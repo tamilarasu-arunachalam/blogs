@@ -1,0 +1,16 @@
+<!-- Optional Topics Navigation -->
+{% if page.topics %}
+<nav class="post-topics mb-5 p-4 bg-light bg-opacity-50 border rounded-4 shadow-sm">
+    <h6 class="small fw-bold text-muted text-uppercase mb-3 ls-1">Quick Topics Navigation</h6>
+    <div class="row row-cols-1 row-cols-md-2 g-2">
+        {% for topic in page.topics %}
+        <div class="col">
+            <a href="#{{ topic.id }}" class="text-decoration-none text-dark d-flex align-items-center hover-primary">
+                <span class="badge bg-dark rounded-circle me-3 p-1" style="width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.7rem;">{{ forloop.index }}</span>
+                <span class="small fw-semibold">{{ topic.title }}</span>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</nav>
+{% endif %}

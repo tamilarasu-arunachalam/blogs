@@ -2,8 +2,8 @@ title: Modern Tech & Affiliate Blog
 description: High readability tech reviews and affiliate recommendations.
 author: Tamilarasu Arunachalam
 email: contact@yourdomain.com
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yourblogdomain.com" # the base hostname & protocol for your site
+baseurl: "/blogs" # the subpath of your site, e.g. /blog
+url: "https://tamilarasu-arunachalam.github.io" # the base hostname & protocol for your site
 twitter_username: tamilarasu
 github_username:  tamilarasu
 

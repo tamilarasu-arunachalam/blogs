@@ -22,14 +22,20 @@ layout: default
 
                 {% if page.image %}
                 <div class="post-featured-image mb-5">
-                    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="img-fluid rounded-4 shadow-sm w-100">
+                     {% include image.html url=page.image alt=page.title class="img-fluid rounded-4 shadow-sm w-100" %}
                 </div>
                 {% endif %}
+
+                <!-- Topics / TOC Include -->
+                {% include topics.html %}
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
                     {{ content }}
                 </div>
+
+                <!-- FAQ Include (Optional) -->
+                {% include faq.html %}
 
                 <!-- Chrome Extension Promotion -->
                 <section class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">

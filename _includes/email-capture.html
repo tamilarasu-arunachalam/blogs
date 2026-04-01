@@ -1,11 +1,17 @@
-<!-- Email Capture Include -->
-<div id="subscribe" class="email-capture-box bg-white p-4 border rounded shadow-sm">
-    <h6 class="text-dark fw-bold mb-3">Stay Updated</h6>
-    <p class="small text-muted mb-4">Join 2,000+ subscribers for weekly tech insights sent directly to your inbox.</p>
-    <form action="#" method="post" id="newsletter-form">
-        <div class="input-group mb-3">
-            <input type="email" name="EMAIL" class="form-control rounded-pill rounded-end-0 border-end-0 px-3" placeholder="email@example.com" aria-label="Email address" required>
-            <button class="btn btn-dark rounded-pill rounded-start-0 px-3" type="submit">Join Now</button>
+<!-- Email Capture Include - Redesigned Horizontal -->
+<div id="subscribe" class="newsletter-compact col-12 mt-5 py-5 border-top">
+    <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+            <h4 class="fw-bold mb-1">Stay in the Loop</h4>
+            <p class="text-muted mb-0 small">Join 2,000+ professionals for weekly tech & productivity insights.</p>
         </div>
-    </form>
+        <div class="col-lg-7">
+            <form action="#" method="post" id="newsletter-form">
+                <div class="input-group input-group-lg newsletter-group shadow-sm rounded-pill overflow-hidden border">
+                    <input type="email" name="EMAIL" class="form-control border-0 px-4" placeholder="yourname@domain.com" aria-label="Email address" required>
+                    <button class="btn btn-dark px-5 fw-bold" type="submit">Join Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

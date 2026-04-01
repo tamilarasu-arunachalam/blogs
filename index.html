@@ -10,7 +10,7 @@ title: Home
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <div class="featured-image-container mb-4">
-                    <img src="{{ featured_post.image | relative_url }}" alt="{{ featured_post.title }}" class="img-fluid rounded-5 shadow-lg w-100 p-0" style="object-fit: cover;">
+                    {% include image.html url=featured_post.image alt=featured_post.title class="img-fluid rounded-5 shadow-lg w-100 p-0" style="object-fit: cover;" %}
                 </div>
             </div>
             <div class="col-lg-6 ps-lg-5">
@@ -66,7 +66,7 @@ title: Home
                 <article class="post-card h-100 d-flex flex-column border-0 bg-transparent">
                     <div class="card-img-wrapper mb-4 rounded-4 overflow-hidden position-relative shadow-sm hover-grow">
                         <a href="{{ post.url | relative_url }}">
-                            <img src="{{ post.image | relative_url | default: '/assets/images/default.jpg' }}" alt="{{ post.title }}" class="post-card-img w-100" style="height: 240px; object-fit: cover;">
+                            {% include image.html url=post.image alt=post.title class="post-card-img w-100" style="height: 240px; object-fit: cover;" %}
                         </a>
                         <div class="position-absolute top-0 end-0 p-3">
                             <span class="badge bg-white text-dark shadow-sm">{{ post.category }}</span>
