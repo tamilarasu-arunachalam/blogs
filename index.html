@@ -13,7 +13,7 @@ title: Home
             </div>
             <div class="col-lg-5 offset-lg-1">
                 <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-4 bg-white">
-                    <h5 class="fw-bold mb-1">Weekly Pulse</h5>
+                    <h5 class="fw-bold mb-1 text-primary">Weekly Pulse</h5>
                     <p class="small text-secondary mb-4">High-signal tech insights delivered once a week.</p>
                     <form action="#" method="post">
                         <div class="input-group mb-0">
@@ -27,11 +27,11 @@ title: Home
     </div>
 </header>
 
-<!-- Categories Navigation- Based Filter -->
+<!-- Categories Navigation - Live Filtering -->
 <section class="py-3 border-bottom sticky-top bg-white shadow-sm" style="top: var(--nav-height); z-index: 1000;">
     <div class="container">
         <div class="d-flex align-items-center overflow-auto no-scrollbar py-1">
-            <span class="text-secondary small fw-bold text-uppercase me-4 ls-1">Browse</span>
+            <span class="text-secondary small fw-bold text-uppercase me-4 ls-1">Browse Topics</span>
             <button class="btn btn-sm btn-dark rounded-pill px-4 me-2 filter-btn active" data-filter="all">All Items</button>
             
             {% assign categories = "" | split: "," %}
@@ -54,10 +54,10 @@ title: Home
         <div class="row">
             <div class="col-lg-10 mx-auto" id="post-list-container">
                 
-                <!-- Combined Pinned and Regular Loop for JS filtering -->
-                {% assign all_posts = site.posts %}
+                <!-- Combined Loop with Pinned sorting: Pinned posts first -->
+                {% assign all_posts = site.posts | sort: "pinned" | reverse %}
                 {% for post in all_posts %}
-                <article class="post-list-item {% for cat in post.categories %}{{ cat | slugify }} {% endfor %}" data-categories="{% for cat in post.categories %}{{ cat | slugify }} {% endfor %}">
+                <article class="post-list-item {% for cat in post.categories %}{{ cat | slugify }} {% endfor %}" data-categories="{% for cat in post.categories %}{{ cat | slugify }} {% endfor %}" style="display: grid; transition: opacity 0.3s ease;">
                     <div class="post-thumbnail-wrapper">
                         <a href="{{ post.url | relative_url }}">
                             {% include image.html url=post.image alt=post.title class="post-thumbnail" %}
@@ -85,6 +85,12 @@ title: Home
                 </article>
                 {% endfor %}
 
+                <!-- No Results Message -->
+                <div id="no-results" class="text-center py-5 d-none">
+                    <p class="text-muted lead">No posts found for this topic yet.</p>
+                    <button class="btn btn-outline-dark btn-sm rounded-pill px-4" onclick="document.querySelector('[data-filter=all]').click()">Show all posts</button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -94,33 +100,43 @@ title: Home
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const posts = document.querySelectorAll('.post-list-item');
+    const noResults = document.getElementById('no-results');
 
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update Active State
-            filterButtons.forEach(b => b.classList.remove('btn-dark', 'active'));
-            filterButtons.forEach(b => b.classList.add('btn-outline-secondary', 'border-0'));
-            
+            // Update Active UI
+            filterButtons.forEach(b => {
+                b.classList.remove('btn-dark', 'active');
+                b.classList.add('btn-outline-secondary', 'border-0');
+            });
             btn.classList.add('btn-dark', 'active');
             btn.classList.remove('btn-outline-secondary', 'border-0');
 
             const filterValue = btn.getAttribute('data-filter');
+            let visibleCount = 0;
 
             posts.forEach(post => {
-                if (filterValue === 'all') {
-                    post.classList.remove('d-none');
-                    // Add fade in or other effect
-                    post.style.display = 'grid';
-                } else {
-                    const categories = post.getAttribute('data-categories').split(' ');
-                    if (categories.includes(filterValue)) {
-                        post.classList.remove('d-none');
+                post.style.opacity = '0'; // Start fade out
+                
+                setTimeout(() => {
+                    const categories = post.getAttribute('data-categories').trim().split(/\s+/);
+                    const isVisible = (filterValue === 'all' || categories.includes(filterValue));
+
+                    if (isVisible) {
                         post.style.display = 'grid';
+                        setTimeout(() => post.style.opacity = '1', 50); // Fade in
+                        visibleCount++;
                     } else {
-                        post.classList.add('d-none');
                         post.style.display = 'none';
                     }
-                }
+                    
+                    // Show/Hide no results message after the loop
+                    if (visibleCount === 0) {
+                        noResults.classList.remove('d-none');
+                    } else {
+                        noResults.classList.add('d-none');
+                    }
+                }, 300);
             });
         });
     });
