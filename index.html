@@ -2,135 +2,134 @@
 layout: default
 title: Home
 ---
-<!-- Featured Hero Post Section (Optional: Shows the latest sticky post or first in list) -->
-{% assign featured_post = paginator.posts | first %}
-{% if paginator.page == 1 %}
-<header class="featured-header py-5 bg-light mb-1">
-    <div class="container">
+
+<!-- Redesigned Hero: Newsletter Section (Replaces featured post section) -->
+<header class="py-5 border-bottom bg-light">
+    <div class="container py-lg-5">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <div class="featured-image-container mb-4">
-                    {% include image.html url=featured_post.image alt=featured_post.title class="img-fluid rounded-5 shadow-lg w-100 p-0" style="object-fit: cover;" %}
+                <h1 class="display-4 fw-bold mb-3 ls-n1">The Developer's Journal</h1>
+                <p class="lead text-secondary mb-0 fs-5 mb-4">Deep dives into software engineering, workspace productivity, and the tools that move the needle.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-white text-secondary border px-3 py-2 rounded-pill fw-medium">#Engineering</span>
+                    <span class="badge bg-white text-secondary border px-3 py-2 rounded-pill fw-medium">#Productivity</span>
+                    <span class="badge bg-white text-secondary border px-3 py-2 rounded-pill fw-medium">#Hardware</span>
                 </div>
             </div>
-            <div class="col-lg-6 ps-lg-5">
-                <div class="mb-3">
-                    <span class="badge bg-dark rounded-pill px-3 py-2">FEATURED POST</span>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5 bg-white">
+                    <h5 class="fw-bold mb-3">Join the Newsletter</h5>
+                    <p class="small text-secondary mb-4">Get high-signal tech insights delivered once a week. No spam, ever.</p>
+                    <form action="#" method="post">
+                        <div class="mb-3">
+                            <input type="email" class="form-control form-control-lg border-2 bg-light-subtle" placeholder="your@email.com" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold rounded-3">Subscribe Now</button>
+                    </form>
                 </div>
-                <h1 class="display-3 fw-bold mb-4">{{ featured_post.title }}</h1>
-                <p class="lead text-muted mb-4 fs-4">{{ featured_post.excerpt | strip_html | truncatewords: 30 }}</p>
-                <div class="d-flex align-items-center mb-5">
-                    <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random" class="rounded-circle me-3" width="48" alt="Author">
-                    <div class="text-start">
-                        <div class="fw-bold">{{ site.author }}</div>
-                        <div class="text-muted small">{{ featured_post.date | date: "%B %d, %Y" }} • {{ featured_post.read_time }}</div>
-                    </div>
-                </div>
-                <a href="{{ featured_post.url | relative_url }}" class="btn btn-dark btn-lg rounded-pill px-5 py-3">Read Full Article</a>
             </div>
         </div>
     </div>
 </header>
-{% endif %}
 
-<!-- Multi-Column Post Grid -->
-<section class="post-grid py-5">
-    <div class="container mt-4">
-        <div class="d-flex justify-content-between align-items-end mb-4">
-            <div>
-                <h2 class="display-5 fw-bold mb-0">Recent Insights</h2>
-                <div class="text-muted">Exploring the edge of modern workspace and productivity.</div>
-            </div>
-            <!-- Optional: Tag Cloud -->
-            <div class="d-none d-lg-block">
-                <div class="small fw-bold text-muted text-uppercase mb-2">Popular Tags</div>
-                <div class="d-flex flex-wrap gap-2">
-                    {% assign tags = "" | split: "," %}
-                    {% for post in site.posts %}
-                        {% for tag in post.tags %}
-                            {% assign tags = tags | push: tag %}
-                        {% endfor %}
-                    {% endfor %}
-                    {% assign tags = tags | uniq | sort %}
-                    {% for tag in tags %}
-                        <a href="#" class="btn btn-outline-secondary btn-xs rounded-pill px-3 py-1 border-light-subtle text-muted" style="font-size: 0.75rem;">#{{ tag }}</a>
-                    {% endfor %}
-                </div>
-            </div>
+<!-- Categories Navigation -->
+<section class="py-4 border-bottom sticky-top bg-white" style="top: var(--navbar-height); z-index: 100;">
+    <div class="container">
+        <div class="d-flex align-items-center overflow-auto no-scrollbar">
+            <span class="text-secondary small fw-bold text-uppercase me-4 ls-1">Topics</span>
+            <a href="{{ site.baseurl }}/" class="btn btn-sm btn-dark rounded-pill px-4 me-2">All</a>
+            {% assign categories = "" | split: "," %}
+            {% for post in site.posts %}
+                {% for cat in post.categories %}
+                    {% assign categories = categories | push: cat %}
+                {% endfor %}
+            {% endfor %}
+            {% assign categories = categories | uniq | sort %}
+            {% for cat in categories %}
+            <a href="{{ site.baseurl }}/category/{{ cat | slugify }}" class="btn btn-sm btn-outline-secondary border-0 rounded-pill px-4 me-2">{{ cat }}</a>
+            {% endfor %}
         </div>
+    </div>
+</section>
 
-        <div class="row g-5">
-            <!-- Iterate through paginated posts -->
-            {% for post in paginator.posts %}
-            <div class="col-md-6 col-lg-4">
-                <article class="post-card h-100 d-flex flex-column border-0 bg-transparent">
-                    <div class="card-img-wrapper mb-4 rounded-4 overflow-hidden position-relative shadow-sm hover-grow">
+<!-- Blog List Section -->
+<section class="py-5">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                
+                <!-- Pinned Blogs First (Only on Page 1) -->
+                {% if paginator.page == 1 %}
+                {% assign pinned_posts = site.posts | where: "pinned", true %}
+                {% for post in pinned_posts %}
+                <article class="post-list-item d-flex flex-column flex-md-row align-items-md-start gap-4">
+                    <div class="flex-shrink-0">
                         <a href="{{ post.url | relative_url }}">
-                            {% include image.html url=post.image alt=post.title class="post-card-img w-100" style="height: 240px; object-fit: cover;" %}
+                            {% include image.html url=post.image alt=post.title class="post-thumbnail shadow-sm" %}
                         </a>
-                        <div class="position-absolute top-0 end-0 p-3">
-                            <span class="badge bg-white text-dark shadow-sm">{{ post.category }}</span>
-                        </div>
                     </div>
-                    <div class="d-flex flex-column flex-grow-1">
-                        <div class="mb-2">
-                             <span class="text-muted small text-uppercase fw-bold">{{ post.date | date: "%b %d, %Y" }}</span>
-                             {% for tag in post.tags %}
-                             <span class="ms-2 badge bg-light text-muted border-0 fw-normal">#{{ tag }}</span>
-                             {% endfor %}
+                    <div class="flex-grow-1">
+                        <div class="mb-2 d-flex align-items-center gap-2">
+                            <span class="pinned-badge">PINNED</span>
+                            <span class="text-secondary small fw-medium">{{ post.date | date: "%b %d, %Y" }}</span>
                         </div>
-                        <h3 class="post-card-title h4 fw-bold mb-3">
-                            <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark">{{ post.title }}</a>
-                        </h3>
-                        <p class="post-card-excerpt text-muted mb-4 small">
-                            {{ post.excerpt | strip_html | truncatewords: 25 }}
-                        </p>
-                        <div class="mt-auto">
-                            <a href="{{ post.url | relative_url }}" class="text-dark text-decoration-none fw-bold small">Read Story →</a>
+                        <h2 class="h3 fw-bold mb-3">
+                            <a href="{{ post.url | relative_url }}" class="post-title-link">{{ post.title }}</a>
+                        </h2>
+                        <p class="post-excerpt-list mb-4">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
+                        <div class="d-flex gap-2">
+                             {% for cat in post.categories %}
+                             <span class="text-accent small fw-bold text-uppercase ls-1" style="font-size: 0.7rem;">{{ cat }}</span>
+                             {% endfor %}
                         </div>
                     </div>
                 </article>
-            </div>
-            {% endfor %}
-        </div>
-
-        <!-- Pagination Controls -->
-        {% if paginator.total_pages > 1 %}
-        <nav aria-label="Page navigation" class="mt-5 pt-5">
-            <ul class="pagination pagination-lg justify-content-center">
-                {% if paginator.previous_page %}
-                <li class="page-item">
-                    <a class="page-link rounded-circle mx-2 border-0 shadow-sm" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
+                {% endfor %}
                 {% endif %}
 
-                {% for page in (1..paginator.total_pages) %}
-                {% if page == paginator.page %}
-                <li class="page-item active">
-                    <span class="page-link rounded-circle mx-2 border-0 shadow-sm">{{ page }}</span>
-                </li>
-                {% elsif page == 1 %}
-                <li class="page-item">
-                    <a class="page-link rounded-circle mx-2 border-0 shadow-sm" href="{{ '/' | relative_url }}">{{ page }}</a>
-                </li>
-                {% else %}
-                <li class="page-item">
-                    <a class="page-link rounded-circle mx-2 border-0 shadow-sm" href="{{ site.paginate_path | replace: ':num', page | relative_url }}">{{ page }}</a>
-                </li>
-                {% endif %}
+                <!-- Regular Blogs (Excluding Pinned) -->
+                {% for post in paginator.posts %}
+                {% unless post.pinned %}
+                <article class="post-list-item d-flex flex-column flex-md-row align-items-md-start gap-4">
+                    <div class="flex-shrink-0">
+                        <a href="{{ post.url | relative_url }}">
+                            {% include image.html url=post.image alt=post.title class="post-thumbnail shadow-sm" %}
+                        </a>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="mb-2">
+                            <span class="text-secondary small fw-medium">{{ post.date | date: "%b %d, %Y" }}</span>
+                        </div>
+                        <h2 class="h3 fw-bold mb-3">
+                            <a href="{{ post.url | relative_url }}" class="post-title-link">{{ post.title }}</a>
+                        </h2>
+                        <p class="post-excerpt-list mb-4">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
+                        <div class="d-flex gap-2">
+                             {% for cat in post.categories %}
+                             <span class="text-accent small fw-bold text-uppercase ls-1" style="font-size: 0.7rem;">{{ cat }}</span>
+                             {% endfor %}
+                        </div>
+                    </div>
+                </article>
+                {% endunless %}
                 {% endfor %}
 
-                {% if paginator.next_page %}
-                <li class="page-item">
-                    <a class="page-link rounded-circle mx-2 border-0 shadow-sm" href="{{ paginator.next_page_path | relative_url }}" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
+                <!-- Pagination -->
+                {% if paginator.total_pages > 1 %}
+                <nav aria-label="Page navigation" class="mt-5 pt-3">
+                    <ul class="pagination justify-content-start border-0">
+                        {% if paginator.previous_page %}
+                        <li class="page-item"><a class="page-link border-0 text-dark fw-bold" href="{{ paginator.previous_page_path | relative_url }}">← Previous</a></li>
+                        {% endif %}
+                        <li class="page-item px-3 d-flex align-items-center small text-muted">Page {{ paginator.page }} of {{ paginator.total_pages }}</li>
+                        {% if paginator.next_page %}
+                        <li class="page-item"><a class="page-link border-0 text-dark fw-bold" href="{{ paginator.next_page_path | relative_url }}">Next →</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
                 {% endif %}
-            </ul>
-        </nav>
-        {% endif %}
+
+            </div>
+        </div>
     </div>
 </section>
