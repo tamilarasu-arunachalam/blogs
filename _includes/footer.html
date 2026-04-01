@@ -1,54 +1,8 @@
-<!-- Modern Compact Footer Include -->
+<!-- Minimalist Footer -->
 <footer class="mt-auto py-5 bg-white border-top">
-    <div class="container overflow-hidden">
-        <div class="row footer-main gy-4 align-items-start mb-5">
-            <!-- Brand Column -->
-            <div class="col-md-4 mb-4 mb-md-0">
-                <div class="navbar-brand fs-3 fw-bold mb-3 d-block">TechBlog.</div>
-                <p class="text-secondary small max-w-sm">Exploring high-performance tech, productivity tools, and modern professional excellence with expert integrity.</p>
-                <div class="d-flex gap-3 mt-4">
-                    <a href="#" class="text-secondary opacity-50 hover-100"><span class="fs-4">𝕏</span></a>
-                    <a href="#" class="text-secondary opacity-50 hover-100"><span class="fs-4">💼</span></a>
-                    <a href="#" class="text-secondary opacity-50 hover-100"><span class="fs-4">🐙</span></a>
-                </div>
-            </div>
-            
-            <!-- Navigation Column -->
-            <div class="col-6 col-md-2 offset-md-1">
-                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Company</h6>
-                <ul class="list-unstyled d-grid gap-2">
-                    <li><a href="{{ site.baseurl }}/" class="text-decoration-none text-secondary small hover-primary">Home</a></li>
-                    <li><a href="{{ site.baseurl }}/about" class="text-decoration-none text-secondary small hover-primary">Our Story</a></li>
-                    <li><a href="{{ site.baseurl }}/tools" class="text-decoration-none text-secondary small hover-primary">Tools I Built</a></li>
-                    <li><a href="{{ site.baseurl }}/contact" class="text-decoration-none text-secondary small hover-primary">Contact</a></li>
-                </ul>
-            </div>
-            
-            <!-- Legal Column -->
-            <div class="col-6 col-md-2">
-                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Legal</h6>
-                <ul class="list-unstyled d-grid gap-2">
-                    <li><a href="{{ site.baseurl }}/privacy" class="text-decoration-none text-secondary small hover-primary">Privacy Policy</a></li>
-                    <li><a href="{{ site.baseurl }}/terms" class="text-decoration-none text-secondary small hover-primary">Terms of Use</a></li>
-                    <li><a href="#" class="text-decoration-none text-secondary small hover-primary">Cookie Policy</a></li>
-                </ul>
-            </div>
-
-            <!-- AdSense Disclaimer (Optional but good for approval) -->
-            <div class="col-md-3">
-                <div class="p-3 bg-light rounded-4 small text-muted border-0 opacity-75">
-                    <p class="mb-0 lh-base" style="font-size: 0.7rem;">Transparency: We participate in affiliate programs. Clicking links may earn us a commission at no extra cost to you.</p>
-                </div>
-            </div>
-        </div>
-
-        {% include email-capture.html %}
-
-        <div class="footer-bottom mt-5 pt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-            <div class="small text-secondary opacity-75">&copy; {{ site.time | date: '%Y' }} {{ site.author }}. Built with Jekyll & Love.</div>
-            <div class="small text-secondary">
-                <span class="opacity-50">Status:</span> <span class="text-success fw-bold">Live & Verified</span>
-            </div>
+    <div class="container text-center">
+        <div class="small text-secondary opacity-75">
+            &copy; {{ site.time | date: '%Y' }} {{ site.author }}. All rights reserved.
         </div>
     </div>
 </footer>
