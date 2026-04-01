@@ -1,0 +1,89 @@
+---
+layout: default
+---
+<article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border">{{ page.category }}</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">{{ page.title }}</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random" class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">{{ site.author }}</div>
+                            <div class="text-muted small">{{ page.date | date: "%B %d, %Y" }} • {{ page.read_time | default: '5 min read' }}</div>
+                        </div>
+                    </div>
+                </header>
+
+                {% if page.image %}
+                <div class="post-featured-image mb-5">
+                    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="img-fluid rounded-4 shadow-sm w-100">
+                </div>
+                {% endif %}
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    {{ content }}
+                </div>
+
+                <!-- Chrome Extension Promotion -->
+                <section class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="{{ '/assets/images/chrome-icon.png' | relative_url }}" alt="Chrome Icon" width="48" class="me-3">
+                        <h4 class="mb-0 fw-bold">Boost Your Productivity!</h4>
+                    </div>
+                    <p class="mb-4">Install my Chrome extension to automate your workspace management directly from your browser.</p>
+                    <a href="#" class="btn btn-primary rounded-pill px-5 py-2">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Over 10,000+ happy developers trust this tool.</div>
+                </section>
+
+                <hr class="my-5">
+
+                <!-- Related Posts or Navigation -->
+                <div class="d-flex justify-content-between mt-5">
+                    {% if page.previous.url %}
+                    <a href="{{ page.previous.url | relative_url }}" class="text-decoration-none">
+                        <div class="small text-muted mb-1">← Previous</div>
+                        <div class="fw-bold">{{ page.previous.title }}</div>
+                    </a>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <a href="{{ page.next.url | relative_url }}" class="text-decoration-none text-end">
+                        <div class="small text-muted mb-1">Next →</div>
+                        <div class="fw-bold">{{ page.next.title }}</div>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title | escape }}",
+  "image": "{{ page.image | absolute_url }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author | escape }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title | escape }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/images/logo.png"
+    }
+  },
+  "description": "{{ page.description | escape }}"
+}
+</script>

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    --primary: #0f172a;
+    --secondary: #64748b;
+    --accent: #3b82f6;
+    --bg: #ffffff;
+    --surface: #f8fafc;
+    --border: #e2e8f0;
+    --radius-lg: 1.5rem;
+    --radius-md: 1rem;
+    --radius-sm: 0.5rem;
+}
+
+body {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    color: var(--primary);
+    background-color: var(--bg);
+    line-height: 1.6;
+}
+
+/* Premium Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Feature Header */
+.featured-header {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 0 0 4rem 4rem;
+}
+
+.featured-image-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(15, 23, 42, 0.4) 0%, transparent 50%);
+    z-index: 1;
+    border-radius: inherit;
+}
+
+/* Post Cards */
+.post-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+}
+
+.hover-grow {
+    transition: transform 0.3s ease;
+}
+
+.hover-grow:hover {
+    transform: scale(1.02);
+}
+
+/* Affiliate Table Customization */
+.affiliate-comparison table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.affiliate-comparison th {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--secondary);
+}
+
+/* Chrome Promo */
+.chrome-promo {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(37, 99, 235, 0.1) 100%);
+}
+
+/* Email Capture */
+.email-capture-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.email-capture-box:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Pagination Custom Circles */
+.pagination .page-link {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Tools Page Items */
+.tool-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .featured-header {
+        border-radius: 0 0 2rem 2rem;
+    }
+}

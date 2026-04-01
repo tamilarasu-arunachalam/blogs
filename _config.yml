@@ -1,0 +1,31 @@
+title: Modern Tech & Affiliate Blog
+description: High readability tech reviews and affiliate recommendations.
+author: Tamilarasu Arunachalam
+email: contact@yourdomain.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://yourblogdomain.com" # the base hostname & protocol for your site
+twitter_username: tamilarasu
+github_username:  tamilarasu
+
+# Build settings
+markdown: kramdown
+theme: minima # You can change this later
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Pagination settings
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# SEO Schema Advanced
+google_search_console: 
+google_analytics: 
+facebook:
+  app_id: 
+  publisher: 
+twitter:
+  username: 
+  card: summary_large_image

@@ -1,0 +1,33 @@
+workspace:
+  - name: Ergo Pro Chair
+    image: "/assets/images/chair.png"
+    features: "Lumbar support, 4D armrests, breathable mesh"
+    best_for: "Long-duration coding"
+    link: "https://amazon.com/example-chair"
+  - name: UltraWide 34”
+    image: "/assets/images/monitor.png"
+    features: "144Hz Refresh, 1440p resolution, built-in hub"
+    best_for: "Video editing & multitasking"
+    link: "https://amazon.com/example-monitor"
+  - name: Keychron K2
+    image: "/assets/images/keyboard.png"
+    features: "Wireless, Mechanical (Brown switches), Mac/Win"
+    best_for: "Mobile productivity"
+    link: "https://amazon.com/example-keyboard"
+
+laptops:
+  - name: MacBook Pro (M4 Max)
+    image: "/assets/images/macbook.png"
+    features: "M4 Max Chip, 64GB Unified RAM, 1TB SSD"
+    best_for: "Mobile App Development & ML"
+    link: "https://amazon.com/macbook-pro"
+  - name: Framework Laptop 13
+    image: "/assets/images/framework.png"
+    features: "Modular parts, 13th Gen Intel, 100% repairable"
+    best_for: "Open Source Developers"
+    link: "https://frame.work/example"
+  - name: Dell XPS 16
+    image: "/assets/images/dell.png"
+    features: "RTX 4060, 4K OLED, Intel Core Ultra 7"
+    best_for: "Windows/WSL Productivity"
+    link: "https://dell.com/xps"
