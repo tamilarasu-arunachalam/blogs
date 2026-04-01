@@ -1,22 +1,29 @@
-<!-- Navbar Include -->
+<!-- Modern Minimalist Navbar - High Performance -->
 <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-        <a class="navbar-brand" href="{{ site.baseurl }}/">TechBlog.</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold text-dark me-auto" href="{{ site.baseurl }}/" style="font-size: 1.25rem;">TechBlog.</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav align-items-center">
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/tools">Tools I Built</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/contact">Contact</a></li>
-                <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4">Subscribe</a>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="{{ site.baseurl }}/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="{{ site.baseurl }}/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="{{ site.baseurl }}/tools">Tools I Built</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="{{ site.baseurl }}/contact">Contact</a></li>
+                
+                <!-- CTA on Desktop -->
+                <li class="nav-item ms-lg-3 d-none d-lg-block">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold" style="font-size: 0.8rem;">Subscribe</a>
                 </li>
             </ul>
         </div>
