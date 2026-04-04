@@ -376,17 +376,73 @@ h1, h2, h3, h4, h5, h6 {
     transform: scaleX(1);
 }
 
-/* Post Content & Readability */
-.post-body p {
-    margin-bottom: 1.75rem;
-    font-size: 1.15rem;
-    color: #334155;
-    line-height: 1.8;
+/* Post Content & Readability Optimized for Wider Layouts */
+.post-body {
+    color: #1e293b;
 }
 
-.post-body h2, .post-body h3 {
-    margin-top: 3rem;
+.post-body p {
+    margin-bottom: 2rem;
+    font-size: clamp(1.1rem, 1.05rem + 0.25vw, 1.25rem); /* Responsive font scaling */
+    line-height: 1.85;
+    color: #334155;
+}
+
+.post-body h2 {
+    font-size: clamp(1.8rem, 1.5rem + 1vw, 2.8rem);
+    margin-top: 4rem;
     margin-bottom: 1.5rem;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.post-body h3 {
+    font-size: clamp(1.4rem, 1.2rem + 0.5vw, 2rem);
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.post-body img {
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    margin: 3rem 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.post-body blockquote {
+    border-left: 5px solid var(--accent);
+    padding: 2rem 2.5rem;
+    background: #f8fafc;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin: 3.5rem 0;
+    font-style: italic;
+    color: #475569;
+}
+
+.post-body blockquote p {
+    margin-bottom: 0px;
+    font-size: 1.4rem;
+}
+
+.post-body ul, .post-body ol {
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+}
+
+.post-body li {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    color: #334155;
+}
+
+/* Ensure images in post body are not too constrained */
+@media (min-width: 1200px) {
+    .post-post .container {
+        max-width: 1200px;
+    }
 }
 
 /* Responsive adjustments */
