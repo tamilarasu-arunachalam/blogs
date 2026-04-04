@@ -100,6 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 .post-excerpt-list {
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     color: var(--secondary);
@@ -229,57 +230,78 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Force Slide-in Mobile Menu from Left */
+/* Compact & Premium Mobile Menu Dropdown */
 @media (max-width: 991.98px) {
     .navbar-collapse {
-        position: fixed !important;
-        top: 0 !important;
-        left: -100% !important;
-        width: 85% !important;
-        max-width: 340px !important;
-        height: 100vh !important;
-        background-color: #ffffff !important;
-        background: #ffffff !important;
-        border-right: 1px solid #e2e8f0 !important;
-        box-shadow: 15px 0 50px rgba(0, 0, 0, 0.15) !important;
-        transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        z-index: 10000 !important;
-        padding: 90px 2rem 2rem !important;
+        position: absolute !important;
+        top: var(--nav-height) !important;
+        left: 1rem !important;
+        right: 1rem !important;
+        width: calc(100% - 2rem) !important;
+        max-width: 400px !important;
+        margin-left: auto !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border) !important;
+        border-radius: 1.5rem !important;
+        padding: 1.5rem !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+        z-index: 1000 !important;
         display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
+        opacity: 0 !important;
+        transform: translateY(-10px) scale(0.95) !important;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        pointer-events: none !important;
+        overflow: hidden !important;
     }
 
     .navbar-collapse.show {
-        left: 0 !important;
+        opacity: 1 !important;
+        transform: translateY(12px) scale(1) !important;
+        pointer-events: auto !important;
     }
 
     .navbar-nav {
         flex-direction: column !important;
-        align-items: flex-start !important;
+        gap: 0.25rem !important;
+        align-items: stretch !important;
     }
 
     .nav-link {
         height: auto !important;
-        padding: 0.8rem 0 !important;
-        font-size: 1.35rem !important;
-        font-weight: 800 !important;
-        width: 100% !important;
+        padding: 0.6rem 1rem !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
         color: var(--primary) !important;
+        border-radius: 0.75rem !important;
+        margin: 0 !important;
     }
 
-    /* Backdrop when menu is open */
-    body.show-nav {
-        overflow: hidden !important;
+    .nav-link:hover {
+        background: var(--surface) !important;
+        color: var(--accent) !important;
+    }
+    
+    .nav-link::after {
+        display: none !important;
     }
 
+    /* Modern CTA for Mobile */
+    .navbar-nav .btn {
+        margin-top: 1rem !important;
+        padding: 0.8rem !important;
+        width: 100% !important;
+        display: block !important;
+        text-align: center !important;
+    }
+
+    /* Remove backdrop entirely */
     body.show-nav::after {
-        content: '';
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.5);
-        backdrop-filter: blur(4px);
-        z-index: 9999;
+        display: none !important;
+    }
+    
+    body.show-nav {
+        overflow: auto !important; /* Allow scroll if menu is small */
     }
 }
 
