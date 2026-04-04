@@ -7,10 +7,10 @@
             <div class="col-lg-4 col-md-6">
                 <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="{{ site.baseurl }}/">TechBlog.</a>
                 <p class="text-secondary small mb-4">Deep dives into software engineering, workspace productivity, and the tools that move the needle for modern developers.</p>
-                <div class="d-flex gap-3">
-                    <a href="#" class="text-secondary opacity-75 hover-primary"><span class="small font-monospace fw-bold">𝕏</span></a>
-                    <a href="#" class="text-secondary opacity-75 hover-primary"><span class="small">💼</span></a>
-                    <a href="#" class="text-secondary opacity-75 hover-primary"><span class="small">🐙</span></a>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/{{ site.twitter_username }}" class="text-secondary opacity-75 hover-primary" target="_blank" rel="noopener"><i class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="https://linkedin.com/in/{{ site.author | slugify }}" class="text-secondary opacity-75 hover-primary" target="_blank" rel="noopener"><i class="bi bi-linkedin fs-5"></i></a>
+                    <a href="https://github.com/{{ site.github_username }}" class="text-secondary opacity-75 hover-primary" target="_blank" rel="noopener"><i class="bi bi-github fs-5"></i></a>
                 </div>
             </div>
 

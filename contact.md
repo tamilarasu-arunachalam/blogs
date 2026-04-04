@@ -49,8 +49,8 @@ permalink: /contact/
             <div class="mb-5">
                 <h3 class="fw-bold mb-4 serif">Other ways to connect</h3>
                 <div class="d-flex align-items-center mb-4">
-                    <div class="bg-light p-3 rounded-circle me-3">
-                         <span class="fs-4">📧</span>
+                    <div class="bg-light p-3 rounded-circle me-3" style="width: 54px; height: 54px; display: flex; align-items: center; justify-content: center;">
+                         <i class="bi bi-envelope-fill text-primary fs-4"></i>
                     </div>
                     <div>
                         <div class="fw-bold text-muted small">EMAIL US</div>
@@ -58,8 +58,8 @@ permalink: /contact/
                     </div>
                 </div>
                 <div class="d-flex align-items-center mb-4">
-                    <div class="bg-light p-3 rounded-circle me-3">
-                         <span class="fs-4">🐦</span>
+                    <div class="bg-light p-3 rounded-circle me-3" style="width: 54px; height: 54px; display: flex; align-items: center; justify-content: center;">
+                         <i class="bi bi-twitter-x text-primary fs-4"></i>
                     </div>
                     <div>
                         <div class="fw-bold text-muted small">TWITTER (X)</div>
@@ -67,12 +67,12 @@ permalink: /contact/
                     </div>
                 </div>
                 <div class="d-flex align-items-center mb-4">
-                    <div class="bg-light p-3 rounded-circle me-3">
-                         <span class="fs-4">💼</span>
+                    <div class="bg-light p-3 rounded-circle me-3" style="width: 54px; height: 54px; display: flex; align-items: center; justify-content: center;">
+                         <i class="bi bi-linkedin text-primary fs-4"></i>
                     </div>
                     <div>
                         <div class="fw-bold text-muted small">LINKEDIN</div>
-                        <div class="fw-bold">linkedin/in/tamilarasu</div>
+                        <div class="fw-bold">linkedin.com/in/tamilarasu</div>
                     </div>
                 </div>
             </div>
