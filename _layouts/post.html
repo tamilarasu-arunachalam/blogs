@@ -50,21 +50,39 @@ layout: default
 
                 <hr class="my-5">
 
-                <!-- Related Posts or Navigation -->
-                <div class="d-flex justify-content-between mt-5">
-                    {% if page.previous.url %}
-                    <a href="{{ page.previous.url | relative_url }}" class="text-decoration-none">
-                        <div class="small text-muted mb-1">← Previous</div>
-                        <div class="fw-bold">{{ page.previous.title }}</div>
-                    </a>
-                    {% endif %}
-                    {% if page.next.url %}
-                    <a href="{{ page.next.url | relative_url }}" class="text-decoration-none text-end">
-                        <div class="small text-muted mb-1">Next →</div>
-                        <div class="fw-bold">{{ page.next.title }}</div>
-                    </a>
-                    {% endif %}
-                </div>
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 serif">You might also like</h4>
+                    <div class="row gy-4">
+                        {% assign related_count = 0 %}
+                        {% for post in site.posts %}
+                            {% if post.url != page.url and post.categories contains page.categories.first %}
+                                {% if related_count < 3 %}
+                                <div class="col-md-4">
+                                    <div class="card h-100 border-0 shadow-sm transition-hover">
+                                        <a href="{{ post.url | relative_url }}">
+                                            {% include image.html url=post.image alt=post.title class="card-img-top rounded-3" style="aspect-ratio: 16/9; object-fit: cover;" %}
+                                        </a>
+                                        <div class="card-body px-0 pt-3">
+                                            <span class="text-secondary small fw-bold text-uppercase ls-1" style="font-size: 0.65rem;">{{ post.categories.first }}</span>
+                                            <h6 class="fw-bold mt-2 mb-0">
+                                                <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark hover-primary">{{ post.title }}</a>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% assign related_count = related_count | plus: 1 %}
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if related_count == 0 %}
+                        <div class="col-12 text-center py-4 bg-light rounded-4">
+                            <p class="text-muted mb-0">Discover more tech insights on our <a href="{{ '/' | relative_url }}">home page</a>.</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </section>
             </div>
         </div>
     </div>

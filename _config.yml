@@ -9,7 +9,8 @@ github_username:  tamilarasu
 
 # Build settings
 markdown: kramdown
-theme: minima # You can change this later
+theme: minima
+permalink: /:title.html
 plugins:
   - jekyll-feed
   - jekyll-paginate

@@ -384,7 +384,7 @@ h1, h2, h3, h4, h5, h6 {
 .post-body p {
     margin-bottom: 2rem;
     font-size: clamp(1.1rem, 1.05rem + 0.25vw, 1.25rem); /* Responsive font scaling */
-    line-height: 1.85;
+    line-height: 1.7; /* Reduced from 1.85 */
     color: #334155;
 }
 
