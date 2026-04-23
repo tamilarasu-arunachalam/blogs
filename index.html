@@ -4,7 +4,7 @@ title: Home
 ---
 
 <!-- Redesigned Hero: Newsletter Section -->
-<header class="py-5 border-bottom bg-light">
+<header class="py-5 border-bottom bg-white">
     <div class="container py-lg-4">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
@@ -60,9 +60,12 @@ title: Home
                         </a>
                     </div>
                     <div class="post-content-column">
-                        <div class="mb-2 d-flex align-items-center gap-2">
-                            {% if post.pinned %}<span class="pinned-badge">PINNED</span>{% endif %}
-                            <span class="text-secondary small fw-medium">{{ post.date | date: "%b %d, %Y" }}</span>
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                {% if post.pinned %}<span class="pinned-badge">PINNED</span>{% endif %}
+                                <span class="text-secondary small fw-medium">{{ post.date | date: "%b %d, %Y" }}</span>
+                            </div>
+                            <span class="small text-muted opacity-75">{{ post.read_time | default: '5 min' }}</span>
                         </div>
                         <h2 class="h4 fw-bold mb-2">
                             <a href="{{ post.url | relative_url }}" class="post-title-link text-decoration-none text-dark hover-primary">{{ post.title }}</a>
@@ -70,12 +73,10 @@ title: Home
                         <div class="post-excerpt-list text-muted small mb-3">
                             {{ post.excerpt | strip_html | truncatewords: 30 }}
                         </div>
-                        <div class="mt-auto d-flex gap-2 align-items-center">
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
                              {% for cat in post.categories %}
-                             <span class="text-accent small fw-bold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.05em;">{{ cat }}</span>
+                             <span class="category-pill">{{ cat }}</span>
                              {% endfor %}
-                             <span class="text-secondary mx-1 opacity-25">•</span>
-                             <span class="small text-muted">{{ post.read_time | default: '5 min' }}</span>
                         </div>
                     </div>
                 </article>
