@@ -27,20 +27,6 @@ title: Home
     </div>
 </header>
 
-<!-- Categories Navigation - Live Filtering -->
-<section class="py-3 border-bottom sticky-top bg-white shadow-sm" style="top: var(--nav-height); z-index: 1000;">
-    <div class="container">
-        <div class="d-flex align-items-center overflow-auto no-scrollbar py-1">
-            <span class="text-secondary small fw-bold text-uppercase me-4 ls-1">Browse Topics</span>
-            <button class="btn btn-sm btn-dark rounded-pill px-4 me-2 filter-btn active" data-filter="all">All Items</button>
-            
-            {% assign categories = site.posts | map: "categories" | join: "," | split: "," | uniq | sort %}
-            {% for cat in categories %}
-            <button class="btn btn-sm btn-outline-secondary border-0 rounded-pill px-4 me-2 filter-btn" data-filter="{{ cat | slugify }}">{{ cat }}</button>
-            {% endfor %}
-        </div>
-    </div>
-</section>
 
 <!-- Blog List Section -->
 <section class="py-4">
