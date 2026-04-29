@@ -4,20 +4,14 @@ title: Contact Us
 permalink: /contact/
 ---
 
----
-layout: default
-title: Contact Us
-permalink: /contact/
----
-
 <header class="py-5 bg-light mb-5 px-3 px-lg-0">
     <div class="container text-center py-5">
-        <h1 class="display-3 fw-bold mb-3 serif">Contact Tamilarasu</h1>
-        <p class="lead text-muted max-w-2xl mx-auto serif">Have a question or interested in collaboration? I'd love to hear from you.</p>
+        <h1 class="display-3 fw-bold mb-3">Contact Tamilarasu</h1>
+        <p class="lead text-muted max-w-2xl mx-auto">Have a question or interested in collaboration? I'd love to hear from you.</p>
     </div>
 </header>
 
-<section class="container mb-5 pb-5 px-4 px-lg-0 serif">
+<section class="container mb-5 pb-5 px-4 px-lg-0">
     <div class="row justify-content-center">
         <div class="col-lg-6">
             <div class="contact-card p-4 p-md-5 bg-white border border-light-subtle rounded-4 shadow-sm mb-5 position-relative overflow-hidden">
@@ -33,17 +27,17 @@ permalink: /contact/
 
                 <form action="#" method="POST" id="contact-form" onsubmit="handleFormSubmit(event)">
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control form-control-lg border-2 rounded-3 serif bg-light-subtle" id="name" name="name" placeholder="John Doe" required>
+                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="name" name="name" placeholder="John Doe" required>
                         <label for="name" class="fw-bold text-secondary">Your Name</label>
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <input type="email" class="form-control form-control-lg border-2 rounded-3 serif bg-light-subtle" id="email" name="email" placeholder="john@example.com" required>
+                        <input type="email" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="email" name="email" placeholder="john@example.com" required>
                         <label for="email" class="fw-bold text-secondary">Email Address</label>
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <select class="form-select form-select-lg border-2 rounded-3 serif bg-light-subtle" id="subject" name="subject" required>
+                        <select class="form-select form-select-lg border-2 rounded-3 bg-light-subtle" id="subject" name="subject" required>
                             <option value="" disabled selected>Select a topic...</option>
                             <option value="general">General Inquiry</option>
                             <option value="collaboration">Business Collaboration</option>
@@ -55,12 +49,12 @@ permalink: /contact/
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <textarea class="form-control border-2 rounded-3 serif bg-light-subtle" id="message" name="message" placeholder="Tell me more..." style="height: 150px" required></textarea>
+                        <textarea class="form-control border-2 rounded-3 bg-light-subtle" id="message" name="message" placeholder="Tell me more..." style="height: 150px" required></textarea>
                         <label for="message" class="fw-bold text-secondary">How can I help?</label>
                     </div>
                     
                     <div class="d-grid gap-2 mt-5">
-                        <button type="submit" id="submit-btn" class="btn btn-dark btn-lg py-3 rounded-pill fw-bold serif d-flex align-items-center justify-content-center gap-2 transition-all">
+                        <button type="submit" id="submit-btn" class="btn btn-dark btn-lg py-3 rounded-pill fw-bold d-flex align-items-center justify-content-center gap-2 transition-all">
                             <span>Send Message</span>
                             <i class="bi bi-send-fill"></i>
                         </button>
@@ -132,10 +126,6 @@ permalink: /contact/
 .form-control:focus, .form-select:focus {
     box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.15);
     border-color: var(--accent) !important;
-}
-/* Ensure form inputs use the serif font if global body font isn't being inherited properly */
-.serif, .form-control.serif, .form-select.serif {
-    font-family: 'Playfair Display', serif !important;
 }
 </style>
 
