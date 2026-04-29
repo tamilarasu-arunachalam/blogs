@@ -433,11 +433,16 @@ h1, h2, h3, h4, h5, h6 {
     color: #1e293b;
 }
 
-.post-body p {
+.post-body p,
+.content-area p,
+.privacy-content p,
+.terms-content p,
+.disclaimer-content p {
     margin-bottom: 2rem;
-    font-size: clamp(1.1rem, 1.05rem + 0.25vw, 1.25rem); /* Responsive font scaling */
-    line-height: 1.7; /* Reduced from 1.85 */
+    font-size: clamp(1.1rem, 1.05rem + 0.25vw, 1.25rem);
+    line-height: 1.7;
     color: #334155;
+    text-align: justify;
 }
 
 .post-body h2 {

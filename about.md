@@ -6,7 +6,7 @@ permalink: /about/
 
 <header class="py-5 bg-light mb-5">
     <div class="container text-center py-5">
-        <h1 class="display-3 fw-bold mb-4 serif">The Story Behind TechBlog</h1>
+        <h1 class="display-3 fw-bold mb-4 serif">The Story Behind My Blog</h1>
         <p class="lead text-muted max-w-2xl mx-auto">Bridging the gap between high-performance technology and a minimalist professional lifestyle.</p>
     </div>
 </header>
