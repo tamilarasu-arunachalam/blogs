@@ -19,7 +19,7 @@ plugins:
 
 # Pagination settings
 paginate: 5
-paginate_path: "/blog/page:num/"
+paginate_path: "/page:num/"
 
 # SEO Schema Advanced
 google_search_console: 
