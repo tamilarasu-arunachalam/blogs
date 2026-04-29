@@ -31,9 +31,9 @@ layout: default
                         </h2>
                         <p class="post-excerpt-list mb-4">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
                         <div class="d-flex gap-2">
-                             {% for cat in post.categories %}
-                             <span class="text-accent small fw-bold text-uppercase ls-1" style="font-size: 0.7rem;">{{ cat }}</span>
-                             {% endfor %}
+                             {% if post.category %}
+                             <span class="text-accent small fw-bold text-uppercase ls-1" style="font-size: 0.7rem;">{{ post.category }}</span>
+                             {% endif %}
                         </div>
                     </div>
                 </article>

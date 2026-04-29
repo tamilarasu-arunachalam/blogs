@@ -56,7 +56,7 @@ layout: default
                     <div class="row gy-4">
                         {% assign related_count = 0 %}
                         {% for post in site.posts %}
-                            {% if post.url != page.url and post.categories contains page.categories.first %}
+                            {% if post.url != page.url and post.category == page.category %}
                                 {% if related_count < 3 %}
                                 <div class="col-md-4">
                                     <div class="card h-100 border-0 shadow-sm transition-hover">
@@ -64,7 +64,7 @@ layout: default
                                             {% include image.html url=post.image alt=post.title class="card-img-top rounded-3" style="aspect-ratio: 16/9; object-fit: cover;" %}
                                         </a>
                                         <div class="card-body px-0 pt-3">
-                                            <span class="text-secondary small fw-bold text-uppercase ls-1" style="font-size: 0.65rem;">{{ post.categories.first }}</span>
+                                            <span class="text-secondary small fw-bold text-uppercase ls-1" style="font-size: 0.65rem;">{{ post.category }}</span>
                                             <h6 class="fw-bold mt-2 mb-0">
                                                 <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark hover-primary">{{ post.title }}</a>
                                             </h6>

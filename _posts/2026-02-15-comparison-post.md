@@ -2,11 +2,7 @@
 layout: post
 title: "Top 3 Coding Laptops for 2026: The Ultimate Comparison"
 date: 2026-02-15 10:00:00 +0530
-category: Hardware Comparison
-categories: [Hardware, Comparison, Coding]
-pinned: false
-meta_description: "Top 3 laptops for coders in 2026: Battery, performance, and portability benchmarks."
-meta_keywords: [laptops for coding, macbook vs dell, developer hardware]
+category: Hardware
 image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1200"
 description: "Expert guide on optimizing your workspace for remote efficiency and mental focus."
 read_time: "15 min read"

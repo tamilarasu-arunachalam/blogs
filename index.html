@@ -34,12 +34,8 @@ title: Home
         <div class="row">
             <div class="col-lg-10 mx-auto" id="post-list-container">
                 
-                <!-- Combined Loop with Pinned logic: Pinned posts first, then sort by date -->
-                {% assign pinned_posts = site.posts | where: "pinned", true | sort: "date" | reverse %}
-                {% assign standard_posts = site.posts | where_exp: "post", "post.pinned != true" | sort: "date" | reverse %}
-                {% assign all_posts = pinned_posts | concat: standard_posts %}
-                {% for post in all_posts %}
-                <article class="post-list-item {% for cat in post.categories %}{{ cat | slugify }} {% endfor %}" data-categories="{% for cat in post.categories %}{{ cat | slugify }} {% endfor %}" style="display: grid; transition: opacity 0.3s ease;">
+                {% for post in paginator.posts %}
+                <article class="post-list-item" style="display: grid; transition: opacity 0.3s ease;">
                     <div class="post-thumbnail-wrapper">
                         <a href="{{ post.url | relative_url }}">
                             {% include image.html url=post.image alt=post.title class="post-thumbnail" %}
@@ -60,68 +56,54 @@ title: Home
                             {{ post.excerpt | strip_html | truncatewords: 30 }}
                         </div>
                         <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
-                             {% for cat in post.categories %}
-                             <span class="category-pill">{{ cat }}</span>
-                             {% endfor %}
+                             {% if post.category %}
+                             <span class="category-pill">{{ post.category }}</span>
+                             {% endif %}
                         </div>
                     </div>
                 </article>
                 {% endfor %}
 
-                <!-- No Results Message -->
-                <div id="no-results" class="text-center py-5 d-none">
-                    <p class="text-muted lead">No posts found for this topic yet.</p>
-                    <button class="btn btn-outline-dark btn-sm rounded-pill px-4" onclick="document.querySelector('[data-filter=all]').click()">Show all posts</button>
-                </div>
+                <!-- Pagination Controls -->
+                {% if paginator.total_pages > 1 %}
+                <nav aria-label="Page navigation" class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        {% if paginator.previous_page %}
+                        <li class="page-item">
+                            <a class="page-link rounded-circle border-0 bg-light text-dark mx-1" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous">
+                                <i class="bi bi-chevron-left"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+
+                        {% for page in (1..paginator.total_pages) %}
+                        {% if page == paginator.page %}
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link rounded-circle border-0 bg-dark text-white mx-1">{{ page }}</span>
+                        </li>
+                        {% elsif page == 1 %}
+                        <li class="page-item">
+                            <a class="page-link rounded-circle border-0 bg-light text-dark mx-1" href="{{ '/' | relative_url }}">{{ page }}</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item">
+                            <a class="page-link rounded-circle border-0 bg-light text-dark mx-1" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if paginator.next_page %}
+                        <li class="page-item">
+                            <a class="page-link rounded-circle border-0 bg-light text-dark mx-1" href="{{ paginator.next_page_path | relative_url }}" aria-label="Next">
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                {% endif %}
 
             </div>
         </div>
     </div>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const posts = document.querySelectorAll('.post-list-item');
-    const noResults = document.getElementById('no-results');
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Update Active UI
-            filterButtons.forEach(b => {
-                b.classList.remove('btn-dark', 'active');
-                b.classList.add('btn-outline-secondary', 'border-0');
-            });
-            btn.classList.add('btn-dark', 'active');
-            btn.classList.remove('btn-outline-secondary', 'border-0');
-
-            const filterValue = btn.getAttribute('data-filter');
-            let visibleCount = 0;
-
-            posts.forEach(post => {
-                post.style.opacity = '0'; // Start fade out
-                
-                setTimeout(() => {
-                    const categories = post.getAttribute('data-categories').trim().split(/\s+/);
-                    const isVisible = (filterValue === 'all' || categories.includes(filterValue));
-
-                    if (isVisible) {
-                        post.style.display = 'grid';
-                        setTimeout(() => post.style.opacity = '1', 50); // Fade in
-                        visibleCount++;
-                    } else {
-                        post.style.display = 'none';
-                    }
-                    
-                    // Show/Hide no results message after the loop
-                    if (visibleCount === 0) {
-                        noResults.classList.remove('d-none');
-                    } else {
-                        noResults.classList.add('d-none');
-                    }
-                }, 300);
-            });
-        });
-    });
-});
-</script>

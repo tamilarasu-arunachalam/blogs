@@ -2,11 +2,7 @@
 layout: post
 title: "The Ultimate Guide to Modern Workspace Efficiency"
 date: 2026-01-01 12:00:00 +0530
-category: Tech Insights
-categories: [Productivity, Remote Work]
-pinned: true
-meta_description: "Expert guide on optimizing your workspace for remote efficiency and mental focus."
-meta_keywords: [workspace, office setup, productivity tools]
+category: Productivity
 image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1200"
 description: "Expert guide on optimizing your workspace for remote efficiency and mental focus."
 read_time: "15 min read"
