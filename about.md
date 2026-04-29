@@ -18,12 +18,12 @@ permalink: /about/
                 <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random&size=150" class="rounded-circle shadow-sm me-4" alt="Tamilarasu Arunachalam">
                 <div>
                     <h2 class="fw-bold mb-1">Tamilarasu Arunachalam</h2>
-                    <p class="text-accent fw-bold">Founder & Tech Strategist</p>
+                    <p class="text-accent fw-bold">Developer & Tech Enthusiast</p>
                 </div>
             </div>
 
             <div class="fs-5 content-area">
-                <p>Hello! I'm Tamilarasu. I've spent over a decade navigating the ever-shifting landscape of modern technology. What started as a simple curiosity about how things work evolved into a lifelong passion for optimizing human productivity through digital tools.</p>
+                <p>Hello! I'm Tamilarasu. I've spent over half a decade navigating the ever-shifting landscape of modern technology. What started as a simple curiosity about how things work evolved into a lifelong passion for optimizing human productivity through digital tools.</p>
                 
                 <p>On this blog, I share my honest insights, rigorous product reviews, and the technical breakdown of the tools I build. My goal is simple: to help you make informed decisions about the technology you invite into your workspace.</p>
 
