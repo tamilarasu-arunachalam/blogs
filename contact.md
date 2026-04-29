@@ -36,8 +36,9 @@ permalink: /contact/
                         <label for="email" class="fw-bold text-secondary">Email Address</label>
                     </div>
                     
-                    <div class="form-floating mb-4">
-                        <select class="form-select form-select-lg border-2 rounded-3 bg-light-subtle" id="subject" name="subject" required>
+                    <div class="mb-4 text-start">
+                        <label for="subject" class="form-label fw-bold text-secondary px-1">Subject</label>
+                        <select class="form-select form-select-lg border-2 rounded-3 bg-light-subtle" id="subject" name="subject" style="padding-top: 0.75rem; padding-bottom: 0.75rem;" required>
                             <option value="" disabled selected>Select a topic...</option>
                             <option value="general">General Inquiry</option>
                             <option value="collaboration">Business Collaboration</option>
@@ -45,7 +46,6 @@ permalink: /contact/
                             <option value="feedback">Product Feedback</option>
                             <option value="error">Reporting a Bug/Issue</option>
                         </select>
-                        <label for="subject" class="fw-bold text-secondary">Subject</label>
                     </div>
                     
                     <div class="form-floating mb-4">
