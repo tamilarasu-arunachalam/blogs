@@ -24,10 +24,10 @@ You'll also need to create API credentials from Google. Head to the [Google Clou
 
 Never hardcode credentials. Instead, go to your GitHub repo → **Settings → Secrets and variables → Actions** and add these three secrets:
 
-  - `EXTENSION_ID` — the unique ID from your Chrome Web Store listing URL
-  - `CLIENT_ID` — from your Google Cloud OAuth credentials
-  - `CLIENT_SECRET` — same place
-  - `REFRESH_TOKEN` — obtained from the OAuth Playground
+  - `EXTENSION_ID` - the unique ID from your Chrome Web Store listing URL
+  - `CLIENT_ID` - from your Google Cloud OAuth credentials
+  - `CLIENT_SECRET` - same place
+  - `REFRESH_TOKEN` - obtained from the OAuth Playground
 
 These values will be injected securely into your workflow at runtime.
 
