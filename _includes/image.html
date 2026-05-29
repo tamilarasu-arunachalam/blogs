@@ -5,18 +5,18 @@
 {% assign img_style = include.style %}
 
 {% if img_url and img_url != "" %}
-    {% if img_url contains '://' or img_url contains 'http' %}
-        <img src="{{ img_url }}" alt="{{ img_alt }}" class="{{ img_class }}" style="{{ img_style }}" loading="lazy" decoding="async">
-    {% else %}
-        {% if page.post_id and img_url contains '/' == false %}
-            {% assign img_path = '/assets/images/posts/' | append: page.post_id | append: '/' | append: img_url %}
-            <img src="{{ img_path | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" style="{{ img_style }}" loading="lazy" decoding="async">
-        {% else %}
-            <img src="{{ img_url | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" style="{{ img_style }}" loading="lazy" decoding="async">
-        {% endif %}
-    {% endif %}
+{% if img_url contains '://' or img_url contains 'http' %}
+<img src="{{ img_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
 {% else %}
-    <div class="{{ img_class }} img-placeholder shadow-inner" style="{{ img_style }}" aria-hidden="true" role="img" aria-label="Placeholder">
-        <!-- Displayed via CSS ::after -->
-    </div>
+{% if page.post_id and img_url contains '/' == false %}
+{% assign img_path = append: page.post_id | append: '/' | append: img_url %}
+<img src="{{ img_path | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
+{% else %}
+<img src="{{ img_url | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
+{% endif %}
+{% endif %}
+{% else %}
+<div class="{{ img_class }} img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
 {% endif %}
