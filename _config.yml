@@ -1,11 +1,11 @@
-title: Modern Tech & Affiliate Blog
+title: Tamilarasu Arunachalam
 description: High readability tech reviews and affiliate recommendations.
 author: Tamilarasu Arunachalam
 email: contact@yourdomain.com
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tamilarasu-arunachalam.github.io" # the base hostname & protocol for your site
+baseurl: "" 
+url: "https://tamilarasu-arunachalam.github.io"
 twitter_username: tamilarasu
-github_username:  tamilarasu
+github_username:  tamilarasu-arunachalam
 
 # Build settings
 markdown: kramdown

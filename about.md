@@ -7,7 +7,6 @@ permalink: /about/
 <header class="py-5 bg-light mb-5">
     <div class="container text-center py-5">
         <h1 class="display-3 fw-bold mb-4 serif">The Story Behind My Blog</h1>
-        <p class="lead text-muted max-w-2xl mx-auto">Bridging the gap between high-performance technology and a minimalist professional lifestyle.</p>
     </div>
 </header>
 
@@ -18,20 +17,20 @@ permalink: /about/
                 <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random&size=150" class="rounded-circle shadow-sm me-4" alt="Tamilarasu Arunachalam">
                 <div>
                     <h2 class="fw-bold mb-1">Tamilarasu Arunachalam</h2>
-                    <p class="text-accent fw-bold">Developer & Tech Enthusiast</p>
+                    <p class="text-accent fw-bold">Software Engineer & Blogger</p>
                 </div>
             </div>
 
             <div class="fs-5 content-area">
-                <p>Hello! I'm Tamilarasu. I've spent over half a decade navigating the ever-shifting landscape of modern technology. What started as a simple curiosity about how things work evolved into a lifelong passion for optimizing human productivity through digital tools.</p>
-                
-                <p>On this blog, I share my honest insights, rigorous product reviews, and the technical breakdown of the tools I build. My goal is simple: to help you make informed decisions about the technology you invite into your workspace.</p>
+                <p>I am Tamilarasu. I am a Software Engineer. I have been a developer for over 5 years and have been a tech enthusiast for as long as I can remember. I am passionate about building tools that help people be more productive and happy.</p>
+
+                <p>On this blog, I share my own development technics, honest insights, rigorous product reviews, and the technical breakdown of the tools I build. My goal is simple: to help you make informed decisions about the technology you invite into your workspace.</p>
 
                 <h3 class="mt-5 mb-4 fw-bold">My Philosophy</h3>
-                <p>I believe that technology should be an invisible enabler, not a distraction. Every review you read here is grounded in real-world usage. If a tool doesn't survive my "deep work" test, it doesn't make it to my recommended list.</p>
+                <p>I strongly believe in the principle of "Build it the simple and right way".</p>
 
                 <h3 class="mt-5 mb-4 fw-bold">Let's Connect</h3>
-                <p>I'm always open to discussing new ideas, tech stacks, or potential collaborations. Feel free to reach out via my <a href="/contact">contact page</a> or follow me on Twitter.</p>
+                <p>I'm always open to discussing new ideas. Feel free to reach out via my <a href="/contact">contact page</a> or follow me on <a href="https://www.linkedin.com/in/tamilarasu-arunachalam">LinkedIn</a>.</p>
             </div>
         </div>
     </div>

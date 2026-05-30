@@ -1,0 +1,267 @@
+---
+layout: default
+title: "Free Permalink Generator – Create SEO-Friendly URL Slugs Instantly"
+permalink: /permalink-generator/
+meta_description: "Free online permalink generator tool. Convert blog titles into clean, SEO-friendly URL slugs with hyphen or underscore separators. Boost your search rankings with optimized permalinks."
+meta_keywords:
+- permalink generator
+- slug generator
+- URL slug creator
+- SEO friendly URL generator
+- blog permalink tool
+- title to slug converter
+- clean URL generator
+- URL optimizer
+- SEO URL tool
+- free slug generator online
+- WordPress permalink generator
+- Jekyll permalink generator
+- blog title to URL
+- hyphenated URL maker
+- web page slug tool
+faq:
+- question: "Is this permalink generator free to use?"
+  answer: "Yes, this tool is 100% free with no sign-up required. Generate unlimited SEO-friendly URL slugs directly in your browser."
+- question: "Can I use this for WordPress, Jekyll, or other CMS platforms?"
+  answer: "Absolutely. The generated slugs work with any platform — WordPress, Jekyll, Hugo, Ghost, Blogger, Webflow, or custom-built websites."
+- question: "Does the tool store my data?"
+  answer: "No. All processing happens client-side in your browser. Nothing is sent to a server, making it completely private and secure."
+- question: "What characters does the generator remove?"
+  answer: "The tool strips special characters such as punctuation, symbols, and non-alphanumeric characters. It preserves letters, numbers, and your chosen separator."
+- question: "Should I use hyphens or underscores for my blog URLs?"
+  answer: "Google recommends hyphens for URLs. Hyphens are treated as word separators, which helps search engines understand each word in your slug individually."
+---
+
+<header class="py-5 bg-light mb-5">
+    <div class="container text-center py-4">
+        <h1 class="display-4 fw-bold mb-3">Free Permalink Generator</h1>
+        <p class="lead text-secondary">Convert any blog title or page heading into a clean, SEO-friendly URL slug -
+            instantly.</p>
+    </div>
+</header>
+
+<section class="container mb-5 pb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5">
+                <div class="mb-4">
+                    <label for="title" class="form-label fw-bold text-secondary">Title</label>
+                    <input type="text" class="form-control form-control-lg bg-light shadow-none"
+                        oninput="generatePermalink(); validateTitle();" id="title"
+                        placeholder="Enter your title here..."
+                        style="border: 2px solid #dee2e6; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
+                    <div id="titleFeedback" class="form-text mt-2 fw-medium" style="transition: opacity 0.3s ease;">
+                        <span id="charCount">0</span> characters
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="separator" class="form-label fw-bold text-secondary">Separator</label>
+                    <select class="form-select form-select-lg bg-light border-0 shadow-none" id="separator"
+                        onchange="generatePermalink()">
+                        <option value="-">Hyphen (-)</option>
+                        <option value="_">Underscore (_)</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label for="permalink" class="form-label fw-bold text-secondary">Generated Permalink</label>
+                    <div class="input-group input-group-lg">
+                        <input type="text" id="permalink" class="form-control bg-light border-0 shadow-none"
+                            onclick="copyToClipboard()" readonly>
+                        <button id="copyButton" class="btn btn-primary px-4 fw-bold shadow-sm" type="button"
+                            onclick="copyToClipboard()" title="Click to copy">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+                    </div>
+                    <div id="copyFeedback" class="form-text text-success d-none mt-2 fw-medium">
+                        <i class="bi bi-check-circle"></i> Copied to clipboard!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SEO Content Section -->
+<section class="container mb-5 pb-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="content-area fs-5">
+                <h2 class="fw-bold mb-4">What Is a Permalink Generator?</h2>
+                <p>A <strong>permalink generator</strong> (also called a <strong>slug generator</strong> or <strong>URL
+                        slug creator</strong>) converts your blog post title, article heading, or page name into a
+                    clean, lowercase, hyphenated or underscored string that works perfectly as a URL path. Clean URLs
+                    are a cornerstone of good <strong>search engine optimization (SEO)</strong>.</p>
+
+                <h3 class="fw-bold mt-5 mb-3">Why SEO-Friendly URLs Matter</h3>
+                <p>Search engines like Google use URLs as a ranking signal. A well-structured permalink tells both users
+                    and crawlers what a page is about before they even visit it. According to Google's SEO guidelines,
+                    descriptive, readable URLs improve click-through rates and help search engines index your content
+                    more effectively.</p>
+                <ul>
+                    <li><strong>Higher click-through rates</strong> - Users are more likely to click on a URL they can
+                        read and understand.</li>
+                    <li><strong>Better crawlability</strong> - Search engine bots parse clean slugs faster than
+                        query-string URLs.</li>
+                    <li><strong>Improved keyword relevance</strong> - Keywords in the URL reinforce the topic of your
+                        page.</li>
+                    <li><strong>Easier sharing</strong> - Clean links look professional on social media and in emails.
+                    </li>
+                </ul>
+
+                <h3 class="fw-bold mt-5 mb-3">How to Use This Tool</h3>
+                <ol>
+                    <li>Type or paste your blog post title into the <strong>Title</strong> field.</li>
+                    <li>Choose your preferred <strong>separator</strong> — hyphen (<code>-</code>) is the SEO standard
+                        recommended by Google, while underscore (<code>_</code>) is common in programming contexts.</li>
+                    <li>Your optimized permalink appears instantly. Click the <strong>copy button</strong> to grab it.
+                    </li>
+                </ol>
+
+                <h3 class="fw-bold mt-5 mb-3">Hyphen vs. Underscore: Which Separator Should You Use?</h3>
+                <p>Google treats hyphens as word separators but treats underscores as word joiners. For example,
+                    <code>seo-friendly-url</code> is read as three separate words, while <code>seo_friendly_url</code>
+                    may be interpreted as one token. For blog posts and web pages, <strong>hyphens are the recommended
+                        choice</strong> for better SEO performance.
+                </p>
+
+                <h3 class="fw-bold mt-5 mb-3">Best Practices for URL Slugs</h3>
+                <ul>
+                    <li>Keep slugs <strong>short and descriptive</strong> - aim for 3 to 5 words.</li>
+                    <li>Use <strong>lowercase</strong> characters only to avoid duplicate content issues.</li>
+                    <li>Remove <strong>stop words</strong> like "the", "and", "is" when they don't add meaning.</li>
+                    <li>Include your <strong>target keyword</strong> naturally in the slug.</li>
+                    <li>Avoid <strong>special characters</strong>, numbers (unless essential), and encoded symbols.</li>
+                </ul>
+            </div>
+
+            <!-- FAQ Section using the reusable include -->
+            {% include faq.html %}
+        </div>
+    </div>
+</section>
+
+<!-- JSON-LD: WebApplication Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Permalink Generator",
+    "description": "Free online tool to convert blog post titles into clean, SEO-friendly URL slugs with customizable separators.",
+    "url": "{{ site.url }}{{ page.url }}",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "{{ site.author }}"
+    }
+}
+</script>
+
+<!-- JSON-LD: FAQPage Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {% for item in page.faq %}
+        {
+            "@type": "Question",
+            "name": "{{ item.question }}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{ item.answer }}"
+            }
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ]
+}
+</script>
+
+<script>
+    function validateTitle() {
+        var titleInput = document.getElementById("title");
+        var feedback = document.getElementById("titleFeedback");
+        var charCount = document.getElementById("charCount");
+        var len = titleInput.value.length;
+
+        charCount.textContent = len;
+
+        if (len === 0) {
+            // Default state
+            titleInput.style.borderColor = "#dee2e6";
+            titleInput.style.boxShadow = "none";
+            feedback.className = "form-text mt-2 fw-medium text-muted";
+        } else if (len <= 5) {
+            // Too short - no special color, just neutral
+            titleInput.style.borderColor = "#dee2e6";
+            titleInput.style.boxShadow = "none";
+            feedback.className = "form-text mt-2 fw-medium text-muted";
+        } else if (len > 5 && len < 50) {
+            // Good length - green
+            titleInput.style.borderColor = "#198754";
+            titleInput.style.boxShadow = "0 0 0 0.15rem rgba(25, 135, 84, 0.15)";
+            feedback.className = "form-text mt-2 fw-medium text-success";
+        } else if (len >= 50 && len <= 60) {
+            // Warning length - orange
+            titleInput.style.borderColor = "#fd7e14";
+            titleInput.style.boxShadow = "0 0 0 0.15rem rgba(253, 126, 20, 0.15)";
+            feedback.className = "form-text mt-2 fw-medium text-warning";
+        } else {
+            // Too long - red
+            titleInput.style.borderColor = "#dc3545";
+            titleInput.style.boxShadow = "0 0 0 0.15rem rgba(220, 53, 69, 0.15)";
+            feedback.className = "form-text mt-2 fw-medium text-danger";
+        }
+    }
+
+    function generatePermalink() {
+        var title = document.getElementById("title").value;
+        var separator = document.getElementById("separator").value;
+
+        // Convert to lowercase
+        title = title.toLowerCase();
+
+        // Replace special characters with nothing, leaving alphanumeric, spaces, hyphens, and underscores
+        title = title.replace(/[^\w\s-]/g, '');
+
+        // Replace spaces and multiple spaces/hyphens/underscores with the chosen separator
+        var regex = new RegExp('[\\s\\-_]+', 'g');
+        title = title.replace(regex, separator);
+
+        // Remove trailing and leading separator
+        var trimRegex = new RegExp('^' + separator + '+|' + separator + '+$', 'g');
+        title = title.replace(trimRegex, '');
+
+        document.getElementById("permalink").value = title;
+    }
+
+    function copyToClipboard() {
+        var permalink = document.getElementById("permalink");
+        if (!permalink.value) return; // Do nothing if empty
+
+        permalink.select();
+        document.execCommand("copy");
+
+        // Show feedback message
+        var feedback = document.getElementById("copyFeedback");
+        feedback.classList.remove("d-none");
+
+        // Change icon temporarily
+        var btnIcon = document.querySelector("#copyButton .bi");
+        btnIcon.classList.remove("bi-clipboard");
+        btnIcon.classList.add("bi-clipboard-check");
+
+        setTimeout(function () {
+            feedback.classList.add("d-none");
+            btnIcon.classList.remove("bi-clipboard-check");
+            btnIcon.classList.add("bi-clipboard");
+        }, 2000);
+    }
+</script>

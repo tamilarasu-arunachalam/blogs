@@ -2,26 +2,43 @@
 <footer class="mt-auto py-5 bg-white border-top">
     <div class="container">
         <div class="row gy-4">
-            
+
             <!-- Column 1: Brand & About -->
             <div class="col-lg-4 col-md-6">
-                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="{{ site.baseurl }}/" style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
-                <p class="text-secondary small mb-4">Deep dives into software engineering, workspace productivity, and the tools that move the needle for modern developers.</p>
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="{{ site.baseurl }}/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="{{ site.baseurl }}/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="{{ site.baseurl }}/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="{{ site.baseurl }}/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
                 <div class="d-flex gap-3 mt-4">
-                    <a href="https://twitter.com/{{ site.twitter_username }}" class="text-secondary opacity-75 hover-primary" target="_blank" rel="noopener"><i class="bi bi-twitter-x fs-5"></i></a>
-                    <a href="https://linkedin.com/in/{{ site.author | slugify }}" class="text-secondary opacity-75 hover-primary" target="_blank" rel="noopener"><i class="bi bi-linkedin fs-5"></i></a>
-                    <a href="https://github.com/{{ site.github_username }}" class="text-secondary opacity-75 hover-primary" target="_blank" rel="noopener"><i class="bi bi-github fs-5"></i></a>
+                    <a href="https://twitter.com/{{ site.twitter_username }}"
+                        class="text-secondary opacity-75 hover-primary" target="_blank" rel="noopener"><i
+                            class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="https://linkedin.com/in/{{ site.author | slugify }}"
+                        class="text-secondary opacity-75 hover-primary" target="_blank" rel="noopener"><i
+                            class="bi bi-linkedin fs-5"></i></a>
+                    <a href="https://github.com/{{ site.github_username }}"
+                        class="text-secondary opacity-75 hover-primary" target="_blank" rel="noopener"><i
+                            class="bi bi-github fs-5"></i></a>
                 </div>
             </div>
 
             <!-- Column 2: Quick Links Menu -->
             <div class="col-lg-3 col-md-6 offset-lg-1">
-                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Resources</h6>
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
                 <ul class="list-unstyled d-grid gap-2">
-                    <li><a href="{{ site.baseurl }}/" class="text-decoration-none text-secondary small hover-primary">Home</a></li>
-                    <li><a href="{{ site.baseurl }}/about" class="text-decoration-none text-secondary small hover-primary">About Us</a></li>
-                    <li><a href="{{ site.baseurl }}/tools" class="text-decoration-none text-secondary small hover-primary">Tools I Built</a></li>
-                    <li><a href="{{ site.baseurl }}/contact" class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                    <li><a href="{{ site.baseurl }}/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="{{ site.baseurl }}/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="{{ site.baseurl }}/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
                 </ul>
             </div>
 
@@ -31,14 +48,18 @@
                 <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
                 <form action="#" method="post" class="mb-4">
                     <div class="input-group shadow-sm border rounded overflow-hidden">
-                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.." required>
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
                         <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
                     </div>
                 </form>
                 <div class="d-flex gap-3 mt-3">
-                    <a href="{{ site.baseurl }}/privacy" class="text-decoration-none text-muted small hover-primary">Privacy</a>
-                    <a href="{{ site.baseurl }}/terms" class="text-decoration-none text-muted small hover-primary">Terms</a>
-                    <a href="{{ site.baseurl }}/disclaimer" class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                    <a href="{{ site.baseurl }}/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="{{ site.baseurl }}/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="{{ site.baseurl }}/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
                 </div>
             </div>
         </div>
