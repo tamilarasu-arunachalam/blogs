@@ -26,9 +26,6 @@ permalink: /about/
 
                 <p>On this blog, I share my own development technics, honest insights, rigorous product reviews, and the technical breakdown of the tools I build. My goal is simple: to help you make informed decisions about the technology you invite into your workspace.</p>
 
-                <h3 class="mt-5 mb-4 fw-bold">My Philosophy</h3>
-                <p>I strongly believe in the principle of "Build it the simple and right way".</p>
-
                 <h3 class="mt-5 mb-4 fw-bold">Let's Connect</h3>
                 <p>I'm always open to discussing new ideas. Feel free to reach out via my <a href="/contact">contact page</a> or follow me on <a href="https://www.linkedin.com/in/tamilarasu-arunachalam">LinkedIn</a>.</p>
             </div>

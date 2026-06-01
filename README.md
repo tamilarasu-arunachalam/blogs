@@ -34,7 +34,7 @@ date: 2026-04-01 12:00:00 +0530
 category: Main Category
 categories: [Primary, Secondary]
 pinned: false
-meta_description: "A summary for Google search results (160 characters max)."
+description: "A summary for Google search results (160 characters max)."
 meta_keywords: [keyword1, keyword2]
 image: "https://your-image-url.jpg"
 read_time: "8 min read"

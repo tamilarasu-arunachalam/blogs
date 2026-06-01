@@ -543,3 +543,15 @@ pre code.hljs {
     background-color: #fdfeff !important;
     /* Slightly distinct background */
 }
+
+/* Social Icons */
+.social-icon img {
+    transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+    opacity: 0.6;
+}
+
+.social-icon:hover img {
+    transform: translateY(-3px);
+    opacity: 1;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
