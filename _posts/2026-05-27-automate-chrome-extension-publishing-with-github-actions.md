@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: "How I Automated Chrome Extension Publishing with GitHub Actions"
-date: 2026-05-02 23:11:00 +0530
+date: 2026-06-02 23:11:00 +0530
 category: Extension Development
 post_id: "002"
 image: "assets/images/002/extension-publishing-featured-image.png"

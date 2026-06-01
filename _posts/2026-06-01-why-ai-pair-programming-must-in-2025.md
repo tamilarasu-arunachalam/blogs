@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: "Why AI Pair Programming Will Become a Must for All Developers in 2026"
-date: 2026-05-16 23:11:00 +0530
+date: 2026-06-16 23:11:00 +0530
 category: AI Programming
 post_id: "003"
 image: "assets/images/003/ai-pair-programming-2026-featured.png"
