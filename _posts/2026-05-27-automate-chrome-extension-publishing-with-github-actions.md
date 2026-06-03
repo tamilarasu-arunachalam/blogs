@@ -71,6 +71,7 @@ jobs:
           publish: true
 ```
 {% endraw %}
+
 This workflow triggers on every push to `main`, builds your extension, zips the output, and publishes it to the Chrome Web Store - all without you lifting a finger.
 
 ## A Few Things Worth Knowing
