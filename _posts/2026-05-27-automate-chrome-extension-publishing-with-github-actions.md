@@ -84,7 +84,7 @@ Beyond saving time, this workflow makes your release process consistent and audi
 
 It also removes the human error factor - no more forgetting to update the store listing or uploading the wrong build. The pipeline either passes or it fails loudly, which is exactly what you want in a release process.
 
-![Web Store Deployment Flowchart](assets/images/002/extension-published.png)
+![Web Store Deployment Flowchart](assets/images/002/extension-published.PNG)
 ## Wrapping Up
 Setting this up takes about an hour the first time, mostly spent navigating Google's OAuth flow. But once it's in place, shipping your Chrome extension becomes as simple as merging a pull request. That's the kind of automation that quietly makes your development life better every single week.
 
