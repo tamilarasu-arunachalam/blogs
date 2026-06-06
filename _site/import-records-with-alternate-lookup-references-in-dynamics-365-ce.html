@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Import records with alternate lookup references in Dynamics 365 CE | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Import records with alternate lookup references in Dynamics 365 CE" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;p style=&quot;text-align: justify;&quot;&gt;     If you are in a place of importing bulk data into the Dynamics 365 CE, you have many choices like importing as excel, CSV or XML. But if you are having records for two tables which are related to each other as like accounts and contacts. You have to be careful while importing those records because this import may cause the following error “The lookup reference could not be resolved”. The error is due to the lookup values which are not present in the table we are looking for. This blog will guide to import the related…" />
+<meta name="twitter:description" property="og:description" content="&lt;p style=&quot;text-align: justify;&quot;&gt;     If you are in a place of importing bulk data into the Dynamics 365 CE, you have many choices like importing as excel, CSV or XML. But if you are having records for two tables which are related to each other as like accounts and contacts. You have to be careful while importing those records because this import may cause the following error “The lookup reference could not be resolved”. The error is due to the lookup values which are not present in the table we are looking for. This blog will guide to import the related…" />
+<link rel="canonical" href="http://localhost:4000/import-records-with-alternate-lookup-references-in-dynamics-365-ce.html" />
+<meta property="og:url" content="http://localhost:4000/import-records-with-alternate-lookup-references-in-dynamics-365-ce.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-20T23:59:00+05:30" />
+<meta property="article:modified_time" content="2023-05-20T23:59:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Import records with alternate lookup references in Dynamics 365 CE" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-05-20T23:59:00+05:30","datePublished":"2023-05-20T23:59:00+05:30","description":"&lt;p style=&quot;text-align: justify;&quot;&gt;     If you are in a place of importing bulk data into the Dynamics 365 CE, you have many choices like importing as excel, CSV or XML. But if you are having records for two tables which are related to each other as like accounts and contacts. You have to be careful while importing those records because this import may cause the following error “The lookup reference could not be resolved”. The error is due to the lookup values which are not present in the table we are looking for. This blog will guide to import the related…","headline":"Import records with alternate lookup references in Dynamics 365 CE","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/import-records-with-alternate-lookup-references-in-dynamics-365-ce.html"},"url":"http://localhost:4000/import-records-with-alternate-lookup-references-in-dynamics-365-ce.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border"></span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Import records with alternate lookup references in Dynamics 365 CE</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">May 20, 2023 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <p><img alt="Import records with alternate lookup references in Dynamics 365 CE" data-original-height="400" data-original-width="700" height="183" src="/assets/images/019/img_868419228a.png" style="display: none;" width="320" />&lt;p style="text-align: justify;"&gt;<span> <span>    </span></span>If you are in a place of importing bulk data into the Dynamics 365 CE, you have many choices like importing as excel, CSV or XML. But if you are having records for two tables which are related to each other as like accounts and contacts. You have to be careful while importing those records because this import may cause the following error “<b><i>The lookup reference could not be resolved</i></b>”. The error is due to the lookup values which are not present in the table we are looking for. This blog will guide to import the related records at a single stretch.&lt;/p&gt;&lt;p style="text-align: center;"&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEh6aHxSIJ3zkYsokIwz0wHoCTjVbGkb7XcMUknkCyUSEgQIjTCthizzIz6ljUcqEd9-4d_6DHyh95uRy8DncCT3xByclud8AUi8LdHfP0BV7e1HqeSyV66nrzJxzEStSJkzTUzF782TpwCdeXu6hAdsvczGN7e_smGOVSHaIM6xnBoXmzpLgS6bFQnZ" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="576" data-original-width="626" src="/assets/images/019/img_8a34e78eb5.png" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;<span>    </span>For importing records with alternate lookup references, we have to get the data for both the tables. In our case, we have taken accounts and contacts table. Go to the <a href="https://admin.powerplatform.microsoft.com/environments/" rel="nofollow" target="_blank">Environment</a> ➔ Settings ➔ Data Management ➔ Data Import Wizard. The wizard will open in the new tab. Click on the Import Data button in the wizard, a dialog box opens up for importing files.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEhKXgzk5x6or_X5tKeHg2UFMzqyM5bVlrvR8dHmA9UNOQDvfZU53RqX6CbUqX_QujuhaIGYfyjRe6tbstv_FcQMFkLRET067IXl7CI-Z-whTPai8paSYwMRD2bgjaUSxUIOWas-9pSlwZOp3nPfHVVk9XFbKm1ad1T0-PufXHT2SNxcxqdqRutf4X82" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="240" data-original-width="601" src="/assets/images/019/img_0329e8609f.png" /></a>&lt;/div&gt;<br />&lt;div style="text-align: justify;"&gt;<span>    </span>For importing, I have two CSV files, one contains data for accounts and another one has for contacts. I have zipped these two files, so that I can upload it as a single file. Click on choose file and select the zip file which we zipped before and click on next.&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEjqhNMhYk8KWN5Hr95OBVdKh_Gu3AzlMAkmTe8blHPAQqe1Jm44pF8YSQlIQVtzui2QL7M4aJE4BffFVArSJz97MkgBrNWvL1TRipnJIB4xeAphoCh69K1M9V6NKV9PvioZSLKa6keiPwafjDOSbCwLJZqJH6ppONQ91sQ4p6eWcDBByfPsBYnzbmzb" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="862" data-original-width="898" src="/assets/images/019/img_51498994a2.png" /></a>&lt;/p&gt;&lt;div style="text-align: left;"&gt;&lt;p style="clear: both; text-align: justify;"&gt;You will get to a Review File Upload Summary, in which you can make sure your CSV files are uploaded and set the delimiter. As I uploaded a CSV file, so the delimiter was comma(,). Then click on Next.&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEiZpZyT4YpfMe87osn9Mi9zuqTa7sR9smz8MPf3fG4Un8XsiL3iiTewqiiYmrtzS4_TPnCfLIzIx4-ULzCflkcToPTxMjsSZyFETg0QHmwCH6lVEVZYv4k-xkmZECGarEqqkNJdyqKZsaH5nSnvg0qrH2TX1bm7n0_tLMQhS3btvz733csRvAIDXlfr" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="616" data-original-width="640" src="/assets/images/019/img_d9e3d946c3.png" /></a>&lt;/p&gt;&lt;p style="clear: both; text-align: justify;"&gt;Map the source files with the dataverse table which you want to import. Ignore if it is correctly mapped already. <span style="text-align: left;">It will take you to the Data map page where you can see two types of mappings, Default and SampleDataMap. Select Default Mapping and click Next.</span>&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEgz-X9DBnZRlyIaGZLUe_WmgWSZn59BoQAYhrWsXsbvZYyLTlN3d7qBRpY-B9m7CHubiP8ED5TWyRz44PeWA9g8SEiUTCHKrfiGHUNwYQ7OShoxHe670C1V2aR0I7QrifIhW97yASNgAQL2AfLAP9arHU94ohzlQe1GiZRQKrSd5Q3wF8ZhzX8f0rj2" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="325" data-original-width="858" src="/assets/images/019/img_105983cc22.png" /></a>&lt;/div&gt;&lt;p style="clear: both; text-align: justify;"&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: justify;"&gt;In the mapping page, make sure all the fields are mapped correctly. For accounts table, the primary contact (lookup) field should be mapped with the full name field of the contact table.&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEhYV2eYlJuxH2CwZ4TTloV9eU8s01_beuPXi1Vq6eyDeJrnWvtSh3FL-ygF0Uw7pMcrKQQqN0r18b0uO_ZrfA8iWqkbtcKbV6SNg3e044VB7ZG1skUQ5KZPZ-LA-scsqqFMn_251Bs6kgvUC6CI0CJ3JMOxQ_BQ0w5Zy0XlX4S6kkTMXLk1aAbU8GcR" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="560" data-original-width="787" src="/assets/images/019/img_30417ec007.png" /></a>&lt;/p&gt;&lt;p style="clear: both; text-align: justify;"&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;For the contact table, the Company name (lookup) field should be mapped with the account name field in accounts table.&lt;/div&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEhQCXlQolmIwDOH9QUaIJmjsTuMliqmQYTTAj-qd7fTgKywwz5Lpxf6jtWqpnDS5B-jIWPyFEfC3oDg6WiomZ4b0utHViRgsZYy8Cudsayafc7YemzKKfbQ_OhwjgAbasrfM4vIn7qyRCAur5xrGchAJCSBElqXJEhn3b0ZjkaOM0Q8lo1-AeUAZM9r" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="566" data-original-width="787" src="/assets/images/019/img_5cc47399fe.png" /></a>&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p style="clear: both; text-align: justify;"&gt;Click on Submit to finish the import. After submitting, click on Finish and move to the imports page to track the imports.&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEiTaYYQuldH8lBhclnXdS94Bt3OV_dJLT7d8e2NfS7HkVGCm3imoMRbM17SMbd5g3HWGDzwmam5z-c5HWblCsCbjPVFbm8KJmm5ZVuPzMHzAZmOpHnm95Pd-LIP6R96A7dVbCzUxAXcoa--SIYploWOFTP-pW8mHW9mFQ8USetth5w5WaKVTOCLIQJg" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="177" data-original-width="1378" src="/assets/images/019/img_5b16ce48bc.png" /></a>&lt;/p&gt;&lt;div style="text-align: left;"&gt;In the above image you could see all the imports are successfully completed and in this view you will know how many records are imported or failed while importing. &lt;/div&gt;&lt;div style="text-align: left;"&gt;<br />&lt;/div&gt;&lt;div style="text-align: left;"&gt;Have a Great Day!&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;</p>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Unlocking the Power of Side Panes in Model-Driven Apps</a>
+                                    </h6>
+                                    <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"
+                                            class="text-decoration-none text-dark hover-primary">Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins</a>
+                                    </h6>
+                                    <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html"
+                                            class="text-decoration-none text-dark hover-primary">Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript</a>
+                                    </h6>
+                                    <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Import records with alternate lookup references in Dynamics 365 CE",
+  "image": "",
+  "datePublished": "2023-05-20T23:59:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

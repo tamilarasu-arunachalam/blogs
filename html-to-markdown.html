@@ -1,0 +1,527 @@
+---
+layout: default
+title: "Free HTML to Markdown Converter – Convert HTML Code to Markdown Instantly"
+permalink: /html-to-markdown/
+description: "Free online HTML to Markdown converter. Instantly convert Blogger posts, HTML code, tables, and rich text to clean Markdown. Optimized for Blogger-to-Jekyll migration with Liquid and Gist script support."
+meta_keywords:
+- html to markdown converter
+- convert html to markdown
+- html to markdown online
+- blogger to jekyll markdown
+- blogger html to markdown converter
+- turndown online tool
+- free html to md converter
+- convert html code to markdown
+- html into markdown
+- rich text to markdown converter
+- wordpress html to markdown converter
+- blogger jekyll migration tool
+- html table to markdown converter
+- clean markdown converter
+- convert html table online
+- markdown table generator
+- online html to md converter
+- convert html to gfm markdown
+- strip html to markdown
+- format html to markdown
+- preserve jekyll liquid tags
+faq:
+- question: "How do I convert HTML to Markdown online?"
+  answer: "To convert HTML to Markdown, simply paste your raw HTML code or rich text markup into the 'HTML Input' panel on the left. The converter will automatically transform it into clean Markdown syntax in the 'Markdown Output' panel on the right. You can then copy the result or download it as a .md file."
+- question: "Is this online HTML to Markdown converter free to use?"
+  answer: "Yes, this tool is 100% free with no registration, signup, or installation required. You can convert unlimited HTML files and code snippets directly in your web browser."
+- question: "Does the converter support tables and GitHub Flavored Markdown (GFM)?"
+  answer: "Yes. With the 'GFM Plugins' toggle enabled, the converter correctly translates HTML tables (<code>&lt;table&gt;</code>), strikethroughs (<code>&lt;s&gt;</code>), task lists, and checkboxes into clean GitHub Flavored Markdown syntax."
+- question: "Can I use this tool to migrate my blog from Blogger to Jekyll?"
+  answer: "Absolutely. This converter is optimized specifically for blog migration. It preserves external GitHub Gist script tags (<code>&lt;script src=\"https://gist.github.com/...\"&gt;&lt;/script&gt;</code>) and prevents escaping of Jekyll Liquid template variables like {{ site.baseurl }} in image paths and anchor links."
+- question: "Is my pasted HTML code secure and private?"
+  answer: "Yes. All HTML to Markdown conversions take place entirely on the client side using JavaScript inside your browser. No code, text, or files are uploaded to any external server, ensuring complete data privacy."
+- question: "How does the 'Strip Styles/Scripts' option work?"
+  answer: "When active, it automatically removes styling wrappers, head metadata, inline stylesheets, and non-essential JavaScript tags. This ensures that the generated Markdown remains focused on content and structure without inline HTML clutter."
+---
+
+<header class="py-5 bg-light mb-4">
+    <div class="container text-center py-4">
+        <h1 class="display-4 fw-bold mb-3">Free HTML to Markdown Converter</h1>
+        <p class="lead text-secondary">Translate HTML elements, WordPress code, or Blogger posts into clean, semantic Markdown formatting instantly.</p>
+    </div>
+</header>
+
+<section class="container-fluid px-lg-5 mb-5 pb-5">
+    <div class="card border-0 shadow-sm rounded-4 p-3 p-lg-4">
+        
+        <!-- Controls & Options -->
+        <div class="row g-3 mb-4 pb-3 border-bottom align-items-center">
+            <div class="col-md-auto d-flex align-items-center gap-2">
+                <button class="btn btn-primary btn-sm rounded-pill px-3" id="btn-sample">
+                    <i class="bi bi-file-earmark-code me-1"></i>Load Sample HTML
+                </button>
+                <button class="btn btn-outline-danger btn-sm rounded-pill px-3" id="btn-clear-all">
+                    <i class="bi bi-trash3 me-1"></i>Clear All
+                </button>
+            </div>
+            
+            <div class="col-md-auto ms-md-auto d-flex flex-wrap gap-3 align-items-center">
+                <div class="form-check form-switch mb-0">
+                    <input class="form-check-input" type="checkbox" id="opt-live" checked>
+                    <label class="form-check-label text-secondary small fw-medium" for="opt-live">Live Convert</label>
+                </div>
+                
+                <div class="form-check form-switch mb-0">
+                    <input class="form-check-input" type="checkbox" id="opt-gfm" checked>
+                    <label class="form-check-label text-secondary small fw-medium" for="opt-gfm" title="Enable tables, strikethrough, task lists">GFM Tables/Plugins</label>
+                </div>
+                
+                <div class="form-check form-switch mb-0">
+                    <input class="form-check-input" type="checkbox" id="opt-strip" checked>
+                    <label class="form-check-label text-secondary small fw-medium" for="opt-strip" title="Strip unrecognized style, script, head tags">Strip CSS & Scripts</label>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <label for="heading-style" class="small text-secondary fw-medium mb-0">Headings:</label>
+                    <select id="heading-style" class="form-select form-select-sm bg-light border-0 shadow-none py-1 px-2" style="width: auto;">
+                        <option value="atx">ATX (# Heading)</option>
+                        <option value="setext">Setext (=== Heading)</option>
+                    </select>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <label for="bullet-style" class="small text-secondary fw-medium mb-0">Bullets:</label>
+                    <select id="bullet-style" class="form-select form-select-sm bg-light border-0 shadow-none py-1 px-2" style="width: auto;">
+                        <option value="-">Dashes (-)</option>
+                        <option value="*">Asterisks (*)</option>
+                        <option value="+">Pluses (+)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Editor Workspace -->
+        <div class="row g-4">
+            <!-- Left Pane: HTML Input -->
+            <div class="col-lg-6">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-bold text-secondary">
+                        <i class="bi bi-code-slash text-warning me-2"></i>Raw HTML Input Source
+                    </span>
+                    <button class="btn btn-link btn-sm text-decoration-none text-muted p-0" id="btn-paste-html">
+                        <i class="bi bi-clipboard me-1"></i>Paste HTML
+                    </button>
+                </div>
+                <textarea class="form-control bg-light border-0 shadow-none font-monospace p-3" id="html-input" rows="18" placeholder="Paste or drag and drop your HTML code or rich text here..." style="font-size: 0.9rem; resize: vertical; min-height: 350px;"></textarea>
+                <div class="d-flex justify-content-between mt-2 px-1">
+                    <small id="html-stats" class="text-muted fw-medium">0 characters | 0 lines</small>
+                    <span id="drop-hint" class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 small">Drag & Drop HTML File</span>
+                </div>
+            </div>
+
+            <!-- Right Pane: Markdown Output -->
+            <div class="col-lg-6">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-bold text-secondary">
+                        <i class="bi bi-markdown text-success me-2"></i>Clean Markdown Output
+                    </span>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-link btn-sm text-decoration-none text-muted p-0" id="btn-copy-md" disabled>
+                            <i class="bi bi-copy me-1"></i>Copy Markdown
+                        </button>
+                        <span class="text-muted">|</span>
+                        <button class="btn btn-link btn-sm text-decoration-none text-muted p-0" id="btn-download-md" disabled>
+                            <i class="bi bi-download me-1"></i>Download .md File
+                        </button>
+                    </div>
+                </div>
+                <textarea class="form-control bg-light border-0 shadow-none font-monospace p-3" id="md-output" rows="18" placeholder="Clean markdown conversion results will appear here..." readonly style="font-size: 0.9rem; resize: vertical; min-height: 350px;"></textarea>
+                <div class="d-flex justify-content-between mt-2 px-1">
+                    <small id="md-stats" class="text-muted fw-medium">0 characters | 0 words | 0 lines</small>
+                    <span id="copy-feedback" class="text-success fw-medium small d-none"><i class="bi bi-check-circle me-1"></i>Copied to Clipboard!</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manual Convert Trigger (Visible if Live Convert is off) -->
+        <div class="text-center mt-4 d-none" id="manual-convert-container">
+            <button class="btn btn-primary btn-lg px-5 fw-bold rounded-pill shadow-sm" id="btn-convert">
+                <i class="bi bi-lightning-charge me-2"></i>Convert HTML to Markdown
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- SEO & Informational Content Section -->
+<section class="container mb-5 pb-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="content-area fs-5">
+                <h2 class="fw-bold mb-4">How This HTML to Markdown Converter Improves Migration SEO</h2>
+                <p>When migrating legacy web content from platforms like Blogger, WordPress, and Medium into static sites, raw markup elements can introduce syntax errors, rendering issues, and bloating. Converting clean <strong>HTML into Markdown</strong> ensures search engine optimization remains perfect on your new platform by enforcing lightweight, compliant HTML5 code blocks.</p>
+                <p>Using a standardized <strong>online HTML to Markdown converter</strong> guarantees that elements like header hierarchies (<code>h1</code> through <code>h6</code>), blockquotes, lists, and tables render perfectly without embedding platform-specific custom classes that decrease page load speed.</p>
+                
+                <h3 class="fw-bold mt-5 mb-3">Key Benefits of Semantic Markdown Conversion</h3>
+                <ul>
+                    <li><strong>Accelerate Page Speed:</strong> Lightweight Markdown output reduces overall document byte size, loading your static blog pages faster for better search engine rankings.</li>
+                    <li><strong>Preserve Internal Link Structures:</strong> Maintains clean URL routes and prevents broken paths during CMS migration.</li>
+                    <li><strong>Error-Free Table Transformations:</strong> Safely formats HTML tables into markdown representation matching the GitHub Flavored Markdown specification.</li>
+                    <li><strong>Prevent Escaped Liquid Parameters:</strong> Retains parameters like Jekyll relative URL syntax tags <code>{{"{{"}} site.baseurl {{"}}"}}</code> unescaped.</li>
+                </ul>
+                
+                <h3 class="fw-bold mt-5 mb-3">Best Practices for Converting HTML to MD</h3>
+                <ol>
+                    <li><strong>Check Heading Structure:</strong> Ensure that your source HTML does not have multiple `h1` tags so the final markdown has a single semantic header structure.</li>
+                    <li><strong>Strip Inline Styling wrappers:</strong> Enable 'Strip CSS & Scripts' to clean up inline alignments and styles, which should instead be managed globally by your site stylesheet.</li>
+                    <li><strong>Embed External Gists Safely:</strong> Keep interactive scripts like embedded code gists from platforms like GitHub from being removed. This tool does this automatically for you.</li>
+                </ol>
+            </div>
+            
+            {% include faq.html %}
+        </div>
+    </div>
+</section>
+
+<!-- JSON-LD: WebApplication Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "HTML to Markdown Converter",
+    "description": "Free online HTML to Markdown converter. Quickly convert Blogger html, rich text, tables, and code formatting to markdown. Ideal for Blogger to Jekyll migrations.",
+    "url": "{{ site.url }}{{ page.url }}",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "{{ site.author }}"
+    }
+}
+</script>
+
+<!-- Turndown & Plugins -->
+<script src="https://unpkg.com/turndown@7.1.2/dist/turndown.js"></script>
+<script src="https://unpkg.com/turndown-plugin-gfm@1.0.2/dist/turndown-plugin-gfm.js"></script>
+
+{% raw %}
+<script>
+    // DOM Elements
+    const htmlInput = document.getElementById('html-input');
+    const mdOutput = document.getElementById('md-output');
+    const htmlStats = document.getElementById('html-stats');
+    const mdStats = document.getElementById('md-stats');
+    const btnSample = document.getElementById('btn-sample');
+    const btnClearAll = document.getElementById('btn-clear-all');
+    const btnPasteHtml = document.getElementById('btn-paste-html');
+    const btnCopyMd = document.getElementById('btn-copy-md');
+    const btnDownloadMd = document.getElementById('btn-download-md');
+    const btnConvert = document.getElementById('btn-convert');
+    const manualConvertContainer = document.getElementById('manual-convert-container');
+    const copyFeedback = document.getElementById('copy-feedback');
+
+    // Option Toggles
+    const optLive = document.getElementById('opt-live');
+    const optGfm = document.getElementById('opt-gfm');
+    const optStrip = document.getElementById('opt-strip');
+    const headingStyle = document.getElementById('heading-style');
+    const bulletStyle = document.getElementById('bullet-style');
+
+    // Initialize Turndown Service
+    function getTurndownService() {
+        const options = {
+            headingStyle: headingStyle.value,
+            bulletListMarker: bulletStyle.value,
+            codeBlockStyle: 'fenced',
+            emDelimiter: '_',
+            strongDelimiter: '**',
+            linkStyle: 'referenced'
+        };
+
+        const turndownService = new TurndownService(options);
+
+        // Apply GFM Plugin if enabled
+        if (optGfm.checked) {
+            turndownService.use(turndownPluginGfm.gfm);
+        }
+
+        // Apply custom rule to strip unnecessary tags
+        if (optStrip.checked) {
+            turndownService.remove(['style', 'head', 'meta', 'link']);
+            // By default, we keep scripts unless they are not Gist scripts
+            turndownService.addRule('stripNonGistScripts', {
+                filter: function(node) {
+                    if (node.nodeName === 'SCRIPT') {
+                        const src = node.getAttribute('src') || '';
+                        return !src.includes('gist.github.com');
+                    }
+                    return false;
+                },
+                replacement: function() {
+                    return '';
+                }
+            });
+        }
+
+        // Custom Rule: Preserve GitHub Gist Script Embeds
+        turndownService.addRule('gistEmbed', {
+            filter: function(node) {
+                if (node.nodeName === 'SCRIPT') {
+                    const src = node.getAttribute('src') || '';
+                    return src.includes('gist.github.com');
+                }
+                return false;
+            },
+            replacement: function(content, node) {
+                return '\n\n' + node.outerHTML + '\n\n';
+            }
+        });
+
+        // Custom Rule: Preserve Jekyll Liquid variables (like {{ site.baseurl }}) inside images and links
+        // We override links and images to prevent URL-encoding the liquid curly brackets.
+        turndownService.addRule('cleanImages', {
+            filter: 'img',
+            replacement: function(content, node) {
+                const alt = node.alt || '';
+                let src = node.getAttribute('src') || '';
+                // Restore liquid syntax if it was encoded by the browser
+                src = src.replace(/%7B%7B%20*site\.baseurl%20*%7D%7D/g, '{{ site.baseurl }}')
+                         .replace(/%7B%7Bsite\.baseurl%7D%7D/g, '{{ site.baseurl }}');
+                return '![' + alt + '](' + src + ')';
+            }
+        });
+
+        turndownService.addRule('cleanLinks', {
+            filter: 'a',
+            replacement: function(content, node) {
+                let href = node.getAttribute('href') || '';
+                href = href.replace(/%7B%7B%20*site\.baseurl%20*%7D%7D/g, '{{ site.baseurl }}')
+                           .replace(/%7B%7Bsite\.baseurl%7D%7D/g, '{{ site.baseurl }}');
+                return '[' + content + '](' + href + ')';
+            }
+        });
+
+        return turndownService;
+    }
+
+    // Conversion Logic
+    function performConversion() {
+        const html = htmlInput.value;
+        if (!html.trim()) {
+            mdOutput.value = '';
+            updateStats();
+            return;
+        }
+
+        try {
+            const turndownService = getTurndownService();
+            let markdown = turndownService.turndown(html);
+
+            // Clean up double-escaped liquid elements or excessive whitespace
+            markdown = markdown
+                .replace(/\\\{\\\{\s*site\.baseurl\s*\\\}\\\}/g, '{{ site.baseurl }}')
+                .replace(/\\\{\\\{site\.baseurl\\\}\\\}/g, '{{ site.baseurl }}')
+                .replace(/\n{3,}/g, '\n\n') // Limit line breaks to max 2
+                .trim();
+
+            mdOutput.value = markdown;
+            updateStats();
+        } catch (error) {
+            mdOutput.value = 'Error converting HTML: ' + error.message;
+        }
+    }
+
+    // Stats Calculation
+    function updateStats() {
+        // HTML Stats
+        const htmlVal = htmlInput.value;
+        const htmlChars = htmlVal.length;
+        const htmlLines = htmlVal ? htmlVal.split('\n').length : 0;
+        htmlStats.textContent = `${htmlChars} character${htmlChars !== 1 ? 's' : ''} | ${htmlLines} line${htmlLines !== 1 ? 's' : ''}`;
+
+        // MD Stats
+        const mdVal = mdOutput.value;
+        const mdChars = mdVal.length;
+        const mdLines = mdVal ? mdVal.split('\n').length : 0;
+        const mdWords = mdVal.trim() === '' ? 0 : mdVal.trim().split(/\s+/).length;
+        mdStats.textContent = `${mdChars} character${mdChars !== 1 ? 's' : ''} | ${mdWords} word${mdWords !== 1 ? 's' : ''} | ${mdLines} line${mdLines !== 1 ? 's' : ''}`;
+
+        // Buttons state
+        const hasContent = mdVal.trim().length > 0 && !mdVal.startsWith('Error converting HTML:');
+        btnCopyMd.disabled = !hasContent;
+        btnDownloadMd.disabled = !hasContent;
+    }
+
+    // Event Handlers
+    function setupEventListeners() {
+        // Live input conversion
+        htmlInput.addEventListener('input', () => {
+            if (optLive.checked) {
+                performConversion();
+            } else {
+                updateStats();
+            }
+        });
+
+        // Live options conversion
+        [optGfm, optStrip, headingStyle, bulletStyle].forEach(el => {
+            el.addEventListener('change', () => {
+                if (optLive.checked) performConversion();
+            });
+        });
+
+        // Toggle Live Convert UI
+        optLive.addEventListener('change', () => {
+            if (optLive.checked) {
+                manualConvertContainer.classList.add('d-none');
+                performConversion();
+            } else {
+                manualConvertContainer.classList.remove('d-none');
+            }
+        });
+
+        // Manual convert trigger
+        btnConvert.addEventListener('click', performConversion);
+
+        // Load Sample content
+        btnSample.addEventListener('click', () => {
+            htmlInput.value = `<!-- Sample Blogger Post Import -->
+<div class="separator" style="clear: both; text-align: center;">
+    <a href="{{ site.baseurl }}/assets/images/001/banner.png" style="margin-left: 1em; margin-right: 1em;">
+        <img border="0" src="{{ site.baseurl }}/assets/images/001/banner.png" alt="Power Automate Logo" width="600" />
+    </a>
+</div>
+
+<h1>Getting Started with Power Pages</h1>
+<p>Today we will explore how to add custom assets to a Power Pages portal.</p>
+
+<h3>Key Advantages:</h3>
+<ul>
+    <li>Easy integration with <strong>Dataverse</strong></li>
+    <li>Supports custom CSS styles</li>
+    <li>Supports embedding <em>GitHub Gists</em></li>
+</ul>
+
+<!-- GitHub Gist Embed Script -->
+<script src="https://gist.github.com/microsoft/d99042b5ba2fbef7116e0262145b2b2a.js"><\/script>
+
+<h3>Feature Matrix</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Standard</th>
+            <th>Enterprise</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Custom CSS</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Dedicated DB</td>
+            <td>No</td>
+            <td>Yes</td>
+        </tr>
+    </tbody>
+</table>
+
+<blockquote>Note: Ensure you configure the site settings properly before deployment.</blockquote>`;
+            performConversion();
+        });
+
+        // Clear All
+        btnClearAll.addEventListener('click', () => {
+            htmlInput.value = '';
+            mdOutput.value = '';
+            updateStats();
+        });
+
+        // Paste HTML
+        btnPasteHtml.addEventListener('click', async () => {
+            try {
+                const text = await navigator.clipboard.readText();
+                htmlInput.value = text;
+                performConversion();
+            } catch (err) {
+                alert('Failed to read clipboard content. Please paste manually using Ctrl+V.');
+            }
+        });
+
+        // Copy MD
+        btnCopyMd.addEventListener('click', async () => {
+            if (!mdOutput.value) return;
+            try {
+                await navigator.clipboard.writeText(mdOutput.value);
+                
+                // Show feedback
+                copyFeedback.classList.remove('d-none');
+                setTimeout(() => {
+                    copyFeedback.classList.add('d-none');
+                }, 2000);
+            } catch (err) {
+                alert('Could not copy text to clipboard.');
+            }
+        });
+
+        // Download MD File
+        btnDownloadMd.addEventListener('click', () => {
+            const content = mdOutput.value;
+            if (!content) return;
+
+            const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'converted-post.md';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        // Drag and Drop Files
+        const dropHint = document.getElementById('drop-hint');
+        
+        window.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropHint.classList.add('bg-warning', 'text-dark');
+        });
+
+        window.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            dropHint.classList.remove('bg-warning', 'text-dark');
+        });
+
+        window.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropHint.classList.remove('bg-warning', 'text-dark');
+            
+            const file = e.dataTransfer.files[0];
+            if (!file) return;
+
+            const ext = file.name.split('.').pop().toLowerCase();
+            if (!['html', 'htm', 'txt'].includes(ext)) {
+                alert('Please drop an .html, .htm, or .txt file.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                htmlInput.value = event.target.result;
+                performConversion();
+            };
+            reader.readAsText(file);
+        });
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        setupEventListeners();
+        updateStats();
+    });
+</script>
+{% endraw %}

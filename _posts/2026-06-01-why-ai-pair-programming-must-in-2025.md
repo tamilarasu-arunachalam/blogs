@@ -4,8 +4,8 @@ layout: post
 title: "Why AI Pair Programming Will Become a Must for All Developers in 2026"
 date: 2026-06-16 23:11:00 +0530
 category: AI Programming
-post_id: "003"
-image: "assets/images/003/ai-pair-programming-2026-featured.png"
+post_id: "071"
+image: "assets/images/071/ai-pair-programming-2026-featured.png"
 description: "AI pair programming is reshaping how developers write, review, and ship code. Discover why every developer - junior or senior - needs to embrace it in 2026 and how to get started today."
 meta_keywords:
         - AI pair programming

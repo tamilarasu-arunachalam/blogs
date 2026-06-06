@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&nbsp;&nbsp; &nbsp;As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit. &lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;There are two primary methods to fetch records, each of which supports pagination:&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Query Expression&lt;/li&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Fetch XML&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;To demonstrate the same, I have created…" />
+<meta name="twitter:description" property="og:description" content="&nbsp;&nbsp; &nbsp;As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit. &lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;There are two primary methods to fetch records, each of which supports pagination:&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Query Expression&lt;/li&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Fetch XML&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;To demonstrate the same, I have created…" />
+<link rel="canonical" href="http://localhost:4000/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" />
+<meta property="og:url" content="http://localhost:4000/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-06-30T23:11:00+05:30" />
+<meta property="article:modified_time" content="2024-06-30T23:11:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2024-06-30T23:11:00+05:30","datePublished":"2024-06-30T23:11:00+05:30","description":"&nbsp;&nbsp; &nbsp;As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit. &lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;There are two primary methods to fetch records, each of which supports pagination:&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Query Expression&lt;/li&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Fetch XML&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;To demonstrate the same, I have created…","headline":"Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"},"url":"http://localhost:4000/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border"></span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">June 30, 2024 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <div style="text-align: justify;"><span>&nbsp;&nbsp; &nbsp;</span>As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit.</div>
+<p><img alt="Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins" border="0" src="/assets/images/037/img_beba359730.png" style="display: none;" />&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;There are two primary methods to fetch records, each of which supports pagination:&lt;/p&gt;&lt;ul&gt;&lt;li style="text-align: justify;"&gt;Query Expression&lt;/li&gt;&lt;li style="text-align: justify;"&gt;Fetch XML&lt;/li&gt;&lt;/ul&gt;&lt;p style="text-align: justify;"&gt;To demonstrate the same, I have created a console application to experiment pagination in C# with the above retrieving methods.&lt;/p&gt;&lt;h2&gt;Query Expression&lt;/h2&gt;&lt;p style="text-align: left;"&gt;Query Expression is an object-oriented approach to fetching records. Pagination can be implemented using the following method:&lt;/p&gt;&lt;pre&gt;<code class="language-csharp">static void queryExpPagination(IOrganizationService service)
+{
+    EntityCollection contactsCollection;
+    int totalContactsCount = 0;
+    //initiate the query expression
+    QueryExpression contactQuery = new QueryExpression("contact");
+    contactQuery.ColumnSet = new ColumnSet(true);</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Initiate the paging info
+contactQuery.PageInfo = new PagingInfo();
+
+// set the initial page number as 1
+contactQuery.PageInfo.PageNumber = 1;
+contactQuery.PageInfo.ReturnTotalRecordCount = true;
+
+do
+{
+    // retrieve records
+    contactsCollection = service.RetrieveMultiple(contactQuery);
+    // Add paging cookie to the retrieve call
+    contactQuery.PageInfo.PagingCookie = contactsCollection.PagingCookie;
+    contactQuery.PageInfo.PageNumber++;
+    totalContactsCount += contactsCollection.Entities.Count;
+} while (contactsCollection.MoreRecords);
+//throw the exception
+throw new InvalidPluginExecutionException("Total Contacts Count : " + totalContactsCount); }&lt;/code&gt;&lt;/pre&gt;&lt;p style="text-align: justify;"&gt;In the above code, we initiate the Query Expression as usual. To enable pagination, we set values for certain properties of Query Expression by initializing paging info. By default, the page number starts at 1. After the first request, the response includes a paging cookie. Subsequent requests require passing this paging cookie from the previous response and incrementing the page number by 1. This process continues in a loop until the &lt;code&gt;more records&lt;/code&gt; property becomes false.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;&lt;a href="https://blogger.googleusercontent.com/img/a/AVvXsEje3HUMtfXWJblfto0ERAdHPNdbf2O7X5-5PjDsTWeM1pbRjBea0qu0Wp4DJ1wj31MiTQvxVeckYEk1olqIqvqgKAXlrR2DBcYlyGxubLnl6-T4agu2pRcVjrLuIktMS2MYcdACyXNjQajSk1sd1jIT7CqgVWVJPg5zYM78crUSYmSo9cKQjEKltSc-yIE" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img alt="" data-original-height="702" data-original-width="1377" src="/assets/images/037/img_425d30595b.png" /&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;h2&gt;Fetch XML&lt;/h2&gt;&lt;h3&gt;Pagination by converting Fetch XML to Query Expression&lt;/h3&gt;&lt;p style="text-align: justify;"&gt;In this method, we convert Fetch XML to Query Expression using the &lt;code&gt;FetchXmlToQueryExpressionRequest&lt;/code&gt; object. After converting the Fetch XML, we retrieve the conversion response and utilize it as the query expression for fetching records.&lt;/p&gt;&lt;pre&gt;&lt;code class="language-csharp"&gt;static void fetchXmlPagination(IOrganizationService service) {
+EntityCollection contactsCollection;
+int totalContactsCount = 0;
+// initiate the fetch xml
+string fetchXml = "&amp;lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'&amp;gt;" +
+                 "  &amp;lt;entity name='contact'&amp;gt;" +
+                 "    &amp;lt;attribute name='fullname' /&amp;gt;" +
+                 "  &amp;lt;/entity&amp;gt;" +
+                 "&amp;lt;/fetch&amp;gt;";
+
+//Convert fetchXml into query expression
+FetchXmlToQueryExpressionRequest conversionRequest = new FetchXmlToQueryExpressionRequest
+{
+    FetchXml = fetchXml
+};
+FetchXmlToQueryExpressionResponse conversionResponse = (FetchXmlToQueryExpressionResponse)service.Execute(conversionRequest);
+QueryExpression contactQuery = conversionResponse.Query;
+
+do
+{
+    // retrieve records using the query expression
+    contactsCollection = service.RetrieveMultiple(contactQuery);
+    // Add paging cookie to the retrieve call
+    contactQuery.PageInfo.PagingCookie = contactsCollection.PagingCookie;
+    contactQuery.PageInfo.PageNumber++;
+    totalContactsCount += contactsCollection.Entities.Count;
+} while (contactsCollection.MoreRecords);
+//throw the exception
+throw new InvalidPluginExecutionException("Total Contacts Count : " + totalContactsCount); }&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Pagination with Paging Cookie in Fetch XML&lt;/h3&gt;&lt;p style="text-align: justify;"&gt;In this method, we parse the Fetch XML and concatenate the paging cookie into it for every request after the initial one. Initially, we parse the Fetch XML and include the page (defaulting to 1) and the paging cookie. This process continues until the &lt;code&gt;more records&lt;/code&gt; property returns false.&lt;/p&gt;&lt;pre&gt;&lt;code class="language-csharp"&gt;static void paginationByXmlParsingFetchXml(IOrganizationService service) {
+EntityCollection contactsCollection;
+int page = 1;
+int totalContactsCount = 0;
+
+// initiate the fetch xml
+string fetchXml = "&amp;lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'&amp;gt;" +
+             "  &amp;lt;entity name='contact'&amp;gt;" +
+             "    &amp;lt;attribute name='fullname' /&amp;gt;" +
+             "  &amp;lt;/entity&amp;gt;" +
+             "&amp;lt;/fetch&amp;gt;";
+
+XElement fetchNode = XElement.Parse(fetchXml);
+fetchNode.SetAttributeValue("page", page);
+
+do
+{
+    // Get the page
+    contactsCollection = service.RetrieveMultiple(new FetchExpression(fetchNode.ToString()));
+
+    // Set the fetch paging-cookie attribute with the paging cookie from the previous query
+    fetchNode.SetAttributeValue("paging-cookie", contactsCollection.PagingCookie);
+    page++;
+    fetchNode.SetAttributeValue("page", page);
+    totalContactsCount += contactsCollection.Entities.Count;
+} while (contactsCollection.MoreRecords);
+//throw the exception
+throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContactsCount); }&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here is the complete code for a console application demonstrating the pagination process by using all the methods.&lt;/p&gt;&lt;p&gt;&lt;script src="https://gist.github.com/tamilarasu-arunachalam/3bdac20a0cde47f9eacda45110df3de3.js"&gt;&lt;/script&gt;&lt;/p&gt;&lt;p style="text-align: center;"&gt;Have a great day!&lt;/p&gt;
+</code></pre></div></div>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Unlocking the Power of Side Panes in Model-Driven Apps</a>
+                                    </h6>
+                                    <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html"
+                                            class="text-decoration-none text-dark hover-primary">Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript</a>
+                                    </h6>
+                                    <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html"
+                                            class="text-decoration-none text-dark hover-primary">Fetching large number of data from Dataverse Connector in Power Automate</a>
+                                    </h6>
+                                    <a href="/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins",
+  "image": "",
+  "datePublished": "2024-06-30T23:11:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

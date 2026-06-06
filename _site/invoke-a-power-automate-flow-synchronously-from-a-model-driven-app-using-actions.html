@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Invoke a Power Automate flow synchronously from a Model Driven App using Actions | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Invoke a Power Automate flow synchronously from a Model Driven App using Actions" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;    In this article, I am going to demonstrate on how to use these dataverse custom action to trigger the automated flow in Power automate. Dataverse already has a trigger in place for the event of the action trigger. With this method, we can call a power automate flow synchronously from the model driven app’s command button.    &lt;/p&gt;&lt;div&gt;&lt;div&gt;    Custom actions are used for creating custom business logics, but they are not invoked automatically. Instead, we can call them inside Workflows, client side scripting, Plugins or Power automate. This custom action may or may not require parameters.…" />
+<meta name="twitter:description" property="og:description" content="&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;    In this article, I am going to demonstrate on how to use these dataverse custom action to trigger the automated flow in Power automate. Dataverse already has a trigger in place for the event of the action trigger. With this method, we can call a power automate flow synchronously from the model driven app’s command button.    &lt;/p&gt;&lt;div&gt;&lt;div&gt;    Custom actions are used for creating custom business logics, but they are not invoked automatically. Instead, we can call them inside Workflows, client side scripting, Plugins or Power automate. This custom action may or may not require parameters.…" />
+<link rel="canonical" href="http://localhost:4000/invoke-a-power-automate-flow-synchronously-from-a-model-driven-app-using-actions.html" />
+<meta property="og:url" content="http://localhost:4000/invoke-a-power-automate-flow-synchronously-from-a-model-driven-app-using-actions.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-12-10T23:11:00+05:30" />
+<meta property="article:modified_time" content="2023-12-10T23:11:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Invoke a Power Automate flow synchronously from a Model Driven App using Actions" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-12-10T23:11:00+05:30","datePublished":"2023-12-10T23:11:00+05:30","description":"&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;    In this article, I am going to demonstrate on how to use these dataverse custom action to trigger the automated flow in Power automate. Dataverse already has a trigger in place for the event of the action trigger. With this method, we can call a power automate flow synchronously from the model driven app’s command button.    &lt;/p&gt;&lt;div&gt;&lt;div&gt;    Custom actions are used for creating custom business logics, but they are not invoked automatically. Instead, we can call them inside Workflows, client side scripting, Plugins or Power automate. This custom action may or may not require parameters.…","headline":"Invoke a Power Automate flow synchronously from a Model Driven App using Actions","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/invoke-a-power-automate-flow-synchronously-from-a-model-driven-app-using-actions.html"},"url":"http://localhost:4000/invoke-a-power-automate-flow-synchronously-from-a-model-driven-app-using-actions.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border"></span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Invoke a Power Automate flow synchronously from a Model Driven App using Actions</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">December 10, 2023 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <p><img border="0" data-original-height="400" data-original-width="700" height="183" src="/assets/images/031/img_ccd88a128b.png" style="display: none;" width="320" />&lt;p style="text-align: justify;"&gt;&lt;/p&gt;&lt;p style="text-align: left;"&gt;<span><span style="text-align: justify;"><span>    </span>In this article, I am going to demonstrate on how to use these dataverse custom action to trigger the automated flow in Power automate. Dataverse already has a trigger in place for the event of the action trigger. With this method, we can call a power automate flow synchronously from the model driven app’s command button.</span></span>    &lt;/p&gt;&lt;div&gt;&lt;div&gt;<span>    </span><b>Custom actions</b> are used for creating custom business logics, but they are not invoked automatically. Instead, we can call them inside Workflows, client side scripting, Plugins or Power automate. This custom action may or may not require parameters. There are two types of parameters in action, they are input parameters and output parameters. We can initialize actions either entity specific or global. &lt;div style="text-align: justify;"&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Create a custom action in a solution by navigating to Settings 🡲 Process 🡲 +New.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDxoVshe_v_IjLm01vzTxbJ2Vhrnai1luVXtL4gwp08C5qnO_DDce2LlmvoFdL5eSDmyMfmXxA9hnaQ-CfMLtU7VMPkqoV5S3UAZJticN6kcqWf-2IVHMi4RptWUu-e7SMb1cN4JFerjA1zS6yG8O9fkQvyClQugS9RX9BK1tLr8lPan1tKWLe_G4Wgik/s932/create-action.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="724" data-original-width="932" height="249" src="/assets/images/031/img_0ba1bebfdd.png" width="320" /></a>&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style="text-align: justify;"&gt;Add a Process name, category as action, entity as None (global), and Type as New blank process. And click on OK.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style="text-align: justify;"&gt;It will navigate to the classic process creation page. If all the configurations are completed, click on save and activate.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkWb8DL5hOtAdZaesByKR026nmIEjz0t1Y5Uy5Yfa3j7F7Dsddc6JukoAjFV0bQ2QEigfhYMcjhoUmyeGTK3SC-IiTUR4wwZeT4SEut1S7-gGGpCF7PJN5QtWkn0Pbr-RmjPu21l329qi0Or-tRETpy2-5Hb5ZX5pX2HgQp1glj16Kj1TRP8otg2MZCw4/s1481/configure-action.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="666" data-original-width="1481" height="144" src="/assets/images/031/img_fc015dedcc.png" width="320" /></a>&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: justify;"&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Create a new web resource to call the action from the ribbon button. For that, go to the solution <span style="text-align: justify;">🡲 Web resources.</span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyJC9HTvZA70RxANoxTeUfzPGjk03uNM-fR9P15Hfc8C7ofic4ktOvX3r0tab9buJWPVrlvwdESuCmGSL4Mq6BZHKifyIOGo5PrQ4ARLl3BFCuSGetK9MEJPTCdLEUqU2elt6gjCPdO5E_P7w9RXNh3ahK1bdDxXIcxnpH0YO6mFsyOzInMiHamlIaZEo/s1055/create-web-resource.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="680" data-original-width="1055" height="206" src="/assets/images/031/img_ef299d6493.png" width="320" /></a>&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style="text-align: left;"&gt;<span style="text-align: justify;">Add name, Display Name, Type as Script(JScript). Click on the Text Editor Button. Add the script below to the editor.</span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style="text-align: justify;"&gt;For adding the button to a form, we need to go to the make.powerapps.com <span style="text-align: justify;">🡲 click on the ellipsis (…) near the page that you want to add a button </span><span style="text-align: justify;">🡲 Select Main Form and the command editor page opens up.</span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;<script src="https://gist.github.com/tamilarasu-arunachalam/507e0c760e6e32fcc3ec58f9f68e1144.js"></script>&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaP1xERNmatCbdk_2p-uzLahgvWKXZ_LL7yNmnLYtunDDdv8PrHjB6r6HJpFGgZi7DxPCz1m0vJBVSKJPPTfjduU8_uq_Nw3GB_rP2OChZ7azKFQE_sfaxM5Szq2foAJepi5Q7956RREMhR8ina3zZbOF7QH9r8efbCPeYf4YSsctk8R89pPylO1rDz1I/s1456/add-command-button.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="704" data-original-width="1456" height="155" src="/assets/images/031/img_d1d729d5ee.png" width="320" /></a>&lt;/div&gt;<br />&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style="text-align: left;"&gt;<span style="text-align: justify;">Add a button by dragging it to where ever you want. Add label, icon, action as JavaScript, add library and function to trigger the button and click OK. Then click Save and Publish.</span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li style="text-align: left;"&gt;<span style="text-align: justify;">The button got added in the main form as expected. </span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicLbSPjMlXWgFBju3euKBjS3AcPTLANB6_m2hoofyliV6LoE9bFSCE0wQMZphdYYXigp3UFjXMapnzVS6p0N1nQDXwDrRSN24QtjeAtc86u9otsYkLQXHupciYM0KEM9ZuCNfw7lqmmH72bjUeDB01eXq-ZcjFB0AgpF00QDezBJq2tSUBUUKYX-qw6-U/s324/ribbon-button.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="75" data-original-width="324" height="74" src="/assets/images/031/img_4783ce1e98.png" width="320" /></a>&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;ul&gt;&lt;li style="text-align: justify;"&gt;Navigate to the solution page in make.powerapps.com, then click on +New <span style="text-align: justify;">🡲 Automation </span><span style="text-align: justify;">🡲 Cloud Flow </span><span style="text-align: justify;">🡲 Automated.</span>&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEib_NoDzhI_K4BBjojGEoasbhyphenhyphenrWaOnNfc0w_CMtIhLlvfa-Afn9Kj6nt5EHTdj3gcwZ9dhpujK_v88xZPm-wfqWzUVA5geZHYQnACFZZs8vxZxKJzlRJPOd7p70Yf5D0QEKNgIolNXxeaIELq1Ejov5k1U1M-IyUfIMFTG58DWL1EIZK_HB-pfn2HC-2I/s1214/create-a-flow.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="770" data-original-width="1214" height="203" src="/assets/images/031/img_b78334ac88.png" width="320" /></a>&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: justify;"&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;A flow creation page pops up, give a meaningful name for the flow and as it is an automated flow we need to choose the trigger. In our case, we need to select When an action is performed trigger from dataverse. Then click in Create. &lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: justify;"&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The flow is getting created with the trigger and configure it as like the below image. Give catalog and category as ALL, as it is a global action give Table name as none, select the appropriate action for action name.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisCLjeBu-dkqianHTDyWdJ9ljXVRaTa6eUCrl24fp7C1YUackqJDTEEXJhqN2FbzA0kWl9m5frNccgfV3XTKihSgLrzcXsLkjdwOXD13g2M6BlmYw4kTkimvD0fhyphenhyphenituu3NB3HR__KkZV0NeRzrMIsCLJqlsrZMiUOXekwhdfAShjot3A80xmIRjqqLIk/s816/configure-powerautomate-trigger.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="293" data-original-width="816" height="115" src="/assets/images/031/img_4b79497e82.png" width="320" /></a>&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: justify;"&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Add a compose action below the trigger, to get the running user from the trigger. For that, we have to use the expression <span style="background-color: #fffffe; font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; text-align: center; white-space: pre;">triggerOutputs()?[</span><span style="background-color: #fffffe; font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; text-align: center; white-space: pre;">‘body/RunAsSystemUserId’</span><span style="background-color: #fffffe; font-family: Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; text-align: center; white-space: pre;">]. </span>And Save the flow.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijkC9NNr182b1e6BpzXbYtEOK0QTXIkCUL2O8Yg5Bv2mvpm3fG80UTV9I_E6MO-B8qVnhCtO1PHby-IUN2nMIVUYeZcAryqsmV_sZmUarga1CsyxoBVghaNYL6e56UAATEZDdEqwAbesMJ0UVrDEU8LugkDni6dZfgtswvVPVn6_b8alsz0q3NQAliqwU/s862/compose.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="192" data-original-width="862" height="71" src="/assets/images/031/img_3909e29c8b.png" width="320" /></a>&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li style="text-align: justify;"&gt;To call the action, we need to click on the command button on the main form. If the action gets called, the flow will run automatically by when an action is performed trigger. &lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;I clicked the button, the action gets called, and the flow also ran successfully.&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxB8gite6V7TL5dNxmlz3IV7Oa-Cs963Z-xj54cUyewS6ob6nzrZ8LREhyphenhyphenx3ptK-zUp2TBnMKAbkTEqsgwQIRoGPgGfeU59zjBmN7xdkON4_pDF9oYVy7egNDf_bdgZocgL_o3LTupEZUgVp64MuG0lOaGTvGvNR5qjeDYvxQXng1RHcuvw7sO4bSltpI/s902/powerautomate-runs.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="252" data-original-width="902" height="89" src="/assets/images/031/img_5de5b8892f.png" width="320" /></a>&lt;/div&gt;<br />&lt;div style="text-align: center;"&gt;Have a good day!&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;</p>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Unlocking the Power of Side Panes in Model-Driven Apps</a>
+                                    </h6>
+                                    <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"
+                                            class="text-decoration-none text-dark hover-primary">Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins</a>
+                                    </h6>
+                                    <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html"
+                                            class="text-decoration-none text-dark hover-primary">Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript</a>
+                                    </h6>
+                                    <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Invoke a Power Automate flow synchronously from a Model Driven App using Actions",
+  "image": "",
+  "datePublished": "2023-12-10T23:11:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

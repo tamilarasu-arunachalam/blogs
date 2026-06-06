@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Get Selected Records from the Grid using Command Button in JavaScript | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Get Selected Records from the Grid using Command Button in JavaScript" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="As of now, Model Driven Apps command bar doesn’t have an option to get the selected record&#39;s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps. &lt;p&gt;&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;ul&gt; Add button to the command bar Add Rules and Commands to Button Getting Selected Records &lt;/ul&gt; Add button to the command bar If your environment doesn’t have Ribbon Workbench, download the ribbon workbench solution to your environment and create a solution specifically for Ribbon Workbench. Add the existing entity without any metadata to that solution for creating custom…" />
+<meta name="twitter:description" property="og:description" content="As of now, Model Driven Apps command bar doesn’t have an option to get the selected record&#39;s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps. &lt;p&gt;&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;ul&gt; Add button to the command bar Add Rules and Commands to Button Getting Selected Records &lt;/ul&gt; Add button to the command bar If your environment doesn’t have Ribbon Workbench, download the ribbon workbench solution to your environment and create a solution specifically for Ribbon Workbench. Add the existing entity without any metadata to that solution for creating custom…" />
+<link rel="canonical" href="http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html" />
+<meta property="og:url" content="http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-25T06:00:00+05:30" />
+<meta property="article:modified_time" content="2023-04-25T06:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Get Selected Records from the Grid using Command Button in JavaScript" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-04-25T06:00:00+05:30","datePublished":"2023-04-25T06:00:00+05:30","description":"As of now, Model Driven Apps command bar doesn’t have an option to get the selected record&#39;s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps. &lt;p&gt;&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;ul&gt; Add button to the command bar Add Rules and Commands to Button Getting Selected Records &lt;/ul&gt; Add button to the command bar If your environment doesn’t have Ribbon Workbench, download the ribbon workbench solution to your environment and create a solution specifically for Ribbon Workbench. Add the existing entity without any metadata to that solution for creating custom…","headline":"Get Selected Records from the Grid using Command Button in JavaScript","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html"},"url":"http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border"></span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Get Selected Records from the Grid using Command Button in JavaScript</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">April 25, 2023 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <div style="text-align: justify;">As of now, Model Driven Apps command bar doesn’t have an option to get the selected record's references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps.</div>
+<p><img alt="Get Selected Records from the Grid using Command Button in JavaScript" src="/assets/images/016/img_a471a25ee1.png" style="display: none;" />&lt;p&gt;&lt;/p&gt;&lt;p&gt;
+&lt;/p&gt;&lt;ul&gt;</p>
+<li><a href="#one">Add button to the command bar</a></li>
+<li><a href="#two">Add Rules and Commands to Button</a></li>
+<li><a href="#three">Getting Selected Records</a></li>
+<p>&lt;/ul&gt;</p>
+<h2 id="one">Add button to the command bar</h2>
+<p style="text-align: justify;">If your environment doesn’t have Ribbon Workbench, <a href="https://www.develop1.net/public/rwb/ribbonworkbench.aspx">download</a> the ribbon workbench solution to your environment and create a solution specifically for Ribbon Workbench. Add the existing entity without any metadata to that solution for creating custom buttons.</p>
+<p style="text-align: justify;">Navigate to the solutions page(in classic mode) you got to see a button on the above named Ribbon Workbench as like below image</p>
+<p></p>
+<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgnHnUbo3Cg_6zIoJYn7bZQahlkM6xXJ_Kh4-wOOC8oJmAHMfU9olEmiV3eckGSK5f22TPug8paKL77hjuqzcb5EWGOWUB5nTVeOxAjm2BzgwSrME844zZBsqaWDkSBj0QQySjJ_4crReEaNI4JjScKg-TXuW8cHEyr5agxdl6DsR5Kmuec7a_FTcB2" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="159" data-original-width="540" src="/assets/images/016/img_5e31800461.png" /></a></div>
+<p>Hit the Ribbon Workbench button, and it will navigate to the command editor page with a pop opened. Select the solution which is specific for buttons.</p>
+<p style="text-align: justify;"><em><strong>Note:</strong></em> Ribbon Workbench is too sensitive and it did not handle much entity data. It has a limit of only five entities for a solution.</p>
+<p></p>
+<div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjF3puvR8QeKJAYBx3M-HzEPp3xYAC8CRyyA-xggEA6eeqnexn9r2p1e5DbZ2KV0rxZQzT47s_ObLRMN4H79iXS2s9QMDO5BWZfIGZaT6zwxkSWuMDgkdQFRFs4daZR2gFBnPdIMqws4czWyo-y-25PzmLjSVKhsNpt7Huqkxo9RI9B4HlhCeMX20YP" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="477" data-original-width="535" src="/assets/images/016/img_ce0b50ded6.png" /></a></div></div></div></div>
+<p></p>
+<p style="text-align: justify;">Select the entity under the solution elements to add buttons. For the current context, we have to add buttons in Home, which refers to Main View. Drag and Drop the button on the desired location and add label and icon to it.</p>
+<p></p>
+<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgx-I8d5j7gSiushe81dI8CaCXtvAMXQWBKgl75NnKq7bQPec8SHOHuVYj2bm4kJaOHmqcggRs_q7gF9YqXqJuLhS4LRSMvsQuTo757BaIPykW_YDXKLf7Moh0aauI5EZvEH2PDC_b3O3TwSMkDS7lVKwM8ZADysB2IRBBTDATjJQF93V-5iQyosqZz" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="282" data-original-width="913" src="/assets/images/016/img_d03539ae37.png" /></a></div>
+<p></p>
+<h2 id="two">Add Rules and Commands to Button</h2>
+<p style="text-align: justify;">Add a new JavaScript Web Resource to the solution (Not in button specific solution) with the following script, then save and publish the solution.</p>
+<script src="https://gist.github.com/tamilarasu-arunachalam/500abd96bfa23acad7e386b8ca9d2c66.js"></script>
+
+<p style="text-align: justify;">Navigate to the Command Editor, then add a new command by clicking the + icon, add a JavaScript action by selecting the library and adding the function name. Add the CRM Parameter and <strong>SelectedControlSelectedItemReferences</strong>.</p>
+<p></p>
+<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEiWAsqOQANmvruiuKsMN2BsEYTEs2D2l70YkmnCSRZdBojNAzjdsGeDDFdvUsyVIyldteoQHTfKPnHu42eIj8ZENRvoU3ZRizgR6rSl7XZn2UV8XDvk2HWPkzMQmxZLzEKXIdyrWxo970_uEqKdGWkrG3DcYkTtkP0qanWtzJBonWbqHlvM1sjHJ13K" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="322" data-original-width="1139" src="/assets/images/016/img_3e8feffddc.png" /></a></div>
+<p></p>
+<p>Add an Enable rule to show the button only a record is selected. Click on + icon near Enable rules. Click on + Add Step and select <span class="notion-enable-hover" data-token-index="1" style="font-weight: 600;">SelectionCountRule</span> and set the minimum field to 1. So that, the button appears on the command at least a record gets selected unless it is hidden.</p>
+<p></p>
+<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEhCJUY6TvMl3e9TECe7852CycibHzC6vMN3UrMGZdW_nKpbGsIlZVGUxXRx4_R1-XO6rBNFSm8fH77jNB9NSAI1pjKx9w9WI72UOWpmerAxQBsdVTmobpOEyCsZFg2eDMf2A6-u4BEAe4oaM96d3H8RaIKJ_z15n610aWW6nK4HdUldWSHO3Mfd5bXj" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="151" data-original-width="920" src="/assets/images/016/img_59b0dc36d8.png" /></a></div>
+<p></p>
+<p style="text-align: left;">Add the Enable Rule to the Command and Add the Command to the button as like the below image, then publish the Command Editor.</p>
+<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcalvz-Gvlg81eyHdergtf0aQFhE7fv8N1aDMzINzk7w7ugYfKwnSN5YwwYYaDOivJ0VThr1cY68LKY8bMVC6YcBFREHiXs562zEfHrB5IIjdeunDXovYqmC6IMfDN1a9px-k6hcL8kGy1FDRQaKcUlsr1EMpkrNlHjRk5DNx5_CyZO463bN6nZHn2/s916/ribbonselecrec.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="426" data-original-width="916" src="/assets/images/016/img_a516faec8e.png" /></a></div>
+<div class="separator" style="clear: both; text-align: left;">
+<h2 id="three">Getting Selected Records</h2>
+<p style="text-align: left;">In this blog, I have placed the button in Products Home grid. I got to see the button which appears after selecting a record.</p>
+<p></p><p style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgw94hv8hOudSYvO1Cn5CQ2ar7T3Ioqw0G-4WFf1Unhj08LDEQqDuz_R-ibqYTTYfRWHAXYhHn3Vf88vVifZ6mhdokXVjhwy2tqKXOwXeEUpTosfEAre6q8yXvY1peywPGeDv8OWczNI3Mwe3FCHPyNpBx8IDWCOIpS_RDTQHGBuiSyTp-0dzs8LSjV" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="73" data-original-width="861" src="/assets/images/016/img_5e370a7e4a.png" /></a></p>
+<div style="text-align: left;">Hit the button to see the selected record names in an alert</div><a href="https://blogger.googleusercontent.com/img/a/AVvXsEg_ubljsvL1F0G5ZsrX0TTDYaNOxYbUIDQyWw0nZDqbjrABhH3PztI0ZnVUsdIJKdynZXuv06zb19r9HX0T4ZgwyPU1lpNgreUSv0ul6tu6-qpdO2R-BAHlhI4CFD38Z93MPeNAIDZIvNfsMRV8DBRXtN3QZ6saHWCMHHVg6GMTsBRvwUg6-8wOigv_" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="605" data-original-width="1158" height="1" src="/assets/images/016/img_7c758397bf.png" width="1" /></a></div>
+<p style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEg5RdpQMw6i4-3E8o7OaGbABQDYaF6TRo6veFWiOcn2ckUbw2pj3e7HktPvCKQUE2k6xtePELJgzEYp-Ofipen7N_LpQHUm_tVKo2XRs2AYFCHGMFMIVpyjdecoURAFHRWxFVGm1EllpTQPWusyHIYDsKEou2ncgHrEw94qB4cieC_JQcQJCeIYB6O-" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="605" data-original-width="1158" src="/assets/images/016/img_e606fc11ea.png" /></a></p>
+<p style="clear: both; text-align: left;">The below GIF will demonstrate the working of this script.</p>
+<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKsk4DDzRzPk96bKWJK5idW-YtcuBkxkN1KiFXmL7hlLYMvYVLEs_j0TTrFrRHKRF52zde6zYMYUUOxlj6PTJTtEzqx4UO50E5HlO1rrXeEfsogEV0dK4b2BvxPD-xSd2KRoNkbLgJs7G8aYrbrbcejC97O6AXiVy6l6srUt9vEX9jHgMf5TwNUZ6c/s1000/selected%20records.gif" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="505" data-original-width="1000" src="/assets/images/016/img_afd13fcd26.gif" /></a></div>
+<p><br />&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div class="hs-body-level-container blogger" strategyname="Blogger"&gt;&lt;/div&gt;</p>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Unlocking the Power of Side Panes in Model-Driven Apps</a>
+                                    </h6>
+                                    <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"
+                                            class="text-decoration-none text-dark hover-primary">Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins</a>
+                                    </h6>
+                                    <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html"
+                                            class="text-decoration-none text-dark hover-primary">Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript</a>
+                                    </h6>
+                                    <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Get Selected Records from the Grid using Command Button in JavaScript",
+  "image": "",
+  "datePublished": "2023-04-25T06:00:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

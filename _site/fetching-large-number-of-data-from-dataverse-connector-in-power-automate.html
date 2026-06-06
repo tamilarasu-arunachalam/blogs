@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Fetching large number of data from Dataverse Connector in Power Automate | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Fetching large number of data from Dataverse Connector in Power Automate" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="     Handling a large amount of data remains a challenge for many Power Automate enthusiasts. Here’s an article detailing how to retrieve a large number of records from Dataverse using Power Automate. There are three methods for fetching large number of data from Dataverse via Power Automate.&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Threshold Way&lt;/li&gt;&lt;li&gt;Paging Cookie way&lt;/li&gt;&lt;li&gt;Next Link Way&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&quot;threshold-way&quot; style=&quot;text-align: left;&quot;&gt;Threshold Way&lt;/h2&gt;&lt;p&gt;To demonstrate this, I’ve set up a cloud instant flow. In the flow editor page, beneath the trigger, you need to add an action called “List Rows from Dataverse” (you can rename it if you prefer).&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;In the “List Rows” action,…" />
+<meta name="twitter:description" property="og:description" content="     Handling a large amount of data remains a challenge for many Power Automate enthusiasts. Here’s an article detailing how to retrieve a large number of records from Dataverse using Power Automate. There are three methods for fetching large number of data from Dataverse via Power Automate.&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Threshold Way&lt;/li&gt;&lt;li&gt;Paging Cookie way&lt;/li&gt;&lt;li&gt;Next Link Way&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&quot;threshold-way&quot; style=&quot;text-align: left;&quot;&gt;Threshold Way&lt;/h2&gt;&lt;p&gt;To demonstrate this, I’ve set up a cloud instant flow. In the flow editor page, beneath the trigger, you need to add an action called “List Rows from Dataverse” (you can rename it if you prefer).&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;In the “List Rows” action,…" />
+<link rel="canonical" href="http://localhost:4000/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html" />
+<meta property="og:url" content="http://localhost:4000/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-05-19T23:11:00+05:30" />
+<meta property="article:modified_time" content="2024-05-19T23:11:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Fetching large number of data from Dataverse Connector in Power Automate" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2024-05-19T23:11:00+05:30","datePublished":"2024-05-19T23:11:00+05:30","description":"     Handling a large amount of data remains a challenge for many Power Automate enthusiasts. Here’s an article detailing how to retrieve a large number of records from Dataverse using Power Automate. There are three methods for fetching large number of data from Dataverse via Power Automate.&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Threshold Way&lt;/li&gt;&lt;li&gt;Paging Cookie way&lt;/li&gt;&lt;li&gt;Next Link Way&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=&quot;threshold-way&quot; style=&quot;text-align: left;&quot;&gt;Threshold Way&lt;/h2&gt;&lt;p&gt;To demonstrate this, I’ve set up a cloud instant flow. In the flow editor page, beneath the trigger, you need to add an action called “List Rows from Dataverse” (you can rename it if you prefer).&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;In the “List Rows” action,…","headline":"Fetching large number of data from Dataverse Connector in Power Automate","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html"},"url":"http://localhost:4000/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border"></span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Fetching large number of data from Dataverse Connector in Power Automate</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">May 19, 2024 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <p><img border="1" src="/assets/images/035/img_25d9f54c30.png" style="display: none;" /><span> <span>    </span></span>Handling a large amount of data remains a challenge for many Power Automate enthusiasts. Here’s an article detailing how to retrieve a large number of records from Dataverse using Power Automate. There are three methods for fetching large number of data from Dataverse via Power Automate.&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;<a href="#threshold-way">Threshold Way</a>&lt;/li&gt;&lt;li&gt;<a href="#paging-cookie-way">Paging Cookie way</a>&lt;/li&gt;&lt;li&gt;<a href="#next-link-way">Next Link Way</a>&lt;/li&gt;&lt;/ul&gt;&lt;h2 id="threshold-way" style="text-align: left;"&gt;Threshold Way&lt;/h2&gt;&lt;p&gt;To demonstrate this, I’ve set up a cloud instant flow. In the flow editor page, beneath the trigger, you need to add an action called “List Rows from Dataverse” (you can rename it if you prefer).&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEgrkN97i02QheqTfwDgRbXO90fE55GWUvqPXzSfZlMocSzxYfrKn2u2-G4KPl-FWm0iQTFUbNBVD-cgdHODVprwjBxrrObmAi2kq4leIIqCJrj4cgEELw9CS9VdnQKKwpTFBA2mjmkbTgl35AT2n2rD316YV5CgqrmluwKtBZpS9-aoy4N2x00DYqC9xE4" style="margin-left: 1em; margin-right: 1em;"><img alt="Pagination in Dataverse using Power Automate" src="/assets/images/035/img_6dfb2bd66e.png" /></a>&lt;/div&gt;<br />&lt;p&gt;&lt;/p&gt;&lt;p&gt;In the “List Rows” action, select the table name and add any necessary queries. For my purpose, I’ve chosen the Contacts table and selected only the fullname column from that table. Alternatively, Fetch XML can also be used for querying the same data.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEjJU0rNH7EloUPPgxkmzEPzo-9GgYQ5LpFoS5ja5h5ZgBEOX-hdeAWlkBfkgU7IueaHtP8uteuZBvKKm2lzWVQ6zyfDBmnWVWzh6n4bnJ8mTkNjtYRAWL3XMg3sbo0X7ZWRMyoD1FEqYYHcMm2KHpNzPZ2OIpIdXbQ_a2ugsTpEfxqFyusOAPD9ZJKekdo" style="margin-left: 1em; margin-right: 1em;"><img alt="Pagination in Dataverse using Power Automate" src="/assets/images/035/img_c6cefaaba7.png" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;The “List Rows” action of the Dataverse connector for Power Automate defaults to fetching 5000 records. However, by enabling Pagination in ellispse → Settings → Threshold (accepting values less than or equal to 100000), you can configure it to fetch records up to a count of 100000.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEjcr9pissK3-Bn48ScPAiEF9u7uPxCYtTs2zLk_UuVV06-T-9N8t9YP_YZKzmuY8NOCutNocTsQV4fsjGHA36ZKK-Ukg39of6MTZMzqKOR0Boo9ZBbK_C9zVkSiUmAD9CrvqcHYfdN4JWbzzzXIiTSlsPF24n1ZVNKlHAg2KhFB032Ikb6G8ioQci2xBKQ" style="margin-left: 1em; margin-right: 1em;"><img alt="Pagination in Dataverse using Power Automate" src="/assets/images/035/img_5638ae2be7.png" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Add another compose action to view the records count. For that, write an expression to find the length of the outputs from the “List Contacts” action. Here’s the expression provided:&lt;/p&gt;&lt;pre&gt;<code class="language-jsx">length(outputs('List_Contacts')?['body/value'])</code>&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEiz14U3pl5f3gHRSEKFqGu1PtYxppdNCfo61NYhZngUDMSrq1OQ8IUc9jQmpryzfU_FQ7mmbYJ0fwSvA3pZIRQjwzk_uLp5kjh4L1pTig0vk0gktK5f47cw65e6ID0L0SS_hvzmmtViC2rSHbuUKaPGGBL8fYYzGS08JfVSQchFrUhxV1jxT3DRYivY8l8" style="margin-left: 1em; margin-right: 1em;"><img alt="Pagination in Dataverse using Power Automate" src="/assets/images/035/img_bfaf6c3cf8.png" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;Save the flow and run it. Wait until the flow runs successfully. Open the run and expand the compose action; there you will see the record count. In my case, I have more than 100k records. However, since we set the threshold limit to 100,000 in the standard configuration, it will fetch records up to that limit.&lt;/p&gt;&lt;h2 id="paging-cookie-way" style="text-align: justify;"&gt;<span style="text-align: left;">Paging Cookie way</span>&lt;/h2&gt;&lt;p style="text-align: justify;"&gt;<span>    </span>The Dataverse connector for Power Automate has a threshold limit of 100K records. To fetch more than 100K records, you need to use the Paging Cookie method in Power Automate. This method can also be used for fetching records below the 100K limit. It retrieves only 5000 records per request, so you need to add requests in a loop and set the Paging Cookie for each iteration. The paging cookie, in XML format, contains the record IDs for the starting and ending records for each iteration, and it changes accordingly for every iteration.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEiq1tFdWcTy6DkzkuW30Ecnc4XUi1lpaJXT-lz-VTGwP7NWtxYb7U6fmn2_PTg3YFaTpcHao9egNLMRKqkRuzqP4MMIcsoo0CiylDg8tTR7Fcwr-aLLaE-IiHQoUljRh5SbaQdiNyTvJ4sm65OcxWJ3SpSgtautHdY68P08bg_eJQtZzK6Nv9czENa5nrM" style="margin-left: 1em; margin-right: 1em;"><img alt="Pagination in Dataverse using Power Automate" src="/assets/images/035/img_fe35f1855a.png" /></a>&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEhK7x4Vrn4vpO55Azak1GIFxeiqxI-bwpRscyWGUUyog0SpExuTMBw1HWyVc2ZnQC1qLHkfQ1XXo5xwjjYFXgSfeVKQaVxyQ0483vwcbjmNfDxR_NEqRByAkLRM6jmfkSKc1-xGqzuJ1G25sRZSZENQ7XnSBZ-Thpv9H8mlDnRQ41Cb7Efuh5oT0Tx96iY" style="margin-left: 1em; margin-right: 1em;"><img alt="Pagination in Dataverse using Power Automate" src="/assets/images/035/img_9c384a0967.png" /></a>&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;We need to initialize several variables, including RecordsCount, PagingCookie, ClearPagingCookie, and EncodingJSON. Within the EncodingJSON object, we create a field named “t” to store the Paging Cookie.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEj6OZ1sGteLDPQT5PkPYbbnWLF4-8VOjvD-gQH5hlfRqZSqxjWvlusKxpHtl2Fti3KteeObId8nKV-FUpEi10d-_KTe4hYmrD-8BiwsIv6HoSDxNuwBfF_7Pp08SAZl18rKEdqnLivIdA5PJ8733Qfdx3lL4k3CVjaEPas9vDldFDvMTonbUB5_3Fm-tEU" style="margin-left: 1em; margin-right: 1em;"><img alt="Pagination in Dataverse using Power Automate" src="/assets/images/035/img_1940cead64.png" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;Initiate a “Do Until” action with the condition to check whether the variable PagingCookie is not empty. Use the following expression to evaluate the variable:&lt;/p&gt;&lt;pre style="text-align: justify;"&gt;<code class="language-jsx">empty(variables('PagingCookie'))</code>&lt;/pre&gt;&lt;p style="text-align: justify;"&gt;Then inside the “Do Until” loop, add a “List Rows” action for the contact entity with the FetchXML query. In the FetchXML query, include the “page” attribute, which defines the page number. Since the request returns only 5000 records in the first iteration, set the initial page number to 1, and it increments for each subsequent iteration. You can use the below expression to dynamically increment the page number by 1:&lt;/p&gt;&lt;pre style="text-align: justify;"&gt;<code class="language-jsx">add(iterationIndexes('Do_until'),1)</code>&lt;/pre&gt;&lt;p style="text-align: justify;"&gt;To set the Paging Cookie, we need to check the iteration index of the “Do Until” loop and then assign the Paging Cookie value stored in the EncodingJSON variable. Use the following expression to set the Paging Cookie:&lt;/p&gt;&lt;pre style="text-align: left;"&gt;<code class="language-jsx">if(equals(iterationIndexes('Do_until'),0),'',concat('paging-cookie=''', substring(first(skip(split(string(xml(setProperty(variables('EncodingJSON'),'t',variables('ClearPagingCookie')))),'&lt;'),1)),2),''''))</code>&lt;/pre&gt;&lt;p style="text-align: left;"&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEhCEgmoec6tb03hiUke2MDywRc3E4jB8sVCOnhxzDr-Ubzep9HUs93gDJGbYZkPRvnjoumUCD1cvTiAFUhlm9TQ8YgIgImvJNq57d3yvUKdQvviTVUsQ0fP0hncCO0VPLNxzlsKa0FaXmV3Oi2BsRsBEZ2WNYhKNxEbus1mPqLA_rPy4--iYgArEnQ30Gg" style="margin-left: 1em; margin-right: 1em;"><img alt="Pagination in Dataverse using Power Automate" src="/assets/images/035/img_3682909986.png" /></a>&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: left;"&gt;After the “List Rows” action, we need to update the Paging Cookie with the value obtained from the response of the “List Rows” action. Use the following expression to achieve this:&lt;/p&gt;&lt;pre style="text-align: left;"&gt;<code class="language-jsx">if(empty(outputs('List_Contacts')?['body']?['@Microsoft.Dynamics.CRM.fetchxmlpagingcookie']),'',decodeUriComponent(decodeUriComponent(outputs('List_Contacts')?['body']?['@Microsoft.Dynamics.CRM.fetchxmlpagingcookie'])))</code>&lt;/pre&gt;&lt;p style="text-align: left;"&gt;To clear the existing Paging Cookie values, use the following expression:&lt;/p&gt;&lt;pre style="text-align: left;"&gt;<code class="language-jsx">if(empty(variables('PagingCookie')),'',replace(substring(variables('PagingCookie'),add(indexOf(variables('PagingCookie'),'pagingcookie="'),14)),'" istracking="False" /&gt;',''))</code>&lt;/pre&gt;&lt;p style="text-align: left;"&gt;In this process, we need to retrieve the record count fetched during each iteration. We’ll save this count in a variable and increment it by the current count in every iteration.&lt;/p&gt;&lt;pre style="text-align: left;"&gt;<code class="language-jsx">length(outputs('List_Contacts')?['body/value'])</code>&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEjSiBGbUSqWYiZbasIB5T48ruhJm8G_ZEor_UpIYGtzHwGJgHw_IlPSRb2Uqv9jUYETUajcAQke24e8eqcZnEra6ZfswREUp4X2mSs04FuhC3HsA-eRwcaXMGc9KfEl6eAsm2n47v3VG8dl--3WzoUl1nYiDnIsFI4kLiEnu6wav7_wkl3bPM7vgTGjI9Y" style="margin-left: 1em; margin-right: 1em;"><img alt="Pagination in Dataverse using Power Automate" src="/assets/images/035/img_8bd12e9f53.png" /></a>&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEjEyETh39m5MYAIZmOgPLk1U5C6gyoanhs_0AfSvrx6Wh26GG8Em71Z9G4M1Rbv47le04Tiu9w5L3eD2AiYUMBDy07mjn5vir_8uH8waj_UMZVq8H6ZkQZFnlsalkFtzQ1XKlJKvykxuGrKpAuB8jlWDI9vfS7k9PZJ57wVJdfqSTGtLSE69Lab6FQY54I" style="margin-left: 1em; margin-right: 1em;"><img alt="Pagination in Dataverse using Power Automate" src="/assets/images/035/img_b99be7bcdc.png" /></a>&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Add a “Compose” action and assign the “RecordsCount” variable to it. This will display the final count of records. Save and publish the flow, then run it.&lt;/p&gt;&lt;p style="text-align: left;"&gt;Once the Run is completed, scroll down and expand the “Compose” action to view the actual count of records. In your case, it should display a count potentially exceeding 100K.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEjda0EDCr-Cq7wGTWA_LOdrg_WSTcAC9Ga6DIu5eNLl22gqq6Ai7FpNgpzzutdQEapAsR8WpSSRcNGwkB2zWKj3_OfNsWqqp62N1B5yZJInn_kIJCHB6eP1NGX567QTdGv8mLbOAEEvO0AuBFarenHv5_ieWpUv2hgW7c7_bQAXuKbjzVPiHL7TxUguvSM" style="margin-left: 1em; margin-right: 1em;"><img alt="Pagination in Dataverse using Power Automate" src="/assets/images/035/img_c8e41d2ab6.png" /></a>&lt;/p&gt;&lt;h2 id="next-link-way"&gt;Next Link Way&lt;/h2&gt;&lt;p style="text-align: justify;"&gt;<span>    </span>If you’re looking to retrieve records exceeding 100,000 without utilizing FetchXML, you can opt for the next link method. This involves leveraging OData queries and incorporating a skip token value, akin to a paging cookie, passed through the OData query parameter. For this approach, it’s common practice to initialize two variables: <strong><code>RecordsCount</code></strong> and <strong><code>NextLink</code></strong>.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEiojljHGSKTFLr7tW7QFMtNQqRbvGgqDCS_hHA3VVW_fbYyCVfhky6HTp_Hna1m9mFpUxqF9WsxpTzDasCowizKZHar7OoNTJQgPuYAZ8mDOGdKdGN8JYKyj6w1CTQHD3xCJi-ziVRiS9o4ejJ6HnDWtItUh6VZsDYxdXVPI8qO4LLosBlpeboyXdsE2JY" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="467" data-original-width="712" src="/assets/images/035/img_a836344567.png" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: left;"&gt;After that, we create a ‘Do Until’ action to loop through the process until the next link value returns null. As we update the <strong><code>NextLink</code></strong> variable in every iteration, it becomes null when it reaches the last page.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEjEnVJlb-eidInHYCUTV909BSQ3vAv0aNHvB64NQJV7WZqWleAHzANgiyzitipCYd-0XNESBsVFYxSgE8raWEU_axrwrYFGP2a62dd3n_JBxShUtPDYyDS3O6zUPHadbyiqgDeHz-7jJR7jh9z2-nhTAf5x7T1zy0MTRwb9ThNsx9CpnzzqQwCjJN3_WzQ" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="228" data-original-width="791" src="/assets/images/035/img_d673a26d32.png" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;Create a “List Rows” action with the table name as “Contacts”. Select the “fullname” column. In the “Skip Token” field, add the value of the <strong><code>NextLink</code></strong> variable.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEjuL0Jum1r7r854iXDixVEZ-f5jtMf3si3uk7nMG6vYZNRmtHlaJDBDQ9MiVVdP0d3-SnItBE6rMZqC_eMYHq7Qmdoua1h3FTKEr0N-Gmyx4xqz9G8VWew5Npdp4J0SkAdkF5a80XZfhsgLJ-iMb4BSOxC8TeieoCiA5IXDJPwY2oPCn3J2LEjm43VoLLQ" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="500" data-original-width="697" src="/assets/images/035/img_2978a566bb.png" /></a>&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;Then set the <code>NextLink</code> variable with the value returned from the response. Since we only need the Skip Token parameter, we have to extract it from the <code>$skiptoken=</code> parameter in the next link value.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEjIvYy6kJBZGEisAlR8ZSiAqE49TJEFuuckDhkwbtiymtXyCo4UlwrSVjbCtpjx28CgpgukGfwRxfBaEG9PFzhn1ibDdvaHmGvwSFmKyVcoATHknvi3Dp2g7OkGlqE6r6HHrClUVtUgh8gqY0dMAw_zniKLkG1tB42uy81dg6d4bEd0ImHubpRJblLgWdQ" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="172" data-original-width="693" src="/assets/images/035/img_e6315a602d.png" /></a>&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: left;"&gt;You can use the following expression to split the skip token away from the next link.&lt;/p&gt;&lt;pre style="text-align: justify;"&gt;<code class="language-flow">if(not(contains(outputs('List_Contacts')?['body'],'@odata.nextLink')),null,decodeUriComponent(last(array(split(last(array(split(outputs('List_Contacts')?['body/@odata.nextLink'],'&amp;'))),'$skiptoken=')))))</code>&lt;/pre&gt;&lt;p style="text-align: justify;"&gt;And increment the count with the current record count from the “List Rows” action to calculate the total count in the end. You can achieve this by using the following expression.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEhrsvgSZK6v-WASkiAwreNJz0G2c2fppUBWEgAu1hZwpozghTuXqFYuRMKFcICoE-IytPAgeT9s6x_ruelf1PJdx6mbXSeCqJaXWd7InhAsvQYFTLhpBOWX8-N95V7DQB6eXNg6ytWuWSH3yxU4Uwjl7dyJL23C-Ng7P-cXpUDx2qJ9_kmNhZ4M_JWvtpE" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="177" data-original-width="691" src="/assets/images/035/img_fc12d4b4ba.png" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;pre style="text-align: justify;"&gt;<code class="language-flow">length(outputs('List_Contacts')?['body/value'])</code>&lt;/pre&gt;&lt;p style="text-align: justify;"&gt;Add a “Compose” action outside of the “Do Until” loop and assign the value of the <code>RecordsCount</code> variable to it. This will display the total record count.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEi4g6AOtY6ZbDC6zPdOA-7JCnB21IKm6suIwVJy2cZdqpCJLgTMt6nwyS55EOz15-hSx5ncGfsfKqWPjuEfx4xhGdSXhxoQ5geidv9tKO925ujf4SIZ_iFUsv0aaMF2phD4m6i2YHGexVyzIu6xDx6HGc2JVYhXxtZyZ9U9LxzSoPPQSgOxsPTfJuqt1YA" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="255" data-original-width="712" src="/assets/images/035/img_a3f5ba1a0a.png" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;Run the flow once you’ve saved and published it. Then open the completed run and expand the “Compose” action that we added last. There, you will be able to see the total record count.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/a/AVvXsEh9VGStI-jJardckI2dVWaM5sgNcwoviF-uDKqj1tuw8kh3kdQIgA1TOI4ZeT8xLHR7tFCSY77H2-1x5zLingdEail3Khn32f-bHpmFewifv2w-BCFIJbyIHmVw_8VHoSyaQSUdiHwYhnWv-MTNnV66s_vOIkQD7A_zlJ8Sj3r0xzDM7gTnXSoTB46bGsI" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="448" data-original-width="696" src="/assets/images/035/img_7ad7942453.png" /></a>&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both;"&gt;&lt;/p&gt;&lt;p style="text-align: center;"&gt;Have a great day!&lt;/p&gt;</p>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Unlocking the Power of Side Panes in Model-Driven Apps</a>
+                                    </h6>
+                                    <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"
+                                            class="text-decoration-none text-dark hover-primary">Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins</a>
+                                    </h6>
+                                    <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html"
+                                            class="text-decoration-none text-dark hover-primary">Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript</a>
+                                    </h6>
+                                    <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Fetching large number of data from Dataverse Connector in Power Automate",
+  "image": "",
+  "datePublished": "2024-05-19T23:11:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

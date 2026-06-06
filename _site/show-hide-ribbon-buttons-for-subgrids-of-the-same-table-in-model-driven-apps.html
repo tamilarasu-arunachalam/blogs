@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Scenario Brief Main Form Configuration Setup Command Button Visibility Setup Command Button Action Deomonstration While working on one of my weekend Power Apps Model-Driven Apps projects, I ran into an interesting requirement. I had three subgrids of the same child entity placed inside the parent entity’s main form. Each subgrid needed to show a drop-down command with buttons — but the tricky part was:" />
+<meta name="twitter:description" property="og:description" content="Scenario Brief Main Form Configuration Setup Command Button Visibility Setup Command Button Action Deomonstration While working on one of my weekend Power Apps Model-Driven Apps projects, I ran into an interesting requirement. I had three subgrids of the same child entity placed inside the parent entity’s main form. Each subgrid needed to show a drop-down command with buttons — but the tricky part was:" />
+<link rel="canonical" href="http://localhost:4000/show-hide-ribbon-buttons-for-subgrids-of-the-same-table-in-model-driven-apps.html" />
+<meta property="og:url" content="http://localhost:4000/show-hide-ribbon-buttons-for-subgrids-of-the-same-table-in-model-driven-apps.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-11-30T23:11:00+05:30" />
+<meta property="article:modified_time" content="2025-11-30T23:11:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-11-30T23:11:00+05:30","datePublished":"2025-11-30T23:11:00+05:30","description":"Scenario Brief Main Form Configuration Setup Command Button Visibility Setup Command Button Action Deomonstration While working on one of my weekend Power Apps Model-Driven Apps projects, I ran into an interesting requirement. I had three subgrids of the same child entity placed inside the parent entity’s main form. Each subgrid needed to show a drop-down command with buttons — but the tricky part was:","headline":"Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/show-hide-ribbon-buttons-for-subgrids-of-the-same-table-in-model-driven-apps.html"},"url":"http://localhost:4000/show-hide-ribbon-buttons-for-subgrids-of-the-same-table-in-model-driven-apps.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border">Dynamics 365 CE</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">November 30, 2025 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCcbDQc5V7XSlymdcR3h9ql6yjNe0u60XNbjVvQWjnzqUMe0TJmPjA70PYApvdTaErc8c3AM3yVkaQJHNnJ0VmLeB8V3IXwEUH1WRdPR11d8kCpkIERef0_f79MJI5hKng2snhLj1fcAPll7v5i0ugGLeDqjzimukK_6vZzinspYtZEpcAypaEWe_q0GQ/s220/spider-man-your-friendly-neighborhood.gif" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="125" data-original-width="220" height="364" src="/assets/images/053/img_72426d992d.gif" width="640" /></a></div>
+<div><br /></div>
+<ul>
+  <li><a href="#scenarioBrief">Scenario Brief</a></li>
+  <li><a href="#mainFormConfiguration">Main Form Configuration</a></li>
+  <li>
+    <a href="#commandActionConfiguration">Setup Command Button Visibility</a>
+  </li>
+  <li><a href="#commandActionConfiguration">Setup Command Button Action</a></li>
+  <li><a href="#scenarioDemonstration">Deomonstration</a></li>
+</ul>
+<p style="text-align: justify;">
+  While working on one of my weekend Power Apps Model-Driven Apps projects, I
+  ran into an interesting requirement. I had
+  <strong>three subgrids of the same child entity</strong> placed inside the
+  parent entity’s main form. Each subgrid needed to show a drop-down command
+  with buttons — but the tricky part was:
+</p>
+
+<ul>
+  <li>Each subgrid should show different buttons based on its context.</li>
+  <li>
+    All buttons should call the same JavaScript function but with different
+    parameters.
+  </li>
+  <li>
+    The visibility must change dynamically depending on which subgrid the user
+    is working in.
+  </li>
+</ul>
+
+<p style="text-align: justify;">
+  After trying multiple approaches, I found that the best way was to configure
+  everything directly inside the
+  <strong>Power Apps Command Bar Editor</strong>. Below is a simple breakdown of
+  how I achieved it.
+</p>
+
+<h3 id="scenarioBrief">Scenario Overview</h3>
+<p>I had two tables:</p>
+<ul>
+  <li><strong>Doctor</strong> – Parent entity</li>
+  <li><strong>Appointments</strong> – Child entity</li>
+</ul>
+
+<p>Inside the Doctor main form, I added three Appointments subgrids:</p>
+
+<ul>
+  <li>In-Progress Appointments</li>
+  <li>Upcoming Appointments</li>
+  <li>Completed Appointments</li>
+</ul>
+
+<p style="text-align: justify;">
+  Each subgrid displays appointments based on the appointment status. The key
+  functionality was simple - allow the user to
+  <strong>move a record from one subgrid to another</strong>
+  by updating the appointment status.
+</p>
+
+<h3 id="mainFormConfiguration">Main Form Setup</h3>
+<p>
+  Below is a quick view of how the main form was arranged, with all three
+  subgrids placed inside the Doctor record:<br /><br />
+</p>
+<div class="separator" style="clear: both; text-align: center;">
+  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhC5Q4BBu_RCsmFgR0YBz3W_M4zkEsxr06Z7oRMDfdpK0Pg3-vBpj0lXzzAwM4c5dxABCwRzDZ8XEf8HHDKf16I42lz93fOyN_8rGztBJFxYD7P3GcjUFoZNZ7TzLoSSrbBXQO5xmjdVRTZJikXEhQK5mOeZ5L9OKumwH7AmKpUCmmXvmbZJGpyD4SYVCE/s1160/main-form-configuration.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="828" data-original-width="1160" src="/assets/images/053/img_5f05052ebf.png" /></a>
+</div>
+<p><br /></p>
+
+<h3 id="commandActionConfiguration">Setting Up Command Button Visibility</h3>
+<p>
+  Since all three buttons perform similar actions, I grouped them inside a
+  single drop-down called
+  <strong>“Move To”</strong>.
+</p>
+
+<p>
+  The drop-down should appear only when a record is selected. I used the
+  following Power FX formula:
+</p>
+
+<pre><code>!IsEmpty(Self.Selected.AllItems)</code></pre>
+<p><br /></p>
+<p>
+  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoFgFnP_8Ihk7I6iq00imArtEueg6OR2zI7INQrKp2NpgFjZDUHN0VUCOWigwDQoVV3WHe1gA6UUTnApzJSzyHvQhMJMQJ9_PdsJ1wxkjomPogXPAJW2WK5ww3YYRwSOPknoquLhzBkjpx3LtK-6WAi1nKbHlZOurvtRK6p42Y7qDjBOII8qjAtu7bH50/s1923/dropdown-button-setup.png" style="margin-left: 1em; margin-right: 1em; text-align: center;"><img border="0" data-original-height="1022" data-original-width="1923" src="/assets/images/053/img_1b6387d2c6.png" /></a>
+</p>
+<p>
+  Next, each button under the drop-down should only appear based on the selected
+  record’s current status. For example:
+</p>
+
+<ul>
+  <li>
+    If the record is in "Upcoming", show only "Move to In-Progress" and "Move to
+    Completed".
+  </li>
+  <li>If the record is in "Completed", hide the option to move forward.</li>
+</ul>
+
+<p>Here’s the Power FX formula I used for conditional button visibility:</p>
+
+<pre><code>If(
+    Or(
+        Text(First(Distinct(Self.Selected.AllItems,'Appointment Status')).Value)="Checked-In",
+        Text(First(Distinct(Self.Selected.AllItems,'Appointment Status')).Value)="Completed"
+    ),
+    true,
+    false
+)</code></pre>
+<p><br /></p>
+<div class="separator" style="clear: both; text-align: center;">
+  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiL5Wx1SxhxZ43tzbyO01emqmJkUPkaijSqgY8X-k8UxxR5zd8ZMgAcIh0wBdH9t0Uyu0INEzfZFEDLBpsKglzTY51j6RZmrwqOCytdclUH_-BaqTqDdpoW6NIlqeiKXEIZ113ZYnvFEaPD_j5yELbwj862extj1O9WV0F-n4LVdXzkkowaoD7TpacrI4A/s1407/button-visibility-configuration.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="870" data-original-width="1407" src="/assets/images/053/img_2782410836.png" /></a>
+</div>
+<h3 id="commandActionConfiguration">Setting Up Command Button Action</h3>
+<p>
+  For the actual update, I added a <strong>JavaScript Web Resource</strong> and
+  connected it to the button action.
+</p>
+
+<div class="separator" style="clear: both; text-align: center;">
+  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeQLWaQbkYhsIV2WgtlvPG6kMNuSIv3BKEj5yOrDXcjzsjgnhch6NzkZjf09viGYbJ6jtZfjT8mi0bT6LEPz-JHLTHpfHUAy1cQQHEXj34_2xR1wqKJ1NtMyBbUdRfDl5DLbdSsa0DZO205Yy2ItLjGyM4BduVLCNbBrSoMWJy7EPm_e-qi6Q0cl5wNH0/s1208/button-action-configuration.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="834" data-original-width="1208" src="/assets/images/053/img_f8ce18e97a.png" /></a>
+</div>
+<p>
+  The JavaScript function updates the appointment status and refreshes all the
+  subgrids. It accepts three parameters:
+</p>
+
+<ul>
+  <li>
+    <strong>SelectedControlSelectedItemIds</strong> – list of selected records
+  </li>
+  <li><strong>Status value</strong> – the new appointment status</li>
+  <li><strong>primaryControl</strong> – the form context</li>
+</ul>
+
+<p>Here’s the script:</p>
+
+<script src="https://gist.github.com/tamilarasu-arunachalam/8dda3400f0d7ab65b952eece822900d7.js"></script>
+
+<h3 id="scenarioDemonstration">Demonstration</h3>
+<p>Here’s a quick look at how the feature works in the form:</p>
+
+<div class="separator" style="clear: both; text-align: center;">
+  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjyzqVqU_pao6gQ58h1keSC0P7UEEQYvKPADSLTeZvlWAK5Gd6NZi4CFB7sn_1mMDVySK1u9HDjmoYISFQb8yIDniigK3kYOmQLlxqigoWrnEbfjBKa8hVCRkJwMsESTIdL4anmsJvhYUxbmRz1DMTM0LMMalsJ6a3asgQJj_TP1GjGCNTJkJ0au3tmpIc/s1782/demonstration-one.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="887" data-original-width="1782" src="/assets/images/053/img_5c93336016.png" /></a>
+</div>
+<p><br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFTRILa9yCpBnkP6Wlm1Ob2cDjzVcvdvqA7v9MfjS1ux90wAnQbcnaygugU7Hx3WQ0g_MDGc3slzcGohVNsK4RywONHkvBjCi0D7Ok1mH-gQYKKA4YNw0j1FeFnJ6nUGb1Sfr7yIlpjjkD1m2r7WTJ30q-C6HerwPxJ-5Ivmfn1TOldKnjnPIo1c2bszQ/s1787/demonstration-two.png" style="margin-left: 1em; margin-right: 1em; text-align: center;"><img border="0" data-original-height="894" data-original-width="1787" src="/assets/images/053/img_fe586e5e10.png" /></a></p>
+<div class="separator" style="clear: both; text-align: center;"><br /></div>
+<div class="separator" style="clear: both; text-align: center;">
+  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBKEVsgr-zbZfOox6f0ELVzKeSaKgKIn0Z7aBdI29J1638zz0jA0GXl0qXxRtccWUvynJwrjQqvEmC6ijbazNB-2OElYH3QrqIAC1oTkVIPw1Cvcfs3ZZG-0K7xpRyYbpyyfOih3nekQqqlAbYCNu_3tYlnEmjoQINNXTuxb0aw7d4b5y8sqJP9zHwj8s/s1779/demonstration-three.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="887" data-original-width="1779" src="/assets/images/053/img_30564f37c5.png" /></a>
+</div>
+<p style="text-align: center;">Have a great day!</p>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</a>
+                                    </h6>
+                                    <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</a>
+                                    </h6>
+                                    <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html"
+                                            class="text-decoration-none text-dark hover-primary">Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</a>
+                                    </h6>
+                                    <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps",
+  "image": "",
+  "datePublished": "2025-11-30T23:11:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>How to Translate Metadata and Web Resources in Dynamics 365 CE | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="How to Translate Metadata and Web Resources in Dynamics 365 CE" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="If you have ever worked on a Dynamics 365 CE or Power Apps model-driven app that serves users from multiple countries, you already know how important language support is. Most of us start confidently because Dynamics 365 handles translations for standard tables automatically. But the moment you introduce custom tables, JavaScript alerts, or HTML web resources, things start getting confusing. If you are wondering, &quot;How do I translate custom web resource content properly?&quot; - you are not alone. In this blog, I&#39;ll walk you through practical and supported ways to handle translations in Dynamics 365 CE. Overview Out of the…" />
+<meta name="twitter:description" property="og:description" content="If you have ever worked on a Dynamics 365 CE or Power Apps model-driven app that serves users from multiple countries, you already know how important language support is. Most of us start confidently because Dynamics 365 handles translations for standard tables automatically. But the moment you introduce custom tables, JavaScript alerts, or HTML web resources, things start getting confusing. If you are wondering, &quot;How do I translate custom web resource content properly?&quot; - you are not alone. In this blog, I&#39;ll walk you through practical and supported ways to handle translations in Dynamics 365 CE. Overview Out of the…" />
+<link rel="canonical" href="http://localhost:4000/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html" />
+<meta property="og:url" content="http://localhost:4000/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-12-21T23:11:00+05:30" />
+<meta property="article:modified_time" content="2025-12-21T23:11:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="How to Translate Metadata and Web Resources in Dynamics 365 CE" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-12-21T23:11:00+05:30","datePublished":"2025-12-21T23:11:00+05:30","description":"If you have ever worked on a Dynamics 365 CE or Power Apps model-driven app that serves users from multiple countries, you already know how important language support is. Most of us start confidently because Dynamics 365 handles translations for standard tables automatically. But the moment you introduce custom tables, JavaScript alerts, or HTML web resources, things start getting confusing. If you are wondering, &quot;How do I translate custom web resource content properly?&quot; - you are not alone. In this blog, I&#39;ll walk you through practical and supported ways to handle translations in Dynamics 365 CE. Overview Out of the…","headline":"How to Translate Metadata and Web Resources in Dynamics 365 CE","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html"},"url":"http://localhost:4000/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border">Dynamics 365 CE</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">How to Translate Metadata and Web Resources in Dynamics 365 CE</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">December 21, 2025 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <p><img alt="" border="0" data-original-height="360" data-original-width="480" src="/assets/images/055/img_189a192a47.gif" style="display: none;" /></p>
+<p style="text-align: justify;">
+    If you have ever worked on a Dynamics 365 CE or Power Apps model-driven app that serves users from multiple
+    countries, you already know how important language support is.
+    Most of us start confidently because Dynamics 365 handles translations for standard tables automatically.
+    But the moment you introduce custom tables, JavaScript alerts, or HTML web resources, things start getting
+    confusing.
+    If you are wondering, <i>"How do I translate custom web resource content properly?"</i> - you are not alone. In this blog, I'll walk you through practical and supported ways to handle translations in Dynamics 365 CE.
+</p>
+<ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#outOfTheBoxWay">Out of the box Way</a></li>
+    <li><a href="#webResourceWay">JavaScript Way</a></li>
+    <li><a href="#references">References</a></li>
+</ul>
+<section id="overview">
+    <h3>Overview:</h3>
+    <p>Dynamics 365 supports multilingual applications, but translations are handled differently depending on
+        what you are translating.
+
+    </p><ul>
+        <li>Standard &amp; custom tables - supported out of the box</li>
+        <li>Field labels, option sets, views - supported via export/import</li>
+        <li>JavaScript &amp; HTML web resources - require custom handling</li>
+    </ul>
+    In this article, we'll cover both:
+    <ul>
+        <li>Out-of-the-box translation for tables</li>
+        <li>Two reliable approaches for translating web resources</li>
+    </ul>
+    <p></p>
+</section>
+<section id="outOfTheBoxWay">
+    <h3>Out of the box way</h3>
+    <p>Dynamics 365 provides a built-in way to translate metadata such as table names, field labels, and option
+        set values. This works for both standard and custom tables.</p>
+    <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizl4o46VQAf6qgDJv52hEkBC-x4v1WWu1KA0yukTqLhrkRm0mRHWFilLEpec10i9J5F8H_y2OJqSgIi283MLwIUMVAOi10JeBJFEXhholPRJfOhrK0qx1MNN6kT-L5O6fGSbakvn7nyMGmzgE-2wid3Ob8KHUJx-Jk4dSVxXNb-ayiEpJQMTc7Hui8YoQ/s1600/translations-import-export.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="621" data-original-width="1332" src="/assets/images/055/img_de06781517.png" /></a>
+    <h4>Steps to Export and Import Translations</h4>
+    <ol>
+        <li>Open Power Apps and navigate to Solutions</li>
+        <li>Open your target solution</li>
+        <li>Click on Translations</li>
+        <li>Select Export Translations</li>
+        <li>Download and extract the ZIP file</li>
+        <li>Open <i><b>CrmTranslations.xml</b></i> in Excel</li>
+        <li>Add translations for the required languages</li>
+        <li>Zip the files again and import them back</li>
+    </ol>
+    <p>Once imported, Dynamics 365 automatically displays translated labels based on the user’s selected
+        language.</p>
+    <p><b>Important Note:</b> This approach works only for metadata. It does not translate JavaScript alerts,
+        HTML content,
+        or other web resources.</p>
+    <p>For the detailed information, you can check this <a href="https://carldesouza.com/translating-renaming-dynamics-365-artifacts-into-other-languages/" target="_blank">blog</a> from Carl de Souza</p>
+</section>
+<section id="webResourceWay">
+    <h3>Web Resource Way:</h3>
+    <p>Web resources such as:</p>
+    <ul>
+        <li>JavaScript alert messages</li>
+        <li>Form notifications</li>
+        <li>Custom HTML pages</li>
+    </ul>
+    <p>are not covered by the translation XML file. To localize these, we need to use one of the following
+        approaches.</p>
+    <ul>
+        <li>Custom JavaScript Helper Method</li>
+        <li>RESX Web Resource Method <i>(Recommended)</i></li>
+    </ul>
+    <h4>Custom Function Way</h4>
+    <p>This approach is useful when you want quick control over translations using JavaScript. The idea is
+        simple:</p>
+    <ul>
+        <li>Create a helper JavaScript file</li>
+        <li>Store translations per language (LCID)</li>
+        <li>Detect the user’s language at runtime</li>
+    </ul>
+    <p>Below is the code for <i>translation-helper.js</i></p>
+    <script src="https://gist.github.com/tamilarasu-arunachalam/ba726f1411108c761c0de7e4a1622da5.js?file=translation-helper.js"></script>
+    <p>Below is the code for <i>showAlerts.js</i> with custom helper method</p>
+    <script src="https://gist.github.com/tamilarasu-arunachalam/ba726f1411108c761c0de7e4a1622da5.js?file=showAlerts.js"></script>
+    <p>Make sure the helper script is added as a dependency to your main JavaScript web resource.</p>
+    <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6SDkBTfk743SFvDqLirkBbiflDZktAjbifTS3-51xNf-5s91cHkHLZVP29l8XhRy9jrdD5bCtpA9wCOanIAAhSBwjTPWDVIGoK_iZtEHDptj4PWzHGfsuWTq5Gxhasn0dCGpCXTzrbjteGpZHUFLjWzAun92yvrSPQDSdswgKIDoOT4Ff5CkkjCKG0nk/s1600/added-dependency.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="378" data-original-width="858" src="/assets/images/055/img_5227f06c4b.png" /></a>
+    <p>After saving and publishing, I've added the function to the on-save event of the appointment table. For
+        the demonstration, i have opened a record and saved it again it is showing the below alert.</p>
+    <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyF_4YK7b3j46YsElpZWFMLVI3XBWxiKrvINGZYnu8Iwf9eheUSP4psV1_MU58VxgQI2Dvjxq9ogG_uFNVOJov4OIg2VTZLSxiNi6ayp06WWthwinUPr1IyR1Yc751lBh1ZPCELbUTrw_1tYS5Bio4OeJYQECUtZceNEaGz3QhebYGrCkvLafAq6_FW2M/s1600/simple-alert-english.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="462" data-original-width="1500" src="/assets/images/055/img_19be20a98b.png" /></a>
+    <p>Then I will change the language by following the below steps.</p>
+    <ul>
+        <li>navigating to the Settings Icon(Gear Icon on Top navigation bar)</li>
+      <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEin0cb4ERCtdgqszURQlO6jwsRVISLnM2GpkunJeDeTNlQcPsY7wExflfKmWBrgFiG8Ako24q5GJ8CnzK2CwE_LKEWCrQrOXHxUSFivb8CkAeFxLkG6o4r2qou0kdrB_cySsgzK1sSg6VM9kyPOjiFI3XbNR4jYAQUmPC1qzsJRJPH5BEnaFlMY1xEXsfw/s1600/personalization-settings.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="1014" data-original-width="483" src="/assets/images/055/img_7faaae9da2.png" /></a></div>
+        <li>Select Personalization Settings from the pane</li>
+      <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhSAnJivnlP1AVhw-AVI47_zzo-K1Pbqwk6Y28WUq0gOUDfuSSjmaBl2izuWTfmiSbsEzOYUKFNpVXUgWRJci-lYqDAKu4VBmzkUJLB0bHBoYfEX8rcWfDPR6RoHzXqj_qEf0cob9W7Ns1-64FcHzjXqj3knaqyyIoS8mIVlGubLgvDJ9VF70qTvbnVjIA/s1600/change-lang-to-arabic.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="323" data-original-width="1074" src="/assets/images/055/img_41646a51c6.png" /></a></div>
+        <li>Open the Languages tab and change the language</li>
+    </ul>
+    <p>Then you'll notice the application language is changed. Just navigate to appointments, open and save any
+        record you'll see the alert in the selected language with the text we have added in the helper script.
+        Please refer the below image for that
+    </p>
+    <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGrpD0VigbzmRq1MWTCNQFOCzlwhqqKMzn_fB_Sn3J8YpNMHlAT9dEgpCCq7tIBqzExycORpTC1GxnDFVJmYLI6HM5Vk1eIxY3-gBG9qitSL9DF8UBDz9lBloq5OPsfPvG9D4XXDyMJAjherwmKCzNgNXjCvvkQ-yY4vuVgQcojv0HN3bIqlNy0xv5Jks/s1600/alert-changed-to-arabic.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="651" data-original-width="1754" src="/assets/images/055/img_ecf5f44b4f.png" /></a></div>
+    <h4>2. RESX Way</h4>
+    <p>This is the cleanest and most scalable approach and is recommended by Microsoft for translating web
+        resources.</p>
+    <b>Why RESX Files?</b>
+    <ul>
+        <li>Native support in Dynamics 365</li>
+        <li>Automatic language resolution</li>
+        <li>Cleaner JavaScript code</li>
+        <li>Easier maintenance for large applications</li>
+    </ul>
+    <p>
+        Note: I have followed the naming convention like <b><i>messages.[LCID].resx</i></b>. The LCID in the
+        file name allows Dynamics 365 to automatically load the correct language based on the user's settings.
+    </p>
+    <p>I have created resx
+        three files.These resx files can be edited with the resx editor extension for vs code, I have opened
+        these files and added the values. Refer to the below images</p>
+    <h4>English</h4>
+  <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqrJ9MzDofauITvy9ulFl4JN69Ep5hReSRBBd1WOpYkXfuIuUZbH9aEfN3bDR8Q9wuln83OlcMoa6J3iWlo6fm5hB4ysfk-WC8BHkXDhrhZ3v1e8-oPQCUxeQ11K4XftrZNk_e6I8af7ZEAFfyo1wdIQLqi9MyfnrPl0KtTKS__wgnwkevG0-KoykK5So/s1600/resx-english.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="317" data-original-width="1596" src="/assets/images/055/img_6034f9fbc3.png" /></a></div>
+    <h4>Arabic</h4>
+  <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWcCVH5_E4FxW6Z2_t4E7sULeTGQJdwOKLCapCjKkl9EJVtdkEUyMVizMUaA8T0hn_BCSchSIYxP90gdt46i_YAMebw_iSlbqoQhvHSGe2-CFuHWVgFzhG25TRnWfCUGz0kDOU3PAbPYM-Hi0JcSx2f_QUwHBPPMaPQ-1X3G26ezya1k3NcxCk78l3cyI/s1600/resx-arabic.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="312" data-original-width="1596" src="/assets/images/055/img_056f0ee44c.png" /></a></div>
+    <h4>Japanese</h4>
+  <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAk-3OmIDgOirms058s-gr1oWLbErzpmQRNZyh-ZzaUuph4UaHR9d5Z85Z81ZTnL0IuxWTZXoRTKRotPqPJwnjECiuA4Ur4cwj9PE4URcIdqs_ivd0VIDHb99JFa9OzSlIeWRbJ7-NBE-wvQ1bh9o1ck1b6sX-qCVzSl9gtm7DOBq_nHw4tby41UJmFoI/s1600/resx-japanese.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="321" data-original-width="1596" src="/assets/images/055/img_19ff35a140.png" /></a></div>
+    <p>After that I have added the below script to the on-save of the appointment main form</p>
+    <p>Below is the code for <i>showAlertsUsingRESX.js</i> to be added on the on-save of appointment main form</p>
+    <script src="https://gist.github.com/tamilarasu-arunachalam/ba726f1411108c761c0de7e4a1622da5.js?file=showAlertsUsingRESX.js"></script>
+    <p>Add all RESX files as dependencies to your JavaScript web resource and publish the changes.</p>
+  <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMxtMoe82L3FU5NFkM3gCHPnaOKsvx5k7VLhjrUZpDWC01qtsVHGYbbBYn1q0pWntyzqflPHj6j1P7YfYiW4td5QUKIc521kXrDPmLi3-4bpiGNOS1PIVWzDU7eBzpNreyRgUNo-vH-SRSJByBcZmUQc2_QYJybca5wixM9sTAKBqO-UVYyQxlEspq-xA/s1600/add-resx-dependencies.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="842" data-original-width="966" src="/assets/images/055/img_a908a06919.png" /></a></div>
+    <p>Note: We can add dependencies to the web resources by clicking on the View dependencies link and add the
+        dependencies. Refer to the below images</p>
+    <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkV6tLkMckqqXSPybCKDkK-AkCXuD3jj3k8R_R3p_YYy2sRwWKAEtHVvcCAUu_PzIXPSRc9e0DBeL6IqBVY2FNZNHOTi2BNe3eTYi04rKPbUp1U-PJhXKAyl0ut4OeIwrt4-j3vKlE4DgFnRA1vG42CQbcwnjpKENP5QNHnLk5EkA5DACllyL24HFf2ts/s1600/view-dependencies.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="1008" data-original-width="851" src="/assets/images/055/img_b22c803678.png" /></a></div>
+    <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjuwZGEEUhrjznYSPak6V23Hypz767mkuNx4nU38NMQYn2EZvRFp8KGPrDE1Zd408gpTm_zuImu9jdrZJucM7_DzzzRRl6DYrymaIR2LhOTe1_bFM7gCDjaLxq-bQBpKZzEFyw9ytSsTYUb_dsydrmAbtnFGhHRhJSUEFwcp_YGhNyjzV42lOzOdO62xCM/s1600/add-dependency-pane.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="1010" data-original-width="863" src="/assets/images/055/img_2f6afcff40.png" /></a></div>
+    <p>Save and Publish and check the form and change the language to Japanese and you'll get the alert like
+        below image as we have added the value in the <b><i>messages.1041.resx</i></b></p>
+    <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjoKVy4lkaGtU0xJPDVEC8F4CQxu7TbZWD3dDt5D85M_i32njdS6xbxpJuKUsUBV-baiWt18eV0zOQMzB6zXyVyiUoGf1yWjrmPMapVPISaE6MsY4bgDwOUU0t4H4Q7lJsQCLSh9ltKXFxpTqXJdWnffB07jOg1ZLtod9P5SnwSFBCgadTTohwiP_jzMfg/s1600/alert-changed-to-japanese.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="558" data-original-width="1743" src="/assets/images/055/img_7f52a4d10a.png" /></a></div>
+    <p>Now, when the user switches their application language, Dynamics 365 automatically picks the correct translation.
+    </p>
+</section>
+<section id="references">
+    <h3>References:</h3>
+    <ul>
+        <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-utility/getglobalcontext/usersettings" target="_blank">getGlobalContext.userSettings (Client API reference) in model-driven apps -
+                Power Apps | Microsoft Learn</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/openspecs/office_standards/ms-oe376/6c085406-a698-4e12-9d4d-c3b0ee3dbc4a" target="_blank">LCID (Locale ID) | Microsoft Learn</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/formcontext-ui/getformtype" target="_blank">getFormType (Client API reference) in model-driven apps - Power Apps | Microsoft
+                Learn</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-navigation/openalertdialog" target="_blank">openAlertDialog (Client API reference) in model-driven apps - Power Apps |
+                Microsoft Learn</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/resx-web-resources" target="_blank">String (RESX) web resources (model-driven apps) - Power Apps | Microsoft
+                Learn</a></li>
+    </ul><div style="text-align: center;">Have a great day!</div>
+</section>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</a>
+                                    </h6>
+                                    <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</a>
+                                    </h6>
+                                    <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html"
+                                            class="text-decoration-none text-dark hover-primary">Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</a>
+                                    </h6>
+                                    <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Translate Metadata and Web Resources in Dynamics 365 CE",
+  "image": "",
+  "datePublished": "2025-12-21T23:11:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Server Logic in Power Pages Explained with Real Time API Example | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Server Logic in Power Pages Explained with Real Time API Example" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview Why server logic? Configure Server Logic Set up Server Logic My Thoughts References Overview: Power Pages is commonly used to build external websites on top of Dataverse. While it works well for forms, lists, and UI customization, handling sensitive logic and third-party APIs has always been a challenge. Most implementations rely on client-side JavaScript, which means API URLs, keys, and request details can be exposed in the browser. This becomes risky, especially for public-facing sites. Server Logic in Power Pages helps solve this problem by allowing developers to run business logic on the server. Instead of calling external APIs…" />
+<meta name="twitter:description" property="og:description" content="Overview Why server logic? Configure Server Logic Set up Server Logic My Thoughts References Overview: Power Pages is commonly used to build external websites on top of Dataverse. While it works well for forms, lists, and UI customization, handling sensitive logic and third-party APIs has always been a challenge. Most implementations rely on client-side JavaScript, which means API URLs, keys, and request details can be exposed in the browser. This becomes risky, especially for public-facing sites. Server Logic in Power Pages helps solve this problem by allowing developers to run business logic on the server. Instead of calling external APIs…" />
+<link rel="canonical" href="http://localhost:4000/server-logic-in-power-pages-explained-with-real-time-api-example.html" />
+<meta property="og:url" content="http://localhost:4000/server-logic-in-power-pages-explained-with-real-time-api-example.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-01-04T23:11:00+05:30" />
+<meta property="article:modified_time" content="2026-01-04T23:11:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Server Logic in Power Pages Explained with Real Time API Example" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-01-04T23:11:00+05:30","datePublished":"2026-01-04T23:11:00+05:30","description":"Overview Why server logic? Configure Server Logic Set up Server Logic My Thoughts References Overview: Power Pages is commonly used to build external websites on top of Dataverse. While it works well for forms, lists, and UI customization, handling sensitive logic and third-party APIs has always been a challenge. Most implementations rely on client-side JavaScript, which means API URLs, keys, and request details can be exposed in the browser. This becomes risky, especially for public-facing sites. Server Logic in Power Pages helps solve this problem by allowing developers to run business logic on the server. Instead of calling external APIs…","headline":"Server Logic in Power Pages Explained with Real Time API Example","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/server-logic-in-power-pages-explained-with-real-time-api-example.html"},"url":"http://localhost:4000/server-logic-in-power-pages-explained-with-real-time-api-example.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border">Power Pages</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Server Logic in Power Pages Explained with Real Time API Example</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">January 04, 2026 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <div class="separator" style="clear: both;">
+  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA5wGfzUqspq_Q6HiNxK11WkMlfzbukX-q-JpzIqUUnSFgNhQqlGJ13Z4_WGYr58JmpbTdF364wCfOOZm0nw99NeXv19bf2GlWUS86fH2dwLxq2P2pr5fMBmQ5JC-Ul01h1EtGgNJBO6hia9xxzJZ9-gJE5UuV53fnMNR9QWrEfwOp8GjYmP3-UNCeHzw/s1600/spiderman-salute.gif" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="228" data-original-width="498" src="/assets/images/057/img_7f5da6a23f.gif" /></a>
+</div>
+<ul>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#whyServerLogic">Why server logic?</a></li>
+  <li><a href="#configureServerLogic">Configure Server Logic</a></li>
+  <li><a href="#setupServerLogic">Set up Server Logic</a></li>
+  <li><a href="#myThoughts">My Thoughts</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+<section id="overview">
+  <h3>Overview:</h3>
+  <p>
+    Power Pages is commonly used to build external websites on top of Dataverse.
+    While it works well for forms, lists, and UI customization, handling
+    sensitive logic and third-party APIs has always been a challenge.
+  </p>
+  <p>
+    Most implementations rely on client-side JavaScript, which means API URLs,
+    keys, and request details can be exposed in the browser. This becomes risky,
+    especially for public-facing sites.
+  </p>
+  <p>
+    Server Logic in Power Pages helps solve this problem by allowing developers
+    to run business logic on the server. Instead of calling external APIs
+    directly from the browser, the site communicates with secure server-side
+    logic that controls the request and response. This makes integrations safer,
+    cleaner, and easier to manage.
+  </p>
+</section>
+<section id="whyServerLogic">
+  <h3>Why server logic?</h3>
+  <p>
+    Server Logic is designed for scenarios where client side JavaScript is not
+    sufficient or safe. Imagine an online store built on Power Pages that
+    handles discount calculation, inventory validation, or payment verification.
+    If these operations are implemented on the client side, users can inspect
+    network calls and manipulate requests. Server Logic allows these operations
+    to run securely on the server with proper permissions. The client only
+    receives the required response, not the implementation details.
+  </p>
+  <p>This makes Server Logic ideal for</p>
+  <ul>
+    <li>Calling paid or sensitive external APIs</li>
+    <li>Handling authentication tokens and secrets</li>
+    <li>Implementing business validations</li>
+    <li>Orchestrating complex workflows</li>
+    <li>Integrating ERP or CRM systems securely</li>
+  </ul>
+</section>
+<section id="configureServerLogic">
+  <h3>Configure Server Logic</h3>
+  <p>
+    Before using Server Logic, it must be enabled in Power Pages. The
+    configuration is done from Power Pages Management app. To-do so, follow the
+    below steps
+  </p>
+  <ul>
+    <li>Open Power Pages Management</li>
+    <li>Navigate to Site Settings</li>
+    <li>Enable Server Logic feature</li>
+  </ul>
+  <p>The site setting to be configured is in the below image.</p>
+  <div class="separator" style="clear: both;">
+    <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKVgSIeSfWtKrviRh5HQwbZm-uyVjBhNitEuKjdjm2nVe9p7snoO0BxmVhZ1iocqg7ggDNM3w8jxaR1OU-Mf7YEwaTO0kWA2vhxlnGfeFHn1dNMJLoW5-aExnye1O8jsrrK79ZIob5g5ttgun4TViROtvoKQDNeaT2qWZ7bOhe5b4Ds8bKgWa7vjmC-Fw/s1600/portal-mgt-configurations.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="444" data-original-width="873" src="/assets/images/057/img_64648c7b2a.png" /></a>
+  </div>
+  <p></p>
+  <p>
+    Server Logic uses server side JavaScript that follows the ECMAScript 2023
+    standard. However, it does not support browser specific objects such as
+    window, document, fetch, or XMLHttpRequest. Instead, Power Pages provides
+    server specific objects such as Server.Connector.HttpClient, Server.Context,
+    and Server.Logger.
+  </p>
+</section>
+<section id="setupServerLogic">
+  <h3>Set up Server Logic</h3>
+  <p>Follow these steps to create a new Server Logic in Power Pages.</p>
+  <ul>
+    <li>
+      Navigate to
+      <a href="https://make.powerpages.com" target="_blank">make.powerpages.com</a>
+    </li>
+    <li>Select your Power Pages site.</li>
+    <li>Open Set up from the left navigation</li>
+    <div class="separator" style="clear: both;">
+      <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtXzIL8P004S9AGKkDhKHsFQI3E-uqfKmm6EjHvCy-AzurGDN9V7eK2cGwDpZit12jEeWZkyYnAb8_o4KDqJtqAypeTjtY79tkrGriBr_gCcZGX0UeL1fQdcGAAxJLSI7TUWRy3RkmtQVYkH47IsmGrDnxpSY3EF4zeOgGjwQb0xOKoEBGWQ87uuYzavY/s1600/set-up-server-logic.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="651" data-original-width="1882" src="/assets/images/057/img_3cb508b442.png" /></a>
+    </div>
+    <li>Under Integrations, select Server Logic</li>
+    <li>Click <strong>+ New Server Logic</strong>.</li>
+    <div class="separator" style="clear: both;">
+      <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNxLUS4gfpA8rlrrHlpHSf0SME6YohJQo9W-NcmOsVWH5zNpAQgPnr-feDo26oL771e60un0-qscBVaq88u9BaPxNIl-LPSs-vG2NgZKEKBj26Rznxoqoh-EJit0ZRVY77fclDnGWCt583GtLYrGuLJXF98cM1ofh2xx8UXLXru17bwf0v-kNfjnwQfgE/s1600/new-server-logic-1.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="1007" data-original-width="879" src="/assets/images/057/img_0939feb576.png" /></a>
+    </div>
+    <li>Provide the name, description, and permissions.</li>
+    <li>Click Add</li>
+    <div class="separator" style="clear: both;">
+      <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgf9kiHIr9drc9jXNNIalRZK4ytFr2GUoaa_uziXjSZbGDdSYB2iUpa6vRccmwdpP6leI8bEigD7wwCAJS9n_7FvzEOJa9gk1cZyFVf1utu8dlLAKQ2dHej7aeW7XUPhu8nhwddTkjqV1nKiwCiW1yzGJvKBbOwtHlOzCZt6T-JLYWqeFWvBgK5GWHjI5g/s1600/edit-with-vs-code.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="384" data-original-width="1334" src="/assets/images/057/img_8a9e07ee3c.png" /></a>
+    </div>
+    <li>
+      Once created, select the Server Logic and click Edit Code. This opens an
+      in browser VS Code editor.
+    </li>
+  </ul>
+  <p>Inside the editor</p>
+  <ul>
+    <li>Navigate to the serverlogics folder</li>
+    <li>Open the created server logic file</li>
+    <li>Modify or overwrite the default code</li>
+  </ul>
+</section>
+<section id="demonstration">
+  <h3>Demonstration</h3>
+  <p>
+    For the demonstration purpose, I will create a web page which will show the
+    current day weather for each hour by fetching the user latitude and
+    longitude. For that, I have used the
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition">Geolocation API</a>
+    for getting the latitude and longitude of the user and
+    <a href="https://open-meteo.com/en/docs" target="_blank">Open-Meteo API</a>
+    to get the weather data of the retrieved location. I have made the API call
+    inside the Server Logic and call the server logic in the web page. You can
+    find the code for the server logic below.
+    <script src="https://gist.github.com/tamilarasu-arunachalam/017ccd819f70b24ac0f96176b3d641cc.js?file=getWeather-serverLogic.js"></script>
+  </p>
+  <p>
+    For me i have a separate page for the demonstration of this use-case which
+    is under <strong>Weather</strong> folder in VS Code. You can refer the below
+    code for calling the server logic inside a web page.
+  </p>
+  <script src="https://gist.github.com/tamilarasu-arunachalam/017ccd819f70b24ac0f96176b3d641cc.js?file=weather-app.html"></script>
+  <p>As I am based out of Chennai, the co-ordinates are in the below image</p>
+  <div class="separator" style="clear: both;">
+    <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJ7w4VIFea5nJxjmrhdY4xmDyZxfHhlybJrIabimRiuobPqIqVoE55-wIFxxdvCUcqLGpN5KOBxFN0bZluhRlf_KOyjbOjaehFz0qdZX9dE6Rj5fTVKlLoXggNG4ehDFN735T7PfVf_uDvFKVA920ZcLpF0f_UI63R6rbpqs-8ZpOzw5AIOi2Bn9cvCZY/s1600/chennai-coordinates.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="435" data-original-width="1017" src="/assets/images/057/img_dc904356b0.png" /></a>
+  </div>
+  <p>And the resultant page is like the below screenshot</p>
+  <div class="separator" style="clear: both;">
+    <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC3cs0sYbdSwE4DrafpWXAdeJiqeksOtdM4tGsB7Leo2clemvrudx5uk6nzvvGNfb6h5pTJFAApwAmB_yoqc5kCPpQ6_0KlCoBjlRvRFgVbcAGFtUlv-VkHj0YYakCoXURYEDc_fv4tvSbXo_TnxmvMJznBQcKftS9qk-gsNFrwHAfzE6Jg6Q2LFdY8lc/s1600/final-web-page.png" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="897" data-original-width="1875" src="/assets/images/057/img_4fea17944e.png" /></a>
+  </div>
+</section>
+<section id="myThoughts">
+  <h3>My Thoughts</h3>
+  <p>
+    After working with Server Logic, it clearly feels like a much-needed
+    improvement for Power Pages. It removes the fear of exposing sensitive data
+    such as client secrets, tokens, or transaction details.
+  </p>
+  <p>
+    This is especially useful for scenarios like payment integrations, ERP
+    connections, or secure CRM data access. Even though the feature is still in
+    preview, it already adds strong value. With future updates like better
+    debugging tools, Liquid support, and easier testing, Server Logic has the
+    potential to become a core building block for secure Power Pages solutions.
+  </p>
+</section>
+<section id="references">
+  <h3>References:</h3>
+  <ul>
+    <li>
+      <a href="https://learn.microsoft.com/en-us/power-pages/configure/server-logic-overview" target="_blank">Power Pages server logic overview | Microsoft Learn</a>
+    </li>
+    <li>
+      <a href="https://learn.microsoft.com/en-us/power-pages/configure/author-server-logic" target="_blank">Create and manage server logic in Power Pages | Microsoft Learn</a>
+    </li>
+    <li>
+      <a href="https://learn.microsoft.com/en-us/power-pages/configure/server-logic-external-services" target="_blank">Interact with external services using server logic | Microsoft Learn</a>
+    </li>
+    <li>
+      <a href="https://learn.microsoft.com/en-us/power-pages/configure/server-objects" target="_blank">Access user and website details with server objects | Microsoft
+        Learn</a>
+    </li>
+    <li>
+      <a href="https://open-meteo.com/en/docs" target="_blank">Docs | Open-Meteo.com</a>
+    </li>
+    <li>
+      <a href="https://api.open-meteo.com/v1/forecast?latitude=13.08&amp;longitude=80.27&amp;hourly=temperature_2m&amp;forecast_days=1" target="_blank">Open-Meteo API</a>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition" target="_blank">Geolocation: getCurrentPosition() method - Web APIs | MDN Learn</a>
+    </li>
+  </ul>
+</section>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/068/img_ceb5e7a952.gif" alt="How I Built a Stunning Admin Dashboard in Power Pages?" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Pages</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html"
+                                            class="text-decoration-none text-dark hover-primary">How I Built a Stunning Admin Dashboard in Power Pages?</a>
+                                    </h6>
+                                    <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-add-a-favicon-in-power-pages.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Pages</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-add-a-favicon-in-power-pages.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Add a Favicon in Power Pages?</a>
+                                    </h6>
+                                    <a href="/how-to-add-a-favicon-in-power-pages.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Pages</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Customize the Sign in page in Power Pages Easily</a>
+                                    </h6>
+                                    <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Server Logic in Power Pages Explained with Real Time API Example",
+  "image": "",
+  "datePublished": "2026-01-04T23:11:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

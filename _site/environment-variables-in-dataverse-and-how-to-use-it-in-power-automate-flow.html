@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Environment Variables in Dataverse and How to use it in Power Automate Flow | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Environment Variables in Dataverse and How to use it in Power Automate Flow" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="High readability tech reviews and affiliate recommendations." />
+<meta name="twitter:description" property="og:description" content="High readability tech reviews and affiliate recommendations." />
+<link rel="canonical" href="http://localhost:4000/environment-variables-in-dataverse-and-how-to-use-it-in-power-automate-flow.html" />
+<meta property="og:url" content="http://localhost:4000/environment-variables-in-dataverse-and-how-to-use-it-in-power-automate-flow.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="http://localhost:4000/assets/images/013/img_ace1b240a0.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-09T13:16:00+05:30" />
+<meta property="article:modified_time" content="2023-04-09T13:16:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/013/img_ace1b240a0.png" />
+<meta name="twitter:title" content="Environment Variables in Dataverse and How to use it in Power Automate Flow" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-04-09T13:16:00+05:30","datePublished":"2023-04-09T13:16:00+05:30","description":"High readability tech reviews and affiliate recommendations.","headline":"Environment Variables in Dataverse and How to use it in Power Automate Flow","image":"http://localhost:4000/assets/images/013/img_ace1b240a0.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/environment-variables-in-dataverse-and-how-to-use-it-in-power-automate-flow.html"},"url":"http://localhost:4000/environment-variables-in-dataverse-and-how-to-use-it-in-power-automate-flow.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="environment variables in dataverse, use environment variables in power automate, environment variables in power automate, environment variables in flows, dataverse environment variables">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border">Power Automate</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Environment Variables in Dataverse and How to use it in Power Automate Flow</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">April 09, 2023 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/013/img_ace1b240a0.png" alt="Environment Variables in Dataverse and How to use it in Power Automate Flow" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+
+
+
+                </div>
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <p><img src="/assets/images/013/img_ace1b240a0.png" alt="" /></p>
+
+<ul>
+  <li><a href="#environment_variables">Environment Variables</a></li>
+  <li><a href="#features">Features of Environment Variables</a></li>
+  <li><a href="#create_a_new_env_var">Create a new Environment Variable</a></li>
+  <li><a href="#use_in_power_automate">Use Environment Variable in Power Automate Flow</a></li>
+  <li><a href="#alm_of_env_var">ALM of Environment Variables</a></li>
+  <li><a href="#limitations">Limitations</a></li>
+  <li><a href="#make_use">Make use of the most in Environment Variables</a></li>
+</ul>
+
+<h2 id="environment-variables">Environment variables</h2>
+
+<p>     Environment variables in Dataverse allow you to store the connection reference or keys which are need to be used inside the environment. They are more like a global variable which can be accessed with in the Power Platform Environment. We can make use of this to store the values and use it for Power Platform Customizations. We can use the environment variables in Canvas Apps, Model Driven Apps, and Power Automate. It allow you to modify the values while moving the solution to the another environment. These environment variables are really useful for avoiding the hardcode values for configuration data which needs to be changed during the ALM operations.</p>
+
+<p>    In Dataverse perspective the Environment Variable has two tables, Environment Variable Definition and Environment Variable Values. Environment Variable Definition table holds the definition, data type, name and some times default values(if it has). Environment variable value table has the current values that are used inside the current environment. Environment Variable Definition has <strong>1:N</strong> relationship with the Environment Variable Value table.</p>
+
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjsSL2_7rRESSy6pq18m3w3lv9e-0YHG6HesVKTBUa7uiwZ_XLDZDXQfS6626RJ3rifUh7nDc3UkPKzLT3Ty7sgd8Pa6gi0LByN-1HELp0zD1dpizb9Px7Kwn6YsfKfeZeEkCZbli7sp8Nn2nsNz4NyuIiXwDXrmirwnXCJxs6-Fh7QfC4nfmqCDyOk"><img src="/assets/images/013/img_8488326eea.png" alt="Environment Variables in Dataverse and Using it in Power Automate" /></a></p>
+
+<h2 id="features-of-environment-variables">Features of Environment Variables</h2>
+
+<ul>
+  <li>One Environment Variable can be used across multiple solution components. </li>
+  <li>Six data types are supported by Environment Variable which are Decimal Number, Text, JSON, Yes/No, Secret and Data source</li>
+  <li>
+    <p>There are two types of values which are</p>
+  </li>
+  <li>Default Value</li>
+  <li>Current Value</li>
+</ul>
+
+<h4 id="default-value">Default value:</h4>
+
+<ul>
+  <li>It is part of the environment variable definition table. It is not a required if it has current values.</li>
+  <li>If the value should be the same for all the environments, we may use default values. Because we can’t able to modify it in the target environment.</li>
+</ul>
+
+<h4 id="current-value-">Current Value :</h4>
+
+<ul>
+  <li>It is part of environment variable value table. It will override the default value. It is used as a value even the default value contains a value.</li>
+  <li>Remove the current value from the solution, if you don’t want to use the value in the target environment.</li>
+</ul>
+
+<h2 id="create-a-new-environment-variable">Create a new Environment Variable</h2>
+
+<ul>
+  <li>Go to the solution, where you want to create a new environment variable.</li>
+</ul>
+
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEho2mjSiNpfL8Ldk-qnMFna1u4ZFD0Nwxn0Dyd12B2anPpDSik_4X7Lowi_AkO5Q1efQaPixF-SKltkzm7FwuIeD9m0NCIvzskYoGT1OJF5KQlHvhZY0uk0yP-WQD6LMB8ZU_-Vx7SuoXIAYA7R8vGCeOUiP5Qjfb17JJ7nlzX9JGQ3I5SK-yRjlIDr"><img src="/assets/images/013/img_e3c5517b52.png" alt="Environment Variables in Dataverse and Using it in Power Automate" /></a></p>
+
+<ul>
+  <li>Click on + New → More → Environment Variable. A quick create form pops from the right.</li>
+  <li>Add Display Name, Name, Data Type and Value</li>
+</ul>
+
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEimOgsHhGCWc7JcmaCP5-Nzju9Rpcz3obTTf2mjB8zJlaFJ7Xzus3vU4dgJdjEiG-VmHpWfm3NM5MpgD02O6TuPJeQ-4mHDit6yYC4ZZt5YtwIhlNCwD4qn2lCa8jyzXXTaS7Z4yCjWp4f2EaQGKjjwM6gioep39t_jJfWSDhuAp7UoTVitEdMiJ0pM"><img src="/assets/images/013/img_e93eb13f3f.png" alt="Environment Variables in Dataverse and Using it in Power Automate" /></a></p>
+
+<ul>
+  <li>Click on save and publish</li>
+  <li>I have created four environment variables which are tenant id, client id, client secret and scope. All are text data types.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable Name</th>
+      <th>Variable Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tenant_id</td>
+      <td>tenant id of your org</td>
+    </tr>
+    <tr>
+      <td>client_id</td>
+      <td>Client Id of your app</td>
+    </tr>
+    <tr>
+      <td>client_secret</td>
+      <td>Client Secret of your app</td>
+    </tr>
+    <tr>
+      <td>scope</td>
+      <td>https://graph.microsoft.com/.default</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>I have get the values from my Azure AD App and stored it in the Environment Variables for using it inside Power Platform.</p>
+  </li>
+  <li>
+    <p><strong><em>Note:</em></strong> You may use secret data type for client secret, for that you have to configure Azure Key Vault. As it is a learning purpose i have used text data type</p>
+  </li>
+</ul>
+
+<p><a href="/assets/images/013/img_f7f69f928b.png"><img src="/assets/images/013/img_f7f69f928b.png" alt="Environment Variables in Dataverse and Using it in Power Automate" /></a></p>
+
+<h2 id="use-environment-variable-in-power-automate-flow">Use Environment Variable in Power Automate Flow</h2>
+
+<ul>
+  <li>Create a new Power Automate Instant flow in a solution by navigating to +New → Automation → Cloud flow → Automated.</li>
+</ul>
+
+<p><a href="/assets/images/013/img_ab2639a42a.png"><img src="/assets/images/013/img_ab2639a42a.png" alt="Environment Variables in Dataverse and Using it in Power Automate" /></a></p>
+
+<ul>
+  <li>Select <strong>Manually trigger a flow</strong> as a trigger and give a meaningful name to the flow.</li>
+  <li>Click on Create and it will move the flow editor</li>
+</ul>
+
+<p><a href="/assets/images/013/img_c119bba742.png"><img src="/assets/images/013/img_c119bba742.png" alt="Environment Variables in Dataverse and Using it in Power Automate" /></a></p>
+
+<ul>
+  <li>Add a step below the trigger and search for http and select the HTTP(premium) Connector.</li>
+</ul>
+
+<p><a href="/assets/images/013/img_756d82cb36.png"><img src="/assets/images/013/img_756d82cb36.png" alt="Environment Variables in Dataverse and Using it in Power Automate" /></a></p>
+
+<ul>
+  <li>In the <strong>HTTP</strong> Action, Set the http method as <strong>POST</strong> and enter the uri as https://login.microsoftonline.com/<em>{tenant_id}</em>/oauth2/v2.0/token, replace <strong>{tenant_id}</strong> in the uri with the environment variable(Tenant ID).</li>
+  <li>In Headers, set <strong>Content-Type</strong> as key and <strong>application/x-www-form-urlencoded</strong> as value</li>
+  <li>In Body, enter grant_type=client_credentials&amp;client_id=<em>{client_id}</em>&amp;client_secret=<em>{client_secret}</em>&amp;scope=<em>{scope}</em>, replace client_id, client_secret and scope with the environment variables.</li>
+  <li>The HTTP step should appear like the below screenshot</li>
+</ul>
+
+<p><a href="/assets/images/013/img_b286c98e64.png"><img src="/assets/images/013/img_b286c98e64.png" alt="Environment Variables in Dataverse and Using it in Power Automate" /></a></p>
+
+<ul>
+  <li>Save and Run the flow.</li>
+</ul>
+
+<p><a href="/assets/images/013/img_05c68964dd.png"><img src="/assets/images/013/img_05c68964dd.png" alt="Environment Variables in Dataverse and Using it in Power Automate" /></a></p>
+
+<ul>
+  <li>It ran successfully with no errors</li>
+</ul>
+
+<h2 id="alm-of-environment-variables">ALM of Environment Variables</h2>
+
+<p>    The environment variables from the solution can be exported and imported across environments. It is still editable if we export and import as unmanaged solution. But in real time scenarios unmanaged solutions are not much preferred to get imported to the environment in terms of ALM. </p>
+
+<p><a href="/assets/images/013/img_b79ec91069.png"><img src="/assets/images/013/img_b79ec91069.png" alt="Environment Variables in Dataverse and Using it in Power Automate" /></a></p>
+
+<p>    To tackle this, we have to remove(not delete) the current value for all the environment variables and export the solution it as managed. While importing the solution to the target environment, a prompt open up and asking for the values for that environment variables.</p>
+
+<p><a href="/assets/images/013/img_85d09b07f0.png"><img src="/assets/images/013/img_85d09b07f0.png" alt="Environment Variables in Dataverse and Using it in Power Automate" /></a></p>
+
+<p>Enter the values to the fields in the prompt and click on import to import the solution. After importing, the flows will work on the new values entered in the prompt. </p>
+
+<h2 id="limitations">Limitations</h2>
+
+<p>    If the flows are using the environment variable values, but the value gets changed from the solution. But the flow still uses the previous value. The flow need to be turned on and off to catch up the modified value.</p>
+
+<h2 id="make-use-of-the-most-in-environment-variables">Make use of the most in Environment Variables</h2>
+
+<ul>
+  <li>Prefer to use current values than default values. As of now we can modify the values of the environment variables from the table or in Advanced find, even if it is a managed solution.</li>
+  <li>We can use the environment variables in Model Driven App using JavaScript or Plugin.</li>
+  <li>Better avoid hardcoding of some configuration values and connection keys in the code or in flows. Rather use Environment variables for those values.</li>
+</ul>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?</a>
+                                    </h6>
+                                    <a href="/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?</a>
+                                    </h6>
+                                    <a href="/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/what-is-a-retry-policy-in-power-automate-and-why-it-matters.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/what-is-a-retry-policy-in-power-automate-and-why-it-matters.html"
+                                            class="text-decoration-none text-dark hover-primary">What Is a Retry Policy in Power Automate (And Why It Matters)?</a>
+                                    </h6>
+                                    <a href="/what-is-a-retry-policy-in-power-automate-and-why-it-matters.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Environment Variables in Dataverse and How to use it in Power Automate Flow",
+  "image": "http://localhost:4000/assets/images/013/img_ace1b240a0.png",
+  "datePublished": "2023-04-09T13:16:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

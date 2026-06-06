@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps! | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I recently worked on something where I had to use Advanced Find or filter views every time while exporting weekly or monthly reports. Although we can create personal views to make the data sorted, I was curious to know how the filtered data actually gets exported. So, I checked the DevTools and identified the API endpoint and payload used during the export process. Interestingly, I discovered that we can even tweak the FetchXML. For an easy implementation, I tried this using a simple instant flow in Power Automate. I added an Invoke an HTTP request action and configured a POST…" />
+<meta name="twitter:description" property="og:description" content="I recently worked on something where I had to use Advanced Find or filter views every time while exporting weekly or monthly reports. Although we can create personal views to make the data sorted, I was curious to know how the filtered data actually gets exported. So, I checked the DevTools and identified the API endpoint and payload used during the export process. Interestingly, I discovered that we can even tweak the FetchXML. For an easy implementation, I tried this using a simple instant flow in Power Automate. I added an Invoke an HTTP request action and configured a POST…" />
+<link rel="canonical" href="http://localhost:4000/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" />
+<meta property="og:url" content="http://localhost:4000/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-05-17T23:11:00+05:30" />
+<meta property="article:modified_time" content="2026-05-17T23:11:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-05-17T23:11:00+05:30","datePublished":"2026-05-17T23:11:00+05:30","description":"I recently worked on something where I had to use Advanced Find or filter views every time while exporting weekly or monthly reports. Although we can create personal views to make the data sorted, I was curious to know how the filtered data actually gets exported. So, I checked the DevTools and identified the API endpoint and payload used during the export process. Interestingly, I discovered that we can even tweak the FetchXML. For an easy implementation, I tried this using a simple instant flow in Power Automate. I added an Invoke an HTTP request action and configured a POST…","headline":"Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html"},"url":"http://localhost:4000/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border">Dynamics 365 CE</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">May 17, 2026 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNXc2V8ao6n6KFHhyphenhyphen1l0mwpGsn1Km03uTzV904GjkgoICu3W618I-LhgO218ZBCk3OHuL4NdkLQNbwGt0Ebylqysruo7r_FpV6BFm5dXC9DCeqZuKj_Ggt20FcxSg3pGAp9BDMMJ2Z5K_m52NBV2eAXRjqFwk0p9_wAZvYic2FDuWyNpbwkki7TfCWdaQ/s480/1000115107.gif" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="270" data-original-width="480" src="/assets/images/067/img_81152b8845.gif" /></a></div>
+<p class="graf graf--p" name="f526" style="text-align: justify;">
+  I recently worked on something where I had to use
+  <strong class="markup--strong markup--p-strong">Advanced Find</strong> or
+  filter views every time while exporting weekly or monthly reports. Although we
+  can create
+  <strong class="markup--strong markup--p-strong">personal views</strong> to
+  make the data sorted, I was curious to know how the filtered data actually
+  gets exported.
+</p>
+<p class="graf graf--p" name="c079">
+  So, I checked the
+  <strong class="markup--strong markup--p-strong">DevTools</strong> and
+  identified the API endpoint and payload used during the export process.
+  Interestingly, I discovered that we can even tweak the
+  <strong class="markup--strong markup--p-strong">FetchXML</strong>.
+</p>
+<p class="graf graf--p" name="c079"></p>
+<div class="separator" style="clear: both; text-align: center;">
+  <a href="https://blogger.googleusercontent.com/img/a/AVvXsEip-EueoO7JNWBauLWe4tzio7hSM_sKeDdJvHfXIomSktXToUYSaqnBbDwQlO_Ufw9OlepQIlnbe-4sMOY3Viq0w49lNedhex8pN3cuj0mtR26RrJf4Qq4zjbDMBfZrBR0jxNnsLXnBUsemhrJvHMLzgCgnDkbke9ELa2UFLpXO4ZuUTf4FGcVIEZCjfx4" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="559" data-original-width="1000" src="/assets/images/067/img_72963cac3a.png" /></a>
+</div>
+<p><br /></p>
+<p></p>
+<p class="graf graf--p" name="f1a5" style="text-align: justify;">
+  For an easy implementation, I tried this using a simple
+  <strong class="markup--strong markup--p-strong">instant flow in Power Automate</strong>. I added an
+  <strong class="markup--strong markup--p-strong">Invoke an HTTP request</strong>
+  action and configured a POST call to the
+  endpoint:&nbsp;</p>
+<pre><code>https://yourorg.crm8.dynamics.com/api/data/v9.0/ExportToExcel</code></pre>
+<p></p>
+<p class="graf graf--p" name="f1a5"></p>
+<div class="separator" style="clear: both; text-align: center;">
+  <a href="https://blogger.googleusercontent.com/img/a/AVvXsEi8zVM-mRXInNL_Kb9GSNlbbLntlVLZKIznibItoSmJJIAzCciYWQF_wkfDWTeSMIKyF6AFiYIQSbKXVQXQpURQ10ugCRH3-II3lkTrz5D9LaS07Xd3MmN4SExEfLkbSiUGyrpcG3mV_0xOgVi3ybiKjzaN1FN_birSrGu2KMUnhy6gfSb7ad5AxL5HcMQ" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="878" data-original-width="1000" src="/assets/images/067/img_2d4666b67e.png" /></a>
+</div>
+<p></p>
+<p class="graf graf--p" name="2581" style="text-align: justify;">
+  Using the same headers and payload found in DevTools, I ran the flow and it
+  worked as expected. The response contained a
+  <strong class="markup--strong markup--p-strong">Base64 value</strong> of the
+  exported Excel file. You can refer to the screenshot below.
+</p>
+<p class="graf graf--p" name="2581"></p>
+<div class="separator" style="clear: both; text-align: center;">
+  <a href="https://blogger.googleusercontent.com/img/a/AVvXsEgH2ktlfiBPA9JgmvAo9_Tgo-eYw_co1NRnR0jwHJy60qf3ZYN3JBHOSpC3Wd6P4fIadNFTKp9eDvdUsTZbiHkvcoYH5psWUY_CGZpHJ0ERv6m0vW5UZZ7p3eLYwYyocSk8kzhMJ9pm4GRAfrLMJexS1LeZA5QZacf5cgQZXt6At8RQdTeuany4Z4U1b0o" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="881" data-original-width="839" src="/assets/images/067/img_283ed78e5f.png" /></a>
+</div>
+<p></p>
+<p class="graf graf--p" name="9219" style="text-align: justify;">
+  After this successful test, I moved on to the actual requirement. The goal was
+  to generate
+  <strong class="markup--strong markup--p-strong">weekly and monthly reports on a button click</strong>. To achieve this, I created two buttons -
+  <strong class="markup--strong markup--p-strong">Weekly</strong> and
+  <strong class="markup--strong markup--p-strong">Monthly - </strong>inside a
+  dropdown command menu.
+</p>
+<p class="graf graf--p" name="1a3b" style="text-align: justify;">
+  Next, I created a
+  <strong class="markup--strong markup--p-strong">JavaScript web resource</strong>
+  named
+  <code><em>generateExcelReport.js</em></code>.<span style="text-align: left;"> I added a function to both buttons and passed a string parameter to identify the report type. I invoked a bound action called </span><strong class="markup--strong markup--p-strong" style="text-align: left;">ExportToExcel</strong><span style="text-align: left;"> (but you can’t find it in Power Automate - I tried). We need to pass the Fetch XML and Layout XML as parameters for the action. I tweaked the Fetch XML based on the button that was clicked. In the response, you receive the Excel file encoded as base64, which I decoded to binary and downloaded using the script. I tested it, and it worked as expected. You can find the script for this implementation below.</span></p>
+<blockquote class="graf graf--blockquote" name="3b5c"><strong><em>Note:</em></strong> This approach is not recommended by Microsoft, as it is not mentioned in their documentation.</blockquote>
+<p></p>
+<script src="https://gist.github.com/tamilarasu-arunachalam/9bfacef867090e6ba141082aa1559750.js"></script>
+
+<p class="graf graf--p" name="0ac9" style="text-align: justify;">
+  Refer to the GIF below for a demonstration of the custom button and how the
+  script works.
+</p>
+<div class="separator" style="clear: both; text-align: center;">
+ <p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbyhLbZCU1rB1u6C9Rint9xFiF3IEiYSB7OEmNqLMxwDsZEqd_YcF0UZG5vVVNhQwGoizeNYuBB3YpV4V6_CKujoz8ENA6pE8WiI10YA8W14yfDY0pzyvZKvQn8OFUm9YLDgCQ7OpSvVQGINE4Er0X3nmSofW0lEQkHsIhAfHe8Y66xmvVgBc45R57XmM/s1920/1_C5zmYIXuEeonVcfrhaaY-Q.gif" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1080" data-original-width="1920" src="/assets/images/067/img_b4e61bca01.gif" /></a></p>
+</div>
+<h4 class="graf graf--h4" name="44ce">References:</h4>
+<ul class="postList">
+  <li class="graf graf--li" name="910a">
+    <a class="markup--anchor markup--li-anchor" data-href="https://butenko.pro/2024/11/23/code-to-excel-export-like-a-pro/" href="https://butenko.pro/2024/11/23/code-to-excel-export-like-a-pro/" rel="noopener" target="_blank">Code to Excel: Export Like a Pro! — Andrew Butenko’s Blog</a>
+  </li>
+  <li class="graf graf--li" name="be11">
+    <a class="markup--anchor markup--li-anchor" data-href="https://ludovicperrichon.com/export-to-excel-dataverse-table-with-power-automate/" href="https://ludovicperrichon.com/export-to-excel-dataverse-table-with-power-automate/" rel="noopener" target="_blank">Export to Excel Dataverse Table with Power Automate — Ludovic
+      Perrichon</a>
+  </li>
+  <li class="graf graf--li" name="f43c">
+    <a class="markup--anchor markup--li-anchor" data-href="https://dreamingincrm.com/2016/11/10/export-to-excel-using-dynamics-365-sdk/" href="https://dreamingincrm.com/2016/11/10/export-to-excel-using-dynamics-365-sdk/" rel="noopener" target="_blank">Export to Excel using Dynamics 365 SDK — Dreaming in CRM &amp; Power
+      Platform</a>
+  </li>
+</ul>
+<p class="graf graf--p" name="aa7d" style="text-align: center;">
+  Have a great day!
+</p>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</a>
+                                    </h6>
+                                    <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html"
+                                            class="text-decoration-none text-dark hover-primary">Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</a>
+                                    </h6>
+                                    <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Translate Metadata and Web Resources in Dynamics 365 CE</a>
+                                    </h6>
+                                    <a href="/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!",
+  "image": "",
+  "datePublished": "2026-05-17T23:11:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+
 :root {
     --primary: #0f172a;
     --secondary: #475569;
@@ -503,6 +505,81 @@ h6 {
     color: #334155;
 }
 
+/* ── Post Body Tables ────────────────────────────────────────────────── */
+.post-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2.5rem 0;
+    font-size: 0.95rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 0 0 1px var(--border);
+}
+
+.post-body table thead {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.post-body table thead th {
+    padding: 0.85rem 1.25rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    white-space: nowrap;
+    color: #e2e8f0;
+    border: none;
+}
+
+.post-body table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s ease;
+}
+
+.post-body table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.post-body table tbody tr:nth-child(even) {
+    background-color: var(--surface);
+}
+
+.post-body table tbody tr:hover {
+    background-color: rgba(37, 99, 235, 0.04);
+}
+
+.post-body table td {
+    padding: 0.8rem 1.25rem;
+    color: #334155;
+    vertical-align: top;
+    line-height: 1.55;
+    font-size: 0.95rem;
+}
+
+.post-body table td code {
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--accent);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+
+/* Responsive table wrapper — prevents horizontal overflow on mobile */
+.post-body table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 768px) {
+    .post-body table {
+        display: table;
+        overflow-x: unset;
+    }
+}
+
 /* Ensure images in post body are not too constrained */
 @media (min-width: 1200px) {
     .post-post .container {
@@ -544,6 +621,54 @@ pre code.hljs {
     /* Slightly distinct background */
 }
 
+.gist .gist-file {
+    margin-bottom: 0;
+    border-radius: var(--radius-md) !important;
+}
+
+.gist .gist-data {
+    border-bottom: none;
+    border-radius: var(--radius-md) !important;
+    border: 1px solid #adb5bd !important;
+    background-color: #fdfeff !important;
+}
+
+.gist .blob-wrapper {
+    border-radius: 0;
+}
+
+.gist .highlight {
+    background-color: transparent;
+    font-family: 'Droid Sans Mono', monospace !important;
+    font-size: 14px;
+}
+
+.gist .highlight td {
+    padding: 5px 15px !important;
+    line-height: 1;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.gist tr:first-child td {
+    padding-top: 15px !important;
+}
+
+.gist tr:last-child td {
+    padding-bottom: 15px !important;
+}
+
+.gist .blob-num {
+    color: #ccc !important;
+    background-color: #fdfeff !important;
+    pointer-events: none;
+    border-right: 1px solid #ccc;
+}
+
+.gist .gist-meta {
+    display: none;
+}
+
 /* Social Icons */
 .social-icon img {
     transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
@@ -554,4 +679,76 @@ pre code.hljs {
     transform: translateY(-3px);
     opacity: 1;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* ── Related Posts Cards ─────────────────────────────────────────────── */
+.related-post-card {
+    border-radius: 1rem !important;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.related-post-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.14), 0 4px 8px rgba(15, 23, 42, 0.06);
+}
+
+.related-card-img-link {
+    display: block;
+    overflow: hidden;
+}
+
+.related-card-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.related-post-card:hover .related-card-img {
+    transform: scale(1.06);
+}
+
+.related-card-category {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: rgba(37, 99, 235, 0.08);
+    padding: 0.25rem 0.65rem;
+    border-radius: 100px;
+}
+
+.related-card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.related-card-readmore {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: gap 0.2s ease, opacity 0.2s ease;
+    opacity: 0.8;
+}
+
+.related-card-readmore:hover {
+    gap: 0.55rem;
+    opacity: 1;
+    color: var(--accent);
 }

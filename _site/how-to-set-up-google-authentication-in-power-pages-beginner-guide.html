@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>How to Set Up Google Authentication in Power Pages (Beginner Guide)? | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="How to Set Up Google Authentication in Power Pages (Beginner Guide)?" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Power Pages, being a Microsoft-hosted low-code portal platform, gives us multiple authentication options out of the box - including Azure AD and External Authentication. But what many makers don’t realize is that Power Pages also supports popular OAuth 2.0 identity providers like Google, GitHub, Facebook, and LinkedIn." />
+<meta name="twitter:description" property="og:description" content="Power Pages, being a Microsoft-hosted low-code portal platform, gives us multiple authentication options out of the box - including Azure AD and External Authentication. But what many makers don’t realize is that Power Pages also supports popular OAuth 2.0 identity providers like Google, GitHub, Facebook, and LinkedIn." />
+<link rel="canonical" href="http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html" />
+<meta property="og:url" content="http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-12-07T23:11:00+05:30" />
+<meta property="article:modified_time" content="2025-12-07T23:11:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="How to Set Up Google Authentication in Power Pages (Beginner Guide)?" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-12-07T23:11:00+05:30","datePublished":"2025-12-07T23:11:00+05:30","description":"Power Pages, being a Microsoft-hosted low-code portal platform, gives us multiple authentication options out of the box - including Azure AD and External Authentication. But what many makers don’t realize is that Power Pages also supports popular OAuth 2.0 identity providers like Google, GitHub, Facebook, and LinkedIn.","headline":"How to Set Up Google Authentication in Power Pages (Beginner Guide)?","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html"},"url":"http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border">Power Pages</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">How to Set Up Google Authentication in Power Pages (Beginner Guide)?</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">December 07, 2025 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <p><img alt="" border="0" src="/assets/images/054/img_f190a8922a.gif" /></p>
+<p>
+  Power Pages, being a Microsoft-hosted low-code portal platform, gives us
+  multiple authentication options out of the box - including Azure AD and
+  External Authentication. But what many makers don’t realize is that Power
+  Pages also supports popular OAuth 2.0 identity providers like
+  <strong>Google, GitHub, Facebook, and LinkedIn</strong>.
+</p>
+
+<p>
+  In this blog, we’ll walk through a simple and beginner-friendly guide on how
+  to set up
+  <strong>Google Authentication in Power Pages</strong> using OAuth 2.0. Even if
+  you aren’t familiar with authentication concepts, don’t worry - I’ll break it
+  down step-by-step.
+</p>
+
+<p><strong>Follow these steps to configure Google Sign-In:</strong></p>
+
+<ul>
+  <li>
+    <a href="#configureGoogleProvider1">Configure Google Identity Provider – Part 1</a>
+  </li>
+  <li>
+    <a href="#createAppInGoogleCloud">Create an OAuth App in Google Cloud Console</a>
+  </li>
+  <li>
+    <a href="#configureGoogleProvider2">Configure Google Identity Provider – Part 2</a>
+  </li>
+  <li>
+    <a href="#reference">References</a>
+  </li>
+</ul>
+
+<section>
+  <h3>Configure Google Identity Provider – Part 1</h3>
+
+  <p>
+    First, go to
+    <a href="https://make.powerpages.com" target="_blank">make.powerpages.com</a>
+    and open the Power Pages site for which you want to enable Google login.
+    From the left navigation, open the <strong>Security</strong> section and
+    select <strong>Identity Providers</strong>. You will see a list of available
+    providers as shown below.
+  </p>
+
+  <img alt="Identity Providers List" src="/assets/images/054/img_28139bff25.png" />
+
+  <ul>
+    <li>Click on <strong>Configure</strong> next to Google.</li>
+
+    <img alt="Provider Selection Pane" src="/assets/images/054/img_396da18b11.png" />
+
+    <li>
+      A right-side configuration pane opens. Provide a name (for example:
+      <em>Google Login</em>) and click <strong>Next</strong>.
+    </li>
+
+    <img alt="Redirect URI" src="/assets/images/054/img_661389591a.png" />
+
+    <li>
+      Power Pages will generate a <strong>Redirect URI</strong>. Copy this URI -
+      we will need it while creating the OAuth Client in Google Cloud.
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h3>Create an OAuth App in Google Cloud Console</h3>
+
+  <p>
+    To enable Google Authentication, we must create an OAuth 2.0 Client inside
+    the
+    <strong>Google Cloud Developer Console</strong>. If you already have a
+    client ID and secret, feel free to skip this part.
+  </p>
+
+  <ul>
+    <li>
+      Navigate
+      <a href="https://cloud.google.com/apigee/docs/api-platform/publish/creating-apps-surface-your-api" target="_blank">here</a>
+      to open Google Cloud Console and create a new project.
+    </li>
+
+    <img alt="Create App in Google Cloud" src="/assets/images/054/img_9b03378a79.png" />
+
+    <li>After creation, you will land on the project overview page.</li>
+
+    <img alt="Project Overview" src="/assets/images/054/img_d51696793d.png" />
+
+    <li>Click on <strong>Get Started</strong>.</li>
+    <li>
+      You’ll see a 4-step configuration wizard.<br /><b>
+      Step 1</b>: Provide <strong>App Name</strong> and
+      <strong>User Support Email</strong>.
+    </li>
+    <img alt="App Information" src="/assets/images/054/img_63653c269e.png" />
+    <li><b>
+      Step 2</b>: Select your app audience type. For Power Pages, select
+      <strong>External</strong> because your users will authenticate using their
+      Google account.
+    </li>
+    <img alt="External Audience Selection" src="/assets/images/054/img_de76574aa2.png" />
+    <li><b>Step 3</b>: Add your contact details.</li>
+    <img alt="Contact Information" src="/assets/images/054/img_90fa30d98b.png" />
+    <li><b>
+      Step 4</b>: Accept the Google API Terms and click <strong>Create</strong>.
+    </li>
+    <img alt="Google API Policy" src="/assets/images/054/img_cced25f86f.png" />
+  </ul>
+  <p>
+    After the consent screen setup, we can now create the actual OAuth Client.
+  </p>
+  <ul>
+    <img alt="OAuth Client Creation" src="/assets/images/054/img_fd852fffbd.png" />
+    <li>
+      Open the <strong>Credentials</strong> tab and click
+      <strong>Create Credentials → OAuth Client ID</strong>.
+    </li>
+    <img alt="Select OAuth Client" src="/assets/images/054/img_b776e6d49e.png" />
+    <li>
+      Select <strong>Web Application</strong> as the application type since
+      Power Pages is web-based.
+    </li>
+    <img alt="App Type Selection" src="/assets/images/054/img_ad4b1474e4.png" />
+    <li>
+      Scroll down and add the following:
+      <ul>
+        <li>
+          <strong>Authorized JavaScript Origin:</strong> Your Power Pages site
+          URL
+        </li>
+        <li>
+          <strong>Authorized Redirect URI:</strong> Paste the redirect URI
+          copied from Power Pages
+        </li>
+      </ul>
+    </li>
+    <li>Click <strong>Create</strong>.</li>
+    <img alt="Client ID and Secret" src="/assets/images/054/img_1661f85ffb.png" />
+    <li>
+      Google will now generate your <strong>Client ID</strong> and
+      <strong>Client Secret</strong>. These are required for configuring the
+      Google Identity Provider in Power Pages. Copy them or download the JSON.
+    </li>
+    <img alt="OAuth Clients List" src="/assets/images/054/img_644424fe7b.png" />
+  </ul>
+</section>
+<section>
+  <h3>Configure Google Identity Provider – Part 2</h3>
+  <p>Now return to Power Pages to complete the configuration.</p>
+  <ul>
+    <img alt="Set Client ID and Secret" src="/assets/images/054/img_90e7837206.png" />
+    <li>
+      Paste the Client ID and Client Secret from Google Cloud and click
+      <strong>Confirm</strong>.
+    </li>
+    <img alt="Google Provider Enabled" src="/assets/images/054/img_9d5797f609.png" />
+    <li>The Google provider should now show as <strong>Enabled</strong>.</li>
+    <img alt="Restart Site" src="/assets/images/054/img_6d9efea19e.png" />
+    <li>
+      Navigate to
+      <a href="https://admin.powerplatform.com" target="_blank">admin.powerplatform.com</a>, go to Power Pages → Site Settings and click
+      <strong>Restart Site</strong>.
+    </li>
+    <img alt="Test Login" src="/assets/images/054/img_92ca0319d0.png" />
+    <li>
+      Once the site restarts, navigate to the sign-in page and click the
+      <strong>Sign in with Google</strong> button.
+    </li>
+    <img alt="After Sign-In" src="/assets/images/054/img_b04b1f7501.png" />
+  </ul>
+</section>
+<section>
+  <h3>References</h3>
+  <ul>
+    <li>
+      <a href="https://learn.microsoft.com/en-us/power-pages/security/authentication/oauth2-google" target="_blank">Set up Google Provider – Microsoft Learn</a>
+    </li>
+    <li>
+      <a href="https://docs.cloud.google.com/apigee/docs/api-platform/publish/creating-apps-surface-your-api" target="_blank">Google Cloud – Registering Apps</a>
+    </li>
+  </ul>
+</section>
+<p><br /></p>
+<p>Have a great day!</p>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/068/img_ceb5e7a952.gif" alt="How I Built a Stunning Admin Dashboard in Power Pages?" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Pages</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html"
+                                            class="text-decoration-none text-dark hover-primary">How I Built a Stunning Admin Dashboard in Power Pages?</a>
+                                    </h6>
+                                    <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-add-a-favicon-in-power-pages.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Pages</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-add-a-favicon-in-power-pages.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Add a Favicon in Power Pages?</a>
+                                    </h6>
+                                    <a href="/how-to-add-a-favicon-in-power-pages.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Pages</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Customize the Sign in page in Power Pages Easily</a>
+                                    </h6>
+                                    <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Set Up Google Authentication in Power Pages (Beginner Guide)?",
+  "image": "",
+  "datePublished": "2025-12-07T23:11:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Free HTML to Markdown Converter – Convert HTML Code to Markdown Instantly | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Free HTML to Markdown Converter – Convert HTML Code to Markdown Instantly" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Free online HTML to Markdown converter. Instantly convert Blogger posts, HTML code, tables, and rich text to clean Markdown. Optimized for Blogger-to-Jekyll migration with Liquid and Gist script support." />
+<meta name="twitter:description" property="og:description" content="Free online HTML to Markdown converter. Instantly convert Blogger posts, HTML code, tables, and rich text to clean Markdown. Optimized for Blogger-to-Jekyll migration with Liquid and Gist script support." />
+<link rel="canonical" href="http://localhost:4000/html-to-markdown/" />
+<meta property="og:url" content="http://localhost:4000/html-to-markdown/" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Free HTML to Markdown Converter – Convert HTML Code to Markdown Instantly" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"description":"Free online HTML to Markdown converter. Instantly convert Blogger posts, HTML code, tables, and rich text to clean Markdown. Optimized for Blogger-to-Jekyll migration with Liquid and Gist script support.","headline":"Free HTML to Markdown Converter – Convert HTML Code to Markdown Instantly","url":"http://localhost:4000/html-to-markdown/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="html to markdown converter, convert html to markdown, html to markdown online, blogger to jekyll markdown, blogger html to markdown converter, turndown online tool, free html to md converter, convert html code to markdown, html into markdown, rich text to markdown converter, wordpress html to markdown converter, blogger jekyll migration tool, html table to markdown converter, clean markdown converter, convert html table online, markdown table generator, online html to md converter, convert html to gfm markdown, strip html to markdown, format html to markdown, preserve jekyll liquid tags">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <header class="py-5 bg-light mb-4">
+    <div class="container text-center py-4">
+        <h1 class="display-4 fw-bold mb-3">Free HTML to Markdown Converter</h1>
+        <p class="lead text-secondary">Translate HTML elements, WordPress code, or Blogger posts into clean, semantic Markdown formatting instantly.</p>
+    </div>
+</header>
+
+<section class="container-fluid px-lg-5 mb-5 pb-5">
+    <div class="card border-0 shadow-sm rounded-4 p-3 p-lg-4">
+        
+        <!-- Controls & Options -->
+        <div class="row g-3 mb-4 pb-3 border-bottom align-items-center">
+            <div class="col-md-auto d-flex align-items-center gap-2">
+                <button class="btn btn-primary btn-sm rounded-pill px-3" id="btn-sample">
+                    <i class="bi bi-file-earmark-code me-1"></i>Load Sample HTML
+                </button>
+                <button class="btn btn-outline-danger btn-sm rounded-pill px-3" id="btn-clear-all">
+                    <i class="bi bi-trash3 me-1"></i>Clear All
+                </button>
+            </div>
+            
+            <div class="col-md-auto ms-md-auto d-flex flex-wrap gap-3 align-items-center">
+                <div class="form-check form-switch mb-0">
+                    <input class="form-check-input" type="checkbox" id="opt-live" checked>
+                    <label class="form-check-label text-secondary small fw-medium" for="opt-live">Live Convert</label>
+                </div>
+                
+                <div class="form-check form-switch mb-0">
+                    <input class="form-check-input" type="checkbox" id="opt-gfm" checked>
+                    <label class="form-check-label text-secondary small fw-medium" for="opt-gfm" title="Enable tables, strikethrough, task lists">GFM Tables/Plugins</label>
+                </div>
+                
+                <div class="form-check form-switch mb-0">
+                    <input class="form-check-input" type="checkbox" id="opt-strip" checked>
+                    <label class="form-check-label text-secondary small fw-medium" for="opt-strip" title="Strip unrecognized style, script, head tags">Strip CSS & Scripts</label>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <label for="heading-style" class="small text-secondary fw-medium mb-0">Headings:</label>
+                    <select id="heading-style" class="form-select form-select-sm bg-light border-0 shadow-none py-1 px-2" style="width: auto;">
+                        <option value="atx">ATX (# Heading)</option>
+                        <option value="setext">Setext (=== Heading)</option>
+                    </select>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <label for="bullet-style" class="small text-secondary fw-medium mb-0">Bullets:</label>
+                    <select id="bullet-style" class="form-select form-select-sm bg-light border-0 shadow-none py-1 px-2" style="width: auto;">
+                        <option value="-">Dashes (-)</option>
+                        <option value="*">Asterisks (*)</option>
+                        <option value="+">Pluses (+)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Editor Workspace -->
+        <div class="row g-4">
+            <!-- Left Pane: HTML Input -->
+            <div class="col-lg-6">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-bold text-secondary">
+                        <i class="bi bi-code-slash text-warning me-2"></i>Raw HTML Input Source
+                    </span>
+                    <button class="btn btn-link btn-sm text-decoration-none text-muted p-0" id="btn-paste-html">
+                        <i class="bi bi-clipboard me-1"></i>Paste HTML
+                    </button>
+                </div>
+                <textarea class="form-control bg-light border-0 shadow-none font-monospace p-3" id="html-input" rows="18" placeholder="Paste or drag and drop your HTML code or rich text here..." style="font-size: 0.9rem; resize: vertical; min-height: 350px;"></textarea>
+                <div class="d-flex justify-content-between mt-2 px-1">
+                    <small id="html-stats" class="text-muted fw-medium">0 characters | 0 lines</small>
+                    <span id="drop-hint" class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 small">Drag & Drop HTML File</span>
+                </div>
+            </div>
+
+            <!-- Right Pane: Markdown Output -->
+            <div class="col-lg-6">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-bold text-secondary">
+                        <i class="bi bi-markdown text-success me-2"></i>Clean Markdown Output
+                    </span>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-link btn-sm text-decoration-none text-muted p-0" id="btn-copy-md" disabled>
+                            <i class="bi bi-copy me-1"></i>Copy Markdown
+                        </button>
+                        <span class="text-muted">|</span>
+                        <button class="btn btn-link btn-sm text-decoration-none text-muted p-0" id="btn-download-md" disabled>
+                            <i class="bi bi-download me-1"></i>Download .md File
+                        </button>
+                    </div>
+                </div>
+                <textarea class="form-control bg-light border-0 shadow-none font-monospace p-3" id="md-output" rows="18" placeholder="Clean markdown conversion results will appear here..." readonly style="font-size: 0.9rem; resize: vertical; min-height: 350px;"></textarea>
+                <div class="d-flex justify-content-between mt-2 px-1">
+                    <small id="md-stats" class="text-muted fw-medium">0 characters | 0 words | 0 lines</small>
+                    <span id="copy-feedback" class="text-success fw-medium small d-none"><i class="bi bi-check-circle me-1"></i>Copied to Clipboard!</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manual Convert Trigger (Visible if Live Convert is off) -->
+        <div class="text-center mt-4 d-none" id="manual-convert-container">
+            <button class="btn btn-primary btn-lg px-5 fw-bold rounded-pill shadow-sm" id="btn-convert">
+                <i class="bi bi-lightning-charge me-2"></i>Convert HTML to Markdown
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- SEO & Informational Content Section -->
+<section class="container mb-5 pb-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="content-area fs-5">
+                <h2 class="fw-bold mb-4">How This HTML to Markdown Converter Improves Migration SEO</h2>
+                <p>When migrating legacy web content from platforms like Blogger, WordPress, and Medium into static sites, raw markup elements can introduce syntax errors, rendering issues, and bloating. Converting clean <strong>HTML into Markdown</strong> ensures search engine optimization remains perfect on your new platform by enforcing lightweight, compliant HTML5 code blocks.</p>
+                <p>Using a standardized <strong>online HTML to Markdown converter</strong> guarantees that elements like header hierarchies (<code>h1</code> through <code>h6</code>), blockquotes, lists, and tables render perfectly without embedding platform-specific custom classes that decrease page load speed.</p>
+                
+                <h3 class="fw-bold mt-5 mb-3">Key Benefits of Semantic Markdown Conversion</h3>
+                <ul>
+                    <li><strong>Accelerate Page Speed:</strong> Lightweight Markdown output reduces overall document byte size, loading your static blog pages faster for better search engine rankings.</li>
+                    <li><strong>Preserve Internal Link Structures:</strong> Maintains clean URL routes and prevents broken paths during CMS migration.</li>
+                    <li><strong>Error-Free Table Transformations:</strong> Safely formats HTML tables into markdown representation matching the GitHub Flavored Markdown specification.</li>
+                    <li><strong>Prevent Escaped Liquid Parameters:</strong> Retains parameters like Jekyll relative URL syntax tags <code>{{ site.baseurl "}}</code> unescaped.</li>
+                </ul>
+                
+                <h3 class="fw-bold mt-5 mb-3">Best Practices for Converting HTML to MD</h3>
+                <ol>
+                    <li><strong>Check Heading Structure:</strong> Ensure that your source HTML does not have multiple `h1` tags so the final markdown has a single semantic header structure.</li>
+                    <li><strong>Strip Inline Styling wrappers:</strong> Enable 'Strip CSS & Scripts' to clean up inline alignments and styles, which should instead be managed globally by your site stylesheet.</li>
+                    <li><strong>Embed External Gists Safely:</strong> Keep interactive scripts like embedded code gists from platforms like GitHub from being removed. This tool does this automatically for you.</li>
+                </ol>
+            </div>
+            
+            <!-- Optional FAQ Component -->
+
+<section class="post-faq mt-5 pt-5 border-top">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <h3 class="fw-bold mb-4">Frequently Asked Questions</h3>
+            <div class="accordion accordion-flush bg-white rounded-4 overflow-hidden border shadow-sm" id="postAccordion">
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading1">
+                        <button class="accordion-button collapsed py-3 px-4 fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                            How do I convert HTML to Markdown online?
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#postAccordion">
+                        <div class="accordion-body py-3 px-4 text-secondary">
+                            To convert HTML to Markdown, simply paste your raw HTML code or rich text markup into the 'HTML Input' panel on the left. The converter will automatically transform it into clean Markdown syntax in the 'Markdown Output' panel on the right. You can then copy the result or download it as a .md file.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2">
+                        <button class="accordion-button collapsed py-3 px-4 fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            Is this online HTML to Markdown converter free to use?
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#postAccordion">
+                        <div class="accordion-body py-3 px-4 text-secondary">
+                            Yes, this tool is 100% free with no registration, signup, or installation required. You can convert unlimited HTML files and code snippets directly in your web browser.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading3">
+                        <button class="accordion-button collapsed py-3 px-4 fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            Does the converter support tables and GitHub Flavored Markdown (GFM)?
+                        </button>
+                    </h2>
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#postAccordion">
+                        <div class="accordion-body py-3 px-4 text-secondary">
+                            Yes. With the 'GFM Plugins' toggle enabled, the converter correctly translates HTML tables (<code>&lt;table&gt;</code>), strikethroughs (<code>&lt;s&gt;</code>), task lists, and checkboxes into clean GitHub Flavored Markdown syntax.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading4">
+                        <button class="accordion-button collapsed py-3 px-4 fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            Can I use this tool to migrate my blog from Blogger to Jekyll?
+                        </button>
+                    </h2>
+                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#postAccordion">
+                        <div class="accordion-body py-3 px-4 text-secondary">
+                            Absolutely. This converter is optimized specifically for blog migration. It preserves external GitHub Gist script tags (<code>&lt;script src="https://gist.github.com/..."&gt;&lt;/script&gt;</code>) and prevents escaping of Jekyll Liquid template variables like {{ site.baseurl }} in image paths and anchor links.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading5">
+                        <button class="accordion-button collapsed py-3 px-4 fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            Is my pasted HTML code secure and private?
+                        </button>
+                    </h2>
+                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#postAccordion">
+                        <div class="accordion-body py-3 px-4 text-secondary">
+                            Yes. All HTML to Markdown conversions take place entirely on the client side using JavaScript inside your browser. No code, text, or files are uploaded to any external server, ensuring complete data privacy.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading6">
+                        <button class="accordion-button collapsed py-3 px-4 fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            How does the 'Strip Styles/Scripts' option work?
+                        </button>
+                    </h2>
+                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#postAccordion">
+                        <div class="accordion-body py-3 px-4 text-secondary">
+                            When active, it automatically removes styling wrappers, head metadata, inline stylesheets, and non-essential JavaScript tags. This ensures that the generated Markdown remains focused on content and structure without inline HTML clutter.
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- JSON-LD: WebApplication Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "HTML to Markdown Converter",
+    "description": "Free online HTML to Markdown converter. Quickly convert Blogger html, rich text, tables, and code formatting to markdown. Ideal for Blogger to Jekyll migrations.",
+    "url": "http://localhost:4000/html-to-markdown/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Tamilarasu Arunachalam"
+    }
+}
+</script>
+
+<!-- Turndown & Plugins -->
+<script src="https://unpkg.com/turndown@7.1.2/dist/turndown.js"></script>
+<script src="https://unpkg.com/turndown-plugin-gfm@1.0.2/dist/turndown-plugin-gfm.js"></script>
+
+
+<script>
+    // DOM Elements
+    const htmlInput = document.getElementById('html-input');
+    const mdOutput = document.getElementById('md-output');
+    const htmlStats = document.getElementById('html-stats');
+    const mdStats = document.getElementById('md-stats');
+    const btnSample = document.getElementById('btn-sample');
+    const btnClearAll = document.getElementById('btn-clear-all');
+    const btnPasteHtml = document.getElementById('btn-paste-html');
+    const btnCopyMd = document.getElementById('btn-copy-md');
+    const btnDownloadMd = document.getElementById('btn-download-md');
+    const btnConvert = document.getElementById('btn-convert');
+    const manualConvertContainer = document.getElementById('manual-convert-container');
+    const copyFeedback = document.getElementById('copy-feedback');
+
+    // Option Toggles
+    const optLive = document.getElementById('opt-live');
+    const optGfm = document.getElementById('opt-gfm');
+    const optStrip = document.getElementById('opt-strip');
+    const headingStyle = document.getElementById('heading-style');
+    const bulletStyle = document.getElementById('bullet-style');
+
+    // Initialize Turndown Service
+    function getTurndownService() {
+        const options = {
+            headingStyle: headingStyle.value,
+            bulletListMarker: bulletStyle.value,
+            codeBlockStyle: 'fenced',
+            emDelimiter: '_',
+            strongDelimiter: '**',
+            linkStyle: 'referenced'
+        };
+
+        const turndownService = new TurndownService(options);
+
+        // Apply GFM Plugin if enabled
+        if (optGfm.checked) {
+            turndownService.use(turndownPluginGfm.gfm);
+        }
+
+        // Apply custom rule to strip unnecessary tags
+        if (optStrip.checked) {
+            turndownService.remove(['style', 'head', 'meta', 'link']);
+            // By default, we keep scripts unless they are not Gist scripts
+            turndownService.addRule('stripNonGistScripts', {
+                filter: function(node) {
+                    if (node.nodeName === 'SCRIPT') {
+                        const src = node.getAttribute('src') || '';
+                        return !src.includes('gist.github.com');
+                    }
+                    return false;
+                },
+                replacement: function() {
+                    return '';
+                }
+            });
+        }
+
+        // Custom Rule: Preserve GitHub Gist Script Embeds
+        turndownService.addRule('gistEmbed', {
+            filter: function(node) {
+                if (node.nodeName === 'SCRIPT') {
+                    const src = node.getAttribute('src') || '';
+                    return src.includes('gist.github.com');
+                }
+                return false;
+            },
+            replacement: function(content, node) {
+                return '\n\n' + node.outerHTML + '\n\n';
+            }
+        });
+
+        // Custom Rule: Preserve Jekyll Liquid variables (like {{ site.baseurl }}) inside images and links
+        // We override links and images to prevent URL-encoding the liquid curly brackets.
+        turndownService.addRule('cleanImages', {
+            filter: 'img',
+            replacement: function(content, node) {
+                const alt = node.alt || '';
+                let src = node.getAttribute('src') || '';
+                // Restore liquid syntax if it was encoded by the browser
+                src = src.replace(/%7B%7B%20*site\.baseurl%20*%7D%7D/g, '{{ site.baseurl }}')
+                         .replace(/%7B%7Bsite\.baseurl%7D%7D/g, '{{ site.baseurl }}');
+                return '![' + alt + '](' + src + ')';
+            }
+        });
+
+        turndownService.addRule('cleanLinks', {
+            filter: 'a',
+            replacement: function(content, node) {
+                let href = node.getAttribute('href') || '';
+                href = href.replace(/%7B%7B%20*site\.baseurl%20*%7D%7D/g, '{{ site.baseurl }}')
+                           .replace(/%7B%7Bsite\.baseurl%7D%7D/g, '{{ site.baseurl }}');
+                return '[' + content + '](' + href + ')';
+            }
+        });
+
+        return turndownService;
+    }
+
+    // Conversion Logic
+    function performConversion() {
+        const html = htmlInput.value;
+        if (!html.trim()) {
+            mdOutput.value = '';
+            updateStats();
+            return;
+        }
+
+        try {
+            const turndownService = getTurndownService();
+            let markdown = turndownService.turndown(html);
+
+            // Clean up double-escaped liquid elements or excessive whitespace
+            markdown = markdown
+                .replace(/\\\{\\\{\s*site\.baseurl\s*\\\}\\\}/g, '{{ site.baseurl }}')
+                .replace(/\\\{\\\{site\.baseurl\\\}\\\}/g, '{{ site.baseurl }}')
+                .replace(/\n{3,}/g, '\n\n') // Limit line breaks to max 2
+                .trim();
+
+            mdOutput.value = markdown;
+            updateStats();
+        } catch (error) {
+            mdOutput.value = 'Error converting HTML: ' + error.message;
+        }
+    }
+
+    // Stats Calculation
+    function updateStats() {
+        // HTML Stats
+        const htmlVal = htmlInput.value;
+        const htmlChars = htmlVal.length;
+        const htmlLines = htmlVal ? htmlVal.split('\n').length : 0;
+        htmlStats.textContent = `${htmlChars} character${htmlChars !== 1 ? 's' : ''} | ${htmlLines} line${htmlLines !== 1 ? 's' : ''}`;
+
+        // MD Stats
+        const mdVal = mdOutput.value;
+        const mdChars = mdVal.length;
+        const mdLines = mdVal ? mdVal.split('\n').length : 0;
+        const mdWords = mdVal.trim() === '' ? 0 : mdVal.trim().split(/\s+/).length;
+        mdStats.textContent = `${mdChars} character${mdChars !== 1 ? 's' : ''} | ${mdWords} word${mdWords !== 1 ? 's' : ''} | ${mdLines} line${mdLines !== 1 ? 's' : ''}`;
+
+        // Buttons state
+        const hasContent = mdVal.trim().length > 0 && !mdVal.startsWith('Error converting HTML:');
+        btnCopyMd.disabled = !hasContent;
+        btnDownloadMd.disabled = !hasContent;
+    }
+
+    // Event Handlers
+    function setupEventListeners() {
+        // Live input conversion
+        htmlInput.addEventListener('input', () => {
+            if (optLive.checked) {
+                performConversion();
+            } else {
+                updateStats();
+            }
+        });
+
+        // Live options conversion
+        [optGfm, optStrip, headingStyle, bulletStyle].forEach(el => {
+            el.addEventListener('change', () => {
+                if (optLive.checked) performConversion();
+            });
+        });
+
+        // Toggle Live Convert UI
+        optLive.addEventListener('change', () => {
+            if (optLive.checked) {
+                manualConvertContainer.classList.add('d-none');
+                performConversion();
+            } else {
+                manualConvertContainer.classList.remove('d-none');
+            }
+        });
+
+        // Manual convert trigger
+        btnConvert.addEventListener('click', performConversion);
+
+        // Load Sample content
+        btnSample.addEventListener('click', () => {
+            htmlInput.value = `<!-- Sample Blogger Post Import -->
+<div class="separator" style="clear: both; text-align: center;">
+    <a href="{{ site.baseurl }}/assets/images/001/banner.png" style="margin-left: 1em; margin-right: 1em;">
+        <img border="0" src="{{ site.baseurl }}/assets/images/001/banner.png" alt="Power Automate Logo" width="600" />
+    </a>
+</div>
+
+<h1>Getting Started with Power Pages</h1>
+<p>Today we will explore how to add custom assets to a Power Pages portal.</p>
+
+<h3>Key Advantages:</h3>
+<ul>
+    <li>Easy integration with <strong>Dataverse</strong></li>
+    <li>Supports custom CSS styles</li>
+    <li>Supports embedding <em>GitHub Gists</em></li>
+</ul>
+
+<!-- GitHub Gist Embed Script -->
+<script src="https://gist.github.com/microsoft/d99042b5ba2fbef7116e0262145b2b2a.js"><\/script>
+
+<h3>Feature Matrix</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Standard</th>
+            <th>Enterprise</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Custom CSS</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Dedicated DB</td>
+            <td>No</td>
+            <td>Yes</td>
+        </tr>
+    </tbody>
+</table>
+
+<blockquote>Note: Ensure you configure the site settings properly before deployment.</blockquote>`;
+            performConversion();
+        });
+
+        // Clear All
+        btnClearAll.addEventListener('click', () => {
+            htmlInput.value = '';
+            mdOutput.value = '';
+            updateStats();
+        });
+
+        // Paste HTML
+        btnPasteHtml.addEventListener('click', async () => {
+            try {
+                const text = await navigator.clipboard.readText();
+                htmlInput.value = text;
+                performConversion();
+            } catch (err) {
+                alert('Failed to read clipboard content. Please paste manually using Ctrl+V.');
+            }
+        });
+
+        // Copy MD
+        btnCopyMd.addEventListener('click', async () => {
+            if (!mdOutput.value) return;
+            try {
+                await navigator.clipboard.writeText(mdOutput.value);
+                
+                // Show feedback
+                copyFeedback.classList.remove('d-none');
+                setTimeout(() => {
+                    copyFeedback.classList.add('d-none');
+                }, 2000);
+            } catch (err) {
+                alert('Could not copy text to clipboard.');
+            }
+        });
+
+        // Download MD File
+        btnDownloadMd.addEventListener('click', () => {
+            const content = mdOutput.value;
+            if (!content) return;
+
+            const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'converted-post.md';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        // Drag and Drop Files
+        const dropHint = document.getElementById('drop-hint');
+        
+        window.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropHint.classList.add('bg-warning', 'text-dark');
+        });
+
+        window.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            dropHint.classList.remove('bg-warning', 'text-dark');
+        });
+
+        window.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropHint.classList.remove('bg-warning', 'text-dark');
+            
+            const file = e.dataTransfer.files[0];
+            if (!file) return;
+
+            const ext = file.name.split('.').pop().toLowerCase();
+            if (!['html', 'htm', 'txt'].includes(ext)) {
+                alert('Please drop an .html, .htm, or .txt file.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                htmlInput.value = event.target.result;
+                performConversion();
+            };
+            reader.readAsText(file);
+        });
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        setupEventListeners();
+        updateStats();
+    });
+</script>
+
+
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

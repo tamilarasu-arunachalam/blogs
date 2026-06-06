@@ -1,4 +1,5 @@
 ---
+post_id: "059"
 published: false
 layout: post
 title: "Top 3 Coding Laptops for 2026: The Ultimate Comparison"

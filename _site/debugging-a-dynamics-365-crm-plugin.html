@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Debugging a Dynamics 365 CRM Plugin | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Debugging a Dynamics 365 CRM Plugin" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;Debugging&lt;/li&gt;&lt;li&gt;Debugging a Dynamics 365 CRM plugin&lt;/li&gt;&lt;li&gt;Trace Logs&lt;/li&gt;&lt;li&gt;Persist to Entity (Recommended)&lt;/li&gt;&lt;li&gt;Exception&lt;/li&gt;&lt;li&gt;Summary&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;h2 id=&quot;debugging&quot; style=&quot;text-align: left;&quot;&gt;Debugging&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Debugging is the process of identifying and resolving errors in a system. Though it is a complex and time-consuming task, it is necessary to debug the code and ensure the functionality of the application. Because, a single bug can cause a drastic impact. It might be an iterative process and might require multiple attempts to track and resolve the bugs.&lt;/p&gt;&lt;h2 id=&quot;debugging-a-dynamics-365-crm-plugin&quot; style=&quot;text-align: justify;&quot;&gt;Debugging a Dynamics 365 CRM plugin&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Dynamics 365 CRM plugins are developed in C#(.NET). Plugins are of…" />
+<meta name="twitter:description" property="og:description" content="&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;Debugging&lt;/li&gt;&lt;li&gt;Debugging a Dynamics 365 CRM plugin&lt;/li&gt;&lt;li&gt;Trace Logs&lt;/li&gt;&lt;li&gt;Persist to Entity (Recommended)&lt;/li&gt;&lt;li&gt;Exception&lt;/li&gt;&lt;li&gt;Summary&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;h2 id=&quot;debugging&quot; style=&quot;text-align: left;&quot;&gt;Debugging&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Debugging is the process of identifying and resolving errors in a system. Though it is a complex and time-consuming task, it is necessary to debug the code and ensure the functionality of the application. Because, a single bug can cause a drastic impact. It might be an iterative process and might require multiple attempts to track and resolve the bugs.&lt;/p&gt;&lt;h2 id=&quot;debugging-a-dynamics-365-crm-plugin&quot; style=&quot;text-align: justify;&quot;&gt;Debugging a Dynamics 365 CRM plugin&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Dynamics 365 CRM plugins are developed in C#(.NET). Plugins are of…" />
+<link rel="canonical" href="http://localhost:4000/debugging-a-dynamics-365-crm-plugin.html" />
+<meta property="og:url" content="http://localhost:4000/debugging-a-dynamics-365-crm-plugin.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-07-02T00:37:00+05:30" />
+<meta property="article:modified_time" content="2023-07-02T00:37:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Debugging a Dynamics 365 CRM Plugin" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-07-02T00:37:00+05:30","datePublished":"2023-07-02T00:37:00+05:30","description":"&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;Debugging&lt;/li&gt;&lt;li&gt;Debugging a Dynamics 365 CRM plugin&lt;/li&gt;&lt;li&gt;Trace Logs&lt;/li&gt;&lt;li&gt;Persist to Entity (Recommended)&lt;/li&gt;&lt;li&gt;Exception&lt;/li&gt;&lt;li&gt;Summary&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;h2 id=&quot;debugging&quot; style=&quot;text-align: left;&quot;&gt;Debugging&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Debugging is the process of identifying and resolving errors in a system. Though it is a complex and time-consuming task, it is necessary to debug the code and ensure the functionality of the application. Because, a single bug can cause a drastic impact. It might be an iterative process and might require multiple attempts to track and resolve the bugs.&lt;/p&gt;&lt;h2 id=&quot;debugging-a-dynamics-365-crm-plugin&quot; style=&quot;text-align: justify;&quot;&gt;Debugging a Dynamics 365 CRM plugin&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Dynamics 365 CRM plugins are developed in C#(.NET). Plugins are of…","headline":"Debugging a Dynamics 365 CRM Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/debugging-a-dynamics-365-crm-plugin.html"},"url":"http://localhost:4000/debugging-a-dynamics-365-crm-plugin.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border"></span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Debugging a Dynamics 365 CRM Plugin</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">July 02, 2023 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <p><img border="0" data-original-height="400" data-original-width="700" height="183" src="/assets/images/025/img_df0059ddb7.png" style="display: none;" width="320" />&lt;ul style="text-align: left;"&gt;&lt;li&gt;<a href="#debugging" rel="nofollow">Debugging</a>&lt;/li&gt;&lt;li&gt;<a href="#debugging-a-dynamics-365-crm-plugin" rel="nofollow">Debugging a Dynamics 365 CRM plugin</a>&lt;/li&gt;&lt;li&gt;<a href="#trace-logs" rel="nofollow">Trace Logs</a>&lt;/li&gt;&lt;li&gt;<a href="#persist-to-entity" rel="nofollow">Persist to Entity (Recommended)</a>&lt;/li&gt;&lt;li&gt;<a href="#exception" rel="nofollow">Exception</a>&lt;/li&gt;&lt;li&gt;<a href="#summary" rel="nofollow">Summary</a>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;h2 id="debugging" style="text-align: left;"&gt;Debugging&lt;/h2&gt;&lt;p style="text-align: justify;"&gt;<span>    Debugging is the process of identifying and resolving errors in a system. Though it is a complex and time-consuming task, it is necessary to debug the code and ensure the functionality of the application. Because, a single bug can cause a drastic impact. It might be an iterative process and might require multiple attempts to track and resolve the bugs.</span>&lt;/p&gt;&lt;h2 id="debugging-a-dynamics-365-crm-plugin" style="text-align: justify;"&gt;<span>Debugging a Dynamics 365 CRM plugin</span>&lt;/h2&gt;&lt;p style="text-align: justify;"&gt;<span><span>    Dynamics 365 CRM plugins are developed in C#(.NET). Plugins are of two types, which are synchronous and asynchronous. </span></span>We cannot debug the plugin on the runtime, rather we can do it using profiler. A profiler will capture the instance of the plugin execution and save it as a row in the plugin-profiler table in Dataverse. You need <a href="https://learn.microsoft.com/en-us/power-apps/developer/data-platform/download-tools-nuget" rel="nofollow" target="_blank">Plugin Registration tool</a> to debug the Dataverse plugins.&lt;/p&gt;&lt;p style="text-align: justify;"&gt;<span>    There are multiple ways in debugging a Dynamics 365 CRM Plugins. They are.</span><br />&lt;/p&gt;&lt;p style="text-align: justify;"&gt;&lt;/p&gt;&lt;ul&gt;&lt;ul&gt;&lt;li&gt;<span>Trace Logs</span>&lt;/li&gt;&lt;li&gt;<span>Persist to Entity</span>&lt;/li&gt;&lt;li&gt;<span>Exception</span>&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;div&gt;I have used <a href="https://www.tamilarasu.me/2023/06/end-a-email-in-dynamics-365-crm-using-plugins.html" rel="nofollow" target="_blank">create email activity plugin</a> to demonstrate the debugging of the plugin. This plugin creates an email activity when a contact record gets created. After the development, build the plugin and sign the assembly.&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;h2 id="trace-logs" style="text-align: justify;"&gt;Trace Logs&lt;/h2&gt;&lt;p style="text-align: justify;"&gt;    We can log the errors using <span style="font-family: Inconsolata;"><b>ITracingService</b></span> interface in plugin. This trace log accepts only the string to log. It is used for debugging both synchronous and asynchronous plugins. If you want to log values of any other data type, you should typecast it to string. This will log the errors, and it will appear on the Plugin Trace logs. Before that, you should make sure that your environment enabled the Plugin Trace logs.&lt;/p&gt;&lt;p style="text-align: left;"&gt;<code>ITracingService log = (ITracingService)serviceProvider.GetService(typeof(ITracingService));<br /></code><code>log.Trace("Execution Started");</code>&lt;/p&gt;&lt;div style="text-align: justify;"&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;To do so, you should navigate to Settings <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span> Advanced Settings <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"><span style="font-size: 14px;"> </span>Administration</span></span> <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"> System Settings </span></span><span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"> Customization</span></span> <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"><span style="font-size: 14px;"> </span>Enable </span></span><span style="background-color: white;">Plug-in and custom workflow activity tracing to All (if not enabled).</span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixiKOcY5mmQMBFb1DUr0WYIu3ZX6XYu8fQiHbv8WNDQ8jwrp1DrxxL2m89EoGeMQqks8mEQMvhTX4COhpOxUdYxLVRY2FdTf448LvmPndQMaPWJJXgvvGlP6X42S51BmbaGAYw-BP_SqHbQUA7BIYX0xgQkrNy30BDr3ZCVKVvJCeaaRdR76cez_6DDj0/s1083/enable-trace-logs.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="429" data-original-width="1083" height="254" src="/assets/images/025/img_0db7a16c1e.png" title="Debugging a Dynamics 365 CRM Plugin" width="640" /></a>&lt;/p&gt;&lt;p style="clear: both; text-align: left;"&gt;&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;To see the Trace logs, navigate to Settings <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span> Advanced Settings <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"> Plug-In Trace log.</span></span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: left;"&gt;<span style="background-color: white;"></span>&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1Z5hHCwLrwrGP9rYaI_u3kbQpIQcAgICj4dmdfZ08d9S4Ttvm-DI-x4AgDnoAM5bDkQKuFoEEZGPKtmx-nIT2_oE_lyoBzkqoc7cp2l9jVdvAoPieBBgGUs0rtjmJleq28LjlQxtrdfx2p9O-V8kV1hQbypxcl9hVOmfvWqKmzEJbBSdgaed2cszDQHw/s768/plugin-trace-logs.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="550" data-original-width="768" height="229" src="/assets/images/025/img_7eb3e81c34.png" title="Debugging a Dynamics 365 CRM Plugin" width="320" /></a>&lt;/p&gt;&lt;p style="clear: both; text-align: justify;"&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Once we hit the Plug-In Trace log, it will take us to the Plugin Trace Logs grid view page. Click on any of the record, you will get to see the trace logs which are logged during the execution of Plugin code.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLSYl2X-QfmU2jyckENm1sfgOicjAqTC-UpUPhMRETqtI5YNRSpoQYetgZRrjopv2nCEb8QnB5OhrUnCfVaP31OsZA64ucExzcIiFPqvtoU0CkoyFhDXhhj6W9_RjHByxh3TRfi0eiOH6FotYmcDx9z_9HzOtDb5VZc5uq1WegOBvEhXUEIT1kwktwg3Y/s1320/trace-logs.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="767" data-original-width="1320" height="233" src="/assets/images/025/img_bb2cf0f148.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;p style="clear: both; text-align: left;"&gt;&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Open any of the record, you will see the configuration and execution details. In the execution section, you will see the message block which we logged while developing a plugin.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicpdB1eNJTpG6dTc7avkBtfV9Wr2rtnDiEtAzrABWDOL6_1AY4TKEhaxpL5eipkPvN1pb3X1QfQhdI757msYi7UxwiWnLB_0nMUw3kC0Ds5DiHtHvdBIb86oYP2ofaJz_ZWunqkzwj928zIvb-3_lbn92k5tx7gdk1Ju3qSjmbLYjfnGP7t3VkpvqhAIY/s1243/trace-logs-record.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="421" data-original-width="1243" height="135" src="/assets/images/025/img_94e3cd99e2.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p style="text-align: justify;"&gt;&lt;/p&gt;&lt;h2 id="persist-to-entity"&gt;Persist to Entity (Recommended)&lt;/h2&gt;&lt;div style="text-align: justify;"&gt;<span>    This is the recommended way of debugging Dynamics 365 CRM plugins. In this method, we can use the saved profiles from the plugin profiles table to debug the plugin code. It is used for debugging both synchronous and asynchronous plugins. In this method, we can catch the profiler once the whole process is completed.</span>&lt;/div&gt;&lt;h3 style="text-align: justify;"&gt;<span>Follow the below steps to debug plugin using Persist to Entity:</span>&lt;/h3&gt;&lt;div style="text-align: justify;"&gt;<span>&lt;div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcQ4JwRFtFxTYUrJiT2Mb9eS89CDou8XZyx7FwqbE9sXE_MqEfom_YSJrlDfb040IHdgLzNA_ZiCypqX9y1QEBZkoxV9c-cMdL-woN8OWtlDcQxu0iksWDGzYrydi8sd_mk8s3c2kbmrj8_1hCTeMRaU62_u_3U2tydKi41hA4lpUMhbboHlIBd0j6Kiw/s965/break-points.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="378" data-original-width="965" height="156" src="/assets/images/025/img_01797fd2f6.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;<span>In Visual Studio, place some break points in the code to catch the debugger.</span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgia-xsSILLfU4rfYloG-k8YhkPnSshjWf0Js86KPRPB5oFQwi2ZQVXsjZZhjdMd_sd8q_d-PI2OSUU80QstZmhTd6bmTQuIeUU0ZR0GyvvH3Zh_4AecxlohY_qT5X37xS040crR1gc_0mvUyfZLvYTzNM_qrtNBmaK2_MYmUYiGO5wYcH1mUfhxIYCPes/s507/attach-to-process.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="507" data-original-width="457" height="400" src="/assets/images/025/img_fc1792d301.png" title="Debugging a Dynamics 365 CRM Plugin" width="360" /></a>&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Go to<span> Debug</span> <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"><span style="font-size: 14px;"> </span></span></span>Attach to Process and select Plugin Registration Tool and hit Attach.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHjtgHOyPTmEIp95F4oKvnQay5D82IH7_L7W9MBlBF1vyqiUFNtAcNZfJ5MvcVH3mqkZFj9SePs37qbInI1GC671LxJFbPz4H5Aep8p6-8BF21InYXG_qq1xXk7AFOLol6PCkL36mbK0wNuUMe9BtqX_rZ7K9G5DBXXuKYfmsq_xQOyog5mYGK2qyj3X0/s978/attach-prt.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="807" data-original-width="978" height="264" src="/assets/images/025/img_145bfe6593.png" title="Debugging a Dynamics 365 CRM Plugin" width="320" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;For that, we have to register our plugin in Plugin Registration Tool. Create a new plugin assembly by uploading the .dll file from files. &lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;</span>&lt;/div&gt;&lt;div style="text-align: justify;"&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3PK0sjsx7usAeseXPBCOgcKMYqhoKv-ofzAkdzx-_qm7DfAKvLJXjkPqMzweG8R2fmjHJfL7Psd920a-THiN0DSAxJrTs63I4Q9ChmV7L8ALwTkKc0RFY-2JioM2W7VjiNhHasmw6TVH9zCq1hw5C1OQURfTARBrGPkv3IjjF_bWabiJsRcpS6hkn62M/s1280/plugin-step.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="818" data-original-width="1280" height="205" src="/assets/images/025/img_2d45214e0a.png" title="Debugging a Dynamics 365 CRM Plugin" width="320" /></a>&lt;/p&gt;&lt;/div&gt;&lt;div style="text-align: justify;"&gt;&lt;ul&gt;&lt;li&gt;<span>Create a new step under the plugin by adding message, entity, event-execution, and type.</span>&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJh9dcKdDfK5oO8GYjKJ5hm3Wy2g99Xe1xI4Wxtv-FvnGHx9i47Hjax51dFw5N-HiI-EfT-dCVlwq9pl8NMdOP6BFeq6T9SesLCe-15w7c5IrhvkDC_Sv8_0gyaC4lIh-HCfJQoL4xXlVZH8BFKqJDWobvHluJ30vKnNMgnF9Hns8ds8QxDjST3wyvGus/s720/plugin-before-profiling.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="279" data-original-width="720" height="155" src="/assets/images/025/img_90cd9dbfd3.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;p style="text-align: left;"&gt;&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;<span style="text-align: justify;">Select the step and click on the Start Profiling button on the navigation bar. A dialog box prompts up and asking for specifying profiler storage option.</span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0Hqms4UgtTSbxL43dUXG8IHv-Zaap-eOch7rCXV_tSwGPl25PWJ-LPZUXn6idcBCmzQ_qTKctIL8HOcMMrXBoo_oTmKbn7ZpFxY0F9EqZqYp2L9PyKlxHBVuEJJ3R3pjF4JH8sTu4b8IgM3Thk2jq50ca2fQvDWoAv2wrXjgO6--nHuQgJh4Hqpb_sD4/s939/start-profiling-persist2entity.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="644" data-original-width="939" height="274" src="/assets/images/025/img_08bf645b6b.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/div&gt;<span style="text-align: justify;"><br /></span>&lt;/div&gt;&lt;div&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Select persist to Entity as a profile storage option and click on the OK.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqKwgv1hNwtM2mztYKcbehLZell2yHi3LTCXLPulQUFD1IZxuiG9Fyb0ErBqXSSkLuIKl0lQFmcgkXojjQ-lLjfWQor77j-7AYkyla6dEFTWoya2wph8IXmevAO1zvLTlfqhFOgv8_ihVJLEEA_Uy348qDQ2IUp2qtzsDl_g1yrzq2NsgaXqxZibhlm_Y/s691/plugin-profiled.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="87" data-original-width="691" height="50" src="/assets/images/025/img_af4062f817.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;div&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Once the plugin got profiled, you will see the text profiled near your plugin step.&lt;/li&gt;&lt;li&gt;Then perform the actual scenario to capture the profile. In my context, I have created a new contact record.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUxo7HoHTA4p9sTH4BXDfPBF_-vjDSqYIDYswWDIVuRIutSfU4iniLRKZN-_BWGngNzVK8-vCa9BDUhV4S1CvuOo9EAptgEUsqrJJtouhHO_xNnkeKEsRCFBNjmExcsaaKvyvP4HZhQ_70kv_XLBaT70rgTKb2YE2YvkmNR5LPMx_CUhu__874PxGQhbg/s850/before-debug.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="850" data-original-width="713" height="400" src="/assets/images/025/img_535e4cc1eb.png" title="Debugging a Dynamics 365 CRM Plugin" width="335" /></a>&lt;/p&gt;&lt;div&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Click on debug in Plugin Registration Tool and click on the down arrow symbol to add the captured Profile&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMZZQqlmrLrFXb9ZOGHupXZBRxMJAypO9IxjDQlEGPmB6AJBdqHEqyh2M-ZUrb8wb2CHjuXjju3106MMS-JSznjUKI79sbRPsnANchdyNLWbQ-TkjFSns-P0Aq6tPZZpvtM3PjqntJVD9qDT4t_xwR-1QA5dtYZfLnUVjMpZpO2mFNg4Qawrq09Q1aLJ8/s800/captured-profiles.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="747" data-original-width="800" height="299" src="/assets/images/025/img_a31b1de0f4.png" title="Debugging a Dynamics 365 CRM Plugin" width="320" /></a>&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Add the assembly and click on start execution button &lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeLIgWwnryKgKO5jv15CowiWpA1emnq-SsafLloMvEcIUKrusFhZcnj64VviSXQW0Yv7iDlXWlNe-eenWQIMaJP64eL-ZHE7d_6uBfMdOpM4_Ratt6atwkBWt9gqVFEWUvLLgObFdV3bTz6MhA4Bjfjb3EDDdG5V2q3_EXOKqN6mugdy9YZNUJ7MIenI4/s850/after-debug.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="850" data-original-width="713" height="400" src="/assets/images/025/img_4b07a7ccda.png" title="Debugging a Dynamics 365 CRM Plugin" width="335" /></a>&lt;/p&gt;&lt;p style="clear: both; text-align: left;"&gt;&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Once you click Start Execution, it will navigate to the Visual Studio and stops at the break point. Then you can move forward by clicking <b>F10</b> key. To check the values for the variables, you can hover over the variable and make sure the value is correct or change the code to make it right. &lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9g6sdGvu_PUMpFLQTAkaH4ZRZGV-Cbb6LZvi1MiberEXFE-WgPwiLEsQj31BHEbmQmcrkZqCUp5CIHY_3MZsoWc-pHjzpLsqBYB-GPFDPvwp2fe9kPQ9AzgYYjF8jVkuJFsYvZqqAxtrv17fh5grh2_tBSe-qTUtPxkwQ3znsoNO1IFY2xv5sPOYL7i4/s990/stops-at-breakpoint.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="227" data-original-width="990" height="91" src="/assets/images/025/img_beb872fce5.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;h2 id="exception" style="text-align: left;"&gt;Exception&lt;/h2&gt;&lt;div style="text-align: justify;"&gt;<span>    Exception is another way to debug the Dataverse plugins. It will use the exception file as the profile. In this method, we cannot proceed the whole action even it is executed in right way. Because of the system throwing an exception and stops the process. This method is used for debugging the synchronous plugins. </span><br />&lt;/div&gt;&lt;div&gt;&lt;h3 style="text-align: justify;"&gt;<span>Follow the below steps to debug plugin using Exception:</span>&lt;/h3&gt;&lt;/div&gt;&lt;div&gt;<span><b><i><span>    </span>Note:</i></b> I have used the same plugin which is demonstrated in Persist to entity method</span>&lt;/div&gt;&lt;div&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Place the break points on the code in Visual Studio and Go to Debug<span style="text-align: justify;"> </span><span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px; text-align: justify;">🡲</span><span style="background-color: white; text-align: justify;"><span style="font-family: inherit;"><span style="font-size: 14px;"> </span></span></span>Attach to Process and Select Plugin Registration Tool.&lt;/li&gt;&lt;li&gt;In Plugin Registration tool, select the step and click on Start Profiling.&lt;/li&gt;&lt;/ul&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjluQGzLaBzgKQgT73KvLHNWUeiA4FTwqW3Tg6dHQD3Ym7W3lz5ZaznHbP2HuBaKAKqCnXgMbjQHCbiJiOMSR_Kyr_Ko77qMGA2FxUTVWrnS9ScZ9DcM5PjBSa0kmvswXPTyt58x1jQ2I8MprxxY9PVG1zhHyiDHjbWn0x1qqaiItYbVuxZ3L-VcJyLV7U/s939/start-profiling-exception.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="644" data-original-width="939" height="274" src="/assets/images/025/img_b5f251c54a.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Select Exception for profile storage and click OK.&lt;/li&gt;&lt;li&gt;Go to the Application and perform the action to trigger the plugin.&lt;/li&gt;&lt;li&gt;In my context, I have to create a contact to trigger the plugin. I will get the business process error with the exception file in it.&lt;/li&gt;&lt;/ul&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUzWxLQvKIPMz3c1YwhaTjGbCmQgo8PZgK8O-UDLwjDk8Tfjek-ZLH2GtoI0h9MLm1il3IGHLzLXDDViE_hBmEOIt_88U-2xg_qXDja70bErzvrp-L3zLHfSe_2WU71bbZ24qwuhKyScPD1zmtbkJ_1SnVu8YY4PFeswKpIWEX6Y7D96sK3Nm9H_ruqwc/s529/business-process-error.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="358" data-original-width="529" height="271" src="/assets/images/025/img_73d73c7009.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Click on the download log file and you will get the .txt file.&lt;/li&gt;&lt;li&gt;Go to the Plugin Registration Tool and click on Debug and select the downloaded .txt file and add the respective assembly.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj44zQEW4cZUn7s4JQzsXVoiYE4ARYFHU7mEuJL4-eBo0GyoM-fKpiN_wLiiAoBcn3Oh6Qx7Fn-TCSDKH0w5zKl5DPYhk6g8yCkoaZ5nnWtWr0ub_2UjRTiumSFaYZP_OTqz4z1r4_QWVzNMEaHR9VMBSkmNsbbcIEEi7-P3RHJEdONj5v04QBo_gJLItw/s850/debug-exception.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="850" data-original-width="713" height="400" src="/assets/images/025/img_f611e99fc0.png" title="Debugging a Dynamics 365 CRM Plugin" width="335" /></a>&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Click on the Start Execution, it will navigate to Visual Studio and hit the break point.&lt;/li&gt;&lt;li&gt;You can move the debugger using <b>F10</b> key and hover over the variables to check the values.&lt;/li&gt;&lt;/ul&gt;&lt;h2 id="summary" style="text-align: left;"&gt;<span>Summary</span>&lt;/h2&gt;&lt;/div&gt;&lt;div style="text-align: justify;"&gt;<span><span>    </span>Thus, the above-mentioned ways are used for debugging the plugins. But Microsoft recommends to use persist to entity for debugging. Trace logs will be used for logging the values. As programming is not a one time activity, and it requires a lot of debugging to make a right application.</span>&lt;/div&gt;&lt;div&gt;<span><br /></span>&lt;/div&gt;&lt;div&gt;<span>Have a great day! </span>&lt;/div&gt;</p>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Unlocking the Power of Side Panes in Model-Driven Apps</a>
+                                    </h6>
+                                    <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"
+                                            class="text-decoration-none text-dark hover-primary">Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins</a>
+                                    </h6>
+                                    <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category"></span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html"
+                                            class="text-decoration-none text-dark hover-primary">Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript</a>
+                                    </h6>
+                                    <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Debugging a Dynamics 365 CRM Plugin",
+  "image": "",
+  "datePublished": "2023-07-02T00:37:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

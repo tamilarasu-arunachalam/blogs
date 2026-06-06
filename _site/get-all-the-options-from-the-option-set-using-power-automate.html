@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Get all the options from the Option set using Power Automate | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Get all the options from the Option set using Power Automate" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="High readability tech reviews and affiliate recommendations." />
+<meta name="twitter:description" property="og:description" content="High readability tech reviews and affiliate recommendations." />
+<link rel="canonical" href="http://localhost:4000/get-all-the-options-from-the-option-set-using-power-automate.html" />
+<meta property="og:url" content="http://localhost:4000/get-all-the-options-from-the-option-set-using-power-automate.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="http://localhost:4000/assets/images/007/img_7d953ce272.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-03T23:32:00+05:30" />
+<meta property="article:modified_time" content="2022-12-03T23:32:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/007/img_7d953ce272.webp" />
+<meta name="twitter:title" content="Get all the options from the Option set using Power Automate" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2022-12-03T23:32:00+05:30","datePublished":"2022-12-03T23:32:00+05:30","description":"High readability tech reviews and affiliate recommendations.","headline":"Get all the options from the Option set using Power Automate","image":"http://localhost:4000/assets/images/007/img_7d953ce272.webp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/get-all-the-options-from-the-option-set-using-power-automate.html"},"url":"http://localhost:4000/get-all-the-options-from-the-option-set-using-power-automate.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border">Power Automate</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Get all the options from the Option set using Power Automate</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">December 03, 2022 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/007/img_7d953ce272.webp" alt="Get all the options from the Option set using Power Automate" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+
+
+
+                </div>
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <p><img src="/assets/images/007/img_7d953ce272.webp" alt="" /></p>
+
+<p>In Power Automate, getting all the option set values from Dataverse is not quite easy as getting the selected value from the option set field(Dataverse Choices). Here in this article we will have a look on how to take all the options from the option set and list it using the Power Automate(Formerly Flow).</p>
+
+<h3 id="steps">Steps:</h3>
+
+<ul>
+  <li>
+    <p>Get Option set metadata from Web API</p>
+  </li>
+  <li>
+    <p>Creating a flow</p>
+  </li>
+  <li>
+    <p>Invoking HTTP request</p>
+  </li>
+  <li>
+    <p>List all options</p>
+  </li>
+</ul>
+
+<h2 id="get-option-set-metadata-from-web-api-">Get Option set metadata from Web API :</h2>
+
+<p>Generally, we retrieve all the option sets from the Dataverse using the API in the Browser or Postman.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://&lt;org_name&gt;.crm.dynamics.com/api/data/v9.2/EntityDefinitions(LogicalName='&lt;entity_name&gt;')/Attributes(LogicalName='&lt;field_name&gt;')/Microsoft.Dynamics.CRM.PicklistAttributeMetadata?$select=LogicalName&amp;$expand=OptionSet($select=Options)
+</code></pre></div></div>
+
+<p>HTTP</p>
+
+<p>Copy</p>
+
+<p>In the above HTTP REST API url replace the text that are enclosed within the angle braces. The entity name and field name should be the logical name. The response for the API endpoint looks like the below picture.</p>
+
+<p><img src="/assets/images/007/img_5324f16d7e.png" alt="" /></p>
+
+<p>We should replicate the above operation in Power Automate using the HTTP connector</p>
+
+<h2 id="creating-a-flow-">Creating a flow :</h2>
+
+<p>For creating a Power Automate flow, open your Dataverse solution ? click on + New on the command bar ? Automation ? Cloud flow ? Click Instant.</p>
+
+<p><img src="/assets/images/007/img_2b4ba4a3be.png" alt="" /></p>
+
+<p>A modal window named Build an instant cloud flow opens up, choose a name for your flow and choose the trigger you wish. I have chosen Manual trigger because i didn’t want it execute from another trigger. Click on Create button on the below. Then the flow edit page opens with the trigger step.</p>
+
+<h2 id="invoking-http-request-">Invoking HTTP Request :</h2>
+
+<p>We can retrieve the Option set metadata in Power Automate by invoking a HTTP GET Request. Click or the + icon and search for the connector name Invoke an HTTP request. Connect it with the base-url and click Signin.</p>
+
+<p><img src="/assets/images/007/img_174f6be9c2.png" alt="" /></p>
+
+<p>After the connection gets established, select the method as <em>GET</em> and use the Web API URL in the Url of the request.</p>
+
+<p><img src="/assets/images/007/img_8ef8a6f8c3.png" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>body('Invoke_an_HTTP_request')?['OptionSet']?['Options']
+</code></pre></div></div>
+
+<p>In the Parse JSON connector, use the above expression in the Content field and for Schema field copy the below JSON snippet and click generate from sample button and paste it and click Ok.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "Value": 1,
+  "Color": null,
+  "IsManaged": true,
+  "ExternalValue": null,
+  "ParentValues": [],
+  "Tag": null,
+  "MetadataId": null,
+  "HasChanged": null,
+  "Label": {
+  "LocalizedLabels": [
+    {
+      "Label": "Accounting",
+      "LanguageCode": 1033,
+      "IsManaged": true,
+      "MetadataId": "6798ba00-2341-db11-898a-0007e9e17ebd",
+      "HasChanged": null
+    }
+  ],
+  "UserLocalizedLabel": {
+    "Label": "Accounting",
+    "LanguageCode": 1033,
+    "IsManaged": true,
+    "MetadataId": "6798ba00-2341-db11-898a-0007e9e17ebd",
+    "HasChanged": null
+  }
+}
+</code></pre></div></div>
+
+<p>Click Generate from sample and paste then submit it. Then the flow step looks like the below picture.</p>
+
+<p><img src="/assets/images/007/img_ef4768dd7c.png" alt="" /></p>
+
+<h2 id="list-all-options">List all Options:</h2>
+
+<p>After parsing the response from the HTTP Request, add a Create HTML Table connector to list the Value and Label in the form of table. In the From field, select response body from the Parse JSON connector.</p>
+
+<ul>
+  <li>item()?[‘value’] is the expression for getting <em>Value</em></li>
+  <li>item()?[‘Label’]?[‘UserLocalizedLabel’]?[‘Label’] is for getting <em>Label Text</em>.</li>
+</ul>
+
+<p><img src="/assets/images/007/img_bf3c458efa.png" alt="" /></p>
+
+<p>Save the flow and solve if the flow checker is showing any warnings or errors. Run the flow by clicking the Run button on the command bar.</p>
+
+<p><img src="/assets/images/007/img_75ce29d6af.png" alt="" /></p>
+
+<p>After running, check the run history for the status and open it to see the working of the flow. If the run results in error, check where it got failed and re-run again until the flow get succeeded. After the success of the flow open the run and move down to the Create HTML Table flow and expand it . You will see the list of options in the Outputs section as like in the below picture.</p>
+
+<p><img src="/assets/images/007/img_18bcc25c14.png" alt="" /></p>
+
+<p>Keep Learning!</p>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?</a>
+                                    </h6>
+                                    <a href="/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?</a>
+                                    </h6>
+                                    <a href="/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/what-is-a-retry-policy-in-power-automate-and-why-it-matters.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/what-is-a-retry-policy-in-power-automate-and-why-it-matters.html"
+                                            class="text-decoration-none text-dark hover-primary">What Is a Retry Policy in Power Automate (And Why It Matters)?</a>
+                                    </h6>
+                                    <a href="/what-is-a-retry-policy-in-power-automate-and-why-it-matters.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Get all the options from the Option set using Power Automate",
+  "image": "http://localhost:4000/assets/images/007/img_7d953ce272.webp",
+  "datePublished": "2022-12-03T23:32:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

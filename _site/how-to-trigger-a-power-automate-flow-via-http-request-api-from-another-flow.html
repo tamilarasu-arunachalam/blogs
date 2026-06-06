@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow? | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Have you ever wanted to call one Power Automate flow from another using a custom API endpoint? Yes, it’s possible! In this article, I&#39;ll explain how to build and invoke a Power Automate flow using HTTP triggers. Overview Step 1: Creating the Core Flow (API Endpoint) Step 2: Creating the Invoker Flow Execution &amp; Scenarios Conclusion Overview To achieve this, we&#39;ll set up two flows: Core Flow - Contains the main logic to create a Dataverse account. Invoker Flow - Triggers the core flow using an HTTP POST request We&#39;ll walk through how to: Set up the HTTP-triggered core flow.…" />
+<meta name="twitter:description" property="og:description" content="Have you ever wanted to call one Power Automate flow from another using a custom API endpoint? Yes, it’s possible! In this article, I&#39;ll explain how to build and invoke a Power Automate flow using HTTP triggers. Overview Step 1: Creating the Core Flow (API Endpoint) Step 2: Creating the Invoker Flow Execution &amp; Scenarios Conclusion Overview To achieve this, we&#39;ll set up two flows: Core Flow - Contains the main logic to create a Dataverse account. Invoker Flow - Triggers the core flow using an HTTP POST request We&#39;ll walk through how to: Set up the HTTP-triggered core flow.…" />
+<link rel="canonical" href="http://localhost:4000/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html" />
+<meta property="og:url" content="http://localhost:4000/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-07-20T23:11:00+05:30" />
+<meta property="article:modified_time" content="2025-07-20T23:11:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-07-20T23:11:00+05:30","datePublished":"2025-07-20T23:11:00+05:30","description":"Have you ever wanted to call one Power Automate flow from another using a custom API endpoint? Yes, it’s possible! In this article, I&#39;ll explain how to build and invoke a Power Automate flow using HTTP triggers. Overview Step 1: Creating the Core Flow (API Endpoint) Step 2: Creating the Invoker Flow Execution &amp; Scenarios Conclusion Overview To achieve this, we&#39;ll set up two flows: Core Flow - Contains the main logic to create a Dataverse account. Invoker Flow - Triggers the core flow using an HTTP POST request We&#39;ll walk through how to: Set up the HTTP-triggered core flow.…","headline":"How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html"},"url":"http://localhost:4000/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- JSON-LD for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://localhost:4000",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://localhost:4000/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border">Power Automate</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">July 20, 2025 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <div><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1h94a9vZVre49xLSendVJcedsFMHfffJmMJ-AL9vlC3b1Q7x1IZ8CC72uiyJ8sAciFD5aTgGTCMH3ojJa5UBkC_czZKauVg2TGPg6hoPCRjCb1Wh9JdamGUyn9poXrvnoGteOXfxcRTYBXlBsASl1vHumtv6n7YpU447vfVt89k5Fthm8_C1rOJ76W84/s736/0e8b7d2c53195177a326670609fcb7ea.jpg"><img border="0" src="/assets/images/048/img_453fc33dd7.jpg" /></a></div>
+<p>
+  Have you ever wanted to call one Power Automate flow from another using a
+  custom API endpoint? Yes, it’s possible! In this article, I'll explain how to
+  build and invoke a Power Automate flow using HTTP triggers.
+</p>
+<ul>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#step1">Step 1: Creating the Core Flow (API Endpoint)</a></li>
+  <li><a href="#step2">Step 2: Creating the Invoker Flow</a></li>
+  <li><a href="#exec_and_scenarios">Execution &amp; Scenarios</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<h2>Overview</h2>
+<p>To achieve this, we'll set up two flows:</p>
+<ol>
+  <li>Core Flow - Contains the main logic to create a Dataverse account.</li>
+  <li>Invoker Flow - Triggers the core flow using an HTTP POST request</li>
+</ol>
+<p>We'll walk through how to:</p>
+<ul>
+  <li>Set up the HTTP-triggered core flow.</li>
+  <li>Use an HTTP action to call the core flow.</li>
+  <li>Handle success and failure responses.</li>
+</ul>
+<h2>Step 1: Creating the Core Flow (API Endpoint)</h2>
+<ol>
+  <li>Navigate to Add New → Automation → Instant Flow in Power Automate.<br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfk_EUf7s5rp2b4AEhJMgw3BxfDbOKUcw6Hi6ndZY-0NdEPA_gAI9h-tP6W5u1LKxK3yUadGvDn5ZgYMcX5OU5tuS_8WH4wuXoRoqrmN8LXItEF9vJY4NTmIVbzAPztdxuF3Uu1Mz_z4TKS6n3KS7hYCV80YUTg5JMPD3tFoSgXTS4qgcPUVOcqljhbqs/s1352/build-an-instant-flow-1.png"><img border="0" src="/assets/images/048/img_adf6be7d5c.png" /></a></li>
+  <li>Name the flow appropriately.<br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqYmSRcC81nYfe7lD9JsILK9cUYSxGZvYvY1HhF39F4KZdUX596eZyyf5HBESkhyB3-8ICWJcOClonSWP3DInW13EEXQ2Rx-QcuHxzciuuWD6ZFedD327fO8VMPJJTvZzFwoGxpbxvTm-VlUEPUno9-1iBjWBe-xsi12_2jBT8B8DKLQ5t3iAY8oRHfts/s1346/build-an-instant-flow-2.png"><img border="0" src="/assets/images/048/img_a06cc0e4d5.png" /></a></li>
+  <li>
+    Select "When an HTTP request is received" as the trigger and click Create.
+  </li>
+  <li>
+    Configure the HTTP trigger:
+    <br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXqr1w9d9OhgQD3hwiVTm3VWIx1b4IW5RXMJej6PhLqIrihNvft9-LmVIt3v-SQCaKFF87smH4VbyC2-p0S3auj2qrUPTo3w20mDXntEm1QogQ5Aki6eBvmMmz0x3sZm31TNJg_m4x82Gl1QVBeNX1cXLaFfl-b3i3HbgaxsuOy4dgNEeBR_Kzaj5trVk/s909/when-a-http-request-is-received-1.png"><img border="0" src="/assets/images/048/img_fa409b72e3.png" /></a><br /><ul>
+      <li>Set "Who can trigger the flow?" to Anyone.</li>
+      <li>
+        Add a sample JSON payload to auto-generate the Request Body JSON Schema.
+      </li>
+      <li>Set Method as <strong>POST</strong>.</li>
+    </ul>
+  </li>
+  <li>
+    Account Creation Logic:
+    <ul>
+      <li>
+        Since "Account Name" is mandatory in Dataverse, add a Condition to check
+        if it's present. add-condition-action.<br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTIHGdJnPYSSX81Ex44igfVuhCvK9cbEb3iYFTtIwlUOk8ktP7mwhPtVKJGcif-MR0BAXjSV0arg9lYTYLayarEZDjGEmZNjrKhnLk3n8mIjK1ZRe9s_EURsKoLDekQf_FCEwq2UZI5pGHeSVOZ7NL7VMuy2cgio7UvB2VRErZnhNY7nyzAOeInXwxkq8/s1562/add-condition-action.png"><img border="0" src="/assets/images/048/img_cfc4cdf781.png" /></a></li>
+      <li>
+        If yes, use "Add a new row" (Dataverse connector) to create the account
+        with fields like name, phone, email, fax, and address info.<br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhti1OeGoDPQ-LBdUFHYhSk28tt1D_zmAqQkASwTgEY4Nv_B2knmPxJpvHf5iqFQmez8F6cwDk3-WttZTgcHZKppftqHiYRudD09QfOeQz65jTrxdp4gswbgSCqLfGoOmZMht49QoJzeQQ1CT-EPo8fXnQvbPamzoYpqQmdRZnk9bS7yHHg6V-hIqfKdLs/s843/add-new-row-dataverse-action.png"><img border="0" src="/assets/images/048/img_e30965c7d6.png" /></a></li>
+    </ul>
+    <p></p>
+  </li>
+  <li>
+    Add Response Actions
+    <p>
+      To ensure the invoker flow receives proper feedback, add two Response
+      actions:
+    </p>
+    <ol>
+      <li>
+        <strong>Success Response:<br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1ZOL5FFh6I0vFzFgy8zeMN7wDIr4XOxzo8WAH3iyQUMvXpngrMhyphenhyphenPsNpFJf87aulCe6PLzF5E_R9KfL0l1y08ZF5dzsYR1SMHLeB1ryxONa1FJFtBLbNxOQ-Cx8TxXTpSSxM_nRaM-8NeXr2hUTJ81MXMufZRHdNqy2CpFJnc_woWNkita-1LBKOb0tQ/s1041/success-response.png"><img border="0" src="/assets/images/048/img_b7459620d5.png" /></a><br /></strong>
+        <ul>
+          <li><strong>Action Name:</strong> SuccessResponse</li>
+          <li><strong>Status Code:</strong> 200</li>
+          <li><strong>Body:</strong></li>
+          <pre><code>{
+   "createdAccountId": "00000000-0000-0000-0000-000000000000"
+}</code></pre>
+          <li>
+            Replace the dummy GUID(00000000-0000-0000-0000-000000000000) with
+            the Account ID from the creation step.
+          </li>
+          <li>
+            Set Run After to trigger only if "Add a new row" is successful.
+          <br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjULnYIBThbRM5-w6IN5YnrZFhqWWih2l74EQJuz8Hv6FB2TmagVWJWC-wIcyTspNVGb-MyjP6iGWfdT2JRlVtAf1rS3J8L9PROBeND2LXpP3R6d2exq3mU0BQvmNT68nyH-LF4FrkSCIxADtH853d-pXhUUkR0prEAXAeO1TFLqQfnyNwx3wE76bLlpmE/s849/run-after-for-success-response.png"><img border="0" src="/assets/images/048/img_de24780865.png" /></a></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Failure Response:<br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3U-R_GWFfgTOLZXDVhxKHkLofKiBDvUUNSTCIE5ZlveXtg8DxkThIGMr0zptIWfABBP2mzDoIeT8P3DiSefgQ1UWH1TNPDOxyehyphenhyphenc4QBU6TCGwjrgki78rHnIHK-DLravdvw5D-QQ5XjLVIxiBuM4sLmxCBzMPt5tzUWxSB9LRqGJQLAs4pK14bnxFGI/s819/failure-response.png"><img border="0" src="/assets/images/048/img_725128fcba.png" /></a><br /></strong>
+        <ul>
+          <li><strong>Action Name:</strong> FailureResponse</li>
+          <li><strong>Status Code:</strong> 500</li>
+          <li><strong>Body:</strong></li>
+          <pre><code>{
+  "error": 500,
+  "errorDescription": "Account Creation Failed"
+}</code></pre>
+          <li>
+            Set Run After to trigger if "Add a new row" has failed or timed out.<br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXLHuGpt9-ZYNdr0hFYiGvsnnvKfdJ6hvH5Pt_iadrkZEHA773z86ZzGRk40mINkhV-ruPwmwcKqVW4HhD2gXySwE2jomHvLhxafPjA5_4V9I52Rq-emr1DKNiiOQmxB7jiy5a6jS1ZOxbLJ0pFhcoHASzIIj0OkjVSVSG5_EYqLk8IW3_AeF92Ku4Jwg/s849/run-after-for-failure-response.png"><img border="0" src="/assets/images/048/img_40db248152.png" /></a></li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>
+    After saving, copy the HTTP URL from the trigger for use in the next flow.
+  <br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijhWzxbUhgrgpaULLrul7fygnj7r6gOpN0KNuHOXH5La1V7jAOEFsj-aBsbOXExlxlGWtf9Kwi7VD4FcHnfT0WkElrhkqZ0o3o_yrBjaSmH5MFRPfEif6KhTXe23bds1N6WxgC2QwCdDS59yox0-mmXnNTynE23irdRrUEuJzH8WgatJvwxS280Ow-OQo/s921/api-url-generatedafter-saved-the-flow.png"><img border="0" src="/assets/images/048/img_bb88b10fdf.png" /></a><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiV1fm6ZqSFLnOcgL0mK8JGJhBHMeqcoRm8tXyq-30J76IUl0D4TxRVejgE8GkXYPg-uWjDjdNTVywSIOjmu5nP3-ZeR7sy8aJ_bMmEABJQdAuVu5vLkLYqLdosSXJmAUNdZWzUXrfBbCmD2DViDh-Z-d9NpcC1_aR7tS-0_p7-z3o7OhJgkL3orwH6wks/s1173/final-flow-structure-main-flow.png"><img border="0" src="/assets/images/048/img_00fc56d40b.png" /></a></li>
+</ol>
+<h2>Step 2: Creating the Invoker Flow</h2>
+<ol>
+  <li>Create a new flow: Add New → Automation → Instant Flow</li>
+  <li>Choose "Manually trigger a flow".</li>
+  <li>
+    Add an Initialize Variable action:
+    <br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYzi04MULxjJfWUELmycRG1M4XSeLuUArcTRd77IZrB5vO8-tm7k76wmJmAS07Qjt0MW2OA33xIz4y7aFHyoJoF6EiMTHnxv4dP0_qm3PuBnF0X6iG6nabPj7MPkO88x7oNamSkAVDLMzg24ySSHbnv2H0hM9d6TDhkO8yPEyzzvTXVo8Ywk-Mq8bdySM/s875/init-var-create-account-payload.png"><img border="0" src="/assets/images/048/img_b0e75d0261.png" /></a><br /><ul>
+      <li><strong>Name:</strong> createAccountPayload</li>
+      <li><strong>Type:</strong> String</li>
+      <li>
+        <strong>Value:</strong>
+        <pre><code>{
+  "name": "OzMetals Manufacturing",
+  "phone": "+61 3 9010 1234",
+  "website": "https://www.ozmetals.com.au",
+  "fax": "+61 3 9010 1200",
+  "address1_street1": "10 Industrial Drive",
+  "address1_street2": "Sector B",
+  "address1_street3": "Manufacturing Hub",
+  "address1_city": "Melbourne",
+  "address1_state": "Victoria",
+  "address1_postalcode": "3000",
+  "address1_country": "Australia"
+}</code></pre>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Add an HTTP action:
+    <br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhegvb-12n-4EA1EYZ_ZsjGP8VJzbMHXD7KPmFbJx2YJPgXa6ma0LO8uvSxyp_HlBwRW8qsfWuuEb9-xyUNd1ZBIRtmRLHQO-G5-sBL8lRyY2d5FVJ0R7B03psdkH36YcnGKDrTFSRLpREdVz-PjwyXV-5g1QcSWsTNA24Y8gRYCIGnAMxqxBy2u_2_D9U/s941/before-http-call-configuration.png"><img border="0" src="/assets/images/048/img_e66feba3c2.png" /></a><br /><ul>
+      <li><strong>Method:</strong> POST</li>
+      <li><strong>URI:</strong> Paste the copied URL from the core flow.</li>
+      <li><strong>Headers:</strong> Content-Type: application/json</li>
+      <li>
+        <strong>Body:</strong>
+        <pre><code>json(variables('createAccountPayload'))</code></pre>
+      </li>
+      <li><strong>Authentication Type:</strong> None<br /><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZ0QpxZNx32Ki6jFAXI3b50YiHvCpGAGFiewf0uO7vgaX3aygSjUNBc_kY6WWfDmJw7wOKUKSeNzmzOATRZxNQsFX62CLAN8LGkSx0J8QWHR7DJpISZe0v0dRCOjEM8AJ8sdrcIuoiAVINIk6vjnr6sqikn5iNthM812IU-w51NbxQpLlJ6NJp_OAzNA0/s1131/add-payload-expression-to-request.png"><img border="0" src="/assets/images/048/img_e5fe5cc130.png" /></a></li>
+      <li>Save and run the flow.</li>
+    </ul>
+  </li>
+</ol>
+<h2>Execution &amp; Scenarios</h2>
+<h3>Positive Scenario</h3>
+<ol>
+  <li>Trigger the Invoker Flow manually.</li>
+  <li>Check that the flow succeeds.</li>
+  <li>
+    In the Core Flow, confirm that:
+    </li><ul>
+      <li>The payload was received.</li>
+      <li>The condition passed.</li>
+      <li>The account record was created.</li>
+      <li>The response includes the createdAccountId.</li></ul></ol>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlNs9r3hyphenhyphen7Vrp5o0TgVLrZ7H_l9ozmMM8dPxiJ49Fp-tiEojrzJH9y6pJ29Yh2a8v9h9Dwg_QabDxFrneFpsLb_Bk4lNe2jaGcHViXq-3lQlHeOhL8tHJC8b3pPN41DGFFjmi1hpSO4tFLPwDdHKbevlW0yKfB3Ny44LDPyCfmH9P0vt8uMBDyOE6fE4g/s942/failure-run-response.png"><img border="0" src="/assets/images/048/img_c19bf53b41.png" /></a><br />&lt;ol&gt;</p>
+
+<p>&lt;/ol&gt;</p>
+<h3>Negative Scenario 1: Missing Required Field</h3>
+<p>
+  Update the createAccountPayload by removing the name field. Since it's
+  mandatory, the core flow will skip account creation. If there's no action in
+  the "No" branch, the flow will end silently.
+</p>
+<h3>Negative Scenario 2: Invalid Lookup Value</h3>
+<p>
+  In the Core Flow, try assigning an invalid string to a lookup field (e.g.,
+  "Primary Contact"). The action will fail, triggering the FailureResponse with
+  the defined error message.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinKvuYt3wwP-Zt6SwaL5dOG8GU3kDGLmssxGt-eijp9at-xCWPaX1LKdUiyMSEzQg9hnsCHxgwCCJiRq4HshZzKKJqRBQ0Ojl9nVs8BEs6oQl3RM8VVxcMV1arXzbhBkCrdt_YN36DMXKKlXkSsJfSbqkD2kVVBUPlZB-PqkYZf43CWHrtQWByeakNNj4/s909/success-run-response.png"><img border="0" src="/assets/images/048/img_6f82179d86.png" /></a></p>
+<h2>Conclusion</h2>
+<p>
+  This method is powerful and flexible - similar to using Dataverse actions - but
+  with the benefit of calling from any external system like Postman, JavaScript,
+  or .NET. However, keep in mind: HTTP endpoint URLs are environment-specific,
+  so it's best to use environment variables to store them.
+</p>
+<p></p>
+<center>Have a great day!</center>
+<p></p>
+
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/tube-flash-kit-icon.png"
+                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                    </div>
+                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
+                        experience with just one click.</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
+                    </div>
+                </section>
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?</a>
+                                    </h6>
+                                    <a href="/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/what-is-a-retry-policy-in-power-automate-and-why-it-matters.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/what-is-a-retry-policy-in-power-automate-and-why-it-matters.html"
+                                            class="text-decoration-none text-dark hover-primary">What Is a Retry Policy in Power Automate (And Why It Matters)?</a>
+                                    </h6>
+                                    <a href="/what-is-a-retry-policy-in-power-automate-and-why-it-matters.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/environment-variables-in-dataverse-and-how-to-use-it-in-power-automate-flow.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/013/img_ace1b240a0.png" alt="Environment Variables in Dataverse and How to use it in Power Automate Flow" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/environment-variables-in-dataverse-and-how-to-use-it-in-power-automate-flow.html"
+                                            class="text-decoration-none text-dark hover-primary">Environment Variables in Dataverse and How to use it in Power Automate Flow</a>
+                                    </h6>
+                                    <a href="/environment-variables-in-dataverse-and-how-to-use-it-in-power-automate-flow.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?",
+  "image": "",
+  "datePublished": "2025-07-20T23:11:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Highlight all code syntax first
+      hljs.highlightAll();
+
+      // 2. Manually inject line numbers on every code element safely
+      if (typeof hljs.lineNumbersBlock === 'function') {
+        document.querySelectorAll('code').forEach((element) => {
+          hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
