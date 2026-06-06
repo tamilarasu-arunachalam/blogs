@@ -11,8 +11,8 @@
 <meta property="og:title" content="Get Selected Records from the Grid using Command Button in JavaScript" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="As of now, Model Driven Apps command bar doesn’t have an option to get the selected record&#39;s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps. &lt;p&gt;&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;ul&gt; Add button to the command bar Add Rules and Commands to Button Getting Selected Records &lt;/ul&gt; Add button to the command bar If your environment doesn’t have Ribbon Workbench, download the ribbon workbench solution to your environment and create a solution specifically for Ribbon Workbench. Add the existing entity without any metadata to that solution for creating custom…" />
-<meta name="twitter:description" property="og:description" content="As of now, Model Driven Apps command bar doesn’t have an option to get the selected record&#39;s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps. &lt;p&gt;&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;ul&gt; Add button to the command bar Add Rules and Commands to Button Getting Selected Records &lt;/ul&gt; Add button to the command bar If your environment doesn’t have Ribbon Workbench, download the ribbon workbench solution to your environment and create a solution specifically for Ribbon Workbench. Add the existing entity without any metadata to that solution for creating custom…" />
+<meta name="description" content="As of now, Model Driven Apps command bar doesn’t have an option to get the selected record’s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps." />
+<meta name="twitter:description" property="og:description" content="As of now, Model Driven Apps command bar doesn’t have an option to get the selected record’s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps." />
 <link rel="canonical" href="http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html" />
 <meta property="og:url" content="http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
@@ -24,7 +24,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-04-25T06:00:00+05:30","datePublished":"2023-04-25T06:00:00+05:30","description":"As of now, Model Driven Apps command bar doesn’t have an option to get the selected record&#39;s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps. &lt;p&gt;&lt;/p&gt;&lt;p&gt; &lt;/p&gt;&lt;ul&gt; Add button to the command bar Add Rules and Commands to Button Getting Selected Records &lt;/ul&gt; Add button to the command bar If your environment doesn’t have Ribbon Workbench, download the ribbon workbench solution to your environment and create a solution specifically for Ribbon Workbench. Add the existing entity without any metadata to that solution for creating custom…","headline":"Get Selected Records from the Grid using Command Button in JavaScript","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html"},"url":"http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-04-25T06:00:00+05:30","datePublished":"2023-04-25T06:00:00+05:30","description":"As of now, Model Driven Apps command bar doesn’t have an option to get the selected record’s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps.","headline":"Get Selected Records from the Grid using Command Button in JavaScript","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html"},"url":"http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta name="keywords" content="">
@@ -132,50 +132,67 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <div style="text-align: justify;">As of now, Model Driven Apps command bar doesn’t have an option to get the selected record's references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps.</div>
-<p><img alt="Get Selected Records from the Grid using Command Button in JavaScript" src="/assets/images/016/img_a471a25ee1.png" style="display: none;" />&lt;p&gt;&lt;/p&gt;&lt;p&gt;
-&lt;/p&gt;&lt;ul&gt;</p>
-<li><a href="#one">Add button to the command bar</a></li>
-<li><a href="#two">Add Rules and Commands to Button</a></li>
-<li><a href="#three">Getting Selected Records</a></li>
-<p>&lt;/ul&gt;</p>
-<h2 id="one">Add button to the command bar</h2>
-<p style="text-align: justify;">If your environment doesn’t have Ribbon Workbench, <a href="https://www.develop1.net/public/rwb/ribbonworkbench.aspx">download</a> the ribbon workbench solution to your environment and create a solution specifically for Ribbon Workbench. Add the existing entity without any metadata to that solution for creating custom buttons.</p>
-<p style="text-align: justify;">Navigate to the solutions page(in classic mode) you got to see a button on the above named Ribbon Workbench as like below image</p>
-<p></p>
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgnHnUbo3Cg_6zIoJYn7bZQahlkM6xXJ_Kh4-wOOC8oJmAHMfU9olEmiV3eckGSK5f22TPug8paKL77hjuqzcb5EWGOWUB5nTVeOxAjm2BzgwSrME844zZBsqaWDkSBj0QQySjJ_4crReEaNI4JjScKg-TXuW8cHEyr5agxdl6DsR5Kmuec7a_FTcB2" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="159" data-original-width="540" src="/assets/images/016/img_5e31800461.png" /></a></div>
+                    <p>As of now, Model Driven Apps command bar doesn’t have an option to get the selected record’s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps.</p>
+
+<p><img src="/assets/images/016/img_a471a25ee1.png" alt="Get Selected Records from the Grid using Command Button in JavaScript" /></p>
+
+<ul>
+  <li><a href="#one">Add button to the command bar</a></li>
+  <li><a href="#two">Add Rules and Commands to Button</a></li>
+  <li><a href="#three">Getting Selected Records</a></li>
+</ul>
+
+<h2 id="add-button-to-the-command-bar">Add button to the command bar</h2>
+
+<p>If your environment doesn’t have Ribbon Workbench, <a href="https://www.develop1.net/public/rwb/ribbonworkbench.aspx">download</a> the ribbon workbench solution to your environment and create a solution specifically for Ribbon Workbench. Add the existing entity without any metadata to that solution for creating custom buttons.</p>
+
+<p>Navigate to the solutions page(in classic mode) you got to see a button on the above named Ribbon Workbench as like below image</p>
+
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgnHnUbo3Cg_6zIoJYn7bZQahlkM6xXJ_Kh4-wOOC8oJmAHMfU9olEmiV3eckGSK5f22TPug8paKL77hjuqzcb5EWGOWUB5nTVeOxAjm2BzgwSrME844zZBsqaWDkSBj0QQySjJ_4crReEaNI4JjScKg-TXuW8cHEyr5agxdl6DsR5Kmuec7a_FTcB2"><img src="/assets/images/016/img_5e31800461.png" alt="" /></a></p>
+
 <p>Hit the Ribbon Workbench button, and it will navigate to the command editor page with a pop opened. Select the solution which is specific for buttons.</p>
-<p style="text-align: justify;"><em><strong>Note:</strong></em> Ribbon Workbench is too sensitive and it did not handle much entity data. It has a limit of only five entities for a solution.</p>
-<p></p>
-<div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjF3puvR8QeKJAYBx3M-HzEPp3xYAC8CRyyA-xggEA6eeqnexn9r2p1e5DbZ2KV0rxZQzT47s_ObLRMN4H79iXS2s9QMDO5BWZfIGZaT6zwxkSWuMDgkdQFRFs4daZR2gFBnPdIMqws4czWyo-y-25PzmLjSVKhsNpt7Huqkxo9RI9B4HlhCeMX20YP" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="477" data-original-width="535" src="/assets/images/016/img_ce0b50ded6.png" /></a></div></div></div></div>
-<p></p>
-<p style="text-align: justify;">Select the entity under the solution elements to add buttons. For the current context, we have to add buttons in Home, which refers to Main View. Drag and Drop the button on the desired location and add label and icon to it.</p>
-<p></p>
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgx-I8d5j7gSiushe81dI8CaCXtvAMXQWBKgl75NnKq7bQPec8SHOHuVYj2bm4kJaOHmqcggRs_q7gF9YqXqJuLhS4LRSMvsQuTo757BaIPykW_YDXKLf7Moh0aauI5EZvEH2PDC_b3O3TwSMkDS7lVKwM8ZADysB2IRBBTDATjJQF93V-5iQyosqZz" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="282" data-original-width="913" src="/assets/images/016/img_d03539ae37.png" /></a></div>
-<p></p>
-<h2 id="two">Add Rules and Commands to Button</h2>
-<p style="text-align: justify;">Add a new JavaScript Web Resource to the solution (Not in button specific solution) with the following script, then save and publish the solution.</p>
+
+<p><em><strong>Note:</strong></em> Ribbon Workbench is too sensitive and it did not handle much entity data. It has a limit of only five entities for a solution.</p>
+
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjF3puvR8QeKJAYBx3M-HzEPp3xYAC8CRyyA-xggEA6eeqnexn9r2p1e5DbZ2KV0rxZQzT47s_ObLRMN4H79iXS2s9QMDO5BWZfIGZaT6zwxkSWuMDgkdQFRFs4daZR2gFBnPdIMqws4czWyo-y-25PzmLjSVKhsNpt7Huqkxo9RI9B4HlhCeMX20YP"><img src="/assets/images/016/img_ce0b50ded6.png" alt="" /></a></p>
+
+<p>Select the entity under the solution elements to add buttons. For the current context, we have to add buttons in Home, which refers to Main View. Drag and Drop the button on the desired location and add label and icon to it.</p>
+
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgx-I8d5j7gSiushe81dI8CaCXtvAMXQWBKgl75NnKq7bQPec8SHOHuVYj2bm4kJaOHmqcggRs_q7gF9YqXqJuLhS4LRSMvsQuTo757BaIPykW_YDXKLf7Moh0aauI5EZvEH2PDC_b3O3TwSMkDS7lVKwM8ZADysB2IRBBTDATjJQF93V-5iQyosqZz"><img src="/assets/images/016/img_d03539ae37.png" alt="" /></a></p>
+
+<h2 id="add-rules-and-commands-to-button">Add Rules and Commands to Button</h2>
+
+<p>Add a new JavaScript Web Resource to the solution (Not in button specific solution) with the following script, then save and publish the solution.</p>
+
 <script src="https://gist.github.com/tamilarasu-arunachalam/500abd96bfa23acad7e386b8ca9d2c66.js"></script>
 
-<p style="text-align: justify;">Navigate to the Command Editor, then add a new command by clicking the + icon, add a JavaScript action by selecting the library and adding the function name. Add the CRM Parameter and <strong>SelectedControlSelectedItemReferences</strong>.</p>
-<p></p>
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEiWAsqOQANmvruiuKsMN2BsEYTEs2D2l70YkmnCSRZdBojNAzjdsGeDDFdvUsyVIyldteoQHTfKPnHu42eIj8ZENRvoU3ZRizgR6rSl7XZn2UV8XDvk2HWPkzMQmxZLzEKXIdyrWxo970_uEqKdGWkrG3DcYkTtkP0qanWtzJBonWbqHlvM1sjHJ13K" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="322" data-original-width="1139" src="/assets/images/016/img_3e8feffddc.png" /></a></div>
-<p></p>
-<p>Add an Enable rule to show the button only a record is selected. Click on + icon near Enable rules. Click on + Add Step and select <span class="notion-enable-hover" data-token-index="1" style="font-weight: 600;">SelectionCountRule</span> and set the minimum field to 1. So that, the button appears on the command at least a record gets selected unless it is hidden.</p>
-<p></p>
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEhCJUY6TvMl3e9TECe7852CycibHzC6vMN3UrMGZdW_nKpbGsIlZVGUxXRx4_R1-XO6rBNFSm8fH77jNB9NSAI1pjKx9w9WI72UOWpmerAxQBsdVTmobpOEyCsZFg2eDMf2A6-u4BEAe4oaM96d3H8RaIKJ_z15n610aWW6nK4HdUldWSHO3Mfd5bXj" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="151" data-original-width="920" src="/assets/images/016/img_59b0dc36d8.png" /></a></div>
-<p></p>
-<p style="text-align: left;">Add the Enable Rule to the Command and Add the Command to the button as like the below image, then publish the Command Editor.</p>
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcalvz-Gvlg81eyHdergtf0aQFhE7fv8N1aDMzINzk7w7ugYfKwnSN5YwwYYaDOivJ0VThr1cY68LKY8bMVC6YcBFREHiXs562zEfHrB5IIjdeunDXovYqmC6IMfDN1a9px-k6hcL8kGy1FDRQaKcUlsr1EMpkrNlHjRk5DNx5_CyZO463bN6nZHn2/s916/ribbonselecrec.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="426" data-original-width="916" src="/assets/images/016/img_a516faec8e.png" /></a></div>
-<div class="separator" style="clear: both; text-align: left;">
-<h2 id="three">Getting Selected Records</h2>
-<p style="text-align: left;">In this blog, I have placed the button in Products Home grid. I got to see the button which appears after selecting a record.</p>
-<p></p><p style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgw94hv8hOudSYvO1Cn5CQ2ar7T3Ioqw0G-4WFf1Unhj08LDEQqDuz_R-ibqYTTYfRWHAXYhHn3Vf88vVifZ6mhdokXVjhwy2tqKXOwXeEUpTosfEAre6q8yXvY1peywPGeDv8OWczNI3Mwe3FCHPyNpBx8IDWCOIpS_RDTQHGBuiSyTp-0dzs8LSjV" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="73" data-original-width="861" src="/assets/images/016/img_5e370a7e4a.png" /></a></p>
-<div style="text-align: left;">Hit the button to see the selected record names in an alert</div><a href="https://blogger.googleusercontent.com/img/a/AVvXsEg_ubljsvL1F0G5ZsrX0TTDYaNOxYbUIDQyWw0nZDqbjrABhH3PztI0ZnVUsdIJKdynZXuv06zb19r9HX0T4ZgwyPU1lpNgreUSv0ul6tu6-qpdO2R-BAHlhI4CFD38Z93MPeNAIDZIvNfsMRV8DBRXtN3QZ6saHWCMHHVg6GMTsBRvwUg6-8wOigv_" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="605" data-original-width="1158" height="1" src="/assets/images/016/img_7c758397bf.png" width="1" /></a></div>
-<p style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEg5RdpQMw6i4-3E8o7OaGbABQDYaF6TRo6veFWiOcn2ckUbw2pj3e7HktPvCKQUE2k6xtePELJgzEYp-Ofipen7N_LpQHUm_tVKo2XRs2AYFCHGMFMIVpyjdecoURAFHRWxFVGm1EllpTQPWusyHIYDsKEou2ncgHrEw94qB4cieC_JQcQJCeIYB6O-" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="605" data-original-width="1158" src="/assets/images/016/img_e606fc11ea.png" /></a></p>
-<p style="clear: both; text-align: left;">The below GIF will demonstrate the working of this script.</p>
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKsk4DDzRzPk96bKWJK5idW-YtcuBkxkN1KiFXmL7hlLYMvYVLEs_j0TTrFrRHKRF52zde6zYMYUUOxlj6PTJTtEzqx4UO50E5HlO1rrXeEfsogEV0dK4b2BvxPD-xSd2KRoNkbLgJs7G8aYrbrbcejC97O6AXiVy6l6srUt9vEX9jHgMf5TwNUZ6c/s1000/selected%20records.gif" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="505" data-original-width="1000" src="/assets/images/016/img_afd13fcd26.gif" /></a></div>
-<p><br />&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;/div&gt;&lt;div class="hs-body-level-container blogger" strategyname="Blogger"&gt;&lt;/div&gt;</p>
+<p>Navigate to the Command Editor, then add a new command by clicking the + icon, add a JavaScript action by selecting the library and adding the function name. Add the CRM Parameter and <strong>SelectedControlSelectedItemReferences</strong>.</p>
+
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEiWAsqOQANmvruiuKsMN2BsEYTEs2D2l70YkmnCSRZdBojNAzjdsGeDDFdvUsyVIyldteoQHTfKPnHu42eIj8ZENRvoU3ZRizgR6rSl7XZn2UV8XDvk2HWPkzMQmxZLzEKXIdyrWxo970_uEqKdGWkrG3DcYkTtkP0qanWtzJBonWbqHlvM1sjHJ13K"><img src="/assets/images/016/img_3e8feffddc.png" alt="" /></a></p>
+
+<p>Add an Enable rule to show the button only a record is selected. Click on + icon near Enable rules. Click on + Add Step and select SelectionCountRule and set the minimum field to 1. So that, the button appears on the command at least a record gets selected unless it is hidden.</p>
+
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEhCJUY6TvMl3e9TECe7852CycibHzC6vMN3UrMGZdW_nKpbGsIlZVGUxXRx4_R1-XO6rBNFSm8fH77jNB9NSAI1pjKx9w9WI72UOWpmerAxQBsdVTmobpOEyCsZFg2eDMf2A6-u4BEAe4oaM96d3H8RaIKJ_z15n610aWW6nK4HdUldWSHO3Mfd5bXj"><img src="/assets/images/016/img_59b0dc36d8.png" alt="" /></a></p>
+
+<p>Add the Enable Rule to the Command and Add the Command to the button as like the below image, then publish the Command Editor.</p>
+
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcalvz-Gvlg81eyHdergtf0aQFhE7fv8N1aDMzINzk7w7ugYfKwnSN5YwwYYaDOivJ0VThr1cY68LKY8bMVC6YcBFREHiXs562zEfHrB5IIjdeunDXovYqmC6IMfDN1a9px-k6hcL8kGy1FDRQaKcUlsr1EMpkrNlHjRk5DNx5_CyZO463bN6nZHn2/s916/ribbonselecrec.png"><img src="/assets/images/016/img_a516faec8e.png" alt="" /></a></p>
+
+<h2 id="getting-selected-records">Getting Selected Records</h2>
+
+<p>In this blog, I have placed the button in Products Home grid. I got to see the button which appears after selecting a record.</p>
+
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgw94hv8hOudSYvO1Cn5CQ2ar7T3Ioqw0G-4WFf1Unhj08LDEQqDuz_R-ibqYTTYfRWHAXYhHn3Vf88vVifZ6mhdokXVjhwy2tqKXOwXeEUpTosfEAre6q8yXvY1peywPGeDv8OWczNI3Mwe3FCHPyNpBx8IDWCOIpS_RDTQHGBuiSyTp-0dzs8LSjV"><img src="/assets/images/016/img_5e370a7e4a.png" alt="" /></a></p>
+
+<p>Hit the button to see the selected record names in an alert</p>
+
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEg_ubljsvL1F0G5ZsrX0TTDYaNOxYbUIDQyWw0nZDqbjrABhH3PztI0ZnVUsdIJKdynZXuv06zb19r9HX0T4ZgwyPU1lpNgreUSv0ul6tu6-qpdO2R-BAHlhI4CFD38Z93MPeNAIDZIvNfsMRV8DBRXtN3QZ6saHWCMHHVg6GMTsBRvwUg6-8wOigv_"><img src="/assets/images/016/img_7c758397bf.png" alt="" /></a></p>
+
+<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEg5RdpQMw6i4-3E8o7OaGbABQDYaF6TRo6veFWiOcn2ckUbw2pj3e7HktPvCKQUE2k6xtePELJgzEYp-Ofipen7N_LpQHUm_tVKo2XRs2AYFCHGMFMIVpyjdecoURAFHRWxFVGm1EllpTQPWusyHIYDsKEou2ncgHrEw94qB4cieC_JQcQJCeIYB6O-"><img src="/assets/images/016/img_e606fc11ea.png" alt="" /></a></p>
+
+<p>The below GIF will demonstrate the working of this script.</p>
+
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKsk4DDzRzPk96bKWJK5idW-YtcuBkxkN1KiFXmL7hlLYMvYVLEs_j0TTrFrRHKRF52zde6zYMYUUOxlj6PTJTtEzqx4UO50E5HlO1rrXeEfsogEV0dK4b2BvxPD-xSd2KRoNkbLgJs7G8aYrbrbcejC97O6AXiVy6l6srUt9vEX9jHgMf5TwNUZ6c/s1000/selected%20records.gif"><img src="/assets/images/016/img_afd13fcd26.gif" alt="" /></a></p>
 
                 </div>
 
