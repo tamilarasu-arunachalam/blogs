@@ -76,7 +76,20 @@ title: Home
                         </li>
                         {% endif %}
 
-                        {% for page in (1..paginator.total_pages) %}
+                        {% assign start_page = paginator.page | minus: 2 %}
+                        {% if start_page < 1 %}
+                            {% assign start_page = 1 %}
+                        {% endif %}
+                        {% assign end_page = start_page | plus: 4 %}
+                        {% if end_page > paginator.total_pages %}
+                            {% assign end_page = paginator.total_pages %}
+                            {% assign start_page = end_page | minus: 4 %}
+                            {% if start_page < 1 %}
+                                {% assign start_page = 1 %}
+                            {% endif %}
+                        {% endif %}
+
+                        {% for page in (start_page..end_page) %}
                         {% if page == paginator.page %}
                         <li class="page-item active" aria-current="page">
                             <span class="page-link rounded-circle border-0 bg-dark text-white mx-1">{{ page }}</span>
