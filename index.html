@@ -68,6 +68,14 @@ title: Home
                 {% if paginator.total_pages > 1 %}
                 <nav aria-label="Page navigation" class="mt-5">
                     <ul class="pagination justify-content-center">
+                        {% if paginator.page > 1 %}
+                        <li class="page-item">
+                            <a class="page-link rounded-circle border-0 bg-light text-dark mx-1" href="{{ '/' | relative_url }}" aria-label="First">
+                                &laquo;
+                            </a>
+                        </li>
+                        {% endif %}
+
                         {% if paginator.previous_page %}
                         <li class="page-item">
                             <a class="page-link rounded-circle border-0 bg-light text-dark mx-1" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous">
@@ -109,6 +117,14 @@ title: Home
                         <li class="page-item">
                             <a class="page-link rounded-circle border-0 bg-light text-dark mx-1" href="{{ paginator.next_page_path | relative_url }}" aria-label="Next">
                                 <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+
+                        {% if paginator.page < paginator.total_pages %}
+                        <li class="page-item">
+                            <a class="page-link rounded-circle border-0 bg-light text-dark mx-1" href="{{ site.paginate_path | relative_url | replace: ':num', paginator.total_pages }}" aria-label="Last">
+                                &raquo;
                             </a>
                         </li>
                         {% endif %}
