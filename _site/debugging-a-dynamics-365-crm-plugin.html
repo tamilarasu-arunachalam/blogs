@@ -11,20 +11,22 @@
 <meta property="og:title" content="Debugging a Dynamics 365 CRM Plugin" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;Debugging&lt;/li&gt;&lt;li&gt;Debugging a Dynamics 365 CRM plugin&lt;/li&gt;&lt;li&gt;Trace Logs&lt;/li&gt;&lt;li&gt;Persist to Entity (Recommended)&lt;/li&gt;&lt;li&gt;Exception&lt;/li&gt;&lt;li&gt;Summary&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;h2 id=&quot;debugging&quot; style=&quot;text-align: left;&quot;&gt;Debugging&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Debugging is the process of identifying and resolving errors in a system. Though it is a complex and time-consuming task, it is necessary to debug the code and ensure the functionality of the application. Because, a single bug can cause a drastic impact. It might be an iterative process and might require multiple attempts to track and resolve the bugs.&lt;/p&gt;&lt;h2 id=&quot;debugging-a-dynamics-365-crm-plugin&quot; style=&quot;text-align: justify;&quot;&gt;Debugging a Dynamics 365 CRM plugin&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Dynamics 365 CRM plugins are developed in C#(.NET). Plugins are of…" />
-<meta name="twitter:description" property="og:description" content="&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;Debugging&lt;/li&gt;&lt;li&gt;Debugging a Dynamics 365 CRM plugin&lt;/li&gt;&lt;li&gt;Trace Logs&lt;/li&gt;&lt;li&gt;Persist to Entity (Recommended)&lt;/li&gt;&lt;li&gt;Exception&lt;/li&gt;&lt;li&gt;Summary&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;h2 id=&quot;debugging&quot; style=&quot;text-align: left;&quot;&gt;Debugging&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Debugging is the process of identifying and resolving errors in a system. Though it is a complex and time-consuming task, it is necessary to debug the code and ensure the functionality of the application. Because, a single bug can cause a drastic impact. It might be an iterative process and might require multiple attempts to track and resolve the bugs.&lt;/p&gt;&lt;h2 id=&quot;debugging-a-dynamics-365-crm-plugin&quot; style=&quot;text-align: justify;&quot;&gt;Debugging a Dynamics 365 CRM plugin&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Dynamics 365 CRM plugins are developed in C#(.NET). Plugins are of…" />
+<meta name="description" content="Debugging Debugging a Dynamics 365 CRM plugin Trace Logs Persist to Entity (Recommended) Follow the below steps to debug plugin using Persist to Entity: Exception Follow the below steps to debug plugin using Exception: Summary" />
+<meta name="twitter:description" property="og:description" content="Debugging Debugging a Dynamics 365 CRM plugin Trace Logs Persist to Entity (Recommended) Follow the below steps to debug plugin using Persist to Entity: Exception Follow the below steps to debug plugin using Exception: Summary" />
 <link rel="canonical" href="http://localhost:4000/debugging-a-dynamics-365-crm-plugin.html" />
 <meta property="og:url" content="http://localhost:4000/debugging-a-dynamics-365-crm-plugin.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="http://localhost:4000/assets/images/025/img_df0059ddb7.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-07-02T00:37:00+05:30" />
 <meta property="article:modified_time" content="2023-07-02T00:37:00+05:30" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/025/img_df0059ddb7.png" />
 <meta name="twitter:title" content="Debugging a Dynamics 365 CRM Plugin" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-07-02T00:37:00+05:30","datePublished":"2023-07-02T00:37:00+05:30","description":"&lt;ul style=&quot;text-align: left;&quot;&gt;&lt;li&gt;Debugging&lt;/li&gt;&lt;li&gt;Debugging a Dynamics 365 CRM plugin&lt;/li&gt;&lt;li&gt;Trace Logs&lt;/li&gt;&lt;li&gt;Persist to Entity (Recommended)&lt;/li&gt;&lt;li&gt;Exception&lt;/li&gt;&lt;li&gt;Summary&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;h2 id=&quot;debugging&quot; style=&quot;text-align: left;&quot;&gt;Debugging&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Debugging is the process of identifying and resolving errors in a system. Though it is a complex and time-consuming task, it is necessary to debug the code and ensure the functionality of the application. Because, a single bug can cause a drastic impact. It might be an iterative process and might require multiple attempts to track and resolve the bugs.&lt;/p&gt;&lt;h2 id=&quot;debugging-a-dynamics-365-crm-plugin&quot; style=&quot;text-align: justify;&quot;&gt;Debugging a Dynamics 365 CRM plugin&lt;/h2&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;    Dynamics 365 CRM plugins are developed in C#(.NET). Plugins are of…","headline":"Debugging a Dynamics 365 CRM Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/debugging-a-dynamics-365-crm-plugin.html"},"url":"http://localhost:4000/debugging-a-dynamics-365-crm-plugin.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-07-02T00:37:00+05:30","datePublished":"2023-07-02T00:37:00+05:30","description":"Debugging Debugging a Dynamics 365 CRM plugin Trace Logs Persist to Entity (Recommended) Follow the below steps to debug plugin using Persist to Entity: Exception Follow the below steps to debug plugin using Exception: Summary","headline":"Debugging a Dynamics 365 CRM Plugin","image":"http://localhost:4000/assets/images/025/img_df0059ddb7.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/debugging-a-dynamics-365-crm-plugin.html"},"url":"http://localhost:4000/debugging-a-dynamics-365-crm-plugin.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta name="keywords" content="">
@@ -110,7 +112,7 @@
                 <!-- Post Title & Meta -->
                 <header class="post-header mb-5">
                     <div class="mb-3">
-                        <span class="badge bg-light text-dark border"></span>
+                        <span class="badge bg-light text-dark border">Dynamics 365 CE</span>
                     </div>
                     <h1 class="display-4 fw-bold mb-4">Debugging a Dynamics 365 CRM Plugin</h1>
                     <div class="post-meta d-flex align-items-center mb-4">
@@ -124,6 +126,23 @@
                 </header>
 
                 
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/025/img_df0059ddb7.png" alt="Debugging a Dynamics 365 CRM Plugin" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+
+
+
+                </div>
+                
 
                 <!-- Topics / TOC Include -->
                 <!-- Optional Topics Navigation -->
@@ -132,7 +151,180 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <p><img border="0" data-original-height="400" data-original-width="700" height="183" src="/assets/images/025/img_df0059ddb7.png" style="display: none;" width="320" />&lt;ul style="text-align: left;"&gt;&lt;li&gt;<a href="#debugging" rel="nofollow">Debugging</a>&lt;/li&gt;&lt;li&gt;<a href="#debugging-a-dynamics-365-crm-plugin" rel="nofollow">Debugging a Dynamics 365 CRM plugin</a>&lt;/li&gt;&lt;li&gt;<a href="#trace-logs" rel="nofollow">Trace Logs</a>&lt;/li&gt;&lt;li&gt;<a href="#persist-to-entity" rel="nofollow">Persist to Entity (Recommended)</a>&lt;/li&gt;&lt;li&gt;<a href="#exception" rel="nofollow">Exception</a>&lt;/li&gt;&lt;li&gt;<a href="#summary" rel="nofollow">Summary</a>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;h2 id="debugging" style="text-align: left;"&gt;Debugging&lt;/h2&gt;&lt;p style="text-align: justify;"&gt;<span>    Debugging is the process of identifying and resolving errors in a system. Though it is a complex and time-consuming task, it is necessary to debug the code and ensure the functionality of the application. Because, a single bug can cause a drastic impact. It might be an iterative process and might require multiple attempts to track and resolve the bugs.</span>&lt;/p&gt;&lt;h2 id="debugging-a-dynamics-365-crm-plugin" style="text-align: justify;"&gt;<span>Debugging a Dynamics 365 CRM plugin</span>&lt;/h2&gt;&lt;p style="text-align: justify;"&gt;<span><span>    Dynamics 365 CRM plugins are developed in C#(.NET). Plugins are of two types, which are synchronous and asynchronous. </span></span>We cannot debug the plugin on the runtime, rather we can do it using profiler. A profiler will capture the instance of the plugin execution and save it as a row in the plugin-profiler table in Dataverse. You need <a href="https://learn.microsoft.com/en-us/power-apps/developer/data-platform/download-tools-nuget" rel="nofollow" target="_blank">Plugin Registration tool</a> to debug the Dataverse plugins.&lt;/p&gt;&lt;p style="text-align: justify;"&gt;<span>    There are multiple ways in debugging a Dynamics 365 CRM Plugins. They are.</span><br />&lt;/p&gt;&lt;p style="text-align: justify;"&gt;&lt;/p&gt;&lt;ul&gt;&lt;ul&gt;&lt;li&gt;<span>Trace Logs</span>&lt;/li&gt;&lt;li&gt;<span>Persist to Entity</span>&lt;/li&gt;&lt;li&gt;<span>Exception</span>&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;div&gt;I have used <a href="https://www.tamilarasu.me/2023/06/end-a-email-in-dynamics-365-crm-using-plugins.html" rel="nofollow" target="_blank">create email activity plugin</a> to demonstrate the debugging of the plugin. This plugin creates an email activity when a contact record gets created. After the development, build the plugin and sign the assembly.&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;h2 id="trace-logs" style="text-align: justify;"&gt;Trace Logs&lt;/h2&gt;&lt;p style="text-align: justify;"&gt;    We can log the errors using <span style="font-family: Inconsolata;"><b>ITracingService</b></span> interface in plugin. This trace log accepts only the string to log. It is used for debugging both synchronous and asynchronous plugins. If you want to log values of any other data type, you should typecast it to string. This will log the errors, and it will appear on the Plugin Trace logs. Before that, you should make sure that your environment enabled the Plugin Trace logs.&lt;/p&gt;&lt;p style="text-align: left;"&gt;<code>ITracingService log = (ITracingService)serviceProvider.GetService(typeof(ITracingService));<br /></code><code>log.Trace("Execution Started");</code>&lt;/p&gt;&lt;div style="text-align: justify;"&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;To do so, you should navigate to Settings <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span> Advanced Settings <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"><span style="font-size: 14px;"> </span>Administration</span></span> <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"> System Settings </span></span><span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"> Customization</span></span> <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"><span style="font-size: 14px;"> </span>Enable </span></span><span style="background-color: white;">Plug-in and custom workflow activity tracing to All (if not enabled).</span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixiKOcY5mmQMBFb1DUr0WYIu3ZX6XYu8fQiHbv8WNDQ8jwrp1DrxxL2m89EoGeMQqks8mEQMvhTX4COhpOxUdYxLVRY2FdTf448LvmPndQMaPWJJXgvvGlP6X42S51BmbaGAYw-BP_SqHbQUA7BIYX0xgQkrNy30BDr3ZCVKVvJCeaaRdR76cez_6DDj0/s1083/enable-trace-logs.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="429" data-original-width="1083" height="254" src="/assets/images/025/img_0db7a16c1e.png" title="Debugging a Dynamics 365 CRM Plugin" width="640" /></a>&lt;/p&gt;&lt;p style="clear: both; text-align: left;"&gt;&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;To see the Trace logs, navigate to Settings <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span> Advanced Settings <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"> Plug-In Trace log.</span></span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: left;"&gt;<span style="background-color: white;"></span>&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1Z5hHCwLrwrGP9rYaI_u3kbQpIQcAgICj4dmdfZ08d9S4Ttvm-DI-x4AgDnoAM5bDkQKuFoEEZGPKtmx-nIT2_oE_lyoBzkqoc7cp2l9jVdvAoPieBBgGUs0rtjmJleq28LjlQxtrdfx2p9O-V8kV1hQbypxcl9hVOmfvWqKmzEJbBSdgaed2cszDQHw/s768/plugin-trace-logs.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="550" data-original-width="768" height="229" src="/assets/images/025/img_7eb3e81c34.png" title="Debugging a Dynamics 365 CRM Plugin" width="320" /></a>&lt;/p&gt;&lt;p style="clear: both; text-align: justify;"&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Once we hit the Plug-In Trace log, it will take us to the Plugin Trace Logs grid view page. Click on any of the record, you will get to see the trace logs which are logged during the execution of Plugin code.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLSYl2X-QfmU2jyckENm1sfgOicjAqTC-UpUPhMRETqtI5YNRSpoQYetgZRrjopv2nCEb8QnB5OhrUnCfVaP31OsZA64ucExzcIiFPqvtoU0CkoyFhDXhhj6W9_RjHByxh3TRfi0eiOH6FotYmcDx9z_9HzOtDb5VZc5uq1WegOBvEhXUEIT1kwktwg3Y/s1320/trace-logs.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="767" data-original-width="1320" height="233" src="/assets/images/025/img_bb2cf0f148.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;p style="clear: both; text-align: left;"&gt;&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Open any of the record, you will see the configuration and execution details. In the execution section, you will see the message block which we logged while developing a plugin.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicpdB1eNJTpG6dTc7avkBtfV9Wr2rtnDiEtAzrABWDOL6_1AY4TKEhaxpL5eipkPvN1pb3X1QfQhdI757msYi7UxwiWnLB_0nMUw3kC0Ds5DiHtHvdBIb86oYP2ofaJz_ZWunqkzwj928zIvb-3_lbn92k5tx7gdk1Ju3qSjmbLYjfnGP7t3VkpvqhAIY/s1243/trace-logs-record.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="421" data-original-width="1243" height="135" src="/assets/images/025/img_94e3cd99e2.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p style="text-align: justify;"&gt;&lt;/p&gt;&lt;h2 id="persist-to-entity"&gt;Persist to Entity (Recommended)&lt;/h2&gt;&lt;div style="text-align: justify;"&gt;<span>    This is the recommended way of debugging Dynamics 365 CRM plugins. In this method, we can use the saved profiles from the plugin profiles table to debug the plugin code. It is used for debugging both synchronous and asynchronous plugins. In this method, we can catch the profiler once the whole process is completed.</span>&lt;/div&gt;&lt;h3 style="text-align: justify;"&gt;<span>Follow the below steps to debug plugin using Persist to Entity:</span>&lt;/h3&gt;&lt;div style="text-align: justify;"&gt;<span>&lt;div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcQ4JwRFtFxTYUrJiT2Mb9eS89CDou8XZyx7FwqbE9sXE_MqEfom_YSJrlDfb040IHdgLzNA_ZiCypqX9y1QEBZkoxV9c-cMdL-woN8OWtlDcQxu0iksWDGzYrydi8sd_mk8s3c2kbmrj8_1hCTeMRaU62_u_3U2tydKi41hA4lpUMhbboHlIBd0j6Kiw/s965/break-points.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="378" data-original-width="965" height="156" src="/assets/images/025/img_01797fd2f6.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;<span>In Visual Studio, place some break points in the code to catch the debugger.</span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgia-xsSILLfU4rfYloG-k8YhkPnSshjWf0Js86KPRPB5oFQwi2ZQVXsjZZhjdMd_sd8q_d-PI2OSUU80QstZmhTd6bmTQuIeUU0ZR0GyvvH3Zh_4AecxlohY_qT5X37xS040crR1gc_0mvUyfZLvYTzNM_qrtNBmaK2_MYmUYiGO5wYcH1mUfhxIYCPes/s507/attach-to-process.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="507" data-original-width="457" height="400" src="/assets/images/025/img_fc1792d301.png" title="Debugging a Dynamics 365 CRM Plugin" width="360" /></a>&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Go to<span> Debug</span> <span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px;">🡲</span><span style="background-color: white;"><span style="font-family: inherit;"><span style="font-size: 14px;"> </span></span></span>Attach to Process and select Plugin Registration Tool and hit Attach.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHjtgHOyPTmEIp95F4oKvnQay5D82IH7_L7W9MBlBF1vyqiUFNtAcNZfJ5MvcVH3mqkZFj9SePs37qbInI1GC671LxJFbPz4H5Aep8p6-8BF21InYXG_qq1xXk7AFOLol6PCkL36mbK0wNuUMe9BtqX_rZ7K9G5DBXXuKYfmsq_xQOyog5mYGK2qyj3X0/s978/attach-prt.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="807" data-original-width="978" height="264" src="/assets/images/025/img_145bfe6593.png" title="Debugging a Dynamics 365 CRM Plugin" width="320" /></a>&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;For that, we have to register our plugin in Plugin Registration Tool. Create a new plugin assembly by uploading the .dll file from files. &lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;</span>&lt;/div&gt;&lt;div style="text-align: justify;"&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3PK0sjsx7usAeseXPBCOgcKMYqhoKv-ofzAkdzx-_qm7DfAKvLJXjkPqMzweG8R2fmjHJfL7Psd920a-THiN0DSAxJrTs63I4Q9ChmV7L8ALwTkKc0RFY-2JioM2W7VjiNhHasmw6TVH9zCq1hw5C1OQURfTARBrGPkv3IjjF_bWabiJsRcpS6hkn62M/s1280/plugin-step.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="818" data-original-width="1280" height="205" src="/assets/images/025/img_2d45214e0a.png" title="Debugging a Dynamics 365 CRM Plugin" width="320" /></a>&lt;/p&gt;&lt;/div&gt;&lt;div style="text-align: justify;"&gt;&lt;ul&gt;&lt;li&gt;<span>Create a new step under the plugin by adding message, entity, event-execution, and type.</span>&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJh9dcKdDfK5oO8GYjKJ5hm3Wy2g99Xe1xI4Wxtv-FvnGHx9i47Hjax51dFw5N-HiI-EfT-dCVlwq9pl8NMdOP6BFeq6T9SesLCe-15w7c5IrhvkDC_Sv8_0gyaC4lIh-HCfJQoL4xXlVZH8BFKqJDWobvHluJ30vKnNMgnF9Hns8ds8QxDjST3wyvGus/s720/plugin-before-profiling.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="279" data-original-width="720" height="155" src="/assets/images/025/img_90cd9dbfd3.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;p style="text-align: left;"&gt;&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;<span style="text-align: justify;">Select the step and click on the Start Profiling button on the navigation bar. A dialog box prompts up and asking for specifying profiler storage option.</span>&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0Hqms4UgtTSbxL43dUXG8IHv-Zaap-eOch7rCXV_tSwGPl25PWJ-LPZUXn6idcBCmzQ_qTKctIL8HOcMMrXBoo_oTmKbn7ZpFxY0F9EqZqYp2L9PyKlxHBVuEJJ3R3pjF4JH8sTu4b8IgM3Thk2jq50ca2fQvDWoAv2wrXjgO6--nHuQgJh4Hqpb_sD4/s939/start-profiling-persist2entity.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="644" data-original-width="939" height="274" src="/assets/images/025/img_08bf645b6b.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/div&gt;<span style="text-align: justify;"><br /></span>&lt;/div&gt;&lt;div&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Select persist to Entity as a profile storage option and click on the OK.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqKwgv1hNwtM2mztYKcbehLZell2yHi3LTCXLPulQUFD1IZxuiG9Fyb0ErBqXSSkLuIKl0lQFmcgkXojjQ-lLjfWQor77j-7AYkyla6dEFTWoya2wph8IXmevAO1zvLTlfqhFOgv8_ihVJLEEA_Uy348qDQ2IUp2qtzsDl_g1yrzq2NsgaXqxZibhlm_Y/s691/plugin-profiled.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="87" data-original-width="691" height="50" src="/assets/images/025/img_af4062f817.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;div&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Once the plugin got profiled, you will see the text profiled near your plugin step.&lt;/li&gt;&lt;li&gt;Then perform the actual scenario to capture the profile. In my context, I have created a new contact record.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUxo7HoHTA4p9sTH4BXDfPBF_-vjDSqYIDYswWDIVuRIutSfU4iniLRKZN-_BWGngNzVK8-vCa9BDUhV4S1CvuOo9EAptgEUsqrJJtouhHO_xNnkeKEsRCFBNjmExcsaaKvyvP4HZhQ_70kv_XLBaT70rgTKb2YE2YvkmNR5LPMx_CUhu__874PxGQhbg/s850/before-debug.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="850" data-original-width="713" height="400" src="/assets/images/025/img_535e4cc1eb.png" title="Debugging a Dynamics 365 CRM Plugin" width="335" /></a>&lt;/p&gt;&lt;div&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Click on debug in Plugin Registration Tool and click on the down arrow symbol to add the captured Profile&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMZZQqlmrLrFXb9ZOGHupXZBRxMJAypO9IxjDQlEGPmB6AJBdqHEqyh2M-ZUrb8wb2CHjuXjju3106MMS-JSznjUKI79sbRPsnANchdyNLWbQ-TkjFSns-P0Aq6tPZZpvtM3PjqntJVD9qDT4t_xwR-1QA5dtYZfLnUVjMpZpO2mFNg4Qawrq09Q1aLJ8/s800/captured-profiles.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="747" data-original-width="800" height="299" src="/assets/images/025/img_a31b1de0f4.png" title="Debugging a Dynamics 365 CRM Plugin" width="320" /></a>&lt;/p&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Add the assembly and click on start execution button &lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeLIgWwnryKgKO5jv15CowiWpA1emnq-SsafLloMvEcIUKrusFhZcnj64VviSXQW0Yv7iDlXWlNe-eenWQIMaJP64eL-ZHE7d_6uBfMdOpM4_Ratt6atwkBWt9gqVFEWUvLLgObFdV3bTz6MhA4Bjfjb3EDDdG5V2q3_EXOKqN6mugdy9YZNUJ7MIenI4/s850/after-debug.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="850" data-original-width="713" height="400" src="/assets/images/025/img_4b07a7ccda.png" title="Debugging a Dynamics 365 CRM Plugin" width="335" /></a>&lt;/p&gt;&lt;p style="clear: both; text-align: left;"&gt;&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Once you click Start Execution, it will navigate to the Visual Studio and stops at the break point. Then you can move forward by clicking <b>F10</b> key. To check the values for the variables, you can hover over the variable and make sure the value is correct or change the code to make it right. &lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9g6sdGvu_PUMpFLQTAkaH4ZRZGV-Cbb6LZvi1MiberEXFE-WgPwiLEsQj31BHEbmQmcrkZqCUp5CIHY_3MZsoWc-pHjzpLsqBYB-GPFDPvwp2fe9kPQ9AzgYYjF8jVkuJFsYvZqqAxtrv17fh5grh2_tBSe-qTUtPxkwQ3znsoNO1IFY2xv5sPOYL7i4/s990/stops-at-breakpoint.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="227" data-original-width="990" height="91" src="/assets/images/025/img_beb872fce5.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;h2 id="exception" style="text-align: left;"&gt;Exception&lt;/h2&gt;&lt;div style="text-align: justify;"&gt;<span>    Exception is another way to debug the Dataverse plugins. It will use the exception file as the profile. In this method, we cannot proceed the whole action even it is executed in right way. Because of the system throwing an exception and stops the process. This method is used for debugging the synchronous plugins. </span><br />&lt;/div&gt;&lt;div&gt;&lt;h3 style="text-align: justify;"&gt;<span>Follow the below steps to debug plugin using Exception:</span>&lt;/h3&gt;&lt;/div&gt;&lt;div&gt;<span><b><i><span>    </span>Note:</i></b> I have used the same plugin which is demonstrated in Persist to entity method</span>&lt;/div&gt;&lt;div&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Place the break points on the code in Visual Studio and Go to Debug<span style="text-align: justify;"> </span><span face="&quot;Work Sans&quot;, sans-serif" style="background-color: white; font-size: 14px; text-align: justify;">🡲</span><span style="background-color: white; text-align: justify;"><span style="font-family: inherit;"><span style="font-size: 14px;"> </span></span></span>Attach to Process and Select Plugin Registration Tool.&lt;/li&gt;&lt;li&gt;In Plugin Registration tool, select the step and click on Start Profiling.&lt;/li&gt;&lt;/ul&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjluQGzLaBzgKQgT73KvLHNWUeiA4FTwqW3Tg6dHQD3Ym7W3lz5ZaznHbP2HuBaKAKqCnXgMbjQHCbiJiOMSR_Kyr_Ko77qMGA2FxUTVWrnS9ScZ9DcM5PjBSa0kmvswXPTyt58x1jQ2I8MprxxY9PVG1zhHyiDHjbWn0x1qqaiItYbVuxZ3L-VcJyLV7U/s939/start-profiling-exception.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="644" data-original-width="939" height="274" src="/assets/images/025/img_b5f251c54a.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Select Exception for profile storage and click OK.&lt;/li&gt;&lt;li&gt;Go to the Application and perform the action to trigger the plugin.&lt;/li&gt;&lt;li&gt;In my context, I have to create a contact to trigger the plugin. I will get the business process error with the exception file in it.&lt;/li&gt;&lt;/ul&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUzWxLQvKIPMz3c1YwhaTjGbCmQgo8PZgK8O-UDLwjDk8Tfjek-ZLH2GtoI0h9MLm1il3IGHLzLXDDViE_hBmEOIt_88U-2xg_qXDja70bErzvrp-L3zLHfSe_2WU71bbZ24qwuhKyScPD1zmtbkJ_1SnVu8YY4PFeswKpIWEX6Y7D96sK3Nm9H_ruqwc/s529/business-process-error.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="358" data-original-width="529" height="271" src="/assets/images/025/img_73d73c7009.png" title="Debugging a Dynamics 365 CRM Plugin" width="400" /></a>&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Click on the download log file and you will get the .txt file.&lt;/li&gt;&lt;li&gt;Go to the Plugin Registration Tool and click on Debug and select the downloaded .txt file and add the respective assembly.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;p style="clear: both; text-align: center;"&gt;<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj44zQEW4cZUn7s4JQzsXVoiYE4ARYFHU7mEuJL4-eBo0GyoM-fKpiN_wLiiAoBcn3Oh6Qx7Fn-TCSDKH0w5zKl5DPYhk6g8yCkoaZ5nnWtWr0ub_2UjRTiumSFaYZP_OTqz4z1r4_QWVzNMEaHR9VMBSkmNsbbcIEEi7-P3RHJEdONj5v04QBo_gJLItw/s850/debug-exception.PNG" style="margin-left: 1em; margin-right: 1em;"><img alt="Debugging a Dynamics 365 CRM Plugin" border="0" data-original-height="850" data-original-width="713" height="400" src="/assets/images/025/img_f611e99fc0.png" title="Debugging a Dynamics 365 CRM Plugin" width="335" /></a>&lt;/p&gt;&lt;ul style="text-align: left;"&gt;&lt;li&gt;Click on the Start Execution, it will navigate to Visual Studio and hit the break point.&lt;/li&gt;&lt;li&gt;You can move the debugger using <b>F10</b> key and hover over the variables to check the values.&lt;/li&gt;&lt;/ul&gt;&lt;h2 id="summary" style="text-align: left;"&gt;<span>Summary</span>&lt;/h2&gt;&lt;/div&gt;&lt;div style="text-align: justify;"&gt;<span><span>    </span>Thus, the above-mentioned ways are used for debugging the plugins. But Microsoft recommends to use persist to entity for debugging. Trace logs will be used for logging the values. As programming is not a one time activity, and it requires a lot of debugging to make a right application.</span>&lt;/div&gt;&lt;div&gt;<span><br /></span>&lt;/div&gt;&lt;div&gt;<span>Have a great day! </span>&lt;/div&gt;</p>
+                    <ul>
+  <li><a href="#debugging">Debugging</a></li>
+  <li><a href="#debugging-a-dynamics-365-crm-plugin">Debugging a Dynamics 365 CRM plugin</a></li>
+  <li><a href="#trace-logs">Trace Logs</a></li>
+  <li><a href="#persist-to-entity-recommended">Persist to Entity (Recommended)</a>
+    <ul>
+      <li><a href="#follow-the-below-steps-to-debug-plugin-using-persist-to-entity">Follow the below steps to debug plugin using Persist to Entity:</a></li>
+    </ul>
+  </li>
+  <li><a href="#exception">Exception</a>
+    <ul>
+      <li><a href="#follow-the-below-steps-to-debug-plugin-using-exception">Follow the below steps to debug plugin using Exception:</a></li>
+    </ul>
+  </li>
+  <li><a href="#summary">Summary</a></li>
+</ul>
+
+<h2 id="debugging">Debugging</h2>
+
+<p>    Debugging is the process of identifying and resolving errors in a system. Though it is a complex and time-consuming task, it is necessary to debug the code and ensure the functionality of the application. Because, a single bug can cause a drastic impact. It might be an iterative process and might require multiple attempts to track and resolve the bugs.</p>
+
+<h2 id="debugging-a-dynamics-365-crm-plugin">Debugging a Dynamics 365 CRM plugin</h2>
+
+<p>    Dynamics 365 CRM plugins are developed in C#(.NET). Plugins are of two types, which are synchronous and asynchronous. We cannot debug the plugin on the runtime, rather we can do it using profiler. A profiler will capture the instance of the plugin execution and save it as a row in the plugin-profiler table in Dataverse. You need <a href="https://learn.microsoft.com/en-us/power-apps/developer/data-platform/download-tools-nuget">Plugin Registration tool</a> to debug the Dataverse plugins.</p>
+
+<p>    There are multiple ways in debugging a Dynamics 365 CRM Plugins. They are.</p>
+
+<ul>
+  <li>Trace Logs</li>
+  <li>Persist to Entity</li>
+  <li>Exception</li>
+</ul>
+
+<p>I have used <a href="https://www.tamilarasu.me/2023/06/end-a-email-in-dynamics-365-crm-using-plugins.html">create email activity plugin</a> to demonstrate the debugging of the plugin. This plugin creates an email activity when a contact record gets created. After the development, build the plugin and sign the assembly.</p>
+
+<h2 id="trace-logs">Trace Logs</h2>
+
+<p>    We can log the errors using <strong>ITracingService</strong> interface in plugin. This trace log accepts only the string to log. It is used for debugging both synchronous and asynchronous plugins. If you want to log values of any other data type, you should typecast it to string. This will log the errors, and it will appear on the Plugin Trace logs. Before that, you should make sure that your environment enabled the Plugin Trace logs.</p>
+
+<p><code class="language-plaintext highlighter-rouge">ITracingService log = (ITracingService)serviceProvider.GetService(typeof(ITracingService));   </code><code class="language-plaintext highlighter-rouge">log.Trace("Execution Started");</code></p>
+
+<ul>
+  <li>To do so, you should navigate to Settings 🡲 Advanced Settings 🡲 Administration 🡲 System Settings 🡲 Customization 🡲 Enable Plug-in and custom workflow activity tracing to All (if not enabled).</li>
+</ul>
+
+<p><a href="/assets/images/025/img_0db7a16c1e.png"><img src="/assets/images/025/img_0db7a16c1e.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>To see the Trace logs, navigate to Settings 🡲 Advanced Settings 🡲 Plug-In Trace log.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_7eb3e81c34.png"><img src="/assets/images/025/img_7eb3e81c34.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Once we hit the Plug-In Trace log, it will take us to the Plugin Trace Logs grid view page. Click on any of the record, you will get to see the trace logs which are logged during the execution of Plugin code.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_bb2cf0f148.png"><img src="/assets/images/025/img_bb2cf0f148.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Open any of the record, you will see the configuration and execution details. In the execution section, you will see the message block which we logged while developing a plugin.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_94e3cd99e2.png"><img src="/assets/images/025/img_94e3cd99e2.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<h2 id="persist-to-entity-recommended">Persist to Entity (Recommended)</h2>
+
+<p>    This is the recommended way of debugging Dynamics 365 CRM plugins. In this method, we can use the saved profiles from the plugin profiles table to debug the plugin code. It is used for debugging both synchronous and asynchronous plugins. In this method, we can catch the profiler once the whole process is completed.</p>
+
+<h3 id="follow-the-below-steps-to-debug-plugin-using-persist-to-entity">Follow the below steps to debug plugin using Persist to Entity:</h3>
+
+<p><a href="/assets/images/025/img_01797fd2f6.png"><img src="/assets/images/025/img_01797fd2f6.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>In Visual Studio, place some break points in the code to catch the debugger.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_fc1792d301.png"><img src="/assets/images/025/img_fc1792d301.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Go to Debug 🡲 Attach to Process and select Plugin Registration Tool and hit Attach.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_145bfe6593.png"><img src="/assets/images/025/img_145bfe6593.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>For that, we have to register our plugin in Plugin Registration Tool. Create a new plugin assembly by uploading the .dll file from files. </li>
+</ul>
+
+<p><a href="/assets/images/025/img_2d45214e0a.png"><img src="/assets/images/025/img_2d45214e0a.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Create a new step under the plugin by adding message, entity, event-execution, and type.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_90cd9dbfd3.png"><img src="/assets/images/025/img_90cd9dbfd3.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Select the step and click on the Start Profiling button on the navigation bar. A dialog box prompts up and asking for specifying profiler storage option.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_08bf645b6b.png"><img src="/assets/images/025/img_08bf645b6b.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Select persist to Entity as a profile storage option and click on the OK.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_af4062f817.png"><img src="/assets/images/025/img_af4062f817.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Once the plugin got profiled, you will see the text profiled near your plugin step.</li>
+  <li>Then perform the actual scenario to capture the profile. In my context, I have created a new contact record.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_535e4cc1eb.png"><img src="/assets/images/025/img_535e4cc1eb.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Click on debug in Plugin Registration Tool and click on the down arrow symbol to add the captured Profile</li>
+</ul>
+
+<p><a href="/assets/images/025/img_a31b1de0f4.png"><img src="/assets/images/025/img_a31b1de0f4.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Add the assembly and click on start execution button </li>
+</ul>
+
+<p><a href="/assets/images/025/img_4b07a7ccda.png"><img src="/assets/images/025/img_4b07a7ccda.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Once you click Start Execution, it will navigate to the Visual Studio and stops at the break point. Then you can move forward by clicking <strong>F10</strong> key. To check the values for the variables, you can hover over the variable and make sure the value is correct or change the code to make it right. </li>
+</ul>
+
+<p><a href="/assets/images/025/img_beb872fce5.png"><img src="/assets/images/025/img_beb872fce5.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<h2 id="exception">Exception</h2>
+
+<p>    Exception is another way to debug the Dataverse plugins. It will use the exception file as the profile. In this method, we cannot proceed the whole action even it is executed in right way. Because of the system throwing an exception and stops the process. This method is used for debugging the synchronous plugins. </p>
+
+<h3 id="follow-the-below-steps-to-debug-plugin-using-exception">Follow the below steps to debug plugin using Exception:</h3>
+
+<p>    <strong><em>Note:</em></strong> I have used the same plugin which is demonstrated in Persist to entity method</p>
+
+<ul>
+  <li>Place the break points on the code in Visual Studio and Go to Debug 🡲 Attach to Process and Select Plugin Registration Tool.</li>
+  <li>In Plugin Registration tool, select the step and click on Start Profiling.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_b5f251c54a.png"><img src="/assets/images/025/img_b5f251c54a.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Select Exception for profile storage and click OK.</li>
+  <li>Go to the Application and perform the action to trigger the plugin.</li>
+  <li>In my context, I have to create a contact to trigger the plugin. I will get the business process error with the exception file in it.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_73d73c7009.png"><img src="/assets/images/025/img_73d73c7009.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Click on the download log file and you will get the .txt file.</li>
+  <li>Go to the Plugin Registration Tool and click on Debug and select the downloaded .txt file and add the respective assembly.</li>
+</ul>
+
+<p><a href="/assets/images/025/img_f611e99fc0.png"><img src="/assets/images/025/img_f611e99fc0.png" alt="Debugging a Dynamics 365 CRM Plugin" /></a></p>
+
+<ul>
+  <li>Click on the Start Execution, it will navigate to Visual Studio and hit the break point.</li>
+  <li>You can move the debugger using <strong>F10</strong> key and hover over the variables to check the values.</li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<p>Thus, the above-mentioned ways are used for debugging the plugins. But Microsoft recommends to use persist to entity for debugging. Trace logs will be used for logging the values. As programming is not a one time activity, and it requires a lot of debugging to make a right application.</p>
+
+<p>Have a great day!</p>
 
                 </div>
 
@@ -168,63 +360,9 @@
                         
                     
                         
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-img-link">
+                                <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -232,18 +370,21 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/067/img_81152b8845.gif" alt="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category"></span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html"
-                                            class="text-decoration-none text-dark hover-primary">Unlocking the Power of Side Panes in Model-Driven Apps</a>
+                                        <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</a>
                                     </h6>
-                                    <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-readmore">
+                                    <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
                                     </a>
                                 </div>
@@ -254,9 +395,11 @@
                     
                     
                         
+                    
+                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-img-link">
+                                <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -264,18 +407,21 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/065/img_508a786ff1.gif" alt="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category"></span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"
-                                            class="text-decoration-none text-dark hover-primary">Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins</a>
+                                        <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</a>
                                     </h6>
-                                    <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-readmore">
+                                    <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
                                     </a>
                                 </div>
@@ -286,9 +432,11 @@
                     
                     
                         
+                    
+                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-img-link">
+                                <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -296,18 +444,21 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/063/img_e3160e0be0.gif" alt="Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category"></span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html"
-                                            class="text-decoration-none text-dark hover-primary">Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript</a>
+                                        <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html"
+                                            class="text-decoration-none text-dark hover-primary">Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</a>
                                     </h6>
-                                    <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-readmore">
+                                    <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
                                     </a>
                                 </div>
@@ -318,24 +469,20 @@
                     
                     
                         
-                        
-                    
                     
                         
-                        
-                    
                     
                         
+                    
                         
                     
+                        
                     
                         
                         
                     
                     
                         
-                        
-                    
                     
                         
                         
@@ -376,6 +523,74 @@
                     
                     
                         
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
                         
                     
                     
@@ -396,6 +611,22 @@
                     
                     
                         
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
                     
                         
                     
@@ -404,16 +635,14 @@
                         
                     
                         
+                        
+                    
                     
                         
                     
                         
-                    
                         
                     
-                        
-                    
-                        
                     
 
                     
@@ -430,7 +659,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Debugging a Dynamics 365 CRM Plugin",
-  "image": "",
+  "image": "http://localhost:4000/assets/images/025/img_df0059ddb7.png",
   "datePublished": "2023-07-02T00:37:00+05:30",
   "author": {
     "@type": "Person",

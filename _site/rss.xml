@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Tamilarasu Arunachalam</title>
+    <link>http://localhost:4000/</link>
+    <description>High readability tech reviews and affiliate recommendations.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Jun 2026 22:46:22 +0530</lastBuildDate>
+    <generator>Jekyll RSS</generator>
+    
+    <item>
+      <title>How I Automated Chrome Extension Publishing with GitHub Actions</title>
+      <link>http://localhost:4000/automate-chrome-extension-publishing-with-github-actions.html</link>
+      <guid isPermaLink="true">http://localhost:4000/automate-chrome-extension-publishing-with-github-actions.html</guid>
+      <pubDate>Tue, 02 Jun 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Every time I shipped a new version of my Chrome extension, I dreaded the same ritual - bump the version, zip the build folder, log into the Chrome Web Store Developer Dashboard, upload the file, fill in the release notes, and hit publish. It sounds simple, but do it a dozen times and you start wondering: &lt;em&gt;why am I doing this manually?&lt;/em&gt;
+That’s when I wired up GitHub Actions to handle it for me. Now every merge to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; ships my extension automatically. Here’s exactly how I did it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How I Built a Stunning Admin Dashboard in Power Pages?</title>
+      <link>http://localhost:4000/how-i-built-a-stunning-admin-dashboard-in-power-pages.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-i-built-a-stunning-admin-dashboard-in-power-pages.html</guid>
+      <pubDate>Sun, 24 May 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;When I started building a hospital management app as a weekend project, I never imagined the frontend would become the most exciting part. I set up Power Pages as an external-facing portal - patients could book appointments, staff could track them, and everyone had what they needed in one place. But then I looked at the default design and thought: &lt;em&gt;this has to change.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</title>
+      <link>http://localhost:4000/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html</link>
+      <guid isPermaLink="true">http://localhost:4000/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html</guid>
+      <pubDate>Sun, 17 May 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;I recently worked on something where I had to use &lt;strong&gt;Advanced Find&lt;/strong&gt; or filter views every time while exporting weekly or monthly reports. Although we can create &lt;strong&gt;personal views&lt;/strong&gt; to make the data sorted, I was curious to know how the filtered data actually gets exported.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?</title>
+      <link>http://localhost:4000/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html</guid>
+      <pubDate>Sun, 26 Apr 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;There was a moment while debugging a Power Automate flow when something unexpected showed up. Instead of just checking an error, the entire API request and response data were visible in the run history. It included sensitive details that should never be exposed so easily. That’s when the importance of secure inputs and outputs became very real.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</title>
+      <link>http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html</guid>
+      <pubDate>Sun, 19 Apr 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing &lt;strong&gt;unit testing&lt;/strong&gt;. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Add a Favicon in Power Pages?</title>
+      <link>http://localhost:4000/how-to-add-a-favicon-in-power-pages.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-add-a-favicon-in-power-pages.html</guid>
+      <pubDate>Sun, 12 Apr 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;When you open a website in your browser, one small detail quietly helps you recognize it instantly. That tiny icon shown in the browser tab, bookmarks, history, and address bar is called a &lt;strong&gt;favicon&lt;/strong&gt;. The word favicon stands for “favorite icon,” and even though it is small, it plays a big role in improving &lt;strong&gt;user experience&lt;/strong&gt; and maintaining &lt;strong&gt;brand consistency&lt;/strong&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</title>
+      <link>http://localhost:4000/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html</link>
+      <guid isPermaLink="true">http://localhost:4000/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html</guid>
+      <pubDate>Mon, 06 Apr 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;There is a quote about debugging from Brian Kernighan (Author and Co-contributor for Unix):&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.    – *Brian Kernighan*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Customize the Sign in page in Power Pages Easily</title>
+      <link>http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily.html</guid>
+      <pubDate>Mon, 30 Mar 2026 02:41:00 +0530</pubDate>
+      <description>&lt;p&gt;Power Pages allows users to sign in using different providers like Entra ID, Google, LinkedIn, and others, which is great for authentication flexibility, but the default sign in page UI is quite basic and not easy to customize. Many developers struggle to match the login experience with their branding or modern UI expectations, so in this blog, we will see a simple and practical way to customize the sign in page by using content snippets, hiding the default components, and building a clean custom login page using Bootstrap.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Implement Data Summarization API for Dataverse in Power Pages</title>
+      <link>http://localhost:4000/implement-data-summarization-api-for-dataverse-in-power-pages.html</link>
+      <guid isPermaLink="true">http://localhost:4000/implement-data-summarization-api-for-dataverse-in-power-pages.html</guid>
+      <pubDate>Sun, 15 Mar 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;In today’s AI-driven world, summarizing information has become incredibly easy. We can summarize long articles, web pages, books, and even lengthy videos within seconds using AI tools. Microsoft is gradually bringing similar AI capabilities into the Power Platform ecosystem.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide</title>
+      <link>http://localhost:4000/power-pages-webapi-with-pages-client-api-modern-dataverse-crud-implementation-guide.html</link>
+      <guid isPermaLink="true">http://localhost:4000/power-pages-webapi-with-pages-client-api-modern-dataverse-crud-implementation-guide.html</guid>
+      <pubDate>Sun, 15 Feb 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;If you have worked with Power Pages, you probably got stuck at some point using webapi.safeAjax for Dataverse operations. Microsoft introduced the $pages Client API to simplify how developers interact with forms, authentication, Dataverse data, and multilingual configuration directly from custom HTML and JavaScript pages.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Integrate Power Pages with Firebase Realtime Database with Example CRUD</title>
+      <link>http://localhost:4000/how-to-integrate-power-pages-with-firebase-realtime-database-with-example-crud.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-integrate-power-pages-with-firebase-realtime-database-with-example-crud.html</guid>
+      <pubDate>Sun, 11 Jan 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;For a long time, I have felt that Power Pages is capable of doing much more than what we usually limit it to. Most of the time, it stays tightly coupled with Dataverse and SharePoint, even though it has the flexibility to work beyond that boundary.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Server Logic in Power Pages Explained with Real Time API Example</title>
+      <link>http://localhost:4000/server-logic-in-power-pages-explained-with-real-time-api-example.html</link>
+      <guid isPermaLink="true">http://localhost:4000/server-logic-in-power-pages-explained-with-real-time-api-example.html</guid>
+      <pubDate>Sun, 04 Jan 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Power Pages is commonly used to build external websites on top of Dataverse. While it works well for forms, lists, and UI customization, handling sensitive logic and third-party APIs has always been a challenge.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Translate Metadata and Web Resources in Dynamics 365 CE</title>
+      <link>http://localhost:4000/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html</guid>
+      <pubDate>Sun, 21 Dec 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;If you have ever worked on a Dynamics 365 CE or Power Apps model-driven app that serves users from multiple countries, you already know how important language support is. Most of us start confidently because Dynamics 365 handles translations for standard tables automatically. But the moment you introduce custom tables, JavaScript alerts, or HTML web resources, things start getting confusing. If you are wondering, &lt;em&gt;“How do I translate custom web resource content properly?”&lt;/em&gt; - you are not alone. In this blog, I’ll walk you through practical and supported ways to handle translations in Dynamics 365 CE.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Set Up Google Authentication in Power Pages (Beginner Guide)?</title>
+      <link>http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html</guid>
+      <pubDate>Sun, 07 Dec 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Power Pages, being a Microsoft-hosted low-code portal platform, gives us multiple authentication options out of the box - including Azure AD and External Authentication. But what many makers don’t realize is that Power Pages also supports popular OAuth 2.0 identity providers like &lt;strong&gt;Google, GitHub, Facebook, and LinkedIn&lt;/strong&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps</title>
+      <link>http://localhost:4000/show-hide-ribbon-buttons-for-subgrids-of-the-same-table-in-model-driven-apps.html</link>
+      <guid isPermaLink="true">http://localhost:4000/show-hide-ribbon-buttons-for-subgrids-of-the-same-table-in-model-driven-apps.html</guid>
+      <pubDate>Sun, 30 Nov 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;While working on one of my weekend Power Apps Model-Driven Apps projects, I ran into an interesting requirement. I had &lt;strong&gt;three subgrids of the same child entity&lt;/strong&gt; placed inside the parent entity’s main form. Each subgrid needed to show a drop-down command with buttons — but the tricky part was:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?</title>
+      <link>http://localhost:4000/how-to-edit-child-and-parent-records-directly-within-forms-in-dynamics-365-crm.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-edit-child-and-parent-records-directly-within-forms-in-dynamics-365-crm.html</guid>
+      <pubDate>Sun, 23 Nov 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Recently, while working on a customization, a simple question hit me — &lt;strong&gt;“Can we edit related entity records directly inside the parent form in Dynamics 365 CRM?”&lt;/strong&gt; After checking, the answer was a clear yes. Here is how you can do it for both 1:N and N:1 relationships.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)</title>
+      <link>http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html</link>
+      <guid isPermaLink="true">http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html</guid>
+      <pubDate>Sun, 02 Nov 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Configure and Use Tabbed Sections in Model-Driven Apps?</title>
+      <link>http://localhost:4000/how-to-configure-and-use-tabbed-sections-in-model-driven-apps.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-configure-and-use-tabbed-sections-in-model-driven-apps.html</guid>
+      <pubDate>Sun, 28 Sep 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;When working with Dynamics 365 model-driven apps, we often think of forms in a traditional way - tabs holding sections, and sections holding fields. Recently, I stumbled upon a hidden gem that many of us might have overlooked: Tabbed Sections. At first, I didn’t even know this feature existed. After digging into it (thanks to Kailash Ramachandran for his detailed &lt;a href=&quot;https://mytrial365.com/2024/05/16/exploring-the-underutilized-power-of-tabbed-sections-in-dynamics/&quot;&gt;blog&lt;/a&gt;), I realized how powerful and underutilized this feature really is.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Open Multiple Workspace Tabs in Dynamics 365 Customer Service Using JavaScript?</title>
+      <link>http://localhost:4000/how-to-open-multiple-workspace-tabs-in-dynamics-365-customer-service-using-javascript.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-open-multiple-workspace-tabs-in-dynamics-365-customer-service-using-javascript.html</guid>
+      <pubDate>Sun, 27 Jul 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Working in Customer Service Workspace can feel like juggling multiple cases/conversations at once. Ofcourse we can open records from view which will open in the new workspace tab. I was thinking of opening multiple records on multiple tabs on a single click.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?</title>
+      <link>http://localhost:4000/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html</guid>
+      <pubDate>Sun, 20 Jul 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Have you ever wanted to call one Power Automate flow from another using a custom API endpoint? Yes, it’s possible! In this article, I’ll explain how to build and invoke a Power Automate flow using HTTP triggers.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

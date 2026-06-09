@@ -16,15 +16,17 @@
 <link rel="canonical" href="http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily.html" />
 <meta property="og:url" content="http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="http://localhost:4000/assets/images/062/img_478dd1953a.gif" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-03-30T02:41:00+05:30" />
 <meta property="article:modified_time" content="2026-03-30T02:41:00+05:30" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/062/img_478dd1953a.gif" />
 <meta name="twitter:title" content="How to Customize the Sign in page in Power Pages Easily" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-03-30T02:41:00+05:30","datePublished":"2026-03-30T02:41:00+05:30","description":"Power Pages allows users to sign in using different providers like Entra ID, Google, LinkedIn, and others, which is great for authentication flexibility, but the default sign in page UI is quite basic and not easy to customize. Many developers struggle to match the login experience with their branding or modern UI expectations, so in this blog, we will see a simple and practical way to customize the sign in page by using content snippets, hiding the default components, and building a clean custom login page using Bootstrap.","headline":"How to Customize the Sign in page in Power Pages Easily","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily.html"},"url":"http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-03-30T02:41:00+05:30","datePublished":"2026-03-30T02:41:00+05:30","description":"Power Pages allows users to sign in using different providers like Entra ID, Google, LinkedIn, and others, which is great for authentication flexibility, but the default sign in page UI is quite basic and not easy to customize. Many developers struggle to match the login experience with their branding or modern UI expectations, so in this blog, we will see a simple and practical way to customize the sign in page by using content snippets, hiding the default components, and building a clean custom login page using Bootstrap.","headline":"How to Customize the Sign in page in Power Pages Easily","image":"http://localhost:4000/assets/images/062/img_478dd1953a.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily.html"},"url":"http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta name="keywords" content="">
@@ -124,6 +126,23 @@
                 </header>
 
                 
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/062/img_478dd1953a.gif" alt="How to Customize the Sign in page in Power Pages Easily" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+
+
+
+                </div>
+                
 
                 <!-- Topics / TOC Include -->
                 <!-- Optional Topics Navigation -->
@@ -132,119 +151,66 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <p style="text-align: justify;"></p>
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheNTV9x4Xf0IZ5BEmuxdCWsvmE4sPLM9rEjAj7nT3ynbWuqRrJ9tvfO8SlJiabED43ZvnOlp25nMx4M7iIxc5iXBfTj_8CrNNISgp73ZH21cFsQZ6YPWfxVtBTbB69xGU5pT0VyAtZ1eomxeLLRLPakXFk4EMbBrnsia2937nlIhieQj5FtC4X3XIrgcQ/s640/superman-animated.gif" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="360" data-original-width="640" src="/assets/images/062/img_478dd1953a.gif" /></a></div>
-<p></p>
-<p style="text-align: justify;">
-  Power Pages allows users to sign in using different providers like Entra ID,
-  Google, LinkedIn, and others, which is great for authentication flexibility,
-  but the default sign in page UI is quite basic and not easy to customize. Many
-  developers struggle to match the login experience with their branding or
-  modern UI expectations, so in this blog, we will see a simple and practical
-  way to customize the sign in page by using content snippets, hiding the
-  default components, and building a clean custom login page using Bootstrap.
-</p>
+                    <p>Power Pages allows users to sign in using different providers like Entra ID, Google, LinkedIn, and others, which is great for authentication flexibility, but the default sign in page UI is quite basic and not easy to customize. Many developers struggle to match the login experience with their branding or modern UI expectations, so in this blog, we will see a simple and practical way to customize the sign in page by using content snippets, hiding the default components, and building a clean custom login page using Bootstrap.</p>
 
 <h2 id="table-of-contents">Table of Contents</h2>
+
 <ul>
-  <li><a href="#content-snippet">Add a Content Snippet</a></li>
-  <li><a href="#hide-components">Hide the Existing Components</a></li>
-  <li><a href="#design-login">Design a New Login Page</a></li>
+  <li><a href="#table-of-contents">Table of Contents</a></li>
+  <li><a href="#add-a-content-snippet">Add a Content Snippet</a></li>
+  <li><a href="#hide-the-existing-components">Hide the Existing Components</a></li>
+  <li><a href="#design-a-new-login-page">Design a New Login Page</a></li>
+  <li><a href="#reference">Reference</a></li>
 </ul>
 
-<h2 id="content-snippet">Add a Content Snippet</h2>
-<p style="text-align: justify;">
-  In Power Pages, the default sign in page is not directly available as a normal
-  web page or template, so we cannot edit it like other pages. To customize it,
-  we need to create a Content Snippet with the correct
-  name(<code>Account/SignIn/PageCopy</code>) so that Power Pages uses it for the
-  sign in page.
-</p>
-<p style="text-align: justify;"></p>
-<div class="separator" style="clear: both; text-align: center;">
-  <a href="https://blogger.googleusercontent.com/img/a/AVvXsEghOx9yAO6VC-N4zU7IeXotqfEk1m7n5F_jYuQ9XJSenL_QA-G4XrY6gQR1ebZ7JcmIno0ho06Z6w3fdtAIwZvzDLWVUVkLdxZOGAH0DRbHKPFsUMtsF06OXZJLCPntLb-QfeF0j90uHHERXiTWRpn0Ij6jIb5nr11XFSAsRbLG0eDPwSLNPuS6e-wXioc" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="374" data-original-width="1200" src="/assets/images/062/img_ce4af0bcbe.png" /></a>
-</div>
-<p></p>
+<h2 id="add-a-content-snippet">Add a Content Snippet</h2>
 
-<p style="text-align: justify;">
-  Go to the Power Pages Management App and create a new Content Snippet. Make
-  sure the name matches the sign in page snippet and also ensure the required
-  site settings for authentication are already configured.
-</p>
-<p style="text-align: justify;"></p>
-<div class="separator" style="clear: both; text-align: center;">
-  <a href="https://blogger.googleusercontent.com/img/a/AVvXsEiT6Bsx8W9KHGrvn4A8pZC_rrI-mpKvfm9IFuka7OALgBQ_CD6UN6lwxWZewm6tQ8s-_7LBZiAfpULMXcLmr-QazbiQ1f41CL4SfZKVCcc7WFH1J27gDnjKR2vmNL6mxNH9WHZg_DocrOanVWPBHr-wkkv-5mMTCSApjc5_tb4-qBUfEFhA5lgWGsDp9zs" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="378" data-original-width="335" src="/assets/images/062/img_933776f92c.png" /></a>
-</div>
-<p></p>
+<p>In Power Pages, the default sign in page is not directly available as a normal web page or template, so we cannot edit it like other pages. To customize it, we need to create a Content Snippet with the correct name(<code class="language-plaintext highlighter-rouge">Account/SignIn/PageCopy</code>) so that Power Pages uses it for the sign in page.</p>
 
-<p>
-  Once you save it, you can open and edit it from the HTML editor or through
-  Visual Studio Code. This is where we will add our custom UI.
-</p>
+<p><a href="/assets/images/062/img_ce4af0bcbe.png"><img src="/assets/images/062/img_ce4af0bcbe.png" alt="" /></a></p>
 
-<!--Image Placeholder: Content snippet creation in Power Pages-->
+<p>Go to the Power Pages Management App and create a new Content Snippet. Make sure the name matches the sign in page snippet and also ensure the required site settings for authentication are already configured.</p>
 
-<h2 id="hide-components">Hide the Existing Components</h2>
-<p>
-  Even after adding the content snippet, the default login UI will still appear
-  on the page. To fully replace it, we need to hide those existing elements.
-</p>
+<p><a href="/assets/images/062/img_933776f92c.png"><img src="/assets/images/062/img_933776f92c.png" alt="" /></a></p>
 
-<p style="text-align: justify;">
-  We can do this by adding simple CSS that targets the default components and
-  hides them. This step ensures that only our custom design is visible to the
-  users. Below is the CSS to hide the default components.
-</p>
-<pre><code>
-.nav-account {
-    display: none !important;
-}
+<p>Once you save it, you can open and edit it from the HTML editor or through Visual Studio Code. This is where we will add our custom UI.</p>
 
-#mainContent .row:nth-child(2) {
-    display: none !important;
-}
-</code></pre>
-<h2 id="design-login">Design a New Login Page</h2>
-<p>
-  After hiding the default UI, we can create our own login page design. Power
-  Pages supports Bootstrap, so it becomes easy to build a responsive and clean
-  layout.
-</p>
+<h2 id="hide-the-existing-components">Hide the Existing Components</h2>
 
-<p>
-  You can design a simple login form with username, password fields, and
-  buttons. You can also add external login options like Google or Entra ID
-  inside your custom UI.
-</p>
+<p>Even after adding the content snippet, the default login UI will still appear on the page. To fully replace it, we need to hide those existing elements.</p>
 
-<p>
-  This way, you keep the same functionality but improve the overall look and
-  user experience.
-</p>
-<div class="separator" style="clear: both; text-align: center;">
-  <a href="https://blogger.googleusercontent.com/img/a/AVvXsEjNB6Oxex4XBd3BzG6wdyTw9jL7wvxM3ZnVjDQ3_b6gEAkg2Y53MHoZZ9QsotvQ1ue_PWB5AFhAU23atXfBEPdMaDWfNA8DSSsm4ogRDaDnCOm-wJFyxWANItBjKrNF2Q6gWg49E9WhGxbPGDXR8_Am-y_mEkUxdaLcyCsGGcu2d6LFMDN_gEI8_zfjqiw" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="630" data-original-width="1200" src="/assets/images/062/img_f5ff876fa7.png" /></a>
-</div>
-<p><br /></p>
+<p>We can do this by adding simple CSS that targets the default components and hides them. This step ensures that only our custom design is visible to the users. Below is the CSS to hide the default components.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.nav-account</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#mainContent</span> <span class="nc">.row</span><span class="nd">:nth-child</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="design-a-new-login-page">Design a New Login Page</h2>
+
+<p>After hiding the default UI, we can create our own login page design. Power Pages supports Bootstrap, so it becomes easy to build a responsive and clean layout.</p>
+
+<p>You can design a simple login form with username, password fields, and buttons. You can also add external login options like Google or Entra ID inside your custom UI.</p>
+
+<p>This way, you keep the same functionality but improve the overall look and user experience.</p>
+
+<p><a href="/assets/images/062/img_f5ff876fa7.png"><img src="/assets/images/062/img_f5ff876fa7.png" alt="" /></a></p>
 
 <script src="https://gist.github.com/tamilarasu-arunachalam/685058eb12ef6d6680cdea913378a756.js"></script>
 
 <h2 id="reference">Reference</h2>
-<div>
-  <ul class="postList">
-    <li class="graf graf--li" name="3991">
-      <a class="markup--anchor markup--li-anchor" data-href="https://ulrikke.akerbak.com/2020/02/16/customize-the-sign-in-and-registration-page-in-power-app-portals/" href="https://ulrikke.akerbak.com/2020/02/16/customize-the-sign-in-and-registration-page-in-power-app-portals/" rel="noopener" target="_blank">Customize the sign-in and registration page in Power App
-        Portals — Ulrikke Akerbæk</a>
-    </li>
-    <li class="graf graf--li" name="21a4">
-      <a class="markup--anchor markup--li-anchor" data-href="https://www.inogic.com/blog/2024/07/personalize-your-power-pages-portal-with-custom-sign-out-redirects/" href="https://www.inogic.com/blog/2024/07/personalize-your-power-pages-portal-with-custom-sign-out-redirects/" rel="noopener" target="_blank">Personalize Your Power Pages Portal with Custom Sign-Out
-        Redirects — Microsoft Dynamics 365 CRM Tips and Tricks</a>
-    </li>
-    <li class="graf graf--li" name="e595">
-      <a class="markup--anchor markup--li-anchor" data-href="https://www.tamilarasu.blog/2025/12/set-up-google-authentication-in-power-pages.html" href="https://www.tamilarasu.blog/2025/12/set-up-google-authentication-in-power-pages.html" rel="noopener" target="_blank">How to Set Up Google Authentication in Power Pages (Beginner Guide)?</a>
-    </li>
-  </ul>
-  <div style="text-align: center;">Have a great day!</div>
-</div>
+
+<ul>
+  <li><a href="https://ulrikke.akerbak.com/2020/02/16/customize-the-sign-in-and-registration-page-in-power-app-portals/">Customize the sign-in and registration page in Power App Portals — Ulrikke Akerbæk</a></li>
+  <li><a href="https://www.inogic.com/blog/2024/07/personalize-your-power-pages-portal-with-custom-sign-out-redirects/">Personalize Your Power Pages Portal with Custom Sign-Out Redirects — Microsoft Dynamics 365 CRM Tips and Tricks</a></li>
+  <li><a href="https://www.tamilarasu.blog/2025/12/set-up-google-authentication-in-power-pages.html">How to Set Up Google Authentication in Power Pages (Beginner Guide)?</a></li>
+</ul>
+
+<p>Have a great day!</p>
 
                 </div>
 
@@ -329,9 +295,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/064/img_0e751ab16e.gif" alt="How to Add a Favicon in Power Pages?" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -365,9 +334,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/061/img_7130141458.gif" alt="Implement Data Summarization API for Dataverse in Power Pages" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -517,7 +489,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "How to Customize the Sign in page in Power Pages Easily",
-  "image": "",
+  "image": "http://localhost:4000/assets/images/062/img_478dd1953a.gif",
   "datePublished": "2026-03-30T02:41:00+05:30",
   "author": {
     "@type": "Person",

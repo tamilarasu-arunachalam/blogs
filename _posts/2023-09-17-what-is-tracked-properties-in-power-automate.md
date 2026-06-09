@@ -3,7 +3,62 @@ post_id: "030"
 layout: post
 title: "What is Tracked Properties in Power Automate?"
 date: 2023-09-17 17:41:00 +0000
+image: assets/images/030/img_54761d610b.png
+category: Power Automate
 categories: ["Microsoft Flows", "Power Automate"]
 ---
+Tracked Properties are the properties which are not directly displayed from the input or output of the action. Tracked Properties are added as a key value pairs. We can retrieve that in the next actions using the action using the expressions. 
 
-<img border="0" data-original-height="400" data-original-width="700" height="183" src="{{ site.baseurl }}/assets/images/030/img_54761d610b.png" style="display: none;" width="320" /><p style="text-align: justify;">Tracked Properties are the properties which are not directly displayed from the input or output of the action. Tracked Properties are added as a key value pairs.&nbsp;We can retrieve that in the next actions using the action using the expressions.&nbsp;</p><p style="text-align: justify;">We can use the tracked propertied to get the execution time of the flow step or to pass any data inside the flow without affecting the input and output.</p><p style="text-align: justify;">For that, I have created an Instant flow in Power Automate. In this flow, I tried to get the user who is running the flow.</p><p style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZdOAWtONndsWI4Gaoudnx9Q1IHmJ-EDaNRT9ZGqcwOZjYK0plw6FPaZPuACmyrxoFaO9pR6cr-yWib5QkjEY-xyZyukCGXzbz2WWaY26e2_kEn-wyWc3SsC6jzbybf8fFigPZxqXeTFqX4ilfphWlbKp1X2toI0K8nBXVMhsaOBuicI543l6sdFCKWqE/s832/get-user-of-the-flow.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="273" data-original-width="832" height="105" src="{{ site.baseurl }}/assets/images/030/img_a50ea328f9.png" width="320" /></a></p><div class="separator" style="clear: both; text-align: left;">To get the user who is currently running the flow, you have to use the below expression</div><div class="separator" style="clear: both; text-align: left;"><pre><code>triggerOutputs()['headers']['x-ms-user-name']</code></pre></div><p style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcxoNO0GFo1FDBuYm-JuhlCfsX13wkbkVPuxhiiMvlQjoBCV8Yz7cnA0B8sc9mXUStiZsq2FzixWBZ3AnLT400Zrljpy86k7OLkPGqHIX7XDtlpfQLvpiGXdx2f8aqPjQBGzYmDCloRj68ZbWaX03eXqfeBypxvl6xGYC5dpI2VrhIRmAAo974MzG3PSE/s464/ellipsis-setting.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="314" data-original-width="464" height="217" src="{{ site.baseurl }}/assets/images/030/img_c59b72f75f.png" width="320" /></a></p><div class="separator" style="clear: both; text-align: left;">For adding the tracked properties, you have to click on the ellipsis(on the top right of the flow step)&nbsp;→ settings.</div><p style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPgYvwXK5Ci6BJ5PT1zdLAFKbhznB0CwP6GzziQxMRdW_fF4BnTManVjzNM_3M2i9Aaxi-RmDMgp0dd8SlUWSSWlXsvimoImT6zYUCuaj_zR2Qd4tofIuExIUF9w7Z58WGgzWsoii72A5YRL-ZySw_eAPkExRh1U-RPr7FUaNbx-QR5QxHylTpE5d6K9c/s820/set-tracked-properties.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="581" data-original-width="820" height="227" src="{{ site.baseurl }}/assets/images/030/img_fda5ce8c09.png" width="320" /></a></p>In this, I have added two properties, flag and currentDateTime. Flag returns a random GUID, and currentDateTime returns a date-time while the flow step is executed.<p style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicA0usNvS758p6oGtAeNTd0QttaRWj09X8iu4w5XT0dvhp_kU4vJ1Mv3jAVQFyS9Z4Wr-zQD4RG5niLq4Gb2PeSSzTG3dOnmIFNb-DMy69PYkkoJpA2yBc_3LddA1D6kS_Pes2ivacq-Jzf4uErflubWF2vKjc4ymLg_teOMrFsfmRxgOvRs5QoY76QEc/s829/tracked-properties-expression0.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="258" data-original-width="829" height="100" src="{{ site.baseurl }}/assets/images/030/img_272076e460.png" width="320" /></a></p>We can retrieve the tracked properties from the flow step using the below expression.<div><pre><code>actions('Get_Current_User')?['TrackedProperties']</code></pre></div><div><div>The below is the syntax for the expression for getting the tracked properties</div><div><br /></div><div>And the result would be the JSON as below</div><pre><code>actions({Step Name})?['TrackedProperties']</code></pre></div><p style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYu6vqpOw3JjYpxNYi0h3ylTTzMNMZ8QucMNNXWsRgWUx0dVLa9Tu5G5OA30EyzuKmvRrvFO4kbDUFkdGPmtnFZy4ur2e-WkPE3Cy6E9XW0CEx3o-wtP0PUDznfFGK6_KWGHVUHJdrTX1id03SLR4Ccdeqt1jdqOiDR1sFW4px3cbR1wj2VWy6J-BNxaA/s831/tracked-properties-expression-run.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="577" data-original-width="831" height="222" src="{{ site.baseurl }}/assets/images/030/img_96d98e444f.png" width="320" /></a></p>We can get the particular tracked property using the below expression<div><pre><code>actions('Get_Current_User')?['TrackedProperties/flag']</code></pre><pre><code>actions('Get_Current_User')?['TrackedProperties/currentDateTime']</code></pre><div>The result of the run is in the below picture.</div></div><p style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizAMLXMnVmb6aNozeHIMuxYjmA2rs4fAGrpnTq2KrTDi4ElJZxvVvMRuA9lsDfECbWWELjlFyGYQG21KXAZscnXmO7a8UC8Fz_PI_x3KpHSpw21BQvYhLcRAYdvH09k-pNCsSJGns1Oj9NuPG_NWxNZZ4R9VQKHlEZNKsNolv1B9PA2Mp0KQ582s3hQ8c/s794/flag-currentDateTime-run.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="794" data-original-width="617" height="320" src="{{ site.baseurl }}/assets/images/030/img_51770a6758.png" width="249" /></a></p><div>Have a Good day!</div>
+We can use the tracked propertied to get the execution time of the flow step or to pass any data inside the flow without affecting the input and output.
+
+For that, I have created an Instant flow in Power Automate. In this flow, I tried to get the user who is running the flow.
+
+[![]({{ site.baseurl }}/assets/images/030/img_a50ea328f9.png)]({{ site.baseurl }}/assets/images/030/img_a50ea328f9.png)
+
+To get the user who is currently running the flow, you have to use the below expression
+
+```js
+triggerOutputs()['headers']['x-ms-user-name']
+```
+
+[![]({{ site.baseurl }}/assets/images/030/img_c59b72f75f.png)]({{ site.baseurl }}/assets/images/030/img_c59b72f75f.png)
+
+For adding the tracked properties, you have to click on the ellipsis(on the top right of the flow step) → settings.
+
+[![]({{ site.baseurl }}/assets/images/030/img_fda5ce8c09.png)]({{ site.baseurl }}/assets/images/030/img_fda5ce8c09.png)
+
+In this, I have added two properties, flag and currentDateTime. Flag returns a random GUID, and currentDateTime returns a date-time while the flow step is executed.
+
+[![]({{ site.baseurl }}/assets/images/030/img_272076e460.png)]({{ site.baseurl }}/assets/images/030/img_272076e460.png)
+
+We can retrieve the tracked properties from the flow step using the below expression.
+
+```js
+actions('Get_Current_User')?['TrackedProperties']
+```
+
+The below is the syntax for the expression for getting the tracked properties
+
+And the result would be the JSON as below
+
+```js
+actions({Step Name})?['TrackedProperties']
+```
+
+[![]({{ site.baseurl }}/assets/images/030/img_96d98e444f.png)]({{ site.baseurl }}/assets/images/030/img_96d98e444f.png)
+
+We can get the particular tracked property using the below expression
+
+```js
+actions('Get_Current_User')?['TrackedProperties/flag']
+```
+
+```js
+actions('Get_Current_User')?['TrackedProperties/currentDateTime']
+```
+
+The result of the run is in the below picture.
+
+[![]({{ site.baseurl }}/assets/images/030/img_51770a6758.png)]({{ site.baseurl }}/assets/images/030/img_51770a6758.png)
+
+Have a Good day!

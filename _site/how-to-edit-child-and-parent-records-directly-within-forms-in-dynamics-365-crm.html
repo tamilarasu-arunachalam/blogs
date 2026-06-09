@@ -16,15 +16,17 @@
 <link rel="canonical" href="http://localhost:4000/how-to-edit-child-and-parent-records-directly-within-forms-in-dynamics-365-crm.html" />
 <meta property="og:url" content="http://localhost:4000/how-to-edit-child-and-parent-records-directly-within-forms-in-dynamics-365-crm.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="http://localhost:4000/assets/images/052/img_14eb6fb8f7.gif" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-11-23T23:11:00+05:30" />
 <meta property="article:modified_time" content="2025-11-23T23:11:00+05:30" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/052/img_14eb6fb8f7.gif" />
 <meta name="twitter:title" content="How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-11-23T23:11:00+05:30","datePublished":"2025-11-23T23:11:00+05:30","description":"Recently, while working on a customization, a simple question hit me — “Can we edit related entity records directly inside the parent form in Dynamics 365 CRM?” After checking, the answer was a clear yes. Here is how you can do it for both 1:N and N:1 relationships.","headline":"How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-to-edit-child-and-parent-records-directly-within-forms-in-dynamics-365-crm.html"},"url":"http://localhost:4000/how-to-edit-child-and-parent-records-directly-within-forms-in-dynamics-365-crm.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-11-23T23:11:00+05:30","datePublished":"2025-11-23T23:11:00+05:30","description":"Recently, while working on a customization, a simple question hit me — “Can we edit related entity records directly inside the parent form in Dynamics 365 CRM?” After checking, the answer was a clear yes. Here is how you can do it for both 1:N and N:1 relationships.","headline":"How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?","image":"http://localhost:4000/assets/images/052/img_14eb6fb8f7.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-to-edit-child-and-parent-records-directly-within-forms-in-dynamics-365-crm.html"},"url":"http://localhost:4000/how-to-edit-child-and-parent-records-directly-within-forms-in-dynamics-365-crm.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta name="keywords" content="">
@@ -124,6 +126,23 @@
                 </header>
 
                 
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/052/img_14eb6fb8f7.gif" alt="How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+
+
+
+                </div>
+                
 
                 <!-- Topics / TOC Include -->
                 <!-- Optional Topics Navigation -->
@@ -132,110 +151,73 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <p style="text-align: center;"><img alt="" border="0" data-original-height="164" data-original-width="220" src="/assets/images/052/img_14eb6fb8f7.gif" /></p>
-<p style="text-align: justify;">
-        Recently, while working on a customization, a simple question hit me —
-        <strong>“Can we edit related entity records directly inside the parent form in
-            Dynamics 365 CRM?”</strong>
-        After checking, the answer was a clear yes. Here is how you can do it for both
-        1:N and N:1 relationships.
-    </p>
+                    <p>Recently, while working on a customization, a simple question hit me — <strong>“Can we edit related entity records directly inside the parent form in Dynamics 365 CRM?”</strong> After checking, the answer was a clear yes. Here is how you can do it for both 1:N and N:1 relationships.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h4&gt;Topics Covered&lt;/h4&gt;
-&lt;ul&gt;
-    &lt;li&gt;&lt;a href="#editableSubGrid"&gt;Editable Subgrid (1:N Relationship)&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;
-        &lt;a href="#formComponentControl"&gt;Form Component Control (N:1 Relationship)&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href="#reference"&gt;Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<h4 id="topics-covered">Topics Covered</h4>
 
-&lt;!--1:N--&gt;
-&lt;section id="editableSubGrid"&gt;
-    &lt;h2&gt;Editable Subgrid (1:N Relationship)&lt;/h2&gt;
+<ul>
+  <li><a href="#editableSubGrid">Editable Subgrid (1:N Relationship)</a></li>
+  <li><a href="#formComponentControl">Form Component Control (N:1 Relationship)</a></li>
+  <li><a href="#reference">Reference</a></li>
+</ul>
 
-    &lt;p&gt;
-        If your entity has a 1:N relationship (for example, Account → Contacts), you
-        can edit child records directly from the subgrid using the
-        &lt;strong&gt;Editable Grid&lt;/strong&gt; control.
-    &lt;/p&gt;
+<h2 id="editable-subgrid-1n-relationship">Editable Subgrid (1:N Relationship)</h2>
 
-    &lt;ul&gt;
-        &lt;li&gt;Open the Account Main Form in the Form Editor.&lt;/li&gt;
-        &lt;li&gt;Select the Contacts subgrid.&lt;/li&gt;
-        &lt;li&gt;
-            In the right panel, click &lt;strong&gt;+ Component&lt;/strong&gt;.&lt;br /&gt;&lt;img alt="" border="0" data-original-height="879" data-original-width="402" src="/assets/images/052/img_4d86709d71.png" /&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            Select &lt;strong&gt;Editable Grid&lt;/strong&gt; from the list.&lt;br /&gt;&lt;img alt="" border="0" data-original-height="693" data-original-width="843" src="/assets/images/052/img_b9ff5de772.png" /&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Click &lt;strong&gt;Done&lt;/strong&gt;, then save and publish.&lt;/li&gt;
-    &lt;/ul&gt;
+<p>If your entity has a 1:N relationship (for example, Account → Contacts), you can edit child records directly from the subgrid using the <strong>Editable Grid</strong> control.</p>
 
-    &lt;h3&gt;Before Applying Editable Grid&lt;/h3&gt;
-    &lt;p&gt;&lt;img alt="" border="0" data-original-height="461" data-original-width="588" src="/assets/images/052/img_f7ee698e39.png" /&gt;&lt;/p&gt;
+<ul>
+  <li>Open the Account Main Form in the Form Editor.</li>
+  <li>Select the Contacts subgrid.</li>
+  <li>In the right panel, click <strong>+ Component</strong>.<br />
+<img src="/assets/images/052/img_4d86709d71.png" alt="" /></li>
+  <li>Select <strong>Editable Grid</strong> from the list.<br />
+<img src="/assets/images/052/img_b9ff5de772.png" alt="" /></li>
+  <li>Click <strong>Done</strong>, then save and publish.</li>
+</ul>
 
-    &lt;h3&gt;After Applying Editable Grid&lt;/h3&gt;
-    &lt;p&gt;&lt;img alt="" border="0" data-original-height="651" data-original-width="533" src="/assets/images/052/img_f5e2763916.png" /&gt;
-    &lt;/p&gt;
-&lt;/section&gt;
+<h3 id="before-applying-editable-grid">Before Applying Editable Grid</h3>
 
-&lt;!--N:1--&gt;
-&lt;section id="formComponentControl"&gt;
-    &lt;h2&gt;Form Component Control (N:1 Relationship)&lt;/h2&gt;
+<p><img src="/assets/images/052/img_f7ee698e39.png" alt="" /></p>
 
-    &lt;p&gt;
-        This method works well when the child record has a lookup to a parent record
-        (N:1). Example: In Contact, the Company Name field looks up to Account.
-        Using &lt;strong&gt;Form Component Control&lt;/strong&gt;, you can show an editable
-        version of the parent form inside the child form.
-    &lt;/p&gt;
+<h3 id="after-applying-editable-grid">After Applying Editable Grid</h3>
 
-    &lt;ul&gt;
-        &lt;li&gt;Open the Contact Main Form in the Form Editor.&lt;/li&gt;
-        &lt;li&gt;
-            Select the Company Name (Account lookup) field. &lt;br /&gt;&lt;img alt="" border="0" data-original-height="683" data-original-width="843" src="/assets/images/052/img_afa6ffb471.png" /&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Click &lt;strong&gt;+ Component&lt;/strong&gt;.&lt;/li&gt;
-        &lt;li&gt;
-            Choose &lt;strong&gt;Form Control&lt;/strong&gt;. &lt;br /&gt;&lt;img alt="" border="0" data-original-height="990" data-original-width="1367" src="/assets/images/052/img_5e5a1d7274.png" /&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            In the popup, select &lt;strong&gt;+ Related Form&lt;/strong&gt;. &lt;br /&gt;&lt;img alt="" border="0" data-original-height="738" data-original-width="441" src="/assets/images/052/img_e59a5bac7b.png" /&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Select the Account form you want to display.&lt;/li&gt;
-        &lt;li&gt;Save and publish the form.&lt;/li&gt;
-    &lt;/ul&gt;
+<p><img src="/assets/images/052/img_f5e2763916.png" alt="" /></p>
 
-    &lt;h3&gt;Before Applying Form Component&lt;/h3&gt;
-    &lt;p&gt;
-        &lt;img alt="" border="0" data-original-height="692" data-original-width="1086" src="/assets/images/052/img_34fb3cd267.png" /&gt;
-    &lt;/p&gt;
+<h2 id="form-component-control-n1-relationship">Form Component Control (N:1 Relationship)</h2>
 
-    &lt;h3&gt;After Applying Form Component&lt;/h3&gt;
-    &lt;p&gt;&lt;img alt="" border="0" data-original-height="855" data-original-width="1755" src="/assets/images/052/img_2a979d33b6.png" /&gt;
-    &lt;/p&gt;
+<p>This method works well when the child record has a lookup to a parent record (N:1). Example: In Contact, the Company Name field looks up to Account. Using <strong>Form Component Control</strong>, you can show an editable version of the parent form inside the child form.</p>
 
-    &lt;p&gt;
-        &lt;strong&gt;Tip:&lt;/strong&gt; Choose a cleaner, minimal form for better usability.
-    &lt;/p&gt;
-&lt;/section&gt;
+<ul>
+  <li>Open the Contact Main Form in the Form Editor.</li>
+  <li>Select the Company Name (Account lookup) field.<br />
+<img src="/assets/images/052/img_afa6ffb471.png" alt="" /></li>
+  <li>Click <strong>+ Component</strong>.</li>
+  <li>Choose <strong>Form Control</strong>.<br />
+<img src="/assets/images/052/img_5e5a1d7274.png" alt="" /></li>
+  <li>In the popup, select <strong>+ Related Form</strong>.<br />
+<img src="/assets/images/052/img_e59a5bac7b.png" alt="" /></li>
+  <li>Select the Account form you want to display.</li>
+  <li>Save and publish the form.</li>
+</ul>
 
-&lt;!--Reference--&gt;
-&lt;section id="reference"&gt;
-    &lt;h3&gt;Reference&lt;/h3&gt;
-    &lt;ul&gt;
-        &lt;li&gt;
-            &lt;a href="https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/make-grids-lists-editable-custom-control" target="_blank"&gt;Make model-driven app views editable using the editable grid control&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;a href="https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/form-component-control" target="_blank"&gt;Edit related table records directly from another table's main form&lt;/a&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/section&gt;
+<h3 id="before-applying-form-component">Before Applying Form Component</h3>
 
-&lt;p style="text-align: center;"&gt;Have a great day!&lt;/p&gt;
-</code></pre></div></div>
+<p><img src="/assets/images/052/img_34fb3cd267.png" alt="" /></p>
+
+<h3 id="after-applying-form-component">After Applying Form Component</h3>
+
+<p><img src="/assets/images/052/img_2a979d33b6.png" alt="" /></p>
+
+<p><strong>Tip:</strong> Choose a cleaner, minimal form for better usability.</p>
+
+<h3 id="reference">Reference</h3>
+
+<ul>
+  <li><a href="https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/make-grids-lists-editable-custom-control">Make model-driven app views editable using the editable grid control</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/form-component-control">Edit related table records directly from another table’s main form</a></li>
+</ul>
+
+<p>Have a great day!</p>
 
                 </div>
 
@@ -281,9 +263,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/067/img_81152b8845.gif" alt="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -315,9 +300,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/065/img_508a786ff1.gif" alt="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -349,9 +337,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/063/img_e3160e0be0.gif" alt="Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -439,50 +430,82 @@
                     
                     
                         
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
                     
                         
                     
                         
                     
                         
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
                     
                         
                     
                         
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
+                    
                     
                         
                         
@@ -529,7 +552,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?",
-  "image": "",
+  "image": "http://localhost:4000/assets/images/052/img_14eb6fb8f7.gif",
   "datePublished": "2025-11-23T23:11:00+05:30",
   "author": {
     "@type": "Person",

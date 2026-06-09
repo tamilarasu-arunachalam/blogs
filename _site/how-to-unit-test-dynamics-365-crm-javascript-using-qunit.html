@@ -11,20 +11,22 @@
 <meta property="og:title" content="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing unit testing. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step. Soon after the decision, I was assigned a task: create a proof of concept (PoC) for unit testing JavaScript (JScript) web resources used in Dynamics 365 CRM. Note: I couldn’t find many simple blogs explaining how to do unit testing for JavaScript in Dynamics 365 CRM. So, I decided to share…" />
-<meta name="twitter:description" property="og:description" content="A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing unit testing. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step. Soon after the decision, I was assigned a task: create a proof of concept (PoC) for unit testing JavaScript (JScript) web resources used in Dynamics 365 CRM. Note: I couldn’t find many simple blogs explaining how to do unit testing for JavaScript in Dynamics 365 CRM. So, I decided to share…" />
+<meta name="description" content="A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing unit testing. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step." />
+<meta name="twitter:description" property="og:description" content="A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing unit testing. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step." />
 <link rel="canonical" href="http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" />
 <meta property="og:url" content="http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="http://localhost:4000/assets/images/065/img_508a786ff1.gif" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-04-19T23:11:00+05:30" />
 <meta property="article:modified_time" content="2026-04-19T23:11:00+05:30" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/065/img_508a786ff1.gif" />
 <meta name="twitter:title" content="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-04-19T23:11:00+05:30","datePublished":"2026-04-19T23:11:00+05:30","description":"A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing unit testing. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step. Soon after the decision, I was assigned a task: create a proof of concept (PoC) for unit testing JavaScript (JScript) web resources used in Dynamics 365 CRM. Note: I couldn’t find many simple blogs explaining how to do unit testing for JavaScript in Dynamics 365 CRM. So, I decided to share…","headline":"How to Unit Test Dynamics 365 CRM JavaScript using QUnit?","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"},"url":"http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-04-19T23:11:00+05:30","datePublished":"2026-04-19T23:11:00+05:30","description":"A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing unit testing. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.","headline":"How to Unit Test Dynamics 365 CRM JavaScript using QUnit?","image":"http://localhost:4000/assets/images/065/img_508a786ff1.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"},"url":"http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta name="keywords" content="">
@@ -124,6 +126,23 @@
                 </header>
 
                 
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/065/img_508a786ff1.gif" alt="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+
+
+
+                </div>
+                
 
                 <!-- Topics / TOC Include -->
                 <!-- Optional Topics Navigation -->
@@ -132,142 +151,127 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <p style="text-align: justify;">
-  </p>
-<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiZxShfRbYaYd3e8mBP6KzMfw4a3SZSmHi1HyMjKRR8sBGgwcNVPBDRoHnDunoAF3lmnePT8w9yp82pknN_NKgeZccfCaZ8JtVFj9ElztI0vOxCJczjp6j0sW6g8LO_g86DdHZ-QET9ycJ3GisyM3U2PSYveqCWdKEPgrX48WWjuhtVTfEbd8iMtL9K14/s480/testing-testing.gif" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="360" data-original-width="480" src="/assets/images/065/img_508a786ff1.gif" /></a></div>
-<p></p>
-<p style="text-align: justify;">A few weeks ago, our team made an important decision — we wanted to
-  improve the quality of our Dynamics 365 CRM project by introducing
-  <b>unit testing</b>. Until then, testing was mostly manual and relied heavily
-  on functional testing inside the CRM environment. Unit testing felt like a
-  natural next step.
-</p>
-<p style="text-align: justify;">
-  Soon after the decision, I was assigned a task:
-  <b>create a proof of concept (PoC) for unit testing JavaScript (JScript) web
-    resources used in Dynamics 365 CRM.</b>
-</p>
-<p></p>
+                    <p>A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing <strong>unit testing</strong>. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.</p>
+
+<p>Soon after the decision, I was assigned a task: <strong>create a proof of concept (PoC) for unit testing JavaScript (JScript) web resources used in Dynamics 365 CRM.</strong></p>
+
 <blockquote>
-  Note: I couldn’t find many simple blogs explaining how to do
-  <b>unit testing for JavaScript in Dynamics 365 CRM</b>. So, I decided to share
-  what I learned and document a simple approach that worked for me, mainly to
-  help beginners get started.
+  <p>Note: I couldn’t find many simple blogs explaining how to do <strong>unit testing for JavaScript in Dynamics 365 CRM</strong>. So, I decided to share what I learned and document a simple approach that worked for me, mainly to help beginners get started.</p>
 </blockquote>
-<p></p>
-<p style="text-align: justify;">
-  At first, I was unsure how to approach it. In my mind, unit testing was
-  something usually done in full‑stack applications, like React with Node.js or
-  Angular projects. I had never written unit tests for plain JavaScript files
-  used in CRM forms. This was new territory for me.
-</p>
-<h2 style="text-align: left;">The Initial Challenge:</h2>
-<p style="text-align: justify;">
-  Like anyone starting something new, I began researching. A quick web search
-  showed popular JavaScript testing frameworks like Jest, Mocha, and Jasmine.
-  They looked powerful, well‑documented, and widely used.
-</p>
+
+<p>At first, I was unsure how to approach it. In my mind, unit testing was something usually done in full‑stack applications, like React with Node.js or Angular projects. I had never written unit tests for plain JavaScript files used in CRM forms. This was new territory for me.</p>
+
+<h2 id="the-initial-challenge">The Initial Challenge:</h2>
+
+<p>Like anyone starting something new, I began researching. A quick web search showed popular JavaScript testing frameworks like Jest, Mocha, and Jasmine. They looked powerful, well‑documented, and widely used.</p>
+
 <p>But there was a catch.</p>
-<p style="text-align: justify;">
-  Almost all of them required Node.js. Installing Node.js on my
-  organization‑issued laptop meant raising a helpdesk ticket and waiting for
-  admin approval. From experience, I knew this could easily take a week or more.
-</p>
-<p style="text-align: justify;">
-  Since this was just a proof of concept, waiting that long didn’t feel
-  efficient. I needed a simple, lightweight solution that didn’t require
-  installing anything new.
-</p>
-<h2 style="text-align: left;">A Different Way of Thinking</h2>
+
+<p>Almost all of them required Node.js. Installing Node.js on my organization‑issued laptop meant raising a helpdesk ticket and waiting for admin approval. From experience, I knew this could easily take a week or more.</p>
+
+<p>Since this was just a proof of concept, waiting that long didn’t feel efficient. I needed a simple, lightweight solution that didn’t require installing anything new.</p>
+
+<h2 id="a-different-way-of-thinking">A Different Way of Thinking</h2>
+
 <p>That’s when I paused and reflected on the nature of the problem.</p>
-<p style="text-align: justify;">
-  Since these scripts already run in the browser, I started looking for
-  browser‑friendly JavaScript unit testing frameworks  -  something that could
-  work directly with an HTML file.
-</p>
-<h2 style="text-align: justify;">Discovering QUnit</h2>
-<p>
-  During this search, I came across
-  <b><a href="https://qunitjs.com/" rel="nofollow" target="_blank">QUnit</a></b>.
-</p>
+
+<p>Since these scripts already run in the browser, I started looking for browser‑friendly JavaScript unit testing frameworks  -  something that could work directly with an HTML file.</p>
+
+<h2 id="discovering-qunit">Discovering QUnit</h2>
+
+<p>During this search, I came across <strong><a href="https://qunitjs.com/">QUnit</a></strong>.</p>
+
 <p>QUnit immediately stood out because it is:</p>
-<p></p>
-<ul style="text-align: left;">
+
+<ul>
   <li>Lightweight and simple</li>
   <li>Designed for testing JavaScript in the browser</li>
   <li>Available via CDN</li>
   <li>Supports integration with mocking libraries</li>
 </ul>
-<p></p>
-<p>
-  With QUnit, you just include a script reference in an HTML file, open it in
-  the browser, and your tests run instantly.
-</p>
+
+<p>With QUnit, you just include a script reference in an HTML file, open it in the browser, and your tests run instantly.</p>
+
 <p>That was exactly what I was looking for.</p>
-<h2 style="text-align: left;">Setting Up the Proof of Concept</h2>
+
+<h2 id="setting-up-the-proof-of-concept">Setting Up the Proof of Concept</h2>
+
 <p>I created a simple project structure to demonstrate the idea.</p>
-<p></p>
-<div class="separator" style="clear: both; text-align: center;">
-  <a href="https://blogger.googleusercontent.com/img/a/AVvXsEhs5lSFYArxgSLCdX97qzHZKtd2rNaW80bW2uiU9ReZFTmPbafh7QcHcjOJDOI2dhmIpEeEyF53Jmkzx97VFWdxyojTMAW0i4LdkHm5UrIPn8qdjgg6qbMISJ1dJcGMD9-VRhNp04hx_t2YA5Er-X5fQI6DY7gIPSMP1-nmcfTxHV3jaVdof4JeFjV-RMM" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="237" data-original-width="348" src="/assets/images/065/img_b6f3ea64b3.png" /></a>
-</div>
-<p><br /></p>
-<p></p>
-<p></p>
-<ul style="text-align: left;">
-  <li>
-    formScripts.js → One JavaScript file contained the CRM form logic (the
-    actual code under test)
-  </li>
+
+<p><a href="/assets/images/065/img_b6f3ea64b3.png"><img src="/assets/images/065/img_b6f3ea64b3.png" alt="" /></a></p>
+
+<ul>
+  <li>formScripts.js → One JavaScript file contained the CRM form logic (the actual code under test)</li>
   <li>tests.js → Another JavaScript file contained the unit test cases</li>
   <li>index.html → file loaded QUnit via CDN and referenced both scripts</li>
 </ul>
-<p></p>
-<p>
-  By opening index.html in the browser, I could run all unit tests and see
-  results immediately - pass, fail, and errors - all in a clean UI provided by
-  QUnit. You can find my sample code below.
-</p>
-<blockquote><strong>formScripts.js</strong></blockquote>
+
+<p>By opening index.html in the browser, I could run all unit tests and see results immediately - pass, fail, and errors - all in a clean UI provided by QUnit. You can find my sample code below.</p>
+
+<p><strong>formScripts.js</strong></p>
+
 <script src="https://gist.github.com/tamilarasu-arunachalam/589ad8f97323f6fb570c93999bbf8611.js?file=formScripts.js"></script>
 
-<blockquote><strong>tests.js</strong></blockquote>
+<p><strong>tests.js</strong></p>
+
 <script src="https://gist.github.com/tamilarasu-arunachalam/589ad8f97323f6fb570c93999bbf8611.js?file=tests.js"></script>
 
-<blockquote><strong>index.html</strong></blockquote>
+<p><strong>index.html</strong></p>
+
 <script src="https://gist.github.com/tamilarasu-arunachalam/589ad8f97323f6fb570c93999bbf8611.js?file=index.html"></script>
 
-<p>
-  Later, I learned how to write test for the basic and necessary objects like
-  executionContext, formContext, getValue and setValue. I ran the index.html
-  file and the test runs showing up. You can refer the below image to see so.
-</p>
-<p></p>
-<p style="clear: both; text-align: center;">
-  <a href="https://blogger.googleusercontent.com/img/a/AVvXsEjSY6f5L507HMgqPoxod_Xwe9SSRXiuT_EF-KQZR6dduu8es5M72Ea4DQ9QZd2xWnCT8uxOzrN6J9AwsxdwD4UlBHZlP4sS4Rja1nwamIpvaoldjbXF98JTCxsv8AmBdTxhEQ_1mRBINzkwh1Va8eZPkUPaOk4UC3WSbDaIl2mPZWGS6lwZ71Hid-P46Oo" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="248" data-original-width="1200" src="/assets/images/065/img_d619c1a3cb.png" /></a></p>
-<p></p>
-<p>
-  This gave me enough confidence to share my findings with the team. I plan to
-  continue working on this and will share more updates as I start implementing
-  unit testing in the full project.
-</p>
-<h2 style="text-align: left;">References:</h2>
-<p></p>
-<ul style="text-align: left;">
+<p>Later, I learned how to write test for the basic and necessary objects like executionContext, formContext, getValue and setValue. I ran the index.html file and the test runs showing up. You can refer the below image to see so.</p>
+
+<p><a href="/assets/images/065/img_d619c1a3cb.png"><img src="/assets/images/065/img_d619c1a3cb.png" alt="" /></a></p>
+
+<p>This gave me enough confidence to share my findings with the team. I plan to continue working on this and will share more updates as I start implementing unit testing in the full project.</p>
+
+<h2 id="references">References:</h2>
+
+<ul>
   <li>
-    <a href="https://qunitjs.com/browser/" rel="nofollow" target="_blank">Browser Runner | QUnit</a>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Browser Runner</td>
+          <td>QUnit](https://qunitjs.com/browser/)</td>
+        </tr>
+      </tbody>
+    </table>
   </li>
   <li>
-    <a href="https://qunitjs.com/api/assert/" rel="nofollow" target="_blank">Assertions | QUnit</a>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Assertions</td>
+          <td>QUnit](https://qunitjs.com/api/assert/)</td>
+        </tr>
+      </tbody>
+    </table>
   </li>
   <li>
-    <a href="https://qunitjs.com/api/QUnit/module/" rel="nofollow" target="_blank">QUnit.module() | QUnit</a>
+    <table>
+      <tbody>
+        <tr>
+          <td>[QUnit.module()</td>
+          <td>QUnit](https://qunitjs.com/api/QUnit/module/)</td>
+        </tr>
+      </tbody>
+    </table>
   </li>
   <li>
-    <a href="https://qunitjs.com/api/QUnit/test/" rel="nofollow" target="_blank">QUnit.test() | QUnit</a>
+    <table>
+      <tbody>
+        <tr>
+          <td>[QUnit.test()</td>
+          <td>QUnit](https://qunitjs.com/api/QUnit/test/)</td>
+        </tr>
+      </tbody>
+    </table>
   </li>
 </ul>
-<p></p>
-<p style="text-align: center;">Have a great day!</p>
+
+<p>Have a great day!</p>
 
                 </div>
 
@@ -313,9 +317,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/067/img_81152b8845.gif" alt="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -351,9 +358,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/063/img_e3160e0be0.gif" alt="Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -393,9 +403,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/055/img_189a192a47.gif" alt="How to Translate Metadata and Web Resources in Dynamics 365 CE" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -471,50 +484,82 @@
                     
                     
                         
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
                     
                         
                     
                         
                     
                         
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
                     
                         
                     
                         
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
+                    
                     
                         
                         
@@ -561,7 +606,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "How to Unit Test Dynamics 365 CRM JavaScript using QUnit?",
-  "image": "",
+  "image": "http://localhost:4000/assets/images/065/img_508a786ff1.gif",
   "datePublished": "2026-04-19T23:11:00+05:30",
   "author": {
     "@type": "Person",

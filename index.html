@@ -71,7 +71,7 @@ title: Home
                         {% if paginator.page > 1 %}
                         <li class="page-item">
                             <a class="page-link rounded-circle border-0 bg-light text-dark mx-1" href="{{ '/' | relative_url }}" aria-label="First">
-                                &laquo;
+                                <i class="bi bi-chevron-double-left"></i>
                             </a>
                         </li>
                         {% endif %}
@@ -84,14 +84,14 @@ title: Home
                         </li>
                         {% endif %}
 
-                        {% assign start_page = paginator.page | minus: 2 %}
+                        {% assign start_page = paginator.page | minus: 1 %}
                         {% if start_page < 1 %}
                             {% assign start_page = 1 %}
                         {% endif %}
-                        {% assign end_page = start_page | plus: 4 %}
+                        {% assign end_page = start_page | plus: 3 %}
                         {% if end_page > paginator.total_pages %}
                             {% assign end_page = paginator.total_pages %}
-                            {% assign start_page = end_page | minus: 4 %}
+                            {% assign start_page = end_page | minus: 3 %}
                             {% if start_page < 1 %}
                                 {% assign start_page = 1 %}
                             {% endif %}
@@ -124,7 +124,7 @@ title: Home
                         {% if paginator.page < paginator.total_pages %}
                         <li class="page-item">
                             <a class="page-link rounded-circle border-0 bg-light text-dark mx-1" href="{{ site.paginate_path | relative_url | replace: ':num', paginator.total_pages }}" aria-label="Last">
-                                &raquo;
+                                <i class="bi bi-chevron-double-right"></i>
                             </a>
                         </li>
                         {% endif %}

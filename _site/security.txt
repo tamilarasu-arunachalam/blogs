@@ -1,0 +1,8 @@
+Contact: mailto:contact@yourdomain.com
+Preferred-Languages: en
+Canonical: https://tamilarasu-arunachalam.github.io/security.txt
+Policy: https://tamilarasu-arunachalam.github.io/privacy.md
+Acknowledgements: https://tamilarasu-arunachalam.github.io
+
+# Security contact for the site. Please use this address for responsible disclosure
+# of security vulnerabilities and privacy issues.

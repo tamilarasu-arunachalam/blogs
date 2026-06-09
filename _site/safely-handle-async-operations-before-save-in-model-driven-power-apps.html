@@ -11,20 +11,22 @@
 <meta property="og:title" content="Safely Handle Async Operations Before Save in Model-Driven Power Apps" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Hello folks. I recently tackled one of these scenarios, and what seemed like a simple validation turned into a bit of a deep dive. In this post, I’ll share how I handled preventing of form save during async operations involving subgrid data, using a real-world example from a JavaScript customization I worked on. Example Scenario Let’s say you have two tables:" />
-<meta name="twitter:description" property="og:description" content="Hello folks. I recently tackled one of these scenarios, and what seemed like a simple validation turned into a bit of a deep dive. In this post, I’ll share how I handled preventing of form save during async operations involving subgrid data, using a real-world example from a JavaScript customization I worked on. Example Scenario Let’s say you have two tables:" />
+<meta name="description" content="Hello folks. I recently tackled one of these scenarios, and what seemed like a simple validation turned into a bit of a deep dive." />
+<meta name="twitter:description" property="og:description" content="Hello folks. I recently tackled one of these scenarios, and what seemed like a simple validation turned into a bit of a deep dive." />
 <link rel="canonical" href="http://localhost:4000/safely-handle-async-operations-before-save-in-model-driven-power-apps.html" />
 <meta property="og:url" content="http://localhost:4000/safely-handle-async-operations-before-save-in-model-driven-power-apps.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="http://localhost:4000/assets/images/044/img_815ddc2024.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-05-25T23:11:00+05:30" />
 <meta property="article:modified_time" content="2025-05-25T23:11:00+05:30" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/044/img_815ddc2024.png" />
 <meta name="twitter:title" content="Safely Handle Async Operations Before Save in Model-Driven Power Apps" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-05-25T23:11:00+05:30","datePublished":"2025-05-25T23:11:00+05:30","description":"Hello folks. I recently tackled one of these scenarios, and what seemed like a simple validation turned into a bit of a deep dive. In this post, I’ll share how I handled preventing of form save during async operations involving subgrid data, using a real-world example from a JavaScript customization I worked on. Example Scenario Let’s say you have two tables:","headline":"Safely Handle Async Operations Before Save in Model-Driven Power Apps","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/safely-handle-async-operations-before-save-in-model-driven-power-apps.html"},"url":"http://localhost:4000/safely-handle-async-operations-before-save-in-model-driven-power-apps.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-05-25T23:11:00+05:30","datePublished":"2025-05-25T23:11:00+05:30","description":"Hello folks. I recently tackled one of these scenarios, and what seemed like a simple validation turned into a bit of a deep dive.","headline":"Safely Handle Async Operations Before Save in Model-Driven Power Apps","image":"http://localhost:4000/assets/images/044/img_815ddc2024.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/safely-handle-async-operations-before-save-in-model-driven-power-apps.html"},"url":"http://localhost:4000/safely-handle-async-operations-before-save-in-model-driven-power-apps.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta name="keywords" content="">
@@ -124,6 +126,23 @@
                 </header>
 
                 
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/044/img_815ddc2024.png" alt="Safely Handle Async Operations Before Save in Model-Driven Power Apps" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+
+
+
+                </div>
+                
 
                 <!-- Topics / TOC Include -->
                 <!-- Optional Topics Navigation -->
@@ -132,268 +151,161 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <div>
-<img border="0" src="/assets/images/044/img_815ddc2024.png" /></div>
-<p>
-  Hello folks. I recently tackled one of these scenarios, and what seemed like a
-  simple validation turned into a bit of a deep dive.
-</p>
-<p>
-  In this post, I’ll share how I handled
-  <span>preventing of form save during async operations involving subgrid
-    data</span>, using a real-world example from a JavaScript customization I worked on.
-</p>
-<h3>Example Scenario</h3>
+                    <p>Hello folks. I recently tackled one of these scenarios, and what seemed like a simple validation turned into a bit of a deep dive.</p>
+
+<p>In this post, I’ll share how I handled preventing of form save during async operations involving subgrid data, using a real-world example from a JavaScript customization I worked on.</p>
+
+<h3 id="example-scenario">Example Scenario</h3>
+
 <p>Let’s say you have two tables:</p>
 
-<p></p>
 <ul>
-  <li>
-    <strong>Order</strong> (the parent)</li></ul>
-<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilWesYTOLuxvxrb3C26j9UDgGnCYgMh1s1-Fdzpaaf2_dHyi2xoWWHsffDX9PMvco05WG579c8h2ifcPNRv1WhCYpaoxUnNJO97GZc6R0O99pDcA0ZMGPf5JqHlJUY1nfhbdkkFcXzo6UXuEq8AHFfKTZAA_aevmAYdF41ePKvwBSDWEv3kr74dfayJxg/s1751/order-form.png"><img border="0" src="/assets/images/044/img_0f910db1b4.png" /></a><br />&lt;ul&gt;&lt;li&gt;
-    <strong>Order Items</strong> (child
-    records shown in a subgrid on the Order form)
-  &lt;/li&gt;
-&lt;/ul&gt;
-<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgE94jCHvYw30mFiEoShF24j0ytIWKohkgS25zee6JfxrNAEsBsRDyrYJvoxMtI8FE7F_0SsKdWwmhW3cx88lZZnerQumJeb9fQtG_WcT9eTt4IYa2a3CFi4tT4J-SHvDLnuqkgVeku5U4KGqvBbHnrz5Hg11pvBKpAsBsSCM_R_ak_k0JY7JsuOodMVKI/s16000/order-products-subgrid.png"><img border="0" src="/assets/images/044/img_bdfd56a891.png" /></a><br /></p>
-<p></p>
-<ul></ul>
-<h4><b>Functionality:</b></h4>
-<p></p>
-<ul>
-  <li>
-    The Order table includes a
-    <code>Order Status</code> field (an option
-    set with values like Open, Closed, and Cancelled).
-  </li>
+  <li><strong>Order</strong> (the parent)</li>
 </ul>
-<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizXUMlq2Icv5XLb2U2Rww1w0XGGFUhRpGmnAdc5o7UB8RmuIaV2rUoxsadmM564jCL8qbYaSepa5vZzokjjVzmzy67m-H-uZ3jcMpIxJ5a8ols_9OD3Uqf5o5SpyoS9o_TuhdciEX-6-qE3DnZ_ibqsxZEsy-TrALHiW6qwjkew-xFXcUzuevAo3ecLVc/s16000/image.png"><img border="0" src="/assets/images/044/img_399df75560.png" /></a></p>
-<p></p>
-<p></p>
-<ul>
-  <li>
-    Each Order Item has a boolean field called
-    <code>Ready to Dispatch?</code>.
-  </li>
-</ul>
-<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiN6N8vMcigQzkMqAhGZsan448b8iZzZdzMuOJLwYXCvrEoXSY_WlZWW_vkhOWs5zVTAt1OXZ_95MaP1yUR6LAVLZQLVjyJB4rMQWUN6bq0ZthiBjYxT-mkNNj-X7S_sRnndNy7u1K6zTyc5QUqDK70A28W8_EZHnwKltnZq7itnDtRbgAcG5UpUjcTTNw/s16000/order-product-form.png"><img border="0" src="/assets/images/044/img_a2e11feda9.png" /></a><br /></p>
-<p></p>
 
-<p></p>
-<h4><b> Here’s the condition:</b></h4>
-<p>
-  If even one Order Item isn’t marked as “Ready to Dispatch,” the Order
-  shouldn’t be allowed to close (i.e., you can’t set its Status to “Closed”). If
-  a user tries to close the Order while there are pending items, we need to stop
-  the form from saving and let them know.
-</p>
-<h3>
-  The First Approach: Using
-  <code>preventDefault()</code> in OnSave
-</h3>
-<p>
-  Initially, I thought this would be easy. I planned to use:
-</p>
+<p><a href="/assets/images/044/img_0f910db1b4.png"><img src="/assets/images/044/img_0f910db1b4.png" alt="" /></a></p>
 
-<p></p>
 <ul>
-  <li>
-    <code>Xrm.WebApi.retrieveMultipleRecords()</code>
-    to check the subgrid data (Order Items)
-  </li>
-  <li>
-    Call
-    <code>eventArgs.preventDefault()</code>
-    if any record didn’t meet the criteria
-  </li>
+  <li><strong>Order Items</strong> (child records shown in a subgrid on the Order form)</li>
 </ul>
-<p></p>
-<ul></ul>
-<p>
-  But there was a catch: the retrieve multiple is
-  <span>asynchronous</span>. So even though
-  the logic was correct, the form would sometimes save
-  <span>before</span> the validation was done
-  - letting invalid data slip through.
-</p>
-<h3>
-  Finding the Fix: Async OnSave Handlers
-</h3>
-<p>
-  Turns out, Power Apps has a way to help with this:
-  <span>async OnSave handlers</span>. These
-  let you run asynchronous logic
-  <span>before</span> the form actually saves,
-  which was exactly what I needed.
-</p>
+
+<p><a href="/assets/images/044/img_bdfd56a891.png"><img src="/assets/images/044/img_bdfd56a891.png" alt="" /></a></p>
+
+<h4 id="functionality"><strong>Functionality:</strong></h4>
+
+<ul>
+  <li>The Order table includes a <code class="language-plaintext highlighter-rouge">Order Status</code> field (an option set with values like Open, Closed, and Cancelled).</li>
+</ul>
+
+<p><a href="/assets/images/044/img_399df75560.png"><img src="/assets/images/044/img_399df75560.png" alt="" /></a></p>
+
+<ul>
+  <li>Each Order Item has a boolean field called <code class="language-plaintext highlighter-rouge">Ready to Dispatch?</code>.</li>
+</ul>
+
+<p><a href="/assets/images/044/img_a2e11feda9.png"><img src="/assets/images/044/img_a2e11feda9.png" alt="" /></a></p>
+
+<h4 id="heres-the-condition"><strong>Here’s the condition:</strong></h4>
+
+<p>If even one Order Item isn’t marked as “Ready to Dispatch,” the Order shouldn’t be allowed to close (i.e., you can’t set its Status to “Closed”). If a user tries to close the Order while there are pending items, we need to stop the form from saving and let them know.</p>
+
+<h3 id="the-first-approach-using-preventdefault-in-onsave">The First Approach: Using <code class="language-plaintext highlighter-rouge">preventDefault()</code> in OnSave</h3>
+
+<p>Initially, I thought this would be easy. I planned to use:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Xrm.WebApi.retrieveMultipleRecords()</code> to check the subgrid data (Order Items)</li>
+  <li>Call <code class="language-plaintext highlighter-rouge">eventArgs.preventDefault()</code> if any record didn’t meet the criteria</li>
+</ul>
+
+<p>But there was a catch: the retrieve multiple is asynchronous. So even though the logic was correct, the form would sometimes save before the validation was done - letting invalid data slip through.</p>
+
+<h3 id="finding-the-fix-async-onsave-handlers">Finding the Fix: Async OnSave Handlers</h3>
+
+<p>Turns out, Power Apps has a way to help with this: async OnSave handlers. These let you run asynchronous logic before the form actually saves, which was exactly what I needed.</p>
+
 <p>Here’s the functionality I implemented:</p>
+
 <ol>
-  <li>
-    Create a web resource and add it in the&nbsp;OnSave event handler on the
-    Order form.
-  </li>
-  <li>
-    When the <code>Status</code> changes to
-    "Closed" and the Save button is clicked, I trigger a validation check.
-  </li>
-  <li>
-    The check:
+  <li>Create a web resource and add it in the OnSave event handler on the Order form.</li>
+  <li>When the <code class="language-plaintext highlighter-rouge">Status</code> changes to “Closed” and the Save button is clicked, I trigger a validation check.</li>
+  <li>The check:
     <ul>
-      <li>
-        Uses
-        <code>Xrm.WebApi.retrieveMultipleRecords()</code>
-        to fetch Order Items.
-      </li>
-      <li>
-        <span>Loops through them to see if all are </span><code>Ready to Dispatch</code><span>.</span>
-      </li>
-      <li>
-        If not, calls
-        <code>preventDefault()</code> to block
-        the save.
-      </li>
+      <li>Uses <code class="language-plaintext highlighter-rouge">Xrm.WebApi.retrieveMultipleRecords()</code> to fetch Order Items.</li>
+      <li>Loops through them to see if all are <code class="language-plaintext highlighter-rouge">Ready to Dispatch</code>.</li>
+      <li>If not, calls <code class="language-plaintext highlighter-rouge">preventDefault()</code> to block the save.</li>
     </ul>
   </li>
-  <li>
-    To add the asynchronous function in the OnSave event handler we need to
-    enable the Async OnSave Handler in App settings
+  <li>To add the asynchronous function in the OnSave event handler we need to enable the Async OnSave Handler in App settings
     <ul>
-      <li>
-        To do that we need to navigate to the setting in the app maker window
-      </li>
-      <p>
-          <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-HbTPh3oh5qapabMx9aGklM_66mt_EA5l4OQ_cLqOHLdUSpFXTMq9PCPGaJHGyN-NbxYtjMG701jcY8cG-kzt-z-YMASA_C7cofrAz9AUyHVLTry066o-C06R1fKbBVCUJ5VZHDjdyoMiozJeWzAfvikJFVCH8g9fYS7jD38bWpHV5i57XHaEKAvrTjQ/s612/app-settings.png"><img border="0" src="/assets/images/044/img_3981c5ac10.png" /></a>
-        </p>
-      <li>
-        Inside that select the features menu, and toggle yes to the Async save
-        handler as like the below image.
-      </li>
-      <p>
-        <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhptltDrzBRVMac0JDJkRa8rHZNeW1SZpCE1exnD_fFZ9B55iJq-_pRAVeNfkCxI23fFlCUQ74y174Ykh8OC6DX_QZtmbOOk6hQLiPvgUFKoLCwKhhUnUIxDbtObmtwJRE2ZG3073340wA6352l-0rME9w8n5nWSCuuWNhNHjQntPx8bR22xPIrPJMFEzc/s1458/async-save-handler.png"><img border="0" src="/assets/images/044/img_f588e438b7.png" /></a>
-      </p>
+      <li>To do that we need to navigate to the setting in the app maker window</li>
     </ul>
+
+    <p><a href="/assets/images/044/img_3981c5ac10.png"><img src="/assets/images/044/img_3981c5ac10.png" alt="" /></a></p>
+
+    <ul>
+      <li>Inside that select the features menu, and toggle yes to the Async save handler as like the below image.</li>
+    </ul>
+
+    <p><a href="/assets/images/044/img_f588e438b7.png"><img src="/assets/images/044/img_f588e438b7.png" alt="" /></a></p>
   </li>
 </ol>
-<p>
-  It was working great… until I hit the next hiccup.
-</p>
-<h3>The Unexpected Issue: Auto-Save</h3>
-<div>
-  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuWOiFZc3FhCXUPfeT7odsnoOnQm2ECxX8nC7VJ0bKk4ESP1b-LMa44SxEDbWiaHbfuslK2yhGtvW6rOpsAoJ0FCLx2wbWgHZwzMGpIe4NXA7cG_6YnU9v_DpkGlyri9_ClQLjgTR35AI87szLf9sOoyiNcWUW4o-RD_eVQZdIyfXkMzkWFos6muAgv5U/s1500/enable-disable-autosave.png"><img border="0" src="/assets/images/044/img_216805d67d.png" /></a>
-</div>
-<p>
-  If you’ve worked with
-  <span>Model-Driven Apps or Dynamics 365 CRM</span>&nbsp;for a while, you’ll know they come with
-  <span>auto-save enabled by default</span>.
-  This means the form tries to save itself every 15–30 seconds or so.
-</p>
-<p>
-  With my validation in place, the form would now block the save and show an
-  error message—even when the user wasn’t doing anything. That wasn’t ideal. It
-  interrupted the user experience and created unnecessary confusion. so i have
-  used the<code>
-    getSaveMode()</code>
-  to check the save mode.
-</p>
-<h3>
-  Smarter Handling: Using
-  <code>getSaveMode()</code> to Detect
-  Auto-Save
-</h3>
-<p>
-  To solve this, I turned to
-  <code>eventArgs.getSaveMode()</code>, which
-  tells you how the form is being saved. You can find the values of the
-  getSaveMode() function from the table below.
-</p>
-<div>
-  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9AVPLAdpfbJNJpRoYIf80tRXwdhd1wqyTbrqL0_a-TDgOFdpf8AvfKLktJ-HiHp3NHnLEH_WptAdSX-Wdkpk40MPWhqWlfLn1xqW2FOeZILyLruh2dkM3Mzqka3FCB_ndCFjX5O_3J7ZSrrujw6HAqcCVVDhlgZc32ANt90sVD7VgtVAIORrdb4miDso/s885/getsavemode-values.png"><img border="0" src="/assets/images/044/img_e82ed7c414.png" /></a>
-</div>
-<p></p>
-<ul></ul>
+
+<p>It was working great… until I hit the next hiccup.</p>
+
+<h3 id="the-unexpected-issue-auto-save">The Unexpected Issue: Auto-Save</h3>
+
+<p><a href="/assets/images/044/img_216805d67d.png"><img src="/assets/images/044/img_216805d67d.png" alt="" /></a></p>
+
+<p>If you’ve worked with Model-Driven Apps or Dynamics 365 CRM for a while, you’ll know they come with auto-save enabled by default. This means the form tries to save itself every 15–30 seconds or so.</p>
+
+<p>With my validation in place, the form would now block the save and show an error message—even when the user wasn’t doing anything. That wasn’t ideal. It interrupted the user experience and created unnecessary confusion. so i have used the <code class="language-plaintext highlighter-rouge">getSaveMode()</code> to check the save mode.</p>
+
+<h3 id="smarter-handling-using-getsavemode-to-detect-auto-save">Smarter Handling: Using <code class="language-plaintext highlighter-rouge">getSaveMode()</code> to Detect Auto-Save</h3>
+
+<p>To solve this, I turned to <code class="language-plaintext highlighter-rouge">eventArgs.getSaveMode()</code>, which tells you how the form is being saved. You can find the values of the getSaveMode() function from the table below.</p>
+
+<p><a href="/assets/images/044/img_e82ed7c414.png"><img src="/assets/images/044/img_e82ed7c414.png" alt="" /></a></p>
+
 <p>Using this, I adjusted the logic:</p>
 
-<p></p>
 <ul>
+  <li><strong>For auto-save (<code class="language-plaintext highlighter-rouge">getSaveMode() === 70</code>):</strong> I only blocked the save quietly using <code class="language-plaintext highlighter-rouge">preventDefault() -</code> no error message.</li>
   <li>
-    <b>
-      For <span>auto-save</span> (<code>getSaveMode() === 70</code>):</b>
-    I only blocked the save quietly using
-    <code>preventDefault() -&nbsp;</code>no
-    error message.
-  </li>
-  <li>
-    <b>For
-      <span>manual save&nbsp;</span>(<span>getSaveMode() === 1 ||&nbsp;</span><span>getSaveMode() === 2</span>):</b>
-    I blocked the save and showed a proper validation message using
-    <code>Xrm.Navigation.openAlertDialog()</code>.
+    <table>
+      <tbody>
+        <tr>
+          <td>**For manual save (getSaveMode() === 1</td>
+          <td> </td>
+          <td> getSaveMode() === 2):** I blocked the save and showed a proper validation message using <code class="language-plaintext highlighter-rouge">Xrm.Navigation.openAlertDialog()</code>.</td>
+        </tr>
+      </tbody>
+    </table>
   </li>
 </ul>
-<p></p>
-<ul></ul>
-<div>After all these changes, I attempted again to test the functionality:</div>
-<div>
-  <ul>
-    <li>I have left one product as not ready to dispatch? (Kept as it is)</li>
-  </ul>
-  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHYkybl_BFqkphEuFRgsqbYta8ujgpAvNLE7D4NRpUbWDm_Q53N-j9meDJ_gK0eQx_YMedluMXc62Ws2oUhm-SrE0prULzVuhiWkO8ZzobJ6RrUSgcu36RP2Ui6bCg03HMADLU2Oefplnc1ZUrNlV8aeUhnkQirLUcM60ORhKQ2Wba_OK6cSd3xf04HFg/s1761/form-before-save.png"><img border="0" src="/assets/images/044/img_b4779a0fd5.png" /></a><br />
-  <ul>
-    <li>
-      I have changes the Order Status to "Closed" and clicked Save button.
-    </li>
-  </ul>
-  <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6FNlQCBs1yPsyTIcjxko1kxIp4hXoyAVxqt9X0PihiOVKgLGRGyhjSPyEs_nFRTGgEEjxmGN4UT3nu0OcRsV5g-qgJZ-SRvmIzivMQvGNogKutio6CTd3Mg3qMZN106n0rkiluyUWJPTSmYEmICG0w7pzaCNjA3_xIIAm0XeK9RDwo6cDkmpupwzNEds/s1758/error-message-alert.png"><img border="0" src="/assets/images/044/img_e58e44ee62.png" /></a><br />
-  <ul>
-    <li>
-      Even I have tested during the autosave also, the alert doesn't thrown
-      again.
-    </li>
-    <li>
-      And finally my form also doesn't got saved until the products under the
-      same order are not in the state of ready to dispatch as true.
-    </li>
-  </ul>
-  <p>You can find the code for the above example use case below.</p>
-  <script src="https://gist.github.com/tamilarasu-arunachalam/c7dac42f58dea23413aec8864fc95055.js"></script>
-</div>
-<ul></ul>
-<p>
-  This small change made a big difference in how the app behaved and how users
-  experienced the form.
-</p>
-<h4>My Learnings:</h4>
 
-<p></p>
+<p>After all these changes, I attempted again to test the functionality:</p>
+
 <ul>
-  <li>
-    Always use
-    <span>async OnSave handlers</span>
-    for async validations in the on save event.
-  </li>
-  <li>
-    Don’t forget about
-    <span>auto-save,&nbsp;</span>it can throw
-    a wrench into your logic if not handled properly.
-  </li>
-  <li>
-    Use <code>getSaveMode()</code> to
-    fine-tune your user experience and avoid unnecessary alerts.
-  </li>
+  <li>I have left one product as not ready to dispatch? (Kept as it is)</li>
 </ul>
-<p></p>
-<ul></ul>
-<h4>Resources Referred:</h4>
-<div>
-  <ul>
-    <li>
-      <a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/save-event-arguments/preventdefault" rel="nofollow" target="_blank">preventDefault method for JavaScript in model-driven apps</a>
-    </li>
-    <li>
-      <a href="https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/manage-auto-save" rel="nofollow" target="_blank">Disable AutoSave in a model-driven app</a>
-    </li><li><a href="https://benediktbergmann.eu/2023/03/20/async-onsave-preventdefault-with-external-call/" rel="nofollow" target="_blank">Async onSave preventDefault with external call</a></li>
-  </ul>
-  <div><br /></div><div style="text-align: center;">Have a great day!</div>
-</div>
+
+<p><a href="/assets/images/044/img_b4779a0fd5.png"><img src="/assets/images/044/img_b4779a0fd5.png" alt="" /></a></p>
+
+<ul>
+  <li>I have changes the Order Status to “Closed” and clicked Save button.</li>
+</ul>
+
+<p><a href="/assets/images/044/img_e58e44ee62.png"><img src="/assets/images/044/img_e58e44ee62.png" alt="" /></a></p>
+
+<ul>
+  <li>Even I have tested during the autosave also, the alert doesn’t thrown again.</li>
+  <li>And finally my form also doesn’t got saved until the products under the same order are not in the state of ready to dispatch as true.</li>
+</ul>
+
+<p>You can find the code for the above example use case below.</p>
+
+<script src="https://gist.github.com/tamilarasu-arunachalam/c7dac42f58dea23413aec8864fc95055.js"></script>
+
+<p>This small change made a big difference in how the app behaved and how users experienced the form.</p>
+
+<h4 id="my-learnings">My Learnings:</h4>
+
+<ul>
+  <li>Always use async OnSave handlers for async validations in the on save event.</li>
+  <li>Don’t forget about auto-save, it can throw a wrench into your logic if not handled properly.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">getSaveMode()</code> to fine-tune your user experience and avoid unnecessary alerts.</li>
+</ul>
+
+<h4 id="resources-referred">Resources Referred:</h4>
+
+<ul>
+  <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/save-event-arguments/preventdefault">preventDefault method for JavaScript in model-driven apps</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/manage-auto-save">Disable AutoSave in a model-driven app</a></li>
+  <li><a href="https://benediktbergmann.eu/2023/03/20/async-onsave-preventdefault-with-external-call/">Async onSave preventDefault with external call</a></li>
+</ul>
+
+<p>Have a great day!</p>
 
                 </div>
 
@@ -439,9 +351,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/067/img_81152b8845.gif" alt="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -473,9 +388,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/065/img_508a786ff1.gif" alt="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -507,9 +425,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/063/img_e3160e0be0.gif" alt="Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -597,50 +518,82 @@
                     
                     
                         
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
                     
                         
                     
                         
                     
                         
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
                     
                         
                     
                         
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
+                    
                     
                         
                         
@@ -687,7 +640,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Safely Handle Async Operations Before Save in Model-Driven Power Apps",
-  "image": "",
+  "image": "http://localhost:4000/assets/images/044/img_815ddc2024.png",
   "datePublished": "2025-05-25T23:11:00+05:30",
   "author": {
     "@type": "Person",

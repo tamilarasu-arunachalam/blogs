@@ -11,20 +11,22 @@
 <meta property="og:title" content="Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="&nbsp;&nbsp; &nbsp;As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit. &lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;There are two primary methods to fetch records, each of which supports pagination:&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Query Expression&lt;/li&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Fetch XML&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;To demonstrate the same, I have created…" />
-<meta name="twitter:description" property="og:description" content="&nbsp;&nbsp; &nbsp;As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit. &lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;There are two primary methods to fetch records, each of which supports pagination:&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Query Expression&lt;/li&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Fetch XML&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;To demonstrate the same, I have created…" />
+<meta name="description" content="As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit." />
+<meta name="twitter:description" property="og:description" content="As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit." />
 <link rel="canonical" href="http://localhost:4000/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" />
 <meta property="og:url" content="http://localhost:4000/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="http://localhost:4000/assets/images/037/img_beba359730.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-06-30T23:11:00+05:30" />
 <meta property="article:modified_time" content="2024-06-30T23:11:00+05:30" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/037/img_beba359730.png" />
 <meta name="twitter:title" content="Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2024-06-30T23:11:00+05:30","datePublished":"2024-06-30T23:11:00+05:30","description":"&nbsp;&nbsp; &nbsp;As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit. &lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;There are two primary methods to fetch records, each of which supports pagination:&lt;/p&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Query Expression&lt;/li&gt;&lt;li style=&quot;text-align: justify;&quot;&gt;Fetch XML&lt;/li&gt;&lt;/ul&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;To demonstrate the same, I have created…","headline":"Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"},"url":"http://localhost:4000/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2024-06-30T23:11:00+05:30","datePublished":"2024-06-30T23:11:00+05:30","description":"As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit.","headline":"Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins","image":"http://localhost:4000/assets/images/037/img_beba359730.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"},"url":"http://localhost:4000/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta name="keywords" content="">
@@ -110,7 +112,7 @@
                 <!-- Post Title & Meta -->
                 <header class="post-header mb-5">
                     <div class="mb-3">
-                        <span class="badge bg-light text-dark border"></span>
+                        <span class="badge bg-light text-dark border">Dynamics 365 CE</span>
                     </div>
                     <h1 class="display-4 fw-bold mb-4">Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins</h1>
                     <div class="post-meta d-flex align-items-center mb-4">
@@ -124,6 +126,23 @@
                 </header>
 
                 
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/037/img_beba359730.png" alt="Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+
+
+
+                </div>
+                
 
                 <!-- Topics / TOC Include -->
                 <!-- Optional Topics Navigation -->
@@ -132,89 +151,134 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <div style="text-align: justify;"><span>&nbsp;&nbsp; &nbsp;</span>As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit.</div>
-<p><img alt="Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins" border="0" src="/assets/images/037/img_beba359730.png" style="display: none;" />&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;There are two primary methods to fetch records, each of which supports pagination:&lt;/p&gt;&lt;ul&gt;&lt;li style="text-align: justify;"&gt;Query Expression&lt;/li&gt;&lt;li style="text-align: justify;"&gt;Fetch XML&lt;/li&gt;&lt;/ul&gt;&lt;p style="text-align: justify;"&gt;To demonstrate the same, I have created a console application to experiment pagination in C# with the above retrieving methods.&lt;/p&gt;&lt;h2&gt;Query Expression&lt;/h2&gt;&lt;p style="text-align: left;"&gt;Query Expression is an object-oriented approach to fetching records. Pagination can be implemented using the following method:&lt;/p&gt;&lt;pre&gt;<code class="language-csharp">static void queryExpPagination(IOrganizationService service)
-{
-    EntityCollection contactsCollection;
-    int totalContactsCount = 0;
-    //initiate the query expression
-    QueryExpression contactQuery = new QueryExpression("contact");
-    contactQuery.ColumnSet = new ColumnSet(true);</code></p>
+                    <p>As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Initiate the paging info
-contactQuery.PageInfo = new PagingInfo();
+<p>There are two primary methods to fetch records, each of which supports pagination:</p>
 
-// set the initial page number as 1
-contactQuery.PageInfo.PageNumber = 1;
-contactQuery.PageInfo.ReturnTotalRecordCount = true;
+<ul>
+  <li>Query Expression</li>
+  <li>Fetch XML</li>
+</ul>
 
-do
-{
-    // retrieve records
-    contactsCollection = service.RetrieveMultiple(contactQuery);
-    // Add paging cookie to the retrieve call
-    contactQuery.PageInfo.PagingCookie = contactsCollection.PagingCookie;
-    contactQuery.PageInfo.PageNumber++;
-    totalContactsCount += contactsCollection.Entities.Count;
-} while (contactsCollection.MoreRecords);
-//throw the exception
-throw new InvalidPluginExecutionException("Total Contacts Count : " + totalContactsCount); }&lt;/code&gt;&lt;/pre&gt;&lt;p style="text-align: justify;"&gt;In the above code, we initiate the Query Expression as usual. To enable pagination, we set values for certain properties of Query Expression by initializing paging info. By default, the page number starts at 1. After the first request, the response includes a paging cookie. Subsequent requests require passing this paging cookie from the previous response and incrementing the page number by 1. This process continues in a loop until the &lt;code&gt;more records&lt;/code&gt; property becomes false.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p style="clear: both; text-align: center;"&gt;&lt;a href="https://blogger.googleusercontent.com/img/a/AVvXsEje3HUMtfXWJblfto0ERAdHPNdbf2O7X5-5PjDsTWeM1pbRjBea0qu0Wp4DJ1wj31MiTQvxVeckYEk1olqIqvqgKAXlrR2DBcYlyGxubLnl6-T4agu2pRcVjrLuIktMS2MYcdACyXNjQajSk1sd1jIT7CqgVWVJPg5zYM78crUSYmSo9cKQjEKltSc-yIE" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img alt="" data-original-height="702" data-original-width="1377" src="/assets/images/037/img_425d30595b.png" /&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;h2&gt;Fetch XML&lt;/h2&gt;&lt;h3&gt;Pagination by converting Fetch XML to Query Expression&lt;/h3&gt;&lt;p style="text-align: justify;"&gt;In this method, we convert Fetch XML to Query Expression using the &lt;code&gt;FetchXmlToQueryExpressionRequest&lt;/code&gt; object. After converting the Fetch XML, we retrieve the conversion response and utilize it as the query expression for fetching records.&lt;/p&gt;&lt;pre&gt;&lt;code class="language-csharp"&gt;static void fetchXmlPagination(IOrganizationService service) {
-EntityCollection contactsCollection;
-int totalContactsCount = 0;
-// initiate the fetch xml
-string fetchXml = "&amp;lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'&amp;gt;" +
-                 "  &amp;lt;entity name='contact'&amp;gt;" +
-                 "    &amp;lt;attribute name='fullname' /&amp;gt;" +
-                 "  &amp;lt;/entity&amp;gt;" +
-                 "&amp;lt;/fetch&amp;gt;";
+<p>To demonstrate the same, I have created a console application to experiment pagination in C# with the above retrieving methods.</p>
 
-//Convert fetchXml into query expression
-FetchXmlToQueryExpressionRequest conversionRequest = new FetchXmlToQueryExpressionRequest
-{
-    FetchXml = fetchXml
-};
-FetchXmlToQueryExpressionResponse conversionResponse = (FetchXmlToQueryExpressionResponse)service.Execute(conversionRequest);
-QueryExpression contactQuery = conversionResponse.Query;
+<h2 id="query-expression">Query Expression</h2>
 
-do
-{
-    // retrieve records using the query expression
-    contactsCollection = service.RetrieveMultiple(contactQuery);
-    // Add paging cookie to the retrieve call
-    contactQuery.PageInfo.PagingCookie = contactsCollection.PagingCookie;
-    contactQuery.PageInfo.PageNumber++;
-    totalContactsCount += contactsCollection.Entities.Count;
-} while (contactsCollection.MoreRecords);
-//throw the exception
-throw new InvalidPluginExecutionException("Total Contacts Count : " + totalContactsCount); }&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;Pagination with Paging Cookie in Fetch XML&lt;/h3&gt;&lt;p style="text-align: justify;"&gt;In this method, we parse the Fetch XML and concatenate the paging cookie into it for every request after the initial one. Initially, we parse the Fetch XML and include the page (defaulting to 1) and the paging cookie. This process continues until the &lt;code&gt;more records&lt;/code&gt; property returns false.&lt;/p&gt;&lt;pre&gt;&lt;code class="language-csharp"&gt;static void paginationByXmlParsingFetchXml(IOrganizationService service) {
-EntityCollection contactsCollection;
-int page = 1;
-int totalContactsCount = 0;
+<p>Query Expression is an object-oriented approach to fetching records. Pagination can be implemented using the following method:</p>
 
-// initiate the fetch xml
-string fetchXml = "&amp;lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'&amp;gt;" +
-             "  &amp;lt;entity name='contact'&amp;gt;" +
-             "    &amp;lt;attribute name='fullname' /&amp;gt;" +
-             "  &amp;lt;/entity&amp;gt;" +
-             "&amp;lt;/fetch&amp;gt;";
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">queryExpPagination</span><span class="p">(</span><span class="n">IOrganizationService</span> <span class="n">service</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">EntityCollection</span> <span class="n">contactsCollection</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">totalContactsCount</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="c1">//initiate the query expression</span>
+    <span class="n">QueryExpression</span> <span class="n">contactQuery</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">QueryExpression</span><span class="p">(</span><span class="s">"contact"</span><span class="p">);</span>
+    <span class="n">contactQuery</span><span class="p">.</span><span class="n">ColumnSet</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ColumnSet</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 
-XElement fetchNode = XElement.Parse(fetchXml);
-fetchNode.SetAttributeValue("page", page);
+    <span class="c1">//Initiate the paging info</span>
+    <span class="n">contactQuery</span><span class="p">.</span><span class="n">PageInfo</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">PagingInfo</span><span class="p">();</span>
 
-do
-{
-    // Get the page
-    contactsCollection = service.RetrieveMultiple(new FetchExpression(fetchNode.ToString()));
+    <span class="c1">// set the initial page number as 1</span>
+    <span class="n">contactQuery</span><span class="p">.</span><span class="n">PageInfo</span><span class="p">.</span><span class="n">PageNumber</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+    <span class="n">contactQuery</span><span class="p">.</span><span class="n">PageInfo</span><span class="p">.</span><span class="n">ReturnTotalRecordCount</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
 
-    // Set the fetch paging-cookie attribute with the paging cookie from the previous query
-    fetchNode.SetAttributeValue("paging-cookie", contactsCollection.PagingCookie);
-    page++;
-    fetchNode.SetAttributeValue("page", page);
-    totalContactsCount += contactsCollection.Entities.Count;
-} while (contactsCollection.MoreRecords);
-//throw the exception
-throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContactsCount); }&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here is the complete code for a console application demonstrating the pagination process by using all the methods.&lt;/p&gt;&lt;p&gt;&lt;script src="https://gist.github.com/tamilarasu-arunachalam/3bdac20a0cde47f9eacda45110df3de3.js"&gt;&lt;/script&gt;&lt;/p&gt;&lt;p style="text-align: center;"&gt;Have a great day!&lt;/p&gt;
+    <span class="k">do</span>
+    <span class="p">{</span>
+        <span class="c1">// retrieve records</span>
+        <span class="n">contactsCollection</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">RetrieveMultiple</span><span class="p">(</span><span class="n">contactQuery</span><span class="p">);</span>
+        <span class="c1">// Add paging cookie to the retrieve call</span>
+        <span class="n">contactQuery</span><span class="p">.</span><span class="n">PageInfo</span><span class="p">.</span><span class="n">PagingCookie</span> <span class="p">=</span> <span class="n">contactsCollection</span><span class="p">.</span><span class="n">PagingCookie</span><span class="p">;</span>
+        <span class="n">contactQuery</span><span class="p">.</span><span class="n">PageInfo</span><span class="p">.</span><span class="n">PageNumber</span><span class="p">++;</span>
+        <span class="n">totalContactsCount</span> <span class="p">+=</span> <span class="n">contactsCollection</span><span class="p">.</span><span class="n">Entities</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">contactsCollection</span><span class="p">.</span><span class="n">MoreRecords</span><span class="p">);</span>
+    <span class="c1">//throw the exception</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">InvalidPluginExecutionException</span><span class="p">(</span><span class="s">"Total Contacts Count : "</span> <span class="p">+</span> <span class="n">totalContactsCount</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></div>
+
+<p>In the above code, we initiate the Query Expression as usual. To enable pagination, we set values for certain properties of Query Expression by initializing paging info. By default, the page number starts at 1. After the first request, the response includes a paging cookie. Subsequent requests require passing this paging cookie from the previous response and incrementing the page number by 1. This process continues in a loop until the <code class="language-plaintext highlighter-rouge">more records</code> property becomes false.</p>
+
+<p><a href="/assets/images/037/img_425d30595b.png"><img src="/assets/images/037/img_425d30595b.png" alt="" /></a></p>
+
+<h2 id="fetch-xml">Fetch XML</h2>
+
+<h3 id="pagination-by-converting-fetch-xml-to-query-expression">Pagination by converting Fetch XML to Query Expression</h3>
+
+<p>In this method, we convert Fetch XML to Query Expression using the <code class="language-plaintext highlighter-rouge">FetchXmlToQueryExpressionRequest</code> object. After converting the Fetch XML, we retrieve the conversion response and utilize it as the query expression for fetching records.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">fetchXmlPagination</span><span class="p">(</span><span class="n">IOrganizationService</span> <span class="n">service</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">EntityCollection</span> <span class="n">contactsCollection</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">totalContactsCount</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="c1">// initiate the fetch xml</span>
+    <span class="kt">string</span> <span class="n">fetchXml</span> <span class="p">=</span> <span class="s">"&lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'&gt;"</span> <span class="p">+</span>
+                     <span class="s">"  &lt;entity name='contact'&gt;"</span> <span class="p">+</span>
+                     <span class="s">"    &lt;attribute name='fullname' /&gt;"</span> <span class="p">+</span>
+                     <span class="s">"  &lt;/entity&gt;"</span> <span class="p">+</span>
+                     <span class="s">"&lt;/fetch&gt;"</span><span class="p">;</span>
+
+    <span class="c1">//Convert fetchXml into query expression</span>
+    <span class="n">FetchXmlToQueryExpressionRequest</span> <span class="n">conversionRequest</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FetchXmlToQueryExpressionRequest</span>
+    <span class="p">{</span>
+        <span class="n">FetchXml</span> <span class="p">=</span> <span class="n">fetchXml</span>
+    <span class="p">};</span>
+    <span class="n">FetchXmlToQueryExpressionResponse</span> <span class="n">conversionResponse</span> <span class="p">=</span> <span class="p">(</span><span class="n">FetchXmlToQueryExpressionResponse</span><span class="p">)</span><span class="n">service</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">conversionRequest</span><span class="p">);</span>
+    <span class="n">QueryExpression</span> <span class="n">contactQuery</span> <span class="p">=</span> <span class="n">conversionResponse</span><span class="p">.</span><span class="n">Query</span><span class="p">;</span>
+
+    <span class="k">do</span>
+    <span class="p">{</span>
+        <span class="c1">// retrieve records using the query expression</span>
+        <span class="n">contactsCollection</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">RetrieveMultiple</span><span class="p">(</span><span class="n">contactQuery</span><span class="p">);</span>
+        <span class="c1">// Add paging cookie to the retrieve call</span>
+        <span class="n">contactQuery</span><span class="p">.</span><span class="n">PageInfo</span><span class="p">.</span><span class="n">PagingCookie</span> <span class="p">=</span> <span class="n">contactsCollection</span><span class="p">.</span><span class="n">PagingCookie</span><span class="p">;</span>
+        <span class="n">contactQuery</span><span class="p">.</span><span class="n">PageInfo</span><span class="p">.</span><span class="n">PageNumber</span><span class="p">++;</span>
+        <span class="n">totalContactsCount</span> <span class="p">+=</span> <span class="n">contactsCollection</span><span class="p">.</span><span class="n">Entities</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">contactsCollection</span><span class="p">.</span><span class="n">MoreRecords</span><span class="p">);</span>
+    <span class="c1">//throw the exception</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">InvalidPluginExecutionException</span><span class="p">(</span><span class="s">"Total Contacts Count : "</span> <span class="p">+</span> <span class="n">totalContactsCount</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="pagination-with-paging-cookie-in-fetch-xml">Pagination with Paging Cookie in Fetch XML</h3>
+
+<p>In this method, we parse the Fetch XML and concatenate the paging cookie into it for every request after the initial one. Initially, we parse the Fetch XML and include the page (defaulting to 1) and the paging cookie. This process continues until the <code class="language-plaintext highlighter-rouge">more records</code> property returns false.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">paginationByXmlParsingFetchXml</span><span class="p">(</span><span class="n">IOrganizationService</span> <span class="n">service</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">EntityCollection</span> <span class="n">contactsCollection</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">page</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">totalContactsCount</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+
+    <span class="c1">// initiate the fetch xml</span>
+    <span class="kt">string</span> <span class="n">fetchXml</span> <span class="p">=</span> <span class="s">"&lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'&gt;"</span> <span class="p">+</span>
+                 <span class="s">"  &lt;entity name='contact'&gt;"</span> <span class="p">+</span>
+                 <span class="s">"    &lt;attribute name='fullname' /&gt;"</span> <span class="p">+</span>
+                 <span class="s">"  &lt;/entity&gt;"</span> <span class="p">+</span>
+                 <span class="s">"&lt;/fetch&gt;"</span><span class="p">;</span>
+
+    <span class="n">XElement</span> <span class="n">fetchNode</span> <span class="p">=</span> <span class="n">XElement</span><span class="p">.</span><span class="nf">Parse</span><span class="p">(</span><span class="n">fetchXml</span><span class="p">);</span>
+    <span class="n">fetchNode</span><span class="p">.</span><span class="nf">SetAttributeValue</span><span class="p">(</span><span class="s">"page"</span><span class="p">,</span> <span class="n">page</span><span class="p">);</span>
+
+    <span class="k">do</span>
+    <span class="p">{</span>
+        <span class="c1">// Get the page</span>
+        <span class="n">contactsCollection</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">RetrieveMultiple</span><span class="p">(</span><span class="k">new</span> <span class="nf">FetchExpression</span><span class="p">(</span><span class="n">fetchNode</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()));</span>
+
+        <span class="c1">// Set the fetch paging-cookie attribute with the paging cookie from the previous query</span>
+        <span class="n">fetchNode</span><span class="p">.</span><span class="nf">SetAttributeValue</span><span class="p">(</span><span class="s">"paging-cookie"</span><span class="p">,</span> <span class="n">contactsCollection</span><span class="p">.</span><span class="n">PagingCookie</span><span class="p">);</span>
+        <span class="n">page</span><span class="p">++;</span>
+        <span class="n">fetchNode</span><span class="p">.</span><span class="nf">SetAttributeValue</span><span class="p">(</span><span class="s">"page"</span><span class="p">,</span> <span class="n">page</span><span class="p">);</span>
+        <span class="n">totalContactsCount</span> <span class="p">+=</span> <span class="n">contactsCollection</span><span class="p">.</span><span class="n">Entities</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">contactsCollection</span><span class="p">.</span><span class="n">MoreRecords</span><span class="p">);</span>
+    <span class="c1">//throw the exception</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">InvalidPluginExecutionException</span><span class="p">(</span><span class="s">"Total Contacts Count : "</span> <span class="p">+</span><span class="n">totalContactsCount</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here is the complete code for a console application demonstrating the pagination process by using all the methods.</p>
+
+<script src="https://gist.github.com/tamilarasu-arunachalam/3bdac20a0cde47f9eacda45110df3de3.js"></script>
+
+<p>Have a great day!</p>
 
                 </div>
 
@@ -250,63 +314,9 @@ throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContac
                         
                     
                         
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-img-link">
+                                <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -314,18 +324,21 @@ throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContac
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/067/img_81152b8845.gif" alt="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category"></span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html"
-                                            class="text-decoration-none text-dark hover-primary">Unlocking the Power of Side Panes in Model-Driven Apps</a>
+                                        <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</a>
                                     </h6>
-                                    <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-readmore">
+                                    <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
                                     </a>
                                 </div>
@@ -340,7 +353,7 @@ throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContac
                         
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-img-link">
+                                <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -348,18 +361,21 @@ throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContac
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/065/img_508a786ff1.gif" alt="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category"></span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html"
-                                            class="text-decoration-none text-dark hover-primary">Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript</a>
+                                        <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</a>
                                     </h6>
-                                    <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-readmore">
+                                    <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
                                     </a>
                                 </div>
@@ -368,11 +384,13 @@ throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContac
                     
                     
                     
+                    
+                        
                     
                         
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html" class="related-card-img-link">
+                                <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -380,18 +398,21 @@ throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContac
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/063/img_e3160e0be0.gif" alt="Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category"></span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html"
-                                            class="text-decoration-none text-dark hover-primary">Fetching large number of data from Dataverse Connector in Power Automate</a>
+                                        <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html"
+                                            class="text-decoration-none text-dark hover-primary">Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</a>
                                     </h6>
-                                    <a href="/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html" class="related-card-readmore">
+                                    <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
                                     </a>
                                 </div>
@@ -402,6 +423,128 @@ throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContac
                     
                     
                         
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
                         
                     
                     
@@ -434,44 +577,6 @@ throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContac
                     
                     
                         
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
                     
                         
                         
@@ -484,18 +589,14 @@ throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContac
                         
                     
                         
+                        
+                    
                     
                         
                     
                         
-                    
                         
                     
-                        
-                    
-                        
-                    
-                        
                     
 
                     
@@ -512,7 +613,7 @@ throw new InvalidPluginExecutionException("Total Contacts Count : " +totalContac
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins",
-  "image": "",
+  "image": "http://localhost:4000/assets/images/037/img_beba359730.png",
   "datePublished": "2024-06-30T23:11:00+05:30",
   "author": {
     "@type": "Person",

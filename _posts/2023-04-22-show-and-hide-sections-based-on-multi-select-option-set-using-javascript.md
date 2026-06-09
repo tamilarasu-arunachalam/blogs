@@ -9,8 +9,6 @@ description: ""
 read_time: "5 min read"
 categories: ["Model Driven Apps", "Dynamics 365 CE", "Web resource"]
 ---
-![Show and Hide sections based on Multi-Select Option Set using JavaScript]({{ site.baseurl }}/)
-
 Multi-Select Option Set in Dataverse allows you to select multiple options for a single field. The selected values of the options are stored in the form of integer array like \[1,2,3\]. Here in this blog, you will learn how to toggle the visibility of sections based on the options in Multi-Select Option Set using JavaScript. Every model driven app form has a hierarchy of Tabs → Sections → Fields.
 
 [![]({{ site.baseurl }}/assets/images/015/img_c7d21c4b0d.png)]({{ site.baseurl }}/assets/images/015/img_c7d21c4b0d.png)

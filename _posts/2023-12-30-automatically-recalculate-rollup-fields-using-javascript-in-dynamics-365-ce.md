@@ -3,7 +3,42 @@ post_id: "032"
 layout: post
 title: "Automatically Recalculate Rollup fields using JavaScript in Dynamics 365 CE"
 date: 2023-12-30 17:41:00 +0000
+category: Dynamics 365 CE
+image: assets/images/032/img_6323eb129c.png
 categories: ["Model Driven Apps", "Dynamics 365 CRM Online", "JavaScript", "Dynamics 365 CE", "Web resource", "Dynamics 365 Web API"]
 ---
+Roll-up fields in Dynamics 365 CE typically take around an hour to recalculate values, unless done manually. To manually trigger the recalculation, simply click on the calculator icon adjacent to the label, which will activate the “Recalculate” button.
 
-<img border="0" data-original-height="400" data-original-width="700" height="183" src="{{ site.baseurl }}/assets/images/032/img_6323eb129c.png" style="display: none;" width="320" /><p style="text-align: justify;"><span>&nbsp;&nbsp; &nbsp;</span>Roll-up fields in Dynamics 365 CE typically take around an hour to recalculate values, unless done manually. To manually trigger the recalculation, simply click on the calculator icon adjacent to the label, which will activate the “Recalculate” button.</p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhe06AVPwaoJQaziAZfAU7vG5LbO6LNXZVSfvJcxB-5vBOZxvBJSmSwH4e-Q_xw5qGiiMEdyw2yM0ixEe4OQP9xXPgfjbxxbsCMQeoWyQDnRWOVsJJVWZ12n3K_Xjf_ibD9LqAjszWHdt7Gq8a806C2DCcx76oPku755f6EELQL1p5JV41CKrPDJInh-qk/s423/recalculate-manually.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="209" data-original-width="423" height="158" src="{{ site.baseurl }}/assets/images/032/img_d00acac10d.png" width="320" /></a></div><p style="text-align: justify;"><span>&nbsp;&nbsp; &nbsp;</span>The automatic recalculation is contingent upon a system job running in the background of the CRM. In this article, we will explore the process of triggering a recalculation of roll-up fields using sub-grid events.</p><p style="text-align: justify;"></p><p></p><p></p><ul style="text-align: left;"><li>I have created a custom whole number field in accounts entity named No of Contacts and set the behaviour as rollup.&nbsp;</li></ul><p></p><p></p><p></p><p style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_OD9l81A7Y1MA7dii3XzwI-WvQ27AEh09Gjn6x5m4gQoJqClrFcGGbVhHxRBIroCBLsx4XYIfb9QLw5iAnA1i9gdaiMZd9loXK3btL76n2eAy03AHoWsSwbm8TX2KVnfZLKodYtrOIDostGSEzdmWlFJ7PFBBPJdkpzNOL1453GEmrja9iN_fYAvGrtU/s627/roll-up-field-creation.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="627" data-original-width="601" height="320" src="{{ site.baseurl }}/assets/images/032/img_9acfb92e2a.png" width="307" /></a></p><div class="separator" style="clear: both; text-align: center;"><p></p><ul><li style="text-align: left;">Click on “Edit” below the behaviour field, and it will open the new window to set the rollup field. I have set the Related Entity as Contact and Aggregation as Count of Contact. Then Save and publish the field.</li></ul><p></p><p style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVNEs3zcDoOFJJkxOX4Hdhn_NQZ7n9RKpkUB9h6_7GUh5rpKoB7dYkZ_tMKNUp84t__SzHVFex2at7EkbcCpDiX7yTJ4_fSqIcpl2Tbog8Ix5W8x_UwvpbBtxFD8yeVjKCsyciWXVZAsq4HdLijAI65KAf_41yUzbcZq0G-A0DtEa7BQ6Gq425nxTU3vA/s524/set-up-roll-up-field.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="524" data-original-width="455" height="320" src="{{ site.baseurl }}/assets/images/032/img_f61638fda7.png" width="278" /></a></p><p></p><ul><li style="text-align: justify;"><span style="text-align: left;">Add the field to the Accounts main form, then save and publish the form.</span></li></ul><p></p><p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhG57GWsrYC3yvm_Z3ct7u4R-3yzqe4JLFmvEjgCd5JSid3AV2KUZWONPPioqcpH1RXjsWS-zxbOYVt6ZDQmwjJMQXng8_BsSIvdXSKdoXk4romKrq0LtHV5qTh_4nOnGsFc59nPs42_2Y0okY7Ongwu9nos_4bkDA9RaO_RMEw_CKyxpbUnG5T3WhlEUo/s528/roll-up-field-uci.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="528" data-original-width="331" height="320" src="{{ site.baseurl }}/assets/images/032/img_0345332956.png" width="201" /></a></p><p></p><ul><li style="text-align: justify;"><span style="text-align: left;">Add a web resource named autoCalculateRollup.js and add the below functions in it.</span></li></ul><p></p><ul><script src="https://gist.github.com/tamilarasu-arunachalam/e380c3d700a692ac727cb37d2086bdbf.js"></script></ul><p></p><ul><li style="text-align: justify;"><span style="text-align: left;">This web resource will add a function on the on load of contacts sub-grid. So that we can easily catch the count of contacts associated with the account and the field will calculate the count automatically using the call to the API.</span></li></ul><p></p><p></p><p></p><ul><li style="text-align: justify;">Please refer to the Microsoft Docs on&nbsp;<b>CalculateRollupField</b> Function link <a href="https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/calculaterollupfield?view=dataverse-latest" rel="nofollow" target="_blank">here</a>.</li></ul><p></p><p></p><ul><li style="text-align: justify;">Add the function to the on load event of Accounts Main Form where the Rollup field is there.</li></ul><p></p><img border="0" data-original-height="389" data-original-width="269" height="320" src="{{ site.baseurl }}/assets/images/032/img_b38ef68c16.png" width="221" /><p></p><p></p><ul><li style="text-align: justify;">The below GIF will demonstrate the automatic recalculation on the load of sub-grid.</li></ul><p></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4UkGNwcsIHLsmr9SFb5t-igHoFimGDJ1SkiJbMiaAE-Dox3mGoM_8vE1RggInjK-ugTzhufgbp536gxauiPT6aIiXeU2R6hJSiA8RL7xSlJaZyvKP3p9CDeti6atWYZkWvyi7aLkfCC-ug-k6bUW3JVFfLgpQA0WwR9D3WQgd-VF3HFhm8qh5hjjljhA/s614/scrnli_12_30_2023_9-23-24%20PM%20(online-video-cutter.com).gif" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="614" data-original-width="438" height="320" src="{{ site.baseurl }}/assets/images/032/img_afcf89f0c7.gif" width="228" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;"></div>Have a great day!</div>
+[![]({{ site.baseurl }}/assets/images/032/img_d00acac10d.png)]({{ site.baseurl }}/assets/images/032/img_d00acac10d.png)
+
+    The automatic recalculation is contingent upon a system job running in the background of the CRM. In this article, we will explore the process of triggering a recalculation of roll-up fields using sub-grid events.
+
+-   I have created a custom whole number field in accounts entity named No of Contacts and set the behaviour as rollup. 
+
+[![]({{ site.baseurl }}/assets/images/032/img_9acfb92e2a.png)]({{ site.baseurl }}/assets/images/032/img_9acfb92e2a.png)
+
+-   Click on “Edit” below the behaviour field, and it will open the new window to set the rollup field. I have set the Related Entity as Contact and Aggregation as Count of Contact. Then Save and publish the field.
+
+[![]({{ site.baseurl }}/assets/images/032/img_f61638fda7.png)]({{ site.baseurl }}/assets/images/032/img_f61638fda7.png)
+
+-   Add the field to the Accounts main form, then save and publish the form.
+
+[![]({{ site.baseurl }}/assets/images/032/img_0345332956.png)]({{ site.baseurl }}/assets/images/032/img_0345332956.png)
+
+-   Add a web resource named autoCalculateRollup.js and add the below functions in it.
+
+<script src="https://gist.github.com/tamilarasu-arunachalam/e380c3d700a692ac727cb37d2086bdbf.js"></script>
+
+-   This web resource will add a function on the on load of contacts sub-grid. So that we can easily catch the count of contacts associated with the account and the field will calculate the count automatically using the call to the API.
+
+-   Please refer to the Microsoft Docs on **CalculateRollupField** Function link [here](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/calculaterollupfield?view=dataverse-latest).
+
+-   Add the function to the on load event of Accounts Main Form where the Rollup field is there.
+
+![]({{ site.baseurl }}/assets/images/032/img_b38ef68c16.png)
+
+-   The below GIF will demonstrate the automatic recalculation on the load of sub-grid.
+
+[![]({{ site.baseurl }}/assets/images/032/img_afcf89f0c7.gif)]({{ site.baseurl }}/assets/images/032/img_afcf89f0c7.gif)
+
+Have a great day!

@@ -27,20 +27,22 @@ Custom Web Templates
 
 This was the game-changer. I found the default header and footer web templates and replaced them entirely. I built three custom templates - **admin-sidebar**, **admin-header**, and **admin-footer** \- tailored specifically for logged-in hospital staff. The result was a cohesive dashboard feel with full control over every pixel.
 
-[![]({{ site.baseurl }}/assets/images/068/img_0cec82bcf4.jpg)](https://blogger.googleusercontent.com/img/a/AVvXsEh_Yd-p_gw7KNf3vhDei--zBfxlB6ooWObRQOpwpVNBHgYTE6-FzVWP4_yR9vN_cMHsJdxPapy1Jkt_pKGatkBQY1f83kNXvP91s2Dqcve74iB2qw4Y-CLaEdStW_O_AlAlbKSoRldkpUh2NJqwbhgrGxHFkFX6ipBmIEY0rapV1m1IWB2IjNZMUwdccxY)
+[![]({{ site.baseurl }}/assets/images/068/img_0cec82bcf4.jpg)]({{ site.baseurl }}/assets/images/068/img_0cec82bcf4.jpg)
 
 Custom Login Page
 -----------------
 
 The default Power Pages login page honestly frustrated me every time I saw it. So I built a custom one - complete with **Microsoft Entra and Google authentication**. It immediately made the app feel more polished and enterprise-ready. Check out my blog about [_How to Customize the Sign in page in Power Pages Easily_](https://www.tamilarasu.blog/2026/03/customize-signin-page-in-power-pages.html) to know how I did that.
 
-[![]({{ site.baseurl }}/assets/images/068/img_571ffe5e22.jpg)](https://blogger.googleusercontent.com/img/a/AVvXsEiiJpSgBMUSM43Fimxg_1B4lqc6D0XUB_JBgKu8dZU82Cjk9dyfSxgeqb0cfJVVNVYMNQ7TaZMtKgfBwYVCfFUCdcbTaHIlh9ht3j4X8zEf1YM0W7l5LgbfXvja3AzVMJTgCGbctX3efaMtQTN7g3Q8QxIH6t1z3U6vpVXAPD0y0ynOUU8WyG-sZabNJqI)
+[![]({{ site.baseurl }}/assets/images/068/img_571ffe5e22.jpg)]({{ site.baseurl }}/assets/images/068/img_571ffe5e22.jpg)
 
-admin-sidebar.html
+**admin-sidebar.html**
 <script src="https://gist.github.com/tamilarasu-arunachalam/e5c7ef982af2e4ff7a98a8e4e4dc62d3.js?file=side-bar.html"></script>
-admin-header.html
+
+**admin-header.html**
 <script src="https://gist.github.com/tamilarasu-arunachalam/e5c7ef982af2e4ff7a98a8e4e4dc62d3.js?file=header.html"></script>
-admin-footer.html
+
+**admin-footer.html**
 <script src="https://gist.github.com/tamilarasu-arunachalam/e5c7ef982af2e4ff7a98a8e4e4dc62d3.js?file=footer.html"></script>
 
 
@@ -49,15 +51,15 @@ The Small Details That Made a Big Difference
 
 A **favicon** might seem trivial, but it signals credibility. I added one, and suddenly the browser tab looked like it belonged to a real product. Here is my blog about [_How to Add a Favicon in Power Pages?_](https://www.tamilarasu.blog/2026/04/how-to-add-favicon-in-power-pages.html) and do check out to know if you want to.
 
-[![]({{ site.baseurl }}/assets/images/068/img_a18cb480e9.jpg)](https://blogger.googleusercontent.com/img/a/AVvXsEgossKQFBwQri4xyyRstZWtdgYdqn6GAZAymFrTFb0X9u2ZFBYvKTIebryzwb4FErAC0ZaXTKv3OBEy4kUVl9vbHpbScopm_s4TjWnFP6Lvb00Yddvys2Zxkuyvi68uvkDASLO_ebxi7bPDpeaQ4gY1tf0ujNJ-1ai_a9E_wTBxR44DwIHXK1tUAPWxYJo)
+[![]({{ site.baseurl }}/assets/images/068/img_a18cb480e9.jpg)]({{ site.baseurl }}/assets/images/068/img_a18cb480e9.jpg)
 
 For **charts and graphs**, I skipped the built-in Power Apps charts - they felt too rigid for a custom dashboard. Instead, I used **Chart.js**, an open-source library that gave me colorful, interactive visuals with full creative control.
 
-[![]({{ site.baseurl }}/assets/images/068/img_862798299f.jpg)](https://blogger.googleusercontent.com/img/a/AVvXsEj-2V0UWBK7pICAw4WbIUbXqDvkTgsOOcrZSs1EmEmPpYv54Q3Wgi8oY3FE-G29CE2HvUub8jEUcEmFYP-2u1MdwZWTRcCUpo8Y0yEgQxDX49khO8bSHqCdgiTiTnaCqvMy08i3flUaqtJNkXc7Wvr_8kCSoGJV_Si7QY2fVNSQOBMypzVCcNh7OulDbcA)
+[![]({{ site.baseurl }}/assets/images/068/img_862798299f.jpg)]({{ site.baseurl }}/assets/images/068/img_862798299f.jpg)
 
 And for **profile avatars**, I used the **UI Avatars API** to generate initials-based profile images dynamically. One image tag. Zero effort. Looks great.
 
-[![]({{ site.baseurl }}/assets/images/068/img_973ca01c0e.jpg)](https://blogger.googleusercontent.com/img/a/AVvXsEiMaZhK5h6ZWiyVS-hxXlf2yyi8JXGGkPWv_vv_9claSenkIjhJPuGkBFqQvGzIXq-c_if4ty_5e1NmHpG2vTHiUvPU3SIlo84aobT1D8Ed496k_22dFkSNq5bFFMSD3VFyDGOxwSp1DHKWiHqqwCr8KDJeCQ1OqfTOug10offChKpnvzkRmtlrxita9fw)
+[![]({{ site.baseurl }}/assets/images/068/img_973ca01c0e.jpg)]({{ site.baseurl }}/assets/images/068/img_973ca01c0e.jpg)
 
 Finally
 -------

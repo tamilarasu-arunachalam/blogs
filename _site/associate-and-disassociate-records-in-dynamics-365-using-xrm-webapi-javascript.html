@@ -11,20 +11,22 @@
 <meta property="og:title" content="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button. Initially, I thought of using Power Automate or a custom plugin with an action, but after exploring more, I discovered that the XRM WebAPI already provides built-in methods to associate and disassociate records. This approach turned out to be much simpler and faster. Scenario Overview I had a Contact subgrid on the Account form showing &quot;All Active Contacts.&quot; The goal was simple: Select a few contacts from the…" />
-<meta name="twitter:description" property="og:description" content="Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button. Initially, I thought of using Power Automate or a custom plugin with an action, but after exploring more, I discovered that the XRM WebAPI already provides built-in methods to associate and disassociate records. This approach turned out to be much simpler and faster. Scenario Overview I had a Contact subgrid on the Account form showing &quot;All Active Contacts.&quot; The goal was simple: Select a few contacts from the…" />
+<meta name="description" content="Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button." />
+<meta name="twitter:description" property="og:description" content="Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button." />
 <link rel="canonical" href="http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html" />
 <meta property="og:url" content="http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="http://localhost:4000/assets/images/051/img_81b48ca268.gif" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-11-02T23:11:00+05:30" />
 <meta property="article:modified_time" content="2025-11-02T23:11:00+05:30" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/051/img_81b48ca268.gif" />
 <meta name="twitter:title" content="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-11-02T23:11:00+05:30","datePublished":"2025-11-02T23:11:00+05:30","description":"Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button. Initially, I thought of using Power Automate or a custom plugin with an action, but after exploring more, I discovered that the XRM WebAPI already provides built-in methods to associate and disassociate records. This approach turned out to be much simpler and faster. Scenario Overview I had a Contact subgrid on the Account form showing &quot;All Active Contacts.&quot; The goal was simple: Select a few contacts from the…","headline":"Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html"},"url":"http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-11-02T23:11:00+05:30","datePublished":"2025-11-02T23:11:00+05:30","description":"Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button.","headline":"Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)","image":"http://localhost:4000/assets/images/051/img_81b48ca268.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html"},"url":"http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta name="keywords" content="">
@@ -124,6 +126,23 @@
                 </header>
 
                 
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/051/img_81b48ca268.gif" alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+
+
+
+                </div>
+                
 
                 <!-- Topics / TOC Include -->
                 <!-- Optional Topics Navigation -->
@@ -132,82 +151,56 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <p><img alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" src="/assets/images/051/img_81b48ca268.gif" style="display: none;" /></p>
-<p style="text-align: justify;">
-  Recently, I worked on a Dynamics 365 customization where I needed to associate
-  selected subgrid records with a parent record - specifically, linking multiple
-  contacts to an account using a custom button.
-</p>
-<p style="text-align: justify;">
-  Initially, I thought of using Power Automate or a custom plugin with an
-  action, but after exploring more, I discovered that the XRM WebAPI already
-  provides built-in methods to associate and disassociate records. This approach
-  turned out to be much simpler and faster.
-</p>
-<h2>Scenario Overview</h2>
-<p>
-  I had a Contact subgrid on the Account form showing "All Active Contacts."
-</p>
+                    <p>Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button.</p>
+
+<p>Initially, I thought of using Power Automate or a custom plugin with an action, but after exploring more, I discovered that the XRM WebAPI already provides built-in methods to associate and disassociate records. This approach turned out to be much simpler and faster.</p>
+
+<h2 id="scenario-overview">Scenario Overview</h2>
+
+<p>I had a Contact subgrid on the Account form showing “All Active Contacts.”</p>
+
 <p>The goal was simple:</p>
+
 <ul>
   <li>Select a few contacts from the subgrid.</li>
-  <li>Click a custom button labeled "Associate."</li>
-  <li>
-    Automatically link those selected contacts to the current account record.
-  </li>
+  <li>Click a custom button labeled “Associate.”</li>
+  <li>Automatically link those selected contacts to the current account record.</li>
 </ul>
-<p style="text-align: justify;">
-  To make it more interactive, I also added another subgrid showing only the
-  related contacts for that account.
-</p>
-<p style="text-align: justify;">
-  When I clicked the "Associate" button, the selected contacts appeared
-  instantly in that related subgrid.
-</p>
-<h2>Associate Records using XRM WebAPI</h2>
-<p>
-  The Associate action works perfectly for relationships such as One-to-Many and
-  Many-to-Many.<br />
-  Here’s the full JavaScript code I used:
-</p>
+
+<p>To make it more interactive, I also added another subgrid showing only the related contacts for that account.</p>
+
+<p>When I clicked the “Associate” button, the selected contacts appeared instantly in that related subgrid.</p>
+
+<h2 id="associate-records-using-xrm-webapi">Associate Records using XRM WebAPI</h2>
+
+<p>The Associate action works perfectly for relationships such as One-to-Many and Many-to-Many.<br />
+Here’s the full JavaScript code I used:</p>
+
 <script src="https://gist.github.com/tamilarasu-arunachalam/2f017b3dba30b252a12fbbccf3af5884.js?file=associateContactWithAccount.js"></script>
 
-<h3>Demonstration</h3>
-<ol>
-  <img alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" src="/assets/images/051/img_29fa5b8871.png" />
-  <li>
-    Added two Contact subgrids on the Account form:
-    <ul>
-      <li>One shows All Active Contacts.</li>
-      <li>Another shows Related Contacts.</li>
-    </ul>
-  </li>
-  <img alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" src="/assets/images/051/img_1238f49940.png" />
-  <li>Created a custom subgrid button labeled "Associate".</li>
-  <img alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" src="/assets/images/051/img_49e580ab1a.png" />
-  <li>
-    On clicking it, the selected contacts from the active view got linked with
-    the account — instantly reflecting in the related subgrid.
-  </li>
-</ol>
-<h2>Disassociate Records using XRM WebAPI</h2>
-<p>
-  Just like the associate action, we can disassociate records easily with a
-  similar approach.<br />
-  Here's the sample code:
-</p>
+<h3 id="demonstration">Demonstration</h3>
+
+<p><img src="/assets/images/051/img_29fa5b8871.png" alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" />2.  Added two Contact subgrids on the Account form:
+    -   One shows All Active Contacts.
+    -   Another shows Related Contacts.
+<img src="/assets/images/051/img_1238f49940.png" alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" />4.  Created a custom subgrid button labeled “Associate”.
+<img src="/assets/images/051/img_49e580ab1a.png" alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" />6.  On clicking it, the selected contacts from the active view got linked with the account — instantly reflecting in the related subgrid.</p>
+
+<h2 id="disassociate-records-using-xrm-webapi">Disassociate Records using XRM WebAPI</h2>
+
+<p>Just like the associate action, we can disassociate records easily with a similar approach.<br />
+Here’s the sample code:</p>
+
 <script src="https://gist.github.com/tamilarasu-arunachalam/2f017b3dba30b252a12fbbccf3af5884.js?file=disassociateContactWithAccount.js"></script>
 
-<h3>Reference</h3>
+<h3 id="reference">Reference</h3>
+
 <ul>
-  <li>
-    <a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-webapi/online/execute#associate-a-record">Associate Records using XRM WebAPI - Microsoft Docs</a>
-  </li>
-  <li>
-    <a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-webapi/online/execute#disassociate-a-record">Disassociate Records using XRM WebAPI - Microsoft Docs</a>
-  </li>
+  <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-webapi/online/execute#associate-a-record">Associate Records using XRM WebAPI - Microsoft Docs</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-webapi/online/execute#disassociate-a-record">Disassociate Records using XRM WebAPI - Microsoft Docs</a></li>
 </ul>
-<p style="text-align: center;"><i>Have a great day!</i></p>
+
+<p><em>Have a great day!</em></p>
 
                 </div>
 
@@ -253,9 +246,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/067/img_81152b8845.gif" alt="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -287,9 +283,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/065/img_508a786ff1.gif" alt="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -321,9 +320,12 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/063/img_e3160e0be0.gif" alt="Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
@@ -411,50 +413,82 @@
                     
                     
                         
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
                     
                         
                     
                         
                     
                         
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
                     
                         
                     
                         
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
+                    
                     
                         
                         
@@ -501,7 +535,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)",
-  "image": "",
+  "image": "http://localhost:4000/assets/images/051/img_81b48ca268.gif",
   "datePublished": "2025-11-02T23:11:00+05:30",
   "author": {
     "@type": "Person",

@@ -16,15 +16,17 @@
 <link rel="canonical" href="http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html" />
 <meta property="og:url" content="http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="http://localhost:4000/assets/images/016/img_a471a25ee1.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-25T06:00:00+05:30" />
 <meta property="article:modified_time" content="2023-04-25T06:00:00+05:30" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/016/img_a471a25ee1.png" />
 <meta name="twitter:title" content="Get Selected Records from the Grid using Command Button in JavaScript" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-04-25T06:00:00+05:30","datePublished":"2023-04-25T06:00:00+05:30","description":"As of now, Model Driven Apps command bar doesn’t have an option to get the selected record’s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps.","headline":"Get Selected Records from the Grid using Command Button in JavaScript","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html"},"url":"http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-04-25T06:00:00+05:30","datePublished":"2023-04-25T06:00:00+05:30","description":"As of now, Model Driven Apps command bar doesn’t have an option to get the selected record’s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps.","headline":"Get Selected Records from the Grid using Command Button in JavaScript","image":"http://localhost:4000/assets/images/016/img_a471a25ee1.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html"},"url":"http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta name="keywords" content="">
@@ -110,7 +112,7 @@
                 <!-- Post Title & Meta -->
                 <header class="post-header mb-5">
                     <div class="mb-3">
-                        <span class="badge bg-light text-dark border"></span>
+                        <span class="badge bg-light text-dark border">Dynamics 365 CE</span>
                     </div>
                     <h1 class="display-4 fw-bold mb-4">Get Selected Records from the Grid using Command Button in JavaScript</h1>
                     <div class="post-meta d-flex align-items-center mb-4">
@@ -124,6 +126,23 @@
                 </header>
 
                 
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/016/img_a471a25ee1.png" alt="Get Selected Records from the Grid using Command Button in JavaScript" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+
+
+
+                </div>
+                
 
                 <!-- Topics / TOC Include -->
                 <!-- Optional Topics Navigation -->
@@ -134,12 +153,10 @@
                 <div class="post-body fs-5 mt-4">
                     <p>As of now, Model Driven Apps command bar doesn’t have an option to get the selected record’s references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps.</p>
 
-<p><img src="/assets/images/016/img_a471a25ee1.png" alt="Get Selected Records from the Grid using Command Button in JavaScript" /></p>
-
 <ul>
-  <li><a href="#one">Add button to the command bar</a></li>
-  <li><a href="#two">Add Rules and Commands to Button</a></li>
-  <li><a href="#three">Getting Selected Records</a></li>
+  <li><a href="#add-button-to-the-command-bar">Add button to the command bar</a></li>
+  <li><a href="#add-rules-and-commands-to-button">Add Rules and Commands to Button</a></li>
+  <li><a href="#getting-selected-records">Getting Selected Records</a></li>
 </ul>
 
 <h2 id="add-button-to-the-command-bar">Add button to the command bar</h2>
@@ -148,17 +165,17 @@
 
 <p>Navigate to the solutions page(in classic mode) you got to see a button on the above named Ribbon Workbench as like below image</p>
 
-<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgnHnUbo3Cg_6zIoJYn7bZQahlkM6xXJ_Kh4-wOOC8oJmAHMfU9olEmiV3eckGSK5f22TPug8paKL77hjuqzcb5EWGOWUB5nTVeOxAjm2BzgwSrME844zZBsqaWDkSBj0QQySjJ_4crReEaNI4JjScKg-TXuW8cHEyr5agxdl6DsR5Kmuec7a_FTcB2"><img src="/assets/images/016/img_5e31800461.png" alt="" /></a></p>
+<p><a href="/assets/images/016/img_5e31800461.png"><img src="/assets/images/016/img_5e31800461.png" alt="" /></a></p>
 
 <p>Hit the Ribbon Workbench button, and it will navigate to the command editor page with a pop opened. Select the solution which is specific for buttons.</p>
 
 <p><em><strong>Note:</strong></em> Ribbon Workbench is too sensitive and it did not handle much entity data. It has a limit of only five entities for a solution.</p>
 
-<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjF3puvR8QeKJAYBx3M-HzEPp3xYAC8CRyyA-xggEA6eeqnexn9r2p1e5DbZ2KV0rxZQzT47s_ObLRMN4H79iXS2s9QMDO5BWZfIGZaT6zwxkSWuMDgkdQFRFs4daZR2gFBnPdIMqws4czWyo-y-25PzmLjSVKhsNpt7Huqkxo9RI9B4HlhCeMX20YP"><img src="/assets/images/016/img_ce0b50ded6.png" alt="" /></a></p>
+<p><a href="/assets/images/016/img_ce0b50ded6.png"><img src="/assets/images/016/img_ce0b50ded6.png" alt="" /></a></p>
 
 <p>Select the entity under the solution elements to add buttons. For the current context, we have to add buttons in Home, which refers to Main View. Drag and Drop the button on the desired location and add label and icon to it.</p>
 
-<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgx-I8d5j7gSiushe81dI8CaCXtvAMXQWBKgl75NnKq7bQPec8SHOHuVYj2bm4kJaOHmqcggRs_q7gF9YqXqJuLhS4LRSMvsQuTo757BaIPykW_YDXKLf7Moh0aauI5EZvEH2PDC_b3O3TwSMkDS7lVKwM8ZADysB2IRBBTDATjJQF93V-5iQyosqZz"><img src="/assets/images/016/img_d03539ae37.png" alt="" /></a></p>
+<p><a href="/assets/images/016/img_d03539ae37.png"><img src="/assets/images/016/img_d03539ae37.png" alt="" /></a></p>
 
 <h2 id="add-rules-and-commands-to-button">Add Rules and Commands to Button</h2>
 
@@ -168,31 +185,29 @@
 
 <p>Navigate to the Command Editor, then add a new command by clicking the + icon, add a JavaScript action by selecting the library and adding the function name. Add the CRM Parameter and <strong>SelectedControlSelectedItemReferences</strong>.</p>
 
-<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEiWAsqOQANmvruiuKsMN2BsEYTEs2D2l70YkmnCSRZdBojNAzjdsGeDDFdvUsyVIyldteoQHTfKPnHu42eIj8ZENRvoU3ZRizgR6rSl7XZn2UV8XDvk2HWPkzMQmxZLzEKXIdyrWxo970_uEqKdGWkrG3DcYkTtkP0qanWtzJBonWbqHlvM1sjHJ13K"><img src="/assets/images/016/img_3e8feffddc.png" alt="" /></a></p>
+<p><a href="/assets/images/016/img_3e8feffddc.png"><img src="/assets/images/016/img_3e8feffddc.png" alt="" /></a></p>
 
 <p>Add an Enable rule to show the button only a record is selected. Click on + icon near Enable rules. Click on + Add Step and select SelectionCountRule and set the minimum field to 1. So that, the button appears on the command at least a record gets selected unless it is hidden.</p>
 
-<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEhCJUY6TvMl3e9TECe7852CycibHzC6vMN3UrMGZdW_nKpbGsIlZVGUxXRx4_R1-XO6rBNFSm8fH77jNB9NSAI1pjKx9w9WI72UOWpmerAxQBsdVTmobpOEyCsZFg2eDMf2A6-u4BEAe4oaM96d3H8RaIKJ_z15n610aWW6nK4HdUldWSHO3Mfd5bXj"><img src="/assets/images/016/img_59b0dc36d8.png" alt="" /></a></p>
+<p><a href="/assets/images/016/img_59b0dc36d8.png"><img src="/assets/images/016/img_59b0dc36d8.png" alt="" /></a></p>
 
 <p>Add the Enable Rule to the Command and Add the Command to the button as like the below image, then publish the Command Editor.</p>
 
-<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcalvz-Gvlg81eyHdergtf0aQFhE7fv8N1aDMzINzk7w7ugYfKwnSN5YwwYYaDOivJ0VThr1cY68LKY8bMVC6YcBFREHiXs562zEfHrB5IIjdeunDXovYqmC6IMfDN1a9px-k6hcL8kGy1FDRQaKcUlsr1EMpkrNlHjRk5DNx5_CyZO463bN6nZHn2/s916/ribbonselecrec.png"><img src="/assets/images/016/img_a516faec8e.png" alt="" /></a></p>
+<p><a href="/assets/images/016/img_a516faec8e.png"><img src="/assets/images/016/img_a516faec8e.png" alt="" /></a></p>
 
 <h2 id="getting-selected-records">Getting Selected Records</h2>
 
 <p>In this blog, I have placed the button in Products Home grid. I got to see the button which appears after selecting a record.</p>
 
-<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgw94hv8hOudSYvO1Cn5CQ2ar7T3Ioqw0G-4WFf1Unhj08LDEQqDuz_R-ibqYTTYfRWHAXYhHn3Vf88vVifZ6mhdokXVjhwy2tqKXOwXeEUpTosfEAre6q8yXvY1peywPGeDv8OWczNI3Mwe3FCHPyNpBx8IDWCOIpS_RDTQHGBuiSyTp-0dzs8LSjV"><img src="/assets/images/016/img_5e370a7e4a.png" alt="" /></a></p>
+<p><a href="/assets/images/016/img_5e370a7e4a.png"><img src="/assets/images/016/img_5e370a7e4a.png" alt="" /></a></p>
 
 <p>Hit the button to see the selected record names in an alert</p>
 
-<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEg_ubljsvL1F0G5ZsrX0TTDYaNOxYbUIDQyWw0nZDqbjrABhH3PztI0ZnVUsdIJKdynZXuv06zb19r9HX0T4ZgwyPU1lpNgreUSv0ul6tu6-qpdO2R-BAHlhI4CFD38Z93MPeNAIDZIvNfsMRV8DBRXtN3QZ6saHWCMHHVg6GMTsBRvwUg6-8wOigv_"><img src="/assets/images/016/img_7c758397bf.png" alt="" /></a></p>
-
-<p><a href="https://blogger.googleusercontent.com/img/a/AVvXsEg5RdpQMw6i4-3E8o7OaGbABQDYaF6TRo6veFWiOcn2ckUbw2pj3e7HktPvCKQUE2k6xtePELJgzEYp-Ofipen7N_LpQHUm_tVKo2XRs2AYFCHGMFMIVpyjdecoURAFHRWxFVGm1EllpTQPWusyHIYDsKEou2ncgHrEw94qB4cieC_JQcQJCeIYB6O-"><img src="/assets/images/016/img_e606fc11ea.png" alt="" /></a></p>
+<p><a href="/assets/images/016/img_7c758397bf.png"><img src="/assets/images/016/img_7c758397bf.png" alt="" /></a></p>
 
 <p>The below GIF will demonstrate the working of this script.</p>
 
-<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKsk4DDzRzPk96bKWJK5idW-YtcuBkxkN1KiFXmL7hlLYMvYVLEs_j0TTrFrRHKRF52zde6zYMYUUOxlj6PTJTtEzqx4UO50E5HlO1rrXeEfsogEV0dK4b2BvxPD-xSd2KRoNkbLgJs7G8aYrbrbcejC97O6AXiVy6l6srUt9vEX9jHgMf5TwNUZ6c/s1000/selected%20records.gif"><img src="/assets/images/016/img_afd13fcd26.gif" alt="" /></a></p>
+<p><a href="/assets/images/016/img_afd13fcd26.gif"><img src="/assets/images/016/img_afd13fcd26.gif" alt="" /></a></p>
 
                 </div>
 
@@ -228,63 +243,9 @@
                         
                     
                         
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-img-link">
+                                <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -292,18 +253,21 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/067/img_81152b8845.gif" alt="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category"></span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html"
-                                            class="text-decoration-none text-dark hover-primary">Unlocking the Power of Side Panes in Model-Driven Apps</a>
+                                        <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</a>
                                     </h6>
-                                    <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="related-card-readmore">
+                                    <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
                                     </a>
                                 </div>
@@ -314,9 +278,11 @@
                     
                     
                         
+                    
+                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-img-link">
+                                <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -324,18 +290,21 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/065/img_508a786ff1.gif" alt="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category"></span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html"
-                                            class="text-decoration-none text-dark hover-primary">Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins</a>
+                                        <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</a>
                                     </h6>
-                                    <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="related-card-readmore">
+                                    <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
                                     </a>
                                 </div>
@@ -346,9 +315,11 @@
                     
                     
                         
+                    
+                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-img-link">
+                                <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -356,18 +327,21 @@
 
 
 
-<div class="card-img-top related-card-img img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
-    <!-- Displayed via CSS ::after -->
-</div>
+
+
+
+<img src="/assets/images/063/img_e3160e0be0.gif" alt="Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts" class="card-img-top related-card-img" loading="lazy" decoding="async">
+
+
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category"></span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html"
-                                            class="text-decoration-none text-dark hover-primary">Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript</a>
+                                        <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html"
+                                            class="text-decoration-none text-dark hover-primary">Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</a>
                                     </h6>
-                                    <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="related-card-readmore">
+                                    <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>
                                     </a>
                                 </div>
@@ -378,60 +352,20 @@
                     
                     
                         
-                        
-                    
                     
                         
-                        
-                    
                     
                         
+                    
                         
                     
+                        
                     
                         
                         
                     
                     
                         
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
                     
                         
                         
@@ -456,6 +390,126 @@
                         
                     
                         
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
                     
                         
                     
@@ -464,16 +518,14 @@
                         
                     
                         
+                        
+                    
                     
                         
                     
                         
-                    
                         
                     
-                        
-                    
-                        
                     
 
                     
@@ -490,7 +542,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Get Selected Records from the Grid using Command Button in JavaScript",
-  "image": "",
+  "image": "http://localhost:4000/assets/images/016/img_a471a25ee1.png",
   "datePublished": "2023-04-25T06:00:00+05:30",
   "author": {
     "@type": "Person",

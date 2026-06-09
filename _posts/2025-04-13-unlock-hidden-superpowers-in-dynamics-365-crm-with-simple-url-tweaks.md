@@ -4,58 +4,181 @@ layout: post
 title: "Unlock Hidden Superpowers in Dynamics 365 CRM with Simple URL Tweaks"
 date: 2025-04-13 17:41:00 +0000
 category: Dynamics 365 CE
+image: assets/images/042/img_abcec1ea48.png
 categories: ["Model Driven Apps", "Dynamics 365 CRM Online", "Dynamics 365 CE", "Dataverse"]
 ---
+Let’s be honest — debugging can be a frustrating part of working with Microsoft Dynamics 365. Whether it’s a mysterious JavaScript error, a misfiring ribbon button, or just trying to understand why a form isn’t behaving the way you expect, we’ve all had those moments of “what the heck is going on?”
 
-<img border="0" data-original-height="400" data-original-width="700" height="183" src="{{ site.baseurl }}/assets/images/042/img_abcec1ea48.png" style="display: none;" width="320" /><p style="text-align: justify;"> Let’s be honest — debugging can be a frustrating part of working with Microsoft Dynamics 365. Whether it’s a mysterious JavaScript error, a misfiring ribbon button, or just trying to understand why a form isn’t behaving the way you expect, we’ve all had those moments of “what the heck is going on?”</p>
-<p data-end="912" data-start="552" style="text-align: justify;">Fortunately, Microsoft has a few hidden gems built right into the URL structure of Dynamics 365. These “URL tweakings,” as I like to call them, are small additions you can make to the web address in your browser to reveal powerful debugging options. While not always officially documented, they’re widely used in the community and can save you <span data-end="903" data-start="896">a ton</span> of time.</p>
-<p data-end="1095" data-start="914" style="text-align: justify;">In this blog post, I’ll walk you through the most useful Dynamics 365 URL tweaks, how to use them in real-world scenarios, and tips to combine them for maximum debugging efficiency.</p>
-<h2 data-end="1132" data-start="1102">Why Bother with URL Tweaks?</h2>
-<p data-end="1205" data-start="1134" style="text-align: justify;">Before we dive into the list, let’s talk about why these tweaks matter.</p>
-<p data-end="1593" data-start="1207" style="text-align: justify;">In a typical Dynamics 365 CRM environment, especially in the cloud-based model-driven apps, a lot is abstracted. That’s great for the user experience, but not always ideal for troubleshooting. Sometimes the ribbon buttons don’t show up, JavaScript doesn’t behave as expected, or performance becomes an issue—but the standard UI doesn’t always give you the visibility you need to fix it.</p>
-<p data-end="1767" data-start="1595" style="text-align: justify;">That's where URL tweaking shines. These parameters give you deeper access into how Dynamics is rendering the page, loading your web resources, and executing customizations.</p>
-<p data-end="1850" data-start="1769" style="text-align: justify;">It’s like pulling back the curtain to see what’s really happening under the hood.</p>
-<h2 data-end="1889" data-start="1857">Anatomy of a Dynamics 365 URL</h2>
-<p data-end="1968" data-start="1891">Let’s start by understanding the structure of a typical Dynamics 365 CRM URL:</p><p></p><pre><code>https://yourorg.crm.dynamics.com/main.aspx?appid=GUID&amp;pagetype=entityrecord&amp;etn=contact&amp;id=RECORD_GUID
-</code></pre><p></p>
-<p data-end="2130" data-start="2091">Each part of this URL serves a purpose:</p>
+Fortunately, Microsoft has a few hidden gems built right into the URL structure of Dynamics 365. These “URL tweakings,” as I like to call them, are small additions you can make to the web address in your browser to reveal powerful debugging options. While not always officially documented, they’re widely used in the community and can save you a ton of time.
 
-<p data-end="2171" data-start="2134" style="text-align: left;"></p><ul style="text-align: left;"><li><code data-end="2141" data-start="2134">appid</code> — Refers to the app module ID</li><li><code data-end="2184" data-start="2174">pagetype</code> — Indicates what kind of page to load (<code data-end="2238" data-start="2224">entityrecord</code>, <code data-end="2252" data-start="2240">entitylist</code>, <code data-end="2265" data-start="2254">dashboard</code>, etc.)</li><li><code data-end="2280" data-start="2275">etn</code> — Entity logical name (e.g., <code data-end="2319" data-start="2310">account</code>, <code data-end="2330" data-start="2321">contact</code>, <code data-end="2338" data-start="2332">lead</code>)</li><li><code data-end="2346" data-start="2342">id</code> — GUID of the specific record</li></ul><p></p><ul data-end="2376" data-start="2132">
-</ul>
-<p data-end="2522" data-start="2378" style="text-align: left;">Now here’s the magic part: by appending certain parameters like <code data-end="2455" data-start="2442">&amp;debug=true</code> or <code data-end="2474" data-start="2459">&amp;nocache=true</code>, you can instantly change how the page behaves.</p>
-<p data-end="2559" data-start="2524">Let’s explore the most useful ones.</p>
-<h2 data-end="2621" data-start="2566">1. <code data-end="2591" data-start="2572">&amp;ribbondebug=true</code> — Reveal the Ribbon's Secrets</h2>
-<p data-end="2716" data-start="2623">Ever had a ribbon button that <em data-end="2661" data-start="2653">should</em> be visible based on the rules you set but just… isn't?</p>
-<p data-end="2772" data-start="2718">This is where <code data-end="2751" data-start="2732">&amp;ribbondebug=true</code> is your best friend.</p>
-<h3 data-end="2791" data-start="2774">What it does:</h3>
-<p data-end="2933" data-start="2792">It enables the ribbon debug mode which lets you inspect the command definition, display rules, and enable rules of each button in the ribbon.</p>
-<h3 data-end="2953" data-start="2935">How to use it:</h3><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5S6SO5hhN24DS_GAflo3eZy3Gyv-NejUxj1u0vjTOwhv30e7ENUcKexrcSbqH8o5GzvLI_WyUcu-9FK7G00vUOACMF4C2ZkZKff9VFyA-JXsjgcCW3r1tCJMGbx5n2CZRn3uTYMPFFzkv3i99uekO5j_iPgtSJPgXBKPSPVhFjYIZ9swna2cYZfaPppI/s233/ribbondebug_true.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="60" data-original-width="233" height="103" src="{{ site.baseurl }}/assets/images/042/img_2f086027ca.png" width="400" /></a></div>
-<p data-end="2981" data-start="2957" style="text-align: left;"></p><ol style="text-align: left;"><li>Open the desired record.</li><li>Append <code data-end="3011" data-start="2992">&amp;ribbondebug=true</code> to the URL.</li><li>Hit <strong data-end="3051" data-start="3031">Ctrl + Shift + 3</strong>&nbsp;dots(or just refresh).</li><li>Hover over the ribbon button—magic!</li></ol><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMDqDw5IL_7IO1z94MYKq48mgkpH9KfC_XKj2wZzP16AUAU4g4UukY4vR62YBZgeC6z36RqcjvPlxRbv51uJ_udiGxqHjp98tryq1fgJ7FlD0W0zLPu7GQG_MvtgX2KG3mNuFSyoaVC-rovFjLQfbh3oQ8AnEjYvYC8REqyyEkksNHPxFaTJuQBZyei9U/s264/command-checker-1.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="158" data-original-width="264" height="239" src="{{ site.baseurl }}/assets/images/042/img_fbd893bae3.png" width="400" /></a></div><p style="clear: both; text-align: left;">On click of the command checker button it will open a side pane with the command properties like the below</p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkyPTEjrdP-JnzWjj48coW3KUEskEeh7ChwqwZI0l1B_h74vJ1Fq6ao6zXozqXu93jMBEMxL6H-4bIluwTmMxt57mHnSognWng8oxJHL8_fuwvFpKTgBkewZdzXgD-FNgqfvpCPRNmwZML8SqXrEVMu8SwN66FeRuqw29a4hvhEiVKvgkOeq3hV_5-Mwc/s763/command-checker-2.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="460" data-original-width="763" height="241" src="{{ site.baseurl }}/assets/images/042/img_7c18be4628.png" width="400" /></a></div><p></p>
-<p data-end="3241" data-start="3111">You’ll see a tooltip with tons of helpful info like which command is being used, whether it's enabled, and why it might be hidden.</p><p></p>
-<h3 data-end="3267" data-start="3243">Real-world use case:</h3>
-<p data-end="3561" data-start="3268" style="text-align: justify;">Imagine a sales manager complaining that their “Close Opportunity” button is missing. You test their security role—everything checks out. Use <code data-end="3429" data-start="3410">&amp;ribbondebug=true</code>, and you'll likely find that one of the enable rules isn't evaluating to <code data-end="3509" data-start="3503">true</code>, perhaps due to a missing field value or condition.</p>
-<h2 data-end="6244" data-start="6181">2.&nbsp;<code data-end="6199" data-start="6187">&amp;perf=true</code>&nbsp;— Use the Performance Center</h2><h2 data-end="4929" data-start="4879"><p data-end="6355" data-start="6246" style="font-size: medium; font-weight: 400; text-align: justify;">Performance issues are some of the hardest to diagnose. Is it the script? The control rendering? The network?</p><p data-end="6393" data-start="6357" style="font-size: medium; font-weight: 400;">The&nbsp;<strong data-end="6383" data-start="6361">Performance Center</strong>&nbsp;can help.</p></h2><h3 data-end="6411" data-start="6395">How to open:</h3><h2 data-end="4929" data-start="4879"><p data-end="6456" data-start="6414" style="font-size: medium; font-weight: 400;">Append&nbsp;<code data-end="6433" data-start="6421">&amp;perf=true</code>&nbsp;to your URL or Hit&nbsp;<strong data-end="6483" data-start="6463">Ctrl + Shift + Q</strong>&nbsp;after loading a page</p></h2><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4XKP9Vxi73tBgGhQORNYXNz4L3Co6o5r0sT0XoX6sKkLTIiaeFzZWi1vNAwgTkuttUTnX9Tzk_S9dWFE6KsVj_YhOG4w1iYj8Rgc3_c3UjYh7EZaMfUr9Jb9TCVBb3CyoVgq6UA9CmzNA9h7XVfveigJphs9m9P0Wi5-IKD82i7EEqyK-DstsN3Lwwzk/s158/perf_true.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="61" data-original-width="158" height="154" src="{{ site.baseurl }}/assets/images/042/img_b9d1b860f0.png" width="400" /></a></div><h3 data-end="6523" data-start="6506">What you get:</h3><h2 data-end="4929" data-start="4879"><p data-end="6553" data-start="6526" style="font-size: medium; font-weight: 400;"></p><ul style="font-size: medium; font-weight: 400;"><li>Load times for each control</li><li>Script performance breakdown</li><li>Form lifecycle timing</li></ul><div><span style="font-size: small;"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEharHOB__9lo0jS71TgKNEqIraHN0KoKwzqgwrdPfOL7zOdHOOIQXo90nbxMeT9W3Yt3BGJS6QSNqJ4Qhnz0CnK6NtI2ZHI_8fq2GKP6fgvInU8qra_9hOtgglXX4X1qaf15k9naLxtrOuiLTAhC-Qupekok2YumvyYo737m8gljpKqXUTVnKLLFOA7lqM/s488/perf_result.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="480" data-original-width="488" height="394" src="{{ site.baseurl }}/assets/images/042/img_d8f4671189.png" width="400" /></a></div></span></div><p style="font-size: medium; font-weight: 400;"></p><ul data-end="6608" data-start="6524" style="font-size: medium; font-weight: 400;"></ul><p data-end="6681" data-start="6610" style="font-size: medium; font-weight: 400;">Super helpful for identifying bottlenecks and making forms load faster.</p></h2><h2 data-end="4929" data-start="4879">3. Open Any Record Instantly with Entity and ID</h2>
-<p data-end="5011" data-start="4931">Want to jump straight to a record without searching or navigating through views?</p>
-<p data-end="5029" data-start="5013">Use this format:</p><pre class="overflow-visible!" data-end="5161" data-start="5031"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-plaintext">https://yourorg.crm.dynamics.com/main.aspx?etn=lead&amp;pagetype=entityrecord&amp;id=00000000-0000-0000-0000-000000000001
-</code></div></div></pre>
-<h3 data-end="5183" data-start="5163">Why it's useful:<span>&nbsp;&nbsp; &nbsp;</span></h3>
+In this blog post, I’ll walk you through the most useful Dynamics 365 URL tweaks, how to use them in real-world scenarios, and tips to combine them for maximum debugging efficiency.
 
-<p data-end="5239" data-start="5186" style="text-align: left;"></p><ul style="text-align: left;"><li>Speeds up testing by jumping directly to test records</li><li>Allows you to bookmark specific records</li><li>Great for demos or bug replication</li></ul><p></p><ul data-end="5318" data-start="5184">
-</ul>
-<h2 data-end="5374" data-start="5325">4. <code data-end="5345" data-start="5331">&amp;formid=GUID</code> — Force Load a Specific Form</h2>
-<p data-end="5501" data-start="5376" style="text-align: justify;">Security roles usually control which form is displayed, but what if you want to test a different form without changing roles?</p>
-<h3 data-end="5533" data-start="5503">Enter: <code data-end="5533" data-start="5514">&amp;formid=FORM_GUID</code></h3>
-<p data-end="5618" data-start="5535">Find the form’s GUID (you can grab it from the Form Designer URL), then plug it in.</p>
-<h3 data-end="5632" data-start="5620">Example:</h3><pre class="overflow-visible!" data-end="5694" data-start="5633"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-plaintext">&amp;formid=abcd1234-abcd-4567-abcd-123456abcdef
-</code></div></div></pre>
-<p data-end="5818" data-start="5696">Now you can test whether a new form layout or script behaves correctly—even if your role wouldn’t normally let you see it.</p><h2 style="text-align: left;">5.System View Evaluation</h2><p>For scenarios involving FetchXML performance testing or view customization verification, appending the view ID with <code>viewtype=1039</code> enables explicit system view rendering.</p><p><span style="font-family: monospace; white-space: pre;">&amp;viewid=abcd1234-abcd-4567-abcd-123456abcdef&amp;</span><span style="font-family: monospace;"><span style="white-space: pre;">viewtype=1039</span></span></p>
-<h2 style="text-align: left;">6.UI Simplification:</h2><div><p data-pm-slice="1 1 []">These flags are instrumental for UI minimalism during testing, demos, or iframe integrations:</p><p style="text-align: left;"></p><ul style="text-align: left;"><li><code><b>&amp;navbar=off</b></code>: Removes global navigation</li></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvXhZDUmqt-iK5qN8ZCZtdsspxwfDFKIA9Had1iTto1vnK9I7E5xJv-HWiyW7svQdZL0h8RxehVSDA_HHjfuMgD1V22wFp1yT1U-16ZrBI08S81wTLvxVgcuPy5Z2jG1erx_C3ZZLiJcyz2KjCKLQ9q-cSw0DXLs-pxUmCn7TAaCnS7-uTsTxhsGahk1g/s161/navbar_off.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="62" data-original-width="161" height="154" src="{{ site.baseurl }}/assets/images/042/img_562a82037c.png" width="400" /></a></div><br /><div><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp; &nbsp; Before the tweak</span><br /></div><div><span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><br /></span><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYl6Eaa5sdLg4GdvCU_xxsfGbNfEedDhwWpD-rIpi6LLqSB_V9dYL_i61ijx0KPBsND_8E3j7xsZ7PTNST8uD3GCLuZ22UFJfwoDgh8M8kathh3Hme5c2OCL26J7TEI0Hbw6t2oHfRZJHJqbvMB9pk-v6U2Q-JyNWy2Po3_o6W7D3awW5xHILy5gRY4Ok/s782/before-navbar-off.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="398" data-original-width="782" height="204" src="{{ site.baseurl }}/assets/images/042/img_2f5a6a8d1a.png" width="400" /></a></div><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp; &nbsp;&nbsp;</span></div><div><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;After the tweak:</span><br /></div><div><span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><br /></span><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgYMRm8uPPKg-CKz-ZLfEafdW4TrffNKLZbi8XwtnyGhE6mqVTQ0J9bHBTeGHvP-pCfxSkXRk-1-eAS9a0KI9hojg_pSkkfLUfyRm7qCG9X4YB4dQ8Wvls5kYASWNsPDvgPBtItG8yCubtmt28j9cOfV-dM7FlZsd_1SYkbsKs1cTrDcIOT1W0LxWqON0/s1072/after-navbar-off.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="531" data-original-width="1072" height="199" src="{{ site.baseurl }}/assets/images/042/img_b4b4eddda3.png" width="400" /></a></div></div><ul style="text-align: left;"><li><code><b>&amp;cmdbar=false</b></code>: Suppresses the command ribbon</li></ul><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdPLACMVZqBw5Z1cwXhyphenhyphenScskxEQwneyz6azdZupWj4GXgn6a9qlG93Oo5UDDcGZHVnhjtBL2QSlqmRowDr-2K4rjJC_bXCbruzAEc8pk0KQ-h6ASYHq4LQEFUsW-IieMcpDypCs3dI6R8DmsdFUvtKk99FM_KQMASwsV_c-RBwdGYPa5xIid34bQmf05g/s16000/cmdbar_false.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="61" data-original-width="237" height="103" src="{{ site.baseurl }}/assets/images/042/img_01959ff519.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Before the tweak:</div><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgm9uAIk3XbnFzSjbOMZot44BDOr2P4pEHu4FjHr1Wd_8ou-sFTREcBa1dBxf5LpYEWght9Qnw-JkmYNxMx8ZGkNZdlDFabeuHsAqDPLZU03m4wPMYQG1KAtBCmjjGAqdciglsiLC0MPPsck5xSQjySvKTdA4c1pcR0QvokH6oBxXknIL7Ylzh7T0vY-wg/s864/before_cmdbar_false.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="274" data-original-width="864" height="126" src="{{ site.baseurl }}/assets/images/042/img_b580123713.png" width="400" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div>&nbsp; &nbsp; &nbsp; &nbsp; After the tweak:<div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDkZU-SagS4_xhBWaDOIlks7SHvTMX5Lg4gbmvzrZSDGhxa0A7T1MahO8VaZojUv1FYeIOHFsgu3AroRxyUr8R0e-hEk9_9hG8FRC_tm29pILLxm1RH_Eekp-WP5dlTY89E6r3nY-5pTxzbcM0t6YrGEnWkR2bSwMrUkvw2mGW1mMP3n4vt3uTbf1w9S8/s906/after-cmdbar-false.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="286" data-original-width="906" height="126" src="{{ site.baseurl }}/assets/images/042/img_3c36659e2a.png" width="400" /></a></div><p></p><p>This is particularly useful for isolating the form experience or creating focused training environments.</p></div><h2 data-end="6733" data-start="6688">Bonus: <code data-end="6711" data-start="6698">&amp;appid=GUID</code> — Open a Specific App</h2>
-<p data-end="6859" data-start="6735" style="text-align: justify;">If you’re juggling multiple apps inside Dynamics (like Sales Hub, Customer Service Hub, etc.), each one has its own <code data-end="6858" data-start="6851">appid</code>.</p>
-<p data-end="6975" data-start="6861" style="text-align: justify;">You can use this to test how a record looks in different apps, especially when security roles or app modules vary.</p>
-<p data-end="6985" data-start="6977">Example:</p><pre><code>https://yourorg.crm.dynamics.com/main.aspx?appid=GUID&amp;etn=contact&amp;pagetype=entityrecord&amp;id=GUID</code></pre>
-<p></p><h2 data-end="7640" data-start="7610">Pro Tips and Best Practices</h2>
-<p data-end="7730" data-start="7644" style="text-align: left;"></p><ul style="text-align: left;"><li><strong data-end="7676" data-start="7644">Bookmark your debugging URLs</strong>: Save commonly used record URLs with debugging flags.</li><li><strong data-end="7769" data-start="7733">Maintain a list of form/view IDs</strong> in a spreadsheet for quick reference.</li><li><strong data-end="7840" data-start="7810">Don’t leave debug flags on</strong> when sharing URLs with end-users—they might see unwanted info.</li><li><strong data-end="7928" data-start="7906">Use Incognito mode</strong> for testing caching issues.</li></ul><p></p><ul data-end="7956" data-start="7642">
-</ul><p></p>
-<h2 data-end="7980" data-start="7963">Final Thoughts</h2>
-<p data-end="8190" data-start="7982" style="text-align: justify;"><span>&nbsp;&nbsp; &nbsp;</span>These simple tweaks can drastically speed up your troubleshooting and give you a deeper understanding of how Dynamics 365 is working behind the scenes.</p>
-<p data-end="8487" data-start="8345" style="text-align: justify;">So the next time something isn’t working quite right, don’t just refresh the page and hope for the best. Grab your URL bar and start tweaking.</p><p data-end="8487" data-start="8345" style="text-align: center;">Have a good day!</p>
+## Why Bother with URL Tweaks?
+
+Before we dive into the list, let’s talk about why these tweaks matter.
+
+In a typical Dynamics 365 CRM environment, especially in the cloud-based model-driven apps, a lot is abstracted. That’s great for the user experience, but not always ideal for troubleshooting. Sometimes the ribbon buttons don’t show up, JavaScript doesn’t behave as expected, or performance becomes an issue—but the standard UI doesn’t always give you the visibility you need to fix it.
+
+That's where URL tweaking shines. These parameters give you deeper access into how Dynamics is rendering the page, loading your web resources, and executing customizations.
+
+It’s like pulling back the curtain to see what’s really happening under the hood.
+
+## Anatomy of a Dynamics 365 URL
+
+Let’s start by understanding the structure of a typical Dynamics 365 CRM URL:
+
+```
+https://yourorg.crm.dynamics.com/main.aspx?appid=GUID&pagetype=entityrecord&etn=contact&id=RECORD_GUID
+```
+
+Each part of this URL serves a purpose:
+
+-   `appid` — Refers to the app module ID
+-   `pagetype` — Indicates what kind of page to load (`entityrecord`, `entitylist`, `dashboard`, etc.)
+-   `etn` — Entity logical name (e.g., `account`, `contact`, `lead`)
+-   `id` — GUID of the specific record
+
+Now here’s the magic part: by appending certain parameters like `&debug=true` or `&nocache=true`, you can instantly change how the page behaves.
+
+Let’s explore the most useful ones.
+
+## 1\. `&ribbondebug=true` — Reveal the Ribbon's Secrets
+
+Ever had a ribbon button that _should_ be visible based on the rules you set but just… isn't?
+
+This is where `&ribbondebug=true` is your best friend.
+
+### What it does:
+
+It enables the ribbon debug mode which lets you inspect the command definition, display rules, and enable rules of each button in the ribbon.
+
+### How to use it:
+
+[![]({{ site.baseurl }}/assets/images/042/img_2f086027ca.png)]({{ site.baseurl }}/assets/images/042/img_2f086027ca.png)
+
+1.  Open the desired record.
+2.  Append `&ribbondebug=true` to the URL.
+3.  Hit **Ctrl + Shift + 3** dots(or just refresh).
+4.  Hover over the ribbon button—magic!
+
+[![]({{ site.baseurl }}/assets/images/042/img_fbd893bae3.png)]({{ site.baseurl }}/assets/images/042/img_fbd893bae3.png)
+
+On click of the command checker button it will open a side pane with the command properties like the below
+
+[![]({{ site.baseurl }}/assets/images/042/img_7c18be4628.png)]({{ site.baseurl }}/assets/images/042/img_7c18be4628.png)
+
+You’ll see a tooltip with tons of helpful info like which command is being used, whether it's enabled, and why it might be hidden.
+
+### Real-world use case:
+
+Imagine a sales manager complaining that their “Close Opportunity” button is missing. You test their security role—everything checks out. Use `&ribbondebug=true`, and you'll likely find that one of the enable rules isn't evaluating to `true`, perhaps due to a missing field value or condition.
+
+## 2. `&perf=true` — Use the Performance Center
+
+Performance issues are some of the hardest to diagnose. Is it the script? The control rendering? The network?
+
+The **Performance Center** can help.
+
+### How to open:
+
+Append `&perf=true` to your URL or Hit **Ctrl + Shift + Q** after loading a page
+
+[![]({{ site.baseurl }}/assets/images/042/img_b9d1b860f0.png)]({{ site.baseurl }}/assets/images/042/img_b9d1b860f0.png)
+
+### What you get:
+
+-   Load times for each control
+-   Script performance breakdown
+-   Form lifecycle timing
+
+[![]({{ site.baseurl }}/assets/images/042/img_d8f4671189.png)]({{ site.baseurl }}/assets/images/042/img_d8f4671189.png)
+
+Super helpful for identifying bottlenecks and making forms load faster.
+
+## 3\. Open Any Record Instantly with Entity and ID
+
+Want to jump straight to a record without searching or navigating through views?
+
+Use this format:
+
+`https://yourorg.crm.dynamics.com/main.aspx?etn=lead&pagetype=entityrecord&id=00000000-0000-0000-0000-000000000001`
+
+### Why it's useful:    
+
+-   Speeds up testing by jumping directly to test records
+-   Allows you to bookmark specific records
+-   Great for demos or bug replication
+
+## 4\. `&formid=GUID` — Force Load a Specific Form
+
+Security roles usually control which form is displayed, but what if you want to test a different form without changing roles?
+
+### Enter: `&formid=FORM_GUID`
+
+Find the form’s GUID (you can grab it from the Form Designer URL), then plug it in.
+
+### Example:
+
+`&formid=abcd1234-abcd-4567-abcd-123456abcdef`
+
+Now you can test whether a new form layout or script behaves correctly—even if your role wouldn’t normally let you see it.
+
+## 5.System View Evaluation
+
+For scenarios involving FetchXML performance testing or view customization verification, appending the view ID with `viewtype=1039` enables explicit system view rendering.
+
+&viewid=abcd1234-abcd-4567-abcd-123456abcdef&viewtype=1039
+
+## 6.UI Simplification:
+
+These flags are instrumental for UI minimalism during testing, demos, or iframe integrations:
+
+-   `**&navbar=off**`: Removes global navigation
+
+[![]({{ site.baseurl }}/assets/images/042/img_562a82037c.png)]({{ site.baseurl }}/assets/images/042/img_562a82037c.png)
+
+**Before the tweak**  
+[![]({{ site.baseurl }}/assets/images/042/img_2f5a6a8d1a.png)]({{ site.baseurl }}/assets/images/042/img_2f5a6a8d1a.png)
+            
+**After the tweak**:  
+[![]({{ site.baseurl }}/assets/images/042/img_b4b4eddda3.png)]({{ site.baseurl }}/assets/images/042/img_b4b4eddda3.png)
+
+-   `**&cmdbar=false**`: Suppresses the command ribbon
+
+[![]({{ site.baseurl }}/assets/images/042/img_01959ff519.png)]({{ site.baseurl }}/assets/images/042/img_01959ff519.png)
+
+**Before the tweak**:
+
+[![]({{ site.baseurl }}/assets/images/042/img_b580123713.png)]({{ site.baseurl }}/assets/images/042/img_b580123713.png)
+
+**After the tweak**:
+
+[![]({{ site.baseurl }}/assets/images/042/img_3c36659e2a.png)]({{ site.baseurl }}/assets/images/042/img_3c36659e2a.png)
+
+This is particularly useful for isolating the form experience or creating focused training environments.
+
+## Bonus: `&appid=GUID` — Open a Specific App
+
+If you’re juggling multiple apps inside Dynamics (like Sales Hub, Customer Service Hub, etc.), each one has its own `appid`.
+
+You can use this to test how a record looks in different apps, especially when security roles or app modules vary.
+
+Example:
+
+```
+https://yourorg.crm.dynamics.com/main.aspx?appid=GUID&etn=contact&pagetype=entityrecord&id=GUID
+```
+
+## Pro Tips and Best Practices
+
+-   **Bookmark your debugging URLs**: Save commonly used record URLs with debugging flags.
+-   **Maintain a list of form/view IDs** in a spreadsheet for quick reference.
+-   **Don’t leave debug flags on** when sharing URLs with end-users—they might see unwanted info.
+-   **Use Incognito mode** for testing caching issues.
+
+## Final Thoughts
+These simple tweaks can drastically speed up your troubleshooting and give you a deeper understanding of how Dynamics 365 is working behind the scenes.
+
+So the next time something isn’t working quite right, don’t just refresh the page and hope for the best. Grab your URL bar and start tweaking.
+
+Have a good day!

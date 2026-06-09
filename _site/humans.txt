@@ -1,0 +1,13 @@
+/* TEAM */
+Developer: Tamilarasu Arunachalam
+Role: Author, Frontend Developer, Technical Blogger
+Contact: contact@yourdomain.com
+Site: https://tamilarasu-arunachalam.github.io
+
+/* SITE */
+Standards: HTML5, CSS3, Jekyll, Responsive Design
+Language: English
+Geo: Chennai, India
+
+/* THANKS */
+Thanks to the open source community and Jekyll ecosystem for powering this site.

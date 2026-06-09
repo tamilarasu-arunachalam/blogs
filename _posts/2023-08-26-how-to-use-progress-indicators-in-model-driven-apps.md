@@ -3,7 +3,36 @@ post_id: "029"
 layout: post
 title: "How to use Progress Indicators in Model Driven Apps?"
 date: 2023-08-26 17:41:00 +0000
+category: Dynamics 365 CE
+image: assets/images/029/img_fd36029ce2.png
 categories: ["Model Driven Apps", "Power Apps", "JavaScript", "Dynamics 365 CE"]
 ---
+In Model Driven Apps, we can place a progress indicator at any event using JavaScript. Some people call it loader. In Power Apps it is termed as progress Indicator. The progress indicator will block the screen until it is closed. We can show the progress indicator using the below piece of code.
 
-<img border="0" data-original-height="400" data-original-width="700" height="183" src="{{ site.baseurl }}/assets/images/029/img_fd36029ce2.png" style="display: none;" width="320" /><p style="text-align: justify;"><span>&nbsp;&nbsp; &nbsp;</span>In Model Driven Apps, we can place a progress indicator at any event using JavaScript. Some people call it loader. In Power Apps it is termed as progress Indicator. The progress indicator will block the screen until it is closed. We can show the progress indicator using the below piece of code.</p><p></p><blockquote style="font-family: Inconsolata;">Xrm.Utility.showProgressIndicator("your message");</blockquote><p><span style="font-family: inherit;">We can close the progress indicator using the below code.</span></p><p></p><blockquote style="font-family: Inconsolata;">Xrm.Utility.closeProgressIndicator();</blockquote><p style="text-align: justify;"><span style="font-family: inherit;"><span>&nbsp;&nbsp; &nbsp;</span>In this article, I have a web resource containing script for showing and closing the progress indicator for a real-time scenario. The code is placed on the on-load event of accounts main form, and it will the set the value for the fax field behind the progress indicator.</span></p><p></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTfl_q4Ul2u4gZptUdlQfI4tRdT2RFcA--fhhcS4zWAAA5pZlb1HIy3T6YSOf2Ley1CNJKMENkGs4_L6ssgCc45g7SNm7FZpPWUtNFdp37oyDX9mEJUjCNGRlFFbprs3iuElOVQhx5CpOcjj7fanvUx6OLduSCd7tCNfX4tkE5vZ8AluIBEH7l8nhua98/s1600/js-events.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="672" data-original-width="637" height="320" src="{{ site.baseurl }}/assets/images/029/img_ee2fac2a5c.png" width="303" /></a></div><br /><p style="text-align: left;"><span style="font-family: inherit;">And below is the code snippet used in the JavaScript web resource used to demonstrate the same.</span></p><script src="https://gist.github.com/tamilarasu-arunachalam/cd9e1ad6ae81d6a20cea34ea108d9501.js"></script><p></p><p style="text-align: left;"><span style="font-family: inherit;">The progress indicator will show for 3 seconds, and it gets closed after every on-load.</span></p><p></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNi-2AoLw_M7Ws1ABqo-Vu41sDBVoj7fzE12gVOVmwCbbKkOsew-Zc2hrcI8I22zH4FSiii3fHvNh14ANDDGYnj00HUyIlZIGrHv3-gi1h42yXt-RGE04UQL0jKmiIrerrqSelYsm5XW4C_q1HcuyW9GaMvIqcMOOwK_235og10xoQ6Dvz4yNmHr1K-W8/s1283/loader.PNG" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="763" data-original-width="1283" height="190" src="{{ site.baseurl }}/assets/images/029/img_8d49882339.png" width="320" /></a></div><br />Have a great day!<p></p><p></p><p></p><div><br /></div><h4 style="text-align: left;">References:</h4><div><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-utility/showprogressindicator" rel="nofollow" target="_blank">showProgressIndicator</a></div><div><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-utility/closeprogressindicator" rel="nofollow" target="_blank">closeProgressIndicator</a></div>
+```javascript
+Xrm.Utility.showProgressIndicator("your message");
+```
+
+We can close the progress indicator using the below code.
+```javascript
+Xrm.Utility.closeProgressIndicator();
+```
+In this article, I have a web resource containing script for showing and closing the progress indicator for a real-time scenario. The code is placed on the on-load event of accounts main form, and it will the set the value for the fax field behind the progress indicator.
+
+[![]({{ site.baseurl }}/assets/images/029/img_ee2fac2a5c.png)]({{ site.baseurl }}/assets/images/029/img_ee2fac2a5c.png)
+
+And below is the code snippet used in the JavaScript web resource used to demonstrate the same.
+
+<script src="https://gist.github.com/tamilarasu-arunachalam/cd9e1ad6ae81d6a20cea34ea108d9501.js"></script>
+
+The progress indicator will show for 3 seconds, and it gets closed after every on-load.
+
+[![]({{ site.baseurl }}/assets/images/029/img_8d49882339.png)]({{ site.baseurl }}/assets/images/029/img_8d49882339.png)
+
+#### References:
+
+[showProgressIndicator](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-utility/showprogressindicator)
+
+[closeProgressIndicator](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-utility/closeprogressindicator)
+
+Have a great day!

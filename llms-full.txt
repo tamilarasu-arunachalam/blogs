@@ -1,0 +1,38 @@
+Site: Tamilarasu Arunachalam
+URL: https://tamilarasu-arunachalam.github.io
+Description: A technical blog focused on readable tutorials and practical solutions for Dynamics 365, Power Platform, Azure, JavaScript, and CRM automation.
+
+Primary Audience:
+- Developers and technical architects
+- Power Platform professionals
+- Microsoft Dynamics 365 implementers
+- Automation and integration specialists
+
+Primary Topics:
+- Dynamics 365 and Power Apps development
+- Power Automate flows and connectors
+- Azure integrations and cloud automation
+- JavaScript solutions for business applications
+- CRM customization, plugins, and API usage
+
+SEO / AEO Metadata:
+- Language: English
+- Geo: Chennai, India
+- Content Type: Technical articles, tutorials, product reviews, how-to guides
+- Structured Data: Jekyll SEO Tag plugin enabled
+
+Important Resources:
+- Sitemap: https://tamilarasu-arunachalam.github.io/sitemap.xml
+- RSS Feed: https://tamilarasu-arunachalam.github.io/rss.xml
+- Atom Feed: https://tamilarasu-arunachalam.github.io/feed.atom
+- Robots: https://tamilarasu-arunachalam.github.io/robots.txt
+- Security: https://tamilarasu-arunachalam.github.io/security.txt
+- Humans: https://tamilarasu-arunachalam.github.io/humans.txt
+
+Contact:
+- Email: contact@yourdomain.com
+- Twitter: https://twitter.com/tamilarasu
+- GitHub: https://github.com/tamilarasu-arunachalam
+
+Notes:
+This file is intended as a machine-readable summary of site structure, audience, and content scope for search engines, geotargeting, and AI optimization.
