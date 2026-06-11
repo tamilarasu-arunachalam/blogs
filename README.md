@@ -80,4 +80,25 @@ read_time: "8 min read"
 3. **Image Logic**: Use the `{% include image.html ... %}` tag for automated lazy loading and placeholder support.
 
 ---
+
+## 🧑‍💻 Content Management System
+
+A custom CMS is available at `/admin/` using Google authentication and GitHub API.
+
+- `admin/index.html`: Launches the custom CMS UI.
+- `admin/config.yml`: Not used by this custom admin panel.
+- `posts` are managed from `_posts/`.
+- Common pages are available as editable files: `about.md`, `contact.md`, `privacy.md`, and `terms.md`.
+
+### How to use it
+
+1. Create a Google OAuth client ID and replace `YOUR_GOOGLE_OAUTH_CLIENT_ID` in `admin/index.html`.
+2. Open `/admin/` in your browser.
+3. Sign in with Google.
+4. Paste a GitHub personal access token with `repo` scope.
+5. Select a file, edit the content, and save.
+
+> This custom admin panel does not rely on Netlify.
+
+---
 Built with ❤️ for performance-driven technical writing.

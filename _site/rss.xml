@@ -5,8 +5,17 @@
     <link>http://localhost:4000/</link>
     <description>High readability tech reviews and affiliate recommendations.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Jun 2026 22:46:22 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 22:00:41 +0530</lastBuildDate>
     <generator>Jekyll RSS</generator>
+    
+    <item>
+      <title>Why Moosend Is the Best Email Marketing Platform for Small Businesses and Growing Brands</title>
+      <link>http://localhost:4000/why-moosend-best-email-platform.html</link>
+      <guid isPermaLink="true">http://localhost:4000/why-moosend-best-email-platform.html</guid>
+      <pubDate>Tue, 09 Jun 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Every business starts email marketing the same way - full of optimism, a growing contact list, and a simple goal: stay connected with customers. But somewhere between navigating confusing dashboards, hitting feature paywalls, and watching monthly costs climb as the subscriber list grows, that optimism fades.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How I Automated Chrome Extension Publishing with GitHub Actions</title>
@@ -179,15 +188,6 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
       <guid isPermaLink="true">http://localhost:4000/how-to-open-multiple-workspace-tabs-in-dynamics-365-customer-service-using-javascript.html</guid>
       <pubDate>Sun, 27 Jul 2025 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;Working in Customer Service Workspace can feel like juggling multiple cases/conversations at once. Ofcourse we can open records from view which will open in the new workspace tab. I was thinking of opening multiple records on multiple tabs on a single click.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?</title>
-      <link>http://localhost:4000/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html</link>
-      <guid isPermaLink="true">http://localhost:4000/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html</guid>
-      <pubDate>Sun, 20 Jul 2025 23:11:00 +0530</pubDate>
-      <description>&lt;p&gt;Have you ever wanted to call one Power Automate flow from another using a custom API endpoint? Yes, it’s possible! In this article, I’ll explain how to build and invoke a Power Automate flow using HTTP triggers.&lt;/p&gt;
 </description>
     </item>
     
