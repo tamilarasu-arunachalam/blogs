@@ -1,12 +1,15 @@
 ---
-post_id: "043"
 layout: post
-title: "What Is a Retry Policy in Power Automate (And Why It Matters)?"
+title: What Is a Retry Policy in Power Automate (And Why It Matters)?
 date: 2025-05-04 17:41:00 +0000
-category: Power Automate
 image: assets/images/043/img_5a8ccf0457.png
-categories: ["Microsoft Flows", "Power Automate"]
+post_id: '043'
+category: Power Automate
+categories:
+  - Microsoft Flows
+  - Power Automate
 ---
+
 **Ever had a Power Automate flow fail and wondered, "Why didn’t it just try again?"** 
 
 You're not alone. One of the more powerful - but often overlooked - features in Microsoft Power Automate is the retry policy. It’s the safety net that makes your flows more resilient when things don’t go exactly as planned.
@@ -48,7 +51,6 @@ You can adjust this easily:
 1.  Click on the action you want to change.
 2.  Tap the three dots (...) > Settings.
 3.  Under Retry Policy, choose:  
-    
 
 -   None – Don’t retry at all.
 -   Fixed Interval – Retry after the same delay each time.
@@ -56,7 +58,7 @@ You can adjust this easily:
 
 5.  Set how many times to retry and how long to wait between tries.
 
-## 1\. "None" – No Second Chances
+## 1. "None" – No Second Chances
 
 [![]({{ site.baseurl }}/assets/images/043/img_ec734a3aed.png)]({{ site.baseurl }}/assets/images/043/img_ec734a3aed.png)
 
@@ -74,7 +76,7 @@ Go with this if:
 
 This policy is pretty unforgiving. Even a tiny glitch can cause your flow to stop. So, use it only when you're sure retries aren't safe.
 
-## 2\. Fixed Interval – Try Again After a Break
+## 2. Fixed Interval – Try Again After a Break
 
 [![]({{ site.baseurl }}/assets/images/043/img_5d56280ddd.png)]({{ site.baseurl }}/assets/images/043/img_5d56280ddd.png)
 
@@ -87,7 +89,7 @@ Let’s say you choose a fixed interval of 10 seconds and 3 retries. That means 
 -   How many times it retries
 -   How long it waits between each try
 
-## 3\. Exponential Interval – Smart Retrying That Backs Off
+## 3. Exponential Interval – Smart Retrying That Backs Off
 
 Instead of retrying every 30 seconds like Fixed Interval, Exponential Interval increases the wait time after each attempt.
 
