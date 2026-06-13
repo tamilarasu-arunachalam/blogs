@@ -18,4 +18,15 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Meta Description", name: "description", widget: "text", required: false}
+      - label: "Keywords"
+        name: "keywords"
+        widget: "list"
+        required: false
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Dataverse", "Power Automate", "Dynamics 365 CRM", "Power Platform", "Azure Active Directory"]
+        required: false
       - {label: "Body", name: "body", widget: "markdown"}
