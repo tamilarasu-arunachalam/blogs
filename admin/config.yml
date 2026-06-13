@@ -5,8 +5,8 @@ backend:
   base_url: https://sveltia-cms-auth.tamilarasu-arunachalam.workers.dev/
   auth_endpoint: auth
 
-media_folder: "assets/images"
-public_folder: "/assets/images"
+media_folder: "assets/images/{{post_id}}"
+public_folder: "/assets/images/{{post_id}}"
 
 collections:
   - name: "posts"

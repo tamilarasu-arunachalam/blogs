@@ -1,12 +1,12 @@
 backend:
   name: github
   repo: tamilarasu-arunachalam/blogs
-  branch: main
-  base_url: https://api.netlify.com
+  branch: master
+  base_url: https://sveltia-cms-auth.tamilarasu-arunachalam.workers.dev/
   auth_endpoint: auth
 
-media_folder: "assets/images"
-public_folder: "/assets/images"
+media_folder: "assets/images/{{post_id}}"
+public_folder: "/assets/images/{{post_id}}"
 
 collections:
   - name: "posts"
@@ -16,6 +16,12 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Post ID", name: "post_id", widget: "number", required: false}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Meta Description", name: "description", widget: "text", required: false}
+      - {label: "Meta Keywords", name: "meta_keywords", widget: "list", required: false}
+      - {label: "Category", name: "category", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Read Time", name: "read_time", widget: "string", required: false}
