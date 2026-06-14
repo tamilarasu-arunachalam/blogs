@@ -1,10 +1,10 @@
 title: Tamilarasu Arunachalam
-description: Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.
+description: "Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day."
 author: Tamilarasu Arunachalam
 email: contact@yourdomain.com
 baseurl: "" 
 url: "https://tamilarasu.blog"
-twitter_username: tamilarasu
+twitter_username: tamilarasu_av
 github_username:  tamilarasu-arunachalam
 
 # Build settings
@@ -23,7 +23,7 @@ paginate_path: "/page:num/"
 
 # SEO Schema Advanced
 google_search_console: 
-google_analytics: 
+google_analytics: G-NRDWJ8N6VV
 facebook:
   app_id: 
   publisher: 
