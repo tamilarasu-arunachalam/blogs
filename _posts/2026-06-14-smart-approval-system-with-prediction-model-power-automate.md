@@ -1,7 +1,7 @@
 ---
-post_id: 73
+post_id: "073"
 layout: post
-title: Build a Smart Approval System with Prediction Model in  Power Automate
+title: "Build a Smart Approval System with Prediction Model in  Power Automate"
 date: 2026-06-14T23:56
 image: /assets/images/73/1000118534.png
 description: "Learn how to build a smart, AI-powered approval workflow using Dataverse, AI Builder, and Power Automate — reducing manual follow-ups and speeding up decisions."
