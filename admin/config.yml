@@ -6,7 +6,7 @@ backend:
   auth_endpoint: auth
 
 media_folder: "assets/images/{{post_id}}"
-public_folder: "/assets/images/{{post_id}}"
+public_folder: "assets/images/{{post_id}}"
 
 collections:
   - name: "posts"
@@ -25,3 +25,4 @@ collections:
       - {label: "Category", name: "category", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Read Time", name: "read_time", widget: "string", required: false}
+      - {label: "Published", name: "published", widget: "boolean", default: true}
