@@ -83,6 +83,23 @@ layout: default
                     </div>
                 </section>
                 {% endcase %}
+
+                <!-- Comments -->
+                {% if site.cusdis_app_id and site.cusdis_app_id != "" %}
+                <section class="comments mt-5 pt-4 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">Comments</h4>
+                    <div id="cusdis_thread"
+                        data-host="https://cusdis.com"
+                        data-app-id="{{ site.cusdis_app_id }}"
+                        data-page-id="{{ page.url }}"
+                        data-page-url="{{ page.url | absolute_url }}"
+                        data-page-title="{{ page.title }}"
+                        data-theme="auto">
+                    </div>
+                    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+                </section>
+                {% endif %}
+
                 <!-- Related Posts Grid -->
                 <section class="related-posts mt-5 pt-5 border-top">
                     <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>

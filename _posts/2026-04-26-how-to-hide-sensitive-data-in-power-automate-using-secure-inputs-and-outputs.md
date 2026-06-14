@@ -5,7 +5,6 @@ title: "How to Hide Sensitive Data in Power Automate Using Secure Inputs and Out
 category: Power Automate
 image: assets/images/066/img_be2a5971b6.gif
 date: 2026-04-26 17:41:00 +0000
-category: Power Automate
 ---
 There was a moment while debugging a Power Automate flow when something unexpected showed up. Instead of just checking an error, the entire API request and response data were visible in the run history. It included sensitive details that should never be exposed so easily. That’s when the importance of secure inputs and outputs became very real.
 

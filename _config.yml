@@ -16,6 +16,7 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # Pagination settings
 paginate: 5
@@ -28,5 +29,8 @@ facebook:
   app_id: 
   publisher: 
 twitter:
-  username: 
+  username: tamilarasu_av
   card: summary_large_image
+
+# Cusdis Comments
+cusdis_app_id: "c273ece9-1cf0-4c6e-aaca-9aa59564a335"
