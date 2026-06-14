@@ -8,7 +8,7 @@ description: Learn how to build a smart, AI-powered approval workflow using Data
 meta_keywords: AI Builder approval automation, Power Automate Dataverse prediction, smart approval workflow, AI-driven decision routing, predictive AI Builder model
 category: Power Automate
 read_time: 10 mins
-published: true
+published: false
 ---
 
 In this AI era, traditional approvals no longer make sense. Approvals play a major role everywhere, but they often require follow-ups and reminders to get things sorted. To address this, I planned to build a smart approval system using Dataverse, AI Builder, and Power Automate. This is a small prototype, but it can be extended to a larger solution.
