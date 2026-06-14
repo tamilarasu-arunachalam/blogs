@@ -1,6 +1,7 @@
 ---
 layout: post
 post_id: 73
+published: true
 title: Build a Smart Approval System with Prediction Model in  Power Automate
 date: 2026-06-14T23:11
 image: assets/images/73/automated-workflows.png
