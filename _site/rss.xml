@@ -5,8 +5,17 @@
     <link>http://localhost:4000/</link>
     <description>Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Jun 2026 20:47:53 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2026 21:53:22 +0530</lastBuildDate>
     <generator>Jekyll RSS</generator>
+    
+    <item>
+      <title>Build a Smart Approval System with Prediction Model in  Power Automate</title>
+      <link>http://localhost:4000/build-a-smart-approval-system-with-prediction-model-in-power-automate.html</link>
+      <guid isPermaLink="true">http://localhost:4000/build-a-smart-approval-system-with-prediction-model-in-power-automate.html</guid>
+      <pubDate>Sun, 14 Jun 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;In this AI era, traditional approvals no longer make sense. Approvals play a major role everywhere, but they often require follow-ups and reminders to get things sorted. To address this, I planned to build a smart approval system using Dataverse, AI Builder, and Power Automate. This is a small prototype, but it can be extended to a larger solution.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Why Moosend Is the Best Email Marketing Platform for Small Businesses and Growing Brands</title>
@@ -179,15 +188,6 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
       <guid isPermaLink="true">http://localhost:4000/how-to-configure-and-use-tabbed-sections-in-model-driven-apps.html</guid>
       <pubDate>Sun, 28 Sep 2025 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;When working with Dynamics 365 model-driven apps, we often think of forms in a traditional way - tabs holding sections, and sections holding fields. Recently, I stumbled upon a hidden gem that many of us might have overlooked: Tabbed Sections. At first, I didn’t even know this feature existed. After digging into it (thanks to Kailash Ramachandran for his detailed &lt;a href=&quot;https://mytrial365.com/2024/05/16/exploring-the-underutilized-power-of-tabbed-sections-in-dynamics/&quot;&gt;blog&lt;/a&gt;), I realized how powerful and underutilized this feature really is.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How to Open Multiple Workspace Tabs in Dynamics 365 Customer Service Using JavaScript?</title>
-      <link>http://localhost:4000/how-to-open-multiple-workspace-tabs-in-dynamics-365-customer-service-using-javascript.html</link>
-      <guid isPermaLink="true">http://localhost:4000/how-to-open-multiple-workspace-tabs-in-dynamics-365-customer-service-using-javascript.html</guid>
-      <pubDate>Sun, 27 Jul 2025 23:11:00 +0530</pubDate>
-      <description>&lt;p&gt;Working in Customer Service Workspace can feel like juggling multiple cases/conversations at once. Ofcourse we can open records from view which will open in the new workspace tab. I was thinking of opening multiple records on multiple tabs on a single click.&lt;/p&gt;
 </description>
     </item>
     

@@ -12,7 +12,12 @@
 {% assign img_path = append: page.post_id | append: '/' | append: img_url %}
 <img src="{{ img_path | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
 {% else %}
-<img src="{{ img_url | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
+{% assign clean_url = img_url %}
+{% assign first_char = img_url | slice: 0 %}
+{% if first_char == '/' %}
+  {% assign clean_url = img_url | remove_first: '/' %}
+{% endif %}
+<img src="{{ clean_url | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
 {% endif %}
 {% endif %}
 {% else %}
