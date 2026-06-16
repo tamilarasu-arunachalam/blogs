@@ -41,7 +41,7 @@ Your flow will be looking like the below screenshot
 
 References
 
-- [Use predict action in Power Automate - AI Builder \| Microsoft Learn](https://learn.microsoft.com/en-us/ai-builder/predict-action-pwr-automate)
+- [Use predict action in Power Automate - AI Builder | Microsoft Learn](https://learn.microsoft.com/en-us/ai-builder/predict-action-pwr-automate)
 - [A simple predictive AI Builder model in Power Automate](https://exceltown.com/en/tutorials/power-automate/a-simple-predictive-ai-builder-model-in-power-automate/)
 
 Have a great day!
