@@ -1,6 +1,6 @@
 ---
 layout: post
-post_id: 73
+post_id: '073'
 title: Build a Smart Approval System with Prediction Model in  Power Automate
 date: 2026-06-14T23:11
 image: /assets/images/73/1000118534.png
@@ -26,7 +26,7 @@ Next, navigate to [https://make.powerautomate.com](https://make.powerautomate.co
 On the next page, select the columns **Amount**, **Department**, **Priority**, and **Request Type** from the historical outcomes table.
 
 ![AI Builder prediction model configuration screen in Power Automate](https://cdn-images-1.medium.com/max/800/1*ZJK-XG0M_m_8AEChBoB1DA.png)
- 
+
 Train the model and publish it so that it can be used in Power Automate. Make sure the model is successfully trained and published.
 
 Then, create an instant flow with the Dataverse trigger **“When a record is added”** for the **ApprovalRequests** table. Add the next action as AI Builder, select the trained model, and map the required inputs from the trigger outputs.
@@ -41,11 +41,7 @@ Your flow will be looking like the below screenshot
 
 References
 
-<<<<<<< HEAD:_posts/2026-06-14-build-a-smart-approval-system-with-prediction-model-in-power-automate.md
-- [Use predict action in Power Automate - AI Builder \| Microsoft Learn](https://learn.microsoft.com/en-us/ai-builder/predict-action-pwr-automate)
-=======
-- [Use predict action in Power Automate  -  AI Builder \| Microsoft Learn](https://learn.microsoft.com/en-us/ai-builder/predict-action-pwr-automate)
->>>>>>> e8912dbba85dcef35aa06e808f497bfcc61a7eb5:_posts/2026-06-14-smart-approval-system-with-prediction-model-power-automate.md
+- [Use predict action in Power Automate - AI Builder | Microsoft Learn](https://learn.microsoft.com/en-us/ai-builder/predict-action-pwr-automate)
 - [A simple predictive AI Builder model in Power Automate](https://exceltown.com/en/tutorials/power-automate/a-simple-predictive-ai-builder-model-in-power-automate/)
 
 Have a great day!
