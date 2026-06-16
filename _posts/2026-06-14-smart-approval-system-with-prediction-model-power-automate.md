@@ -3,12 +3,12 @@ layout: post
 post_id: 73
 title: Build a Smart Approval System with Prediction Model in  Power Automate
 date: 2026-06-14T23:11
-image: /assets/images/73/automated-workflows.png
+image: /assets/images/73/1000118534.png
 description: Learn how to build a smart, AI-powered approval workflow using Dataverse, AI Builder, and Power Automate — reducing manual follow-ups and speeding up decisions.
-meta_keywords:
-  - AI Builder approval automation, Power Automate Dataverse prediction, smart approval workflow, AI-driven decision routing, predictive AI Builder model
+meta_keywords: AI Builder approval automation, Power Automate Dataverse prediction, smart approval workflow, AI-driven decision routing, predictive AI Builder model
 category: Power Automate
 read_time: 10 mins
+published: true
 ---
 
 In this AI era, traditional approvals no longer make sense. Approvals play a major role everywhere, but they often require follow-ups and reminders to get things sorted. To address this, I planned to build a smart approval system using Dataverse, AI Builder, and Power Automate. This is a small prototype, but it can be extended to a larger solution.
@@ -37,11 +37,15 @@ You can refer to the workflow diagram below to implement the Power Automate flow
 
 Your flow will be looking like the below screenshot
 
-![Approval flow structure](https://cdn-images-1.medium.com/max/800/1*uJUWmR3dMirV33fMxCP7WQ.png)
+![Approval flow structure](https://cdn-images-1.medium.com/max/800/1*uJUWmR3dMirV33fMxCP7WQ.png "Approval flow structure")
 
 References
 
+<<<<<<< HEAD:_posts/2026-06-14-build-a-smart-approval-system-with-prediction-model-in-power-automate.md
 - [Use predict action in Power Automate - AI Builder \| Microsoft Learn](https://learn.microsoft.com/en-us/ai-builder/predict-action-pwr-automate)
+=======
+- [Use predict action in Power Automate  -  AI Builder \| Microsoft Learn](https://learn.microsoft.com/en-us/ai-builder/predict-action-pwr-automate)
+>>>>>>> e8912dbba85dcef35aa06e808f497bfcc61a7eb5:_posts/2026-06-14-smart-approval-system-with-prediction-model-power-automate.md
 - [A simple predictive AI Builder model in Power Automate](https://exceltown.com/en/tutorials/power-automate/a-simple-predictive-ai-builder-model-in-power-automate/)
 
 Have a great day!
