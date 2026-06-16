@@ -1,15 +1,27 @@
+<!-- Premium Image Handler with Placeholder Fallback -->
 {% assign img_url = include.url %}
 {% assign img_alt = include.alt | default: "Image" %}
 {% assign img_class = include.class %}
 {% assign img_style = include.style %}
 
 {% if img_url and img_url != "" %}
-  {% if img_url contains '://' %}
-    <img src="{{ img_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
-  {% else %}
-    {% assign clean_url = img_url | remove_first: '/' %}
-    <img src="{{ clean_url | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
-  {% endif %}
+{% if img_url contains '://' or img_url contains 'http' %}
+<img src="{{ img_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
 {% else %}
-  <div class="{{ img_class }} img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder"></div>
+{% if page.post_id and img_url contains '/' == false %}
+{% assign img_path = append: page.post_id | append: '/' | append: img_url %}
+<img src="{{ img_path | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
+{% else %}
+{% assign clean_url = img_url %}
+{% assign first_char = img_url | slice: 0 %}
+{% if first_char == '/' %}
+  {% assign clean_url = img_url | remove_first: '/' %}
+{% endif %}
+<img src="{{ clean_url | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
+{% endif %}
+{% endif %}
+{% else %}
+<div class="{{ img_class }} img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
+    <!-- Displayed via CSS ::after -->
+</div>
 {% endif %}
