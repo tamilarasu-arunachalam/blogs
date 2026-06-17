@@ -1,13 +1,15 @@
 ---
-post_id: "068"
 layout: post
-title: "How I Built a Stunning Admin Dashboard in Power Pages?"
+post_id: '068'
+title: How I Built a Stunning Admin Dashboard in Power Pages?
 date: 2026-05-24 17:41:00 +0000
+image: assets/images/068/img_ceb5e7a952.gif
+description: ''
+meta_keywords: ''
 category: Power Pages
-image: "assets/images/068/img_ceb5e7a952.gif"
-description: ""
-read_time: "5 min read"
+read_time: 5 min read
 ---
+
 When I started building a hospital management app as a weekend project, I never imagined the frontend would become the most exciting part. I set up Power Pages as an external-facing portal - patients could book appointments, staff could track them, and everyone had what they needed in one place. But then I looked at the default design and thought: _this has to change._
 
 Here's the story of how I transformed a generic Power Pages site into a dashboard I'm actually proud of.
@@ -25,7 +27,7 @@ Power Pages already supports Bootstrap for styling, which is a great starting po
 Custom Web Templates
 --------------------
 
-This was the game-changer. I found the default header and footer web templates and replaced them entirely. I built three custom templates - **admin-sidebar**, **admin-header**, and **admin-footer** \- tailored specifically for logged-in hospital staff. The result was a cohesive dashboard feel with full control over every pixel.
+This was the game-changer. I found the default header and footer web templates and replaced them entirely. I built three custom templates - **admin-sidebar**, **admin-header**, and **admin-footer** - tailored specifically for logged-in hospital staff. The result was a cohesive dashboard feel with full control over every pixel.
 
 [![]({{ site.baseurl }}/assets/images/068/img_0cec82bcf4.jpg)]({{ site.baseurl }}/assets/images/068/img_0cec82bcf4.jpg)
 
@@ -44,7 +46,6 @@ The default Power Pages login page honestly frustrated me every time I saw it. S
 
 **admin-footer.html**
 <script src="https://gist.github.com/tamilarasu-arunachalam/e5c7ef982af2e4ff7a98a8e4e4dc62d3.js?file=footer.html"></script>
-
 
 The Small Details That Made a Big Difference
 --------------------------------------------
