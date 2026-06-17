@@ -1,12 +1,20 @@
 ---
-post_id: "062"
 layout: post
-title: "How to Customize the Sign in page in Power Pages Easily"
+post_id: '062'
+title: How to Customize the Sign in page in Power Pages Easily
 date: 2026-03-29 21:11:00 +0000
-category: Power Pages
 image: assets/images/062/img_478dd1953a.gif
-categories: ["Power Pages", "Power Portal", "Dataverse", "Authentication", "Custom Pages"]
+description: ''
+meta_keywords: ''
+category: Power Pages
+categories:
+  - Power Pages
+  - Power Portal
+  - Dataverse
+  - Authentication
+  - Custom Pages
 ---
+
 Power Pages allows users to sign in using different providers like Entra ID, Google, LinkedIn, and others, which is great for authentication flexibility, but the default sign in page UI is quite basic and not easy to customize. Many developers struggle to match the login experience with their branding or modern UI expectations, so in this blog, we will see a simple and practical way to customize the sign in page by using content snippets, hiding the default components, and building a clean custom login page using Bootstrap.
 
 ## Table of Contents
