@@ -1,11 +1,18 @@
 ---
-post_id: "058"
 layout: post
-title: "How to Integrate Power Pages with Firebase Realtime Database with Example CRUD"
+post_id: '058'
+title: How to Integrate Power Pages with Firebase Realtime Database with Example CRUD
 date: 2026-01-11 17:41:00 +0000
-category: Power Pages
 image: assets/images/058/img_17c61a0d2a.gif
-categories: ["Power Pages", "Power Portal", "HTML", "JavaScript", "Firebase"]
+description: ''
+meta_keywords: ''
+category: Power Pages
+categories:
+  - Power Pages
+  - Power Portal
+  - HTML
+  - JavaScript
+  - Firebase
 ---
 
 For a long time, I have felt that Power Pages is capable of doing much more than what we usually limit it to. Most of the time, it stays tightly coupled with Dataverse and SharePoint, even though it has the flexibility to work beyond that boundary.
@@ -15,17 +22,17 @@ As with my other blogs, this one is also about integration, but with a combinati
 - [What is Firebase ?](#what-is-firebase-)
 - [Configure Firebase](#configure-firebase)
 - [Coding Part](#coding-part)
-  - [HTML Code](#html-code)
-  - [JavScript Code](#javscript-code)
-  - [Create Record](#create-record)
-  - [Read Records](#read-records)
-  - [Edit Record](#edit-record)
-  - [Delete Record](#delete-record)
+    - [HTML Code](#html-code)
+    - [JavScript Code](#javscript-code)
+    - [Create Record](#create-record)
+    - [Read Records](#read-records)
+    - [Edit Record](#edit-record)
+    - [Delete Record](#delete-record)
 - [References:](#references)
 
 ### What is Firebase ?
 
-**[Firebase](https://firebase.google.com/firebase)** is a Google product that helps developers build, manage, and scale applications easily. In simple terms, Firebase is a **Backend as a Service (BaaS)**.
+  [**Firebase**](https://firebase.google.com/firebase) is a Google product that helps developers build, manage, and scale applications easily. In simple terms, Firebase is a **Backend as a Service (BaaS)**.
 
 Firebase provides multiple components such as authentication, NoSQL databases, configuration management, and file storage. Because of this, developers can focus more on improving the application experience instead of spending a lot of time building and maintaining a backend from scratch.
 
