@@ -1,11 +1,14 @@
 ---
-post_id: "067"
 layout: post
-title: "Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!"
-image: assets/images/067/img_81152b8845.gif
+post_id: '067'
+title: Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!
 date: 2026-05-17 17:41:00 +0000
+image: assets/images/067/img_81152b8845.gif
+description: ''
+meta_keywords: ''
 category: Dynamics 365 CE
 ---
+
 I recently worked on something where I had to use **Advanced Find** or filter views every time while exporting weekly or monthly reports. Although we can create **personal views** to make the data sorted, I was curious to know how the filtered data actually gets exported.
 
 So, I checked the **DevTools** and identified the API endpoint and payload used during the export process. Interestingly, I discovered that we can even tweak the **FetchXML**.
@@ -14,7 +17,7 @@ So, I checked the **DevTools** and identified the API endpoint and payload used 
 
 For an easy implementation, I tried this using a simple **instant flow in Power Automate**. I added an **Invoke an HTTP request** action and configured a POST call to the endpoint: 
 
-```
+```plain
 https://yourorg.crm8.dynamics.com/api/data/v9.0/ExportToExcel
 ```
 
