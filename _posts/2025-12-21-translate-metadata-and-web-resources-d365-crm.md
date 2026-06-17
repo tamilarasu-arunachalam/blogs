@@ -1,12 +1,21 @@
 ---
-post_id: "055"
 layout: post
-title: "How to Translate Metadata and Web Resources in Dynamics 365 CE"
+post_id: '055'
+title: How to Translate Metadata and Web Resources in Dynamics 365 CE
 date: 2025-12-21 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/055/img_189a192a47.gif
-categories: ["Dynamics 365 CE", "Dynamics 365 CRM Online", "HTML", "JavaScript", "Model Driven Apps", "Web resource"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Dynamics 365 CE
+  - Dynamics 365 CRM Online
+  - HTML
+  - JavaScript
+  - Model Driven Apps
+  - Web resource
 ---
+
 If you have ever worked on a Dynamics 365 CE or Power Apps model-driven app that serves users from multiple countries, you already know how important language support is. Most of us start confidently because Dynamics 365 handles translations for standard tables automatically. But the moment you introduce custom tables, JavaScript alerts, or HTML web resources, things start getting confusing. If you are wondering, _"How do I translate custom web resource content properly?"_ - you are not alone. In this blog, I'll walk you through practical and supported ways to handle translations in Dynamics 365 CE.
 
 -   [Overview](#overview)
@@ -40,7 +49,7 @@ Dynamics 365 provides a built-in way to translate metadata such as table names, 
 3.  Click on Translations
 4.  Select Export Translations
 5.  Download and extract the ZIP file
-6.  Open _**CrmTranslations.xml**_ in Excel
+6.  Open **_CrmTranslations.xml_** in Excel
 7.  Add translations for the required languages
 8.  Zip the files again and import them back
 
@@ -103,7 +112,7 @@ Then you'll notice the application language is changed. Just navigate to appoint
 
 [![]({{ site.baseurl }}/assets/images/055/img_ecf5f44b4f.png)]({{ site.baseurl }}/assets/images/055/img_ecf5f44b4f.png)
 
-#### 2\. RESX Way
+#### 2. RESX Way
 
 This is the cleanest and most scalable approach and is recommended by Microsoft for translating web resources.
 
@@ -114,7 +123,7 @@ This is the cleanest and most scalable approach and is recommended by Microsoft 
 -   Cleaner JavaScript code
 -   Easier maintenance for large applications
 
-Note: I have followed the naming convention like **_messages.\[LCID\].resx_**. The LCID in the file name allows Dynamics 365 to automatically load the correct language based on the user's settings.
+Note: I have followed the naming convention like **_messages.[LCID].resx_**. The LCID in the file name allows Dynamics 365 to automatically load the correct language based on the user's settings.
 
 I have created resx three files.These resx files can be edited with the resx editor extension for vs code, I have opened these files and added the values. Refer to the below images
 
