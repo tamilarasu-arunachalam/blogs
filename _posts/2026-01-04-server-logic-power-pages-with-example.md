@@ -1,12 +1,19 @@
 ---
-post_id: "057"
 layout: post
-title: "Server Logic in Power Pages Explained with Real Time API Example"
+post_id: '057'
+title: Server Logic in Power Pages Explained with Real Time API Example
 date: 2026-01-04 17:41:00 +0000
-category: Power Pages
 image: assets/images/057/img_7f5da6a23f.gif
-categories: ["Power Pages", "HTML", "JavaScript", "Power Portal"]
+description: ''
+meta_keywords: ''
+category: Power Pages
+categories:
+  - Power Pages
+  - HTML
+  - JavaScript
+  - Power Portal
 ---
+
 Power Pages is commonly used to build external websites on top of Dataverse. While it works well for forms, lists, and UI customization, handling sensitive logic and third-party APIs has always been a challenge.
 
 Most implementations rely on client-side JavaScript, which means API URLs, keys, and request details can be exposed in the browser. This becomes risky, especially for public-facing sites.
@@ -57,7 +64,7 @@ Follow these steps to create a new Server Logic in Power Pages.
 [![]({{ site.baseurl }}/assets/images/057/img_3cb508b442.png)]({{ site.baseurl }}/assets/images/057/img_3cb508b442.png)
 
 -   Under Integrations, select Server Logic
--   Click **\+ New Server Logic**.
+-   Click **+ New Server Logic**.
 
 [![]({{ site.baseurl }}/assets/images/057/img_0939feb576.png)]({{ site.baseurl }}/assets/images/057/img_0939feb576.png)
 
