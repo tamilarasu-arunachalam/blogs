@@ -1,18 +1,27 @@
 ---
-post_id: "060"
 layout: post
-title: "Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide"
+post_id: '060'
+title: 'Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide'
 date: 2026-02-15 17:41:00 +0000
-category: Power Pages
 image: assets/images/060/img_25db1d708c.gif
-categories: ["Power Pages", "Power Portal", "Dataverse", "Dataverse API", "HTML", "JavaScript"]
+description: ''
+meta_keywords: ''
+category: Power Pages
+categories:
+  - Power Pages
+  - Power Portal
+  - Dataverse
+  - Dataverse API
+  - HTML
+  - JavaScript
 ---
+
 If you have worked with Power Pages, you probably got stuck at some point using webapi.safeAjax for Dataverse operations. Microsoft introduced the $pages Client API to simplify how developers interact with forms, authentication, Dataverse data, and multilingual configuration directly from custom HTML and JavaScript pages.
 
 - [Initialize Client API](#initialize-client-api)
 - [$pages Client API Objects](#pages-client-api-objects)
-  - [currentPage Object](#currentpage-object)
-  - [user Object](#user-object)
+    - [currentPage Object](#currentpage-object)
+    - [user Object](#user-object)
 - [webAPI Object](#webapi-object)
 - [languages Object](#languages-object)
 - [Demonstration: Custom Appointment Form](#demonstration-custom-appointment-form)
@@ -82,8 +91,7 @@ $pages.user.signOut
 ## webAPI Object
 
 Supports Create, Retrieve, and Retrieve Multiple operations in Dataverse.
-
-**Create**
+  **Create**
 
 ```js
 $pages.webAPI.createRecord('contacts', {  
@@ -92,13 +100,13 @@ lastName: 'Doe'
 });
 ```
 
-**Retrieve**
+  **Retrieve**
 
 ```js
 let record = await $pages.webAPI.retrieveRecord('accounts', 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb',  '$select=name');
 ```
 
-**Retrieve Multiple**
+  **Retrieve Multiple**
 
 ```js
 let records = await $pages.webAPI.retrieveMultipleRecords('accounts','$select=name&$top=3');
