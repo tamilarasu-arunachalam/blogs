@@ -1,12 +1,18 @@
 ---
-post_id: "054"
 layout: post
-title: "How to Set Up Google Authentication in Power Pages (Beginner Guide)?"
+post_id: '054'
+title: How to Set Up Google Authentication in Power Pages (Beginner Guide)?
 date: 2025-12-07 17:41:00 +0000
-category: Power Pages
 image: assets/images/054/img_f190a8922a.gif
-categories: ["Power Pages", "Power Portal", "Dataverse"]
+description: ''
+meta_keywords: ''
+category: Power Pages
+categories:
+  - Power Pages
+  - Power Portal
+  - Dataverse
 ---
+
 Power Pages, being a Microsoft-hosted low-code portal platform, gives us multiple authentication options out of the box - including Azure AD and External Authentication. But what many makers don’t realize is that Power Pages also supports popular OAuth 2.0 identity providers like **Google, GitHub, Facebook, and LinkedIn**.
 
 In this blog, we’ll walk through a simple and beginner-friendly guide on how to set up **Google Authentication in Power Pages** using OAuth 2.0. Even if you aren’t familiar with authentication concepts, don’t worry - I’ll break it down step-by-step.
@@ -47,6 +53,7 @@ After the consent screen setup, we can now create the actual OAuth Client.
 ![OAuth Client Creation]({{ site.baseurl }}/assets/images/054/img_fd852fffbd.png)-   Open the **Credentials** tab and click **Create Credentials → OAuth Client ID**.
 ![Select OAuth Client]({{ site.baseurl }}/assets/images/054/img_b776e6d49e.png)-   Select **Web Application** as the application type since Power Pages is web-based.
 ![App Type Selection]({{ site.baseurl }}/assets/images/054/img_ad4b1474e4.png)-   Scroll down and add the following:
+
     -   **Authorized JavaScript Origin:** Your Power Pages site URL
     -   **Authorized Redirect URI:** Paste the redirect URI copied from Power Pages
 -   Click **Create**.
@@ -67,7 +74,5 @@ Now return to Power Pages to complete the configuration.
 
 -   [Set up Google Provider – Microsoft Learn](https://learn.microsoft.com/en-us/power-pages/security/authentication/oauth2-google)
 -   [Google Cloud – Registering Apps](https://docs.cloud.google.com/apigee/docs/api-platform/publish/creating-apps-surface-your-api)
-
-  
 
 Have a great day!
