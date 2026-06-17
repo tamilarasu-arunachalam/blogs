@@ -1,12 +1,20 @@
 ---
-post_id: "065"
 layout: post
-title: "How to Unit Test Dynamics 365 CRM JavaScript using QUnit?"
+post_id: '065'
+title: How to Unit Test Dynamics 365 CRM JavaScript using QUnit?
 date: 2026-04-19 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/065/img_508a786ff1.gif
-categories: ["Unit Testing", "JavaScript", "Dynamics 365 CE", "Dynamics 365 CRM Online", "Web resource"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Unit Testing
+  - JavaScript
+  - Dynamics 365 CE
+  - Dynamics 365 CRM Online
+  - Web resource
 ---
+
 A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing **unit testing**. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.
 
 Soon after the decision, I was assigned a task: **create a proof of concept (PoC) for unit testing JavaScript (JScript) web resources used in Dynamics 365 CRM.**
@@ -33,7 +41,7 @@ Since these scripts already run in the browser, I started looking for browser‑
 
 ## Discovering QUnit
 
-During this search, I came across **[QUnit](https://qunitjs.com/)**.
+During this search, I came across [**QUnit**](https://qunitjs.com/).
 
 QUnit immediately stood out because it is:
 
@@ -51,8 +59,6 @@ That was exactly what I was looking for.
 I created a simple project structure to demonstrate the idea.
 
 [![]({{ site.baseurl }}/assets/images/065/img_b6f3ea64b3.png)]({{ site.baseurl }}/assets/images/065/img_b6f3ea64b3.png)
-
-  
 
 -   formScripts.js → One JavaScript file contained the CRM form logic (the actual code under test)
 -   tests.js → Another JavaScript file contained the unit test cases
