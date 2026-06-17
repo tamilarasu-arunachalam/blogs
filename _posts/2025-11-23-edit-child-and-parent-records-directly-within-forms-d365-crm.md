@@ -1,12 +1,20 @@
 ---
-post_id: "052"
 layout: post
-title: "How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?"
+post_id: '052'
+title: How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?
 date: 2025-11-23 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/052/img_14eb6fb8f7.gif
-categories: ["Dynamics 365 CE", "Dynamics 365 CRM Online", "Model Driven Apps", "Power Apps", "Dataverse"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Dynamics 365 CE
+  - Dynamics 365 CRM Online
+  - Model Driven Apps
+  - Power Apps
+  - Dataverse
 ---
+
 Recently, while working on a customization, a simple question hit me — **“Can we edit related entity records directly inside the parent form in Dynamics 365 CRM?”** After checking, the answer was a clear yes. Here is how you can do it for both 1:N and N:1 relationships.
 
 #### Topics Covered
@@ -21,7 +29,7 @@ If your entity has a 1:N relationship (for example, Account → Contacts), you c
 
 -   Open the Account Main Form in the Form Editor.
 -   Select the Contacts subgrid.
--   In the right panel, click **\+ Component**.  
+-   In the right panel, click **+ Component**.  
     ![]({{ site.baseurl }}/assets/images/052/img_4d86709d71.png)
 -   Select **Editable Grid** from the list.  
     ![]({{ site.baseurl }}/assets/images/052/img_b9ff5de772.png)
@@ -42,10 +50,10 @@ This method works well when the child record has a lookup to a parent record (N:
 -   Open the Contact Main Form in the Form Editor.
 -   Select the Company Name (Account lookup) field.  
     ![]({{ site.baseurl }}/assets/images/052/img_afa6ffb471.png)
--   Click **\+ Component**.
+-   Click **+ Component**.
 -   Choose **Form Control**.  
     ![]({{ site.baseurl }}/assets/images/052/img_5e5a1d7274.png)
--   In the popup, select **\+ Related Form**.  
+-   In the popup, select **+ Related Form**.  
     ![]({{ site.baseurl }}/assets/images/052/img_e59a5bac7b.png)
 -   Select the Account form you want to display.
 -   Save and publish the form.
