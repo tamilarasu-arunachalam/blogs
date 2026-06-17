@@ -1,12 +1,23 @@
 ---
-post_id: "053"
 layout: post
-title: "Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps"
+post_id: '053'
+title: Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps
 date: 2025-11-30 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/053/img_72426d992d.gif
-categories: ["Dynamics 365 CE", "Dynamics 365 CRM Online", "Dynamics 365 Web API", "JavaScript", "Model Driven Apps", "PowerFX", "Power Apps"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+read_time: ''
+categories:
+  - Dynamics 365 CE
+  - Dynamics 365 CRM Online
+  - Dynamics 365 Web API
+  - JavaScript
+  - Model Driven Apps
+  - PowerFX
+  - Power Apps
 ---
+
 While working on one of my weekend Power Apps Model-Driven Apps projects, I ran into an interesting requirement. I had **three subgrids of the same child entity** placed inside the parent entity’s main form. Each subgrid needed to show a drop-down command with buttons — but the tricky part was:
 
 -   Each subgrid should show different buttons based on its context.
@@ -39,7 +50,7 @@ Each subgrid displays appointments based on the appointment status. The key func
 ### Main Form Setup
 
 Below is a quick view of how the main form was arranged, with all three subgrids placed inside the Doctor record:  
-  
+
 [![]({{ site.baseurl }}/assets/images/053/img_5f05052ebf.png)]({{ site.baseurl }}/assets/images/053/img_5f05052ebf.png)
 
 ### Setting Up Command Button Visibility
@@ -72,8 +83,6 @@ If(
 )
 ```
 
-  
-
 [![]({{ site.baseurl }}/assets/images/053/img_2782410836.png)]({{ site.baseurl }}/assets/images/053/img_2782410836.png)
 
 ### Setting Up Command Button Action
@@ -98,10 +107,7 @@ Here’s a quick look at how the feature works in the form:
 
 [![]({{ site.baseurl }}/assets/images/053/img_5c93336016.png)]({{ site.baseurl }}/assets/images/053/img_5c93336016.png)
 
-  
 [![]({{ site.baseurl }}/assets/images/053/img_fe586e5e10.png)]({{ site.baseurl }}/assets/images/053/img_fe586e5e10.png)
-
-  
 
 [![]({{ site.baseurl }}/assets/images/053/img_30564f37c5.png)]({{ site.baseurl }}/assets/images/053/img_30564f37c5.png)
 
