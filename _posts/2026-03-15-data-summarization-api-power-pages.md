@@ -1,12 +1,20 @@
 ---
-post_id: "061"
 layout: post
-title: "Implement Data Summarization API for Dataverse in Power Pages"
+post_id: '061'
+title: Implement Data Summarization API for Dataverse in Power Pages
 date: 2026-03-15 17:41:00 +0000
-category: Power Pages
 image: assets/images/061/img_7130141458.gif
-categories: ["Power Pages", "Power Portal", "Dataverse", "Dataverse API", "Dataverse AI"]
+description: ''
+meta_keywords: ''
+category: Power Pages
+categories:
+  - Power Pages
+  - Power Portal
+  - Dataverse
+  - Dataverse API
+  - Dataverse AI
 ---
+
 In today’s AI-driven world, summarizing information has become incredibly easy. We can summarize long articles, web pages, books, and even lengthy videos within seconds using AI tools. Microsoft is gradually bringing similar AI capabilities into the Power Platform ecosystem.
 
 One interesting feature I recently explored is the Dataverse record summarization capability in Power Pages. This allows us to generate AI-powered summaries of Dataverse records directly from a portal page. I tried this feature with one of my custom entity forms and it worked really well.
@@ -18,9 +26,9 @@ In this article, we will walk through how to enable the summarization feature in
 - [Topics](#topics)
 - [Understanding Dataverse Record Summarization](#understanding-dataverse-record-summarization)
 - [Required Site Settings in Power Pages](#required-site-settings-in-power-pages)
-  - [Enable Summarization](#enable-summarization)
-  - [Content Size Limit](#content-size-limit)
-  - [Prompt Configuration](#prompt-configuration)
+    - [Enable Summarization](#enable-summarization)
+    - [Content Size Limit](#content-size-limit)
+    - [Prompt Configuration](#prompt-configuration)
 - [Implementing Summarization in a Custom HTML Form](#implementing-summarization-in-a-custom-html-form)
 - [Example Using Appointment Table](#example-using-appointment-table)
 - [Conclusion](#conclusion)
