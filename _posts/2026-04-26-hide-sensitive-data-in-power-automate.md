@@ -1,11 +1,14 @@
 ---
-post_id: "066"
 layout: post
-title: "How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?"
-category: Power Automate
-image: assets/images/066/img_be2a5971b6.gif
+post_id: '066'
+title: How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?
 date: 2026-04-26 17:41:00 +0000
+image: assets/images/066/img_be2a5971b6.gif
+description: ''
+meta_keywords: ''
+category: Power Automate
 ---
+
 There was a moment while debugging a Power Automate flow when something unexpected showed up. Instead of just checking an error, the entire API request and response data were visible in the run history. It included sensitive details that should never be exposed so easily. That’s when the importance of secure inputs and outputs became very real.
 
 In Power Automate, every action logs its inputs and outputs in the run history. While this is helpful for debugging, it becomes a risk when working with confidential data like customer details, API payloads, or authentication tokens. Anyone with access to the flow history can view this information unless it is protected.
@@ -27,9 +30,7 @@ Secure inputs and outputs may seem like a small feature, but they play a big rol
 ### References:
 
 -   [Manage sensitive input like passwords in Power Automate — Power Automate | Microsoft Learn](https://learn.microsoft.com/en-us/power-automate/how-tos-use-sensitive-input)  
-    
 -   [Secure data used in cloud flows — Power Automate | Microsoft Learn](https://learn.microsoft.com/en-us/power-automate/guidance/coding-guidelines/use-secure-inputs-outputs-triggers)  
-    
 -   [Defining inputs and outputs as you plan a Power Automate project — Power Automate | Microsoft Learn](https://learn.microsoft.com/en-us/power-automate/guidance/planning/define-input-output)
 
 Have a great day!
