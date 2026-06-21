@@ -10,29 +10,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
   <!-- Begin Jekyll SEO tag v2.9.0 -->
-<title>Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide | Tamilarasu Arunachalam</title>
+<title>How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM? | Tamilarasu Arunachalam</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide" />
+<meta property="og:title" content="How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="If you have worked with Power Pages, you probably got stuck at some point using webapi.safeAjax for Dataverse operations. Microsoft introduced the $pages Client API to simplify how developers interact with forms, authentication, Dataverse data, and multilingual configuration directly from custom HTML and JavaScript pages." />
-<meta name="twitter:description" property="og:description" content="If you have worked with Power Pages, you probably got stuck at some point using webapi.safeAjax for Dataverse operations. Microsoft introduced the $pages Client API to simplify how developers interact with forms, authentication, Dataverse data, and multilingual configuration directly from custom HTML and JavaScript pages." />
-<link rel="canonical" href="http://localhost:4000/power-pages-webapi-with-pages-client-api-modern-dataverse-crud-implementation-guide.html" />
-<meta property="og:url" content="http://localhost:4000/power-pages-webapi-with-pages-client-api-modern-dataverse-crud-implementation-guide.html" />
+<meta name="description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<meta name="twitter:description" property="og:description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<link rel="canonical" href="http://localhost:4000/edit-child-and-parent-records-directly-within-forms-d365-crm.html" />
+<meta property="og:url" content="http://localhost:4000/edit-child-and-parent-records-directly-within-forms-d365-crm.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
-<meta property="og:image" content="http://localhost:4000/assets/images/060/img_25db1d708c.gif" />
+<meta property="og:image" content="http://localhost:4000/assets/images/052/img_14eb6fb8f7.gif" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-02-15T23:11:00+05:30" />
-<meta property="article:modified_time" content="2026-02-15T23:11:00+05:30" />
+<meta property="article:published_time" content="2025-11-23T23:11:00+05:30" />
+<meta property="article:modified_time" content="2025-11-23T23:11:00+05:30" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:4000/assets/images/060/img_25db1d708c.gif" />
-<meta name="twitter:title" content="Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/052/img_14eb6fb8f7.gif" />
+<meta name="twitter:title" content="How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?" />
 <meta name="twitter:site" content="@tamilarasu_av" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-02-15T23:11:00+05:30","datePublished":"2026-02-15T23:11:00+05:30","description":"If you have worked with Power Pages, you probably got stuck at some point using webapi.safeAjax for Dataverse operations. Microsoft introduced the $pages Client API to simplify how developers interact with forms, authentication, Dataverse data, and multilingual configuration directly from custom HTML and JavaScript pages.","headline":"Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide","image":"http://localhost:4000/assets/images/060/img_25db1d708c.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/power-pages-webapi-with-pages-client-api-modern-dataverse-crud-implementation-guide.html"},"url":"http://localhost:4000/power-pages-webapi-with-pages-client-api-modern-dataverse-crud-implementation-guide.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-11-23T23:11:00+05:30","datePublished":"2025-11-23T23:11:00+05:30","description":"Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.","headline":"How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?","image":"http://localhost:4000/assets/images/052/img_14eb6fb8f7.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/edit-child-and-parent-records-directly-within-forms-d365-crm.html"},"url":"http://localhost:4000/edit-child-and-parent-records-directly-within-forms-d365-crm.html"}</script>
 <!-- End Jekyll SEO tag -->
 
+  <link rel="alternate" type="application/rss+xml" title="Tamilarasu Arunachalam" href="http://localhost:4000/feed.xml">
   <!-- keywords -->
   <meta name="keywords" content="Tamilarasu, Tamilarasu Arunachalam, Tamilarasu Power Platform, Tamilarasu Arunachalam Developer, Tamilarasu chrome extensions, Tamilarasu blogs, Power Platform blogs, Dynamics 365 blogs">
 
@@ -97,6 +98,16 @@
                 <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
                 <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
 
+                <!-- Search Input -->
+                <li class="nav-item ms-lg-3 my-auto position-relative" id="search-container" style="min-width: 250px;">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-dark rounded-start-pill ps-3"><i class="bi bi-search"></i></span>
+                        <input type="text" id="search-input" class="form-control border-start-0 border-dark rounded-end-pill shadow-none" placeholder="Search posts..." aria-label="Search">
+                    </div>
+                    <!-- Results Container -->
+                    <ul id="results-container" class="position-absolute w-100 bg-white border border-dark list-unstyled m-0 mt-1 p-0 rounded shadow-sm" style="top: 100%; left: 0; z-index: 1050; display: none; max-height: 400px; overflow-y: auto;"></ul>
+                </li>
+
                 <!-- CTA Button -->
                 <li class="nav-item ms-lg-3">
                     <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
@@ -114,15 +125,15 @@
                 <!-- Post Title & Meta -->
                 <header class="post-header mb-5">
                     <div class="mb-3">
-                        <span class="badge bg-light text-dark border">Power Pages</span>
+                        <span class="badge bg-light text-dark border">Dynamics 365 CE</span>
                     </div>
-                    <h1 class="display-4 fw-bold mb-4">Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide</h1>
+                    <h1 class="display-4 fw-bold mb-4">How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?</h1>
                     <div class="post-meta d-flex align-items-center mb-4">
                         <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
                             class="rounded-circle me-3" width="50" alt="Author">
                         <div>
                             <div class="fw-bold">Tamilarasu Arunachalam</div>
-                            <div class="text-muted small">February 15, 2026 • 5 min read</div>
+                            <div class="text-muted small">November 23, 2025 • 5 min read</div>
                         </div>
                     </div>
                 </header>
@@ -139,7 +150,7 @@
 
 
 
-<img src="/assets/images/060/img_25db1d708c.gif" alt="Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+<img src="/assets/images/052/img_14eb6fb8f7.gif" alt="How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
 
 
 
@@ -153,150 +164,70 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <p>If you have worked with Power Pages, you probably got stuck at some point using webapi.safeAjax for Dataverse operations. Microsoft introduced the $pages Client API to simplify how developers interact with forms, authentication, Dataverse data, and multilingual configuration directly from custom HTML and JavaScript pages.</p>
+                    <p>Recently, while working on a customization, a simple question hit me — <strong>“Can we edit related entity records directly inside the parent form in Dynamics 365 CRM?”</strong> After checking, the answer was a clear yes. Here is how you can do it for both 1:N and N:1 relationships.</p>
+
+<h4 id="topics-covered">Topics Covered</h4>
 
 <ul>
-  <li><a href="#initialize-client-api">Initialize Client API</a></li>
-  <li><a href="#pages-client-api-objects">$pages Client API Objects</a>
-    <ul>
-      <li><a href="#currentpage-object">currentPage Object</a></li>
-      <li><a href="#user-object">user Object</a></li>
-    </ul>
-  </li>
-  <li><a href="#webapi-object">webAPI Object</a></li>
-  <li><a href="#languages-object">languages Object</a></li>
-  <li><a href="#demonstration-custom-appointment-form">Demonstration: Custom Appointment Form</a></li>
-  <li><a href="#references">References</a></li>
+  <li><a href="#editableSubGrid">Editable Subgrid (1:N Relationship)</a></li>
+  <li><a href="#formComponentControl">Form Component Control (N:1 Relationship)</a></li>
+  <li><a href="#reference">Reference</a></li>
 </ul>
 
-<h2 id="initialize-client-api">Initialize Client API</h2>
+<h2 id="editable-subgrid-1n-relationship">Editable Subgrid (1:N Relationship)</h2>
 
-<p>The $pages Client API is not automatically available on page load. You must ensure it is initialized before calling its methods.</p>
+<p>If your entity has a 1:N relationship (for example, Account → Contacts), you can edit child records directly from the subgrid using the <strong>Editable Grid</strong> control.</p>
 
 <ul>
-  <li>Callback-based readiness</li>
+  <li>Open the Account Main Form in the Form Editor.</li>
+  <li>Select the Contacts subgrid.</li>
+  <li>In the right panel, click <strong>+ Component</strong>.<br />
+<img src="/assets/images/052/img_4d86709d71.png" alt="" /></li>
+  <li>Select <strong>Editable Grid</strong> from the list.<br />
+<img src="/assets/images/052/img_b9ff5de772.png" alt="" /></li>
+  <li>Click <strong>Done</strong>, then save and publish.</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Microsoft</span><span class="p">.</span><span class="nx">Dynamic365</span><span class="p">.</span><span class="nx">Portal</span><span class="p">.</span><span class="nf">onPagesClientApiReady</span><span class="p">((</span><span class="nx">$pages</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">forms</span> <span class="o">=</span> <span class="nx">$pages</span><span class="p">.</span><span class="nx">currentPage</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nf">getAll</span><span class="p">();</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Found </span><span class="p">${</span><span class="nx">forms</span><span class="p">.</span><span class="nx">length</span><span class="p">}</span><span class="s2"> forms on the page.`</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
+<h3 id="before-applying-editable-grid">Before Applying Editable Grid</h3>
+
+<p><img src="/assets/images/052/img_f7ee698e39.png" alt="" /></p>
+
+<h3 id="after-applying-editable-grid">After Applying Editable Grid</h3>
+
+<p><img src="/assets/images/052/img_f5e2763916.png" alt="" /></p>
+
+<h2 id="form-component-control-n1-relationship">Form Component Control (N:1 Relationship)</h2>
+
+<p>This method works well when the child record has a lookup to a parent record (N:1). Example: In Contact, the Company Name field looks up to Account. Using <strong>Form Component Control</strong>, you can show an editable version of the parent form inside the child form.</p>
 
 <ul>
-  <li>Promise or async/await-based readiness</li>
+  <li>Open the Contact Main Form in the Form Editor.</li>
+  <li>Select the Company Name (Account lookup) field.<br />
+<img src="/assets/images/052/img_afa6ffb471.png" alt="" /></li>
+  <li>Click <strong>+ Component</strong>.</li>
+  <li>Choose <strong>Form Control</strong>.<br />
+<img src="/assets/images/052/img_5e5a1d7274.png" alt="" /></li>
+  <li>In the popup, select <strong>+ Related Form</strong>.<br />
+<img src="/assets/images/052/img_e59a5bac7b.png" alt="" /></li>
+  <li>Select the Account form you want to display.</li>
+  <li>Save and publish the form.</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">$pages</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Microsoft</span><span class="p">.</span><span class="nx">Dynamic365</span><span class="p">.</span><span class="nx">Portal</span><span class="p">.</span><span class="nf">onPagesClientApiReady</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">forms</span> <span class="o">=</span> <span class="nx">$pages</span><span class="p">.</span><span class="nx">currentPage</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nf">getAll</span><span class="p">();</span>
-</code></pre></div></div>
+<h3 id="before-applying-form-component">Before Applying Form Component</h3>
 
-<h2 id="pages-client-api-objects">$pages Client API Objects</h2>
+<p><img src="/assets/images/052/img_34fb3cd267.png" alt="" /></p>
 
-<p>The Client API exposesthe below objects</p>
+<h3 id="after-applying-form-component">After Applying Form Component</h3>
 
-<ul>
-  <li>currentPage</li>
-  <li>user</li>
-  <li>webAPI</li>
-  <li>languages</li>
-</ul>
+<p><img src="/assets/images/052/img_2a979d33b6.png" alt="" /></p>
 
-<h3 id="currentpage-object">currentPage Object</h3>
+<p><strong>Tip:</strong> Choose a cleaner, minimal form for better usability.</p>
 
-<p>Provides access to forms and components available on the current page.</p>
-
-<p>The below piece of code will get all the forms inside the current page</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">forms</span> <span class="o">=</span> <span class="nx">$pages</span><span class="p">.</span><span class="nx">currentPage</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nf">getAll</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>The below piece of code will get all the list inside the current page</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">lists</span> <span class="o">=</span> <span class="nx">$pages</span><span class="p">.</span><span class="nx">currentPage</span><span class="p">.</span><span class="nx">lists</span><span class="p">.</span><span class="nf">getAll</span><span class="p">();</span>
-</code></pre></div></div>
-
-<h3 id="user-object">user Object</h3>
-
-<p>Allows programmatic sign-in and sign-out operations.</p>
-
-<p>The below line of code will sign the user into the site.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$pages</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">signIn</span>
-</code></pre></div></div>
-
-<p>The below line of code will sign the user into the site.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$pages</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">signOut</span>
-</code></pre></div></div>
-
-<h2 id="webapi-object">webAPI Object</h2>
-
-<p>Supports Create, Retrieve, and Retrieve Multiple operations in Dataverse.</p>
-
-<p><strong>Create</strong></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$pages</span><span class="p">.</span><span class="nx">webAPI</span><span class="p">.</span><span class="nf">createRecord</span><span class="p">(</span><span class="dl">'</span><span class="s1">contacts</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>  
-<span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span>
-<span class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Doe</span><span class="dl">'</span>  
-<span class="p">});</span>
-</code></pre></div></div>
-
-<p><strong>Retrieve</strong></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">record</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">$pages</span><span class="p">.</span><span class="nx">webAPI</span><span class="p">.</span><span class="nf">retrieveRecord</span><span class="p">(</span><span class="dl">'</span><span class="s1">accounts</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb</span><span class="dl">'</span><span class="p">,</span>  <span class="dl">'</span><span class="s1">$select=name</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p><strong>Retrieve Multiple</strong></p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">records</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">$pages</span><span class="p">.</span><span class="nx">webAPI</span><span class="p">.</span><span class="nf">retrieveMultipleRecords</span><span class="p">(</span><span class="dl">'</span><span class="s1">accounts</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">$select=name&amp;$top=3</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h2 id="languages-object">languages Object</h2>
-
-<p>Retrieves the list of configured languages for the website.</p>
-
-<h2 id="demonstration-custom-appointment-form">Demonstration: Custom Appointment Form</h2>
-
-<p>A Bootstrap-based custom HTML page submits form data into the Appointment table in Dataverse. Choice values are fetched from the StringMaps table using $pages.webAPI.retrieveMultiple and records are created using $pages.webAPI.createRecord</p>
-
-<p><a href="/assets/images/060/img_c88c457720.png"><img src="/assets/images/060/img_c88c457720.png" alt="" /></a></p>
-
-<p>Below is the HTML code of the page</p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/426431069fb79661b6f5495a165a3c5f.js?file=mw_appointments.page.html"></script>
-
-<p>Below is the JS Code</p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/426431069fb79661b6f5495a165a3c5f.js?file=mw_appointments.page.js"></script>
-
-<p>Below is the image after the appointment is booked</p>
-
-<p><a href="/assets/images/060/img_0d02769f61.png"><img src="/assets/images/060/img_0d02769f61.png" alt="" /></a></p>
-
-<h2 id="references">References</h2>
+<h3 id="reference">Reference</h3>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[Power Pages Client APIs Overview (preview)</td>
-          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-pages/configure/client-api)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[Power Pages Client API supported controls (preview)</td>
-          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-pages/configure/client-api-controls)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li><a href="https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/make-grids-lists-editable-custom-control">Make model-driven app views editable using the editable grid control</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/form-component-control">Edit related table records directly from another table’s main form</a></li>
 </ul>
 
 <p>Have a great day!</p>
@@ -311,19 +242,17 @@
                 <!-- Chrome Extension Promotion -->
                 
                 <section
-                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    class="chrome-promo mt-5 p-4 bg-secondary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
                     <div class="d-flex align-items-center justify-content-center mb-3">
-                        <img src="/assets/images/tube-flash-kit-icon.png"
+                        <img src="/assets/images/xrm-flash-code-icon.png"
                             alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
-                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                        <h4 class="mb-0 fw-bold">XRM Flash Code</h4>
                     </div>
-                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
-                        experience with just one click.</p>
+                    <p class="mb-4">VS Code-style editor for Dynamics 365 CRM. Edit, format, and publish Web Resources natively (JS, HTML, CSS, XML).</p>
                     <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
                         target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
-                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
-                    </div>
                 </section>
+
                 
 
                 <!-- Comments -->
@@ -338,9 +267,9 @@
                     <div id="cusdis_thread"
                         data-host="https://cusdis.com"
                         data-app-id="c273ece9-1cf0-4c6e-aaca-9aa59564a335"
-                        data-page-id="/power-pages-webapi-with-pages-client-api-modern-dataverse-crud-implementation-guide.html"
-                        data-page-url="http://localhost:4000/power-pages-webapi-with-pages-client-api-modern-dataverse-crud-implementation-guide.html"
-                        data-page-title="Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide"
+                        data-page-id="/edit-child-and-parent-records-directly-within-forms-d365-crm.html"
+                        data-page-url="http://localhost:4000/edit-child-and-parent-records-directly-within-forms-d365-crm.html"
+                        data-page-title="How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?"
                         data-theme="auto">
                     </div>
                     <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
@@ -354,15 +283,9 @@
                         
                         
                         
-                    
-                        
-                    
-                        
-                    
-                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html" class="related-card-img-link">
+                                <a href="/play-sound-effects-on-validation-errors-d365-crm-js.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -373,19 +296,19 @@
 
 
 
-<img src="/assets/images/068/img_ceb5e7a952.gif" alt="How I Built a Stunning Admin Dashboard in Power Pages?" class="card-img-top
+<img src="//assets/images/074/play-sound-on-validation-errors-d365-crm.png" alt="How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript" class="card-img-top
                                     related-card-img" loading="lazy" decoding="async">
 
 
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category">Power Pages</span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html"
-                                            class="text-decoration-none text-dark hover-primary">How I Built a Stunning Admin Dashboard in Power Pages?</a>
+                                        <a href="/play-sound-effects-on-validation-errors-d365-crm-js.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript</a>
                                     </h6>
-                                    <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html" class="related-card-readmore">
+                                    <a href="/play-sound-effects-on-validation-errors-d365-crm-js.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -406,9 +329,13 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/how-to-add-a-favicon-in-power-pages.html" class="related-card-img-link">
+                                <a href="/bts-of-export-to-excel-model-driven-apps.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -419,19 +346,19 @@
 
 
 
-<img src="/assets/images/064/img_0e751ab16e.gif" alt="How to Add a Favicon in Power Pages?" class="card-img-top
+<img src="/assets/images/067/img_81152b8845.gif" alt="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" class="card-img-top
                                     related-card-img" loading="lazy" decoding="async">
 
 
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category">Power Pages</span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/how-to-add-a-favicon-in-power-pages.html"
-                                            class="text-decoration-none text-dark hover-primary">How to Add a Favicon in Power Pages?</a>
+                                        <a href="/bts-of-export-to-excel-model-driven-apps.html"
+                                            class="text-decoration-none text-dark hover-primary">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</a>
                                     </h6>
-                                    <a href="/how-to-add-a-favicon-in-power-pages.html" class="related-card-readmore">
+                                    <a href="/bts-of-export-to-excel-model-driven-apps.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -450,7 +377,7 @@
                         
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html" class="related-card-img-link">
+                                <a href="/unit-test-javascript-using-qunit-d365-crm.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -461,19 +388,19 @@
 
 
 
-<img src="/assets/images/062/img_478dd1953a.gif" alt="How to Customize the Sign in page in Power Pages Easily" class="card-img-top
+<img src="/assets/images/065/img_508a786ff1.gif" alt="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" class="card-img-top
                                     related-card-img" loading="lazy" decoding="async">
 
 
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category">Power Pages</span>
+                                    <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html"
-                                            class="text-decoration-none text-dark hover-primary">How to Customize the Sign in page in Power Pages Easily</a>
+                                        <a href="/unit-test-javascript-using-qunit-d365-crm.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</a>
                                     </h6>
-                                    <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html" class="related-card-readmore">
+                                    <a href="/unit-test-javascript-using-qunit-d365-crm.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -488,6 +415,60 @@
                     
                     
                         
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
                         
                     
                     
@@ -508,30 +489,26 @@
                     
                     
                         
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
                     
                         
                     
                         
-                    
                         
                     
-                        
                     
                         
-                    
                         
                     
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
                     
                         
                         
@@ -542,6 +519,66 @@
                         
                     
                         
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                        
+                    
                     
                         
                     
@@ -550,60 +587,14 @@
                         
                     
                         
+                        
+                    
                     
                         
                     
                         
-                    
                         
                     
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
                     
 
                     
@@ -619,9 +610,9 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide",
-  "image": "http://localhost:4000/assets/images/060/img_25db1d708c.gif",
-  "datePublished": "2026-02-15T23:11:00+05:30",
+  "headline": "How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?",
+  "image": "http://localhost:4000/assets/images/052/img_14eb6fb8f7.gif",
+  "datePublished": "2025-11-23T23:11:00+05:30",
   "author": {
     "@type": "Person",
     "name": "Tamilarasu Arunachalam"
@@ -762,6 +753,49 @@
       if (typeof hljs.lineNumbersBlock === 'function') {
         document.querySelectorAll('code').forEach((element) => {
           hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+  <!-- Simple-Jekyll-Search -->
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('results-container');
+      
+      if (searchInput && resultsContainer) {
+        SimpleJekyllSearch({
+          searchInput: searchInput,
+          resultsContainer: resultsContainer,
+          json: '/search.json',
+          searchResultTemplate: '<li class="p-2 border-bottom"><a href="{url}" class="text-decoration-none text-dark d-block fw-medium">{title}</a><small class="text-muted">{date}</small></li>',
+          noResultsText: '<li class="p-2 text-muted">No results found</li>',
+          limit: 10,
+          fuzzy: false
+        });
+
+        // Show/hide results dropdown
+        searchInput.addEventListener('input', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          } else {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Hide results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!document.getElementById('search-container').contains(e.target)) {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Show results when focusing back on input
+        searchInput.addEventListener('focus', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          }
         });
       }
     });

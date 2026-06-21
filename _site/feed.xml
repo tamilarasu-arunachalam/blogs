@@ -1,690 +1,205 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-15T22:17:52+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tamilarasu Arunachalam</title><subtitle>Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.</subtitle><author><name>Tamilarasu Arunachalam</name></author><entry><title type="html">Build a Smart Approval System with Prediction Model in Power Automate</title><link href="http://localhost:4000/build-a-smart-approval-system-with-prediction-model-in-power-automate.html" rel="alternate" type="text/html" title="Build a Smart Approval System with Prediction Model in Power Automate" /><published>2026-06-14T23:11:00+05:30</published><updated>2026-06-14T23:11:00+05:30</updated><id>http://localhost:4000/build-a-smart-approval-system-with-prediction-model-in-power-automate</id><content type="html" xml:base="http://localhost:4000/build-a-smart-approval-system-with-prediction-model-in-power-automate.html"><![CDATA[<p>In this AI era, traditional approvals no longer make sense. Approvals play a major role everywhere, but they often require follow-ups and reminders to get things sorted. To address this, I planned to build a smart approval system using Dataverse, AI Builder, and Power Automate. This is a small prototype, but it can be extended to a larger solution.</p>
-
-<p>The agenda is simple: when a new approval request is created, AI Builder will predict the outcome using a trained model. If the prediction likelihood is greater than 0.7, it will be auto-approved. If it is between 0.4 and 0.7, it will be sent to the manager for approval. If it is less than 0.4, it will be escalated to the senior manager.</p>
-
-<p>To accomplish this, I created a Dataverse table named <strong>ApprovalRequests</strong> with the required fields and data types.</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/800/1*6XA3-7MnAYdQQwqdol9S4g.png" alt="ApprovalRequests table structure in Dataverse with required fields" /></p>
-
-<p>Next, navigate to <a href="https://make.powerautomate.com">https://make.powerautomate.com</a> and select the <strong>AI Models</strong> menu. From there, choose <strong>Predict future outcomes from historical data</strong> under the Prediction section and create a custom model. Select the table as <strong>ApprovalRequests</strong> and the column as <strong>AI Decision</strong>.</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/800/1*csZ51WUlc0jzrFOvvw8LcQ.png" alt="AI Builder prediction model configuration screen in Power Automate" /></p>
-
-<p>On the next page, select the columns <strong>Amount</strong>, <strong>Department</strong>, <strong>Priority</strong>, and <strong>Request Type</strong> from the historical outcomes table.</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/800/1*ZJK-XG0M_m_8AEChBoB1DA.png" alt="AI Builder prediction model configuration screen in Power Automate" /></p>
-
-<p>Train the model and publish it so that it can be used in Power Automate. Make sure the model is successfully trained and published.</p>
-
-<p>Then, create an instant flow with the Dataverse trigger <strong>“When a record is added”</strong> for the <strong>ApprovalRequests</strong> table. Add the next action as AI Builder, select the trained model, and map the required inputs from the trigger outputs.</p>
-
-<p>You can refer to the workflow diagram below to implement the Power Automate flow.</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/800/1*vKmT70O6noC7q8zapKtDiQ.png" alt="Power Automate flow diagram showing AI-based approval routing logic" /></p>
-
-<p>Your flow will be looking like the below screenshot</p>
-
-<p><img src="https://cdn-images-1.medium.com/max/800/1*uJUWmR3dMirV33fMxCP7WQ.png" alt="Approval flow structure" /></p>
-
-<p>References</p>
-
-<ul>
-  <li><a href="https://learn.microsoft.com/en-us/ai-builder/predict-action-pwr-automate">Use predict action in Power Automate - AI Builder | Microsoft Learn</a></li>
-  <li><a href="https://exceltown.com/en/tutorials/power-automate/a-simple-predictive-ai-builder-model-in-power-automate/">A simple predictive AI Builder model in Power Automate</a></li>
-</ul>
-
-<p>Have a great day!</p>]]></content><author><name>Tamilarasu Arunachalam</name></author><category term="Power Automate" /><summary type="html"><![CDATA[Learn how to build a smart, AI-powered approval workflow using Dataverse, AI Builder, and Power Automate — reducing manual follow-ups and speeding up decisions.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/73/automated-workflows.png" /><media:content medium="image" url="http://localhost:4000/assets/images/73/automated-workflows.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Why Moosend Is the Best Email Marketing Platform for Small Businesses and Growing Brands</title><link href="http://localhost:4000/why-moosend-best-email-platform.html" rel="alternate" type="text/html" title="Why Moosend Is the Best Email Marketing Platform for Small Businesses and Growing Brands" /><published>2026-06-09T23:11:00+05:30</published><updated>2026-06-09T23:11:00+05:30</updated><id>http://localhost:4000/why-moosend-best-email-platform</id><content type="html" xml:base="http://localhost:4000/why-moosend-best-email-platform.html"><![CDATA[<p>Every business starts email marketing the same way - full of optimism, a growing contact list, and a simple goal: stay connected with customers. But somewhere between navigating confusing dashboards, hitting feature paywalls, and watching monthly costs climb as the subscriber list grows, that optimism fades.</p>
-
-<p>This is a story many marketers know too well. And it’s exactly the problem Moosend was built to solve.</p>
-
-<h2 id="email-marketing-shouldnt-be-this-hard">Email Marketing Shouldn’t Be This Hard</h2>
-
-<p>According to a 2024 Litmus report, <strong>email marketing delivers an average ROI of $36 for every $1 spent</strong> - making it one of the highest-performing digital channels available. Yet many businesses abandon their campaigns early, not because email doesn’t work, but because the tools get in the way.</p>
-
-<p>Moosend takes a different approach. It strips away the unnecessary complexity while keeping the features that actually move the needle - automation, segmentation, and analytics - all under one roof, at a price point that doesn’t punish growth.</p>
-
-<p><img src="assets/images/001/email-editor-canvas.png" alt="Moosend drag-and-drop email builder for creating professional campaigns without coding" /></p>
-<h2 id="building-campaigns-without-the-guesswork">Building Campaigns Without the Guesswork</h2>
-
-<p>One of the first things new users notice is how fast they can go from idea to live campaign. Moosend’s drag-and-drop editor makes it possible to design professional emails without writing a single line of code. Choose from a library of pre-built templates, customize them to match your brand, and hit send - it’s genuinely that straightforward.</p>
-
-<p>For freelancers and small teams juggling multiple responsibilities, this matters. Time spent wrestling with a clunky builder is time not spent on strategy, content, or customers.</p>
-
-<div style="display:flex; justify-content:center;">
-<img src="assets/images/001/moosend-workflow.png" alt="drag and drop mail builder" />
-</div>
-
-<h2 id="automation-that-works-while-you-sleep">Automation That Works While You Sleep</h2>
-
-<p>Smart automation is where Moosend genuinely earns its reputation. Rather than manually sending follow-ups or remembering to re-engage dormant subscribers, businesses can build <strong>automated workflows</strong> triggered by real user behavior.</p>
-
-<p>Think about what that looks like in practice:</p>
-
-<ul>
-  <li>A new subscriber joins your list → they receive a warm welcome sequence automatically</li>
-  <li>A customer browses a product but doesn’t buy → an abandoned cart reminder goes out within hours</li>
-  <li>A subscriber hasn’t opened an email in 60 days → a re-engagement campaign kicks in without any manual effort</li>
-</ul>
-
-<p>According to Campaign Monitor, <strong>automated emails generate 320% more revenue</strong> than non-automated campaigns. Moosend puts this kind of power in the hands of businesses that previously thought automation was only for enterprise teams with large budgets.</p>
-
-<h2 id="sending-the-right-message-to-the-right-people">Sending the Right Message to the Right People</h2>
-<p><img src="assets/images/001/email-workflow.png" alt="Moosend email automation workflow showing triggers, conditions, and automated actions" />
-Blasting the same email to your entire list is one of the fastest ways to inflate unsubscribes and tank open rates. Moosend’s segmentation tools let businesses divide their audience based on behavior, location, purchase history, or engagement level - so every message feels personal, not generic.</p>
-
-<p><strong>Higher relevance = higher results.</strong> Mailchimp’s own research shows that segmented campaigns see <strong>14.31% higher open rates</strong> and <strong>100.95% higher click rates</strong> compared to non-segmented ones. Moosend brings this capability without the complexity or the premium price tag that typically comes with it.</p>
-
-<h2 id="try-before-you-commit">Try Before You Commit</h2>
-
-<p>One of the more refreshing things about Moosend is its no-credit-card-required free trial. For businesses that have been burned by platforms that lock features behind paywalls or make cancellation difficult, this is a genuine differentiator. Explore the automation builder, test the editor, import your list - all without handing over payment details upfront.</p>
-
-<h2 id="the-bottom-line">The Bottom Line</h2>
-
-<p>Email marketing works. The data is clear, the ROI is real, and the opportunity is there for businesses willing to use the right tools. What Moosend offers isn’t magic - it’s clarity. A platform designed so that getting started feels easy, scaling feels affordable, and automation feels accessible.</p>
-
-<p>For startups watching every rupee, freelancers managing multiple clients, or growing businesses that need results without complexity, Moosend is worth a serious look.</p>
-
-<p><a href="https://moosend.com/?ref=51e754dbd6"><strong>Start your free Moosend trial today - no credit card required. →</strong></a></p>
-
-<p><strong>References:</strong></p>
-<ul>
-  <li><a href="https://www.litmus.com/wp-content/uploads/pdf/The-2024-State-of-Email-Trends.pdf">Litmus Email Marketing ROI Report, 2024</a></li>
-  <li><a href="https://www.campaignmonitor.com/resources/guides/email-automation/">Campaign Monitor: The Power of Email Automation</a></li>
-  <li><a href="https://mailchimp.com/resources/effects-of-list-segmentation-on-email-marketing-stats/">Mailchimp Research: Effects of List Segmentation on Email Marketing Stats</a></li>
-</ul>]]></content><author><name>Tamilarasu Arunachalam</name></author><category term="Email Marketing" /><summary type="html"><![CDATA[A comprehensive look at why Moosend is the perfect blend of simplicity and advanced automation for growing businesses.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/001/moosend-email-analytics.png" /><media:content medium="image" url="http://localhost:4000/assets/images/001/moosend-email-analytics.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How I Automated Chrome Extension Publishing with GitHub Actions</title><link href="http://localhost:4000/automate-chrome-extension-publishing-with-github-actions.html" rel="alternate" type="text/html" title="How I Automated Chrome Extension Publishing with GitHub Actions" /><published>2026-06-02T23:11:00+05:30</published><updated>2026-06-02T23:11:00+05:30</updated><id>http://localhost:4000/automate-chrome-extension-publishing-with-github-actions</id><content type="html" xml:base="http://localhost:4000/automate-chrome-extension-publishing-with-github-actions.html"><![CDATA[<p>Every time I shipped a new version of my Chrome extension, I dreaded the same ritual - bump the version, zip the build folder, log into the Chrome Web Store Developer Dashboard, upload the file, fill in the release notes, and hit publish. It sounds simple, but do it a dozen times and you start wondering: <em>why am I doing this manually?</em>
-That’s when I wired up GitHub Actions to handle it for me. Now every merge to <code class="language-plaintext highlighter-rouge">main</code> ships my extension automatically. Here’s exactly how I did it.</p>
-
-<h2 id="what-youll-need-before-you-start">What You’ll Need Before You Start</h2>
-<p>Before writing a single line of YAML, make sure you have three things ready: a Google account with Chrome Web Store developer access, an extension already listed on the store (even in draft), and a GitHub repository with your extension code.</p>
-
-<p>You’ll also need to create API credentials from Google. Head to the <a href="https://console.cloud.google.com">Google Cloud Console</a>, create a project, enable the <strong>Chrome Web Store API</strong>, and generate OAuth 2.0 credentials (Client ID + Client Secret). Then use the OAuth playground to get a <strong>refresh token</strong> scoped to <code class="language-plaintext highlighter-rouge">https://www.googleapis.com/auth/chromewebstore</code>. This one-time setup unlocks programmatic publishing.</p>
-
-<h2 id="storing-secrets-in-github">Storing Secrets in GitHub</h2>
-<p>Never hardcode credentials. Instead, go to your GitHub repo → <strong>Settings → Secrets and variables → Actions</strong> and add these three secrets:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">EXTENSION_ID</code> - the unique ID from your Chrome Web Store listing URL</li>
-  <li><code class="language-plaintext highlighter-rouge">CLIENT_ID</code> - from your Google Cloud OAuth credentials</li>
-  <li><code class="language-plaintext highlighter-rouge">CLIENT_SECRET</code> - same place</li>
-  <li><code class="language-plaintext highlighter-rouge">REFRESH_TOKEN</code> - obtained from the OAuth Playground
-These values will be injected securely into your workflow at runtime.</li>
-</ul>
-
-<h2 id="the-github-actions-workflow">The GitHub Actions Workflow</h2>
-<p><img src="assets/images/002/webstore-deployment-flowchart.png" alt="Web Store Deployment Flowchart" />
-Create a file at <code class="language-plaintext highlighter-rouge">.github/workflows/publish.yml</code> in your repo:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Publish Chrome Extension</span>
-
-<span class="na">on</span><span class="pi">:</span>
-  <span class="na">push</span><span class="pi">:</span>
-    <span class="na">branches</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">main</span>
-
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">publish</span><span class="pi">:</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout code</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
-
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Node.js</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v4</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">node-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">20'</span>
-
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">npm ci</span>
-
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build extension</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">npm run build</span>
-
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Zip the build</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">zip -r extension.zip dist/</span>
-
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Upload &amp; Publish to Chrome Web Store</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">mnao305/chrome-extension-upload@v5.0.0</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">file-path</span><span class="pi">:</span> <span class="s">extension.zip</span>
-          <span class="na">extension-id</span><span class="pi">:</span> <span class="s">${{ secrets.EXTENSION_ID }}</span>
-          <span class="na">client-id</span><span class="pi">:</span> <span class="s">${{ secrets.CLIENT_ID }}</span>
-          <span class="na">client-secret</span><span class="pi">:</span> <span class="s">${{ secrets.CLIENT_SECRET }}</span>
-          <span class="na">refresh-token</span><span class="pi">:</span> <span class="s">${{ secrets.REFRESH_TOKEN }}</span>
-          <span class="na">publish</span><span class="pi">:</span> <span class="kc">true</span>
-</code></pre></div></div>
-
-<p>This workflow triggers on every push to <code class="language-plaintext highlighter-rouge">main</code>, builds your extension, zips the output, and publishes it to the Chrome Web Store - all without you lifting a finger.</p>
-
-<h2 id="a-few-things-worth-knowing">A Few Things Worth Knowing</h2>
-<p>The <code class="language-plaintext highlighter-rouge">publish: true</code> flag submits the extension for review immediately. If you’d rather upload it and review before going live, set <code class="language-plaintext highlighter-rouge">publish: false</code> - the new version will sit in draft on the dashboard until you manually publish.</p>
-
-<p>Also make sure your <code class="language-plaintext highlighter-rouge">manifest.json</code> version is bumped before merging. The Chrome Web Store rejects uploads with a version number that already exists. A clean approach is to automate version bumping using <code class="language-plaintext highlighter-rouge">npm version patch</code> as part of your release process or a separate workflow.</p>
-
-<h2 id="why-this-matters">Why This Matters</h2>
-<p>Beyond saving time, this workflow makes your release process consistent and auditable. Every deployment is tied to a commit, logged in GitHub, and repeatable. If something goes wrong, you can trace it back instantly.</p>
-
-<p>It also removes the human error factor - no more forgetting to update the store listing or uploading the wrong build. The pipeline either passes or it fails loudly, which is exactly what you want in a release process.</p>
-
-<p><img src="assets/images/002/extension-published.PNG" alt="Web Store Deployment Flowchart" /></p>
-<h2 id="wrapping-up">Wrapping Up</h2>
-<p>Setting this up takes about an hour the first time, mostly spent navigating Google’s OAuth flow. But once it’s in place, shipping your Chrome extension becomes as simple as merging a pull request. That’s the kind of automation that quietly makes your development life better every single week.</p>
-
-<p>If you’re building Chrome extensions and still deploying manually, this is the one workflow worth setting up today.</p>]]></content><author><name>Tamilarasu Arunachalam</name></author><category term="Extension Development" /><summary type="html"><![CDATA[Tired of manually zipping and uploading your Chrome extension updates? Learn how I built a seamless GitHub Actions workflow to automate my deployments in under 10 minutes.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/069/extension-publishing-featured-image.png" /><media:content medium="image" url="http://localhost:4000/assets/images/069/extension-publishing-featured-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How I Built a Stunning Admin Dashboard in Power Pages?</title><link href="http://localhost:4000/how-i-built-a-stunning-admin-dashboard-in-power-pages.html" rel="alternate" type="text/html" title="How I Built a Stunning Admin Dashboard in Power Pages?" /><published>2026-05-24T23:11:00+05:30</published><updated>2026-05-24T23:11:00+05:30</updated><id>http://localhost:4000/how-i-built-a-stunning-admin-dashboard-in-power-pages</id><content type="html" xml:base="http://localhost:4000/how-i-built-a-stunning-admin-dashboard-in-power-pages.html"><![CDATA[<p>When I started building a hospital management app as a weekend project, I never imagined the frontend would become the most exciting part. I set up Power Pages as an external-facing portal - patients could book appointments, staff could track them, and everyone had what they needed in one place. But then I looked at the default design and thought: <em>this has to change.</em></p>
-
-<p>Here’s the story of how I transformed a generic Power Pages site into a dashboard I’m actually proud of.</p>
-
-<h2 id="the-design-problem-nobody-talks-about">The Design Problem Nobody Talks About</h2>
-
-<p>Power Pages is powerful, but out of the box, it looks like every other portal on the internet. Default headers, default footers, default login screens. For a hospital app, that just didn’t feel trustworthy or professional. So I rolled up my sleeves and started customizing — piece by piece.</p>
-
-<h2 id="bootstrap-icons">Bootstrap Icons</h2>
-
-<p>Power Pages already supports Bootstrap for styling, which is a great starting point. To layer in Bootstrap Icons, I created a <strong>content snippet</strong> with the CDN link tag. Power Pages automatically injects it across the site - clean, simple, no hacks needed.</p>
-
-<h2 id="custom-web-templates">Custom Web Templates</h2>
-
-<p>This was the game-changer. I found the default header and footer web templates and replaced them entirely. I built three custom templates - <strong>admin-sidebar</strong>, <strong>admin-header</strong>, and <strong>admin-footer</strong> - tailored specifically for logged-in hospital staff. The result was a cohesive dashboard feel with full control over every pixel.</p>
-
-<p><a href="/assets/images/068/img_0cec82bcf4.jpg"><img src="/assets/images/068/img_0cec82bcf4.jpg" alt="" /></a></p>
-
-<h2 id="custom-login-page">Custom Login Page</h2>
-
-<p>The default Power Pages login page honestly frustrated me every time I saw it. So I built a custom one - complete with <strong>Microsoft Entra and Google authentication</strong>. It immediately made the app feel more polished and enterprise-ready. Check out my blog about <a href="https://www.tamilarasu.blog/2026/03/customize-signin-page-in-power-pages.html"><em>How to Customize the Sign in page in Power Pages Easily</em></a> to know how I did that.</p>
-
-<p><a href="/assets/images/068/img_571ffe5e22.jpg"><img src="/assets/images/068/img_571ffe5e22.jpg" alt="" /></a></p>
-
-<p><strong>admin-sidebar.html</strong>
-<script src="https://gist.github.com/tamilarasu-arunachalam/e5c7ef982af2e4ff7a98a8e4e4dc62d3.js?file=side-bar.html"></script></p>
-
-<p><strong>admin-header.html</strong>
-<script src="https://gist.github.com/tamilarasu-arunachalam/e5c7ef982af2e4ff7a98a8e4e4dc62d3.js?file=header.html"></script></p>
-
-<p><strong>admin-footer.html</strong>
-<script src="https://gist.github.com/tamilarasu-arunachalam/e5c7ef982af2e4ff7a98a8e4e4dc62d3.js?file=footer.html"></script></p>
-
-<h2 id="the-small-details-that-made-a-big-difference">The Small Details That Made a Big Difference</h2>
-
-<p>A <strong>favicon</strong> might seem trivial, but it signals credibility. I added one, and suddenly the browser tab looked like it belonged to a real product. Here is my blog about <a href="https://www.tamilarasu.blog/2026/04/how-to-add-favicon-in-power-pages.html"><em>How to Add a Favicon in Power Pages?</em></a> and do check out to know if you want to.</p>
-
-<p><a href="/assets/images/068/img_a18cb480e9.jpg"><img src="/assets/images/068/img_a18cb480e9.jpg" alt="" /></a></p>
-
-<p>For <strong>charts and graphs</strong>, I skipped the built-in Power Apps charts - they felt too rigid for a custom dashboard. Instead, I used <strong>Chart.js</strong>, an open-source library that gave me colorful, interactive visuals with full creative control.</p>
-
-<p><a href="/assets/images/068/img_862798299f.jpg"><img src="/assets/images/068/img_862798299f.jpg" alt="" /></a></p>
-
-<p>And for <strong>profile avatars</strong>, I used the <strong>UI Avatars API</strong> to generate initials-based profile images dynamically. One image tag. Zero effort. Looks great.</p>
-
-<p><a href="/assets/images/068/img_973ca01c0e.jpg"><img src="/assets/images/068/img_973ca01c0e.jpg" alt="" /></a></p>
-
-<h2 id="finally">Finally</h2>
-
-<p>Building a custom admin dashboard in Power Pages is absolutely doable - you just need to know which defaults to override and which tools to bring in from outside. Bootstrap Icons, Chart.js, UI Avatars, and custom web templates each solved a specific problem without overcomplicating things.</p>
-
-<h3 id="references">References:</h3>
-
-<ul>
-  <li><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Get started with Bootstrap · Bootstrap v5.3</a></li>
-  <li><a href="https://icons.getbootstrap.com/">Bootstrap Icons · Official open source SVG icon library for Bootstrap</a></li>
-  <li><a href="https://www.chartjs.org/">Chart.js - Open source HTML5 Charts for your website</a></li>
-  <li><a href="https://ui-avatars.com/">Generate avatars with initials — User Initial avatars</a></li>
-  <li><a href="https://ulrikkeakerback.com/">Font Awesome icons in Power Pages — Ulrikke Akerbæk</a></li>
-</ul>
-
-<p>Have a great day!</p>]]></content><author><name>Tamilarasu Arunachalam</name></author><category term="Power Pages" /><summary type="html"><![CDATA[When I started building a hospital management app as a weekend project, I never imagined the frontend would become the most exciting part. I set up Power Pages as an external-facing portal - patients could book appointments, staff could track them, and everyone had what they needed in one place. But then I looked at the default design and thought: this has to change.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/068/img_ceb5e7a952.gif" /><media:content medium="image" url="http://localhost:4000/assets/images/068/img_ceb5e7a952.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</title><link href="http://localhost:4000/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" rel="alternate" type="text/html" title="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" /><published>2026-05-17T23:11:00+05:30</published><updated>2026-05-17T23:11:00+05:30</updated><id>http://localhost:4000/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps</id><content type="html" xml:base="http://localhost:4000/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html"><![CDATA[<p>I recently worked on something where I had to use <strong>Advanced Find</strong> or filter views every time while exporting weekly or monthly reports. Although we can create <strong>personal views</strong> to make the data sorted, I was curious to know how the filtered data actually gets exported.</p>
-
-<p>So, I checked the <strong>DevTools</strong> and identified the API endpoint and payload used during the export process. Interestingly, I discovered that we can even tweak the <strong>FetchXML</strong>.</p>
-
-<p><a href="/assets/images/067/img_72963cac3a.png"><img src="/assets/images/067/img_72963cac3a.png" alt="" /></a></p>
-
-<p>For an easy implementation, I tried this using a simple <strong>instant flow in Power Automate</strong>. I added an <strong>Invoke an HTTP request</strong> action and configured a POST call to the endpoint: </p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://yourorg.crm8.dynamics.com/api/data/v9.0/ExportToExcel
-</code></pre></div></div>
-
-<p><a href="/assets/images/067/img_2d4666b67e.png"><img src="/assets/images/067/img_2d4666b67e.png" alt="" /></a></p>
-
-<p>Using the same headers and payload found in DevTools, I ran the flow and it worked as expected. The response contained a <strong>Base64 value</strong> of the exported Excel file. You can refer to the screenshot below.</p>
-
-<p><a href="/assets/images/067/img_283ed78e5f.png"><img src="/assets/images/067/img_283ed78e5f.png" alt="" /></a></p>
-
-<p>After this successful test, I moved on to the actual requirement. The goal was to generate <strong>weekly and monthly reports on a button click</strong>. To achieve this, I created two buttons - <strong>Weekly</strong> and <strong>Monthly -</strong> inside a dropdown command menu.</p>
-
-<p>Next, I created a <strong>JavaScript web resource</strong> named <code class="language-plaintext highlighter-rouge">_generateExcelReport.js_</code>. I added a function to both buttons and passed a string parameter to identify the report type. I invoked a bound action called <strong>ExportToExcel</strong> (but you can’t find it in Power Automate - I tried). We need to pass the Fetch XML and Layout XML as parameters for the action. I tweaked the Fetch XML based on the button that was clicked. In the response, you receive the Excel file encoded as base64, which I decoded to binary and downloaded using the script. I tested it, and it worked as expected. You can find the script for this implementation below.</p>
-
-<blockquote>
-  <p><strong><em>Note:</em></strong> This approach is not recommended by Microsoft, as it is not mentioned in their documentation.</p>
-</blockquote>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/9bfacef867090e6ba141082aa1559750.js"></script>
-
-<p>Refer to the GIF below for a demonstration of the custom button and how the script works.</p>
-
-<p><a href="/assets/images/067/img_b4e61bca01.gif"><img src="/assets/images/067/img_b4e61bca01.gif" alt="" /></a></p>
-
-<h4 id="references">References:</h4>
-
-<ul>
-  <li><a href="https://butenko.pro/2024/11/23/code-to-excel-export-like-a-pro/">Code to Excel: Export Like a Pro! — Andrew Butenko’s Blog</a></li>
-  <li><a href="https://ludovicperrichon.com/export-to-excel-dataverse-table-with-power-automate/">Export to Excel Dataverse Table with Power Automate — Ludovic Perrichon</a></li>
-  <li><a href="https://dreamingincrm.com/2016/11/10/export-to-excel-using-dynamics-365-sdk/">Export to Excel using Dynamics 365 SDK — Dreaming in CRM &amp; Power Platform</a></li>
-</ul>
-
-<p>Have a great day!</p>]]></content><author><name>Tamilarasu Arunachalam</name></author><category term="Dynamics 365 CE" /><summary type="html"><![CDATA[I recently worked on something where I had to use Advanced Find or filter views every time while exporting weekly or monthly reports. Although we can create personal views to make the data sorted, I was curious to know how the filtered data actually gets exported.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/067/img_81152b8845.gif" /><media:content medium="image" url="http://localhost:4000/assets/images/067/img_81152b8845.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?</title><link href="http://localhost:4000/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html" rel="alternate" type="text/html" title="How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?" /><published>2026-04-26T23:11:00+05:30</published><updated>2026-04-26T23:11:00+05:30</updated><id>http://localhost:4000/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs</id><content type="html" xml:base="http://localhost:4000/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html"><![CDATA[<p>There was a moment while debugging a Power Automate flow when something unexpected showed up. Instead of just checking an error, the entire API request and response data were visible in the run history. It included sensitive details that should never be exposed so easily. That’s when the importance of secure inputs and outputs became very real.</p>
-
-<p>In Power Automate, every action logs its inputs and outputs in the run history. While this is helpful for debugging, it becomes a risk when working with confidential data like customer details, API payloads, or authentication tokens. Anyone with access to the flow history can view this information unless it is protected.</p>
-
-<p>This is where Secure Inputs and Secure Outputs come into play. These settings allow you to hide sensitive data from the run history. Once enabled, the actual values are no longer visible, ensuring that critical information remains protected even if someone accesses the flow logs.</p>
-
-<p>Consider a simple scenario where a flow sends customer data to an external API using an HTTP action. Without enabling these settings, both the request and response data will be fully visible in the run history. By turning on secure inputs and outputs from the action settings, this data becomes hidden while the flow continues to function normally.</p>
-
-<p><a href="/assets/images/066/img_6786aaa34f.png"><img src="/assets/images/066/img_6786aaa34f.png" alt="" /></a></p>
-
-<p>It’s important to remember that this setting is action-specific and must be enabled wherever sensitive data is involved. While it may limit visibility during debugging, it is essential for production environments where data security is critical.</p>
-
-<p><a href="/assets/images/066/img_f1b8f21135.png"><img src="/assets/images/066/img_f1b8f21135.png" alt="" /></a></p>
-
-<p>In Dynamics 365 and Dataverse-based implementations, flows often handle business-critical and sensitive information. Leaving such data exposed in logs can lead to security risks and compliance issues.</p>
-
-<p>Secure inputs and outputs may seem like a small feature, but they play a big role in building secure and reliable Power Automate solutions.</p>
-
-<h3 id="references">References:</h3>
-
-<ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[Manage sensitive input like passwords in Power Automate — Power Automate</td>
-          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-automate/how-tos-use-sensitive-input)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[Secure data used in cloud flows — Power Automate</td>
-          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-automate/guidance/coding-guidelines/use-secure-inputs-outputs-triggers)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[Defining inputs and outputs as you plan a Power Automate project — Power Automate</td>
-          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-automate/guidance/planning/define-input-output)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ul>
-
-<p>Have a great day!</p>]]></content><author><name>Tamilarasu Arunachalam</name></author><category term="Power Automate" /><summary type="html"><![CDATA[There was a moment while debugging a Power Automate flow when something unexpected showed up. Instead of just checking an error, the entire API request and response data were visible in the run history. It included sensitive details that should never be exposed so easily. That’s when the importance of secure inputs and outputs became very real.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/066/img_be2a5971b6.gif" /><media:content medium="image" url="http://localhost:4000/assets/images/066/img_be2a5971b6.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</title><link href="http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" rel="alternate" type="text/html" title="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" /><published>2026-04-19T23:11:00+05:30</published><updated>2026-04-19T23:11:00+05:30</updated><id>http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit</id><content type="html" xml:base="http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"><![CDATA[<p>A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing <strong>unit testing</strong>. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.</p>
-
-<p>Soon after the decision, I was assigned a task: <strong>create a proof of concept (PoC) for unit testing JavaScript (JScript) web resources used in Dynamics 365 CRM.</strong></p>
-
-<blockquote>
-  <p>Note: I couldn’t find many simple blogs explaining how to do <strong>unit testing for JavaScript in Dynamics 365 CRM</strong>. So, I decided to share what I learned and document a simple approach that worked for me, mainly to help beginners get started.</p>
-</blockquote>
-
-<p>At first, I was unsure how to approach it. In my mind, unit testing was something usually done in full‑stack applications, like React with Node.js or Angular projects. I had never written unit tests for plain JavaScript files used in CRM forms. This was new territory for me.</p>
-
-<h2 id="the-initial-challenge">The Initial Challenge:</h2>
-
-<p>Like anyone starting something new, I began researching. A quick web search showed popular JavaScript testing frameworks like Jest, Mocha, and Jasmine. They looked powerful, well‑documented, and widely used.</p>
-
-<p>But there was a catch.</p>
-
-<p>Almost all of them required Node.js. Installing Node.js on my organization‑issued laptop meant raising a helpdesk ticket and waiting for admin approval. From experience, I knew this could easily take a week or more.</p>
-
-<p>Since this was just a proof of concept, waiting that long didn’t feel efficient. I needed a simple, lightweight solution that didn’t require installing anything new.</p>
-
-<h2 id="a-different-way-of-thinking">A Different Way of Thinking</h2>
-
-<p>That’s when I paused and reflected on the nature of the problem.</p>
-
-<p>Since these scripts already run in the browser, I started looking for browser‑friendly JavaScript unit testing frameworks  -  something that could work directly with an HTML file.</p>
-
-<h2 id="discovering-qunit">Discovering QUnit</h2>
-
-<p>During this search, I came across <strong><a href="https://qunitjs.com/">QUnit</a></strong>.</p>
-
-<p>QUnit immediately stood out because it is:</p>
-
-<ul>
-  <li>Lightweight and simple</li>
-  <li>Designed for testing JavaScript in the browser</li>
-  <li>Available via CDN</li>
-  <li>Supports integration with mocking libraries</li>
-</ul>
-
-<p>With QUnit, you just include a script reference in an HTML file, open it in the browser, and your tests run instantly.</p>
-
-<p>That was exactly what I was looking for.</p>
-
-<h2 id="setting-up-the-proof-of-concept">Setting Up the Proof of Concept</h2>
-
-<p>I created a simple project structure to demonstrate the idea.</p>
-
-<p><a href="/assets/images/065/img_b6f3ea64b3.png"><img src="/assets/images/065/img_b6f3ea64b3.png" alt="" /></a></p>
-
-<ul>
-  <li>formScripts.js → One JavaScript file contained the CRM form logic (the actual code under test)</li>
-  <li>tests.js → Another JavaScript file contained the unit test cases</li>
-  <li>index.html → file loaded QUnit via CDN and referenced both scripts</li>
-</ul>
-
-<p>By opening index.html in the browser, I could run all unit tests and see results immediately - pass, fail, and errors - all in a clean UI provided by QUnit. You can find my sample code below.</p>
-
-<p><strong>formScripts.js</strong></p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/589ad8f97323f6fb570c93999bbf8611.js?file=formScripts.js"></script>
-
-<p><strong>tests.js</strong></p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/589ad8f97323f6fb570c93999bbf8611.js?file=tests.js"></script>
-
-<p><strong>index.html</strong></p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/589ad8f97323f6fb570c93999bbf8611.js?file=index.html"></script>
-
-<p>Later, I learned how to write test for the basic and necessary objects like executionContext, formContext, getValue and setValue. I ran the index.html file and the test runs showing up. You can refer the below image to see so.</p>
-
-<p><a href="/assets/images/065/img_d619c1a3cb.png"><img src="/assets/images/065/img_d619c1a3cb.png" alt="" /></a></p>
-
-<p>This gave me enough confidence to share my findings with the team. I plan to continue working on this and will share more updates as I start implementing unit testing in the full project.</p>
-
-<h2 id="references">References:</h2>
-
-<ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[Browser Runner</td>
-          <td>QUnit](https://qunitjs.com/browser/)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[Assertions</td>
-          <td>QUnit](https://qunitjs.com/api/assert/)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[QUnit.module()</td>
-          <td>QUnit](https://qunitjs.com/api/QUnit/module/)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[QUnit.test()</td>
-          <td>QUnit](https://qunitjs.com/api/QUnit/test/)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ul>
-
-<p>Have a great day!</p>]]></content><author><name>Tamilarasu Arunachalam</name></author><category term="Dynamics 365 CE" /><summary type="html"><![CDATA[A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing unit testing. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/065/img_508a786ff1.gif" /><media:content medium="image" url="http://localhost:4000/assets/images/065/img_508a786ff1.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to Add a Favicon in Power Pages?</title><link href="http://localhost:4000/how-to-add-a-favicon-in-power-pages.html" rel="alternate" type="text/html" title="How to Add a Favicon in Power Pages?" /><published>2026-04-12T23:11:00+05:30</published><updated>2026-04-12T23:11:00+05:30</updated><id>http://localhost:4000/how-to-add-a-favicon-in-power-pages</id><content type="html" xml:base="http://localhost:4000/how-to-add-a-favicon-in-power-pages.html"><![CDATA[<p>When you open a website in your browser, one small detail quietly helps you recognize it instantly. That tiny icon shown in the browser tab, bookmarks, history, and address bar is called a <strong>favicon</strong>. The word favicon stands for “favorite icon,” and even though it is small, it plays a big role in improving <strong>user experience</strong> and maintaining <strong>brand consistency</strong>.</p>
-
-<p>Think about the times when your browser is filled with multiple tabs. It becomes difficult to read every page title, but the favicon helps you quickly identify which tab belongs to which website. This makes navigation easier and saves time, especially for users who frequently switch between tabs.</p>
-
-<p><a href="/assets/images/064/img_1fbc8949e2.png"><img src="/assets/images/064/img_1fbc8949e2.png" alt="" /></a></p>
-
-<p>A standard favicon is usually created in a <strong>16x16 pixel</strong> size and comes in formats like <strong>PNG, GIF, or ICO</strong>, with ICO being the most recommended format for better browser compatibility. If you already have a logo, you can easily convert it into a favicon using online tools. One simple approach is to upload your logo to <strong>favicon.io</strong> and download the generated favicon files. If you do not have a logo, you can even create a text-based favicon by customizing fonts and colors directly on the same platform. The downloaded file usually comes as a ZIP, where you can find the <strong>.ico file</strong> ready to use.</p>
-
-<p>For a regular HTML website, adding a favicon is straightforward. You just need to include a simple link tag inside the head section of your website.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"icon"</span> <span class="na">href=</span><span class="s">"/favicon.ico"</span> <span class="na">type=</span><span class="s">"image/x-icon"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
-
-<p>However, if you are working with <strong>Power Pages</strong>, the process is slightly different since it is a low-code platform. To add a favicon in Power Pages, you need to go to the Power Pages Management app and select your site. </p>
-
-<p><a href="/assets/images/064/img_73a86ff2a0.png"><img src="/assets/images/064/img_73a86ff2a0.png" alt="" /></a></p>
-
-<p>From there, create a new web file and name it <strong>favicon.ico</strong>. Set the state to published and upload your .ico file in the file upload section. Once you save the web file, go back to the maker portal, sync the site, and refresh it.</p>
-
-<p><a href="/assets/images/064/img_853ee467a1.png"><img src="/assets/images/064/img_853ee467a1.png" alt="" /></a></p>
-
-<p>After completing these steps, you will notice that the default globe icon in your browser tab is replaced with your custom favicon. This small change gives your website a more professional look and makes it easier for users to recognize your site among multiple open tabs.</p>
-
-<p><a href="/assets/images/064/img_b753786854.png"><img src="/assets/images/064/img_b753786854.png" alt="" /></a></p>
-
-<p>Adding a favicon may seem like a minor step, but it contributes significantly to <strong>branding</strong>, <strong>usability</strong>, and overall <strong>website experience</strong>. It is one of those small details that can make your website feel complete and polished.</p>
-
-<h3 id="references">References</h3>
-
-<ul>
-  <li>
-    <p><a href="https://favicon.io/">The best Favicon Generator (completely free) - favicon.io</a></p>
-  </li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Favicon">MDN Favicon</a></li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[How do I change the favicon in Power Pages?</td>
-          <td>Microsoft Learn](https://learn.microsoft.com/en-us/shows/one-dev-minute/how-do-i-change-the-favicon-in-power-pages)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li><a href="https://ulrikke.akerbak.com/2022/09/23/browser-icon-favicon-power-pages/">Add browser icon (favicon) to Power Pages - Ulrikke Akerbæk</a></li>
-</ul>
-
-<p>Have a great day!</p>]]></content><author><name>Tamilarasu Arunachalam</name></author><category term="Power Pages" /><summary type="html"><![CDATA[When you open a website in your browser, one small detail quietly helps you recognize it instantly. That tiny icon shown in the browser tab, bookmarks, history, and address bar is called a favicon. The word favicon stands for “favorite icon,” and even though it is small, it plays a big role in improving user experience and maintaining brand consistency.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/064/img_0e751ab16e.gif" /><media:content medium="image" url="http://localhost:4000/assets/images/064/img_0e751ab16e.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</title><link href="http://localhost:4000/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" rel="alternate" type="text/html" title="Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts" /><published>2026-04-06T23:11:00+05:30</published><updated>2026-04-06T23:11:00+05:30</updated><id>http://localhost:4000/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts</id><content type="html" xml:base="http://localhost:4000/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html"><![CDATA[<p>There is a quote about debugging from Brian Kernighan (Author and Co-contributor for Unix):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.    – *Brian Kernighan*
-</code></pre></div></div>
-
-<p>As a developer working in this platform for about five years, I thought about some tips and shortcuts I wish I had known earlier. After learning these shortcuts, I haven’t been stuck without knowing where and what to debug. If you are a developer, tester, or business analyst, these shortcuts and tips will increase your productivity. In this blog, I will provide the shortcut, its uses, and how you can create your shortcut.</p>
-
-<h2 id="debugging">Debugging:</h2>
-
-<p>As a first step, we will go with the ribbon debugger. If you’re a developer, you may need to work more on the buttons. With this, you can easily check the details of command details with action, enable rule details, and display rule details. Moreover, you can see the buttons even when they are hidden. To enable this, you just have to append <code class="language-plaintext highlighter-rouge">&amp;ribbondebug=true</code> to the URL.</p>
-
-<p><a href="/assets/images/063/img_143f6a47d4.png"><img src="/assets/images/063/img_143f6a47d4.png" alt="" /></a></p>
-
-<p>With this, you can debug all kinds of ribbons including Application, View, Form, and Sub-grid. Yes, adding the query parameter every time to the URL is sometimes annoying, so I came up with something that will add the query to the URL by clicking on a bookmark. Yes, that is a bookmarklet, which is a browser bookmark that executes JavaScript instead of opening a webpage.</p>
-
-<h3 id="adding-bookmarklet">Adding Bookmarklet</h3>
-
-<p><a href="/assets/images/063/img_b5da2ef098.png"><img src="/assets/images/063/img_b5da2ef098.png" alt="" /></a></p>
-
-<p>To add the bookmarklet, go to the bookmarks page and click on “Add a bookmark.” Give a proper name and add the below code in the place of URL. If you are using Edge, you can’t create a new favourite directly, so you have to add any site to favourite and update it with the script.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:(</span><span class="kd">function</span><span class="p">(){</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">e</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="o">&amp;&amp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nf">getGlobalContext</span><span class="p">();</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please navigate to CRM page</span><span class="dl">"</span><span class="p">);</span><span class="k">return</span><span class="p">}</span><span class="kd">var</span> <span class="nx">n</span><span class="o">=</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span><span class="sr">/</span><span class="se">[</span><span class="sr">?&amp;</span><span class="se">]</span><span class="sr">ribbondebug=true/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">ribbondebug already enabled!</span><span class="dl">"</span><span class="p">):</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nx">n</span><span class="o">+</span><span class="p">(</span><span class="sr">/</span><span class="se">\?</span><span class="sr">/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="dl">"</span><span class="s2">&amp;</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">?</span><span class="dl">"</span><span class="p">)</span><span class="o">+</span><span class="dl">"</span><span class="s2">ribbondebug=true</span><span class="dl">"</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span><span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">message</span><span class="p">)}})();</span>
-</code></pre></div></div>
-
-<p>These bookmarklets will only work on Dynamics 365 and Model-driven App pages, as we have the condition to check whether the current page has the context or not. You can do the same for the following bookmarklets as well.</p>
-
-<p><a href="/assets/images/063/img_19430cee06.png"><img src="/assets/images/063/img_19430cee06.png" alt="" /></a></p>
-
-<p>Similarly, you can use <code class="language-plaintext highlighter-rouge">&amp;navbar=off</code> to hide the navigation pane on the left. You can use the below bookmarklet to use this frequently.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:(</span><span class="kd">function</span><span class="p">(){</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">e</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="o">&amp;&amp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nf">getGlobalContext</span><span class="p">();</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please navigate to CRM page</span><span class="dl">"</span><span class="p">);</span><span class="k">return</span><span class="p">}</span><span class="kd">var</span> <span class="nx">n</span><span class="o">=</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span><span class="sr">/</span><span class="se">[</span><span class="sr">?&amp;</span><span class="se">]</span><span class="sr">navbar=off/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Navbar already disabled!</span><span class="dl">"</span><span class="p">):</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nx">n</span><span class="o">+</span><span class="p">(</span><span class="sr">/</span><span class="se">\?</span><span class="sr">/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="dl">"</span><span class="s2">&amp;</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">?</span><span class="dl">"</span><span class="p">)</span><span class="o">+</span><span class="dl">"</span><span class="s2">navbar=off</span><span class="dl">"</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span><span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">message</span><span class="p">)}})();</span>
-</code></pre></div></div>
-
-<h2 id="flags">Flags:</h2>
-
-<p><code class="language-plaintext highlighter-rouge">**&amp;flags=DisableFormCommandbar=true**</code>: This will remove the command/ribbon from the form. For that, we have to append <code class="language-plaintext highlighter-rouge">&amp;flags=DisableFormCommandbar=true</code> to the URL. To make it easier, you can use the below script in the bookmarklet to make it work on clicking the bookmark.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:(</span><span class="kd">function</span><span class="p">(){</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">e</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="o">&amp;&amp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nf">getGlobalContext</span><span class="p">();</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please navigate to CRM page</span><span class="dl">"</span><span class="p">);</span><span class="k">return</span><span class="p">}</span><span class="kd">var</span> <span class="nx">n</span><span class="o">=</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span><span class="sr">/</span><span class="se">[</span><span class="sr">?&amp;</span><span class="se">]</span><span class="sr">flags=DisableFormCommandbar=true/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">DisableFormCommandbar already enabled!</span><span class="dl">"</span><span class="p">):</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nx">n</span><span class="o">+</span><span class="p">(</span><span class="sr">/</span><span class="se">\?</span><span class="sr">/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="dl">"</span><span class="s2">&amp;</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">?</span><span class="dl">"</span><span class="p">)</span><span class="o">+</span><span class="dl">"</span><span class="s2">flags=DisableFormCommandbar=true</span><span class="dl">"</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span><span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">message</span><span class="p">)}})();</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">**&amp;flags=DisableFormHandlers=true**</code>: This will disable all the form handlers in the form that are added in the events including onLoad, onSave, onChange, Business Rules, and Tab State Change. For that, we have to append <code class="language-plaintext highlighter-rouge">&amp;flags=DisableFormHandlers=true</code> to the URL.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:(</span><span class="kd">function</span><span class="p">(){</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">e</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="o">&amp;&amp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nf">getGlobalContext</span><span class="p">();</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please navigate to CRM page</span><span class="dl">"</span><span class="p">);</span><span class="k">return</span><span class="p">}</span><span class="kd">var</span> <span class="nx">n</span><span class="o">=</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span><span class="sr">/</span><span class="se">[</span><span class="sr">?&amp;</span><span class="se">]</span><span class="sr">flags=DisableFormHandlers=true/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">DisableFormHandlers already enabled!</span><span class="dl">"</span><span class="p">):</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nx">n</span><span class="o">+</span><span class="p">(</span><span class="sr">/</span><span class="se">\?</span><span class="sr">/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="dl">"</span><span class="s2">&amp;</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">?</span><span class="dl">"</span><span class="p">)</span><span class="o">+</span><span class="dl">"</span><span class="s2">flags=DisableFormHandlers=true</span><span class="dl">"</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span><span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">message</span><span class="p">)}})();</span>
-</code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">**&amp;flags=DisableFormHandlers=&lt;eventName&gt;**</code>: disables the event handler on the specified event. For example: <code class="language-plaintext highlighter-rouge">&amp;flags=DisableFormHandlers=onload</code>.</li>
-  <li><code class="language-plaintext highlighter-rouge">**&amp;flags=DisableFormHandlers=&lt;eventName&gt;_&lt;index&gt;**</code>: disables the event handler on the specified event at the mentioned index. For example: <code class="language-plaintext highlighter-rouge">&amp;flags=DisableFormHandlers=onsave_0</code>.</li>
-  <li><code class="language-plaintext highlighter-rouge">**&amp;flags=DisableFormHandlers=&lt;eventName&gt;&lt;startIndex&gt;&lt;endIndex&gt;**</code>: disables the event handlers in the specified range. For example: <code class="language-plaintext highlighter-rouge">&amp;flags=DisableFormHandlers=onload_3_5</code>.</li>
-</ul>
-
-<p><code class="language-plaintext highlighter-rouge">**&amp;flags=DisableFormLibraries=true**</code>: disables all the form libraries from getting loaded on the event which is added.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:(</span><span class="kd">function</span><span class="p">(){</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">e</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="o">&amp;&amp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nf">getGlobalContext</span><span class="p">();</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please navigate to CRM page</span><span class="dl">"</span><span class="p">);</span><span class="k">return</span><span class="p">}</span><span class="kd">var</span> <span class="nx">n</span><span class="o">=</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span><span class="sr">/</span><span class="se">[</span><span class="sr">?&amp;</span><span class="se">]</span><span class="sr">flags=DisableFormLibraries=true/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">DisableFormLibraries already enabled!</span><span class="dl">"</span><span class="p">):</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nx">n</span><span class="o">+</span><span class="p">(</span><span class="sr">/</span><span class="se">\?</span><span class="sr">/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="dl">"</span><span class="s2">&amp;</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">?</span><span class="dl">"</span><span class="p">)</span><span class="o">+</span><span class="dl">"</span><span class="s2">flags=DisableFormLibraries=true</span><span class="dl">"</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span><span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">message</span><span class="p">)}})();</span>
-</code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">**&amp;flags=DisableFormLibraries=&lt;index&gt;**</code>: disables libraries at the specified index. For example: <code class="language-plaintext highlighter-rouge">&amp;flags=DisableFormLibraries=0</code>.</li>
-  <li><code class="language-plaintext highlighter-rouge">**&amp;flags=DisableFormLibraries=&lt;startIndex&gt;_&lt;endIndex&gt;**</code>: disables the libraries in the specified range. For example: <code class="language-plaintext highlighter-rouge">&amp;flags=DisableFormLibraries=1_3</code>.</li>
-</ul>
-
-<blockquote>
-  <p><strong><em>Note:</em></strong> DisableFormHandlers only disables the handler; it doesn’t stop the library from loading. As recommended by Microsoft, DisableFormHandlers should be used first to check whether the issue goes away. If not, try DisableFormLibraries.</p>
-</blockquote>
-
-<p><code class="language-plaintext highlighter-rouge">**&amp;flags=DisableWebResourceControls=true**</code>: disables the web resource controls added to the form.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:(</span><span class="kd">function</span><span class="p">(){</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">e</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="o">&amp;&amp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nf">getGlobalContext</span><span class="p">();</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please navigate to CRM page</span><span class="dl">"</span><span class="p">);</span><span class="k">return</span><span class="p">}</span><span class="kd">var</span> <span class="nx">n</span><span class="o">=</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span><span class="sr">/</span><span class="se">[</span><span class="sr">?&amp;</span><span class="se">]</span><span class="sr">flags=DisableWebResourceControls=true/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">DisableWebResourceControls already enabled!</span><span class="dl">"</span><span class="p">):</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nx">n</span><span class="o">+</span><span class="p">(</span><span class="sr">/</span><span class="se">\?</span><span class="sr">/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="dl">"</span><span class="s2">&amp;</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">?</span><span class="dl">"</span><span class="p">)</span><span class="o">+</span><span class="dl">"</span><span class="s2">flags=DisableWebResourceControls=true</span><span class="dl">"</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span><span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">message</span><span class="p">)}})();</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">**&amp;flags=DisableFormControl=&lt;controlName&gt;**</code>: disables the control on the form.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:(</span><span class="kd">function</span><span class="p">(){</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">e</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="o">&amp;&amp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nf">getGlobalContext</span><span class="p">();</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please navigate to CRM page</span><span class="dl">"</span><span class="p">);</span><span class="k">return</span><span class="p">}</span><span class="kd">var</span> <span class="nx">n</span><span class="o">=</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span><span class="sr">/</span><span class="se">[</span><span class="sr">?&amp;</span><span class="se">]</span><span class="sr">flags=DisableFormControl=crf4c_myWebReSrc/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">DisableFormControl already enabled!</span><span class="dl">"</span><span class="p">):</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nx">n</span><span class="o">+</span><span class="p">(</span><span class="sr">/</span><span class="se">\?</span><span class="sr">/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="dl">"</span><span class="s2">&amp;</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">?</span><span class="dl">"</span><span class="p">)</span><span class="o">+</span><span class="dl">"</span><span class="s2">flags=DisableFormControl=crf4c_myWebReSrc</span><span class="dl">"</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span><span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">message</span><span class="p">)}})();</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">**&amp;flags=DisableBusinessProcessFlow=true**</code>: disables all the business process flows in the form.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:(</span><span class="kd">function</span><span class="p">(){</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">e</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="o">&amp;&amp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nf">getGlobalContext</span><span class="p">();</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please navigate to CRM page</span><span class="dl">"</span><span class="p">);</span><span class="k">return</span><span class="p">}</span><span class="kd">var</span> <span class="nx">n</span><span class="o">=</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span><span class="sr">/</span><span class="se">[</span><span class="sr">?&amp;</span><span class="se">]</span><span class="sr">flags=DisableBusinessProcessFlow=true/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">DisableFormControl already enabled!</span><span class="dl">"</span><span class="p">):</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nx">n</span><span class="o">+</span><span class="p">(</span><span class="sr">/</span><span class="se">\?</span><span class="sr">/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="dl">"</span><span class="s2">&amp;</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">?</span><span class="dl">"</span><span class="p">)</span><span class="o">+</span><span class="dl">"</span><span class="s2">flags=DisableBusinessProcessFlow=true</span><span class="dl">"</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span><span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">message</span><span class="p">)}})();</span>
-</code></pre></div></div>
-
-<p>You can even combine all the flags into a single query parameter like the one below:</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&amp;</span><span class="nx">flags</span><span class="o">=</span><span class="nx">DisableFormHandlers</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span><span class="nx">DisableWebResourceControls</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span><span class="nx">DisableFormCommandbar</span><span class="o">=</span><span class="kc">true</span><span class="p">,</span><span class="nx">DisableBusinessProcessFlow</span><span class="o">=</span><span class="kc">true</span>
-</code></pre></div></div>
-
-<h2 id="troubleshooting">Troubleshooting</h2>
-
-<p>At times while debugging, we lack data and information about the application and the system. For that, we have to navigate to the URL: <code class="language-plaintext highlighter-rouge">https://myorg.crm.dynamics.crm/home/home_debug.aspx</code>.</p>
-
-<p>You can either bookmark it or use the below bookmarklet. But it will only work on CRM Online. You can find more insights about the application like Data Source, Component versions, Browser Version, User details, and Tenant ID.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:(</span><span class="kd">function</span><span class="p">(){</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">e</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="o">&amp;&amp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nf">getGlobalContext</span><span class="p">();</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">)</span><span class="k">return</span> <span class="k">void</span> <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please navigate to CRM page.</span><span class="dl">"</span><span class="p">);</span><span class="nb">window</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nf">getClientUrl</span><span class="p">()</span><span class="o">+</span><span class="dl">"</span><span class="s2">/home/home_debug.aspx</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">_blank</span><span class="dl">"</span><span class="p">)}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span><span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">message</span><span class="p">)}})();</span>
-</code></pre></div></div>
-
-<p>The below image refers to the snapshot of my application’s Debug Information.</p>
-
-<p><a href="/assets/images/063/img_10463fca4b.png"><img src="/assets/images/063/img_10463fca4b.png" alt="" /></a></p>
-
-<h2 id="diagnostics">Diagnostics</h2>
-
-<p>To diagnose the system and its performance, we can use the diagnostics page. You can get to know the specifications of the system. For that, we can use the URL: <code class="language-plaintext highlighter-rouge">https://myorg.crm.dynamics.crm/tools/diagnostics/diag.aspx</code>.</p>
-
-<p>And you can find the bookmarklet for that below:</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:(</span><span class="kd">function</span><span class="p">(){</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">e</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="o">&amp;&amp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nf">getGlobalContext</span><span class="p">();</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">)</span><span class="k">return</span> <span class="k">void</span> <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please navigate to CRM page.</span><span class="dl">"</span><span class="p">);</span><span class="nb">window</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nf">getClientUrl</span><span class="p">()</span><span class="o">+</span><span class="dl">"</span><span class="s2">/tools/diagnostics/diag.aspx</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">_blank</span><span class="dl">"</span><span class="p">)}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span><span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">message</span><span class="p">)}})();</span>
-</code></pre></div></div>
-
-<p>After clicking run, we can see the Status and Result of the run. Please refer to the below image.</p>
-
-<p><a href="/assets/images/063/img_3234ecaea7.pn"><img src="/assets/images/063/img_3234ecaea7.png" alt="" /></a></p>
-
-<h2 id="client-performance-center">Client Performance Center:</h2>
-
-<p>If you want to understand the performance of the form, you have to use the query parameter <code class="language-plaintext highlighter-rouge">&amp;perf=true</code> in the URL. I have created a bookmarklet for this too. You can get it from the below code.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">javascript</span><span class="p">:(</span><span class="kd">function</span><span class="p">(){</span><span class="k">try</span><span class="p">{</span><span class="kd">var</span> <span class="nx">e</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="o">&amp;&amp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">Xrm</span><span class="p">.</span><span class="nx">Utility</span><span class="p">.</span><span class="nf">getGlobalContext</span><span class="p">();</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Please navigate to CRM page</span><span class="dl">"</span><span class="p">);</span><span class="k">return</span><span class="p">}</span><span class="kd">var</span> <span class="nx">n</span><span class="o">=</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span><span class="sr">/</span><span class="se">[</span><span class="sr">?&amp;</span><span class="se">]</span><span class="sr">perf=true/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">DisableFormControl already enabled!</span><span class="dl">"</span><span class="p">):</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nx">n</span><span class="o">+</span><span class="p">(</span><span class="sr">/</span><span class="se">\?</span><span class="sr">/</span><span class="p">.</span><span class="nf">test</span><span class="p">(</span><span class="nx">n</span><span class="p">)?</span><span class="dl">"</span><span class="s2">&amp;</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">?</span><span class="dl">"</span><span class="p">)</span><span class="o">+</span><span class="dl">"</span><span class="s2">perf=true</span><span class="dl">"</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error: </span><span class="dl">"</span><span class="o">+</span><span class="nx">t</span><span class="p">.</span><span class="nx">message</span><span class="p">)}})();</span>
-</code></pre></div></div>
-
-<p>It will be like the below image and you can find some interesting insights from this shortcut.</p>
-
-<p><a href="/assets/images/063/img_5f14647988.png"><img src="/assets/images/063/img_5f14647988.png" alt="" /></a></p>
-
-<h2 id="references">References:</h2>
-
-<ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[Troubleshoot form issues in model-driven apps (Power Apps</td>
-          <td>Microsoft Learn)](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/troubleshoot-forms)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li><a href="https://readyxrm.blog/2016/10/19/crm-debug-info-from-your-browser/">CRM Debug Info from your Browser – The ReadyXRM Blog by Nick Doelman</a></li>
-  <li><a href="https://crmtipoftheday.com/1160/bring-up-client-performance-center/">Tip #1160: Bring up client performance center – Power Platform &amp; Dynamics CRM Tip Of The Day</a></li>
-  <li><a href="https://www.tamilarasu.blog/2025/04/unlock-hidden-superpowers-in-dynamics-crm-url-tweaks.html">Unlock Hidden Superpowers in Dynamics 365 CRM with Simple URL Tweaks</a></li>
-</ul>
-
-<p>Have a great day!</p>]]></content><author><name>Tamilarasu Arunachalam</name></author><category term="Dynamics 365 CE" /><summary type="html"><![CDATA[There is a quote about debugging from Brian Kernighan (Author and Co-contributor for Unix): Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it. – *Brian Kernighan*]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/063/img_e3160e0be0.gif" /><media:content medium="image" url="http://localhost:4000/assets/images/063/img_e3160e0be0.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to Customize the Sign in page in Power Pages Easily</title><link href="http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily.html" rel="alternate" type="text/html" title="How to Customize the Sign in page in Power Pages Easily" /><published>2026-03-30T02:41:00+05:30</published><updated>2026-03-30T02:41:00+05:30</updated><id>http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily</id><content type="html" xml:base="http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily.html"><![CDATA[<p>Power Pages allows users to sign in using different providers like Entra ID, Google, LinkedIn, and others, which is great for authentication flexibility, but the default sign in page UI is quite basic and not easy to customize. Many developers struggle to match the login experience with their branding or modern UI expectations, so in this blog, we will see a simple and practical way to customize the sign in page by using content snippets, hiding the default components, and building a clean custom login page using Bootstrap.</p>
-
-<h2 id="table-of-contents">Table of Contents</h2>
-
-<ul>
-  <li><a href="#table-of-contents">Table of Contents</a></li>
-  <li><a href="#add-a-content-snippet">Add a Content Snippet</a></li>
-  <li><a href="#hide-the-existing-components">Hide the Existing Components</a></li>
-  <li><a href="#design-a-new-login-page">Design a New Login Page</a></li>
-  <li><a href="#reference">Reference</a></li>
-</ul>
-
-<h2 id="add-a-content-snippet">Add a Content Snippet</h2>
-
-<p>In Power Pages, the default sign in page is not directly available as a normal web page or template, so we cannot edit it like other pages. To customize it, we need to create a Content Snippet with the correct name(<code class="language-plaintext highlighter-rouge">Account/SignIn/PageCopy</code>) so that Power Pages uses it for the sign in page.</p>
-
-<p><a href="/assets/images/062/img_ce4af0bcbe.png"><img src="/assets/images/062/img_ce4af0bcbe.png" alt="" /></a></p>
-
-<p>Go to the Power Pages Management App and create a new Content Snippet. Make sure the name matches the sign in page snippet and also ensure the required site settings for authentication are already configured.</p>
-
-<p><a href="/assets/images/062/img_933776f92c.png"><img src="/assets/images/062/img_933776f92c.png" alt="" /></a></p>
-
-<p>Once you save it, you can open and edit it from the HTML editor or through Visual Studio Code. This is where we will add our custom UI.</p>
-
-<h2 id="hide-the-existing-components">Hide the Existing Components</h2>
-
-<p>Even after adding the content snippet, the default login UI will still appear on the page. To fully replace it, we need to hide those existing elements.</p>
-
-<p>We can do this by adding simple CSS that targets the default components and hides them. This step ensures that only our custom design is visible to the users. Below is the CSS to hide the default components.</p>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.nav-account</span> <span class="p">{</span>
-    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span> <span class="cp">!important</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nf">#mainContent</span> <span class="nc">.row</span><span class="nd">:nth-child</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="p">{</span>
-    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span> <span class="cp">!important</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="design-a-new-login-page">Design a New Login Page</h2>
-
-<p>After hiding the default UI, we can create our own login page design. Power Pages supports Bootstrap, so it becomes easy to build a responsive and clean layout.</p>
-
-<p>You can design a simple login form with username, password fields, and buttons. You can also add external login options like Google or Entra ID inside your custom UI.</p>
-
-<p>This way, you keep the same functionality but improve the overall look and user experience.</p>
-
-<p><a href="/assets/images/062/img_f5ff876fa7.png"><img src="/assets/images/062/img_f5ff876fa7.png" alt="" /></a></p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/685058eb12ef6d6680cdea913378a756.js"></script>
-
-<h2 id="reference">Reference</h2>
-
-<ul>
-  <li><a href="https://ulrikke.akerbak.com/2020/02/16/customize-the-sign-in-and-registration-page-in-power-app-portals/">Customize the sign-in and registration page in Power App Portals — Ulrikke Akerbæk</a></li>
-  <li><a href="https://www.inogic.com/blog/2024/07/personalize-your-power-pages-portal-with-custom-sign-out-redirects/">Personalize Your Power Pages Portal with Custom Sign-Out Redirects — Microsoft Dynamics 365 CRM Tips and Tricks</a></li>
-  <li><a href="https://www.tamilarasu.blog/2025/12/set-up-google-authentication-in-power-pages.html">How to Set Up Google Authentication in Power Pages (Beginner Guide)?</a></li>
-</ul>
-
-<p>Have a great day!</p>]]></content><author><name>Tamilarasu Arunachalam</name></author><category term="Power Pages" /><summary type="html"><![CDATA[Power Pages allows users to sign in using different providers like Entra ID, Google, LinkedIn, and others, which is great for authentication flexibility, but the default sign in page UI is quite basic and not easy to customize. Many developers struggle to match the login experience with their branding or modern UI expectations, so in this blog, we will see a simple and practical way to customize the sign in page by using content snippets, hiding the default components, and building a clean custom login page using Bootstrap.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/062/img_478dd1953a.gif" /><media:content medium="image" url="http://localhost:4000/assets/images/062/img_478dd1953a.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Tamilarasu Arunachalam</title>
+    <link>http://localhost:4000/</link>
+    <description>Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Jun 2026 21:09:00 +0530</lastBuildDate>
+    <generator>Jekyll RSS</generator>
+    
+    <item>
+      <title>How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript</title>
+      <link>http://localhost:4000/play-sound-effects-on-validation-errors-d365-crm-js.html</link>
+      <guid isPermaLink="true">http://localhost:4000/play-sound-effects-on-validation-errors-d365-crm-js.html</guid>
+      <pubDate>Sun, 21 Jun 2026 11:11:00 +0530</pubDate>
+      <description>&lt;p&gt;A few days ago, I came across a trending tweet where someone asked for a VS Code extension that plays a loud “Faaaaaaaaah” sound whenever an error occurs while coding.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Why AI Pair Programming Will Become a Must for All Developers in 2026</title>
+      <link>http://localhost:4000/why-ai-pair-programming-must-in-2025.html</link>
+      <guid isPermaLink="true">http://localhost:4000/why-ai-pair-programming-must-in-2025.html</guid>
+      <pubDate>Tue, 16 Jun 2026 23:11:00 +0530</pubDate>
+      <description>&lt;h2 id=&quot;the-shift-already-happening-in-dev-teams&quot;&gt;The Shift Already Happening in Dev Teams&lt;/h2&gt;
+
+&lt;p&gt;Not long ago, pair programming meant pulling up a chair beside a colleague, sharing a screen, and thinking out loud together. It was powerful - but expensive in time and coordination. Then AI changed the equation.&lt;/p&gt;
+
+&lt;p&gt;In 2025, &lt;strong&gt;GitHub Copilot alone reported over 1.8 million paid subscribers&lt;/strong&gt;, and surveys from Stack Overflow showed that &lt;strong&gt;62% of developers were already using or planning to use AI coding tools&lt;/strong&gt;. By 2026, that number isn’t just growing - it’s becoming the baseline expectation in most engineering teams.&lt;/p&gt;
+
+&lt;p&gt;AI pair programming isn’t a productivity hack anymore. It’s becoming a professional standard.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-ai-pair-programming-really&quot;&gt;What Is AI Pair Programming, Really?&lt;/h2&gt;
+
+&lt;p&gt;At its core, &lt;strong&gt;AI pair programming&lt;/strong&gt; is the practice of working alongside an AI model - in real time - to write, debug, refactor, and review code. Think of it less like autocomplete and more like having a brilliant junior developer who never gets tired, never gets defensive about feedback, and has read every documentation page ever written.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Build a Smart Approval System with Prediction Model in  Power Automate</title>
+      <link>http://localhost:4000/smart-approval-system-with-prediction-model-power-automate.html</link>
+      <guid isPermaLink="true">http://localhost:4000/smart-approval-system-with-prediction-model-power-automate.html</guid>
+      <pubDate>Sun, 14 Jun 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;In this AI era, traditional approvals no longer make sense. Approvals play a major role everywhere, but they often require follow-ups and reminders to get things sorted. To address this, I planned to build a smart approval system using Dataverse, AI Builder, and Power Automate. This is a small prototype, but it can be extended to a larger solution.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Why Moosend Is the Best Email Marketing Platform for Small Businesses and Growing Brands</title>
+      <link>http://localhost:4000/why-moosend-best-email-platform.html</link>
+      <guid isPermaLink="true">http://localhost:4000/why-moosend-best-email-platform.html</guid>
+      <pubDate>Tue, 09 Jun 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Every business starts email marketing the same way - full of optimism, a growing contact list, and a simple goal: stay connected with customers. But somewhere between navigating confusing dashboards, hitting feature paywalls, and watching monthly costs climb as the subscriber list grows, that optimism fades.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How I Automated Chrome Extension Publishing with GitHub Actions</title>
+      <link>http://localhost:4000/automate-chrome-extension-publishing-with-github-actions.html</link>
+      <guid isPermaLink="true">http://localhost:4000/automate-chrome-extension-publishing-with-github-actions.html</guid>
+      <pubDate>Tue, 02 Jun 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Every time I shipped a new version of my Chrome extension, I dreaded the same ritual - bump the version, zip the build folder, log into the Chrome Web Store Developer Dashboard, upload the file, fill in the release notes, and hit publish. It sounds simple, but do it a dozen times and you start wondering: &lt;em&gt;why am I doing this manually?&lt;/em&gt;
+That’s when I wired up GitHub Actions to handle it for me. Now every merge to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; ships my extension automatically. Here’s exactly how I did it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How I Built a Stunning Admin Dashboard in Power Pages?</title>
+      <link>http://localhost:4000/built-stunning-admin-dashboard-power-pages.html</link>
+      <guid isPermaLink="true">http://localhost:4000/built-stunning-admin-dashboard-power-pages.html</guid>
+      <pubDate>Sun, 24 May 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;When I started building a hospital management app as a weekend project, I never imagined the frontend would become the most exciting part. I set up Power Pages as an external-facing portal - patients could book appointments, staff could track them, and everyone had what they needed in one place. But then I looked at the default design and thought: &lt;em&gt;this has to change.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</title>
+      <link>http://localhost:4000/bts-of-export-to-excel-model-driven-apps.html</link>
+      <guid isPermaLink="true">http://localhost:4000/bts-of-export-to-excel-model-driven-apps.html</guid>
+      <pubDate>Sun, 17 May 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;I recently worked on something where I had to use &lt;strong&gt;Advanced Find&lt;/strong&gt; or filter views every time while exporting weekly or monthly reports. Although we can create &lt;strong&gt;personal views&lt;/strong&gt; to make the data sorted, I was curious to know how the filtered data actually gets exported.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?</title>
+      <link>http://localhost:4000/hide-sensitive-data-in-power-automate.html</link>
+      <guid isPermaLink="true">http://localhost:4000/hide-sensitive-data-in-power-automate.html</guid>
+      <pubDate>Sun, 26 Apr 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;There was a moment while debugging a Power Automate flow when something unexpected showed up. Instead of just checking an error, the entire API request and response data were visible in the run history. It included sensitive details that should never be exposed so easily. That’s when the importance of secure inputs and outputs became very real.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</title>
+      <link>http://localhost:4000/unit-test-javascript-using-qunit-d365-crm.html</link>
+      <guid isPermaLink="true">http://localhost:4000/unit-test-javascript-using-qunit-d365-crm.html</guid>
+      <pubDate>Sun, 19 Apr 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing &lt;strong&gt;unit testing&lt;/strong&gt;. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Add a Favicon in Power Pages?</title>
+      <link>http://localhost:4000/how-to-add-a-favicon-in-power-pages.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-add-a-favicon-in-power-pages.html</guid>
+      <pubDate>Sun, 12 Apr 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;When you open a website in your browser, one small detail quietly helps you recognize it instantly. That tiny icon shown in the browser tab, bookmarks, history, and address bar is called a &lt;strong&gt;favicon&lt;/strong&gt;. The word favicon stands for “favorite icon,” and even though it is small, it plays a big role in improving &lt;strong&gt;user experience&lt;/strong&gt; and maintaining &lt;strong&gt;brand consistency&lt;/strong&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</title>
+      <link>http://localhost:4000/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html</link>
+      <guid isPermaLink="true">http://localhost:4000/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html</guid>
+      <pubDate>Mon, 06 Apr 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;There is a quote about debugging from Brian Kernighan (Author and Co-contributor for Unix):&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.    – *Brian Kernighan*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Customize the Sign in page in Power Pages Easily</title>
+      <link>http://localhost:4000/customize-signin-page-power-pages.html</link>
+      <guid isPermaLink="true">http://localhost:4000/customize-signin-page-power-pages.html</guid>
+      <pubDate>Mon, 30 Mar 2026 02:41:00 +0530</pubDate>
+      <description>&lt;p&gt;Power Pages allows users to sign in using different providers like Entra ID, Google, LinkedIn, and others, which is great for authentication flexibility, but the default sign in page UI is quite basic and not easy to customize. Many developers struggle to match the login experience with their branding or modern UI expectations, so in this blog, we will see a simple and practical way to customize the sign in page by using content snippets, hiding the default components, and building a clean custom login page using Bootstrap.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Implement Data Summarization API for Dataverse in Power Pages</title>
+      <link>http://localhost:4000/data-summarization-api-power-pages.html</link>
+      <guid isPermaLink="true">http://localhost:4000/data-summarization-api-power-pages.html</guid>
+      <pubDate>Sun, 15 Mar 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;In today’s AI-driven world, summarizing information has become incredibly easy. We can summarize long articles, web pages, books, and even lengthy videos within seconds using AI tools. Microsoft is gradually bringing similar AI capabilities into the Power Platform ecosystem.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide</title>
+      <link>http://localhost:4000/client-api-power-pages-crud-guide.html</link>
+      <guid isPermaLink="true">http://localhost:4000/client-api-power-pages-crud-guide.html</guid>
+      <pubDate>Sun, 15 Feb 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;If you have worked with Power Pages, you probably got stuck at some point using webapi.safeAjax for Dataverse operations. Microsoft introduced the $pages Client API to simplify how developers interact with forms, authentication, Dataverse data, and multilingual configuration directly from custom HTML and JavaScript pages.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Integrate Power Pages with Firebase Realtime Database with Example CRUD</title>
+      <link>http://localhost:4000/integrate-power-pages-with-firebase-example-crud.html</link>
+      <guid isPermaLink="true">http://localhost:4000/integrate-power-pages-with-firebase-example-crud.html</guid>
+      <pubDate>Sun, 11 Jan 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;For a long time, I have felt that Power Pages is capable of doing much more than what we usually limit it to. Most of the time, it stays tightly coupled with Dataverse and SharePoint, even though it has the flexibility to work beyond that boundary.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Server Logic in Power Pages Explained with Real Time API Example</title>
+      <link>http://localhost:4000/server-logic-power-pages-with-example.html</link>
+      <guid isPermaLink="true">http://localhost:4000/server-logic-power-pages-with-example.html</guid>
+      <pubDate>Sun, 04 Jan 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Power Pages is commonly used to build external websites on top of Dataverse. While it works well for forms, lists, and UI customization, handling sensitive logic and third-party APIs has always been a challenge.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Translate Metadata and Web Resources in Dynamics 365 CE</title>
+      <link>http://localhost:4000/translate-metadata-and-web-resources-d365-crm.html</link>
+      <guid isPermaLink="true">http://localhost:4000/translate-metadata-and-web-resources-d365-crm.html</guid>
+      <pubDate>Sun, 21 Dec 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;If you have ever worked on a Dynamics 365 CE or Power Apps model-driven app that serves users from multiple countries, you already know how important language support is. Most of us start confidently because Dynamics 365 handles translations for standard tables automatically. But the moment you introduce custom tables, JavaScript alerts, or HTML web resources, things start getting confusing. If you are wondering, &lt;em&gt;“How do I translate custom web resource content properly?”&lt;/em&gt; - you are not alone. In this blog, I’ll walk you through practical and supported ways to handle translations in Dynamics 365 CE.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Set Up Google Authentication in Power Pages (Beginner Guide)?</title>
+      <link>http://localhost:4000/google-authentication-in-power-pages-guide.html</link>
+      <guid isPermaLink="true">http://localhost:4000/google-authentication-in-power-pages-guide.html</guid>
+      <pubDate>Sun, 07 Dec 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Power Pages, being a Microsoft-hosted low-code portal platform, gives us multiple authentication options out of the box - including Azure AD and External Authentication. But what many makers don’t realize is that Power Pages also supports popular OAuth 2.0 identity providers like &lt;strong&gt;Google, GitHub, Facebook, and LinkedIn&lt;/strong&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps</title>
+      <link>http://localhost:4000/show-hide-subgrid-ribbon-buttons-of-same-table-in-d365-crm.html</link>
+      <guid isPermaLink="true">http://localhost:4000/show-hide-subgrid-ribbon-buttons-of-same-table-in-d365-crm.html</guid>
+      <pubDate>Sun, 30 Nov 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;While working on one of my weekend Power Apps Model-Driven Apps projects, I ran into an interesting requirement. I had &lt;strong&gt;three subgrids of the same child entity&lt;/strong&gt; placed inside the parent entity’s main form. Each subgrid needed to show a drop-down command with buttons — but the tricky part was:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?</title>
+      <link>http://localhost:4000/edit-child-and-parent-records-directly-within-forms-d365-crm.html</link>
+      <guid isPermaLink="true">http://localhost:4000/edit-child-and-parent-records-directly-within-forms-d365-crm.html</guid>
+      <pubDate>Sun, 23 Nov 2025 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Recently, while working on a customization, a simple question hit me — &lt;strong&gt;“Can we edit related entity records directly inside the parent form in Dynamics 365 CRM?”&lt;/strong&gt; After checking, the answer was a clear yes. Here is how you can do it for both 1:N and N:1 relationships.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

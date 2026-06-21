@@ -1,0 +1,465 @@
+[
+  
+    {
+      "title"    : "How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/play-sound-effects-on-validation-errors-d365-crm-js.html",
+      "date"     : "June 21, 2026"
+    } ,
+  
+    {
+      "title"    : "Why AI Pair Programming Will Become a Must for All Developers in 2026",
+      "category" : "AI Programming",
+      "url"      : "/why-ai-pair-programming-must-in-2025.html",
+      "date"     : "June 16, 2026"
+    } ,
+  
+    {
+      "title"    : "Build a Smart Approval System with Prediction Model in  Power Automate",
+      "category" : "Power Automate",
+      "url"      : "/smart-approval-system-with-prediction-model-power-automate.html",
+      "date"     : "June 14, 2026"
+    } ,
+  
+    {
+      "title"    : "Why Moosend Is the Best Email Marketing Platform for Small Businesses and Growing Brands",
+      "category" : "Email Marketing",
+      "url"      : "/why-moosend-best-email-platform.html",
+      "date"     : "June 9, 2026"
+    } ,
+  
+    {
+      "title"    : "How I Automated Chrome Extension Publishing with GitHub Actions",
+      "category" : "Extension Development",
+      "url"      : "/automate-chrome-extension-publishing-with-github-actions.html",
+      "date"     : "June 2, 2026"
+    } ,
+  
+    {
+      "title"    : "How I Built a Stunning Admin Dashboard in Power Pages?",
+      "category" : "Power Pages",
+      "url"      : "/built-stunning-admin-dashboard-power-pages.html",
+      "date"     : "May 24, 2026"
+    } ,
+  
+    {
+      "title"    : "Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/bts-of-export-to-excel-model-driven-apps.html",
+      "date"     : "May 17, 2026"
+    } ,
+  
+    {
+      "title"    : "How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?",
+      "category" : "Power Automate",
+      "url"      : "/hide-sensitive-data-in-power-automate.html",
+      "date"     : "April 26, 2026"
+    } ,
+  
+    {
+      "title"    : "How to Unit Test Dynamics 365 CRM JavaScript using QUnit?",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/unit-test-javascript-using-qunit-d365-crm.html",
+      "date"     : "April 19, 2026"
+    } ,
+  
+    {
+      "title"    : "How to Add a Favicon in Power Pages?",
+      "category" : "Power Pages",
+      "url"      : "/how-to-add-a-favicon-in-power-pages.html",
+      "date"     : "April 12, 2026"
+    } ,
+  
+    {
+      "title"    : "Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html",
+      "date"     : "April 6, 2026"
+    } ,
+  
+    {
+      "title"    : "How to Customize the Sign in page in Power Pages Easily",
+      "category" : "Power Pages",
+      "url"      : "/customize-signin-page-power-pages.html",
+      "date"     : "March 30, 2026"
+    } ,
+  
+    {
+      "title"    : "Implement Data Summarization API for Dataverse in Power Pages",
+      "category" : "Power Pages",
+      "url"      : "/data-summarization-api-power-pages.html",
+      "date"     : "March 15, 2026"
+    } ,
+  
+    {
+      "title"    : "Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide",
+      "category" : "Power Pages",
+      "url"      : "/client-api-power-pages-crud-guide.html",
+      "date"     : "February 15, 2026"
+    } ,
+  
+    {
+      "title"    : "How to Integrate Power Pages with Firebase Realtime Database with Example CRUD",
+      "category" : "Power Pages",
+      "url"      : "/integrate-power-pages-with-firebase-example-crud.html",
+      "date"     : "January 11, 2026"
+    } ,
+  
+    {
+      "title"    : "Server Logic in Power Pages Explained with Real Time API Example",
+      "category" : "Power Pages",
+      "url"      : "/server-logic-power-pages-with-example.html",
+      "date"     : "January 4, 2026"
+    } ,
+  
+    {
+      "title"    : "How to Translate Metadata and Web Resources in Dynamics 365 CE",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/translate-metadata-and-web-resources-d365-crm.html",
+      "date"     : "December 21, 2025"
+    } ,
+  
+    {
+      "title"    : "How to Set Up Google Authentication in Power Pages (Beginner Guide)?",
+      "category" : "Power Pages",
+      "url"      : "/google-authentication-in-power-pages-guide.html",
+      "date"     : "December 7, 2025"
+    } ,
+  
+    {
+      "title"    : "Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/show-hide-subgrid-ribbon-buttons-of-same-table-in-d365-crm.html",
+      "date"     : "November 30, 2025"
+    } ,
+  
+    {
+      "title"    : "How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/edit-child-and-parent-records-directly-within-forms-d365-crm.html",
+      "date"     : "November 23, 2025"
+    } ,
+  
+    {
+      "title"    : "Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/associate-disassociate-records-using-javascript-webapi-d365.html",
+      "date"     : "November 2, 2025"
+    } ,
+  
+    {
+      "title"    : "How to Configure and Use Tabbed Sections in Model-Driven Apps?",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/how-to-configure-and-use-tabbed-sections-in-model-driven-apps.html",
+      "date"     : "September 28, 2025"
+    } ,
+  
+    {
+      "title"    : "How to Open Multiple Workspace Tabs in Dynamics 365 Customer Service Using JavaScript?",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/how-to-open-multiple-workspace-tabs-in-dynamics-365-customer-service-using-javascript.html",
+      "date"     : "July 27, 2025"
+    } ,
+  
+    {
+      "title"    : "How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?",
+      "category" : "Power Automate",
+      "url"      : "/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html",
+      "date"     : "July 20, 2025"
+    } ,
+  
+    {
+      "title"    : "Quick View Forms in Model Driven Apps: What, Why, and How to Use Them?",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/quick-view-forms-in-model-driven-apps-what-why-and-how-to-use-them.html",
+      "date"     : "July 6, 2025"
+    } ,
+  
+    {
+      "title"    : "How to Revert to the Classic UI in Power Apps Model-Driven Apps (Even After the Toggle Is Gone)?",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/how-to-revert-to-the-classic-ui-in-power-apps-model-driven-apps-even-after-the-toggle-is-gone.html",
+      "date"     : "June 29, 2025"
+    } ,
+  
+    {
+      "title"    : "How to Filter Subgrid Based on Parent Record Fields on Tab Switch in Model-Driven Apps?",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/how-to-filter-subgrid-based-on-parent-record-fields-on-tab-switch-in-model-driven-apps.html",
+      "date"     : "June 22, 2025"
+    } ,
+  
+    {
+      "title"    : "Safely Handle Async Operations Before Save in Model-Driven Power Apps",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/safely-handle-async-operations-before-save-in-model-driven-power-apps.html",
+      "date"     : "May 25, 2025"
+    } ,
+  
+    {
+      "title"    : "What Is a Retry Policy in Power Automate (And Why It Matters)?",
+      "category" : "Power Automate",
+      "url"      : "/why-retry-policy-in-power-automate-matters.html",
+      "date"     : "May 4, 2025"
+    } ,
+  
+    {
+      "title"    : "Unlock Hidden Superpowers in Dynamics 365 CRM with Simple URL Tweaks",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/unlock-hidden-superpowers-in-dynamics-365-crm-with-simple-url-tweaks.html",
+      "date"     : "April 13, 2025"
+    } ,
+  
+    {
+      "title"    : "Clone a record in Dynamics 365 CE using JavaScript",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/clone-a-record-in-dynamics-365-ce-using-javascript.html",
+      "date"     : "February 9, 2025"
+    } ,
+  
+    {
+      "title"    : "Inline Documents Preview in Power Pages using JavaScript",
+      "category" : "Power Pages",
+      "url"      : "/inline-documents-preview-in-power-pages-using-javascript.html",
+      "date"     : "January 26, 2025"
+    } ,
+  
+    {
+      "title"    : "Making XRM Web API Calls Synchronous with JavaScript in Dynamics 365 CRM",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/making-xrm-web-api-calls-synchronous-with-javascript-in-dynamics-365-crm.html",
+      "date"     : "December 8, 2024"
+    } ,
+  
+    {
+      "title"    : "Unlocking the Power of Side Panes in Model-Driven Apps",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/unlocking-the-power-of-side-panes-in-model-driven-apps.html",
+      "date"     : "September 15, 2024"
+    } ,
+  
+    {
+      "title"    : "Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html",
+      "date"     : "June 30, 2024"
+    } ,
+  
+    {
+      "title"    : "Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html",
+      "date"     : "June 9, 2024"
+    } ,
+  
+    {
+      "title"    : "Fetching large number of data from Dataverse Connector in Power Automate",
+      "category" : "Power Automate",
+      "url"      : "/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html",
+      "date"     : "May 19, 2024"
+    } ,
+  
+    {
+      "title"    : "Building a PDF Preview feature inside Dynamics 365 CE with JScript",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/building-a-pdf-preview-feature-inside-dynamics-365-ce-with-jscript.html",
+      "date"     : "January 27, 2024"
+    } ,
+  
+    {
+      "title"    : "Field Mapping between Entities in Dynamics 365 CE",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/field-mapping-between-entities-in-dynamics-365-ce.html",
+      "date"     : "January 10, 2024"
+    } ,
+  
+    {
+      "title"    : "Automatically Recalculate Rollup fields using JavaScript in Dynamics 365 CE",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/automatically-recalculate-rollup-fields-using-javascript-in-dynamics-365-ce.html",
+      "date"     : "December 30, 2023"
+    } ,
+  
+    {
+      "title"    : "Invoke a Power Automate flow synchronously from a Model Driven App using Actions",
+      "category" : "Power Automate",
+      "url"      : "/invoke-a-power-automate-flow-synchronously-from-a-model-driven-app-using-actions.html",
+      "date"     : "December 10, 2023"
+    } ,
+  
+    {
+      "title"    : "What is Tracked Properties in Power Automate?",
+      "category" : "Power Automate",
+      "url"      : "/what-is-tracked-properties-in-power-automate.html",
+      "date"     : "September 17, 2023"
+    } ,
+  
+    {
+      "title"    : "How to use Progress Indicators in Model Driven Apps?",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/how-to-use-progress-indicators-in-model-driven-apps.html",
+      "date"     : "August 26, 2023"
+    } ,
+  
+    {
+      "title"    : "Simplifying the Upsert Operation in Dataverse",
+      "category" : "Dataverse",
+      "url"      : "/simplifying-the-upsert-operation-in-dataverse.html",
+      "date"     : "August 13, 2023"
+    } ,
+  
+    {
+      "title"    : "Dependent option sets using JavaScript in Model Driven Apps",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/dependent-option-sets-using-javascript-in-model-driven-apps.html",
+      "date"     : "July 25, 2023"
+    } ,
+  
+    {
+      "title"    : "Relate and Unrelate Dataverse rows using Power Automate",
+      "category" : "Power Automate",
+      "url"      : "/relate-and-unrelate-dataverse-rows-using-power-automate.html",
+      "date"     : "July 9, 2023"
+    } ,
+  
+    {
+      "title"    : "Debugging a Dynamics 365 CRM Plugin",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/debugging-a-dynamics-365-crm-plugin.html",
+      "date"     : "July 2, 2023"
+    } ,
+  
+    {
+      "title"    : "Send a Email in Dynamics 365 CRM using C# Plugins",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/send-a-email-in-dynamics-365-crm-using-c-plugins.html",
+      "date"     : "June 25, 2023"
+    } ,
+  
+    {
+      "title"    : "Perform a changeset request in Dataverse Connector | Power Automate",
+      "category" : "Power Automate",
+      "url"      : "/perform-a-changeset-request-in-dataverse-connector-power-automate.html",
+      "date"     : "June 18, 2023"
+    } ,
+  
+    {
+      "title"    : "How to create Custom Connector for Power Automate from Scratch",
+      "category" : "Power Automate",
+      "url"      : "/how-to-create-custom-connector-for-power-automate-from-scratch.html",
+      "date"     : "June 12, 2023"
+    } ,
+  
+    {
+      "title"    : "Fetch Optionset Labels from String Maps Table using Flow or JavaScript",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/fetch-optionset-labels-from-string-maps-table-using-flow-or-javascript.html",
+      "date"     : "June 12, 2023"
+    } ,
+  
+    {
+      "title"    : "Import Price List Items to Dynamics 365 CE using Data Imports",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/import-price-list-items-to-dynamics-365-ce-using-data-imports.html",
+      "date"     : "May 28, 2023"
+    } ,
+  
+    {
+      "title"    : "Import records with alternate lookup references in Dynamics 365 CE",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/import-records-with-alternate-lookup-references-in-dynamics-365-ce.html",
+      "date"     : "May 20, 2023"
+    } ,
+  
+    {
+      "title"    : "Deactivate Duplicate Records using Plugin and Custom Action in Dynamics CRM",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/deactivate-duplicate-records-using-plugin-and-custom-action-in-dynamics-crm.html",
+      "date"     : "May 9, 2023"
+    } ,
+  
+    {
+      "title"    : "Send In-app Notifications to Model Driven App from Power Automate",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/send-in-app-notifications-to-model-driven-app-from-power-automate.html",
+      "date"     : "May 7, 2023"
+    } ,
+  
+    {
+      "title"    : "Get Selected Records from the Grid using Command Button in JavaScript",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/get-selected-records-from-the-grid-using-command-button-in-javascript.html",
+      "date"     : "April 25, 2023"
+    } ,
+  
+    {
+      "title"    : "Show and Hide sections based on Multi-Select Option Set using JavaScript",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/show-and-hide-sections-based-on-multi-select-option-set-using-javascript.html",
+      "date"     : "April 23, 2023"
+    } ,
+  
+    {
+      "title"    : "Plugins and Event Execution Pipeline in Dataverse",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/plugins-and-event-execution-pipeline-in-dataverse.html",
+      "date"     : "April 16, 2023"
+    } ,
+  
+    {
+      "title"    : "Environment Variables in Dataverse and How to use it in Power Automate Flow",
+      "category" : "Power Automate",
+      "url"      : "/environment-variables-in-dataverse-and-how-to-use-it-in-power-automate-flow.html",
+      "date"     : "April 9, 2023"
+    } ,
+  
+    {
+      "title"    : "Third-party map integration with geocoding in Model Driven App - Power Apps",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/third-party-map-integration-with-geocoding-in-model-driven-app-power-apps.html",
+      "date"     : "February 16, 2023"
+    } ,
+  
+    {
+      "title"    : "Build a Single Page Application with MSAL.js",
+      "category" : "Azure Active Directory",
+      "url"      : "/build-a-single-page-application-with-msal-js.html",
+      "date"     : "January 15, 2023"
+    } ,
+  
+    {
+      "title"    : "Connect the Azure AD App for Business Central with Postman using OAuth 2.0 Authentication",
+      "category" : "Azure Active Directory",
+      "url"      : "/connect-the-azure-ad-app-for-business-central-with-postman-using-oauth-2-0-authentication.html",
+      "date"     : "December 31, 2022"
+    } ,
+  
+    {
+      "title"    : "Register an App in Azure Active Directory for Business Central",
+      "category" : "Azure Active Directory",
+      "url"      : "/register-an-app-in-azure-active-directory-for-business-central.html",
+      "date"     : "December 23, 2022"
+    } ,
+  
+    {
+      "title"    : "Auto Populate lookup based on the other lookup field in Power Apps",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/auto-populate-lookup-based-on-the-other-lookup-field-in-power-apps.html",
+      "date"     : "December 11, 2022"
+    } ,
+  
+    {
+      "title"    : "Get all the options from the Option set using Power Automate",
+      "category" : "Power Automate",
+      "url"      : "/get-all-the-options-from-the-option-set-using-power-automate.html",
+      "date"     : "December 3, 2022"
+    } ,
+  
+    {
+      "title"    : "Add custom icons to all records of a view based on a condition in PowerApps",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/add-custom-icons-to-all-records-of-a-view-based-on-a-condition-in-powerapps.html",
+      "date"     : "November 28, 2022"
+    } 
+  
+]

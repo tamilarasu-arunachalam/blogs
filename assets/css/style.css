@@ -725,3 +725,9 @@ pre code.hljs {
     opacity: 1;
     color: var(--accent);
 }
+
+/* Remove blue border on search input focus */
+#search-input:focus {
+    box-shadow: none !important;
+    border-color: var(--bs-dark) !important;
+}

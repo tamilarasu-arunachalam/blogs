@@ -10,29 +10,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
   <!-- Begin Jekyll SEO tag v2.9.0 -->
-<title>How to Unit Test Dynamics 365 CRM JavaScript using QUnit? | Tamilarasu Arunachalam</title>
+<title>Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps! | Tamilarasu Arunachalam</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" />
+<meta property="og:title" content="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing unit testing. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step." />
-<meta name="twitter:description" property="og:description" content="A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing unit testing. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step." />
-<link rel="canonical" href="http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" />
-<meta property="og:url" content="http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" />
+<meta name="description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<meta name="twitter:description" property="og:description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<link rel="canonical" href="http://localhost:4000/bts-of-export-to-excel-model-driven-apps.html" />
+<meta property="og:url" content="http://localhost:4000/bts-of-export-to-excel-model-driven-apps.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
-<meta property="og:image" content="http://localhost:4000/assets/images/065/img_508a786ff1.gif" />
+<meta property="og:image" content="http://localhost:4000/assets/images/067/img_81152b8845.gif" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-04-19T23:11:00+05:30" />
-<meta property="article:modified_time" content="2026-04-19T23:11:00+05:30" />
+<meta property="article:published_time" content="2026-05-17T23:11:00+05:30" />
+<meta property="article:modified_time" content="2026-05-17T23:11:00+05:30" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:4000/assets/images/065/img_508a786ff1.gif" />
-<meta name="twitter:title" content="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/067/img_81152b8845.gif" />
+<meta name="twitter:title" content="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" />
 <meta name="twitter:site" content="@tamilarasu_av" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-04-19T23:11:00+05:30","datePublished":"2026-04-19T23:11:00+05:30","description":"A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing unit testing. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.","headline":"How to Unit Test Dynamics 365 CRM JavaScript using QUnit?","image":"http://localhost:4000/assets/images/065/img_508a786ff1.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"},"url":"http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-05-17T23:11:00+05:30","datePublished":"2026-05-17T23:11:00+05:30","description":"Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.","headline":"Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!","image":"http://localhost:4000/assets/images/067/img_81152b8845.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/bts-of-export-to-excel-model-driven-apps.html"},"url":"http://localhost:4000/bts-of-export-to-excel-model-driven-apps.html"}</script>
 <!-- End Jekyll SEO tag -->
 
+  <link rel="alternate" type="application/rss+xml" title="Tamilarasu Arunachalam" href="http://localhost:4000/feed.xml">
   <!-- keywords -->
   <meta name="keywords" content="Tamilarasu, Tamilarasu Arunachalam, Tamilarasu Power Platform, Tamilarasu Arunachalam Developer, Tamilarasu chrome extensions, Tamilarasu blogs, Power Platform blogs, Dynamics 365 blogs">
 
@@ -97,6 +98,16 @@
                 <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
                 <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
 
+                <!-- Search Input -->
+                <li class="nav-item ms-lg-3 my-auto position-relative" id="search-container" style="min-width: 250px;">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-dark rounded-start-pill ps-3"><i class="bi bi-search"></i></span>
+                        <input type="text" id="search-input" class="form-control border-start-0 border-dark rounded-end-pill shadow-none" placeholder="Search posts..." aria-label="Search">
+                    </div>
+                    <!-- Results Container -->
+                    <ul id="results-container" class="position-absolute w-100 bg-white border border-dark list-unstyled m-0 mt-1 p-0 rounded shadow-sm" style="top: 100%; left: 0; z-index: 1050; display: none; max-height: 400px; overflow-y: auto;"></ul>
+                </li>
+
                 <!-- CTA Button -->
                 <li class="nav-item ms-lg-3">
                     <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
@@ -116,13 +127,13 @@
                     <div class="mb-3">
                         <span class="badge bg-light text-dark border">Dynamics 365 CE</span>
                     </div>
-                    <h1 class="display-4 fw-bold mb-4">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</h1>
+                    <h1 class="display-4 fw-bold mb-4">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</h1>
                     <div class="post-meta d-flex align-items-center mb-4">
                         <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
                             class="rounded-circle me-3" width="50" alt="Author">
                         <div>
                             <div class="fw-bold">Tamilarasu Arunachalam</div>
-                            <div class="text-muted small">April 19, 2026 • 5 min read</div>
+                            <div class="text-muted small">May 17, 2026 • 5 min read</div>
                         </div>
                     </div>
                 </header>
@@ -139,7 +150,7 @@
 
 
 
-<img src="/assets/images/065/img_508a786ff1.gif" alt="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+<img src="/assets/images/067/img_81152b8845.gif" alt="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
 
 
 
@@ -153,124 +164,43 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <p>A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing <strong>unit testing</strong>. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.</p>
+                    <p>I recently worked on something where I had to use <strong>Advanced Find</strong> or filter views every time while exporting weekly or monthly reports. Although we can create <strong>personal views</strong> to make the data sorted, I was curious to know how the filtered data actually gets exported.</p>
 
-<p>Soon after the decision, I was assigned a task: <strong>create a proof of concept (PoC) for unit testing JavaScript (JScript) web resources used in Dynamics 365 CRM.</strong></p>
+<p>So, I checked the <strong>DevTools</strong> and identified the API endpoint and payload used during the export process. Interestingly, I discovered that we can even tweak the <strong>FetchXML</strong>.</p>
+
+<p><a href="/assets/images/067/img_72963cac3a.png"><img src="/assets/images/067/img_72963cac3a.png" alt="" /></a></p>
+
+<p>For an easy implementation, I tried this using a simple <strong>instant flow in Power Automate</strong>. I added an <strong>Invoke an HTTP request</strong> action and configured a POST call to the endpoint: </p>
+
+<pre><code class="language-plain">https://yourorg.crm8.dynamics.com/api/data/v9.0/ExportToExcel
+</code></pre>
+
+<p><a href="/assets/images/067/img_2d4666b67e.png"><img src="/assets/images/067/img_2d4666b67e.png" alt="" /></a></p>
+
+<p>Using the same headers and payload found in DevTools, I ran the flow and it worked as expected. The response contained a <strong>Base64 value</strong> of the exported Excel file. You can refer to the screenshot below.</p>
+
+<p><a href="/assets/images/067/img_283ed78e5f.png"><img src="/assets/images/067/img_283ed78e5f.png" alt="" /></a></p>
+
+<p>After this successful test, I moved on to the actual requirement. The goal was to generate <strong>weekly and monthly reports on a button click</strong>. To achieve this, I created two buttons - <strong>Weekly</strong> and <strong>Monthly -</strong> inside a dropdown command menu.</p>
+
+<p>Next, I created a <strong>JavaScript web resource</strong> named <code class="language-plaintext highlighter-rouge">_generateExcelReport.js_</code>. I added a function to both buttons and passed a string parameter to identify the report type. I invoked a bound action called <strong>ExportToExcel</strong> (but you can’t find it in Power Automate - I tried). We need to pass the Fetch XML and Layout XML as parameters for the action. I tweaked the Fetch XML based on the button that was clicked. In the response, you receive the Excel file encoded as base64, which I decoded to binary and downloaded using the script. I tested it, and it worked as expected. You can find the script for this implementation below.</p>
 
 <blockquote>
-  <p>Note: I couldn’t find many simple blogs explaining how to do <strong>unit testing for JavaScript in Dynamics 365 CRM</strong>. So, I decided to share what I learned and document a simple approach that worked for me, mainly to help beginners get started.</p>
+  <p><strong><em>Note:</em></strong> This approach is not recommended by Microsoft, as it is not mentioned in their documentation.</p>
 </blockquote>
 
-<p>At first, I was unsure how to approach it. In my mind, unit testing was something usually done in full‑stack applications, like React with Node.js or Angular projects. I had never written unit tests for plain JavaScript files used in CRM forms. This was new territory for me.</p>
+<script src="https://gist.github.com/tamilarasu-arunachalam/9bfacef867090e6ba141082aa1559750.js"></script>
 
-<h2 id="the-initial-challenge">The Initial Challenge:</h2>
+<p>Refer to the GIF below for a demonstration of the custom button and how the script works.</p>
 
-<p>Like anyone starting something new, I began researching. A quick web search showed popular JavaScript testing frameworks like Jest, Mocha, and Jasmine. They looked powerful, well‑documented, and widely used.</p>
+<p><a href="/assets/images/067/img_b4e61bca01.gif"><img src="/assets/images/067/img_b4e61bca01.gif" alt="" /></a></p>
 
-<p>But there was a catch.</p>
-
-<p>Almost all of them required Node.js. Installing Node.js on my organization‑issued laptop meant raising a helpdesk ticket and waiting for admin approval. From experience, I knew this could easily take a week or more.</p>
-
-<p>Since this was just a proof of concept, waiting that long didn’t feel efficient. I needed a simple, lightweight solution that didn’t require installing anything new.</p>
-
-<h2 id="a-different-way-of-thinking">A Different Way of Thinking</h2>
-
-<p>That’s when I paused and reflected on the nature of the problem.</p>
-
-<p>Since these scripts already run in the browser, I started looking for browser‑friendly JavaScript unit testing frameworks  -  something that could work directly with an HTML file.</p>
-
-<h2 id="discovering-qunit">Discovering QUnit</h2>
-
-<p>During this search, I came across <strong><a href="https://qunitjs.com/">QUnit</a></strong>.</p>
-
-<p>QUnit immediately stood out because it is:</p>
+<h4 id="references">References:</h4>
 
 <ul>
-  <li>Lightweight and simple</li>
-  <li>Designed for testing JavaScript in the browser</li>
-  <li>Available via CDN</li>
-  <li>Supports integration with mocking libraries</li>
-</ul>
-
-<p>With QUnit, you just include a script reference in an HTML file, open it in the browser, and your tests run instantly.</p>
-
-<p>That was exactly what I was looking for.</p>
-
-<h2 id="setting-up-the-proof-of-concept">Setting Up the Proof of Concept</h2>
-
-<p>I created a simple project structure to demonstrate the idea.</p>
-
-<p><a href="/assets/images/065/img_b6f3ea64b3.png"><img src="/assets/images/065/img_b6f3ea64b3.png" alt="" /></a></p>
-
-<ul>
-  <li>formScripts.js → One JavaScript file contained the CRM form logic (the actual code under test)</li>
-  <li>tests.js → Another JavaScript file contained the unit test cases</li>
-  <li>index.html → file loaded QUnit via CDN and referenced both scripts</li>
-</ul>
-
-<p>By opening index.html in the browser, I could run all unit tests and see results immediately - pass, fail, and errors - all in a clean UI provided by QUnit. You can find my sample code below.</p>
-
-<p><strong>formScripts.js</strong></p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/589ad8f97323f6fb570c93999bbf8611.js?file=formScripts.js"></script>
-
-<p><strong>tests.js</strong></p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/589ad8f97323f6fb570c93999bbf8611.js?file=tests.js"></script>
-
-<p><strong>index.html</strong></p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/589ad8f97323f6fb570c93999bbf8611.js?file=index.html"></script>
-
-<p>Later, I learned how to write test for the basic and necessary objects like executionContext, formContext, getValue and setValue. I ran the index.html file and the test runs showing up. You can refer the below image to see so.</p>
-
-<p><a href="/assets/images/065/img_d619c1a3cb.png"><img src="/assets/images/065/img_d619c1a3cb.png" alt="" /></a></p>
-
-<p>This gave me enough confidence to share my findings with the team. I plan to continue working on this and will share more updates as I start implementing unit testing in the full project.</p>
-
-<h2 id="references">References:</h2>
-
-<ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[Browser Runner</td>
-          <td>QUnit](https://qunitjs.com/browser/)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[Assertions</td>
-          <td>QUnit](https://qunitjs.com/api/assert/)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[QUnit.module()</td>
-          <td>QUnit](https://qunitjs.com/api/QUnit/module/)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>[QUnit.test()</td>
-          <td>QUnit](https://qunitjs.com/api/QUnit/test/)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li><a href="https://butenko.pro/2024/11/23/code-to-excel-export-like-a-pro/">Code to Excel: Export Like a Pro! — Andrew Butenko’s Blog</a></li>
+  <li><a href="https://ludovicperrichon.com/export-to-excel-dataverse-table-with-power-automate/">Export to Excel Dataverse Table with Power Automate — Ludovic Perrichon</a></li>
+  <li><a href="https://dreamingincrm.com/2016/11/10/export-to-excel-using-dynamics-365-sdk/">Export to Excel using Dynamics 365 SDK — Dreaming in CRM &amp; Power Platform</a></li>
 </ul>
 
 <p>Have a great day!</p>
@@ -310,9 +240,9 @@
                     <div id="cusdis_thread"
                         data-host="https://cusdis.com"
                         data-app-id="c273ece9-1cf0-4c6e-aaca-9aa59564a335"
-                        data-page-id="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"
-                        data-page-url="http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"
-                        data-page-title="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?"
+                        data-page-id="/bts-of-export-to-excel-model-driven-apps.html"
+                        data-page-url="http://localhost:4000/bts-of-export-to-excel-model-driven-apps.html"
+                        data-page-title="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!"
                         data-theme="auto">
                     </div>
                     <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
@@ -326,17 +256,9 @@
                         
                         
                         
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-img-link">
+                                <a href="/play-sound-effects-on-validation-errors-d365-crm-js.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -347,7 +269,7 @@
 
 
 
-<img src="/assets/images/067/img_81152b8845.gif" alt="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" class="card-img-top
+<img src="//assets/images/074/play-sound-on-validation-errors-d365-crm.png" alt="How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript" class="card-img-top
                                     related-card-img" loading="lazy" decoding="async">
 
 
@@ -356,10 +278,10 @@
                                 <div class="card-body p-4">
                                     <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html"
-                                            class="text-decoration-none text-dark hover-primary">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</a>
+                                        <a href="/play-sound-effects-on-validation-errors-d365-crm-js.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript</a>
                                     </h6>
-                                    <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-readmore">
+                                    <a href="/play-sound-effects-on-validation-errors-d365-crm-js.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -376,6 +298,56 @@
                         
                     
                         
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/unit-test-javascript-using-qunit-d365-crm.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/065/img_508a786ff1.gif" alt="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" class="card-img-top
+                                    related-card-img" loading="lazy" decoding="async">
+
+
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/unit-test-javascript-using-qunit-d365-crm.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</a>
+                                    </h6>
+                                    <a href="/unit-test-javascript-using-qunit-d365-crm.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
                     
                         
                     
@@ -430,43 +402,7 @@
                         
                     
                         
-                         <div class="col-md-4">
-                            <div class="related-post-card card h-100 border-0">
-                                <a href="/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html" class="related-card-img-link">
-                                    <!-- Premium Image Handler with Placeholder Fallback -->
-
-
-
-
-
-
-
-
-
-<img src="/assets/images/055/img_189a192a47.gif" alt="How to Translate Metadata and Web Resources in Dynamics 365 CE" class="card-img-top
-                                    related-card-img" loading="lazy" decoding="async">
-
-
-
-                                </a>
-                                <div class="card-body p-4">
-                                    <span class="related-card-category">Dynamics 365 CE</span>
-                                    <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html"
-                                            class="text-decoration-none text-dark hover-primary">How to Translate Metadata and Web Resources in Dynamics 365 CE</a>
-                                    </h6>
-                                    <a href="/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html" class="related-card-readmore">
-                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd"
-                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                    </div>
-                    
-                    
+                        
                     
                     
                         
@@ -647,9 +583,9 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "How to Unit Test Dynamics 365 CRM JavaScript using QUnit?",
-  "image": "http://localhost:4000/assets/images/065/img_508a786ff1.gif",
-  "datePublished": "2026-04-19T23:11:00+05:30",
+  "headline": "Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!",
+  "image": "http://localhost:4000/assets/images/067/img_81152b8845.gif",
+  "datePublished": "2026-05-17T23:11:00+05:30",
   "author": {
     "@type": "Person",
     "name": "Tamilarasu Arunachalam"
@@ -790,6 +726,49 @@
       if (typeof hljs.lineNumbersBlock === 'function') {
         document.querySelectorAll('code').forEach((element) => {
           hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+  <!-- Simple-Jekyll-Search -->
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('results-container');
+      
+      if (searchInput && resultsContainer) {
+        SimpleJekyllSearch({
+          searchInput: searchInput,
+          resultsContainer: resultsContainer,
+          json: '/search.json',
+          searchResultTemplate: '<li class="p-2 border-bottom"><a href="{url}" class="text-decoration-none text-dark d-block fw-medium">{title}</a><small class="text-muted">{date}</small></li>',
+          noResultsText: '<li class="p-2 text-muted">No results found</li>',
+          limit: 10,
+          fuzzy: false
+        });
+
+        // Show/hide results dropdown
+        searchInput.addEventListener('input', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          } else {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Hide results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!document.getElementById('search-container').contains(e.target)) {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Show results when focusing back on input
+        searchInput.addEventListener('focus', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          }
         });
       }
     });

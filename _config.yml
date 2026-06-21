@@ -12,7 +12,6 @@ markdown: kramdown
 theme: minima
 permalink: /:title.html
 plugins:
-  - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap

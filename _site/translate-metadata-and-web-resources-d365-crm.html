@@ -10,29 +10,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
   <!-- Begin Jekyll SEO tag v2.9.0 -->
-<title>Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript) | Tamilarasu Arunachalam</title>
+<title>How to Translate Metadata and Web Resources in Dynamics 365 CE | Tamilarasu Arunachalam</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" />
+<meta property="og:title" content="How to Translate Metadata and Web Resources in Dynamics 365 CE" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button." />
-<meta name="twitter:description" property="og:description" content="Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button." />
-<link rel="canonical" href="http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html" />
-<meta property="og:url" content="http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html" />
+<meta name="description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<meta name="twitter:description" property="og:description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<link rel="canonical" href="http://localhost:4000/translate-metadata-and-web-resources-d365-crm.html" />
+<meta property="og:url" content="http://localhost:4000/translate-metadata-and-web-resources-d365-crm.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
-<meta property="og:image" content="http://localhost:4000/assets/images/051/img_81b48ca268.gif" />
+<meta property="og:image" content="http://localhost:4000/assets/images/055/img_189a192a47.gif" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-11-02T23:11:00+05:30" />
-<meta property="article:modified_time" content="2025-11-02T23:11:00+05:30" />
+<meta property="article:published_time" content="2025-12-21T23:11:00+05:30" />
+<meta property="article:modified_time" content="2025-12-21T23:11:00+05:30" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:4000/assets/images/051/img_81b48ca268.gif" />
-<meta name="twitter:title" content="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/055/img_189a192a47.gif" />
+<meta name="twitter:title" content="How to Translate Metadata and Web Resources in Dynamics 365 CE" />
 <meta name="twitter:site" content="@tamilarasu_av" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-11-02T23:11:00+05:30","datePublished":"2025-11-02T23:11:00+05:30","description":"Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button.","headline":"Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)","image":"http://localhost:4000/assets/images/051/img_81b48ca268.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html"},"url":"http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-12-21T23:11:00+05:30","datePublished":"2025-12-21T23:11:00+05:30","description":"Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.","headline":"How to Translate Metadata and Web Resources in Dynamics 365 CE","image":"http://localhost:4000/assets/images/055/img_189a192a47.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/translate-metadata-and-web-resources-d365-crm.html"},"url":"http://localhost:4000/translate-metadata-and-web-resources-d365-crm.html"}</script>
 <!-- End Jekyll SEO tag -->
 
+  <link rel="alternate" type="application/rss+xml" title="Tamilarasu Arunachalam" href="http://localhost:4000/feed.xml">
   <!-- keywords -->
   <meta name="keywords" content="Tamilarasu, Tamilarasu Arunachalam, Tamilarasu Power Platform, Tamilarasu Arunachalam Developer, Tamilarasu chrome extensions, Tamilarasu blogs, Power Platform blogs, Dynamics 365 blogs">
 
@@ -97,6 +98,16 @@
                 <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
                 <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
 
+                <!-- Search Input -->
+                <li class="nav-item ms-lg-3 my-auto position-relative" id="search-container" style="min-width: 250px;">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-dark rounded-start-pill ps-3"><i class="bi bi-search"></i></span>
+                        <input type="text" id="search-input" class="form-control border-start-0 border-dark rounded-end-pill shadow-none" placeholder="Search posts..." aria-label="Search">
+                    </div>
+                    <!-- Results Container -->
+                    <ul id="results-container" class="position-absolute w-100 bg-white border border-dark list-unstyled m-0 mt-1 p-0 rounded shadow-sm" style="top: 100%; left: 0; z-index: 1050; display: none; max-height: 400px; overflow-y: auto;"></ul>
+                </li>
+
                 <!-- CTA Button -->
                 <li class="nav-item ms-lg-3">
                     <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
@@ -116,13 +127,13 @@
                     <div class="mb-3">
                         <span class="badge bg-light text-dark border">Dynamics 365 CE</span>
                     </div>
-                    <h1 class="display-4 fw-bold mb-4">Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)</h1>
+                    <h1 class="display-4 fw-bold mb-4">How to Translate Metadata and Web Resources in Dynamics 365 CE</h1>
                     <div class="post-meta d-flex align-items-center mb-4">
                         <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
                             class="rounded-circle me-3" width="50" alt="Author">
                         <div>
                             <div class="fw-bold">Tamilarasu Arunachalam</div>
-                            <div class="text-muted small">November 02, 2025 • 5 min read</div>
+                            <div class="text-muted small">December 21, 2025 • 5 min read</div>
                         </div>
                     </div>
                 </header>
@@ -139,7 +150,7 @@
 
 
 
-<img src="/assets/images/051/img_81b48ca268.gif" alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+<img src="/assets/images/055/img_189a192a47.gif" alt="How to Translate Metadata and Web Resources in Dynamics 365 CE" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
 
 
 
@@ -153,56 +164,229 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <p>Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a custom button.</p>
-
-<p>Initially, I thought of using Power Automate or a custom plugin with an action, but after exploring more, I discovered that the XRM WebAPI already provides built-in methods to associate and disassociate records. This approach turned out to be much simpler and faster.</p>
-
-<h2 id="scenario-overview">Scenario Overview</h2>
-
-<p>I had a Contact subgrid on the Account form showing “All Active Contacts.”</p>
-
-<p>The goal was simple:</p>
+                    <p>If you have ever worked on a Dynamics 365 CE or Power Apps model-driven app that serves users from multiple countries, you already know how important language support is. Most of us start confidently because Dynamics 365 handles translations for standard tables automatically. But the moment you introduce custom tables, JavaScript alerts, or HTML web resources, things start getting confusing. If you are wondering, <em>“How do I translate custom web resource content properly?”</em> - you are not alone. In this blog, I’ll walk you through practical and supported ways to handle translations in Dynamics 365 CE.</p>
 
 <ul>
-  <li>Select a few contacts from the subgrid.</li>
-  <li>Click a custom button labeled “Associate.”</li>
-  <li>Automatically link those selected contacts to the current account record.</li>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#outOfTheBoxWay">Out of the box Way</a></li>
+  <li><a href="#webResourceWay">JavaScript Way</a></li>
+  <li><a href="#references">References</a></li>
 </ul>
 
-<p>To make it more interactive, I also added another subgrid showing only the related contacts for that account.</p>
+<h3 id="overview">Overview:</h3>
 
-<p>When I clicked the “Associate” button, the selected contacts appeared instantly in that related subgrid.</p>
-
-<h2 id="associate-records-using-xrm-webapi">Associate Records using XRM WebAPI</h2>
-
-<p>The Associate action works perfectly for relationships such as One-to-Many and Many-to-Many.<br />
-Here’s the full JavaScript code I used:</p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/2f017b3dba30b252a12fbbccf3af5884.js?file=associateContactWithAccount.js"></script>
-
-<h3 id="demonstration">Demonstration</h3>
-
-<p><img src="/assets/images/051/img_29fa5b8871.png" alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" />2.  Added two Contact subgrids on the Account form:
-    -   One shows All Active Contacts.
-    -   Another shows Related Contacts.
-<img src="/assets/images/051/img_1238f49940.png" alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" />4.  Created a custom subgrid button labeled “Associate”.
-<img src="/assets/images/051/img_49e580ab1a.png" alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" />6.  On clicking it, the selected contacts from the active view got linked with the account — instantly reflecting in the related subgrid.</p>
-
-<h2 id="disassociate-records-using-xrm-webapi">Disassociate Records using XRM WebAPI</h2>
-
-<p>Just like the associate action, we can disassociate records easily with a similar approach.<br />
-Here’s the sample code:</p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/2f017b3dba30b252a12fbbccf3af5884.js?file=disassociateContactWithAccount.js"></script>
-
-<h3 id="reference">Reference</h3>
+<p>Dynamics 365 supports multilingual applications, but translations are handled differently depending on what you are translating.</p>
 
 <ul>
-  <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-webapi/online/execute#associate-a-record">Associate Records using XRM WebAPI - Microsoft Docs</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-webapi/online/execute#disassociate-a-record">Disassociate Records using XRM WebAPI - Microsoft Docs</a></li>
+  <li>Standard &amp; custom tables - supported out of the box</li>
+  <li>Field labels, option sets, views - supported via export/import</li>
+  <li>JavaScript &amp; HTML web resources - require custom handling</li>
 </ul>
 
-<p><em>Have a great day!</em></p>
+<p>In this article, we’ll cover both:</p>
+
+<ul>
+  <li>Out-of-the-box translation for tables</li>
+  <li>Two reliable approaches for translating web resources</li>
+</ul>
+
+<h3 id="out-of-the-box-way">Out of the box way</h3>
+
+<p>Dynamics 365 provides a built-in way to translate metadata such as table names, field labels, and option set values. This works for both standard and custom tables.</p>
+
+<p><a href="/assets/images/055/img_de06781517.png"><img src="/assets/images/055/img_de06781517.png" alt="" /></a></p>
+
+<h4 id="steps-to-export-and-import-translations">Steps to Export and Import Translations</h4>
+
+<ol>
+  <li>Open Power Apps and navigate to Solutions</li>
+  <li>Open your target solution</li>
+  <li>Click on Translations</li>
+  <li>Select Export Translations</li>
+  <li>Download and extract the ZIP file</li>
+  <li>Open <strong><em>CrmTranslations.xml</em></strong> in Excel</li>
+  <li>Add translations for the required languages</li>
+  <li>Zip the files again and import them back</li>
+</ol>
+
+<p>Once imported, Dynamics 365 automatically displays translated labels based on the user’s selected language.</p>
+
+<p><strong>Important Note:</strong> This approach works only for metadata. It does not translate JavaScript alerts, HTML content, or other web resources.</p>
+
+<p>For the detailed information, you can check this <a href="https://carldesouza.com/translating-renaming-dynamics-365-artifacts-into-other-languages/">blog</a> from Carl de Souza</p>
+
+<h3 id="web-resource-way">Web Resource Way:</h3>
+
+<p>Web resources such as:</p>
+
+<ul>
+  <li>JavaScript alert messages</li>
+  <li>Form notifications</li>
+  <li>Custom HTML pages</li>
+</ul>
+
+<p>are not covered by the translation XML file. To localize these, we need to use one of the following approaches.</p>
+
+<ul>
+  <li>Custom JavaScript Helper Method</li>
+  <li>RESX Web Resource Method <em>(Recommended)</em></li>
+</ul>
+
+<h4 id="custom-function-way">Custom Function Way</h4>
+
+<p>This approach is useful when you want quick control over translations using JavaScript. The idea is simple:</p>
+
+<ul>
+  <li>Create a helper JavaScript file</li>
+  <li>Store translations per language (LCID)</li>
+  <li>Detect the user’s language at runtime</li>
+</ul>
+
+<p>Below is the code for <em>translation-helper.js</em></p>
+
+<script src="https://gist.github.com/tamilarasu-arunachalam/ba726f1411108c761c0de7e4a1622da5.js?file=translation-helper.js"></script>
+
+<p>Below is the code for <em>showAlerts.js</em> with custom helper method</p>
+
+<script src="https://gist.github.com/tamilarasu-arunachalam/ba726f1411108c761c0de7e4a1622da5.js?file=showAlerts.js"></script>
+
+<p>Make sure the helper script is added as a dependency to your main JavaScript web resource.</p>
+
+<p><a href="/assets/images/055/img_5227f06c4b.png"><img src="/assets/images/055/img_5227f06c4b.png" alt="" /></a></p>
+
+<p>After saving and publishing, I’ve added the function to the on-save event of the appointment table. For the demonstration, i have opened a record and saved it again it is showing the below alert.</p>
+
+<p><a href="/assets/images/055/img_19be20a98b.png"><img src="/assets/images/055/img_19be20a98b.png" alt="" /></a></p>
+
+<p>Then I will change the language by following the below steps.</p>
+
+<ul>
+  <li>navigating to the Settings Icon(Gear Icon on Top navigation bar)</li>
+</ul>
+
+<p><a href="/assets/images/055/img_7faaae9da2.png"><img src="/assets/images/055/img_7faaae9da2.png" alt="" /></a></p>
+
+<ul>
+  <li>Select Personalization Settings from the pane</li>
+</ul>
+
+<p><a href="/assets/images/055/img_41646a51c6.png"><img src="/assets/images/055/img_41646a51c6.png" alt="" /></a></p>
+
+<ul>
+  <li>Open the Languages tab and change the language</li>
+</ul>
+
+<p>Then you’ll notice the application language is changed. Just navigate to appointments, open and save any record you’ll see the alert in the selected language with the text we have added in the helper script. Please refer the below image for that</p>
+
+<p><a href="/assets/images/055/img_ecf5f44b4f.png"><img src="/assets/images/055/img_ecf5f44b4f.png" alt="" /></a></p>
+
+<h4 id="2-resx-way">2. RESX Way</h4>
+
+<p>This is the cleanest and most scalable approach and is recommended by Microsoft for translating web resources.</p>
+
+<p><strong>Why RESX Files?</strong></p>
+
+<ul>
+  <li>Native support in Dynamics 365</li>
+  <li>Automatic language resolution</li>
+  <li>Cleaner JavaScript code</li>
+  <li>Easier maintenance for large applications</li>
+</ul>
+
+<p>Note: I have followed the naming convention like <strong><em>messages.[LCID].resx</em></strong>. The LCID in the file name allows Dynamics 365 to automatically load the correct language based on the user’s settings.</p>
+
+<p>I have created resx three files.These resx files can be edited with the resx editor extension for vs code, I have opened these files and added the values. Refer to the below images</p>
+
+<h4 id="english">English</h4>
+
+<p><a href="/assets/images/055/img_6034f9fbc3.png"><img src="/assets/images/055/img_6034f9fbc3.png" alt="" /></a></p>
+
+<h4 id="arabic">Arabic</h4>
+
+<p><a href="/assets/images/055/img_056f0ee44c.png"><img src="/assets/images/055/img_056f0ee44c.png" alt="" /></a></p>
+
+<h4 id="japanese">Japanese</h4>
+
+<p><a href="/assets/images/055/img_19ff35a140.png"><img src="/assets/images/055/img_19ff35a140.png" alt="" /></a></p>
+
+<p>After that I have added the below script to the on-save of the appointment main form</p>
+
+<p>Below is the code for <em>showAlertsUsingRESX.js</em> to be added on the on-save of appointment main form</p>
+
+<script src="https://gist.github.com/tamilarasu-arunachalam/ba726f1411108c761c0de7e4a1622da5.js?file=showAlertsUsingRESX.js"></script>
+
+<p>Add all RESX files as dependencies to your JavaScript web resource and publish the changes.</p>
+
+<p><a href="/assets/images/055/img_a908a06919.png"><img src="/assets/images/055/img_a908a06919.png" alt="" /></a></p>
+
+<p>Note: We can add dependencies to the web resources by clicking on the View dependencies link and add the dependencies. Refer to the below images</p>
+
+<p><a href="/assets/images/055/img_b22c803678.png"><img src="/assets/images/055/img_b22c803678.png" alt="" /></a></p>
+
+<p><a href="/assets/images/055/img_2f6afcff40.png"><img src="/assets/images/055/img_2f6afcff40.png" alt="" /></a></p>
+
+<p>Save and Publish and check the form and change the language to Japanese and you’ll get the alert like below image as we have added the value in the <strong><em>messages.1041.resx</em></strong></p>
+
+<p><a href="/assets/images/055/img_7f52a4d10a.png"><img src="/assets/images/055/img_7f52a4d10a.png" alt="" /></a></p>
+
+<p>Now, when the user switches their application language, Dynamics 365 automatically picks the correct translation.</p>
+
+<h3 id="references">References:</h3>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[getGlobalContext.userSettings (Client API reference) in model-driven apps - Power Apps</td>
+          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-utility/getglobalcontext/usersettings)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[LCID (Locale ID)</td>
+          <td>Microsoft Learn](https://learn.microsoft.com/en-us/openspecs/office_standards/ms-oe376/6c085406-a698-4e12-9d4d-c3b0ee3dbc4a)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[getFormType (Client API reference) in model-driven apps - Power Apps</td>
+          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/formcontext-ui/getformtype)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[openAlertDialog (Client API reference) in model-driven apps - Power Apps</td>
+          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-navigation/openalertdialog)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[String (RESX) web resources (model-driven apps) - Power Apps</td>
+          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/resx-web-resources)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>Have a great day!</p>
 
                 </div>
 
@@ -239,9 +423,9 @@ Here’s the sample code:</p>
                     <div id="cusdis_thread"
                         data-host="https://cusdis.com"
                         data-app-id="c273ece9-1cf0-4c6e-aaca-9aa59564a335"
-                        data-page-id="/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html"
-                        data-page-url="http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html"
-                        data-page-title="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)"
+                        data-page-id="/translate-metadata-and-web-resources-d365-crm.html"
+                        data-page-url="http://localhost:4000/translate-metadata-and-web-resources-d365-crm.html"
+                        data-page-title="How to Translate Metadata and Web Resources in Dynamics 365 CE"
                         data-theme="auto">
                     </div>
                     <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
@@ -255,6 +439,48 @@ Here’s the sample code:</p>
                         
                         
                         
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/play-sound-effects-on-validation-errors-d365-crm-js.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+<img src="//assets/images/074/play-sound-on-validation-errors-d365-crm.png" alt="How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript" class="card-img-top
+                                    related-card-img" loading="lazy" decoding="async">
+
+
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/play-sound-effects-on-validation-errors-d365-crm-js.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript</a>
+                                    </h6>
+                                    <a href="/play-sound-effects-on-validation-errors-d365-crm-js.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
                     
                         
                     
@@ -265,7 +491,7 @@ Here’s the sample code:</p>
                         
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-img-link">
+                                <a href="/bts-of-export-to-excel-model-driven-apps.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -285,10 +511,10 @@ Here’s the sample code:</p>
                                 <div class="card-body p-4">
                                     <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html"
+                                        <a href="/bts-of-export-to-excel-model-driven-apps.html"
                                             class="text-decoration-none text-dark hover-primary">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</a>
                                     </h6>
-                                    <a href="/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html" class="related-card-readmore">
+                                    <a href="/bts-of-export-to-excel-model-driven-apps.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -307,7 +533,7 @@ Here’s the sample code:</p>
                         
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-img-link">
+                                <a href="/unit-test-javascript-using-qunit-d365-crm.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -327,10 +553,10 @@ Here’s the sample code:</p>
                                 <div class="card-body p-4">
                                     <span class="related-card-category">Dynamics 365 CE</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html"
+                                        <a href="/unit-test-javascript-using-qunit-d365-crm.html"
                                             class="text-decoration-none text-dark hover-primary">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</a>
                                     </h6>
-                                    <a href="/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html" class="related-card-readmore">
+                                    <a href="/unit-test-javascript-using-qunit-d365-crm.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -347,44 +573,12 @@ Here’s the sample code:</p>
                         
                     
                         
-                         <div class="col-md-4">
-                            <div class="related-post-card card h-100 border-0">
-                                <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-img-link">
-                                    <!-- Premium Image Handler with Placeholder Fallback -->
-
-
-
-
-
-
-
-
-
-<img src="/assets/images/063/img_e3160e0be0.gif" alt="Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts" class="card-img-top
-                                    related-card-img" loading="lazy" decoding="async">
-
-
-
-                                </a>
-                                <div class="card-body p-4">
-                                    <span class="related-card-category">Dynamics 365 CE</span>
-                                    <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html"
-                                            class="text-decoration-none text-dark hover-primary">Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</a>
-                                    </h6>
-                                    <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="related-card-readmore">
-                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd"
-                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                    </div>
+                        
                     
                     
+                        
                     
+                        
                     
                         
                     
@@ -401,16 +595,12 @@ Here’s the sample code:</p>
                     
                     
                         
-                    
-                        
                         
                     
                     
                         
                         
                     
-                    
-                        
                     
                         
                         
@@ -576,9 +766,9 @@ Here’s the sample code:</p>
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)",
-  "image": "http://localhost:4000/assets/images/051/img_81b48ca268.gif",
-  "datePublished": "2025-11-02T23:11:00+05:30",
+  "headline": "How to Translate Metadata and Web Resources in Dynamics 365 CE",
+  "image": "http://localhost:4000/assets/images/055/img_189a192a47.gif",
+  "datePublished": "2025-12-21T23:11:00+05:30",
   "author": {
     "@type": "Person",
     "name": "Tamilarasu Arunachalam"
@@ -719,6 +909,49 @@ Here’s the sample code:</p>
       if (typeof hljs.lineNumbersBlock === 'function') {
         document.querySelectorAll('code').forEach((element) => {
           hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+  <!-- Simple-Jekyll-Search -->
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('results-container');
+      
+      if (searchInput && resultsContainer) {
+        SimpleJekyllSearch({
+          searchInput: searchInput,
+          resultsContainer: resultsContainer,
+          json: '/search.json',
+          searchResultTemplate: '<li class="p-2 border-bottom"><a href="{url}" class="text-decoration-none text-dark d-block fw-medium">{title}</a><small class="text-muted">{date}</small></li>',
+          noResultsText: '<li class="p-2 text-muted">No results found</li>',
+          limit: 10,
+          fuzzy: false
+        });
+
+        // Show/hide results dropdown
+        searchInput.addEventListener('input', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          } else {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Hide results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!document.getElementById('search-container').contains(e.target)) {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Show results when focusing back on input
+        searchInput.addEventListener('focus', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          }
         });
       }
     });

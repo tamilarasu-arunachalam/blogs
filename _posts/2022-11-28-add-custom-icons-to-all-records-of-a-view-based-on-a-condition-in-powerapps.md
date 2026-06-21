@@ -7,7 +7,7 @@ image: "assets/images/002/img_bff5487888.webp"
 category: Dynamics 365 CE
 categories: ["Power Apps", "Dynamics 365 CE", "Web resource", "Dataverse"]
 redirect_from: 
-     - https://tamilarasu-arunachalam.blogspot.com/2022/11/add-custom-icons-to-all-records-of-view.html
+     - /2022/11/add-custom-icons-to-all-records-of-view.html
 ---
 Have you ever thought of inserting an icon to all records in a view based on a condition. Here I have a table with some fields like name and gender of types single line of text and optionset respectively. The icons will be displayed based on the gender option.
 

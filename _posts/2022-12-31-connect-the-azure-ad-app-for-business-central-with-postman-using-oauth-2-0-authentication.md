@@ -22,7 +22,7 @@ Postman is the tool which is used to develop and test API's. Let's see how you c
 
 [![]({{ site.baseurl }}/assets/images/010/img_6de50fa10d.png)]({{ site.baseurl }}/assets/images/010/img_6de50fa10d.png)
 
-Create a collection by clicking the + icon in the top left corner of the menu. This collection holds some values which is often used for authentication and HTTP requests. Those values are declared as variables and it is reusable. The variables are simply used by placing double curly braces on both beginning and end like {{<variable name>}}. These variables are used inside another variable also.
+Create a collection by clicking the + icon in the top left corner of the menu. This collection holds some values which is often used for authentication and HTTP requests. Those values are declared as variables and it is reusable. The variables are simply used by placing double curly braces on both beginning and end like {% raw %}{{<variable name>}}{% endraw %}. These variables are used inside another variable also.
 
 | **Variable Name** | **Value** |
 | --- | --- |

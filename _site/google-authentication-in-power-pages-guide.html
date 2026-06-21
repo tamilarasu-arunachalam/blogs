@@ -15,10 +15,10 @@
 <meta property="og:title" content="How to Set Up Google Authentication in Power Pages (Beginner Guide)?" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Power Pages, being a Microsoft-hosted low-code portal platform, gives us multiple authentication options out of the box - including Azure AD and External Authentication. But what many makers don’t realize is that Power Pages also supports popular OAuth 2.0 identity providers like Google, GitHub, Facebook, and LinkedIn." />
-<meta name="twitter:description" property="og:description" content="Power Pages, being a Microsoft-hosted low-code portal platform, gives us multiple authentication options out of the box - including Azure AD and External Authentication. But what many makers don’t realize is that Power Pages also supports popular OAuth 2.0 identity providers like Google, GitHub, Facebook, and LinkedIn." />
-<link rel="canonical" href="http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html" />
-<meta property="og:url" content="http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html" />
+<meta name="description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<meta name="twitter:description" property="og:description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<link rel="canonical" href="http://localhost:4000/google-authentication-in-power-pages-guide.html" />
+<meta property="og:url" content="http://localhost:4000/google-authentication-in-power-pages-guide.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
 <meta property="og:image" content="http://localhost:4000/assets/images/054/img_f190a8922a.gif" />
 <meta property="og:type" content="article" />
@@ -30,9 +30,10 @@
 <meta name="twitter:site" content="@tamilarasu_av" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-12-07T23:11:00+05:30","datePublished":"2025-12-07T23:11:00+05:30","description":"Power Pages, being a Microsoft-hosted low-code portal platform, gives us multiple authentication options out of the box - including Azure AD and External Authentication. But what many makers don’t realize is that Power Pages also supports popular OAuth 2.0 identity providers like Google, GitHub, Facebook, and LinkedIn.","headline":"How to Set Up Google Authentication in Power Pages (Beginner Guide)?","image":"http://localhost:4000/assets/images/054/img_f190a8922a.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html"},"url":"http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-12-07T23:11:00+05:30","datePublished":"2025-12-07T23:11:00+05:30","description":"Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.","headline":"How to Set Up Google Authentication in Power Pages (Beginner Guide)?","image":"http://localhost:4000/assets/images/054/img_f190a8922a.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/google-authentication-in-power-pages-guide.html"},"url":"http://localhost:4000/google-authentication-in-power-pages-guide.html"}</script>
 <!-- End Jekyll SEO tag -->
 
+  <link rel="alternate" type="application/rss+xml" title="Tamilarasu Arunachalam" href="http://localhost:4000/feed.xml">
   <!-- keywords -->
   <meta name="keywords" content="Tamilarasu, Tamilarasu Arunachalam, Tamilarasu Power Platform, Tamilarasu Arunachalam Developer, Tamilarasu chrome extensions, Tamilarasu blogs, Power Platform blogs, Dynamics 365 blogs">
 
@@ -96,6 +97,16 @@
                 <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
                 <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
                 <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- Search Input -->
+                <li class="nav-item ms-lg-3 my-auto position-relative" id="search-container" style="min-width: 250px;">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-dark rounded-start-pill ps-3"><i class="bi bi-search"></i></span>
+                        <input type="text" id="search-input" class="form-control border-start-0 border-dark rounded-end-pill shadow-none" placeholder="Search posts..." aria-label="Search">
+                    </div>
+                    <!-- Results Container -->
+                    <ul id="results-container" class="position-absolute w-100 bg-white border border-dark list-unstyled m-0 mt-1 p-0 rounded shadow-sm" style="top: 100%; left: 0; z-index: 1050; display: none; max-height: 400px; overflow-y: auto;"></ul>
+                </li>
 
                 <!-- CTA Button -->
                 <li class="nav-item ms-lg-3">
@@ -198,14 +209,11 @@
 
 <p><img src="/assets/images/054/img_fd852fffbd.png" alt="OAuth Client Creation" />-   Open the <strong>Credentials</strong> tab and click <strong>Create Credentials → OAuth Client ID</strong>.
 <img src="/assets/images/054/img_b776e6d49e.png" alt="Select OAuth Client" />-   Select <strong>Web Application</strong> as the application type since Power Pages is web-based.
-<img src="/assets/images/054/img_ad4b1474e4.png" alt="App Type Selection" />-   Scroll down and add the following:
-    -   <strong>Authorized JavaScript Origin:</strong> Your Power Pages site URL
-    -   <strong>Authorized Redirect URI:</strong> Paste the redirect URI copied from Power Pages</p>
-<ul>
-  <li>Click <strong>Create</strong>.
-<img src="/assets/images/054/img_1661f85ffb.png" alt="Client ID and Secret" />-   Google will now generate your <strong>Client ID</strong> and <strong>Client Secret</strong>. These are required for configuring the Google Identity Provider in Power Pages. Copy them or download the JSON.
-<img src="/assets/images/054/img_644424fe7b.png" alt="OAuth Clients List" /></li>
-</ul>
+<img src="/assets/images/054/img_ad4b1474e4.png" alt="App Type Selection" />-   Scroll down and add the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-   **Authorized JavaScript Origin:** Your Power Pages site URL
+-   **Authorized Redirect URI:** Paste the redirect URI copied from Power Pages -   Click **Create**. ![Client ID and Secret](/assets/images/054/img_1661f85ffb.png)-   Google will now generate your **Client ID** and **Client Secret**. These are required for configuring the Google Identity Provider in Power Pages. Copy them or download the JSON. ![OAuth Clients List](/assets/images/054/img_644424fe7b.png)
+</code></pre></div></div>
 
 <h3 id="configure-google-identity-provider--part-2">Configure Google Identity Provider – Part 2</h3>
 
@@ -263,8 +271,8 @@
                     <div id="cusdis_thread"
                         data-host="https://cusdis.com"
                         data-app-id="c273ece9-1cf0-4c6e-aaca-9aa59564a335"
-                        data-page-id="/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html"
-                        data-page-url="http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html"
+                        data-page-id="/google-authentication-in-power-pages-guide.html"
+                        data-page-url="http://localhost:4000/google-authentication-in-power-pages-guide.html"
                         data-page-title="How to Set Up Google Authentication in Power Pages (Beginner Guide)?"
                         data-theme="auto">
                     </div>
@@ -285,9 +293,13 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html" class="related-card-img-link">
+                                <a href="/built-stunning-admin-dashboard-power-pages.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -307,10 +319,10 @@
                                 <div class="card-body p-4">
                                     <span class="related-card-category">Power Pages</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html"
+                                        <a href="/built-stunning-admin-dashboard-power-pages.html"
                                             class="text-decoration-none text-dark hover-primary">How I Built a Stunning Admin Dashboard in Power Pages?</a>
                                     </h6>
-                                    <a href="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html" class="related-card-readmore">
+                                    <a href="/built-stunning-admin-dashboard-power-pages.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -375,7 +387,7 @@
                         
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html" class="related-card-img-link">
+                                <a href="/customize-signin-page-power-pages.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -395,10 +407,10 @@
                                 <div class="card-body p-4">
                                     <span class="related-card-category">Power Pages</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html"
+                                        <a href="/customize-signin-page-power-pages.html"
                                             class="text-decoration-none text-dark hover-primary">How to Customize the Sign in page in Power Pages Easily</a>
                                     </h6>
-                                    <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html" class="related-card-readmore">
+                                    <a href="/customize-signin-page-power-pages.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -687,6 +699,49 @@
       if (typeof hljs.lineNumbersBlock === 'function') {
         document.querySelectorAll('code').forEach((element) => {
           hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+  <!-- Simple-Jekyll-Search -->
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('results-container');
+      
+      if (searchInput && resultsContainer) {
+        SimpleJekyllSearch({
+          searchInput: searchInput,
+          resultsContainer: resultsContainer,
+          json: '/search.json',
+          searchResultTemplate: '<li class="p-2 border-bottom"><a href="{url}" class="text-decoration-none text-dark d-block fw-medium">{title}</a><small class="text-muted">{date}</small></li>',
+          noResultsText: '<li class="p-2 text-muted">No results found</li>',
+          limit: 10,
+          fuzzy: false
+        });
+
+        // Show/hide results dropdown
+        searchInput.addEventListener('input', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          } else {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Hide results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!document.getElementById('search-container').contains(e.target)) {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Show results when focusing back on input
+        searchInput.addEventListener('focus', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          }
         });
       }
     });

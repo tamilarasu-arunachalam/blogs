@@ -29,6 +29,7 @@
 {"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"description":"Free online permalink generator tool. Convert blog titles into clean, SEO-friendly URL slugs with hyphen or underscore separators. Boost your search rankings with optimized permalinks.","headline":"Free Permalink Generator – Create SEO-Friendly URL Slugs Instantly","url":"http://localhost:4000/permalink-generator/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  <link rel="alternate" type="application/rss+xml" title="Tamilarasu Arunachalam" href="http://localhost:4000/feed.xml">
   <!-- keywords -->
   <meta name="keywords" content="permalink generatorslug generatorURL slug creatorSEO friendly URL generatorblog permalink tooltitle to slug converterclean URL generatorURL optimizerSEO URL toolfree slug generator onlineWordPress permalink generatorJekyll permalink generatorblog title to URLhyphenated URL makerweb page slug tool">
 
@@ -92,6 +93,16 @@
                 <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
                 <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
                 <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- Search Input -->
+                <li class="nav-item ms-lg-3 my-auto position-relative" id="search-container" style="min-width: 250px;">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-dark rounded-start-pill ps-3"><i class="bi bi-search"></i></span>
+                        <input type="text" id="search-input" class="form-control border-start-0 border-dark rounded-end-pill shadow-none" placeholder="Search posts..." aria-label="Search">
+                    </div>
+                    <!-- Results Container -->
+                    <ul id="results-container" class="position-absolute w-100 bg-white border border-dark list-unstyled m-0 mt-1 p-0 rounded shadow-sm" style="top: 100%; left: 0; z-index: 1050; display: none; max-height: 400px; overflow-y: auto;"></ul>
+                </li>
 
                 <!-- CTA Button -->
                 <li class="nav-item ms-lg-3">
@@ -575,6 +586,49 @@
       if (typeof hljs.lineNumbersBlock === 'function') {
         document.querySelectorAll('code').forEach((element) => {
           hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+  <!-- Simple-Jekyll-Search -->
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('results-container');
+      
+      if (searchInput && resultsContainer) {
+        SimpleJekyllSearch({
+          searchInput: searchInput,
+          resultsContainer: resultsContainer,
+          json: '/search.json',
+          searchResultTemplate: '<li class="p-2 border-bottom"><a href="{url}" class="text-decoration-none text-dark d-block fw-medium">{title}</a><small class="text-muted">{date}</small></li>',
+          noResultsText: '<li class="p-2 text-muted">No results found</li>',
+          limit: 10,
+          fuzzy: false
+        });
+
+        // Show/hide results dropdown
+        searchInput.addEventListener('input', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          } else {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Hide results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!document.getElementById('search-container').contains(e.target)) {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Show results when focusing back on input
+        searchInput.addEventListener('focus', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          }
         });
       }
     });

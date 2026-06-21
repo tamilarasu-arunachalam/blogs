@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:4000/</loc>
-    <lastmod>2026-06-15T22:17:52+05:30</lastmod>
+    <lastmod>2026-06-21T21:09:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -24,6 +24,17 @@
       
   <url>
     <loc>http://localhost:4000/contact/</loc>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+      
+    
+  
+    
+      
+  <url>
+    <loc>http://localhost:4000/feed.xml</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -71,7 +82,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/rss.xml</loc>
+    <loc>http://localhost:4000/search.json</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -129,6 +140,17 @@
       
   <url>
     <loc>http://localhost:4000/assets/main.css</loc>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+      
+    
+  
+    
+      
+  <url>
+    <loc>http://localhost:4000/2022/11/add-custom-icons-to-all-records-of-view.html</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -282,7 +304,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/feed.xml</loc>
+    <loc>http://localhost:4000/page14/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -292,7 +314,21 @@
   
   
   <url>
-    <loc>http://localhost:4000/build-a-smart-approval-system-with-prediction-model-in-power-automate.html</loc>
+    <loc>http://localhost:4000/play-sound-effects-on-validation-errors-d365-crm-js.html</loc>
+    <lastmod>2026-06-21T11:11:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/why-ai-pair-programming-must-in-2025.html</loc>
+    <lastmod>2026-06-16T23:11:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/smart-approval-system-with-prediction-model-power-automate.html</loc>
     <lastmod>2026-06-14T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -313,28 +349,28 @@
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-i-built-a-stunning-admin-dashboard-in-power-pages.html</loc>
+    <loc>http://localhost:4000/built-stunning-admin-dashboard-power-pages.html</loc>
     <lastmod>2026-05-24T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/just-found-what-happens-behind-the-scenes-of-export-to-excel-in-model-driven-apps.html</loc>
+    <loc>http://localhost:4000/bts-of-export-to-excel-model-driven-apps.html</loc>
     <lastmod>2026-05-17T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-hide-sensitive-data-in-power-automate-using-secure-inputs-and-outputs.html</loc>
+    <loc>http://localhost:4000/hide-sensitive-data-in-power-automate.html</loc>
     <lastmod>2026-04-26T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-unit-test-dynamics-365-crm-javascript-using-qunit.html</loc>
+    <loc>http://localhost:4000/unit-test-javascript-using-qunit-d365-crm.html</loc>
     <lastmod>2026-04-19T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -355,70 +391,70 @@
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-customize-the-sign-in-page-in-power-pages-easily.html</loc>
+    <loc>http://localhost:4000/customize-signin-page-power-pages.html</loc>
     <lastmod>2026-03-30T02:41:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/implement-data-summarization-api-for-dataverse-in-power-pages.html</loc>
+    <loc>http://localhost:4000/data-summarization-api-power-pages.html</loc>
     <lastmod>2026-03-15T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/power-pages-webapi-with-pages-client-api-modern-dataverse-crud-implementation-guide.html</loc>
+    <loc>http://localhost:4000/client-api-power-pages-crud-guide.html</loc>
     <lastmod>2026-02-15T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-integrate-power-pages-with-firebase-realtime-database-with-example-crud.html</loc>
+    <loc>http://localhost:4000/integrate-power-pages-with-firebase-example-crud.html</loc>
     <lastmod>2026-01-11T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/server-logic-in-power-pages-explained-with-real-time-api-example.html</loc>
+    <loc>http://localhost:4000/server-logic-power-pages-with-example.html</loc>
     <lastmod>2026-01-04T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-translate-metadata-and-web-resources-in-dynamics-365-ce.html</loc>
+    <loc>http://localhost:4000/translate-metadata-and-web-resources-d365-crm.html</loc>
     <lastmod>2025-12-21T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-set-up-google-authentication-in-power-pages-beginner-guide.html</loc>
+    <loc>http://localhost:4000/google-authentication-in-power-pages-guide.html</loc>
     <lastmod>2025-12-07T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/show-hide-ribbon-buttons-for-subgrids-of-the-same-table-in-model-driven-apps.html</loc>
+    <loc>http://localhost:4000/show-hide-subgrid-ribbon-buttons-of-same-table-in-d365-crm.html</loc>
     <lastmod>2025-11-30T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-edit-child-and-parent-records-directly-within-forms-in-dynamics-365-crm.html</loc>
+    <loc>http://localhost:4000/edit-child-and-parent-records-directly-within-forms-d365-crm.html</loc>
     <lastmod>2025-11-23T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/associate-and-disassociate-records-in-dynamics-365-using-xrm-webapi-javascript.html</loc>
+    <loc>http://localhost:4000/associate-disassociate-records-using-javascript-webapi-d365.html</loc>
     <lastmod>2025-11-02T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -23,6 +23,16 @@
                 <li class="nav-item h-100"><a class="nav-link" href="{{ site.baseurl }}/about">About</a></li>
                 <li class="nav-item h-100"><a class="nav-link" href="{{ site.baseurl }}/contact">Contact</a></li>
 
+                <!-- Search Input -->
+                <li class="nav-item ms-lg-3 my-auto position-relative" id="search-container" style="min-width: 250px;">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-dark rounded-start-pill ps-3"><i class="bi bi-search"></i></span>
+                        <input type="text" id="search-input" class="form-control border-start-0 border-dark rounded-end-pill shadow-none" placeholder="Search posts..." aria-label="Search">
+                    </div>
+                    <!-- Results Container -->
+                    <ul id="results-container" class="position-absolute w-100 bg-white border border-dark list-unstyled m-0 mt-1 p-0 rounded shadow-sm" style="top: 100%; left: 0; z-index: 1050; display: none; max-height: 400px; overflow-y: auto;"></ul>
+                </li>
+
                 <!-- CTA Button -->
                 <li class="nav-item ms-lg-3">
                     <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>

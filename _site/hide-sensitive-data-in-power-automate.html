@@ -10,29 +10,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
   <!-- Begin Jekyll SEO tag v2.9.0 -->
-<title>How I Built a Stunning Admin Dashboard in Power Pages? | Tamilarasu Arunachalam</title>
+<title>How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs? | Tamilarasu Arunachalam</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="How I Built a Stunning Admin Dashboard in Power Pages?" />
+<meta property="og:title" content="How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
 <meta name="twitter:description" property="og:description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
-<link rel="canonical" href="http://localhost:4000/how-i-built-a-stunning-admin-dashboard-in-power-pages.html" />
-<meta property="og:url" content="http://localhost:4000/how-i-built-a-stunning-admin-dashboard-in-power-pages.html" />
+<link rel="canonical" href="http://localhost:4000/hide-sensitive-data-in-power-automate.html" />
+<meta property="og:url" content="http://localhost:4000/hide-sensitive-data-in-power-automate.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
-<meta property="og:image" content="http://localhost:4000/assets/images/068/img_ceb5e7a952.gif" />
+<meta property="og:image" content="http://localhost:4000/assets/images/066/img_be2a5971b6.gif" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-05-24T23:11:00+05:30" />
-<meta property="article:modified_time" content="2026-05-24T23:11:00+05:30" />
+<meta property="article:published_time" content="2026-04-26T23:11:00+05:30" />
+<meta property="article:modified_time" content="2026-04-26T23:11:00+05:30" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:4000/assets/images/068/img_ceb5e7a952.gif" />
-<meta name="twitter:title" content="How I Built a Stunning Admin Dashboard in Power Pages?" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/066/img_be2a5971b6.gif" />
+<meta name="twitter:title" content="How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?" />
 <meta name="twitter:site" content="@tamilarasu_av" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-05-24T23:11:00+05:30","datePublished":"2026-05-24T23:11:00+05:30","description":"Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.","headline":"How I Built a Stunning Admin Dashboard in Power Pages?","image":"http://localhost:4000/assets/images/068/img_ceb5e7a952.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/how-i-built-a-stunning-admin-dashboard-in-power-pages.html"},"url":"http://localhost:4000/how-i-built-a-stunning-admin-dashboard-in-power-pages.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-04-26T23:11:00+05:30","datePublished":"2026-04-26T23:11:00+05:30","description":"Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.","headline":"How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?","image":"http://localhost:4000/assets/images/066/img_be2a5971b6.gif","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/hide-sensitive-data-in-power-automate.html"},"url":"http://localhost:4000/hide-sensitive-data-in-power-automate.html"}</script>
 <!-- End Jekyll SEO tag -->
 
+  <link rel="alternate" type="application/rss+xml" title="Tamilarasu Arunachalam" href="http://localhost:4000/feed.xml">
   <!-- keywords -->
   <meta name="keywords" content="Tamilarasu, Tamilarasu Arunachalam, Tamilarasu Power Platform, Tamilarasu Arunachalam Developer, Tamilarasu chrome extensions, Tamilarasu blogs, Power Platform blogs, Dynamics 365 blogs">
 
@@ -97,6 +98,16 @@
                 <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
                 <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
 
+                <!-- Search Input -->
+                <li class="nav-item ms-lg-3 my-auto position-relative" id="search-container" style="min-width: 250px;">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-dark rounded-start-pill ps-3"><i class="bi bi-search"></i></span>
+                        <input type="text" id="search-input" class="form-control border-start-0 border-dark rounded-end-pill shadow-none" placeholder="Search posts..." aria-label="Search">
+                    </div>
+                    <!-- Results Container -->
+                    <ul id="results-container" class="position-absolute w-100 bg-white border border-dark list-unstyled m-0 mt-1 p-0 rounded shadow-sm" style="top: 100%; left: 0; z-index: 1050; display: none; max-height: 400px; overflow-y: auto;"></ul>
+                </li>
+
                 <!-- CTA Button -->
                 <li class="nav-item ms-lg-3">
                     <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
@@ -114,15 +125,15 @@
                 <!-- Post Title & Meta -->
                 <header class="post-header mb-5">
                     <div class="mb-3">
-                        <span class="badge bg-light text-dark border">Power Pages</span>
+                        <span class="badge bg-light text-dark border">Power Automate</span>
                     </div>
-                    <h1 class="display-4 fw-bold mb-4">How I Built a Stunning Admin Dashboard in Power Pages?</h1>
+                    <h1 class="display-4 fw-bold mb-4">How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?</h1>
                     <div class="post-meta d-flex align-items-center mb-4">
                         <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
                             class="rounded-circle me-3" width="50" alt="Author">
                         <div>
                             <div class="fw-bold">Tamilarasu Arunachalam</div>
-                            <div class="text-muted small">May 24, 2026 • 5 min read</div>
+                            <div class="text-muted small">April 26, 2026 • 5 min read</div>
                         </div>
                     </div>
                 </header>
@@ -139,7 +150,7 @@
 
 
 
-<img src="/assets/images/068/img_ceb5e7a952.gif" alt="How I Built a Stunning Admin Dashboard in Power Pages?" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
+<img src="/assets/images/066/img_be2a5971b6.gif" alt="How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?" class="img-fluid rounded-4 shadow-sm w-100" loading="lazy" decoding="async">
 
 
 
@@ -153,65 +164,57 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <p>When I started building a hospital management app as a weekend project, I never imagined the frontend would become the most exciting part. I set up Power Pages as an external-facing portal - patients could book appointments, staff could track them, and everyone had what they needed in one place. But then I looked at the default design and thought: <em>this has to change.</em></p>
+                    <p>There was a moment while debugging a Power Automate flow when something unexpected showed up. Instead of just checking an error, the entire API request and response data were visible in the run history. It included sensitive details that should never be exposed so easily. That’s when the importance of secure inputs and outputs became very real.</p>
 
-<p>Here’s the story of how I transformed a generic Power Pages site into a dashboard I’m actually proud of.</p>
+<p>In Power Automate, every action logs its inputs and outputs in the run history. While this is helpful for debugging, it becomes a risk when working with confidential data like customer details, API payloads, or authentication tokens. Anyone with access to the flow history can view this information unless it is protected.</p>
 
-<h2 id="the-design-problem-nobody-talks-about">The Design Problem Nobody Talks About</h2>
+<p>This is where Secure Inputs and Secure Outputs come into play. These settings allow you to hide sensitive data from the run history. Once enabled, the actual values are no longer visible, ensuring that critical information remains protected even if someone accesses the flow logs.</p>
 
-<p>Power Pages is powerful, but out of the box, it looks like every other portal on the internet. Default headers, default footers, default login screens. For a hospital app, that just didn’t feel trustworthy or professional. So I rolled up my sleeves and started customizing — piece by piece.</p>
+<p>Consider a simple scenario where a flow sends customer data to an external API using an HTTP action. Without enabling these settings, both the request and response data will be fully visible in the run history. By turning on secure inputs and outputs from the action settings, this data becomes hidden while the flow continues to function normally.</p>
 
-<h2 id="bootstrap-icons">Bootstrap Icons</h2>
+<p><a href="/assets/images/066/img_6786aaa34f.png"><img src="/assets/images/066/img_6786aaa34f.png" alt="" /></a></p>
 
-<p>Power Pages already supports Bootstrap for styling, which is a great starting point. To layer in Bootstrap Icons, I created a <strong>content snippet</strong> with the CDN link tag. Power Pages automatically injects it across the site - clean, simple, no hacks needed.</p>
+<p>It’s important to remember that this setting is action-specific and must be enabled wherever sensitive data is involved. While it may limit visibility during debugging, it is essential for production environments where data security is critical.</p>
 
-<h2 id="custom-web-templates">Custom Web Templates</h2>
+<p><a href="/assets/images/066/img_f1b8f21135.png"><img src="/assets/images/066/img_f1b8f21135.png" alt="" /></a></p>
 
-<p>This was the game-changer. I found the default header and footer web templates and replaced them entirely. I built three custom templates - <strong>admin-sidebar</strong>, <strong>admin-header</strong>, and <strong>admin-footer</strong> - tailored specifically for logged-in hospital staff. The result was a cohesive dashboard feel with full control over every pixel.</p>
+<p>In Dynamics 365 and Dataverse-based implementations, flows often handle business-critical and sensitive information. Leaving such data exposed in logs can lead to security risks and compliance issues.</p>
 
-<p><a href="/assets/images/068/img_0cec82bcf4.jpg"><img src="/assets/images/068/img_0cec82bcf4.jpg" alt="" /></a></p>
-
-<h2 id="custom-login-page">Custom Login Page</h2>
-
-<p>The default Power Pages login page honestly frustrated me every time I saw it. So I built a custom one - complete with <strong>Microsoft Entra and Google authentication</strong>. It immediately made the app feel more polished and enterprise-ready. Check out my blog about <a href="https://www.tamilarasu.blog/2026/03/customize-signin-page-in-power-pages.html"><em>How to Customize the Sign in page in Power Pages Easily</em></a> to know how I did that.</p>
-
-<p><a href="/assets/images/068/img_571ffe5e22.jpg"><img src="/assets/images/068/img_571ffe5e22.jpg" alt="" /></a></p>
-
-<p><strong>admin-sidebar.html</strong>
-<script src="https://gist.github.com/tamilarasu-arunachalam/e5c7ef982af2e4ff7a98a8e4e4dc62d3.js?file=side-bar.html"></script></p>
-
-<p><strong>admin-header.html</strong>
-<script src="https://gist.github.com/tamilarasu-arunachalam/e5c7ef982af2e4ff7a98a8e4e4dc62d3.js?file=header.html"></script></p>
-
-<p><strong>admin-footer.html</strong>
-<script src="https://gist.github.com/tamilarasu-arunachalam/e5c7ef982af2e4ff7a98a8e4e4dc62d3.js?file=footer.html"></script></p>
-
-<h2 id="the-small-details-that-made-a-big-difference">The Small Details That Made a Big Difference</h2>
-
-<p>A <strong>favicon</strong> might seem trivial, but it signals credibility. I added one, and suddenly the browser tab looked like it belonged to a real product. Here is my blog about <a href="https://www.tamilarasu.blog/2026/04/how-to-add-favicon-in-power-pages.html"><em>How to Add a Favicon in Power Pages?</em></a> and do check out to know if you want to.</p>
-
-<p><a href="/assets/images/068/img_a18cb480e9.jpg"><img src="/assets/images/068/img_a18cb480e9.jpg" alt="" /></a></p>
-
-<p>For <strong>charts and graphs</strong>, I skipped the built-in Power Apps charts - they felt too rigid for a custom dashboard. Instead, I used <strong>Chart.js</strong>, an open-source library that gave me colorful, interactive visuals with full creative control.</p>
-
-<p><a href="/assets/images/068/img_862798299f.jpg"><img src="/assets/images/068/img_862798299f.jpg" alt="" /></a></p>
-
-<p>And for <strong>profile avatars</strong>, I used the <strong>UI Avatars API</strong> to generate initials-based profile images dynamically. One image tag. Zero effort. Looks great.</p>
-
-<p><a href="/assets/images/068/img_973ca01c0e.jpg"><img src="/assets/images/068/img_973ca01c0e.jpg" alt="" /></a></p>
-
-<h2 id="finally">Finally</h2>
-
-<p>Building a custom admin dashboard in Power Pages is absolutely doable - you just need to know which defaults to override and which tools to bring in from outside. Bootstrap Icons, Chart.js, UI Avatars, and custom web templates each solved a specific problem without overcomplicating things.</p>
+<p>Secure inputs and outputs may seem like a small feature, but they play a big role in building secure and reliable Power Automate solutions.</p>
 
 <h3 id="references">References:</h3>
 
 <ul>
-  <li><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Get started with Bootstrap · Bootstrap v5.3</a></li>
-  <li><a href="https://icons.getbootstrap.com/">Bootstrap Icons · Official open source SVG icon library for Bootstrap</a></li>
-  <li><a href="https://www.chartjs.org/">Chart.js - Open source HTML5 Charts for your website</a></li>
-  <li><a href="https://ui-avatars.com/">Generate avatars with initials — User Initial avatars</a></li>
-  <li><a href="https://ulrikkeakerback.com/">Font Awesome icons in Power Pages — Ulrikke Akerbæk</a></li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Manage sensitive input like passwords in Power Automate — Power Automate</td>
+          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-automate/how-tos-use-sensitive-input)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Secure data used in cloud flows — Power Automate</td>
+          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-automate/guidance/coding-guidelines/use-secure-inputs-outputs-triggers)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Defining inputs and outputs as you plan a Power Automate project — Power Automate</td>
+          <td>Microsoft Learn](https://learn.microsoft.com/en-us/power-automate/guidance/planning/define-input-output)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
 
 <p>Have a great day!</p>
@@ -228,17 +231,15 @@
                 <section
                     class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
                     <div class="d-flex align-items-center justify-content-center mb-3">
-                        <img src="/assets/images/tube-flash-kit-icon.png"
-                            alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
-                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                        <img src="/assets/images/xrm-fq-icon128.png" alt="XRM Flash Query Logo"
+                            width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">XRM Flash Query</h4>
                     </div>
-                    <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
-                        experience with just one click.</p>
+                    <p class="mb-4">High-performance FetchXML and SQL query builder for Dynamics 365, Microsoft Dataverse and Power Platform</p>
                     <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
                         target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
-                    <div class="mt-3 small text-muted">Join thousands of users optimizing their YouTube experience.
-                    </div>
                 </section>
+
                 
 
                 <!-- Comments -->
@@ -253,9 +254,9 @@
                     <div id="cusdis_thread"
                         data-host="https://cusdis.com"
                         data-app-id="c273ece9-1cf0-4c6e-aaca-9aa59564a335"
-                        data-page-id="/how-i-built-a-stunning-admin-dashboard-in-power-pages.html"
-                        data-page-url="http://localhost:4000/how-i-built-a-stunning-admin-dashboard-in-power-pages.html"
-                        data-page-title="How I Built a Stunning Admin Dashboard in Power Pages?"
+                        data-page-id="/hide-sensitive-data-in-power-automate.html"
+                        data-page-url="http://localhost:4000/hide-sensitive-data-in-power-automate.html"
+                        data-page-title="How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?"
                         data-theme="auto">
                     </div>
                     <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
@@ -273,19 +274,9 @@
                         
                     
                         
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/how-to-add-a-favicon-in-power-pages.html" class="related-card-img-link">
+                                <a href="/smart-approval-system-with-prediction-model-power-automate.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -296,19 +287,19 @@
 
 
 
-<img src="/assets/images/064/img_0e751ab16e.gif" alt="How to Add a Favicon in Power Pages?" class="card-img-top
+<img src="/assets/images/73/1000118534.png" alt="Build a Smart Approval System with Prediction Model in  Power Automate" class="card-img-top
                                     related-card-img" loading="lazy" decoding="async">
 
 
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category">Power Pages</span>
+                                    <span class="related-card-category">Power Automate</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/how-to-add-a-favicon-in-power-pages.html"
-                                            class="text-decoration-none text-dark hover-primary">How to Add a Favicon in Power Pages?</a>
+                                        <a href="/smart-approval-system-with-prediction-model-power-automate.html"
+                                            class="text-decoration-none text-dark hover-primary">Build a Smart Approval System with Prediction Model in  Power Automate</a>
                                     </h6>
-                                    <a href="/how-to-add-a-favicon-in-power-pages.html" class="related-card-readmore">
+                                    <a href="/smart-approval-system-with-prediction-model-power-automate.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -325,9 +316,47 @@
                         
                     
                         
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html" class="related-card-img-link">
+                                <a href="/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -338,19 +367,19 @@
 
 
 
-<img src="/assets/images/062/img_478dd1953a.gif" alt="How to Customize the Sign in page in Power Pages Easily" class="card-img-top
+<img src="/assets/images/048/img_453fc33dd7.jpg" alt="How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?" class="card-img-top
                                     related-card-img" loading="lazy" decoding="async">
 
 
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category">Power Pages</span>
+                                    <span class="related-card-category">Power Automate</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html"
-                                            class="text-decoration-none text-dark hover-primary">How to Customize the Sign in page in Power Pages Easily</a>
+                                        <a href="/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?</a>
                                     </h6>
-                                    <a href="/how-to-customize-the-sign-in-page-in-power-pages-easily.html" class="related-card-readmore">
+                                    <a href="/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -365,9 +394,17 @@
                     
                     
                         
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
                          <div class="col-md-4">
                             <div class="related-post-card card h-100 border-0">
-                                <a href="/implement-data-summarization-api-for-dataverse-in-power-pages.html" class="related-card-img-link">
+                                <a href="/why-retry-policy-in-power-automate-matters.html" class="related-card-img-link">
                                     <!-- Premium Image Handler with Placeholder Fallback -->
 
 
@@ -378,19 +415,19 @@
 
 
 
-<img src="/assets/images/061/img_7130141458.gif" alt="Implement Data Summarization API for Dataverse in Power Pages" class="card-img-top
+<img src="/assets/images/043/img_5a8ccf0457.png" alt="What Is a Retry Policy in Power Automate (And Why It Matters)?" class="card-img-top
                                     related-card-img" loading="lazy" decoding="async">
 
 
 
                                 </a>
                                 <div class="card-body p-4">
-                                    <span class="related-card-category">Power Pages</span>
+                                    <span class="related-card-category">Power Automate</span>
                                     <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/implement-data-summarization-api-for-dataverse-in-power-pages.html"
-                                            class="text-decoration-none text-dark hover-primary">Implement Data Summarization API for Dataverse in Power Pages</a>
+                                        <a href="/why-retry-policy-in-power-automate-matters.html"
+                                            class="text-decoration-none text-dark hover-primary">What Is a Retry Policy in Power Automate (And Why It Matters)?</a>
                                     </h6>
-                                    <a href="/implement-data-summarization-api-for-dataverse-in-power-pages.html" class="related-card-readmore">
+                                    <a href="/why-retry-policy-in-power-automate-matters.html" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -405,36 +442,6 @@
                     
                     
                         
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                    
-                        
-                    
-                        
-                        
-                    
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
                     
                         
                     
@@ -459,6 +466,34 @@
                         
                     
                         
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
                     
                         
                     
@@ -477,6 +512,8 @@
                         
                     
                         
+                        
+                    
                     
                         
                     
@@ -489,34 +526,8 @@
                         
                     
                         
-                    
                         
                     
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
                     
                         
                     
@@ -534,9 +545,9 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "How I Built a Stunning Admin Dashboard in Power Pages?",
-  "image": "http://localhost:4000/assets/images/068/img_ceb5e7a952.gif",
-  "datePublished": "2026-05-24T23:11:00+05:30",
+  "headline": "How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?",
+  "image": "http://localhost:4000/assets/images/066/img_be2a5971b6.gif",
+  "datePublished": "2026-04-26T23:11:00+05:30",
   "author": {
     "@type": "Person",
     "name": "Tamilarasu Arunachalam"
@@ -677,6 +688,49 @@
       if (typeof hljs.lineNumbersBlock === 'function') {
         document.querySelectorAll('code').forEach((element) => {
           hljs.lineNumbersBlock(element);
+        });
+      }
+    });
+  </script>
+  <!-- Simple-Jekyll-Search -->
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('results-container');
+      
+      if (searchInput && resultsContainer) {
+        SimpleJekyllSearch({
+          searchInput: searchInput,
+          resultsContainer: resultsContainer,
+          json: '/search.json',
+          searchResultTemplate: '<li class="p-2 border-bottom"><a href="{url}" class="text-decoration-none text-dark d-block fw-medium">{title}</a><small class="text-muted">{date}</small></li>',
+          noResultsText: '<li class="p-2 text-muted">No results found</li>',
+          limit: 10,
+          fuzzy: false
+        });
+
+        // Show/hide results dropdown
+        searchInput.addEventListener('input', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          } else {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Hide results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!document.getElementById('search-container').contains(e.target)) {
+            resultsContainer.style.display = 'none';
+          }
+        });
+        
+        // Show results when focusing back on input
+        searchInput.addEventListener('focus', function() {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          }
         });
       }
     });
