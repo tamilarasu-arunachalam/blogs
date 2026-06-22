@@ -56,4 +56,4 @@ See the demonstration video below
 #### References:
 
 - [Playing sounds in CRM — Power Platform & Dynamics CRM Tip Of The Day](https://crmtipoftheday.com/892/tip-892-playing-sounds-in-crm/)
-- [Play Custom CRM Sounds with JavaScript Workaround | Aladdin Farajat posted on the topic | LinkedIn](https://www.linkedin.com/posts/aladdin-farajat-2055b1236_dynamics365-powerplatform-javascript-activity-7409664330243190784-VIT1)
+- [Play Custom CRM Sounds with JavaScript Workaround \| Aladdin Farajat posted on the topic \| LinkedIn](https://www.linkedin.com/posts/aladdin-farajat-2055b1236_dynamics365-powerplatform-javascript-activity-7409664330243190784-VIT1)
