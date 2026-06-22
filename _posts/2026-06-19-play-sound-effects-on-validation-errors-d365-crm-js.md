@@ -3,7 +3,7 @@ layout: post
 post_id: '074'
 title: How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript
 date: 2026-06-21T11:11
-image: /assets/images/074/play-sound-on-validation-errors-d365-crm.png
+image: assets/images/074/play-sound-on-validation-errors-d365-crm.png
 description: Learn how to play sound effects for validation errors in Dynamics 365 CE using JavaScript and web resources. A creative workaround to enhance user experience.
 meta_keywords: Dynamics 365 CE sound effects, Dataverse audio workaround, Dynamics 365 JavaScript validation, Play sound on error Dynamics 365, CRM UX enhancements, Web resource tricks Dynamics 365, Dynamics 365 form scripting
 category: Dynamics 365 CE
