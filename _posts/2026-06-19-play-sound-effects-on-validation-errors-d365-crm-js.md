@@ -51,7 +51,7 @@ While this approach may not be suitable for all production scenarios, it’s a c
 If you found this interesting, you may want to check out my other blogs as well!
 
 See the demonstration video below
-<video src="/assets/images/074/sound-effects-in-d365-crm.mp4" width="720" height="280" controls></video>
+<video src="/assets/images/074/sound-effects-in-d365-crm.mp4" width="100%" height="auto" controls></video>
 
 #### References:
 
