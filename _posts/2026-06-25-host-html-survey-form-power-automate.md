@@ -8,7 +8,7 @@ description: Step-by-step tutorial to host a survey form in Power Automate and s
 meta_keywords: host website Power Automate, Power Automate HTTP trigger, Power Automate Dataverse integration, Host web form in Power Automate, Power Automate website hosting, HTML website Power Automate hosting
 category: Power Automate
 read_time: 10 mins
-published: false
+published: true
 ---
 
 Ever wondered if you could host a survey form in Power Automate and have the submitted data directly inserted into Dataverse? I recently read a blog by [**Matthew Devaney**](https://www.matthewdevaney.com/power-automate-flow-to-host-a-web-page-web-application/) that explains how to host a page in Power Automate and add data to a SharePoint list. Inspired by that, I wanted to demonstrate the same concept using Dataverse  -  so here it is.
