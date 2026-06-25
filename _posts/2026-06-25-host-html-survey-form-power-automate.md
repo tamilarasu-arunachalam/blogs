@@ -3,7 +3,7 @@ layout: post
 post_id: '075'
 title: How to Build and Host a Contact Form Using Power Automate and Dataverse
 date: 2026-06-28T23:11
-image: /assets/images/075/host-survey-page-power-automate.png
+image: assets/images/075/host-survey-page-power-automate.png
 description: Step-by-step tutorial to host a survey form in Power Automate and store user responses directly into Dataverse using HTTP requests.
 meta_keywords: host website Power Automate, Power Automate HTTP trigger, Power Automate Dataverse integration, Host web form in Power Automate, Power Automate website hosting, HTML website Power Automate hosting
 category: Power Automate
@@ -17,7 +17,7 @@ For this demonstration, we need two flows. One is for hosting the contact form, 
 
 So, I straight move into the [https://make.powerautomate.com](https://make.powerautomate.com) and create an instant flow with trigger “\*\*_When a HTTP request is received_\*\*”, select **_Anyone_** in Who can trigger the flow? and method as **GET.** 
 
-![Trigger config for Host a webpage flow](/assets/images/075/host-webpage-flow-trigger.png)
+![Trigger config for Host a webpage flow](assets/images/075/host-webpage-flow-trigger.png)
 
 Next, add an **Initialize Variable** action. Initialize it with a dummy value for now — we will replace it later with the POST URL.
 
@@ -27,15 +27,15 @@ Then, add a **Compose** action and set its input to the HTML code for your form.
 
 After that, add a Response action at the end and configure it as needed to return the HTML content.
 
-![Host a webpage flow response](/assets/images/075/host-a-webpage-flow-response.png)
+![Host a webpage flow response](assets/images/075/host-a-webpage-flow-response.png)
 
 Finally, your complete flow for hosting the web page should look like this.
 
-![Host webpage flow overview](/assets/images/075/host-webpage-flow-overview.png)
+![Host webpage flow overview](assets/images/075/host-webpage-flow-overview.png)
 
 Since we have hosted a survey form, we need another flow to save the submitted data. Create a new instant cloud flow with the trigger "When an HTTP request is received." This time, set Who can trigger the flow to Anyone and the method to POST. Configure the trigger accordingly.
 
-![Data processing flow trigger](/assets/images/075/data-processing-flow-trigger.png)
+![Data processing flow trigger](assets/images/075/data-processing-flow-trigger.png)
 
 Copy the HTTP POST URL from this form-processing flow. Then, go back to the Host a web page flow and replace the dummy value in the Initialize Variable action with this URL.
 
@@ -43,7 +43,7 @@ Next, add an action to store the form data. Since we want to save the data in Da
 
 Now, copy the URL from the Host a web page flow and paste it into your browser. You'll see the HTML survey form you created.
 
-![](/assets/images/075/hosted-webpage-design.png)
+![Design for the hosted web page](assets/images/075/hosted-webpage-design.png)
 
 ### References:
 
