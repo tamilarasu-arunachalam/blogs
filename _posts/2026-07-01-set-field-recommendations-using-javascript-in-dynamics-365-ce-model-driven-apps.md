@@ -30,12 +30,14 @@ If the **Nickname** field on the Contact form is empty, the system recommends us
 
 To achieve this, I created a JavaScript web resource and registered the method in the form’s **OnLoad** event handler.
 
+<script src="https://gist.github.com/tamilarasu-arunachalam/71a6fb82844f0d73103b4ad5ada1a0ed.js"></script>
+
 When the form loads, the recommendation appears on the Nickname field, prompting the user to use the First Name as a suggested value.
 
 The GIF below demonstrates the recommendation notification in action.
 
-![](/assets/images/076/set-recommendation.gif)
+![Set Recommendation for a field using JavaScript Dynamics 365 CE](/assets/images/076/set-recommendation.gif)
 
 #### References:
 
-- [addNotification (Client API reference) in model-driven apps — Power Apps \| Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/controls/addnotification)
+- [addNotification (Client API reference) in model-driven apps — Power Apps | Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/controls/addnotification)
