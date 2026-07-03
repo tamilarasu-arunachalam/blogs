@@ -5,7 +5,7 @@ title: How to Unit Test Dynamics 365 CRM JavaScript using QUnit?
 date: 2026-04-19 17:41:00 +0000
 image: assets/images/065/img_508a786ff1.gif
 description: ''
-meta_keywords: ''
+meta_keywords: Unit Testing Dynamics 365 CE, Unit Testing Power Platform, Unit Testing Dynamics 365 CRM, Microsoft Dynamics Unit Testing, Dynamics 365 CRM QUnit
 category: Dynamics 365 CE
 categories:
   - Unit Testing
@@ -15,7 +15,7 @@ categories:
   - Web resource
 ---
 
-A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing **unit testing**. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.
+A few weeks ago, our team made an important decision -we wanted to improve the quality of our Dynamics 365 CRM project by introducing **unit testing**. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.
 
 Soon after the decision, I was assigned a task: **create a proof of concept (PoC) for unit testing JavaScript (JScript) web resources used in Dynamics 365 CRM.**
 
