@@ -135,26 +135,29 @@
                     <button type="button" class="btn btn-outline-dark rounded-pill px-4 mt-2" onclick="resetForm()">Send Another</button>
                 </div>
 
-                <form action="#" method="POST" id="contact-form" onsubmit="handleFormSubmit(event)">
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSdbXaYwkQCSgz9JCCl_Etkox3wk8W971dZxkMB8QhaPaOFuew/formResponse" target="_self" method="POST" id="contact-form" onsubmit="handleFormSubmit(event)">
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="name" name="name" placeholder="John Doe" required="" />
+                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="name" name="entry.1374407783" placeholder="John Doe" required="" />
                         <label for="name" class="fw-bold text-secondary">Your Name</label>
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <input type="email" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="email" name="email" placeholder="john@example.com" required="" />
+                        <input type="email" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="email" name="entry.1875774789" placeholder="john@example.com" required="" />
                         <label for="email" class="fw-bold text-secondary">Email Address</label>
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="subject" name="subject" placeholder="Type Your Subject Here" required="" />
+                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="subject" name="entry.156927077" placeholder="How Can I help you?" required="" />
                         <label for="subject" class="fw-bold text-secondary">Subject</label>
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <textarea class="form-control border-2 rounded-3 bg-light-subtle" id="message" name="message" placeholder="Tell me more..." style="height: 150px" required=""></textarea>
+                        <textarea class="form-control border-2 rounded-3 bg-light-subtle" id="message" name="entry.360405811" placeholder="Tell me more..." style="height: 150px" required=""></textarea>
                         <label for="message" class="fw-bold text-secondary">How can I help?</label>
                     </div>
+
+                    <input type="hidden" name="fvv" value="1" />
+    <input type="hidden" name="fbzx" value="-8741921683673455065" />
                     
                     <div class="d-grid gap-2 mt-5">
                         <button type="submit" id="submit-btn" class="btn btn-dark btn-lg py-3 rounded-pill fw-bold d-flex align-items-center justify-content-center gap-2 transition-all">
@@ -226,8 +229,12 @@ function handleFormSubmit(e) {
     btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
     btn.disabled = true;
     
-    // Simulate API call
-    setTimeout(() => {
+    const formData = new FormData(form);
+    fetch(form.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+    }).then(() => {
         btn.innerHTML = originalContent;
         btn.disabled = false;
         
@@ -235,7 +242,12 @@ function handleFormSubmit(e) {
         overlay.style.opacity = '1';
         overlay.style.pointerEvents = 'auto';
         form.reset();
-    }, 1200);
+    }).catch(error => {
+        console.error('Error submitting form:', error);
+        btn.innerHTML = originalContent;
+        btn.disabled = false;
+        alert('There was an error sending your message. Please try again.');
+    });
 }
 
 function resetForm() {
