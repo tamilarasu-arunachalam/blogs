@@ -5,8 +5,17 @@
     <link>http://localhost:4000/</link>
     <description>Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Jun 2026 21:09:00 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 13:29:20 +0530</lastBuildDate>
     <generator>Jekyll RSS</generator>
+    
+    <item>
+      <title>How to Build and Host a Survey Form Using Power Automate and Dataverse</title>
+      <link>http://localhost:4000/host-html-survey-form-power-automate.html</link>
+      <guid isPermaLink="true">http://localhost:4000/host-html-survey-form-power-automate.html</guid>
+      <pubDate>Sun, 28 Jun 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Ever wondered if you could host a survey form in Power Automate and have the submitted data directly inserted into Dataverse? I recently read a blog by &lt;a href=&quot;https://www.matthewdevaney.com/power-automate-flow-to-host-a-web-page-web-application/&quot;&gt;&lt;strong&gt;Matthew Devaney&lt;/strong&gt;&lt;/a&gt; that explains how to host a page in Power Automate and add data to a SharePoint list. Inspired by that, I wanted to demonstrate the same concept using Dataverse  -  so here it is.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript</title>
@@ -96,7 +105,7 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
       <link>http://localhost:4000/unit-test-javascript-using-qunit-d365-crm.html</link>
       <guid isPermaLink="true">http://localhost:4000/unit-test-javascript-using-qunit-d365-crm.html</guid>
       <pubDate>Sun, 19 Apr 2026 23:11:00 +0530</pubDate>
-      <description>&lt;p&gt;A few weeks ago, our team made an important decision — we wanted to improve the quality of our Dynamics 365 CRM project by introducing &lt;strong&gt;unit testing&lt;/strong&gt;. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.&lt;/p&gt;
+      <description>&lt;p&gt;A few weeks ago, our team made an important decision -we wanted to improve the quality of our Dynamics 365 CRM project by introducing &lt;strong&gt;unit testing&lt;/strong&gt;. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.&lt;/p&gt;
 </description>
     </item>
     
@@ -189,15 +198,6 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
       <guid isPermaLink="true">http://localhost:4000/show-hide-subgrid-ribbon-buttons-of-same-table-in-d365-crm.html</guid>
       <pubDate>Sun, 30 Nov 2025 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;While working on one of my weekend Power Apps Model-Driven Apps projects, I ran into an interesting requirement. I had &lt;strong&gt;three subgrids of the same child entity&lt;/strong&gt; placed inside the parent entity’s main form. Each subgrid needed to show a drop-down command with buttons — but the tricky part was:&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?</title>
-      <link>http://localhost:4000/edit-child-and-parent-records-directly-within-forms-d365-crm.html</link>
-      <guid isPermaLink="true">http://localhost:4000/edit-child-and-parent-records-directly-within-forms-d365-crm.html</guid>
-      <pubDate>Sun, 23 Nov 2025 23:11:00 +0530</pubDate>
-      <description>&lt;p&gt;Recently, while working on a customization, a simple question hit me — &lt;strong&gt;“Can we edit related entity records directly inside the parent form in Dynamics 365 CRM?”&lt;/strong&gt; After checking, the answer was a clear yes. Here is how you can do it for both 1:N and N:1 relationships.&lt;/p&gt;
 </description>
     </item>
     

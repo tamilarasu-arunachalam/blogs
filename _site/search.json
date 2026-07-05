@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "How to Build and Host a Survey Form Using Power Automate and Dataverse",
+      "category" : "Power Automate",
+      "url"      : "/host-html-survey-form-power-automate.html",
+      "date"     : "June 28, 2026"
+    } ,
+  
+    {
       "title"    : "How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript",
       "category" : "Dynamics 365 CE",
       "url"      : "/play-sound-effects-on-validation-errors-d365-crm-js.html",
