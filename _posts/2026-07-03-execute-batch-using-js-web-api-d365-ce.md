@@ -3,7 +3,7 @@ layout: post
 post_id: '077'
 title: How to execute a batch process using JavaScript Web API in Dynamics 365 CE?
 date: 2026-07-12T23:11
-image: ''
+image: /assets/images/077/dataverse-batch-process-flow.png
 description: Discover how to use Dataverse Web API Batch Requests to create multiple records in a single API call, improve performance, and manage transactions using change sets.
 meta_keywords: Dataverse Batch Requests, Dynamics 365 Batch Requests, Dataverse Web API, Bulk Create Records Dataverse, Create Multiple Records Dataverse, Dataverse Performance Optimization, Web API Batch Processing, Dataverse Change Sets, Dynamics 365 Web API Batch, ExecuteMultipleRequest Dataverse, Dataverse Bulk Operations, Power Platform Batch Requests, Dataverse Transaction Processing, Dataverse Create Records from JSON, Dataverse change set transaction example, Bulk insert records in Dynamics 365, Dataverse batch request example with JavaScript
 category: Dynamics 365 CE
