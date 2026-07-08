@@ -24,7 +24,7 @@ layout: default
 
                 {% if page.image %}
                 <div class="post-featured-image mb-5">
-                    {% include image.html url=page.image alt=page.title class="img-fluid rounded-4 shadow-sm w-100" %}
+                    {% include image.html url=page.image alt=page.title class="img-fluid rounded-4 shadow-sm w-100" preload="true" %}
                 </div>
                 {% endif %}
 

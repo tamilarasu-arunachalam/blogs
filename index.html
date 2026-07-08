@@ -28,6 +28,29 @@ title: Home
 </header>
 
 
+<!-- Category Filter UI -->
+<section class="py-3 bg-light border-bottom">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center" id="category-filter-container">
+            <span class="fw-medium text-secondary" id="post-count-label">{{ site.posts | size }} posts</span>
+            <div class="dropdown">
+                <button class="btn btn-outline-dark rounded-pill px-4 fw-medium dropdown-toggle d-flex align-items-center gap-2" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-funnel"></i> <span id="selected-category-text">All Categories</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm rounded-4 border-0 mt-2" aria-labelledby="categoryDropdown">
+                    <li><button class="dropdown-item category-filter-btn active fw-medium" data-category="all">All Categories</button></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="dynamics 365 ce">Dynamics 365 CE</button></li>
+                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="power automate">Power Automate</button></li>
+                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="power pages">Power Pages</button></li>
+                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="ai programming">AI Programming</button></li>
+                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="extension development">Extension Development</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Blog List Section -->
 <section class="py-4">
     <div class="container">
@@ -133,6 +156,170 @@ title: Home
                 {% endif %}
 
             </div>
+            
+            <div class="col-lg-10 mx-auto" id="filtered-posts-container" style="display: none;">
+                <!-- Filtered posts will be injected here -->
+            </div>
+            
+            <div id="all-posts-hidden-container" style="display: none;">
+                {% for post in site.posts %}
+                <article class="post-list-item" data-category="{{ post.category | downcase | escape }}" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="{{ post.url | relative_url }}">
+                            {% include image.html url=post.image alt=post.title class="post-thumbnail" %}
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                {% if post.pinned %}<span class="pinned-badge">PINNED</span>{% endif %}
+                                <span class="text-secondary small fw-medium">{{ post.date | date: "%b %d, %Y" }}</span>
+                            </div>
+                            <span class="small text-muted opacity-75">{{ post.read_time | default: '5 min' }}</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="{{ post.url | relative_url }}" class="post-title-link text-decoration-none text-dark hover-primary">{{ post.title }}</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            {{ post.excerpt | strip_html | truncatewords: 30 }}
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             {% if post.category %}
+                             <span class="category-pill">{{ post.category }}</span>
+                             {% endif %}
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const POSTS_PER_PAGE = 5;
+        const filterBtns = document.querySelectorAll('.category-filter-btn');
+        const defaultContainer = document.getElementById('post-list-container');
+        const filteredContainer = document.getElementById('filtered-posts-container');
+        const allPostsHidden = document.getElementById('all-posts-hidden-container');
+        const postCountLabel = document.getElementById('post-count-label');
+        const totalPosts = allPostsHidden ? allPostsHidden.querySelectorAll('.post-list-item').length : 0;
+
+        if (!filterBtns.length || !defaultContainer || !filteredContainer || !allPostsHidden) return;
+
+        function updateCount(count) {
+            if (postCountLabel) {
+                postCountLabel.textContent = count + (count === 1 ? ' post' : ' posts');
+            }
+        }
+
+        function renderFilteredPage(matchingPosts, page) {
+            const totalPages = Math.ceil(matchingPosts.length / POSTS_PER_PAGE);
+            const start = (page - 1) * POSTS_PER_PAGE;
+            const end = start + POSTS_PER_PAGE;
+
+            filteredContainer.innerHTML = '';
+
+            // Render posts for the current page
+            matchingPosts.slice(start, end).forEach(post => {
+                filteredContainer.appendChild(post.cloneNode(true));
+            });
+
+            // Render pagination if needed
+            if (totalPages > 1) {
+                const nav = document.createElement('nav');
+                nav.setAttribute('aria-label', 'Filtered page navigation');
+                nav.className = 'mt-5';
+                let paginationHTML = '<ul class="pagination justify-content-center">';
+
+                // First button
+                if (page > 1) {
+                    paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="1" aria-label="First"><i class="bi bi-chevron-double-left"></i></button></li>';
+                }
+
+                // Previous button
+                if (page > 1) {
+                    paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="' + (page - 1) + '" aria-label="Previous"><i class="bi bi-chevron-left"></i></button></li>';
+                }
+
+                // Page numbers
+                let startPage = Math.max(1, page - 1);
+                let endPage = Math.min(totalPages, startPage + 3);
+                if (endPage - startPage < 3) startPage = Math.max(1, endPage - 3);
+
+                for (let i = startPage; i <= endPage; i++) {
+                    if (i === page) {
+                        paginationHTML += '<li class="page-item active" aria-current="page"><span class="page-link rounded-circle border-0 bg-dark text-white mx-1">' + i + '</span></li>';
+                    } else {
+                        paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="' + i + '">' + i + '</button></li>';
+                    }
+                }
+
+                // Next button
+                if (page < totalPages) {
+                    paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="' + (page + 1) + '" aria-label="Next"><i class="bi bi-chevron-right"></i></button></li>';
+                }
+
+                // Last button
+                if (page < totalPages) {
+                    paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="' + totalPages + '" aria-label="Last"><i class="bi bi-chevron-double-right"></i></button></li>';
+                }
+
+                paginationHTML += '</ul>';
+                nav.innerHTML = paginationHTML;
+                filteredContainer.appendChild(nav);
+
+                // Bind pagination clicks
+                filteredContainer.querySelectorAll('.filtered-page-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        renderFilteredPage(matchingPosts, parseInt(this.getAttribute('data-page')));
+                        window.scrollTo({ top: filteredContainer.offsetTop - 100, behavior: 'smooth' });
+                    });
+                });
+            }
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const selectedCategoryText = document.getElementById('selected-category-text');
+                if (selectedCategoryText) {
+                    selectedCategoryText.textContent = this.textContent;
+                }
+
+                const category = this.getAttribute('data-category');
+
+                if (category === 'all') {
+                    defaultContainer.style.display = 'block';
+                    filteredContainer.style.display = 'none';
+                    updateCount(totalPosts);
+                } else {
+                    defaultContainer.style.display = 'none';
+                    filteredContainer.style.display = 'block';
+
+                    // Collect matching posts
+                    const allPosts = allPostsHidden.querySelectorAll('.post-list-item');
+                    const matchingPosts = [];
+                    allPosts.forEach(post => {
+                        if (post.getAttribute('data-category') === category) {
+                            matchingPosts.push(post);
+                        }
+                    });
+
+                    updateCount(matchingPosts.length);
+
+                    if (matchingPosts.length === 0) {
+                        filteredContainer.innerHTML = '<div class="text-center text-muted py-5">No posts found in this category.</div>';
+                    } else {
+                        renderFilteredPage(matchingPosts, 1);
+                    }
+                }
+            });
+        });
+    });
+</script>

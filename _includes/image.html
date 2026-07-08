@@ -4,20 +4,26 @@
 {% assign img_class = include.class %}
 {% assign img_style = include.style %}
 
+{% if include.preload == "true" or include.preload == true %}
+{% assign img_loading = 'fetchpriority="high"' %}
+{% else %}
+{% assign img_loading = 'loading="lazy" decoding="async"' %}
+{% endif %}
+
 {% if img_url and img_url != "" %}
 {% if img_url contains '://' or img_url contains 'http' %}
-<img src="{{ img_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
+<img src="{{ img_url }}" alt="{{ img_alt }}" class="{{ img_class }}" {{ img_loading }}>
 {% else %}
 {% if page.post_id and img_url contains '/' == false %}
 {% assign img_path = append: page.post_id | append: '/' | append: img_url %}
-<img src="{{ img_path | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
+<img src="{{ img_path | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" {{ img_loading }}>
 {% else %}
 {% assign clean_url = img_url %}
 {% assign first_char = img_url | slice: 0 %}
 {% if first_char == '/' %}
   {% assign clean_url = img_url | remove_first: '/' %}
 {% endif %}
-<img src="{{ clean_url | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" loading="lazy" decoding="async">
+<img src="{{ clean_url | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" {{ img_loading }}>
 {% endif %}
 {% endif %}
 {% else %}

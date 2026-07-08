@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "Set Field Recommendations Using JavaScript in Dynamics 365 CE / Model-Driven Apps",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/set-field-recommendations-javascript-in-d365-ce-mda.html",
+      "date"     : "July 5, 2026"
+    } ,
+  
+    {
       "title"    : "How to Build and Host a Survey Form Using Power Automate and Dataverse",
       "category" : "Power Automate",
       "url"      : "/host-html-survey-form-power-automate.html",

@@ -59,9 +59,10 @@
   <link rel="preload" as="style" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/style.css">
   
+  
   <!-- Google tag (gtag.js) -->
-  <script async='async' src='https://www.googletagmanager.com/gtag/js?id=G-NRDWJ8N6VV' />
-  <script defer='defer'>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRDWJ8N6VV"></script>
+  <script defer>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag("js", new Date());
@@ -141,6 +142,29 @@
 </header>
 
 
+<!-- Category Filter UI -->
+<section class="py-3 bg-light border-bottom">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center" id="category-filter-container">
+            <span class="fw-medium text-secondary" id="post-count-label">68 posts</span>
+            <div class="dropdown">
+                <button class="btn btn-outline-dark rounded-pill px-4 fw-medium dropdown-toggle d-flex align-items-center gap-2" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-funnel"></i> <span id="selected-category-text">All Categories</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm rounded-4 border-0 mt-2" aria-labelledby="categoryDropdown">
+                    <li><button class="dropdown-item category-filter-btn active fw-medium" data-category="all">All Categories</button></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="dynamics 365 ce">Dynamics 365 CE</button></li>
+                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="power automate">Power Automate</button></li>
+                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="power pages">Power Pages</button></li>
+                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="ai programming">AI Programming</button></li>
+                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="extension development">Extension Development</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Blog List Section -->
 <section class="py-4">
     <div class="container">
@@ -150,8 +174,55 @@
                 
                 <article class="post-list-item" style="display: grid; transition: opacity 0.3s ease;">
                     <div class="post-thumbnail-wrapper">
+                        <a href="/perform-a-changeset-request-in-dataverse-connector-power-automate.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/023/img_0437cd6c48.png" alt="Perform a changeset request in Dataverse Connector | Power Automate" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 18, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/perform-a-changeset-request-in-dataverse-connector-power-automate.html" class="post-title-link text-decoration-none text-dark hover-primary">Perform a changeset request in Dataverse Connector | Power Automate</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            As you all know, Power Automate’s action depends on the previous action or trigger. We can even configure the action to run even on the failure of the previous action...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
                         <a href="/how-to-create-custom-connector-for-power-automate-from-scratch.html">
                             <!-- Premium Image Handler with Placeholder Fallback -->
+
+
 
 
 
@@ -213,6 +284,8 @@
 
 
 
+
+
 <img src="/assets/images/021/img_9d960ad019.png" alt="Fetch Optionset Labels from String Maps Table using Flow or JavaScript" class="post-thumbnail" loading="lazy" decoding="async">
 
 
@@ -251,6 +324,8 @@
                     <div class="post-thumbnail-wrapper">
                         <a href="/import-price-list-items-to-dynamics-365-ce-using-data-imports.html">
                             <!-- Premium Image Handler with Placeholder Fallback -->
+
+
 
 
 
@@ -305,6 +380,8 @@
 
 
 
+
+
 <img src="/assets/images/019/img_868419228a.png" alt="Import records with alternate lookup references in Dynamics 365 CE" class="post-thumbnail" loading="lazy" decoding="async">
 
 
@@ -324,49 +401,6 @@
                         </h2>
                         <div class="post-excerpt-list text-muted small mb-3">
                             If you are in a place of importing bulk data into the Dynamics 365 CE, you have many choices like importing as excel, CSV or XML. But if you are...
-                        </div>
-                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
-                             
-                             <span class="category-pill">Dynamics 365 CE</span>
-                             
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="post-list-item" style="display: grid; transition: opacity 0.3s ease;">
-                    <div class="post-thumbnail-wrapper">
-                        <a href="/deactivate-duplicate-records-using-plugin-and-custom-action-in-dynamics-crm.html">
-                            <!-- Premium Image Handler with Placeholder Fallback -->
-
-
-
-
-
-
-
-
-
-
-
-<img src="/assets/images/018/img_ccac86014f.png" alt="Deactivate Duplicate Records using Plugin and Custom Action in Dynamics CRM" class="post-thumbnail" loading="lazy" decoding="async">
-
-
-
-                        </a>
-                    </div>
-                    <div class="post-content-column">
-                        <div class="mb-2 d-flex align-items-center justify-content-between">
-                            <div class="d-flex align-items-center gap-2">
-                                
-                                <span class="text-secondary small fw-medium">May 09, 2023</span>
-                            </div>
-                            <span class="small text-muted opacity-75">5 min</span>
-                        </div>
-                        <h2 class="h4 fw-bold mb-2">
-                            <a href="/deactivate-duplicate-records-using-plugin-and-custom-action-in-dynamics-crm.html" class="post-title-link text-decoration-none text-dark hover-primary">Deactivate Duplicate Records using Plugin and Custom Action in Dynamics CRM</a>
-                        </h2>
-                        <div class="post-excerpt-list text-muted small mb-3">
-                            Recently I have come across a question in Dynamics 365 CRM Community in which someone is asking to fetch duplicates from contact entity.  I had suggested Power Automate to do so....
                         </div>
                         <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
                              
@@ -448,9 +482,3240 @@
                 
 
             </div>
+            
+            <div class="col-lg-10 mx-auto" id="filtered-posts-container" style="display: none;">
+                <!-- Filtered posts will be injected here -->
+            </div>
+            
+            <div id="all-posts-hidden-container" style="display: none;">
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/set-field-recommendations-javascript-in-d365-ce-mda.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/076/recommendation-using-javascript.png" alt="Set Field Recommendations Using JavaScript in Dynamics 365 CE / Model-Driven Apps" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jul 05, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 mins</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/set-field-recommendations-javascript-in-d365-ce-mda.html" class="post-title-link text-decoration-none text-dark hover-primary">Set Field Recommendations Using JavaScript in Dynamics 365 CE / Model-Driven Apps</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            In Dynamics 365 Customer Engagement (CE), we often use Business Rules to provide field recommendations. However, there may be scenarios where we need more flexibility and want to display recommendations...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/host-html-survey-form-power-automate.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/075/host-survey-page-power-automate.png" alt="How to Build and Host a Survey Form Using Power Automate and Dataverse" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 28, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">10 mins</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/host-html-survey-form-power-automate.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Build and Host a Survey Form Using Power Automate and Dataverse</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Ever wondered if you could host a survey form in Power Automate and have the submitted data directly inserted into Dataverse? I recently read a blog by Matthew Devaney that...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/play-sound-effects-on-validation-errors-d365-crm-js.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/074/play-sound-on-validation-errors-d365-crm.png" alt="How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 21, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">10 mins</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/play-sound-effects-on-validation-errors-d365-crm-js.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            A few days ago, I came across a trending tweet where someone asked for a VS Code extension that plays a loud “Faaaaaaaaah” sound whenever an error occurs while coding....
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="ai programming" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/why-ai-pair-programming-must-in-2025.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/071/ai-pair-programming-2026-featured.png" alt="Why AI Pair Programming Will Become a Must for All Developers in 2026" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 16, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">10 min read</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/why-ai-pair-programming-must-in-2025.html" class="post-title-link text-decoration-none text-dark hover-primary">Why AI Pair Programming Will Become a Must for All Developers in 2026</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            The Shift Already Happening in Dev Teams Not long ago, pair programming meant pulling up a chair beside a colleague, sharing a screen, and thinking out loud together. It was...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">AI Programming</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/smart-approval-system-with-prediction-model-power-automate.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/73/1000118534.png" alt="Build a Smart Approval System with Prediction Model in  Power Automate" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 14, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">10 mins</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/smart-approval-system-with-prediction-model-power-automate.html" class="post-title-link text-decoration-none text-dark hover-primary">Build a Smart Approval System with Prediction Model in  Power Automate</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            In this AI era, traditional approvals no longer make sense. Approvals play a major role everywhere, but they often require follow-ups and reminders to get things sorted. To address this,...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="email marketing" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/why-moosend-best-email-platform.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/001/moosend-email-analytics.png" alt="Why Moosend Is the Best Email Marketing Platform for Small Businesses and Growing Brands" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 09, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min read</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/why-moosend-best-email-platform.html" class="post-title-link text-decoration-none text-dark hover-primary">Why Moosend Is the Best Email Marketing Platform for Small Businesses and Growing Brands</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Every business starts email marketing the same way - full of optimism, a growing contact list, and a simple goal: stay connected with customers. But somewhere between navigating confusing dashboards,...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Email Marketing</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="extension development" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/automate-chrome-extension-publishing-with-github-actions.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/069/extension-publishing-featured-image.png" alt="How I Automated Chrome Extension Publishing with GitHub Actions" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 02, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">10 min read</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/automate-chrome-extension-publishing-with-github-actions.html" class="post-title-link text-decoration-none text-dark hover-primary">How I Automated Chrome Extension Publishing with GitHub Actions</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Every time I shipped a new version of my Chrome extension, I dreaded the same ritual - bump the version, zip the build folder, log into the Chrome Web Store...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Extension Development</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power pages" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/built-stunning-admin-dashboard-power-pages.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/068/img_ceb5e7a952.gif" alt="How I Built a Stunning Admin Dashboard in Power Pages?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">May 24, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min read</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/built-stunning-admin-dashboard-power-pages.html" class="post-title-link text-decoration-none text-dark hover-primary">How I Built a Stunning Admin Dashboard in Power Pages?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            When I started building a hospital management app as a weekend project, I never imagined the frontend would become the most exciting part. I set up Power Pages as an...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Pages</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/bts-of-export-to-excel-model-driven-apps.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/067/img_81152b8845.gif" alt="Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">May 17, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/bts-of-export-to-excel-model-driven-apps.html" class="post-title-link text-decoration-none text-dark hover-primary">Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            I recently worked on something where I had to use Advanced Find or filter views every time while exporting weekly or monthly reports. Although we can create personal views to...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/hide-sensitive-data-in-power-automate.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/066/img_be2a5971b6.gif" alt="How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Apr 26, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/hide-sensitive-data-in-power-automate.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            There was a moment while debugging a Power Automate flow when something unexpected showed up. Instead of just checking an error, the entire API request and response data were visible...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/unit-test-javascript-using-qunit-d365-crm.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/065/img_508a786ff1.gif" alt="How to Unit Test Dynamics 365 CRM JavaScript using QUnit?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Apr 19, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/unit-test-javascript-using-qunit-d365-crm.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            A few weeks ago, our team made an important decision -we wanted to improve the quality of our Dynamics 365 CRM project by introducing unit testing. Until then, testing was mostly...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power pages" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/how-to-add-a-favicon-in-power-pages.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/064/img_0e751ab16e.gif" alt="How to Add a Favicon in Power Pages?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Apr 12, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/how-to-add-a-favicon-in-power-pages.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Add a Favicon in Power Pages?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            When you open a website in your browser, one small detail quietly helps you recognize it instantly. That tiny icon shown in the browser tab, bookmarks, history, and address bar...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Pages</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/063/img_e3160e0be0.gif" alt="Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Apr 06, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html" class="post-title-link text-decoration-none text-dark hover-primary">Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            There is a quote about debugging from Brian Kernighan (Author and Co-contributor for Unix): Debugging is twice as hard as writing the code in the first place. Therefore, if you...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power pages" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/customize-signin-page-power-pages.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/062/img_478dd1953a.gif" alt="How to Customize the Sign in page in Power Pages Easily" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Mar 30, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/customize-signin-page-power-pages.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Customize the Sign in page in Power Pages Easily</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Power Pages allows users to sign in using different providers like Entra ID, Google, LinkedIn, and others, which is great for authentication flexibility, but the default sign in page UI...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Pages</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power pages" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/data-summarization-api-power-pages.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/061/img_7130141458.gif" alt="Implement Data Summarization API for Dataverse in Power Pages" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Mar 15, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/data-summarization-api-power-pages.html" class="post-title-link text-decoration-none text-dark hover-primary">Implement Data Summarization API for Dataverse in Power Pages</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            In today’s AI-driven world, summarizing information has become incredibly easy. We can summarize long articles, web pages, books, and even lengthy videos within seconds using AI tools. Microsoft is gradually...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Pages</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power pages" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/client-api-power-pages-crud-guide.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/060/img_25db1d708c.gif" alt="Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Feb 15, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/client-api-power-pages-crud-guide.html" class="post-title-link text-decoration-none text-dark hover-primary">Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            If you have worked with Power Pages, you probably got stuck at some point using webapi.safeAjax for Dataverse operations. Microsoft introduced the $pages Client API to simplify how developers interact...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Pages</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power pages" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/integrate-power-pages-with-firebase-example-crud.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/058/img_17c61a0d2a.gif" alt="How to Integrate Power Pages with Firebase Realtime Database with Example CRUD" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jan 11, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/integrate-power-pages-with-firebase-example-crud.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Integrate Power Pages with Firebase Realtime Database with Example CRUD</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            For a long time, I have felt that Power Pages is capable of doing much more than what we usually limit it to. Most of the time, it stays tightly...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Pages</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power pages" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/server-logic-power-pages-with-example.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/057/img_7f5da6a23f.gif" alt="Server Logic in Power Pages Explained with Real Time API Example" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jan 04, 2026</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/server-logic-power-pages-with-example.html" class="post-title-link text-decoration-none text-dark hover-primary">Server Logic in Power Pages Explained with Real Time API Example</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Power Pages is commonly used to build external websites on top of Dataverse. While it works well for forms, lists, and UI customization, handling sensitive logic and third-party APIs has...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Pages</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/translate-metadata-and-web-resources-d365-crm.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/055/img_189a192a47.gif" alt="How to Translate Metadata and Web Resources in Dynamics 365 CE" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Dec 21, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/translate-metadata-and-web-resources-d365-crm.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Translate Metadata and Web Resources in Dynamics 365 CE</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            If you have ever worked on a Dynamics 365 CE or Power Apps model-driven app that serves users from multiple countries, you already know how important language support is. Most...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power pages" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/google-authentication-in-power-pages-guide.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/054/img_f190a8922a.gif" alt="How to Set Up Google Authentication in Power Pages (Beginner Guide)?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Dec 07, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/google-authentication-in-power-pages-guide.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Set Up Google Authentication in Power Pages (Beginner Guide)?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Power Pages, being a Microsoft-hosted low-code portal platform, gives us multiple authentication options out of the box - including Azure AD and External Authentication. But what many makers don’t realize...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Pages</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/show-hide-subgrid-ribbon-buttons-of-same-table-in-d365-crm.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/053/img_72426d992d.gif" alt="Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Nov 30, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/show-hide-subgrid-ribbon-buttons-of-same-table-in-d365-crm.html" class="post-title-link text-decoration-none text-dark hover-primary">Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            While working on one of my weekend Power Apps Model-Driven Apps projects, I ran into an interesting requirement. I had three subgrids of the same child entity placed inside the...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/edit-child-and-parent-records-directly-within-forms-d365-crm.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/052/img_14eb6fb8f7.gif" alt="How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Nov 23, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/edit-child-and-parent-records-directly-within-forms-d365-crm.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Recently, while working on a customization, a simple question hit me — “Can we edit related entity records directly inside the parent form in Dynamics 365 CRM?” After checking, the...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/associate-disassociate-records-using-javascript-webapi-d365.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/051/img_81b48ca268.gif" alt="Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Nov 02, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/associate-disassociate-records-using-javascript-webapi-d365.html" class="post-title-link text-decoration-none text-dark hover-primary">Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Recently, I worked on a Dynamics 365 customization where I needed to associate selected subgrid records with a parent record - specifically, linking multiple contacts to an account using a...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/how-to-configure-and-use-tabbed-sections-in-model-driven-apps.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/050/img_62d6897223.gif" alt="How to Configure and Use Tabbed Sections in Model-Driven Apps?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Sep 28, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/how-to-configure-and-use-tabbed-sections-in-model-driven-apps.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Configure and Use Tabbed Sections in Model-Driven Apps?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            When working with Dynamics 365 model-driven apps, we often think of forms in a traditional way - tabs holding sections, and sections holding fields. Recently, I stumbled upon a hidden...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/how-to-open-multiple-workspace-tabs-in-dynamics-365-customer-service-using-javascript.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/049/img_e80e5e6282.gif" alt="How to Open Multiple Workspace Tabs in Dynamics 365 Customer Service Using JavaScript?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jul 27, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/how-to-open-multiple-workspace-tabs-in-dynamics-365-customer-service-using-javascript.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Open Multiple Workspace Tabs in Dynamics 365 Customer Service Using JavaScript?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Working in Customer Service Workspace can feel like juggling multiple cases/conversations at once. Ofcourse we can open records from view which will open in the new workspace tab. I was...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/048/img_453fc33dd7.jpg" alt="How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jul 20, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Have you ever wanted to call one Power Automate flow from another using a custom API endpoint? Yes, it’s possible! In this article, I’ll explain how to build and invoke...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/quick-view-forms-in-model-driven-apps-what-why-and-how-to-use-them.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/047/img_004273db2e.gif" alt="Quick View Forms in Model Driven Apps: What, Why, and How to Use Them?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jul 06, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/quick-view-forms-in-model-driven-apps-what-why-and-how-to-use-them.html" class="post-title-link text-decoration-none text-dark hover-primary">Quick View Forms in Model Driven Apps: What, Why, and How to Use Them?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            When working with Microsoft Dynamics 365 CRM, efficiency and user experience matter. One feature that often goes unnoticed - but can make a significant difference - is the Quick View...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/how-to-revert-to-the-classic-ui-in-power-apps-model-driven-apps-even-after-the-toggle-is-gone.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/046/img_b9249e56d8.png" alt="How to Revert to the Classic UI in Power Apps Model-Driven Apps (Even After the Toggle Is Gone)?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 29, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/how-to-revert-to-the-classic-ui-in-power-apps-model-driven-apps-even-after-the-toggle-is-gone.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Revert to the Classic UI in Power Apps Model-Driven Apps (Even After the Toggle Is Gone)?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Microsoft introduced the new Fluent UI for Model-Driven Power Apps in October 1. Initially, users could easily switch between the new and classic experiences using the “Try the new look” toggle...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/how-to-filter-subgrid-based-on-parent-record-fields-on-tab-switch-in-model-driven-apps.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/045/img_7996e7f7a6.gif" alt="How to Filter Subgrid Based on Parent Record Fields on Tab Switch in Model-Driven Apps?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 22, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/how-to-filter-subgrid-based-on-parent-record-fields-on-tab-switch-in-model-driven-apps.html" class="post-title-link text-decoration-none text-dark hover-primary">How to Filter Subgrid Based on Parent Record Fields on Tab Switch in Model-Driven Apps?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            I have recently came across a use case where i have to filter the sub grid based on the field values from the parent record on the event of tab...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/safely-handle-async-operations-before-save-in-model-driven-power-apps.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/044/img_815ddc2024.png" alt="Safely Handle Async Operations Before Save in Model-Driven Power Apps" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">May 25, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/safely-handle-async-operations-before-save-in-model-driven-power-apps.html" class="post-title-link text-decoration-none text-dark hover-primary">Safely Handle Async Operations Before Save in Model-Driven Power Apps</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Hello folks. I recently tackled one of these scenarios, and what seemed like a simple validation turned into a bit of a deep dive.
+
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/why-retry-policy-in-power-automate-matters.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/043/img_5a8ccf0457.png" alt="What Is a Retry Policy in Power Automate (And Why It Matters)?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">May 04, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/why-retry-policy-in-power-automate-matters.html" class="post-title-link text-decoration-none text-dark hover-primary">What Is a Retry Policy in Power Automate (And Why It Matters)?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Ever had a Power Automate flow fail and wondered, “Why didn’t it just try again?” 
+
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/unlock-hidden-superpowers-in-dynamics-365-crm-with-simple-url-tweaks.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/042/img_abcec1ea48.png" alt="Unlock Hidden Superpowers in Dynamics 365 CRM with Simple URL Tweaks" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Apr 13, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/unlock-hidden-superpowers-in-dynamics-365-crm-with-simple-url-tweaks.html" class="post-title-link text-decoration-none text-dark hover-primary">Unlock Hidden Superpowers in Dynamics 365 CRM with Simple URL Tweaks</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Let’s be honest — debugging can be a frustrating part of working with Microsoft Dynamics 365. Whether it’s a mysterious JavaScript error, a misfiring ribbon button, or just trying to...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/clone-a-record-in-dynamics-365-ce-using-javascript.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/041/img_8bc1cd0eba.png" alt="Clone a record in Dynamics 365 CE using JavaScript" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Feb 09, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/clone-a-record-in-dynamics-365-ce-using-javascript.html" class="post-title-link text-decoration-none text-dark hover-primary">Clone a record in Dynamics 365 CE using JavaScript</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Fellas! Have you ever been in a situation where you needed to create multiple similar records with some fields carrying the same data? I found myself in this exact scenario...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power pages" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/inline-documents-preview-in-power-pages-using-javascript.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/040/img_9fa686f603.png" alt="Inline Documents Preview in Power Pages using JavaScript" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jan 26, 2025</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/inline-documents-preview-in-power-pages-using-javascript.html" class="post-title-link text-decoration-none text-dark hover-primary">Inline Documents Preview in Power Pages using JavaScript</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            In this blog post, I’ll Walk you through the steps to preview documents directly inside Power Pages without relying on any third-party libraries. For this demonstration, I’ve created a Power...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Pages</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/making-xrm-web-api-calls-synchronous-with-javascript-in-dynamics-365-crm.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/039/img_fb79362642.png" alt="Making XRM Web API Calls Synchronous with JavaScript in Dynamics 365 CRM" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Dec 08, 2024</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/making-xrm-web-api-calls-synchronous-with-javascript-in-dynamics-365-crm.html" class="post-title-link text-decoration-none text-dark hover-primary">Making XRM Web API Calls Synchronous with JavaScript in Dynamics 365 CRM</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            When working with Dynamics 365 CRM and Model Driven Apps, developers often need to interact with the XRM Web API to perform CRUD (Create, Read, Update, Delete) operations. By default,...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/038/img_9dc1697832.png" alt="Unlocking the Power of Side Panes in Model-Driven Apps" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Sep 15, 2024</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/unlocking-the-power-of-side-panes-in-model-driven-apps.html" class="post-title-link text-decoration-none text-dark hover-primary">Unlocking the Power of Side Panes in Model-Driven Apps</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Side panes in Model Driven Apps are designed to facilitate access to multiple pages within a single view. They appear from the right side of the page and offer various...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/037/img_beba359730.png" alt="Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 30, 2024</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html" class="post-title-link text-decoration-none text-dark hover-primary">Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/036/img_8e7a92550f.png" alt="Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 09, 2024</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html" class="post-title-link text-decoration-none text-dark hover-primary">Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Struggling to fetch large data sets via the XRM Web API? No sweat! I’ve authored an article demonstrating how to efficiently fetch large datasets from the Dataverse XRM Web API...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/035/img_25d9f54c30.png" alt="Fetching large number of data from Dataverse Connector in Power Automate" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">May 19, 2024</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html" class="post-title-link text-decoration-none text-dark hover-primary">Fetching large number of data from Dataverse Connector in Power Automate</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Handling a large amount of data remains a challenge for many Power Automate enthusiasts. Here’s an article detailing how to retrieve a large number of records from Dataverse using Power...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/building-a-pdf-preview-feature-inside-dynamics-365-ce-with-jscript.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/034/img_647b95229f.png" alt="Building a PDF Preview feature inside Dynamics 365 CE with JScript" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jan 27, 2024</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/building-a-pdf-preview-feature-inside-dynamics-365-ce-with-jscript.html" class="post-title-link text-decoration-none text-dark hover-primary">Building a PDF Preview feature inside Dynamics 365 CE with JScript</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            I recently encountered a question regarding the possibility of previewing a PDF file inside Dynamics 365 CRM or a Model Driven App without opening an additional tab or window. After...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/field-mapping-between-entities-in-dynamics-365-ce.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/033/img_ea59cf2330.png" alt="Field Mapping between Entities in Dynamics 365 CE" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jan 10, 2024</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/field-mapping-between-entities-in-dynamics-365-ce.html" class="post-title-link text-decoration-none text-dark hover-primary">Field Mapping between Entities in Dynamics 365 CE</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            You know what!. We can map fields with the related entity without using any client-side script. It can be done by the Out-of-Box feature, which is Entity Field Mapping. But...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/automatically-recalculate-rollup-fields-using-javascript-in-dynamics-365-ce.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/032/img_6323eb129c.png" alt="Automatically Recalculate Rollup fields using JavaScript in Dynamics 365 CE" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Dec 30, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/automatically-recalculate-rollup-fields-using-javascript-in-dynamics-365-ce.html" class="post-title-link text-decoration-none text-dark hover-primary">Automatically Recalculate Rollup fields using JavaScript in Dynamics 365 CE</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Roll-up fields in Dynamics 365 CE typically take around an hour to recalculate values, unless done manually. To manually trigger the recalculation, simply click on the calculator icon adjacent to...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/invoke-a-power-automate-flow-synchronously-from-a-model-driven-app-using-actions.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/031/img_ccd88a128b.png" alt="Invoke a Power Automate flow synchronously from a Model Driven App using Actions" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Dec 10, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/invoke-a-power-automate-flow-synchronously-from-a-model-driven-app-using-actions.html" class="post-title-link text-decoration-none text-dark hover-primary">Invoke a Power Automate flow synchronously from a Model Driven App using Actions</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            In this article, I am going to demonstrate on how to use these dataverse custom action to trigger the automated flow in Power automate. Dataverse already has a trigger in...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/what-is-tracked-properties-in-power-automate.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/030/img_54761d610b.png" alt="What is Tracked Properties in Power Automate?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Sep 17, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/what-is-tracked-properties-in-power-automate.html" class="post-title-link text-decoration-none text-dark hover-primary">What is Tracked Properties in Power Automate?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Tracked Properties are the properties which are not directly displayed from the input or output of the action. Tracked Properties are added as a key value pairs. We can retrieve that...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/how-to-use-progress-indicators-in-model-driven-apps.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/029/img_fd36029ce2.png" alt="How to use Progress Indicators in Model Driven Apps?" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Aug 26, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/how-to-use-progress-indicators-in-model-driven-apps.html" class="post-title-link text-decoration-none text-dark hover-primary">How to use Progress Indicators in Model Driven Apps?</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            In Model Driven Apps, we can place a progress indicator at any event using JavaScript. Some people call it loader. In Power Apps it is termed as progress Indicator. The...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dataverse" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/simplifying-the-upsert-operation-in-dataverse.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/028/img_1298e796a2.png" alt="Simplifying the Upsert Operation in Dataverse" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Aug 13, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/simplifying-the-upsert-operation-in-dataverse.html" class="post-title-link text-decoration-none text-dark hover-primary">Simplifying the Upsert Operation in Dataverse</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            
+  Upsert using Power Automate
+  Upsert using JavaScript
+    
+      Best Practices:
+    
+  
+  Upsert using Plugins
+  Conclusion
+
+
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dataverse</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/dependent-option-sets-using-javascript-in-model-driven-apps.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/027/img_daf545a6e1.png" alt="Dependent option sets using JavaScript in Model Driven Apps" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jul 25, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/dependent-option-sets-using-javascript-in-model-driven-apps.html" class="post-title-link text-decoration-none text-dark hover-primary">Dependent option sets using JavaScript in Model Driven Apps</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Dependent Option sets
+
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/relate-and-unrelate-dataverse-rows-using-power-automate.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/026/img_14c59e2764.png" alt="Relate and Unrelate Dataverse rows using Power Automate" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jul 09, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/relate-and-unrelate-dataverse-rows-using-power-automate.html" class="post-title-link text-decoration-none text-dark hover-primary">Relate and Unrelate Dataverse rows using Power Automate</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            
+
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/debugging-a-dynamics-365-crm-plugin.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/025/img_df0059ddb7.png" alt="Debugging a Dynamics 365 CRM Plugin" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jul 02, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/debugging-a-dynamics-365-crm-plugin.html" class="post-title-link text-decoration-none text-dark hover-primary">Debugging a Dynamics 365 CRM Plugin</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Debugging Debugging a Dynamics 365 CRM plugin Trace Logs Persist to Entity (Recommended) Follow the below steps to debug plugin using Persist to Entity: Exception Follow the below steps to...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/send-a-email-in-dynamics-365-crm-using-c-plugins.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/024/img_ec9c18d4fc.png" alt="Send a Email in Dynamics 365 CRM using C# Plugins" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 25, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/send-a-email-in-dynamics-365-crm-using-c-plugins.html" class="post-title-link text-decoration-none text-dark hover-primary">Send a Email in Dynamics 365 CRM using C# Plugins</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            We have all came through the activity timeline section in account and contact forms. The activities include Email, Phone call, Appointments, Tasks, Posts, and Notes. I have explored how to...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/perform-a-changeset-request-in-dataverse-connector-power-automate.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/023/img_0437cd6c48.png" alt="Perform a changeset request in Dataverse Connector | Power Automate" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 18, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/perform-a-changeset-request-in-dataverse-connector-power-automate.html" class="post-title-link text-decoration-none text-dark hover-primary">Perform a changeset request in Dataverse Connector | Power Automate</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            As you all know, Power Automate’s action depends on the previous action or trigger. We can even configure the action to run even on the failure of the previous action...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/how-to-create-custom-connector-for-power-automate-from-scratch.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/022/img_374c6419b0.png" alt="How to create Custom Connector for Power Automate from Scratch" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 12, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/how-to-create-custom-connector-for-power-automate-from-scratch.html" class="post-title-link text-decoration-none text-dark hover-primary">How to create Custom Connector for Power Automate from Scratch</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            
+  Connectors
+  Custom Connectors
+  Creating Custom Connector
+  Use Custom Connector in Flow
+  Summary
+
+
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/fetch-optionset-labels-from-string-maps-table-using-flow-or-javascript.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/021/img_9d960ad019.png" alt="Fetch Optionset Labels from String Maps Table using Flow or JavaScript" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jun 12, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/fetch-optionset-labels-from-string-maps-table-using-flow-or-javascript.html" class="post-title-link text-decoration-none text-dark hover-primary">Fetch Optionset Labels from String Maps Table using Flow or JavaScript</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            
+  String Maps Table in Dataverse
+  List Option set Labels using Power Automate
+  List Option set Labels using JavaScript
+  Summary
+
+
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/import-price-list-items-to-dynamics-365-ce-using-data-imports.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/020/img_d4c2b82a69.png" alt="Import Price List Items to Dynamics 365 CE using Data Imports" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">May 28, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/import-price-list-items-to-dynamics-365-ce-using-data-imports.html" class="post-title-link text-decoration-none text-dark hover-primary">Import Price List Items to Dynamics 365 CE using Data Imports</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Importing data to Price list items table is not easy as product table. Because the price list items include lookup fields from different tables. Sometimes the import may lead to...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/import-records-with-alternate-lookup-references-in-dynamics-365-ce.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/019/img_868419228a.png" alt="Import records with alternate lookup references in Dynamics 365 CE" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">May 20, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/import-records-with-alternate-lookup-references-in-dynamics-365-ce.html" class="post-title-link text-decoration-none text-dark hover-primary">Import records with alternate lookup references in Dynamics 365 CE</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            If you are in a place of importing bulk data into the Dynamics 365 CE, you have many choices like importing as excel, CSV or XML. But if you are...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/deactivate-duplicate-records-using-plugin-and-custom-action-in-dynamics-crm.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/018/img_ccac86014f.png" alt="Deactivate Duplicate Records using Plugin and Custom Action in Dynamics CRM" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">May 09, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/deactivate-duplicate-records-using-plugin-and-custom-action-in-dynamics-crm.html" class="post-title-link text-decoration-none text-dark hover-primary">Deactivate Duplicate Records using Plugin and Custom Action in Dynamics CRM</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Recently I have come across a question in Dynamics 365 CRM Community in which someone is asking to fetch duplicates from contact entity.  I had suggested Power Automate to do so....
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/send-in-app-notifications-to-model-driven-app-from-power-automate.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/017/img_bd5fd7ae90.png" alt="Send In-app Notifications to Model Driven App from Power Automate" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">May 07, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/send-in-app-notifications-to-model-driven-app-from-power-automate.html" class="post-title-link text-decoration-none text-dark hover-primary">Send In-app Notifications to Model Driven App from Power Automate</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            In-app notifications in Model Driven Apps is a great option for notifying the user for any process, approval, and task related information. We can even create In-app notification in Power...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/get-selected-records-from-the-grid-using-command-button-in-javascript.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/016/img_a471a25ee1.png" alt="Get Selected Records from the Grid using Command Button in JavaScript" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Apr 25, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/get-selected-records-from-the-grid-using-command-button-in-javascript.html" class="post-title-link text-decoration-none text-dark hover-primary">Get Selected Records from the Grid using Command Button in JavaScript</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            As of now, Model Driven Apps command bar doesn’t have an option to get the selected record’s references on the button click. Getting the references of the selected records in...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/show-and-hide-sections-based-on-multi-select-option-set-using-javascript.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/015/img_1fe707bb24.png" alt="Show and Hide sections based on Multi-Select Option Set using JavaScript" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Apr 23, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min read</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/show-and-hide-sections-based-on-multi-select-option-set-using-javascript.html" class="post-title-link text-decoration-none text-dark hover-primary">Show and Hide sections based on Multi-Select Option Set using JavaScript</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Multi-Select Option Set in Dataverse allows you to select multiple options for a single field. The selected values of the options are stored in the form of integer array like...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/plugins-and-event-execution-pipeline-in-dataverse.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/014/img_dba72be05a.png" alt="Plugins and Event Execution Pipeline in Dataverse" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Apr 16, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/plugins-and-event-execution-pipeline-in-dataverse.html" class="post-title-link text-decoration-none text-dark hover-primary">Plugins and Event Execution Pipeline in Dataverse</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            
+  Plugins in Dataverse
+  Event Execution Pipeline
+  Pre and Post Images
+  Points to Remember
+
+
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/environment-variables-in-dataverse-and-how-to-use-it-in-power-automate-flow.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/013/img_ace1b240a0.png" alt="Environment Variables in Dataverse and How to use it in Power Automate Flow" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Apr 09, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/environment-variables-in-dataverse-and-how-to-use-it-in-power-automate-flow.html" class="post-title-link text-decoration-none text-dark hover-primary">Environment Variables in Dataverse and How to use it in Power Automate Flow</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            
+
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/third-party-map-integration-with-geocoding-in-model-driven-app-power-apps.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/012/img_bff71861f8.png" alt="Third-party map integration with geocoding in Model Driven App - Power Apps" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Feb 16, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/third-party-map-integration-with-geocoding-in-model-driven-app-power-apps.html" class="post-title-link text-decoration-none text-dark hover-primary">Third-party map integration with geocoding in Model Driven App - Power Apps</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Microsoft Dynamics 365 CRM supports addition of Bing Maps to its forms by default. But it should be enable/disable under Settings → Administration → System Settings. Bing Maps in Dynamics...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="azure active directory" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/build-a-single-page-application-with-msal-js.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/011/img_d349a72e26.png" alt="Build a Single Page Application with MSAL.js" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Jan 15, 2023</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/build-a-single-page-application-with-msal-js.html" class="post-title-link text-decoration-none text-dark hover-primary">Build a Single Page Application with MSAL.js</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Hi fellow tech peeps out there. Have you ever thought of using the dataverse table data in the normal HTML page with some CSS styles in it. This article is...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Azure Active Directory</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="azure active directory" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/connect-the-azure-ad-app-for-business-central-with-postman-using-oauth-2-0-authentication.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/010/img_3e414448ba.png" alt="Connect the Azure AD App for Business Central with Postman using OAuth 2.0 Authentication" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Dec 31, 2022</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/connect-the-azure-ad-app-for-business-central-with-postman-using-oauth-2-0-authentication.html" class="post-title-link text-decoration-none text-dark hover-primary">Connect the Azure AD App for Business Central with Postman using OAuth 2.0 Authentication</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Postman is the tool which is used to develop and test API’s. Let’s see how you can connect the registered app for the Dynamics 365 Business Central application with the...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Azure Active Directory</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="azure active directory" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/register-an-app-in-azure-active-directory-for-business-central.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/009/img_8d15ac4e46.png" alt="Register an App in Azure Active Directory for Business Central" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Dec 23, 2022</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/register-an-app-in-azure-active-directory-for-business-central.html" class="post-title-link text-decoration-none text-dark hover-primary">Register an App in Azure Active Directory for Business Central</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            In Business Central, Web Service Access Key is used for the  authentication of business central from external applications. But unfortunately business central stopped the usage web service access key. There...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Azure Active Directory</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/auto-populate-lookup-based-on-the-other-lookup-field-in-power-apps.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/008/img_21739b17b9.png" alt="Auto Populate lookup based on the other lookup field in Power Apps" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Dec 11, 2022</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/auto-populate-lookup-based-on-the-other-lookup-field-in-power-apps.html" class="post-title-link text-decoration-none text-dark hover-primary">Auto Populate lookup based on the other lookup field in Power Apps</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Lookup fields are not like a normal field because after creation, the lookup field creates a N:1 relationship between the entity that the lookup is created for and the entity that...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="power automate" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/get-all-the-options-from-the-option-set-using-power-automate.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/007/img_7d953ce272.webp" alt="Get all the options from the Option set using Power Automate" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Dec 03, 2022</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/get-all-the-options-from-the-option-set-using-power-automate.html" class="post-title-link text-decoration-none text-dark hover-primary">Get all the options from the Option set using Power Automate</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            
+
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Power Automate</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="post-list-item" data-category="dynamics 365 ce" style="display: grid; transition: opacity 0.3s ease;">
+                    <div class="post-thumbnail-wrapper">
+                        <a href="/add-custom-icons-to-all-records-of-a-view-based-on-a-condition-in-powerapps.html">
+                            <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/002/img_bff5487888.webp" alt="Add custom icons to all records of a view based on a condition in PowerApps" class="post-thumbnail" loading="lazy" decoding="async">
+
+
+
+                        </a>
+                    </div>
+                    <div class="post-content-column">
+                        <div class="mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                
+                                <span class="text-secondary small fw-medium">Nov 28, 2022</span>
+                            </div>
+                            <span class="small text-muted opacity-75">5 min</span>
+                        </div>
+                        <h2 class="h4 fw-bold mb-2">
+                            <a href="/add-custom-icons-to-all-records-of-a-view-based-on-a-condition-in-powerapps.html" class="post-title-link text-decoration-none text-dark hover-primary">Add custom icons to all records of a view based on a condition in PowerApps</a>
+                        </h2>
+                        <div class="post-excerpt-list text-muted small mb-3">
+                            Have you ever thought of inserting an icon to all records in a view based on a condition. Here I have a table with some fields like name and gender of types...
+                        </div>
+                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                             
+                             <span class="category-pill">Dynamics 365 CE</span>
+                             
+                        </div>
+                    </div>
+                </article>
+                
+            </div>
+
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const POSTS_PER_PAGE = 5;
+        const filterBtns = document.querySelectorAll('.category-filter-btn');
+        const defaultContainer = document.getElementById('post-list-container');
+        const filteredContainer = document.getElementById('filtered-posts-container');
+        const allPostsHidden = document.getElementById('all-posts-hidden-container');
+        const postCountLabel = document.getElementById('post-count-label');
+        const totalPosts = allPostsHidden ? allPostsHidden.querySelectorAll('.post-list-item').length : 0;
+
+        if (!filterBtns.length || !defaultContainer || !filteredContainer || !allPostsHidden) return;
+
+        function updateCount(count) {
+            if (postCountLabel) {
+                postCountLabel.textContent = count + (count === 1 ? ' post' : ' posts');
+            }
+        }
+
+        function renderFilteredPage(matchingPosts, page) {
+            const totalPages = Math.ceil(matchingPosts.length / POSTS_PER_PAGE);
+            const start = (page - 1) * POSTS_PER_PAGE;
+            const end = start + POSTS_PER_PAGE;
+
+            filteredContainer.innerHTML = '';
+
+            // Render posts for the current page
+            matchingPosts.slice(start, end).forEach(post => {
+                filteredContainer.appendChild(post.cloneNode(true));
+            });
+
+            // Render pagination if needed
+            if (totalPages > 1) {
+                const nav = document.createElement('nav');
+                nav.setAttribute('aria-label', 'Filtered page navigation');
+                nav.className = 'mt-5';
+                let paginationHTML = '<ul class="pagination justify-content-center">';
+
+                // First button
+                if (page > 1) {
+                    paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="1" aria-label="First"><i class="bi bi-chevron-double-left"></i></button></li>';
+                }
+
+                // Previous button
+                if (page > 1) {
+                    paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="' + (page - 1) + '" aria-label="Previous"><i class="bi bi-chevron-left"></i></button></li>';
+                }
+
+                // Page numbers
+                let startPage = Math.max(1, page - 1);
+                let endPage = Math.min(totalPages, startPage + 3);
+                if (endPage - startPage < 3) startPage = Math.max(1, endPage - 3);
+
+                for (let i = startPage; i <= endPage; i++) {
+                    if (i === page) {
+                        paginationHTML += '<li class="page-item active" aria-current="page"><span class="page-link rounded-circle border-0 bg-dark text-white mx-1">' + i + '</span></li>';
+                    } else {
+                        paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="' + i + '">' + i + '</button></li>';
+                    }
+                }
+
+                // Next button
+                if (page < totalPages) {
+                    paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="' + (page + 1) + '" aria-label="Next"><i class="bi bi-chevron-right"></i></button></li>';
+                }
+
+                // Last button
+                if (page < totalPages) {
+                    paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="' + totalPages + '" aria-label="Last"><i class="bi bi-chevron-double-right"></i></button></li>';
+                }
+
+                paginationHTML += '</ul>';
+                nav.innerHTML = paginationHTML;
+                filteredContainer.appendChild(nav);
+
+                // Bind pagination clicks
+                filteredContainer.querySelectorAll('.filtered-page-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        renderFilteredPage(matchingPosts, parseInt(this.getAttribute('data-page')));
+                        window.scrollTo({ top: filteredContainer.offsetTop - 100, behavior: 'smooth' });
+                    });
+                });
+            }
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const selectedCategoryText = document.getElementById('selected-category-text');
+                if (selectedCategoryText) {
+                    selectedCategoryText.textContent = this.textContent;
+                }
+
+                const category = this.getAttribute('data-category');
+
+                if (category === 'all') {
+                    defaultContainer.style.display = 'block';
+                    filteredContainer.style.display = 'none';
+                    updateCount(totalPosts);
+                } else {
+                    defaultContainer.style.display = 'none';
+                    filteredContainer.style.display = 'block';
+
+                    // Collect matching posts
+                    const allPosts = allPostsHidden.querySelectorAll('.post-list-item');
+                    const matchingPosts = [];
+                    allPosts.forEach(post => {
+                        if (post.getAttribute('data-category') === category) {
+                            matchingPosts.push(post);
+                        }
+                    });
+
+                    updateCount(matchingPosts.length);
+
+                    if (matchingPosts.length === 0) {
+                        filteredContainer.innerHTML = '<div class="text-center text-muted py-5">No posts found in this category.</div>';
+                    } else {
+                        renderFilteredPage(matchingPosts, 1);
+                    }
+                }
+            });
+        });
+    });
+</script>
   </main>
 
   <!-- Optimized 3-Column Footer -->
@@ -563,9 +3828,8 @@
       }
     });
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
   <!-- Initialize highlighting -->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
@@ -581,7 +3845,7 @@
     });
   </script>
   <!-- Simple-Jekyll-Search -->
-  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script defer src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const searchInput = document.getElementById('search-input');

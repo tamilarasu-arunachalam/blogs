@@ -5,8 +5,17 @@
     <link>http://localhost:4000/</link>
     <description>Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jul 2026 13:51:28 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 23:56:06 +0530</lastBuildDate>
     <generator>Jekyll RSS</generator>
+    
+    <item>
+      <title>Set Field Recommendations Using JavaScript in Dynamics 365 CE / Model-Driven Apps</title>
+      <link>http://localhost:4000/set-field-recommendations-javascript-in-d365-ce-mda.html</link>
+      <guid isPermaLink="true">http://localhost:4000/set-field-recommendations-javascript-in-d365-ce-mda.html</guid>
+      <pubDate>Sun, 05 Jul 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;In Dynamics 365 Customer Engagement (CE), we often use &lt;strong&gt;Business Rules&lt;/strong&gt; to provide field recommendations. However, there may be scenarios where we need more flexibility and want to display recommendations dynamically using JavaScript.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to Build and Host a Survey Form Using Power Automate and Dataverse</title>
@@ -189,15 +198,6 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
       <guid isPermaLink="true">http://localhost:4000/google-authentication-in-power-pages-guide.html</guid>
       <pubDate>Sun, 07 Dec 2025 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;Power Pages, being a Microsoft-hosted low-code portal platform, gives us multiple authentication options out of the box - including Azure AD and External Authentication. But what many makers don’t realize is that Power Pages also supports popular OAuth 2.0 identity providers like &lt;strong&gt;Google, GitHub, Facebook, and LinkedIn&lt;/strong&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps</title>
-      <link>http://localhost:4000/show-hide-subgrid-ribbon-buttons-of-same-table-in-d365-crm.html</link>
-      <guid isPermaLink="true">http://localhost:4000/show-hide-subgrid-ribbon-buttons-of-same-table-in-d365-crm.html</guid>
-      <pubDate>Sun, 30 Nov 2025 23:11:00 +0530</pubDate>
-      <description>&lt;p&gt;While working on one of my weekend Power Apps Model-Driven Apps projects, I ran into an interesting requirement. I had &lt;strong&gt;three subgrids of the same child entity&lt;/strong&gt; placed inside the parent entity’s main form. Each subgrid needed to show a drop-down command with buttons — but the tricky part was:&lt;/p&gt;
 </description>
     </item>
     
