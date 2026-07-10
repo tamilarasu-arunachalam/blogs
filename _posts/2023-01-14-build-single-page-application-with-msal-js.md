@@ -1,12 +1,18 @@
 ---
-post_id: "011"
 layout: post
-title: "Build a Single Page Application with MSAL.js"
+post_id: '011'
+title: Build a Single Page Application with MSAL.js
 date: 2023-01-14 19:04:00 +0000
+image: assets/images/011/img_d349a72e26.png
+description: ''
+meta_keywords: ''
 category: Azure Active Directory
-image: "assets/images/011/img_d349a72e26.png"
-categories: ["Azure Active Directory", "Dataverse", "Dynamics 365 Web API"]
+categories:
+  - Azure Active Directory
+  - Dataverse
+  - Dynamics 365 Web API
 ---
+
 Hi fellow tech peeps out there. Have you ever thought of using the dataverse table data in the normal HTML page with some CSS styles in it. This article is about how to access the dataverse data using the MSAL.js(_Microsoft Authentication Library_). 
 
 ### Pre-requisites:
@@ -26,7 +32,7 @@ Hi fellow tech peeps out there. Have you ever thought of using the dataverse tab
 
 [![]({{ site.baseurl }}/assets/images/011/img_04299dc2e3.png)]({{ site.baseurl }}/assets/images/011/img_04299dc2e3.png)
 
-For accessing the dataverse data, **register an application in azure active directory**. In the registered app, navigate to the Authentication → **\+ Add a platform**. Select the Single-page application under Configure Platforms. Use **http://localhost:5500/index.html** for Redirect URIs and click on configure and save.
+For accessing the dataverse data, **register an application in azure active directory**. In the registered app, navigate to the Authentication → **+ Add a platform**. Select the Single-page application under Configure Platforms. Use **http://localhost:5500/index.html** for Redirect URIs and click on configure and save.
 
 [![]({{ site.baseurl }}/assets/images/011/img_10133e1fb4.png)]({{ site.baseurl }}/assets/images/011/img_10133e1fb4.png)
 
