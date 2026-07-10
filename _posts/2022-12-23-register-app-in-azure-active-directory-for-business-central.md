@@ -1,12 +1,17 @@
 ---
-post_id: "009"
 layout: post
-title: "Register an App in Azure Active Directory for Business Central"
+post_id: '009'
+title: Register an App in Azure Active Directory for Business Central
 date: 2022-12-23 16:59:00 +0000
+image: assets/images/009/img_8d15ac4e46.png
+description: ''
+meta_keywords: ''
 category: Azure Active Directory
-image: "assets/images/009/img_8d15ac4e46.png"
-categories: ["Azure Active Directory", "Business Central"]
+categories:
+  - Azure Active Directory
+  - Business Central
 ---
+
 In Business Central, Web Service Access Key is used for the  authentication of business central from external applications. But unfortunately business central stopped the usage web service access key. There is another choice to authenticate Business central which is Azure Active Directory App.
 
 [![]({{ site.baseurl }}/assets/images/009/img_131ed5ae1c.png)]({{ site.baseurl }}/assets/images/009/img_131ed5ae1c.png)
@@ -24,7 +29,7 @@ This article guides you to register an app in Azure Active Directory and make th
 
 [![]({{ site.baseurl }}/assets/images/009/img_43138d5844.png)]({{ site.baseurl }}/assets/images/009/img_43138d5844.png)  
 
--   Select App Registration under the **\+ Add** dropdown
+-   Select App Registration under the **+ Add** dropdown
 
 [![]({{ site.baseurl }}/assets/images/009/img_fa73a9aebf.png)]({{ site.baseurl }}/assets/images/009/img_fa73a9aebf.png)  
 
@@ -36,7 +41,7 @@ This article guides you to register an app in Azure Active Directory and make th
 
 [![]({{ site.baseurl }}/assets/images/009/img_75a8160f2d.png)]({{ site.baseurl }}/assets/images/009/img_75a8160f2d.png)  
 
--   In the API Permissions menu click on **\+ Add a permission**, 
+-   In the API Permissions menu click on **+ Add a permission**, 
 
 [![]({{ site.baseurl }}/assets/images/009/img_8246ced4aa.png)]({{ site.baseurl }}/assets/images/009/img_8246ced4aa.png)  
 
