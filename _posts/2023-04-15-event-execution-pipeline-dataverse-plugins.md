@@ -1,12 +1,18 @@
 ---
-post_id: "014"
 layout: post
-title: "Plugins and Event Execution Pipeline in Dataverse"
+post_id: '014'
+title: Plugins and Event Execution Pipeline in Dataverse
 date: 2023-04-15 18:46:00 +0000
+image: assets/images/014/img_dba72be05a.png
+description: ''
+meta_keywords: ''
 category: Dynamics 365 CE
-image: "assets/images/014/img_dba72be05a.png"
-categories: ["Dynamics 365 CE", "Dataverse", "Plugins"]
+categories:
+  - Dynamics 365 CE
+  - Dataverse
+  - Plugins
 ---
+
 -   [Plugins in Dataverse](#plugins-in-dataverse)
 -   [Event Execution Pipeline](#event-execution-pipeline)
 -   [Pre and Post Images](#pre-and-post-images)
@@ -45,8 +51,6 @@ categories: ["Dynamics 365 CE", "Dataverse", "Plugins"]
 
     Images are the snapshots of the entity's attributes before and after the main operation. The value of the attributes before the update operation can be retrieved with these images. 
 
-  
-
 Two types of Images:
 
 -   Pre-Image
@@ -64,7 +68,7 @@ The below table shows the availability of images in Pre and Post Events
 
 [![Plugins and Event Execution Pipeline in Dataverse]({{ site.baseurl }}/assets/images/014/img_35ca6f65a9.png)]({{ site.baseurl }}/assets/images/014/img_35ca6f65a9.png)
 
-✔ \- Available
+✔ - Available
 
 ✖ - Not Available
 
