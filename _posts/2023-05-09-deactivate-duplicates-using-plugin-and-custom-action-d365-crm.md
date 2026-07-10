@@ -1,12 +1,20 @@
 ---
-post_id: "018"
 layout: post
-title: "Deactivate Duplicate Records using Plugin and Custom Action in Dynamics CRM"
+post_id: '018'
+title: Deactivate Duplicate Records using Plugin and Custom Action in Dynamics CRM
 date: 2023-05-09 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/018/img_ccac86014f.png
-categories: ["Model Driven Apps", "Custom Action", "Dynamics 365 CRM Online", "Web resource", "Plugins"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Model Driven Apps
+  - Custom Action
+  - Dynamics 365 CRM Online
+  - Web resource
+  - Plugins
 ---
+
 Recently I have come across a [question](https://community.dynamics.com/crm/f/microsoft-dynamics-crm-forum/484378/fetch-duplicate-records) in Dynamics 365 CRM Community in which someone is asking to fetch duplicates from contact entity.  I had suggested Power Automate to do so. But my instinct insisted me to try the same using plugin or custom script. So I had reproduced the same scenario as in the community question. I used custom action, JavaScript, and Plugin for that. And guess what? It worked!
 
 [![Deactivate Duplicate Records using Plugin and Custom Action in Dynamics CRM]({{ site.baseurl }}/assets/images/018/img_677ba70a4b.png)]({{ site.baseurl }}/assets/images/018/img_677ba70a4b.png)
@@ -41,7 +49,7 @@ I have created a plugin for fetching duplicate records using fetch XML and deact
 
 [![]({{ site.baseurl }}/assets/images/018/img_3478cab14d.png)]({{ site.baseurl }}/assets/images/018/img_3478cab14d.png)
 
-    Create a new plugin assembly if you haven't done yet. While registering the plugin step, select your custom action as a Message as like the below image (I have added my custom action named _cr1d9\_DeactivateDuplicates_). Select Event Pipeline Stage of Execution as _Post Operation_. Click on Register New Step.
+    Create a new plugin assembly if you haven't done yet. While registering the plugin step, select your custom action as a Message as like the below image (I have added my custom action named _cr1d9_DeactivateDuplicates_). Select Event Pipeline Stage of Execution as _Post Operation_. Click on Register New Step.
 
 [![]({{ site.baseurl }}/assets/images/018/img_245f73bdb6.png)]({{ site.baseurl }}/assets/images/018/img_245f73bdb6.png)
 
