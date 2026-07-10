@@ -5,7 +5,7 @@ title: Environment Variables in Dataverse and How to use it in Power Automate Fl
 date: 2023-04-09 07:46:00 +0000
 image: assets/images/013/img_ace1b240a0.png
 description: ''
-meta_keywords: environment variables in dataverse, use environment variables in power automate, environment variables in power automate, environment variables in flows, dataverse environment variables
+meta_keywords: environment variables in dataverse, use environment variables in power automate, environment variables in power automate, environment variables in flows, dataverse environment variables, Power Automate environment variables
 category: Power Automate
 categories:
   - Environment Variables
