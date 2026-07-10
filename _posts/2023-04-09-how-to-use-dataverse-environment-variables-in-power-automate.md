@@ -1,14 +1,19 @@
 ---
-post_id: "013"
 layout: post
-title: "Environment Variables in Dataverse and How to use it in Power Automate Flow"
+post_id: '013'
+title: Environment Variables in Dataverse and How to use it in Power Automate Flow
 date: 2023-04-09 07:46:00 +0000
-categories: ["Environment Variables", "Power Automate", "Dataverse"]
-meta_description: "Environment variables in Dataverse allow you to store the connection reference or keys which are need to be used inside the environment. They are more like a global variable which can be accessed with in the Power Platform Environment. We can make use of this to store the values and use it for Power Platform Customizations."
-meta_keywords: "environment variables in dataverse, use environment variables in power automate, environment variables in power automate, environment variables in flows, dataverse environment variables"
+image: assets/images/013/img_ace1b240a0.png
+description: ''
+meta_keywords: environment variables in dataverse, use environment variables in power automate, environment variables in power automate, environment variables in flows, dataverse environment variables
 category: Power Automate
-image: "assets/images/013/img_ace1b240a0.png"
+categories:
+  - Environment Variables
+  - Power Automate
+  - Dataverse
+meta_description: Environment variables in Dataverse allow you to store the connection reference or keys which are need to be used inside the environment. They are more like a global variable which can be accessed with in the Power Platform Environment. We can make use of this to store the values and use it for Power Platform Customizations.
 ---
+
 ![]({{ site.baseurl }}/assets/images/013/img_ace1b240a0.png)
 
 -   [Environment Variables](#environment_variables)
@@ -32,7 +37,6 @@ image: "assets/images/013/img_ace1b240a0.png"
 -   One Environment Variable can be used across multiple solution components. 
 -   Six data types are supported by Environment Variable which are Decimal Number, Text, JSON, Yes/No, Secret and Data source
 -   There are two types of values which are
-
 -   Default Value
 -   Current Value
 
@@ -62,13 +66,12 @@ image: "assets/images/013/img_ace1b240a0.png"
 
 | Variable Name | Variable Value |
 | --- | --- |
-| tenant\_id | tenant id of your org |
-| client\_id | Client Id of your app |
-| client\_secret | Client Secret of your app |
+| tenant_id | tenant id of your org |
+| client_id | Client Id of your app |
+| client_secret | Client Secret of your app |
 | scope | https://graph.microsoft.com/.default |
 
 -   I have get the values from my Azure AD App and stored it in the Environment Variables for using it inside Power Platform.
-
 -   **_Note:_** You may use secret data type for client secret, for that you have to configure Azure Key Vault. As it is a learning purpose i have used text data type
 
 [![Environment Variables in Dataverse and Using it in Power Automate]({{ site.baseurl }}/assets/images/013/img_f7f69f928b.png)]({{ site.baseurl }}/assets/images/013/img_f7f69f928b.png)
@@ -88,9 +91,9 @@ image: "assets/images/013/img_ace1b240a0.png"
 
 [![Environment Variables in Dataverse and Using it in Power Automate]({{ site.baseurl }}/assets/images/013/img_756d82cb36.png)]({{ site.baseurl }}/assets/images/013/img_756d82cb36.png)
 
--   In the **HTTP** Action, Set the http method as **POST** and enter the uri as https://login.microsoftonline.com/_{tenant\_id}_/oauth2/v2.0/token, replace **{tenant\_id}** in the uri with the environment variable(Tenant ID).
+-   In the **HTTP** Action, Set the http method as **POST** and enter the uri as https://login.microsoftonline.com/_{tenant_id}_/oauth2/v2.0/token, replace **{tenant_id}** in the uri with the environment variable(Tenant ID).
 -   In Headers, set **Content-Type** as key and **application/x-www-form-urlencoded** as value
--   In Body, enter grant\_type=client\_credentials&client\_id=_{client\_id}_&client\_secret=_{client\_secret}_&scope=_{scope}_, replace client\_id, client\_secret and scope with the environment variables.
+-   In Body, enter grant_type=client_credentials&client_id=_{client_id}_&client_secret=_{client_secret}_&scope=_{scope}_, replace client_id, client_secret and scope with the environment variables.
 -   The HTTP step should appear like the below screenshot
 
 [![Environment Variables in Dataverse and Using it in Power Automate]({{ site.baseurl }}/assets/images/013/img_b286c98e64.png)]({{ site.baseurl }}/assets/images/013/img_b286c98e64.png)
