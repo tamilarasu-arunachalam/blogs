@@ -1,12 +1,18 @@
 ---
-post_id: "008"
 layout: post
-title: "Auto Populate lookup based on the other lookup field in Power Apps"
+post_id: '008'
+title: Auto Populate lookup based on the other lookup field in Power Apps
 date: 2022-12-11 10:54:00 +0000
+image: assets/images/008/img_21739b17b9.png
+description: ''
+meta_keywords: ''
 category: Dynamics 365 CE
-image: "assets/images/008/img_21739b17b9.png"
-categories: ["Power Apps", "Web resource", "Dataverse"]
+categories:
+  - Power Apps
+  - Web resource
+  - Dataverse
 ---
+
 Lookup fields are not like a normal field because after creation, the lookup field creates a N:1 relationship between the entity that the lookup is created for and the entity that is being looked up to. The value of the lookup is the GUID of the record in destination table we are looked up to. 
 
 In this article we'll have a view on auto populating lookup based on the another lookup using the JavaScript web resource. I have created a form which includes three lookup fields and they are related to one another. 
@@ -42,9 +48,11 @@ The Web resource contains two functions setState and setCountry, one for auto-po
 The below snippet is for setCountry function. 
 
 <script src="https://gist.github.com/tamilarasu-arunachalam/9c76178b30c512ef5c746af93e6ece8b.js?file=setCountry.js"></script>
-```
+
+```plain
 targetState.fireOnChange();
 ```
+
 The above line of code is a special function in dataverse because which triggers the function when a field is changed automatically(from another trigger). Once our coding part gets completed add the Web resource file to dataverse. 
 
 ## Add Web resource to Event Handler:
@@ -53,7 +61,7 @@ Move to form designer in Power Apps and add the Web resource to the form library
 
 [![]({{ site.baseurl }}/assets/images/008/img_ea3c22d7d4.png)]({{ site.baseurl }}/assets/images/008/img_ea3c22d7d4.png)
 
-Move to the **Tree View** and select the field and navigate to Events tab in the right menu bar. Configure the event by clicking the **\+ Event handler**. Select event type, library and function name then click Done. You have to add event handler for city and state field in form.
+Move to the **Tree View** and select the field and navigate to Events tab in the right menu bar. Configure the event by clicking the **+ Event handler**. Select event type, library and function name then click Done. You have to add event handler for city and state field in form.
 
 [![]({{ site.baseurl }}/assets/images/008/img_274b8f01e0.png)]({{ site.baseurl }}/assets/images/008/img_274b8f01e0.png)
 
