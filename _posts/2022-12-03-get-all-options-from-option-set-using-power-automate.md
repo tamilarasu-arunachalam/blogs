@@ -1,12 +1,19 @@
 ---
-post_id: "007"
 layout: post
-title: "Get all the options from the Option set using Power Automate"
+post_id: '007'
+title: Get all the options from the Option set using Power Automate
 date: 2022-12-03 18:02:00 +0000
+image: assets/images/007/img_7d953ce272.webp
+description: ''
+meta_keywords: ''
 category: Power Automate
-image: "assets/images/007/img_7d953ce272.webp"
-categories: ["Power Automate", "Dynamics 365 CE", "Dataverse"]
+read_time: ''
+categories:
+  - Power Automate
+  - Dynamics 365 CE
+  - Dataverse
 ---
+
 ![]({{ site.baseurl }}/assets/images/007/img_7d953ce272.webp)
 
 In Power Automate, getting all the option set values from Dataverse is not quite easy as getting the selected value from the option set field(Dataverse Choices). Here in this article we will have a look on how to take all the options from the option set and list it using the Power Automate(Formerly Flow).
@@ -14,18 +21,15 @@ In Power Automate, getting all the option set values from Dataverse is not quite
 ### Steps:
 
 -   Get Option set metadata from Web API
-
 -   Creating a flow
-
 -   Invoking HTTP request
-
 -   List all options
 
 ## Get Option set metadata from Web API :
 
 Generally, we retrieve all the option sets from the Dataverse using the API in the Browser or Postman.
 
-```
+```plain
 https://<org_name>.crm.dynamics.com/api/data/v9.2/EntityDefinitions(LogicalName='<entity_name>')/Attributes(LogicalName='<field_name>')/Microsoft.Dynamics.CRM.PicklistAttributeMetadata?$select=LogicalName&$expand=OptionSet($select=Options)
 ```
 
@@ -57,13 +61,13 @@ After the connection gets established, select the method as _GET_ and use the 
 
 ![]({{ site.baseurl }}/assets/images/007/img_8ef8a6f8c3.png)
 
-```
+```plain
 body('Invoke_an_HTTP_request')?['OptionSet']?['Options']
 ```
 
 In the Parse JSON connector, use the above expression in the Content field and for Schema field copy the below JSON snippet and click generate from sample button and paste it and click Ok.
 
-```
+```plain
 {
   "Value": 1,
   "Color": null,
@@ -101,8 +105,8 @@ Click Generate from sample and paste then submit it. Then the flow step looks li
 
 After parsing the response from the HTTP Request, add a Create HTML Table connector to list the Value and Label in the form of table. In the From field, select response body from the Parse JSON connector.
 
--   item()?\[‘value’\] is the expression for getting _Value_
--   item()?\[‘Label’\]?\[‘UserLocalizedLabel’\]?\[‘Label’\] is for getting _Label Text_.
+-   item()?[‘value’] is the expression for getting _Value_
+-   item()?[‘Label’]?[‘UserLocalizedLabel’]?[‘Label’] is for getting _Label Text_.
 
 ![]({{ site.baseurl }}/assets/images/007/img_bf3c458efa.png)
 
