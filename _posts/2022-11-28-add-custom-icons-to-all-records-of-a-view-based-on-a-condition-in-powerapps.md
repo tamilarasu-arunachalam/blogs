@@ -1,14 +1,23 @@
 ---
-post_id: "002"
 layout: post
-title: "Add custom icons to all records of a view based on a condition in PowerApps"
+post_id: '002'
+title: Add Custom Icons to Views in Dynamics 365 CRM/Model-Driven Apps
 date: 2022-11-28 17:39:00 +0000
-image: "assets/images/002/img_bff5487888.webp"
+image: assets/images/002/img_bff5487888.webp
+description: See how to show custom icons for each record in a Power Apps view using a JScript web resource, based on a gender/option set field condition.
+meta_keywords: View icons Dynamics 365 CE, microsoft dynamics 365 crm, views dynamics 365 crm,dynamics 365 crm development, dynamics 365 crm javascript
 category: Dynamics 365 CE
-categories: ["Power Apps", "Dynamics 365 CE", "Web resource", "Dataverse"]
-redirect_from: 
-     - /2022/11/add-custom-icons-to-all-records-of-view.html
+read_time: 5 mins
+published: true
+categories:
+  - Power Apps
+  - Dynamics 365 CE
+  - Web resource
+  - Dataverse
+redirect_from:
+  - /2022/11/add-custom-icons-to-all-records-of-view.html
 ---
+
 Have you ever thought of inserting an icon to all records in a view based on a condition. Here I have a table with some fields like name and gender of types single line of text and optionset respectively. The icons will be displayed based on the gender option.
 
 ![]({{ site.baseurl }}/assets/images/002/img_28d435f3e5.png)
@@ -34,7 +43,7 @@ For setting up icons I have created two web resources named male and female and 
 
 ## Set up a Web resource:
 
-Create another web resource of name custom icon in view and gave type as JScript. Add a function with two parameters rowData and userLCID. rowData retrieves the metadata for each row. userLCID gets the Language Code for current user. First parse the data which we got from the rowData and assign it to a variable. The field values are inside the data object. we can get the field value by data.c99\_gender\_Value(data.fieldname\_Value).
+Create another web resource of name custom icon in view and gave type as JScript. Add a function with two parameters rowData and userLCID. rowData retrieves the metadata for each row. userLCID gets the Language Code for current user. First parse the data which we got from the rowData and assign it to a variable. The field values are inside the data object. we can get the field value by data.c99_gender_Value(data.fieldname_Value).
 
 <script src="https://gist.github.com/tamilarasu-arunachalam/17136d44197416774aaa12ca5ba99bc3.js"></script>
 
