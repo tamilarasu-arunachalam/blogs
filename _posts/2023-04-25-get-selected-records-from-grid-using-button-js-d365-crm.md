@@ -1,12 +1,20 @@
 ---
-post_id: "016"
 layout: post
-title: "Get Selected Records from the Grid using Command Button in JavaScript"
+post_id: '016'
+title: Get Selected Records from the Grid using Command Button in JavaScript
 date: 2023-04-25 00:30:00 +0000
-category: Dynamics 365 CE
 image: assets/images/016/img_a471a25ee1.png
-categories: ["Model Driven Apps", "Dynamics 365 CE", "Web resource", "Dataverse"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+read_time: ''
+categories:
+  - Model Driven Apps
+  - Dynamics 365 CE
+  - Web resource
+  - Dataverse
 ---
+
 As of now, Model Driven Apps command bar doesn’t have an option to get the selected record's references on the button click. Getting the references of the selected records in the Main Grid should be accomplished by the following steps.
 
 - [Add button to the command bar](#add-button-to-the-command-bar)
@@ -23,7 +31,7 @@ Navigate to the solutions page(in classic mode) you got to see a button on the a
 
 Hit the Ribbon Workbench button, and it will navigate to the command editor page with a pop opened. Select the solution which is specific for buttons.
 
-_**Note:**_ Ribbon Workbench is too sensitive and it did not handle much entity data. It has a limit of only five entities for a solution.
+**_Note:_** Ribbon Workbench is too sensitive and it did not handle much entity data. It has a limit of only five entities for a solution.
 
 [![]({{ site.baseurl }}/assets/images/016/img_ce0b50ded6.png)]({{ site.baseurl }}/assets/images/016/img_ce0b50ded6.png)
 
@@ -61,4 +69,4 @@ Hit the button to see the selected record names in an alert
 
 The below GIF will demonstrate the working of this script.
 
-[![]({{ site.baseurl }}/assets/images/016/img_afd13fcd26.gif)]({{ site.baseurl }}/assets/images/016/img_afd13fcd26.gif) 
+[![]({{ site.baseurl }}/assets/images/016/img_afd13fcd26.gif)]({{ site.baseurl }}/assets/images/016/img_afd13fcd26.gif)
