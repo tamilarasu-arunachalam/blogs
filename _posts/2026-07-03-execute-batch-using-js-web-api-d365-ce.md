@@ -64,5 +64,5 @@ Refer to the image below for the demonstration.
 
 #### References:
 
-- [Execute Batch Operations Using the Web API — Power Apps | Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/execute-batch-operations-using-web-api)
-- [Batch Request to Create, Update and Delete records in Dynamics 365 CE — Nebulaa IT Solutions | Nebulaa IT Solutions](https://nebulaaitsolutions.com/blog/batch-request-to-create-update-and-delete-records-in-dynamics-365-ce)
+- [Execute Batch Operations Using the Web API — Power Apps \| Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/execute-batch-operations-using-web-api)
+- [Batch Request to Create, Update and Delete records in Dynamics 365 CE — Nebulaa IT Solutions \| Nebulaa IT Solutions](https://nebulaaitsolutions.com/blog/batch-request-to-create-update-and-delete-records-in-dynamics-365-ce)
