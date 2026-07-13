@@ -40,4 +40,4 @@ The GIF below demonstrates the recommendation notification in action.
 
 #### References:
 
-- [addNotification (Client API reference) in model-driven apps — Power Apps | Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/controls/addnotification)
+- [addNotification (Client API reference) in model-driven apps — Power Apps - Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/controls/addnotification)
