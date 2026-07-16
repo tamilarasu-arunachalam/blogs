@@ -1,12 +1,21 @@
 ---
-post_id: "044"
 layout: post
-title: "Safely Handle Async Operations Before Save in Model-Driven Power Apps"
+post_id: '044'
+title: Safely Handle Async Operations Before Save in Model-Driven Power Apps
 date: 2025-05-25 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/044/img_815ddc2024.png
-categories: ["Model Driven Apps", "Dynamics 365 CE", "Dynamics 365 Web API", "JavaScript", "Web resource", "Power Apps"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Model Driven Apps
+  - Dynamics 365 CE
+  - Dynamics 365 Web API
+  - JavaScript
+  - Web resource
+  - Power Apps
 ---
+
 Hello folks. I recently tackled one of these scenarios, and what seemed like a simple validation turned into a bit of a deep dive.
 
 In this post, I’ll share how I handled preventing of form save during async operations involving subgrid data, using a real-world example from a JavaScript customization I worked on.
@@ -55,18 +64,20 @@ Here’s the functionality I implemented:
 1.  Create a web resource and add it in the OnSave event handler on the Order form.
 2.  When the `Status` changes to "Closed" and the Save button is clicked, I trigger a validation check.
 3.  The check:
+
     -   Uses `Xrm.WebApi.retrieveMultipleRecords()` to fetch Order Items.
     -   Loops through them to see if all are `Ready to Dispatch`.
     -   If not, calls `preventDefault()` to block the save.
+
 4.  To add the asynchronous function in the OnSave event handler we need to enable the Async OnSave Handler in App settings
+
     -   To do that we need to navigate to the setting in the app maker window
-    
+
     [![]({{ site.baseurl }}/assets/images/044/img_3981c5ac10.png)]({{ site.baseurl }}/assets/images/044/img_3981c5ac10.png)
-    
+
     -   Inside that select the features menu, and toggle yes to the Async save handler as like the below image.
-    
+
     [![]({{ site.baseurl }}/assets/images/044/img_f588e438b7.png)]({{ site.baseurl }}/assets/images/044/img_f588e438b7.png)
-    
 
 It was working great… until I hit the next hiccup.
 
@@ -119,7 +130,5 @@ This small change made a big difference in how the app behaved and how users exp
 -   [preventDefault method for JavaScript in model-driven apps](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/save-event-arguments/preventdefault)
 -   [Disable AutoSave in a model-driven app](https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/manage-auto-save)
 -   [Async onSave preventDefault with external call](https://benediktbergmann.eu/2023/03/20/async-onsave-preventdefault-with-external-call/)
-
-  
 
 Have a great day!
