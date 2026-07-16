@@ -1,12 +1,18 @@
 ---
-post_id: "030"
 layout: post
-title: "What is Tracked Properties in Power Automate?"
+post_id: '030'
+title: What is Tracked Properties in Power Automate?
 date: 2023-09-17 17:41:00 +0000
 image: assets/images/030/img_54761d610b.png
+description: ''
+meta_keywords: ''
 category: Power Automate
-categories: ["Microsoft Flows", "Power Automate"]
+read_time: ''
+categories:
+  - Microsoft Flows
+  - Power Automate
 ---
+
 Tracked Properties are the properties which are not directly displayed from the input or output of the action. Tracked Properties are added as a key value pairs. We can retrieve that in the next actions using the action using the expressions. 
 
 We can use the tracked propertied to get the execution time of the flow step or to pass any data inside the flow without affecting the input and output.
