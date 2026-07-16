@@ -1,12 +1,22 @@
 ---
-post_id: "036"
 layout: post
-title: "Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript"
+post_id: '036'
+title: Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript
 date: 2024-06-09 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/036/img_8e7a92550f.png
-categories: ["Pagination", "Model Driven Apps", "Dataverse API", "Dynamics 365 CRM Online", "JavaScript", "Web resource", "Dynamics 365 Web API"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Pagination
+  - Model Driven Apps
+  - Dataverse API
+  - Dynamics 365 CRM Online
+  - JavaScript
+  - Web resource
+  - Dynamics 365 Web API
 ---
+
 Struggling to fetch large data sets via the XRM Web API? No sweat! I've authored an article demonstrating how to efficiently fetch large datasets from the Dataverse XRM Web API using JavaScript. In the article, I cover both querying techniques, including FetchXML and OData Query, providing comprehensive guidance on handling substantial amounts of data.
 
 To demonstrate, I imported a sample dataset with over 100,000 records into the contact table. This allows us to experiment and interact with a large dataset.
@@ -42,6 +52,6 @@ You can see the result of the above demonstration in the below GIF
 
 [![Retrieve 100K+ records from Dataverse in XRM Web API using JavaScript]({{ site.baseurl }}/assets/images/036/img_b8fbc1acd2.gif)]({{ site.baseurl }}/assets/images/036/img_b8fbc1acd2.gif)  
 
-_**Reference:**_ You can refer the Microsoft learn document by clicking [here](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-webapi/retrievemultiplerecords)
+**_Reference:_** You can refer the Microsoft learn document by clicking [here](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-webapi/retrievemultiplerecords)
 
 Have a great day!
