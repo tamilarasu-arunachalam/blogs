@@ -1,19 +1,25 @@
 ---
-post_id: "046"
 layout: post
-title: "How to Revert to the Classic UI in Power Apps Model-Driven Apps (Even After the Toggle Is Gone)?"
+post_id: '046'
+title: How to Revert to the Classic UI in Power Apps Model-Driven Apps (Even After the Toggle Is Gone)?
 date: 2025-06-29 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/046/img_b9249e56d8.png
-categories: ["Dynamics 365 CE", "Dynamics 365 CRM Online", "Model Driven Apps", "Power Apps"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Dynamics 365 CE
+  - Dynamics 365 CRM Online
+  - Model Driven Apps
+  - Power Apps
 ---
-Microsoft introduced the new Fluent UI for Model-Driven Power Apps in October 1. Initially, users could easily switch between the new and classic experiences using the **"****Try the new look"** toggle available in the command bar.
+
+Microsoft introduced the new Fluent UI for Model-Driven Power Apps in October 1. Initially, users could easily switch between the new and classic experiences using the **"Try the new look"** toggle available in the command bar.
 
 **Before toggling:** You’d see the traditional UI.
 
 [![]({{ site.baseurl }}/assets/images/046/img_1527df1c79.png)]({{ site.baseurl }}/assets/images/046/img_1527df1c79.png)  
 
-  
 **After toggling:** You’d get the sleek, modern Fluent UI.
 
 [![]({{ site.baseurl }}/assets/images/046/img_26eaefe3ac.png)]({{ site.baseurl }}/assets/images/046/img_26eaefe3ac.png)  
@@ -38,11 +44,9 @@ Admins can **turn off** the new Fluent UI across all model-driven apps in an env
 5.  Select **New look for model driven apps** and click Add to include it in your solution.  
     [![]({{ site.baseurl }}/assets/images/046/img_0511d9b0d9.png)]({{ site.baseurl }}/assets/images/046/img_0511d9b0d9.png)
 6.  In the Solution Explorer, click **New look for model driven apps**.  
-    
+
     [![]({{ site.baseurl }}/assets/images/046/img_f668e6dc67.png)]({{ site.baseurl }}/assets/images/046/img_f668e6dc67.png)
-    
-      
-    
+
 7.  Set **Setting Environment Value** to **No**.
 8.  Add the specific model-driven apps you want to revert to the classic UI.
 9.  For each app, set the value to **No**.
@@ -67,12 +71,9 @@ Alternatively, if you want to enforce the new experience permanently, you can **
 [![]({{ site.baseurl }}/assets/images/046/img_739c75fa6c.png)]({{ site.baseurl }}/assets/images/046/img_739c75fa6c.png)
 5.  Select it and click **Add**.
 6.  In the Solution Explorer, open **New look always on**.  
-      
-    
+
 [![]({{ site.baseurl }}/assets/images/046/img_03b19e634f.png)]({{ site.baseurl }}/assets/images/046/img_03b19e634f.png)
-    
-      
-    
+
 1.  Set the **Setting Environment Value** to **Yes**.
 2.  Click **Save**, then **Publish All Customizations**.
 
@@ -87,9 +88,8 @@ This removes the toggle and enforces the new Fluent UI for everyone.
 1.  In the app designer select Settings on the command bar.
 2.  To manage features in a model-driven app, simply click on **Settings**, and then select **Features**. From there, you can enable or disable various capabilities for your app.
 3.  One of the key options you'll see is: **New look for Model-Driven Apps**  
-    
+
 This feature is enabled by default and provides end users with a toggle labeled "**Try the new look**". It allows them to experience the modern Fluent UI for model-driven apps. The best part? Users can switch back to the classic experience anytime - at least while the toggle is still available.
-    
 
 #### Reference
 
