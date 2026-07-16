@@ -1,12 +1,21 @@
 ---
-post_id: "041"
 layout: post
-title: "Clone a record in Dynamics 365 CE using JavaScript"
+post_id: '041'
+title: Clone a record in Dynamics 365 CE using JavaScript
 date: 2025-02-09 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/041/img_8bc1cd0eba.png
-categories: ["Model Driven Apps", "Dynamics 365 CRM Online", "JavaScript", "Web resource", "Dynamics 365 CE", "Dynamics 365 Web API"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Model Driven Apps
+  - Dynamics 365 CRM Online
+  - JavaScript
+  - Web resource
+  - Dynamics 365 CE
+  - Dynamics 365 Web API
 ---
+
 Fellas! Have you ever been in a situation where you needed to create multiple similar records with some fields carrying the same data? I found myself in this exact scenario and thought—why not build a simple templating functionality?
 
 Imagine opening a new record with all the existing data prefilled, making only the necessary tweaks, and saving it — without the hassle of manually copying everything. While searching for existing solutions, I came across workflows and plugins, but they automatically save the record, which wasn’t what I needed.
@@ -43,10 +52,12 @@ To enable the cloning functionality, we need an event trigger. The best way to d
 4.  Choose Main Form.
 5.  In the Command Editor, click + New → Command and place it anywhere in the ribbon.
 6.  Configure the command by adding:
+
     -   Action (Run JavaScript)
     -   Library (add Web Resource)
     -   Function (to trigger cloning)
     -   Parameter (set as Primary Control)
+
 7.  Click Save and Publish to apply the changes.
 
 Below is a snapshot of the configured button for reference.
