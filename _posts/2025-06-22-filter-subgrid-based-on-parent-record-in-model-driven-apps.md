@@ -1,12 +1,20 @@
 ---
-post_id: "045"
 layout: post
-title: "How to Filter Subgrid Based on Parent Record Fields on Tab Switch in Model-Driven Apps?"
+post_id: '045'
+title: How to Filter Subgrid Based on Parent Record Fields on Tab Switch in Model-Driven Apps?
 date: 2025-06-22 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/045/img_7996e7f7a6.gif
-categories: ["Dynamics 365 CE", "Dynamics 365 CRM Online", "JavaScript", "Web resource"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+read_time: ''
+categories:
+  - Dynamics 365 CE
+  - Dynamics 365 CRM Online
+  - JavaScript
+  - Web resource
 ---
+
 I have recently came across a use case where i have to filter the sub grid based on the field values from the parent record on the event of tab switch. I have accomplished it with the JavaScript Code. For the demonstration of the same, Assume you are in the main form of account entity. You have the contacts tab with the sub grid of contacts which are related to the account. For the ease of understanding, I have taken the fields Shipping Method and Freight Terms(as account and contact). Refer the below image for the unfiltered sub grid.
 
 [![How to Filter Subgrid Based on Parent Record Fields on Tab Switch in Model-Driven Apps?]({{ site.baseurl }}/assets/images/045/img_1c12b9a4a1.png)]({{ site.baseurl }}/assets/images/045/img_1c12b9a4a1.png)
