@@ -1,12 +1,21 @@
 ---
-post_id: "024"
 layout: post
-title: "Send a Email in Dynamics 365 CRM using C# Plugins"
+post_id: '024'
+title: Send a Email in Dynamics 365 CRM using C# Plugins
 date: 2023-06-25 10:03:00 +0000
-category: Dynamics 365 CE
 image: assets/images/024/img_ec9c18d4fc.png
-categories: ["Model Driven Apps", "Dynamics 365 CRM Online", "Power Apps", "Dynamics 365 CE", "Plugins"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+read_time: ''
+categories:
+  - Model Driven Apps
+  - Dynamics 365 CRM Online
+  - Power Apps
+  - Dynamics 365 CE
+  - Plugins
 ---
+
 We have all came through the activity timeline section in account and contact forms. The activities include Email, Phone call, Appointments, Tasks, Posts, and Notes. I have explored how to send an email inside Dynamics 365 CRM using plugins. It is quite simple by using the two pre-defined objects, which are **SendEmailRequest** and **SendEmailResponse.**
 
 **_Note:_** The **sender** of the email should be a system user or queue. And the **receiver** might be a user, queue, account, contact, lead, entitlement, facility/equipment, or knowledge article.
