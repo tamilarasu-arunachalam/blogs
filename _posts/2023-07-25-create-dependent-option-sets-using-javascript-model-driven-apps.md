@@ -1,12 +1,20 @@
 ---
-post_id: "027"
 layout: post
-title: "Dependent option sets using JavaScript in Model Driven Apps"
+post_id: '027'
+title: Dependent option sets using JavaScript in Model Driven Apps
 date: 2023-07-25 16:58:00 +0000
-category: Dynamics 365 CE
 image: assets/images/027/img_daf545a6e1.png
-categories: ["Model Driven Apps", "Power Apps", "Dynamics 365 CE", "Web resource", "Dataverse"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Model Driven Apps
+  - Power Apps
+  - Dynamics 365 CE
+  - Web resource
+  - Dataverse
 ---
+
 ## Dependent Option sets
 
     Option sets which depend on the another option set, and the options vary on the change of the value in parent option set.
@@ -30,10 +38,9 @@ categories: ["Model Driven Apps", "Power Apps", "Dynamics 365 CE", "Web resource
 | MBA | 8 |
 | MCOM | 9 |
 
-
 Here we need to make the options of degree field dependent on the selected value from qualification field. I need to create a JavaScript code to demonstrate the same. I have used an object which contains options respective to the qualification. The object is in the below snippet.
 
-_**Note:** It is better you can add the same handler to on-load event to prevent inconsistency issues._
+**_Note:_** _It is better you can add the same handler to on-load event to prevent inconsistency issues._
 
 ```json
 {
