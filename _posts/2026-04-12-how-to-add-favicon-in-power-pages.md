@@ -1,12 +1,19 @@
 ---
-post_id: "064"
 layout: post
-title: "How to Add a Favicon in Power Pages?"
+post_id: '064'
+title: How to Add a Favicon in Power Pages?
 date: 2026-04-12 17:41:00 +0000
-category: Power Pages
 image: assets/images/064/img_0e751ab16e.gif
-categories: ["Power Pages", "Power Portal", "HTML", "Power Platform"]
+description: ''
+meta_keywords: ''
+category: Power Pages
+categories:
+  - Power Pages
+  - Power Portal
+  - HTML
+  - Power Platform
 ---
+
 When you open a website in your browser, one small detail quietly helps you recognize it instantly. That tiny icon shown in the browser tab, bookmarks, history, and address bar is called a **favicon**. The word favicon stands for “favorite icon,” and even though it is small, it plays a big role in improving **user experience** and maintaining **brand consistency**.
 
 Think about the times when your browser is filled with multiple tabs. It becomes difficult to read every page title, but the favicon helps you quickly identify which tab belongs to which website. This makes navigation easier and saves time, especially for users who frequently switch between tabs.
@@ -38,7 +45,6 @@ Adding a favicon may seem like a minor step, but it contributes significantly to
 ### References
 
 -   [The best Favicon Generator (completely free) - favicon.io](https://favicon.io/)  
-    
 -   [MDN Favicon](https://developer.mozilla.org/en-US/docs/Glossary/Favicon)
 -   [How do I change the favicon in Power Pages? | Microsoft Learn](https://learn.microsoft.com/en-us/shows/one-dev-minute/how-do-i-change-the-favicon-in-power-pages)
 -   [Add browser icon (favicon) to Power Pages - Ulrikke Akerbæk](https://ulrikke.akerbak.com/2022/09/23/browser-icon-favicon-power-pages/)
