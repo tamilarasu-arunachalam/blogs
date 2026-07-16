@@ -1,12 +1,23 @@
 ---
-post_id: "035"
 layout: post
-title: "Fetching large number of data from Dataverse Connector in Power Automate"
+post_id: '035'
+title: Fetching large number of data from Dataverse Connector in Power Automate
 date: 2024-05-19 17:41:00 +0000
-category: Power Automate
 image: assets/images/035/img_25d9f54c30.png
-categories: ["Pagination", "Dataverse API", "Data Management", "Power Automate", "Dataverse Connector", "Dataverse", "Dynamics 365 Web API"]
+description: ''
+meta_keywords: ''
+category: Power Automate
+read_time: ''
+categories:
+  - Pagination
+  - Dataverse API
+  - Data Management
+  - Power Automate
+  - Dataverse Connector
+  - Dataverse
+  - Dynamics 365 Web API
 ---
+
 Handling a large amount of data remains a challenge for many Power Automate enthusiasts. Here's an article detailing how to retrieve a large number of records from Dataverse using Power Automate. There are three methods for fetching large number of data from Dataverse via Power Automate.
 
 - [Threshold Way](#threshold-way)
