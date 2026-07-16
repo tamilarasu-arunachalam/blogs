@@ -1,12 +1,23 @@
 ---
-post_id: "034"
 layout: post
-title: "Building a PDF Preview feature inside Dynamics 365 CE with JScript"
+post_id: '034'
+title: Building a PDF Preview feature inside Dynamics 365 CE with JScript
 date: 2024-01-27 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/034/img_647b95229f.png
-categories: ["Model Driven Apps", "Dynamics 365 CRM Online", "JavaScript", "Dynamics 365 CE", "HTML", "Web resource", "Dynamics 365 Web API"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+read_time: ''
+categories:
+  - Model Driven Apps
+  - Dynamics 365 CRM Online
+  - JavaScript
+  - Dynamics 365 CE
+  - HTML
+  - Web resource
+  - Dynamics 365 Web API
 ---
+
 I recently encountered a question regarding the possibility of previewing a PDF file inside Dynamics 365 CRM or a Model Driven App without opening an additional tab or window. After conducting some research, I found that there is no out-of-the-box (OOTB) feature for previewing PDF files. However, I devised an approach to achieve this by leveraging client-side scripting, specifically using JScript.
 
 One of the methods I explored is the Xrm.Navigation.openFile(file, openFileOptions) script. This script allows you to open a file in another tab or window. However, the goal is to have the file open inline within the Unified Client Interface (UCI) page. More details on this script can be found in the [Microsoft Docs](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-navigation/openfile).
