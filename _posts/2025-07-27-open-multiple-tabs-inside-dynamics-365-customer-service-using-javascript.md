@@ -1,18 +1,27 @@
 ---
-post_id: "049"
 layout: post
-title: "How to Open Multiple Workspace Tabs in Dynamics 365 Customer Service Using JavaScript?"
+post_id: '049'
+title: How to Open Multiple Workspace Tabs in Dynamics 365 Customer Service Using JavaScript?
 date: 2025-07-27 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/049/img_e80e5e6282.gif
-categories: ["Dataverse", "Dynamics 365 CE", "Dynamics 365 Customer Service", "JavaScript", "Model Driven Apps", "Web resource"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Dataverse
+  - Dynamics 365 CE
+  - Dynamics 365 Customer Service
+  - JavaScript
+  - Model Driven Apps
+  - Web resource
 ---
+
 Working in Customer Service Workspace can feel like juggling multiple cases/conversations at once. Ofcourse we can open records from view which will open in the new workspace tab. I was thinking of opening multiple records on multiple tabs on a single click.
 
 - [What's Customer Service Workspace and Why Should You Care About Tabs?](#whats-customer-service-workspace-and-why-should-you-care-about-tabs)
 - [Quick Clarification: Session vs Tabs](#quick-clarification-session-vs-tabs)
 - [Example Scenario :](#example-scenario-)
-  - [Steps:](#steps)
+    - [Steps:](#steps)
 - [Demonstration](#demonstration)
 - [Conclusion](#conclusion)
 
@@ -35,26 +44,27 @@ Opening Multiple Case(s) at once a command button is clicked. Let's say an agent
 ### Steps:
 
 1.  Create a Web Resource
-    -   I have created a JavaScript web resource which have a function named OpenNewWorkspaceTab. It will accept only one parameter which is **SelectedControlSelectedItemIds**. Below is the code.
-    -   Save and Publish the Web Resource
+
+        -   I have created a JavaScript web resource which have a function named OpenNewWorkspaceTab. It will accept only one parameter which is **SelectedControlSelectedItemIds**. Below is the code.
+        -   Save and Publish the Web Resource
+
 2.  Create and Configure the Button:
-    -   First of all, create a command button named "**Open in New Tab**" in the maker portal.  
-        
-    -   Refer the below link to know how to create or customize the command buttons [https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/use-command-designer](https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/use-command-designer)
-    -   I have configured a button which will execute the JavaScript function when clicked.  
+
+        -   First of all, create a command button named "**Open in New Tab**" in the maker portal.  
+                        -   Refer the below link to know how to create or customize the command buttons [https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/use-command-designer](https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/use-command-designer)
+        -   I have configured a button which will execute the JavaScript function when clicked.  
         [![configure command button model driven apps]({{ site.baseurl }}/assets/images/049/img_5799897ed4.png)]({{ site.baseurl }}/assets/images/049/img_5799897ed4.png)
-    -   As the function requires a parameter, add the parameter "**SelectedControlSelectedItemIds**". The button's visbility is based on the record selection, If one or more records will be selected, the button is visible otherwise it is hidden.  
-        
+        -   As the function requires a parameter, add the parameter "**SelectedControlSelectedItemIds**". The button's visbility is based on the record selection, If one or more records will be selected, the button is visible otherwise it is hidden.  
+
 [![configure command button model driven apps]({{ site.baseurl }}/assets/images/049/img_0e9b9167d5.png)]({{ site.baseurl }}/assets/images/049/img_0e9b9167d5.png)
-             
-    -   I have did that using the Show on condition from formula option in Visibility field. And add the below formula to make the button visible based on condition.(Refer the formula bar in the above image for the same)
-    
-    ```jsx
+
+                                    -   I have did that using the Show on condition from formula option in Visibility field. And add the below formula to make the button visible based on condition.(Refer the formula bar in the above image for the same)
+
+```jsx
     CountRows(Self.Selected.AllItems)>0
-    ```
-    
-    -   Save and Publish the editor.  
-        
+```
+
+                -   Save and Publish the editor.  
 
 ## Demonstration
 
@@ -73,8 +83,7 @@ If ok is clicked, it will open the new tabs.
 ## Conclusion
 
 I hope this workaround makes navigating the Customer Service Workspace a bit easier for you. It’s a great approach when you’re dealing with just a few records. But if the number of records gets too high, it could slow things down. Also, from what I’ve heard, there might be a limit on how many tabs you can open in the workspace - so it’s a good idea to use this method thoughtfully.
-
-**References:**
+  **References:**
 
 [https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/pass-data-page-parameter-ribbon-actions#grid-values](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/pass-data-page-parameter-ribbon-actions#grid-values)
 
