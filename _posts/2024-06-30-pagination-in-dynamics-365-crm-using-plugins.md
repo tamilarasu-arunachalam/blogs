@@ -1,12 +1,19 @@
 ---
-post_id: "037"
 layout: post
-title: "Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins"
+post_id: '037'
+title: Exploring Pagination Techniques in Dynamics 365 CRM using C# Plugins
 date: 2024-06-30 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/037/img_beba359730.png
-categories: ["Pagination", "Model Driven Apps", "Dynamics 365 CRM Online", "Plugins"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Pagination
+  - Model Driven Apps
+  - Dynamics 365 CRM Online
+  - Plugins
 ---
+
 As we all know, fetching records from a plugin is straightforward. However, it becomes more challenging when dealing with large volumes of data. In real-world scenarios, the number of records within an entity can be unpredictable. Every application will eventually encounter this threshold. Similar to JavaScript and Power Automate, where a single request can fetch a limit of 5000 records, pagination becomes necessary when dealing with more than this limit.
 
 There are two primary methods to fetch records, each of which supports pagination:
