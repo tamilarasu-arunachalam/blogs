@@ -1,12 +1,19 @@
 ---
-post_id: "029"
 layout: post
-title: "How to use Progress Indicators in Model Driven Apps?"
+post_id: '029'
+title: How to use Progress Indicators in Model Driven Apps?
 date: 2023-08-26 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/029/img_fd36029ce2.png
-categories: ["Model Driven Apps", "Power Apps", "JavaScript", "Dynamics 365 CE"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Model Driven Apps
+  - Power Apps
+  - JavaScript
+  - Dynamics 365 CE
 ---
+
 In Model Driven Apps, we can place a progress indicator at any event using JavaScript. Some people call it loader. In Power Apps it is termed as progress Indicator. The progress indicator will block the screen until it is closed. We can show the progress indicator using the below piece of code.
 
 ```javascript
@@ -14,9 +21,11 @@ Xrm.Utility.showProgressIndicator("your message");
 ```
 
 We can close the progress indicator using the below code.
+
 ```javascript
 Xrm.Utility.closeProgressIndicator();
 ```
+
 In this article, I have a web resource containing script for showing and closing the progress indicator for a real-time scenario. The code is placed on the on-load event of accounts main form, and it will the set the value for the fax field behind the progress indicator.
 
 [![]({{ site.baseurl }}/assets/images/029/img_ee2fac2a5c.png)]({{ site.baseurl }}/assets/images/029/img_ee2fac2a5c.png)
