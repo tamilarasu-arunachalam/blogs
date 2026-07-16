@@ -1,12 +1,21 @@
 ---
-post_id: "047"
 layout: post
-title: "Quick View Forms in Model Driven Apps: What, Why, and How to Use Them?"
+post_id: '047'
+title: 'Quick View Forms in Model Driven Apps: What, Why, and How to Use Them?'
 date: 2025-07-06 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/047/img_004273db2e.gif
-categories: ["Dynamics 365 CE", "Dynamics 365 CRM Online", "JavaScript", "Model Driven Apps", "Power Apps", "Web resource"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Dynamics 365 CE
+  - Dynamics 365 CRM Online
+  - JavaScript
+  - Model Driven Apps
+  - Power Apps
+  - Web resource
 ---
+
 When working with Microsoft Dynamics 365 CRM, efficiency and user experience matter. One feature that often goes unnoticed - but can make a significant difference - is the Quick View Form. If you’ve ever wanted to display related record information directly within the current form without forcing users to open another window, Quick View Forms are exactly what you need.
 
 In this blog, I’ll walk you through what Quick View Forms are, why and when you should use them, how to set them up, and how to enhance them using JavaScript where possible.
@@ -39,7 +48,7 @@ Creating and using Quick View Forms in Dynamics 365 CRM is straightforward. Here
 Let’s say you have a **City** entity with three fields: **City Name**, **State Name**, and **Country Name**. In the **Account** form, I’ll create a lookup field for the City table. I’ve added a new tab named **“QV Test”** to demonstrate this use case.
 
 [![Quick View Forms in Dynamics 365 CRM: What, Why, and How to Use Them]({{ site.baseurl }}/assets/images/047/img_e7059e3785.png)]({{ site.baseurl }}/assets/images/047/img_e7059e3785.png)  
-  
+
 When a city is  selected, the corresponding **State** and **Country** names should automatically appear. This is exactly where a Quick View Form helps.
 
 ### **Step 1: Create the Quick View Form**
@@ -47,32 +56,32 @@ When a city is  selected, the corresponding **State** and **Country** names sho
 1.  Navigate to **Advanced Settings → Solutions → Your preferred solution**
 2.  Select the entity from which you want to display information (e.g., City)
 3.  Go to the **Forms** section and click **New Quick View Form**
-    
+
 [![Quick View Forms in Dynamics 365 CRM: What, Why, and How to Use Them]({{ site.baseurl }}/assets/images/047/img_7cff1f85cd.png)]({{ site.baseurl }}/assets/images/047/img_7cff1f85cd.png)
-    
+
 1.  Name the form something like **“City Quick View”**
 2.  Design your form by adding only the necessary fields - keep it simple and focused (in this case, State and Country)  
-    
+
 [![Quick View Forms in Dynamics 365 CRM: What, Why, and How to Use Them]({{ site.baseurl }}/assets/images/047/img_c57ec3cedc.png)]({{ site.baseurl }}/assets/images/047/img_c57ec3cedc.png)
-    
+
 1.  Save and **Publish** the form
 
 ### **Step 2: Add the Quick View Form to the Target Entity**
 
 1.  Open the main form of the target entity (e.g., Account)
 2.  Add the **City** lookup field to the **QV Test** tab  
-    
+
 [![Quick View Forms in Dynamics 365 CRM: What, Why, and How to Use Them]({{ site.baseurl }}/assets/images/047/img_dbe2e51c16.png)]({{ site.baseurl }}/assets/images/047/img_dbe2e51c16.png)
-    
+
 1.  In the form designer, insert a **Quick View Form** control
 2.  Select the lookup field that links to the related City record  
-    
+
 [![Quick View Forms in Dynamics 365 CRM: What, Why, and How to Use Them]({{ site.baseurl }}/assets/images/047/img_5f37d4ff4b.png)]({{ site.baseurl }}/assets/images/047/img_5f37d4ff4b.png)
-    
+
 1.  Choose the **related entity** and the Quick View Form you created  
-    
+
 [![Quick View Forms in Dynamics 365 CRM: What, Why, and How to Use Them]({{ site.baseurl }}/assets/images/047/img_75bd8f1a39.png)]({{ site.baseurl }}/assets/images/047/img_75bd8f1a39.png)
-    
+
 1.  Position the form in the layout where it makes the most sense for users
 2.  Save and **Publish** the form
 
@@ -83,12 +92,10 @@ Once published, users will see the Quick View Form populated with data from the 
 [![Quick View Forms in Dynamics 365 CRM: What, Why, and How to Use Them]({{ site.baseurl }}/assets/images/047/img_701f2156ab.png)]({{ site.baseurl }}/assets/images/047/img_701f2156ab.png)  
 
 -   Navigate to the **Account** form and switch to the **QV Test** tab.  
-    
 
 [![Quick View Forms in Dynamics 365 CRM: What, Why, and How to Use Them]({{ site.baseurl }}/assets/images/047/img_844b32e1aa.png)]({{ site.baseurl }}/assets/images/047/img_844b32e1aa.png)  
 
 -   Once a city is selected from the lookup field, the Quick View Form will automatically display the corresponding **State** and **Country** fields.  
-    
 
 [![Quick View Forms in Dynamics 365 CRM: What, Why, and How to Use Them]({{ site.baseurl }}/assets/images/047/img_398a585229.png)]({{ site.baseurl }}/assets/images/047/img_398a585229.png)  
 
@@ -106,10 +113,10 @@ You can access the Quick View Form control and control its visibility based on c
 
 ### **Code Breakdown**
 
--   Get the City lookup field value using: formContext.getAttribute("tamil\_city").getValue()\[0\].id.slice(1, -1);
--   Retrieve related record details using Web API: Xrm.WebApi.retrieveRecord("tamil\_city", cityValue, "?$select=tamil\_name,tamil\_state,tamil\_country");
--   Get the Quick View Form control: formContext.ui.quickForms.get("tamil\_cityQVF");
--   Use visibility logic based on field values: cityQvfControl.getControl("tamil\_state").setVisible(false);
+-   Get the City lookup field value using: formContext.getAttribute("tamil_city").getValue()[0].id.slice(1, -1);
+-   Retrieve related record details using Web API: Xrm.WebApi.retrieveRecord("tamil_city", cityValue, "?$select=tamil_name,tamil_state,tamil_country");
+-   Get the Quick View Form control: formContext.ui.quickForms.get("tamil_cityQVF");
+-   Use visibility logic based on field values: cityQvfControl.getControl("tamil_state").setVisible(false);
 -   Hide individual fields or the entire Quick View Form if necessary: cityQvfControl.setVisible(false);
 
 ### **Final Steps**
