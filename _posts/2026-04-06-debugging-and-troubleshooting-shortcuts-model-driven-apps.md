@@ -1,14 +1,23 @@
 ---
-post_id: "063"
 layout: post
-title: "Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts"
+post_id: '063'
+title: Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts
 date: 2026-04-06 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/063/img_e3160e0be0.gif
-categories: ["Model Driven Apps", "Dynamics 365 CE", "Dynamics 365 CRM Online", "Debugging", "Troubleshooting"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Model Driven Apps
+  - Dynamics 365 CE
+  - Dynamics 365 CRM Online
+  - Debugging
+  - Troubleshooting
 ---
+
 There is a quote about debugging from Brian Kernighan (Author and Co-contributor for Unix):
-```
+
+```plain
 Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.    – *Brian Kernighan*
 ```
 
