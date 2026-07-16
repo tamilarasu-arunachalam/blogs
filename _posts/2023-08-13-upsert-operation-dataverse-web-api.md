@@ -1,15 +1,25 @@
 ---
-post_id: "028"
 layout: post
-title: "Simplifying the Upsert Operation in Dataverse"
+post_id: '028'
+title: Simplifying the Upsert Operation in Dataverse
 date: 2023-08-13 17:41:00 +0000
-category: Dataverse
 image: assets/images/028/img_1298e796a2.png
-categories: ["Dynamics 365 CRM Online", "JavaScript", "Power Automate", "Web resource", "Dataverse", "Plugins"]
+description: ''
+meta_keywords: ''
+category: Dataverse
+read_time: ''
+categories:
+  - Dynamics 365 CRM Online
+  - JavaScript
+  - Power Automate
+  - Web resource
+  - Dataverse
+  - Plugins
 ---
+
 - [Upsert using Power Automate](#upsert-using-power-automate)
 - [Upsert using JavaScript](#upsert-using-javascript)
-  - [Best Practices:](#best-practices)
+    - [Best Practices:](#best-practices)
 - [Upsert using Plugins](#upsert-using-plugins)
 - [Conclusion](#conclusion)
 
@@ -39,7 +49,7 @@ We can use Power Automate to do the upsert operation with the Dataverse connecto
 #### Best Practices:
 
 -   If you are not sure about the existence of the record (thought of doing upsert), you can use PATCH request without any header.
--   If you only want to update a record in Dataverse, you must use the PATCH request with the header If\-Match: \*.
+-   If you only want to update a record in Dataverse, you must use the PATCH request with the header If-Match: \*.
 -   If you want to create a record using PATCH request, you must use the header If-None-Match : \*.
 
 ### Upsert using Plugins
