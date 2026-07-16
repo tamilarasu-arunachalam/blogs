@@ -1,12 +1,18 @@
 ---
-post_id: "022"
 layout: post
-title: "How to create Custom Connector for Power Automate from Scratch"
+post_id: '022'
+title: How to create Custom Connector for Power Automate from Scratch
 date: 2023-06-12 17:41:00 +0000
 image: assets/images/022/img_374c6419b0.png
+description: ''
+meta_keywords: ''
 category: Power Automate
-categories: ["Power Apps", "Custom Connector", "Power Automate"]
+categories:
+  - Power Apps
+  - Custom Connector
+  - Power Automate
 ---
+
 - [Connectors](#connectors)
 - [Custom Connectors](#custom-connectors)
 - [Creating Custom Connector](#creating-custom-connector)
@@ -42,7 +48,7 @@ In this article, I have used the [JSON Placeholder API](https://jsonplaceholder.
 
 [![How to create Custom Connector for Power Automate from Scratch]({{ site.baseurl }}/assets/images/022/img_04da16391a.png)]({{ site.baseurl }}/assets/images/022/img_04da16391a.png)
 
--   Then click on the security button in the bottom. It will take you to the Security Page. Select No Authentication for Authentication Type (_**Note:** As the JSON Placeholder API doesn't need any authentication_). If the API that you have used needs Authentication, you need to select any other suitable Authentication. Then click on the Definition.
+-   Then click on the security button in the bottom. It will take you to the Security Page. Select No Authentication for Authentication Type (**_Note:_** _As the JSON Placeholder API doesn't need any authentication_). If the API that you have used needs Authentication, you need to select any other suitable Authentication. Then click on the Definition.
 
 [![How to create Custom Connector for Power Automate from Scratch]({{ site.baseurl }}/assets/images/022/img_4a5dda9732.png)]({{ site.baseurl }}/assets/images/022/img_4a5dda9732.png)
 
@@ -51,8 +57,6 @@ In this article, I have used the [JSON Placeholder API](https://jsonplaceholder.
 [![How to create Custom Connector for Power Automate from Scratch]({{ site.baseurl }}/assets/images/022/img_50f352a042.png)]({{ site.baseurl }}/assets/images/022/img_50f352a042.png)
 
 -   A form opens with some inputs in the right. Add Summary, Description, and Operation ID. 
-
-  
 
 [![How to create Custom Connector for Power Automate from Scratch]({{ site.baseurl }}/assets/images/022/img_8e802689c2.png)]({{ site.baseurl }}/assets/images/022/img_8e802689c2.png)
 
