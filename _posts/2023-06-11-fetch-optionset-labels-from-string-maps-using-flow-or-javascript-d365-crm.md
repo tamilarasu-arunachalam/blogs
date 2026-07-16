@@ -1,12 +1,20 @@
 ---
-post_id: "021"
 layout: post
-title: "Fetch Optionset Labels from String Maps Table using Flow or JavaScript"
+post_id: '021'
+title: Fetch Optionset Labels from String Maps Table using Flow or JavaScript
 date: 2023-06-11 18:30:00 +0000
-category: Dynamics 365 CE
 image: assets/images/021/img_9d960ad019.png
-categories: ["Model Driven Apps", "Dynamics 365 CRM Online", "Power Automate", "Web resource", "Dataverse"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Model Driven Apps
+  - Dynamics 365 CRM Online
+  - Power Automate
+  - Web resource
+  - Dataverse
 ---
+
 -   [String Maps Table in Dataverse](string-maps-table-in-dataverse)
 -   [List Option set Labels using Power Automate](#list-option-set-labels-using-power-automate)
 -   [List Option set Labels using JavaScript](#list-option-set-labels-using-javascript)
@@ -21,7 +29,7 @@ categories: ["Model Driven Apps", "Dynamics 365 CRM Online", "Power Automate", "
 ### List Option set Labels using Power Automate
 
 -   I have used the Shipping method field from accounts table
--   Go to [https://make.powerautomate.com](https://make.powerautomate.com/) → \+ Create → Instant Flow.
+-   Go to [https://make.powerautomate.com](https://make.powerautomate.com/) → + Create → Instant Flow.
 
 [![]({{ site.baseurl }}/assets/images/021/img_d233ca34ee.png)]({{ site.baseurl }}/assets/images/021/img_d233ca34ee.png)
 
@@ -29,8 +37,7 @@ categories: ["Model Driven Apps", "Dynamics 365 CRM Online", "Power Automate", "
 
 [![]({{ site.baseurl }}/assets/images/021/img_f11a73dd6e.png)]({{ site.baseurl }}/assets/images/021/img_f11a73dd6e.png)
 
--   Select Table name as String Maps and add a filter as _objecttypecode eq 'account' and attributename eq 'address1\_shippingmethodcode'._
-
+-   Select Table name as String Maps and add a filter as _objecttypecode eq 'account' and attributename eq 'address1_shippingmethodcode'._
 -   Then add Create HTML Table connector to list those options we got from the previous action.
 
 [![]({{ site.baseurl }}/assets/images/021/img_d83179ca8c.png)]({{ site.baseurl }}/assets/images/021/img_d83179ca8c.png)
