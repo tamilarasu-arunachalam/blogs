@@ -1,12 +1,20 @@
 ---
-post_id: "039"
 layout: post
-title: "Making XRM Web API Calls Synchronous with JavaScript in Dynamics 365 CRM"
+post_id: '039'
+title: Making XRM Web API Calls Synchronous with JavaScript in Dynamics 365 CRM
 date: 2024-12-08 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/039/img_fb79362642.png
-categories: ["Model Driven Apps", "JavaScript", "Web resource", "Dynamics 365 CE", "Dynamics 365 Web API"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Model Driven Apps
+  - JavaScript
+  - Web resource
+  - Dynamics 365 CE
+  - Dynamics 365 Web API
 ---
+
 When working with Dynamics 365 CRM and Model Driven Apps, developers often need to interact with the XRM Web API to perform CRUD (Create, Read, Update, Delete) operations. By default, the XRM Web API works asynchronously. This means that the results are returned later, allowing other code to run in the meantime. However, there are times when synchronous calls are needed, especially when operations must happen in a specific order. In this post, we'll explore how to make XRM Web API calls appear synchronous in Dynamics 365.
 
 ### **Understanding Asynchronous vs. Synchronous in JavaScript**
@@ -228,21 +236,29 @@ getEntityRecord("account", "00000000-0000-0000-0000-000000000001", function(erro
 ### **Which Approach Should You Use?**
 
 1.  **Use async/await:**
+
     -   **Best for:** Modern projects with ES6+ support.
     -   **Why:** It makes your code easy to read and follow, and allows you to handle asynchronous operations in sequence without freezing the user interface.
     -   **When to use:** If your project supports async/await.
+
 2.  **Use Promise Chaining (`.then()`):**
+
     -   **Best for:** Older projects or environments that don’t support async/await.
     -   **Why:** It allows you to handle asynchronous operations in sequence, but can get complicated with too many `.then()` blocks.
     -   **When to use:** If you're working with older JavaScript versions or browsers that don’t support async/await.
+
 3.  **Avoid Synchronous XMLHttpRequest:**
+
     -   **Best for:** Very rare situations where you have no other choice.
     -   **Why:** It blocks the code, slowing down performance and causing a poor user experience. It’s best avoided.
     -   **When to use:** Never, unless absolutely necessary.
+
 4.  **Use jQuery (if already using it):**
+
     -   **Best for:** Projects that already use jQuery.
     -   **Why:** jQuery makes it easier to manage asynchronous code, but synchronous calls are discouraged for the same reasons as XMLHttpRequest.
     -   **When to use:** If you’re already using jQuery and want to manage asynchronous operations more easily.
 
 ### **Conclusion**
+
 In Dynamics 365 CRM, making synchronous-like API calls can be useful when the results are required in a specific order. While JavaScript is naturally asynchronous, methods like `async/await`, `$.ajax`, or callbacks can help you structure your code sequentially.
