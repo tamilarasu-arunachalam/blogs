@@ -1,19 +1,26 @@
 ---
-post_id: "025"
 layout: post
-title: "Debugging a Dynamics 365 CRM Plugin"
+post_id: '025'
+title: Debugging a Dynamics 365 CRM Plugin
 date: 2023-07-01 19:07:00 +0000
-category: Dynamics 365 CE
 image: assets/images/025/img_df0059ddb7.png
-categories: ["Model Driven Apps", "Dynamics 365 CRM Online", "Dynamics 365 CE", "Plugins"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Model Driven Apps
+  - Dynamics 365 CRM Online
+  - Dynamics 365 CE
+  - Plugins
 ---
+
 - [Debugging](#debugging)
 - [Debugging a Dynamics 365 CRM plugin](#debugging-a-dynamics-365-crm-plugin)
 - [Trace Logs](#trace-logs)
 - [Persist to Entity (Recommended)](#persist-to-entity-recommended)
-  - [Follow the below steps to debug plugin using Persist to Entity:](#follow-the-below-steps-to-debug-plugin-using-persist-to-entity)
+    - [Follow the below steps to debug plugin using Persist to Entity:](#follow-the-below-steps-to-debug-plugin-using-persist-to-entity)
 - [Exception](#exception)
-  - [Follow the below steps to debug plugin using Exception:](#follow-the-below-steps-to-debug-plugin-using-exception)
+    - [Follow the below steps to debug plugin using Exception:](#follow-the-below-steps-to-debug-plugin-using-exception)
 - [Summary](#summary)
 
 ## Debugging
@@ -36,7 +43,7 @@ I have used [create email activity plugin](https://www.tamilarasu.me/2023/06/en
 
     We can log the errors using **ITracingService** interface in plugin. This trace log accepts only the string to log. It is used for debugging both synchronous and asynchronous plugins. If you want to log values of any other data type, you should typecast it to string. This will log the errors, and it will appear on the Plugin Trace logs. Before that, you should make sure that your environment enabled the Plugin Trace logs.
 
-`ITracingService log = (ITracingService)serviceProvider.GetService(typeof(ITracingService));   ``log.Trace("Execution Started");`
+``` ITracingService log = (ITracingService)serviceProvider.GetService(typeof(ITracingService));   ``log.Trace("Execution Started"); ```
 
 -   To do so, you should navigate to Settings 🡲 Advanced Settings 🡲 Administration 🡲 System Settings 🡲 Customization 🡲 Enable Plug-in and custom workflow activity tracing to All (if not enabled).
 
@@ -82,9 +89,7 @@ I have used [create email activity plugin](https://www.tamilarasu.me/2023/06/en
 
 [![Debugging a Dynamics 365 CRM Plugin]({{ site.baseurl }}/assets/images/025/img_08bf645b6b.png)]({{ site.baseurl }}/assets/images/025/img_08bf645b6b.png)
 
-  
-
--   Select persist to Entity as a profile storage option and click on the OK.
+        -   Select persist to Entity as a profile storage option and click on the OK.
 
 [![Debugging a Dynamics 365 CRM Plugin]({{ site.baseurl }}/assets/images/025/img_af4062f817.png)]({{ site.baseurl }}/assets/images/025/img_af4062f817.png)
 
@@ -111,7 +116,7 @@ I have used [create email activity plugin](https://www.tamilarasu.me/2023/06/en
 
 ### Follow the below steps to debug plugin using Exception:
 
-    **_Note:_** I have used the same plugin which is demonstrated in Persist to entity method
+          **_Note:_** I have used the same plugin which is demonstrated in Persist to entity method
 
 -   Place the break points on the code in Visual Studio and Go to Debug 🡲 Attach to Process and Select Plugin Registration Tool.
 -   In Plugin Registration tool, select the step and click on Start Profiling.
