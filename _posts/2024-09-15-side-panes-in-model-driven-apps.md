@@ -1,12 +1,22 @@
 ---
-post_id: "038"
 layout: post
-title: "Unlocking the Power of Side Panes in Model-Driven Apps"
+post_id: '038'
+title: Unlocking the Power of Side Panes in Model-Driven Apps
 date: 2024-09-15 17:41:00 +0000
-category: Dynamics 365 CE
 image: assets/images/038/img_9dc1697832.png
-categories: ["Model Driven Apps", "Power Apps", "Dynamics 365 CRM Online", "JavaScript", "Web resource", "HTML"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+read_time: ''
+categories:
+  - Model Driven Apps
+  - Power Apps
+  - Dynamics 365 CRM Online
+  - JavaScript
+  - Web resource
+  - HTML
 ---
+
 Side panes in Model Driven Apps are designed to facilitate access to multiple pages within a single view. They appear from the right side of the page and offer various features, including customizable headers, adjustable width, and options to hide or show the pane, as well as a close (x) icon. However, these side panes are not configured by out of the box (OOTB) and require custom client-side scripting to fully utilize their functionality on your page. For more information on configuring side panes, see the relevant Microsoft documentation [here](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-app-sidepanes).
 
 ## **Side Pane Development:**
@@ -88,13 +98,11 @@ Below is a snapshot of the demonstration.
 
 [![]({{ site.baseurl }}/assets/images/038/img_8573554c79.png)]({{ site.baseurl }}/assets/images/038/img_8573554c79.png)
 
-
 ### `entitylist`
 
 This type of page will display views for the specific entity mentioned in the code. For example, if you want to open a list of contacts in the side pane, you can use the entity list page to achieve this. Below is the code for implementing this example
 
 ```jsx
-
 function sidePaneList() {
     Xrm.App.sidePanes.createPane({
         title: "Accounts",
