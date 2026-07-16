@@ -1,13 +1,20 @@
 ---
-post_id: "019"
 layout: post
-title: "Import records with alternate lookup references in Dynamics 365 CE"
+post_id: '019'
+title: Import records with alternate lookup references in Dynamics 365 CE
 date: 2023-05-20 18:29:00 +0000
-category: Dynamics 365 CE
 image: assets/images/019/img_868419228a.png
-categories: ["Model Driven Apps", "Data Management", "Dynamics 365 CE", "Data Import"]
+description: ''
+meta_keywords: ''
+category: Dynamics 365 CE
+categories:
+  - Model Driven Apps
+  - Data Management
+  - Dynamics 365 CE
+  - Data Import
 ---
-If you are in a place of importing bulk data into the Dynamics 365 CE, you have many choices like importing as excel, CSV or XML. But if you are having records for two tables which are related to each other as like accounts and contacts. You have to be careful while importing those records because this import may cause the following error “**_The lookup reference could not be resolved_**”. The error is due to the lookup values which are not present in the table we are looking for. This blog will guide to import the related records at a single stretch.
+
+If you are in a place of importing bulk data into the Dynamics 365 CE, you have many choices like importing as excel, CSV or XML. But if you are having records for two tables which are related to each other as like accounts and contacts. You have to be careful while importing those records because this import may cause the following error “\*\*_The lookup reference could not be resolved_\*\*”. The error is due to the lookup values which are not present in the table we are looking for. This blog will guide to import the related records at a single stretch.
 
 [![]({{ site.baseurl }}/assets/images/019/img_8a34e78eb5.png)]({{ site.baseurl }}/assets/images/019/img_8a34e78eb5.png)
 
