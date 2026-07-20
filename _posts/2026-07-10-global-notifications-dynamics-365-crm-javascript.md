@@ -3,7 +3,7 @@ layout: post
 post_id: '078'
 title: How to Configure and Manage Global Notifications in Dynamics 365 CRM Using JavaScript
 date: 2026-07-19T23:11
-image: /assets/images/078/1000122064.png
+image: assets/images/078/1000122064.png
 description: Learn how to create and manage Global Notifications in Dynamics 365 CRM and Power Apps Model-Driven Apps using JavaScript. Explore notification types, action buttons, notification levels, and a birthday notification example.
 meta_keywords: Dynamics 365 CRM Global Notification, Model-Driven Apps Global Notification, Global Notification Dynamics 365, Xrm.App.addGlobalNotification, Xrm.App.clearGlobalNotification, Global Notifications in Dynamics 365, App Notifications Model-Driven App JavaScript, Dynamics 365 Custom Notifications, notification dynamics 365 javascript
 category: Dynamics 365 CE
