@@ -51,13 +51,9 @@ Next, I created a button in the **Application Ribbon** using **Ribbon Workbench*
 
 After a few debugging iterations, the code worked successfully. Below are the resulting screenshots.
 
-For another user’s birthday
+For another user’s birthday[![Dynamics 365 CRM Global Notification](/assets/images/078/other-user-global-notification.png)](/assets/images/{{post_id}}/other-user-global-notification.png)
 
-[![Dynamics 365 CRM Global Notification](/assets/images/078/other-user-global-notification.png)](/assets/images/{{post_id}}/other-user-global-notification.png)
-
-For current user birthday
-
-[![Dynamics 365 CRM Global Notification](/assets/images/078/same-user-global-notification.png)](/assets/images/{{post_id}}/same-user-global-notification.png)
+For current user birthday[![Dynamics 365 CRM Global Notification](/assets/images/078/same-user-global-notification.png)](/assets/images/{{post_id}}/same-user-global-notification.png)
 
 #### References:
 
