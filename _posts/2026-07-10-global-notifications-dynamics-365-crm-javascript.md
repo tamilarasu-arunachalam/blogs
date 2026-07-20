@@ -17,7 +17,7 @@ Global notifications are not specific to any form or view. They are displayed ac
 
 Below is the syntax for setting a Global Notification.
 
-```plain
+```javascript
 Xrm.App.addGlobalNotification(notification).then(successCallback, errorCallback);
 ```
 
@@ -33,7 +33,7 @@ In the `successcallback`, a Promise object is returned containing the GUID that 
 
 Below is the syntax for clearing an existing Global Notification.
 
-```plain
+```javascript
 Xrm.App.clearGlobalNotification(uniqueId).then(successCallback, errorCallback);
 ```
 
@@ -61,5 +61,5 @@ For current user birthday
 
 #### References:
 
-- [addGlobalNotification (Client API reference) in model-driven apps — Power Apps | Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-app/addglobalnotification)
-- [clearGlobalNotification (Client API reference) in model-driven apps — Power Apps | Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-app/clearglobalnotification)
+- [addGlobalNotification (Client API reference) in model-driven apps — Power Apps \| Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-app/addglobalnotification)
+- [clearGlobalNotification (Client API reference) in model-driven apps — Power Apps \| Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-app/clearglobalnotification)
