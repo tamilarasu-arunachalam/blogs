@@ -3,7 +3,7 @@ layout: post
 post_id: '079'
 title: Understanding Dataverse Impersonation with Web API using JavaScript - Dynamics 365 CRM
 date: 2026-07-26T23:11
-image: /assets/images/079/1000122786.png
+image: /assets/images/079/impersonation-webapi-featured.png
 description: Learn how to implement user impersonation in Microsoft Dynamics 365 CRM and Dataverse using Web API and JavaScript.
 meta_keywords: Dynamics 365 CRM impersonation, Dataverse impersonation, Dynamics 365 Web API impersonation, prvActOnBehalfOfAnotherUser, Delegate security role, Dynamics 365 security roles, createdonbehalfby, modifiedonbehalfby
 category: Dynamics 365 CE
