@@ -61,5 +61,5 @@ For current user birthday
 
 #### References:
 
-- [addGlobalNotification (Client API reference) in model-driven apps — Power Apps \| Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-app/addglobalnotification)
-- [clearGlobalNotification (Client API reference) in model-driven apps — Power Apps \| Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-app/clearglobalnotification)
+- [addGlobalNotification (Client API reference) in model-driven apps — Power Apps - Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-app/addglobalnotification)
+- [clearGlobalNotification (Client API reference) in model-driven apps — Power Apps - Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-app/clearglobalnotification)
