@@ -25,6 +25,8 @@ You can find the different environment types in the table below.
 
 Once I found the approach, I jumped straight into the implementation. I wrote a script that hides the **Word Templates** button when the current environment is a **Production** environment. You can refer to the code sample below.
 
+<script src="https://gist.github.com/tamilarasu-arunachalam/06d48913d6796fb42849a0fd14c473be.js"></script>
+
 To hide the button, you need to add an **Enable Rule** to the existing command. The screenshot below shows how this can be configured.
 
 ![Enable rule in Ribbon WorkBench](assets/images/00f80e660366/ShowBtnOnDev-enable-rule.png)
