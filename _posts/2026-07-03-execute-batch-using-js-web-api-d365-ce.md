@@ -56,6 +56,8 @@ Content-Type: application/json;type=entry
 
 For testing purposes, I created a Custom Command Button in a model-driven app and associated a JavaScript method with the button action.
 
+<script src="https://gist.github.com/tamilarasu-arunachalam/c00c9c9a09e97bf30d0b1cc24c0ea3e8.js"></script>
+
 The script constructs a batch request and creates multiple Account records through a single Web API call. This approach significantly reduces the number of requests sent to the Dataverse server and improves performance when processing bulk records.
 
 Refer to the image below for the demonstration.
