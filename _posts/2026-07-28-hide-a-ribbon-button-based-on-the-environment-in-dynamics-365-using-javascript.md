@@ -3,7 +3,7 @@ layout: post
 post_id: '080'
 title: Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript
 date: 2026-08-02T23:11
-image: ''
+image: /assets/images/6e42f728b544/environment-type-featured.png
 description: Learn how to detect environment type in Dynamics 365 using RetrieveOrganizationInfo and hide the Word Template button in Production.
 meta_keywords: RetrieveOrganizationInfo, Dynamics 365 Environment Type, Hide Word Template Button, Dynamics 365 Web API, Power Apps Environment, Dynamics 365 Production Environment, Sandbox Environment, Developer Environment, Dataverse API
 category: Dynamics 365 CE
