@@ -3,7 +3,7 @@ layout: post
 post_id: '080'
 title: Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript
 date: 2026-08-02T23:11
-image: /assets/images/6e42f728b544/environment-type-featured.png
+image: assets/images/3322dc979390/environment-type-featured.png
 description: Learn how to detect environment type in Dynamics 365 using RetrieveOrganizationInfo and hide the Word Template button in Production.
 meta_keywords: RetrieveOrganizationInfo, Dynamics 365 Environment Type, Hide Word Template Button, Dynamics 365 Web API, Power Apps Environment, Dynamics 365 Production Environment, Sandbox Environment, Developer Environment, Dataverse API
 category: Dynamics 365 CE
@@ -21,13 +21,13 @@ However, relying on the URL is not the most reliable or recommended approach. Af
 
 You can find the different environment types in the table below.
 
-![Environment types in Power Platform](/assets/images/1fa130044712/environment-types-table.png)
+![Environment types in Power Platform](assets/images/baa3f60c9fb5/environment-types-table.png)
 
 Once I found the approach, I jumped straight into the implementation. I wrote a script that hides the **Word Templates** button when the current environment is a **Production** environment. You can refer to the code sample below.
 
 To hide the button, you need to add an **Enable Rule** to the existing command. The screenshot below shows how this can be configured.
 
-![Enable rule in Ribbon WorkBench](/assets/images/21440beb985f/ShowBtnOnDev-enable-rule.png)
+![Enable rule in Ribbon WorkBench](assets/images/00f80e660366/ShowBtnOnDev-enable-rule.png)
 
 Since I currently have access only to a developer environment and not a Production environment, I cannot demonstrate the functionality directly. However, I performed reverse testing, and the solution worked as expected.
 
