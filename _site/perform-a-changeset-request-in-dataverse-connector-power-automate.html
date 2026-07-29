@@ -17,27 +17,33 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="As you all know, Power Automate’s action depends on the previous action or trigger. We can even configure the action to run even on the failure of the previous action by using configure run after in settings. But what if we have a scenario of performing multiple actions bundled inside a change set. If any of the action in the set failed, rollback all the completed actions." />
 <meta name="twitter:description" property="og:description" content="As you all know, Power Automate’s action depends on the previous action or trigger. We can even configure the action to run even on the failure of the previous action by using configure run after in settings. But what if we have a scenario of performing multiple actions bundled inside a change set. If any of the action in the set failed, rollback all the completed actions." />
-<link rel="canonical" href="http://localhost:4000/perform-a-changeset-request-in-dataverse-connector-power-automate.html" />
-<meta property="og:url" content="http://localhost:4000/perform-a-changeset-request-in-dataverse-connector-power-automate.html" />
+<link rel="canonical" href="https://tamilarasu.blog/perform-a-changeset-request-in-dataverse-connector-power-automate.html" />
+<meta property="og:url" content="https://tamilarasu.blog/perform-a-changeset-request-in-dataverse-connector-power-automate.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
-<meta property="og:image" content="http://localhost:4000/assets/images/023/img_0437cd6c48.png" />
+<meta property="og:image" content="https://tamilarasu.blog/assets/images/023/img_0437cd6c48.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-06-18T21:09:00+05:30" />
 <meta property="article:modified_time" content="2023-06-18T21:09:00+05:30" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:4000/assets/images/023/img_0437cd6c48.png" />
+<meta name="twitter:image" content="https://tamilarasu.blog/assets/images/023/img_0437cd6c48.png" />
 <meta name="twitter:title" content="Perform a changeset request in Dataverse Connector Power Automate" />
 <meta name="twitter:site" content="@tamilarasu_av" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-06-18T21:09:00+05:30","datePublished":"2023-06-18T21:09:00+05:30","description":"As you all know, Power Automate’s action depends on the previous action or trigger. We can even configure the action to run even on the failure of the previous action by using configure run after in settings. But what if we have a scenario of performing multiple actions bundled inside a change set. If any of the action in the set failed, rollback all the completed actions.","headline":"Perform a changeset request in Dataverse Connector Power Automate","image":"http://localhost:4000/assets/images/023/img_0437cd6c48.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/perform-a-changeset-request-in-dataverse-connector-power-automate.html"},"url":"http://localhost:4000/perform-a-changeset-request-in-dataverse-connector-power-automate.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2023-06-18T21:09:00+05:30","datePublished":"2023-06-18T21:09:00+05:30","description":"As you all know, Power Automate’s action depends on the previous action or trigger. We can even configure the action to run even on the failure of the previous action by using configure run after in settings. But what if we have a scenario of performing multiple actions bundled inside a change set. If any of the action in the set failed, rollback all the completed actions.","headline":"Perform a changeset request in Dataverse Connector Power Automate","image":"https://tamilarasu.blog/assets/images/023/img_0437cd6c48.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://tamilarasu.blog/perform-a-changeset-request-in-dataverse-connector-power-automate.html"},"url":"https://tamilarasu.blog/perform-a-changeset-request-in-dataverse-connector-power-automate.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-  <link rel="alternate" type="application/rss+xml" title="Tamilarasu Arunachalam" href="http://localhost:4000/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Tamilarasu Arunachalam"
+    href="https://tamilarasu.blog/feed.xml">
   <!-- keywords -->
-  <meta name="keywords" content="Tamilarasu, Tamilarasu Arunachalam, Tamilarasu Power Platform, Tamilarasu Arunachalam Developer, Tamilarasu chrome extensions, Tamilarasu blogs, Power Platform blogs, Dynamics 365 blogs">
+  <meta name="keywords" content=" Tamilarasu, Tamilarasu Arunachalam, Tamilarasu Power
+    Platform, Tamilarasu Arunachalam Developer, Tamilarasu chrome extensions, Tamilarasu blogs, Power Platform blogs,
+    Dynamics 365 blogs">
 
   <!-- Bootstrap 5 CSS -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -53,26 +59,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
       rel="stylesheet">
   </noscript>
+  
   <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
     integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
   
+
   <!-- Custom CSS -->
   <link rel="preload" as="style" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/style.css">
-  
+
   
   <link rel="preload" as="image" href="/assets/images/023/img_0437cd6c48.png">
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRDWJ8N6VV"></script>
-  <script defer>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "G-NRDWJ8N6VV");
+  <script>
+    window.addEventListener('load', function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-NRDWJ8N6VV");
+    });
   </script>
   <!-- Google tag (gtag.js) -->
+  <!-- Microsoft Clarity -->
+  <script>
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.clarity.ms/tag/xcgip28bks';
+      document.head.appendChild(s);
+    });
+  </script>
+  <!-- Microsoft Clarity -->
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -155,9 +175,11 @@
 
 
 
-<img src="/assets/images/023/img_0437cd6c48.png" alt="Perform a changeset request in Dataverse Connector | Power Automate" class="img-fluid rounded-4 shadow-sm w-100" fetchpriority="high">
 
 
+
+
+<img src="/assets/images/023/img_0437cd6c48.png" alt="Perform a changeset request in Dataverse Connector | Power Automate" class="img-fluid rounded-4 shadow-sm w-100" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" fetchpriority="high">
 
                 </div>
                 
@@ -272,7 +294,7 @@
                         data-host="https://cusdis.com"
                         data-app-id="c273ece9-1cf0-4c6e-aaca-9aa59564a335"
                         data-page-id="/perform-a-changeset-request-in-dataverse-connector-power-automate.html"
-                        data-page-url="http://localhost:4000/perform-a-changeset-request-in-dataverse-connector-power-automate.html"
+                        data-page-url="https://tamilarasu.blog/perform-a-changeset-request-in-dataverse-connector-power-automate.html"
                         data-page-title="Perform a changeset request in Dataverse Connector | Power Automate"
                         data-theme="auto">
                     </div>
@@ -286,6 +308,12 @@
                     <div class="row gy-4">
                         
                         
+                        
+                    
+                        
+                    
+                        
+                    
                         
                     
                         
@@ -304,10 +332,12 @@
 
 
 
+
+
+
+
 <img src="/assets/images/075/host-survey-page-power-automate.png" alt="How to Build and Host a Survey Form Using Power Automate and Dataverse" class="card-img-top
-                                    related-card-img" loading="lazy" decoding="async">
-
-
+                                    related-card-img" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" loading="lazy" decoding="async">
 
                                 </a>
                                 <div class="card-body p-4">
@@ -350,10 +380,12 @@
 
 
 
+
+
+
+
 <img src="/assets/images/73/1000118534.png" alt="Build a Smart Approval System with Prediction Model in  Power Automate" class="card-img-top
-                                    related-card-img" loading="lazy" decoding="async">
-
-
+                                    related-card-img" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" loading="lazy" decoding="async">
 
                                 </a>
                                 <div class="card-body p-4">
@@ -400,10 +432,12 @@
 
 
 
+
+
+
+
 <img src="/assets/images/066/img_be2a5971b6.gif" alt="How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?" class="card-img-top
-                                    related-card-img" loading="lazy" decoding="async">
-
-
+                                    related-card-img" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" loading="lazy" decoding="async">
 
                                 </a>
                                 <div class="card-body p-4">
@@ -575,7 +609,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Perform a changeset request in Dataverse Connector | Power Automate",
-  "image": "http://localhost:4000/assets/images/023/img_0437cd6c48.png",
+  "image": "https://tamilarasu.blog/assets/images/023/img_0437cd6c48.png",
   "datePublished": "2023-06-18T21:09:00+05:30",
   "author": {
     "@type": "Person",
@@ -586,7 +620,7 @@
     "name": "Tamilarasu Arunachalam",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:4000/assets/images/logo.png"
+      "url": "https://tamilarasu.blog/assets/images/logo.png"
     }
   },
   "description": ""
@@ -704,29 +738,32 @@
       }
     });
   </script>
+  
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
   <!-- Initialize highlighting -->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      // 1. Highlight all code syntax first
-      hljs.highlightAll();
+      if (window.hljs) {
+        hljs.highlightAll();
 
-      // 2. Manually inject line numbers on every code element safely
-      if (typeof hljs.lineNumbersBlock === 'function') {
-        document.querySelectorAll('code').forEach((element) => {
-          hljs.lineNumbersBlock(element);
-        });
+        if (typeof hljs.lineNumbersBlock === 'function') {
+          document.querySelectorAll('code').forEach((element) => {
+            hljs.lineNumbersBlock(element);
+          });
+        }
       }
     });
   </script>
+  
   <!-- Simple-Jekyll-Search -->
   <script defer src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const searchInput = document.getElementById('search-input');
       const resultsContainer = document.getElementById('results-container');
-      
+
       if (searchInput && resultsContainer) {
         SimpleJekyllSearch({
           searchInput: searchInput,
@@ -739,23 +776,23 @@
         });
 
         // Show/hide results dropdown
-        searchInput.addEventListener('input', function() {
+        searchInput.addEventListener('input', function () {
           if (this.value.length > 0) {
             resultsContainer.style.display = 'block';
           } else {
             resultsContainer.style.display = 'none';
           }
         });
-        
+
         // Hide results when clicking outside
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
           if (!document.getElementById('search-container').contains(e.target)) {
             resultsContainer.style.display = 'none';
           }
         });
-        
+
         // Show results when focusing back on input
-        searchInput.addEventListener('focus', function() {
+        searchInput.addEventListener('focus', function () {
           if (this.value.length > 0) {
             resultsContainer.style.display = 'block';
           }

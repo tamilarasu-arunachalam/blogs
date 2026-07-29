@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Fetching large number of data from Dataverse Connector in Power Automate | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Fetching large number of data from Dataverse Connector in Power Automate" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<meta name="twitter:description" property="og:description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<link rel="canonical" href="https://tamilarasu.blog/fetching-large-number-of-data-from-dataverse-power-automate.html" />
+<meta property="og:url" content="https://tamilarasu.blog/fetching-large-number-of-data-from-dataverse-power-automate.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="https://tamilarasu.blog/assets/images/035/img_25d9f54c30.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-05-19T23:11:00+05:30" />
+<meta property="article:modified_time" content="2024-05-19T23:11:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://tamilarasu.blog/assets/images/035/img_25d9f54c30.png" />
+<meta name="twitter:title" content="Fetching large number of data from Dataverse Connector in Power Automate" />
+<meta name="twitter:site" content="@tamilarasu_av" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2024-05-19T23:11:00+05:30","datePublished":"2024-05-19T23:11:00+05:30","description":"Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.","headline":"Fetching large number of data from Dataverse Connector in Power Automate","image":"https://tamilarasu.blog/assets/images/035/img_25d9f54c30.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://tamilarasu.blog/fetching-large-number-of-data-from-dataverse-power-automate.html"},"url":"https://tamilarasu.blog/fetching-large-number-of-data-from-dataverse-power-automate.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="alternate" type="application/rss+xml" title="Tamilarasu Arunachalam"
+    href="https://tamilarasu.blog/feed.xml">
+  <!-- keywords -->
+  <meta name="keywords" content=" Tamilarasu, Tamilarasu Arunachalam, Tamilarasu Power
+    Platform, Tamilarasu Arunachalam Developer, Tamilarasu chrome extensions, Tamilarasu blogs, Power Platform blogs,
+    Dynamics 365 blogs">
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  
+
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  
+  <link rel="preload" as="image" href="/assets/images/035/img_25d9f54c30.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRDWJ8N6VV"></script>
+  <script>
+    window.addEventListener('load', function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-NRDWJ8N6VV");
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <!-- Microsoft Clarity -->
+  <script>
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.clarity.ms/tag/xcgip28bks';
+      document.head.appendChild(s);
+    });
+  </script>
+  <!-- Microsoft Clarity -->
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- Search Input -->
+                <li class="nav-item ms-lg-3 my-auto position-relative" id="search-container" style="min-width: 250px;">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-dark rounded-start-pill ps-3"><i class="bi bi-search"></i></span>
+                        <input type="text" id="search-input" class="form-control border-start-0 border-dark rounded-end-pill shadow-none" placeholder="Search posts..." aria-label="Search">
+                    </div>
+                    <!-- Results Container -->
+                    <ul id="results-container" class="position-absolute w-100 bg-white border border-dark list-unstyled m-0 mt-1 p-0 rounded shadow-sm" style="top: 100%; left: 0; z-index: 1050; display: none; max-height: 400px; overflow-y: auto;"></ul>
+                </li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border">Power Automate</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Fetching large number of data from Dataverse Connector in Power Automate</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">May 19, 2024 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/035/img_25d9f54c30.png" alt="Fetching large number of data from Dataverse Connector in Power Automate" class="img-fluid rounded-4 shadow-sm w-100" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" fetchpriority="high">
+
+                </div>
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <p>Handling a large amount of data remains a challenge for many Power Automate enthusiasts. Here’s an article detailing how to retrieve a large number of records from Dataverse using Power Automate. There are three methods for fetching large number of data from Dataverse via Power Automate.</p>
+
+<ul>
+  <li><a href="#threshold-way">Threshold Way</a></li>
+  <li><a href="#paging-cookie-way">Paging Cookie way</a></li>
+  <li><a href="#next-link-way">Next Link Way</a></li>
+</ul>
+
+<h2 id="threshold-way">Threshold Way</h2>
+
+<p>To demonstrate this, I’ve set up a cloud instant flow. In the flow editor page, beneath the trigger, you need to add an action called “List Rows from Dataverse” (you can rename it if you prefer).</p>
+
+<p><a href="/assets/images/035/img_6dfb2bd66e.png"><img src="/assets/images/035/img_6dfb2bd66e.png" alt="Pagination in Dataverse using Power Automate" /></a></p>
+
+<p>In the “List Rows” action, select the table name and add any necessary queries. For my purpose, I’ve chosen the Contacts table and selected only the fullname column from that table. Alternatively, Fetch XML can also be used for querying the same data.</p>
+
+<p><a href="/assets/images/035/img_c6cefaaba7.png"><img src="/assets/images/035/img_c6cefaaba7.png" alt="Pagination in Dataverse using Power Automate" /></a></p>
+
+<p>The “List Rows” action of the Dataverse connector for Power Automate defaults to fetching 5000 records. However, by enabling Pagination in ellispse → Settings → Threshold (accepting values less than or equal to 100000), you can configure it to fetch records up to a count of 100000.</p>
+
+<p><a href="/assets/images/035/img_5638ae2be7.png"><img src="/assets/images/035/img_5638ae2be7.png" alt="Pagination in Dataverse using Power Automate" /></a></p>
+
+<p>Add another compose action to view the records count. For that, write an expression to find the length of the outputs from the “List Contacts” action. Here’s the expression provided:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">length</span><span class="p">(</span><span class="nf">outputs</span><span class="p">(</span><span class="dl">'</span><span class="s1">List_Contacts</span><span class="dl">'</span><span class="p">)?[</span><span class="dl">'</span><span class="s1">body/value</span><span class="dl">'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><a href="/assets/images/035/img_bfaf6c3cf8.png"><img src="/assets/images/035/img_bfaf6c3cf8.png" alt="Pagination in Dataverse using Power Automate" /></a></p>
+
+<p>Save the flow and run it. Wait until the flow runs successfully. Open the run and expand the compose action; there you will see the record count. In my case, I have more than 100k records. However, since we set the threshold limit to 100,000 in the standard configuration, it will fetch records up to that limit.</p>
+
+<h2 id="paging-cookie-way">Paging Cookie way</h2>
+
+<p>The Dataverse connector for Power Automate has a threshold limit of 100K records. To fetch more than 100K records, you need to use the Paging Cookie method in Power Automate. This method can also be used for fetching records below the 100K limit. It retrieves only 5000 records per request, so you need to add requests in a loop and set the Paging Cookie for each iteration. The paging cookie, in XML format, contains the record IDs for the starting and ending records for each iteration, and it changes accordingly for every iteration.</p>
+
+<p><a href="/assets/images/035/img_fe35f1855a.png"><img src="/assets/images/035/img_fe35f1855a.png" alt="Pagination in Dataverse using Power Automate" /></a></p>
+
+<p><a href="/assets/images/035/img_9c384a0967.png"><img src="/assets/images/035/img_9c384a0967.png" alt="Pagination in Dataverse using Power Automate" /></a></p>
+
+<p>We need to initialize several variables, including RecordsCount, PagingCookie, ClearPagingCookie, and EncodingJSON. Within the EncodingJSON object, we create a field named “t” to store the Paging Cookie.</p>
+
+<p><a href="/assets/images/035/img_1940cead64.png"><img src="/assets/images/035/img_1940cead64.png" alt="Pagination in Dataverse using Power Automate" /></a></p>
+
+<p>Initiate a “Do Until” action with the condition to check whether the variable PagingCookie is not empty. Use the following expression to evaluate the variable:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">empty</span><span class="p">(</span><span class="nf">variables</span><span class="p">(</span><span class="dl">'</span><span class="s1">PagingCookie</span><span class="dl">'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Then inside the “Do Until” loop, add a “List Rows” action for the contact entity with the FetchXML query. In the FetchXML query, include the “page” attribute, which defines the page number. Since the request returns only 5000 records in the first iteration, set the initial page number to 1, and it increments for each subsequent iteration. You can use the below expression to dynamically increment the page number by 1:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">add</span><span class="p">(</span><span class="nf">iterationIndexes</span><span class="p">(</span><span class="dl">'</span><span class="s1">Do_until</span><span class="dl">'</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>To set the Paging Cookie, we need to check the iteration index of the “Do Until” loop and then assign the Paging Cookie value stored in the EncodingJSON variable. Use the following expression to set the Paging Cookie:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nf">equals</span><span class="p">(</span><span class="nf">iterationIndexes</span><span class="p">(</span><span class="dl">'</span><span class="s1">Do_until</span><span class="dl">'</span><span class="p">),</span><span class="mi">0</span><span class="p">),</span><span class="dl">''</span><span class="p">,</span><span class="nf">concat</span><span class="p">(</span><span class="dl">'</span><span class="s1">paging-cookie=</span><span class="dl">'''</span><span class="p">,</span> <span class="nf">substring</span><span class="p">(</span><span class="nf">first</span><span class="p">(</span><span class="nf">skip</span><span class="p">(</span><span class="nf">split</span><span class="p">(</span><span class="nf">string</span><span class="p">(</span><span class="nf">xml</span><span class="p">(</span><span class="nf">setProperty</span><span class="p">(</span><span class="nf">variables</span><span class="p">(</span><span class="dl">'</span><span class="s1">EncodingJSON</span><span class="dl">'</span><span class="p">),</span><span class="dl">'</span><span class="s1">t</span><span class="dl">'</span><span class="p">,</span><span class="nf">variables</span><span class="p">(</span><span class="dl">'</span><span class="s1">ClearPagingCookie</span><span class="dl">'</span><span class="p">)))),</span><span class="dl">'</span><span class="s1">&lt;</span><span class="dl">'</span><span class="p">),</span><span class="mi">1</span><span class="p">)),</span><span class="mi">2</span><span class="p">),</span><span class="dl">''''</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><a href="/assets/images/035/img_3682909986.png"><img src="/assets/images/035/img_3682909986.png" alt="Pagination in Dataverse using Power Automate" /></a></p>
+
+<p>After the “List Rows” action, we need to update the Paging Cookie with the value obtained from the response of the “List Rows” action. Use the following expression to achieve this:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nf">empty</span><span class="p">(</span><span class="nf">outputs</span><span class="p">(</span><span class="dl">'</span><span class="s1">List_Contacts</span><span class="dl">'</span><span class="p">)?[</span><span class="dl">'</span><span class="s1">body</span><span class="dl">'</span><span class="p">]?[</span><span class="dl">'</span><span class="s1">@Microsoft.Dynamics.CRM.fetchxmlpagingcookie</span><span class="dl">'</span><span class="p">]),</span><span class="dl">''</span><span class="p">,</span><span class="nf">decodeUriComponent</span><span class="p">(</span><span class="nf">decodeUriComponent</span><span class="p">(</span><span class="nf">outputs</span><span class="p">(</span><span class="dl">'</span><span class="s1">List_Contacts</span><span class="dl">'</span><span class="p">)?[</span><span class="dl">'</span><span class="s1">body</span><span class="dl">'</span><span class="p">]?[</span><span class="dl">'</span><span class="s1">@Microsoft.Dynamics.CRM.fetchxmlpagingcookie</span><span class="dl">'</span><span class="p">])))</span>
+</code></pre></div></div>
+
+<p>To clear the existing Paging Cookie values, use the following expression:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nf">empty</span><span class="p">(</span><span class="nf">variables</span><span class="p">(</span><span class="dl">'</span><span class="s1">PagingCookie</span><span class="dl">'</span><span class="p">)),</span><span class="dl">''</span><span class="p">,</span><span class="nf">replace</span><span class="p">(</span><span class="nf">substring</span><span class="p">(</span><span class="nf">variables</span><span class="p">(</span><span class="dl">'</span><span class="s1">PagingCookie</span><span class="dl">'</span><span class="p">),</span><span class="nf">add</span><span class="p">(</span><span class="nf">indexOf</span><span class="p">(</span><span class="nf">variables</span><span class="p">(</span><span class="dl">'</span><span class="s1">PagingCookie</span><span class="dl">'</span><span class="p">),</span><span class="dl">'</span><span class="s1">pagingcookie="</span><span class="dl">'</span><span class="p">),</span><span class="mi">14</span><span class="p">)),</span><span class="dl">'</span><span class="s1">" istracking="False" /&gt;</span><span class="dl">'</span><span class="p">,</span><span class="dl">''</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>In this process, we need to retrieve the record count fetched during each iteration. We’ll save this count in a variable and increment it by the current count in every iteration.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">length</span><span class="p">(</span><span class="nf">outputs</span><span class="p">(</span><span class="dl">'</span><span class="s1">List_Contacts</span><span class="dl">'</span><span class="p">)?[</span><span class="dl">'</span><span class="s1">body/value</span><span class="dl">'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><a href="/assets/images/035/img_8bd12e9f53.png"><img src="/assets/images/035/img_8bd12e9f53.png" alt="Pagination in Dataverse using Power Automate" /></a></p>
+
+<p><a href="/assets/images/035/img_b99be7bcdc.png"><img src="/assets/images/035/img_b99be7bcdc.png" alt="Pagination in Dataverse using Power Automate" /></a></p>
+
+<p>Add a “Compose” action and assign the “RecordsCount” variable to it. This will display the final count of records. Save and publish the flow, then run it.</p>
+
+<p>Once the Run is completed, scroll down and expand the “Compose” action to view the actual count of records. In your case, it should display a count potentially exceeding 100K.</p>
+
+<p><a href="/assets/images/035/img_c8e41d2ab6.png"><img src="/assets/images/035/img_c8e41d2ab6.png" alt="Pagination in Dataverse using Power Automate" /></a></p>
+
+<h2 id="next-link-way">Next Link Way</h2>
+
+<p>    If you’re looking to retrieve records exceeding 100,000 without utilizing FetchXML, you can opt for the next link method. This involves leveraging OData queries and incorporating a skip token value, akin to a paging cookie, passed through the OData query parameter. For this approach, it’s common practice to initialize two variables: <strong><code class="language-plaintext highlighter-rouge">RecordsCount</code></strong> and <strong><code class="language-plaintext highlighter-rouge">NextLink</code></strong>.</p>
+
+<p><a href="/assets/images/035/img_a836344567.png"><img src="/assets/images/035/img_a836344567.png" alt="" /></a></p>
+
+<p>After that, we create a ‘Do Until’ action to loop through the process until the next link value returns null. As we update the <strong><code class="language-plaintext highlighter-rouge">NextLink</code></strong> variable in every iteration, it becomes null when it reaches the last page.</p>
+
+<p><a href="/assets/images/035/img_d673a26d32.png"><img src="/assets/images/035/img_d673a26d32.png" alt="" /></a></p>
+
+<p>Create a “List Rows” action with the table name as “Contacts”. Select the “fullname” column. In the “Skip Token” field, add the value of the <strong><code class="language-plaintext highlighter-rouge">NextLink</code></strong> variable.</p>
+
+<p><a href="/assets/images/035/img_2978a566bb.png"><img src="/assets/images/035/img_2978a566bb.png" alt="" /></a></p>
+
+<p>Then set the <code class="language-plaintext highlighter-rouge">NextLink</code> variable with the value returned from the response. Since we only need the Skip Token parameter, we have to extract it from the <code class="language-plaintext highlighter-rouge">$skiptoken=</code> parameter in the next link value.</p>
+
+<p><a href="/assets/images/035/img_e6315a602d.png"><img src="/assets/images/035/img_e6315a602d.png" alt="" /></a></p>
+
+<p>You can use the following expression to split the skip token away from the next link.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nf">not</span><span class="p">(</span><span class="nf">contains</span><span class="p">(</span><span class="nf">outputs</span><span class="p">(</span><span class="dl">'</span><span class="s1">List_Contacts</span><span class="dl">'</span><span class="p">)?[</span><span class="dl">'</span><span class="s1">body</span><span class="dl">'</span><span class="p">],</span><span class="dl">'</span><span class="s1">@odata.nextLink</span><span class="dl">'</span><span class="p">)),</span><span class="kc">null</span><span class="p">,</span><span class="nf">decodeUriComponent</span><span class="p">(</span><span class="nf">last</span><span class="p">(</span><span class="nf">array</span><span class="p">(</span><span class="nf">split</span><span class="p">(</span><span class="nf">last</span><span class="p">(</span><span class="nf">array</span><span class="p">(</span><span class="nf">split</span><span class="p">(</span><span class="nf">outputs</span><span class="p">(</span><span class="dl">'</span><span class="s1">List_Contacts</span><span class="dl">'</span><span class="p">)?[</span><span class="dl">'</span><span class="s1">body/@odata.nextLink</span><span class="dl">'</span><span class="p">],</span><span class="dl">'</span><span class="s1">&amp;</span><span class="dl">'</span><span class="p">))),</span><span class="dl">'</span><span class="s1">$skiptoken=</span><span class="dl">'</span><span class="p">)))))</span>
+</code></pre></div></div>
+
+<p>And increment the count with the current record count from the “List Rows” action to calculate the total count in the end. You can achieve this by using the following expression.</p>
+
+<p><a href="/assets/images/035/img_fc12d4b4ba.png"><img src="/assets/images/035/img_fc12d4b4ba.png" alt="" /></a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">length</span><span class="p">(</span><span class="nf">outputs</span><span class="p">(</span><span class="dl">'</span><span class="s1">List_Contacts</span><span class="dl">'</span><span class="p">)?[</span><span class="dl">'</span><span class="s1">body/value</span><span class="dl">'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Add a “Compose” action outside of the “Do Until” loop and assign the value of the <code class="language-plaintext highlighter-rouge">RecordsCount</code> variable to it. This will display the total record count.</p>
+
+<p><a href="/assets/images/035/img_a3f5ba1a0a.png"><img src="/assets/images/035/img_a3f5ba1a0a.png" alt="" /></a></p>
+
+<p>Run the flow once you’ve saved and published it. Then open the completed run and expand the “Compose” action that we added last. There, you will be able to see the total record count.</p>
+
+<p><a href="/assets/images/035/img_7ad7942453.png"><img src="/assets/images/035/img_7ad7942453.png" alt="" /></a></p>
+
+<p>Have a great day!</p>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/xrm-fq-icon128.png" alt="XRM Flash Query Logo"
+                            width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">XRM Flash Query</h4>
+                    </div>
+                    <p class="mb-4">High-performance FetchXML and SQL query builder for Dynamics 365, Microsoft Dataverse and Power Platform</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                </section>
+
+                
+
+                <!-- Comments -->
+                
+                <section class="comments mt-5 pt-4 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">Comments</h4>
+                    <style>
+                        #cusdis_thread iframe {
+                            min-height: 350px !important;
+                        }
+                    </style>
+                    <div id="cusdis_thread"
+                        data-host="https://cusdis.com"
+                        data-app-id="c273ece9-1cf0-4c6e-aaca-9aa59564a335"
+                        data-page-id="/fetching-large-number-of-data-from-dataverse-power-automate.html"
+                        data-page-url="https://tamilarasu.blog/fetching-large-number-of-data-from-dataverse-power-automate.html"
+                        data-page-title="Fetching large number of data from Dataverse Connector in Power Automate"
+                        data-theme="auto">
+                    </div>
+                    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+                </section>
+                
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/host-html-survey-form-power-automate.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/075/host-survey-page-power-automate.png" alt="How to Build and Host a Survey Form Using Power Automate and Dataverse" class="card-img-top
+                                    related-card-img" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" loading="lazy" decoding="async">
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/host-html-survey-form-power-automate.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Build and Host a Survey Form Using Power Automate and Dataverse</a>
+                                    </h6>
+                                    <a href="/host-html-survey-form-power-automate.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/smart-approval-system-with-prediction-model-power-automate.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/73/1000118534.png" alt="Build a Smart Approval System with Prediction Model in  Power Automate" class="card-img-top
+                                    related-card-img" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" loading="lazy" decoding="async">
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/smart-approval-system-with-prediction-model-power-automate.html"
+                                            class="text-decoration-none text-dark hover-primary">Build a Smart Approval System with Prediction Model in  Power Automate</a>
+                                    </h6>
+                                    <a href="/smart-approval-system-with-prediction-model-power-automate.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/hide-sensitive-data-in-power-automate.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/066/img_be2a5971b6.gif" alt="How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?" class="card-img-top
+                                    related-card-img" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" loading="lazy" decoding="async">
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/hide-sensitive-data-in-power-automate.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?</a>
+                                    </h6>
+                                    <a href="/hide-sensitive-data-in-power-automate.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Fetching large number of data from Dataverse Connector in Power Automate",
+  "image": "https://tamilarasu.blog/assets/images/035/img_25d9f54c30.png",
+  "datePublished": "2024-05-19T23:11:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tamilarasu.blog/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu_av" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.hljs) {
+        hljs.highlightAll();
+
+        if (typeof hljs.lineNumbersBlock === 'function') {
+          document.querySelectorAll('code').forEach((element) => {
+            hljs.lineNumbersBlock(element);
+          });
+        }
+      }
+    });
+  </script>
+  
+  <!-- Simple-Jekyll-Search -->
+  <script defer src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('results-container');
+
+      if (searchInput && resultsContainer) {
+        SimpleJekyllSearch({
+          searchInput: searchInput,
+          resultsContainer: resultsContainer,
+          json: '/search.json',
+          searchResultTemplate: '<li class="p-2 border-bottom"><a href="{url}" class="text-decoration-none text-dark d-block fw-medium">{title}</a><small class="text-muted">{date}</small></li>',
+          noResultsText: '<li class="p-2 text-muted">No results found</li>',
+          limit: 10,
+          fuzzy: false
+        });
+
+        // Show/hide results dropdown
+        searchInput.addEventListener('input', function () {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          } else {
+            resultsContainer.style.display = 'none';
+          }
+        });
+
+        // Hide results when clicking outside
+        document.addEventListener('click', function (e) {
+          if (!document.getElementById('search-container').contains(e.target)) {
+            resultsContainer.style.display = 'none';
+          }
+        });
+
+        // Show results when focusing back on input
+        searchInput.addEventListener('focus', function () {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:4000/</loc>
-    <lastmod>2026-07-08T23:56:06+05:30</lastmod>
+    <loc>https://tamilarasu.blog/</loc>
+    <lastmod>2026-07-29T19:55:03+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/about/</loc>
+    <loc>https://tamilarasu.blog/about/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -23,7 +23,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/contact/</loc>
+    <loc>https://tamilarasu.blog/contact/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -34,7 +34,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/feed.xml</loc>
+    <loc>https://tamilarasu.blog/feed.xml</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -45,7 +45,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/html-to-markdown/</loc>
+    <loc>https://tamilarasu.blog/html-to-markdown/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -60,7 +60,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/permalink-generator/</loc>
+    <loc>https://tamilarasu.blog/permalink-generator/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -71,7 +71,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/privacy/</loc>
+    <loc>https://tamilarasu.blog/privacy/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -82,7 +82,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/search.json</loc>
+    <loc>https://tamilarasu.blog/search.json</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -95,7 +95,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/terms/</loc>
+    <loc>https://tamilarasu.blog/terms/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -106,7 +106,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/text-to-file/</loc>
+    <loc>https://tamilarasu.blog/text-to-file/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -117,7 +117,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/tools</loc>
+    <loc>https://tamilarasu.blog/tools</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -128,7 +128,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/whatsapp-link-generator/</loc>
+    <loc>https://tamilarasu.blog/whatsapp-link-generator/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -139,7 +139,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/assets/main.css</loc>
+    <loc>https://tamilarasu.blog/assets/main.css</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -150,7 +150,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/2022/11/add-custom-icons-to-all-records-of-view.html</loc>
+    <loc>https://tamilarasu.blog/2022/11/add-custom-icons-to-all-records-of-view.html</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -161,7 +161,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/redirects.json</loc>
+    <loc>https://tamilarasu.blog/redirects.json</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -172,7 +172,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page2/</loc>
+    <loc>https://tamilarasu.blog/page2/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -183,7 +183,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page3/</loc>
+    <loc>https://tamilarasu.blog/page3/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -194,7 +194,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page4/</loc>
+    <loc>https://tamilarasu.blog/page4/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -205,7 +205,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page5/</loc>
+    <loc>https://tamilarasu.blog/page5/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -216,7 +216,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page6/</loc>
+    <loc>https://tamilarasu.blog/page6/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -227,7 +227,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page7/</loc>
+    <loc>https://tamilarasu.blog/page7/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -238,7 +238,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page8/</loc>
+    <loc>https://tamilarasu.blog/page8/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -249,7 +249,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page9/</loc>
+    <loc>https://tamilarasu.blog/page9/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -260,7 +260,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page10/</loc>
+    <loc>https://tamilarasu.blog/page10/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -271,7 +271,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page11/</loc>
+    <loc>https://tamilarasu.blog/page11/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -282,7 +282,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page12/</loc>
+    <loc>https://tamilarasu.blog/page12/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -293,7 +293,7 @@
     
       
   <url>
-    <loc>http://localhost:4000/page13/</loc>
+    <loc>https://tamilarasu.blog/page13/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -304,7 +304,18 @@
     
       
   <url>
-    <loc>http://localhost:4000/page14/</loc>
+    <loc>https://tamilarasu.blog/page14/</loc>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+      
+    
+  
+    
+      
+  <url>
+    <loc>https://tamilarasu.blog/page15/</loc>
     
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -314,476 +325,497 @@
   
   
   <url>
-    <loc>http://localhost:4000/set-field-recommendations-javascript-in-d365-ce-mda.html</loc>
+    <loc>https://tamilarasu.blog/dataverse-impersonation-with-web-api-d365-crm.html</loc>
+    <lastmod>2026-07-26T23:11:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tamilarasu.blog/global-notifications-dynamics-365-crm-javascript.html</loc>
+    <lastmod>2026-07-19T23:11:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tamilarasu.blog/execute-batch-using-js-web-api-d365-ce.html</loc>
+    <lastmod>2026-07-12T23:11:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tamilarasu.blog/set-field-recommendations-javascript-in-d365-ce-mda.html</loc>
     <lastmod>2026-07-05T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/host-html-survey-form-power-automate.html</loc>
+    <loc>https://tamilarasu.blog/host-html-survey-form-power-automate.html</loc>
     <lastmod>2026-06-28T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/play-sound-effects-on-validation-errors-d365-crm-js.html</loc>
+    <loc>https://tamilarasu.blog/play-sound-effects-on-validation-errors-d365-crm-js.html</loc>
     <lastmod>2026-06-21T11:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/why-ai-pair-programming-must-in-2025.html</loc>
+    <loc>https://tamilarasu.blog/why-ai-pair-programming-must-in-2025.html</loc>
     <lastmod>2026-06-16T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/smart-approval-system-with-prediction-model-power-automate.html</loc>
+    <loc>https://tamilarasu.blog/smart-approval-system-with-prediction-model-power-automate.html</loc>
     <lastmod>2026-06-14T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/why-moosend-best-email-platform.html</loc>
+    <loc>https://tamilarasu.blog/why-moosend-best-email-platform.html</loc>
     <lastmod>2026-06-09T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/automate-chrome-extension-publishing-with-github-actions.html</loc>
+    <loc>https://tamilarasu.blog/automate-chrome-extension-publishing-with-github-actions.html</loc>
     <lastmod>2026-06-02T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/built-stunning-admin-dashboard-power-pages.html</loc>
+    <loc>https://tamilarasu.blog/built-stunning-admin-dashboard-power-pages.html</loc>
     <lastmod>2026-05-24T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/bts-of-export-to-excel-model-driven-apps.html</loc>
+    <loc>https://tamilarasu.blog/bts-of-export-to-excel-model-driven-apps.html</loc>
     <lastmod>2026-05-17T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/hide-sensitive-data-in-power-automate.html</loc>
+    <loc>https://tamilarasu.blog/hide-sensitive-data-in-power-automate.html</loc>
     <lastmod>2026-04-26T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/unit-test-javascript-using-qunit-d365-crm.html</loc>
+    <loc>https://tamilarasu.blog/unit-test-javascript-using-qunit-d365-crm.html</loc>
     <lastmod>2026-04-19T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-add-a-favicon-in-power-pages.html</loc>
+    <loc>https://tamilarasu.blog/how-to-add-favicon-in-power-pages.html</loc>
     <lastmod>2026-04-12T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/best-way-to-troubleshoot-model-driven-apps-with-debugging-shortcuts.html</loc>
+    <loc>https://tamilarasu.blog/debugging-and-troubleshooting-shortcuts-model-driven-apps.html</loc>
     <lastmod>2026-04-06T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/customize-signin-page-power-pages.html</loc>
+    <loc>https://tamilarasu.blog/customize-signin-page-power-pages.html</loc>
     <lastmod>2026-03-30T02:41:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/data-summarization-api-power-pages.html</loc>
+    <loc>https://tamilarasu.blog/data-summarization-api-power-pages.html</loc>
     <lastmod>2026-03-15T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/client-api-power-pages-crud-guide.html</loc>
+    <loc>https://tamilarasu.blog/client-api-power-pages-crud-guide.html</loc>
     <lastmod>2026-02-15T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/integrate-power-pages-with-firebase-example-crud.html</loc>
+    <loc>https://tamilarasu.blog/integrate-power-pages-with-firebase-example-crud.html</loc>
     <lastmod>2026-01-11T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/server-logic-power-pages-with-example.html</loc>
+    <loc>https://tamilarasu.blog/server-logic-power-pages-with-example.html</loc>
     <lastmod>2026-01-04T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/translate-metadata-and-web-resources-d365-crm.html</loc>
+    <loc>https://tamilarasu.blog/translate-metadata-and-web-resources-d365-crm.html</loc>
     <lastmod>2025-12-21T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/google-authentication-in-power-pages-guide.html</loc>
+    <loc>https://tamilarasu.blog/google-authentication-in-power-pages-guide.html</loc>
     <lastmod>2025-12-07T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/show-hide-subgrid-ribbon-buttons-of-same-table-in-d365-crm.html</loc>
+    <loc>https://tamilarasu.blog/show-hide-subgrid-ribbon-buttons-of-same-table-in-d365-crm.html</loc>
     <lastmod>2025-11-30T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/edit-child-and-parent-records-directly-within-forms-d365-crm.html</loc>
+    <loc>https://tamilarasu.blog/edit-child-and-parent-records-directly-within-forms-d365-crm.html</loc>
     <lastmod>2025-11-23T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/associate-disassociate-records-using-javascript-webapi-d365.html</loc>
+    <loc>https://tamilarasu.blog/associate-disassociate-records-using-javascript-webapi-d365.html</loc>
     <lastmod>2025-11-02T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-configure-and-use-tabbed-sections-in-model-driven-apps.html</loc>
+    <loc>https://tamilarasu.blog/how-to-configure-and-use-tabbed-sections-in-model-driven-apps.html</loc>
     <lastmod>2025-09-28T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-open-multiple-workspace-tabs-in-dynamics-365-customer-service-using-javascript.html</loc>
+    <loc>https://tamilarasu.blog/open-multiple-tabs-inside-dynamics-365-customer-service-using-javascript.html</loc>
     <lastmod>2025-07-27T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-trigger-a-power-automate-flow-via-http-request-api-from-another-flow.html</loc>
+    <loc>https://tamilarasu.blog/trigger-flow-via-http-request-from-another-flow.html</loc>
     <lastmod>2025-07-20T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/quick-view-forms-in-model-driven-apps-what-why-and-how-to-use-them.html</loc>
+    <loc>https://tamilarasu.blog/quick-view-forms-in-model-driven-apps.html</loc>
     <lastmod>2025-07-06T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-revert-to-the-classic-ui-in-power-apps-model-driven-apps-even-after-the-toggle-is-gone.html</loc>
+    <loc>https://tamilarasu.blog/revert-to-classic-ui-model-driven-apps.html</loc>
     <lastmod>2025-06-29T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-filter-subgrid-based-on-parent-record-fields-on-tab-switch-in-model-driven-apps.html</loc>
+    <loc>https://tamilarasu.blog/filter-subgrid-based-on-parent-record-in-model-driven-apps.html</loc>
     <lastmod>2025-06-22T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/safely-handle-async-operations-before-save-in-model-driven-power-apps.html</loc>
+    <loc>https://tamilarasu.blog/async-operations-before-save-model-driven-apps.html</loc>
     <lastmod>2025-05-25T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/why-retry-policy-in-power-automate-matters.html</loc>
+    <loc>https://tamilarasu.blog/retry-policy-in-power-automate.html</loc>
     <lastmod>2025-05-04T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/unlock-hidden-superpowers-in-dynamics-365-crm-with-simple-url-tweaks.html</loc>
+    <loc>https://tamilarasu.blog/simple-url-tweaks-superpowers-in-dynamics-365-crm.html</loc>
     <lastmod>2025-04-13T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/clone-a-record-in-dynamics-365-ce-using-javascript.html</loc>
+    <loc>https://tamilarasu.blog/clone-a-record-dynamics-365-ce-using-javascript.html</loc>
     <lastmod>2025-02-09T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/inline-documents-preview-in-power-pages-using-javascript.html</loc>
+    <loc>https://tamilarasu.blog/inline-documents-preview-in-power-pages-using-javascript.html</loc>
     <lastmod>2025-01-26T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/making-xrm-web-api-calls-synchronous-with-javascript-in-dynamics-365-crm.html</loc>
+    <loc>https://tamilarasu.blog/synchronous-javascript-xrm-webapi-calls-dynamics-365-crm.html</loc>
     <lastmod>2024-12-08T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/unlocking-the-power-of-side-panes-in-model-driven-apps.html</loc>
+    <loc>https://tamilarasu.blog/side-panes-in-model-driven-apps.html</loc>
     <lastmod>2024-09-15T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/exploring-pagination-techniques-in-dynamics-365-crm-using-c-plugins.html</loc>
+    <loc>https://tamilarasu.blog/pagination-in-dynamics-365-crm-using-plugins.html</loc>
     <lastmod>2024-06-30T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html</loc>
+    <loc>https://tamilarasu.blog/retrieve-100k-records-from-dataverse-using-xrm-web-api-javascript.html</loc>
     <lastmod>2024-06-09T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/fetching-large-number-of-data-from-dataverse-connector-in-power-automate.html</loc>
+    <loc>https://tamilarasu.blog/fetching-large-number-of-data-from-dataverse-power-automate.html</loc>
     <lastmod>2024-05-19T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/building-a-pdf-preview-feature-inside-dynamics-365-ce-with-jscript.html</loc>
+    <loc>https://tamilarasu.blog/pdf-preview-dynamics-365-crm-with-javascript.html</loc>
     <lastmod>2024-01-27T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/field-mapping-between-entities-in-dynamics-365-ce.html</loc>
+    <loc>https://tamilarasu.blog/field-mapping-between-entities-in-dynamics-365-ce.html</loc>
     <lastmod>2024-01-10T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/automatically-recalculate-rollup-fields-using-javascript-in-dynamics-365-ce.html</loc>
+    <loc>https://tamilarasu.blog/automatically-recalculate-rollup-fields-using-javascript-in-dynamics-365-ce.html</loc>
     <lastmod>2023-12-30T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/invoke-a-power-automate-flow-synchronously-from-a-model-driven-app-using-actions.html</loc>
+    <loc>https://tamilarasu.blog/invoke-flow-from-model-driven-app-using-actions.html</loc>
     <lastmod>2023-12-10T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/what-is-tracked-properties-in-power-automate.html</loc>
+    <loc>https://tamilarasu.blog/tracked-properties-in-power-automate.html</loc>
     <lastmod>2023-09-17T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-use-progress-indicators-in-model-driven-apps.html</loc>
+    <loc>https://tamilarasu.blog/how-to-use-progress-indicators-model-driven-apps.html</loc>
     <lastmod>2023-08-26T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/simplifying-the-upsert-operation-in-dataverse.html</loc>
+    <loc>https://tamilarasu.blog/upsert-operation-dataverse-web-api.html</loc>
     <lastmod>2023-08-13T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/dependent-option-sets-using-javascript-in-model-driven-apps.html</loc>
+    <loc>https://tamilarasu.blog/create-dependent-option-sets-using-javascript-model-driven-apps.html</loc>
     <lastmod>2023-07-25T22:28:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/relate-and-unrelate-dataverse-rows-using-power-automate.html</loc>
+    <loc>https://tamilarasu.blog/relate-and-unrelate-dataverse-rows-using-power-automate.html</loc>
     <lastmod>2023-07-09T09:09:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/debugging-a-dynamics-365-crm-plugin.html</loc>
+    <loc>https://tamilarasu.blog/debugging-plugins-dynamics-365-crm.html</loc>
     <lastmod>2023-07-02T00:37:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/send-a-email-in-dynamics-365-crm-using-c-plugins.html</loc>
+    <loc>https://tamilarasu.blog/send-email-dynamics-365-crm-using-plugins.html</loc>
     <lastmod>2023-06-25T15:33:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/perform-a-changeset-request-in-dataverse-connector-power-automate.html</loc>
+    <loc>https://tamilarasu.blog/perform-a-changeset-request-in-dataverse-connector-power-automate.html</loc>
     <lastmod>2023-06-18T21:09:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-create-custom-connector-for-power-automate-from-scratch.html</loc>
+    <loc>https://tamilarasu.blog/create-custom-connector-for-power-automate-from-scratch.html</loc>
     <lastmod>2023-06-12T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/fetch-optionset-labels-from-string-maps-table-using-flow-or-javascript.html</loc>
+    <loc>https://tamilarasu.blog/fetch-optionset-labels-from-string-maps-using-flow-or-javascript-d365-crm.html</loc>
     <lastmod>2023-06-12T00:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/import-price-list-items-to-dynamics-365-ce-using-data-imports.html</loc>
+    <loc>https://tamilarasu.blog/import-price-list-items-to-dynamics-365-ce-using-data-imports.html</loc>
     <lastmod>2023-05-28T11:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/import-records-with-alternate-lookup-references-in-dynamics-365-ce.html</loc>
+    <loc>https://tamilarasu.blog/import-records-with-alternate-lookup-references-dynamics-365-crm.html</loc>
     <lastmod>2023-05-20T23:59:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/deactivate-duplicate-records-using-plugin-and-custom-action-in-dynamics-crm.html</loc>
+    <loc>https://tamilarasu.blog/deactivate-duplicates-using-plugin-and-custom-action-d365-crm.html</loc>
     <lastmod>2023-05-09T23:11:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/send-in-app-notifications-to-model-driven-app-from-power-automate.html</loc>
+    <loc>https://tamilarasu.blog/send-in-app-notifications-to-model-driven-app-from-power-automate.html</loc>
     <lastmod>2023-05-07T18:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/get-selected-records-from-the-grid-using-command-button-in-javascript.html</loc>
+    <loc>https://tamilarasu.blog/get-selected-records-from-grid-using-button-js-d365-crm.html</loc>
     <lastmod>2023-04-25T06:00:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/show-and-hide-sections-based-on-multi-select-option-set-using-javascript.html</loc>
+    <loc>https://tamilarasu.blog/show-hide-sections-based-on-multi-select-option-set-d365-crm-js.html</loc>
     <lastmod>2023-04-23T01:05:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/plugins-and-event-execution-pipeline-in-dataverse.html</loc>
+    <loc>https://tamilarasu.blog/event-execution-pipeline-dataverse-plugins.html</loc>
     <lastmod>2023-04-16T00:16:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/environment-variables-in-dataverse-and-how-to-use-it-in-power-automate-flow.html</loc>
+    <loc>https://tamilarasu.blog/how-to-use-dataverse-environment-variables-in-power-automate.html</loc>
     <lastmod>2023-04-09T13:16:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/third-party-map-integration-with-geocoding-in-model-driven-app-power-apps.html</loc>
+    <loc>https://tamilarasu.blog/third-party-map-integration-in-model-driven-app.html</loc>
     <lastmod>2023-02-16T22:34:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/build-a-single-page-application-with-msal-js.html</loc>
+    <loc>https://tamilarasu.blog/build-single-page-application-with-msal-js.html</loc>
     <lastmod>2023-01-15T00:34:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/connect-the-azure-ad-app-for-business-central-with-postman-using-oauth-2-0-authentication.html</loc>
+    <loc>https://tamilarasu.blog/connect-business-central-with-postman-using-oauth.html</loc>
     <lastmod>2022-12-31T22:04:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/register-an-app-in-azure-active-directory-for-business-central.html</loc>
+    <loc>https://tamilarasu.blog/register-app-in-azure-active-directory-for-business-central.html</loc>
     <lastmod>2022-12-23T22:29:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/auto-populate-lookup-based-on-the-other-lookup-field-in-power-apps.html</loc>
+    <loc>https://tamilarasu.blog/auto-populate-lookup-based-on-other-lookup-in-d365-crm.html</loc>
     <lastmod>2022-12-11T16:24:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/get-all-the-options-from-the-option-set-using-power-automate.html</loc>
+    <loc>https://tamilarasu.blog/get-all-options-from-option-set-using-power-automate.html</loc>
     <lastmod>2022-12-03T23:32:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/add-custom-icons-to-all-records-of-a-view-based-on-a-condition-in-powerapps.html</loc>
+    <loc>https://tamilarasu.blog/add-custom-icons-to-view-d365-crm.html</loc>
     <lastmod>2022-11-28T23:09:00+05:30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

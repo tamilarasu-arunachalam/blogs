@@ -10,22 +10,48 @@
 {% assign img_loading = 'loading="lazy" decoding="async"' %}
 {% endif %}
 
+{% assign resolved_url = nil %}
+
 {% if img_url and img_url != "" %}
-{% if img_url contains '://' or img_url contains 'http' %}
-<img src="{{ img_url }}" alt="{{ img_alt }}" class="{{ img_class }}" {{ img_loading }}>
+{% assign normalized_url = img_url | strip %}
+
+{% if normalized_url contains '://' or normalized_url contains 'http' %}
+{% assign resolved_url = normalized_url %}
 {% else %}
-{% if page.post_id and img_url contains '/' == false %}
-{% assign img_path = append: page.post_id | append: '/' | append: img_url %}
-<img src="{{ img_path | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" {{ img_loading }}>
-{% else %}
-{% assign clean_url = img_url %}
-{% assign first_char = img_url | slice: 0 %}
+{% assign candidate = normalized_url %}
+{% assign first_char = candidate | slice: 0 %}
 {% if first_char == '/' %}
-  {% assign clean_url = img_url | remove_first: '/' %}
+  {% assign candidate = candidate | remove_first: '/' %}
 {% endif %}
-<img src="{{ clean_url | relative_url }}" alt="{{ img_alt }}" class="{{ img_class }}" {{ img_loading }}>
+
+{% assign candidate_path = '/' | append: candidate %}
+{% assign candidate_matches = site.static_files | where: "path", candidate_path %}
+
+{% if candidate_matches.size == 0 and page.post_id and candidate contains '/' == false %}
+  {% assign candidate = 'assets/images/' | append: page.post_id | append: '/' | append: candidate %}
+  {% assign candidate_path = '/' | append: candidate %}
+  {% assign candidate_matches = site.static_files | where: "path", candidate_path %}
+{% endif %}
+
+{% if candidate_matches.size == 0 and candidate contains '/' %}
+  {% assign candidate = 'assets/images/' | append: candidate %}
+  {% assign candidate_path = '/' | append: candidate %}
+  {% assign candidate_matches = site.static_files | where: "path", candidate_path %}
+{% endif %}
+
+{% if candidate_matches.size > 0 %}
+  {% assign resolved_url = candidate_path | relative_url %}
+{% else %}
+  {% assign resolved_url = candidate | relative_url %}
 {% endif %}
 {% endif %}
+{% endif %}
+
+{% if resolved_url %}
+{% assign img_width = include.width | default: '1200' %}
+{% assign img_height = include.height | default: '630' %}
+{% assign img_sizes = include.sizes | default: '(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px' %}
+<img src="{{ resolved_url }}" alt="{{ img_alt }}" class="{{ img_class }}" width="{{ img_width }}" height="{{ img_height }}" sizes="{{ img_sizes }}" {{ img_loading }}>
 {% else %}
 <div class="{{ img_class }} img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
     <!-- Displayed via CSS ::after -->

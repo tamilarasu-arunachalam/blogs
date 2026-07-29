@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>What Is a Retry Policy in Power Automate (And Why It Matters)? | Tamilarasu Arunachalam</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="What Is a Retry Policy in Power Automate (And Why It Matters)?" />
+<meta name="author" content="Tamilarasu Arunachalam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<meta name="twitter:description" property="og:description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
+<link rel="canonical" href="https://tamilarasu.blog/retry-policy-in-power-automate.html" />
+<meta property="og:url" content="https://tamilarasu.blog/retry-policy-in-power-automate.html" />
+<meta property="og:site_name" content="Tamilarasu Arunachalam" />
+<meta property="og:image" content="https://tamilarasu.blog/assets/images/043/img_5a8ccf0457.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-05-04T23:11:00+05:30" />
+<meta property="article:modified_time" content="2025-05-04T23:11:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://tamilarasu.blog/assets/images/043/img_5a8ccf0457.png" />
+<meta name="twitter:title" content="What Is a Retry Policy in Power Automate (And Why It Matters)?" />
+<meta name="twitter:site" content="@tamilarasu_av" />
+<meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2025-05-04T23:11:00+05:30","datePublished":"2025-05-04T23:11:00+05:30","description":"Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.","headline":"What Is a Retry Policy in Power Automate (And Why It Matters)?","image":"https://tamilarasu.blog/assets/images/043/img_5a8ccf0457.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://tamilarasu.blog/retry-policy-in-power-automate.html"},"url":"https://tamilarasu.blog/retry-policy-in-power-automate.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="alternate" type="application/rss+xml" title="Tamilarasu Arunachalam"
+    href="https://tamilarasu.blog/feed.xml">
+  <!-- keywords -->
+  <meta name="keywords" content=" Tamilarasu, Tamilarasu Arunachalam, Tamilarasu Power
+    Platform, Tamilarasu Arunachalam Developer, Tamilarasu chrome extensions, Tamilarasu blogs, Power Platform blogs,
+    Dynamics 365 blogs">
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts Preconnect & Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rock+Salt&display=swap"
+      rel="stylesheet">
+  </noscript>
+  
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/googlecode.css"
+    integrity="sha256-DoctU8+u7lhnY4WC+WLLESh25ZJ4Kob/YISlLjheF70=" crossorigin="anonymous">
+  
+
+  <!-- Custom CSS -->
+  <link rel="preload" as="style" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  
+  <link rel="preload" as="image" href="/assets/images/043/img_5a8ccf0457.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRDWJ8N6VV"></script>
+  <script>
+    window.addEventListener('load', function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-NRDWJ8N6VV");
+    });
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <!-- Microsoft Clarity -->
+  <script>
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.clarity.ms/tag/xcgip28bks';
+      document.head.appendChild(s);
+    });
+  </script>
+  <!-- Microsoft Clarity -->
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Modern Minimalist Navbar - High Performance -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container h-100 flex-nowrap">
+        <!-- Logo -->
+        <a class="navbar-brand text-dark me-auto" href="/"
+            style="font-size: 1.25rem; font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+
+        <!-- Hamburger Toggler (Visible on Mobile) -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+            style="border: none !important; padding: 5px !important; outline: none !important; box-shadow: none !important;">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Menu Container -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center h-100">
+                <li class="nav-item h-100"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item h-100"><a class="nav-link" href="/contact">Contact</a></li>
+
+                <!-- Search Input -->
+                <li class="nav-item ms-lg-3 my-auto position-relative" id="search-container" style="min-width: 250px;">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text bg-white border-dark rounded-start-pill ps-3"><i class="bi bi-search"></i></span>
+                        <input type="text" id="search-input" class="form-control border-start-0 border-dark rounded-end-pill shadow-none" placeholder="Search posts..." aria-label="Search">
+                    </div>
+                    <!-- Results Container -->
+                    <ul id="results-container" class="position-absolute w-100 bg-white border border-dark list-unstyled m-0 mt-1 p-0 rounded shadow-sm" style="top: 100%; left: 0; z-index: 1050; display: none; max-height: 400px; overflow-y: auto;"></ul>
+                </li>
+
+                <!-- CTA Button -->
+                <li class="nav-item ms-lg-3">
+                    <a href="#subscribe" class="btn btn-dark btn-sm rounded-pill px-4 fw-bold">Subscribe</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <main id="main">
+    <article class="post-post py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
+                <!-- Post Title & Meta -->
+                <header class="post-header mb-5">
+                    <div class="mb-3">
+                        <span class="badge bg-light text-dark border">Power Automate</span>
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">What Is a Retry Policy in Power Automate (And Why It Matters)?</h1>
+                    <div class="post-meta d-flex align-items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
+                            class="rounded-circle me-3" width="50" alt="Author">
+                        <div>
+                            <div class="fw-bold">Tamilarasu Arunachalam</div>
+                            <div class="text-muted small">May 04, 2025 • 5 min read</div>
+                        </div>
+                    </div>
+                </header>
+
+                
+                <div class="post-featured-image mb-5">
+                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/043/img_5a8ccf0457.png" alt="What Is a Retry Policy in Power Automate (And Why It Matters)?" class="img-fluid rounded-4 shadow-sm w-100" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" fetchpriority="high">
+
+                </div>
+                
+
+                <!-- Topics / TOC Include -->
+                <!-- Optional Topics Navigation -->
+
+
+
+                <!-- Main Content Body -->
+                <div class="post-body fs-5 mt-4">
+                    <p><strong>Ever had a Power Automate flow fail and wondered, “Why didn’t it just try again?”</strong> </p>
+
+<p>You’re not alone. One of the more powerful - but often overlooked - features in Microsoft Power Automate is the retry policy. It’s the safety net that makes your flows more resilient when things don’t go exactly as planned.</p>
+
+<p>In this post, we’ll break down what a retry policy is, how it works behind the scenes, when you should customize it, and how to avoid common pitfalls. Whether you’re a beginner or have a few flows under your belt, this guide will help you level up your automation game.</p>
+
+<h2 id="what-exactly-is-a-retry-policy">What Exactly Is a Retry Policy?</h2>
+
+<p><a href="/assets/images/043/img_5c19d1e9bc.png"><img src="/assets/images/043/img_5c19d1e9bc.png" alt="" /></a></p>
+
+<p>    Simply put, a retry policy tells Power Automate how to respond when an action doesn’t succeed the first time - like when a service is temporarily down or a connection times out.</p>
+
+<p>    Instead of giving up right away, Power Automate can try again automatically. This is super helpful when you’re dealing with things like:</p>
+
+<ul>
+  <li>Unstable internet connections</li>
+  <li>APIs that hit rate limits</li>
+  <li>Temporary server issues</li>
+</ul>
+
+<h2 id="the-default-retry-behavior">The Default Retry Behavior</h2>
+
+<p>    By default, many actions in Power Automate already have retry logic built in. If something goes wrong temporarily, the platform will retry the action up to 4 times using something called exponential backoff.</p>
+
+<h3 id="whats-exponential-backoff">What’s exponential backoff?</h3>
+
+<p>    It’s a fancy way of saying that the time between each retry keeps getting longer. So if the first retry happens after 5 seconds, the next might be 10, then 20, and so on.</p>
+
+<p>This approach prevents hammering the system with constant requests - and gives it a chance to recover.</p>
+
+<h2 id="want-more-control-customize-it">Want More Control? Customize It.</h2>
+
+<p>Sometimes, the default retry policy isn’t quite right for your scenario. Maybe the system you’re calling has specific retry rules, or maybe you don’t want it to retry at all.</p>
+
+<p>You can adjust this easily:</p>
+
+<h3 id="how-to-customize-retry-settings">How to Customize Retry Settings:</h3>
+
+<p><a href="/assets/images/043/img_19f32fcbbb.png"><img src="/assets/images/043/img_19f32fcbbb.png" alt="" /></a></p>
+
+<ol>
+  <li>Click on the action you want to change.</li>
+  <li>Tap the three dots (…) &gt; Settings.</li>
+  <li>Under Retry Policy, choose:</li>
+</ol>
+
+<ul>
+  <li>None – Don’t retry at all.</li>
+  <li>Fixed Interval – Retry after the same delay each time.</li>
+  <li>Exponential Interval – Retry with increasing delays.</li>
+</ul>
+
+<ol>
+  <li>Set how many times to retry and how long to wait between tries.</li>
+</ol>
+
+<h2 id="1-none--no-second-chances">1. “None” – No Second Chances</h2>
+
+<p><a href="/assets/images/043/img_ec734a3aed.png"><img src="/assets/images/043/img_ec734a3aed.png" alt="" /></a></p>
+
+<p>Choosing None means your flow won’t retry the action at all. If it fails once, it’s done. The flow moves on (or stops, depending on how you’ve set it up).</p>
+
+<h3 id="when-should-you-use-it">When should you use it?</h3>
+
+<p>Go with this if:</p>
+
+<ul>
+  <li>The action must not run more than once - like sending a payment or submitting a form.</li>
+  <li>You want the flow to fail fast and hit an error path quickly.</li>
+  <li>Retrying would create duplicates or conflicts (like multiple emails).</li>
+</ul>
+
+<h3 id="heads-up">Heads-up:</h3>
+
+<p>This policy is pretty unforgiving. Even a tiny glitch can cause your flow to stop. So, use it only when you’re sure retries aren’t safe.</p>
+
+<h2 id="2-fixed-interval--try-again-after-a-break">2. Fixed Interval – Try Again After a Break</h2>
+
+<p><a href="/assets/images/043/img_5d56280ddd.png"><img src="/assets/images/043/img_5d56280ddd.png" alt="" /></a></p>
+
+<p>With Fixed Interval, Power Automate will retry the action a few times, waiting the same amount of time between each try.</p>
+
+<p>Let’s say you choose a fixed interval of 10 seconds and 3 retries. That means Power Automate will try once, then again in 10 seconds, again in another 10, and a final time after another 10—then give up if it still fails.</p>
+
+<h3 id="you-can-customize">You can customize:</h3>
+
+<ul>
+  <li>How many times it retries</li>
+  <li>How long it waits between each try</li>
+</ul>
+
+<h2 id="3-exponential-interval--smart-retrying-that-backs-off">3. Exponential Interval – Smart Retrying That Backs Off</h2>
+
+<p>Instead of retrying every 30 seconds like Fixed Interval, Exponential Interval increases the wait time after each attempt.</p>
+
+<p><a href="/assets/images/043/img_bc08bffb11.png"><img src="/assets/images/043/img_bc08bffb11.png" alt="" /></a></p>
+
+<p><strong>Example:</strong></p>
+
+<ul>
+  <li>First retry: 5 seconds</li>
+  <li>Second retry: 10 seconds</li>
+  <li>Third retry: 20 seconds</li>
+  <li>…and so on</li>
+</ul>
+
+<p><a href="/assets/images/043/img_1ad1a5308a.png"><img src="/assets/images/043/img_1ad1a5308a.png" alt="" /></a></p>
+
+<h3 id="perfect-for">Perfect for:</h3>
+
+<ul>
+  <li>APIs that throttle or rate-limit requests</li>
+  <li>Systems under heavy load</li>
+  <li>General-purpose retrying when you’re not sure how long a system might take to recover</li>
+</ul>
+
+<h3 id="why-its-awesome">Why it’s awesome:</h3>
+
+<p>This is actually the default retry policy for most actions in Power Automate - and for good reason. It gives systems time to breathe and reduces the risk of overloading anything.</p>
+
+<h2 id="when-should-you-use-custom-retry-policies">When Should You Use Custom Retry Policies?</h2>
+
+<p>Here are some common situations where tweaking the retry settings makes sense:</p>
+
+<ul>
+  <li>Calling an external API that might temporarily throttle requests</li>
+  <li>Working with cloud storage like SharePoint or OneDrive where things might lag</li>
+  <li>Sending emails through servers that occasionally delay or reject requests</li>
+  <li>Handling approvals where duplicate requests could cause issues (you might want no retries here)</li>
+</ul>
+
+<h2 id="best-practices-to-keep-in-mind">Best Practices to Keep in Mind</h2>
+
+<p>If you’re customizing retry settings, here are a few tips to do it right:</p>
+
+<ul>
+  <li>Start with exponential backoff – It’s the safest way to avoid overloading a system.</li>
+  <li>Avoid retry loops – Don’t set retries too high or too frequent; it can make things worse.</li>
+  <li>Use error handling – Combine retry policies with Scope controls and “Configure Run After” options.</li>
+  <li>Log your retries – Use Compose or Append to Array to track what’s happening during retries.</li>
+  <li>Know when to stop – If a retry won’t help (e.g., the request is invalid), disable it.</li>
+</ul>
+
+<h2 id="how-to-know-if-a-retry-happened">How to Know If a Retry Happened</h2>
+
+<p>Curious if a flow retried an action?</p>
+
+<p>Check the flow run history:</p>
+
+<ul>
+  <li>Open the flow run</li>
+  <li>Click the action</li>
+  <li>You’ll see retry attempts, delays, and error messages (if any)</li>
+</ul>
+
+<p>This is great for troubleshooting or refining your logic.</p>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Retry policies might not be the flashiest feature in Power Automate, but they’re absolutely essential for building dependable, real-world flows.</p>
+
+<p>Whether you’re working with APIs, cloud storage, or approvals, adding (or disabling) retries at the right time can help you:</p>
+
+<ul>
+  <li>Avoid flow failures</li>
+  <li>Reduce false alerts</li>
+  <li>Handle real-life network issues gracefully</li>
+</ul>
+
+<p>Next time a flow action fails, don’t just ask “what went wrong”—check the retry settings. A small tweak there could save you a lot of time and headaches.</p>
+
+<h2 id="faqs-about-power-automate-retry-policies">FAQs About Power Automate Retry Policies</h2>
+
+<p>Can I disable retries completely?</p>
+
+<p>Yes. Just go to the action’s settings and change the retry policy to “None.”</p>
+
+<p>What happens if all retries fail?</p>
+
+<p>The action fails, and the flow continues based on how you’ve set “Configure Run After” for the next step.</p>
+
+<p>Do all connectors support retry logic?</p>
+
+<p>Most major ones do—especially HTTP actions, SharePoint, Outlook, and other cloud services.</p>
+
+<p>Have a good day!</p>
+
+                </div>
+
+                <!-- FAQ Include (Optional) -->
+                <!-- Optional FAQ Component -->
+
+
+
+                <!-- Chrome Extension Promotion -->
+                
+                <section
+                    class="chrome-promo mt-5 p-4 bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-4 shadow-sm text-center">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img src="/assets/images/xrm-fq-icon128.png" alt="XRM Flash Query Logo"
+                            width="48" height="48" class="me-3 rounded-3 shadow-sm">
+                        <h4 class="mb-0 fw-bold">XRM Flash Query</h4>
+                    </div>
+                    <p class="mb-4">High-performance FetchXML and SQL query builder for Dynamics 365, Microsoft Dataverse and Power Platform</p>
+                    <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
+                        target="_blank" class="btn btn-primary rounded-pill px-5 py-2 fw-bold">Add to Chrome</a>
+                </section>
+
+                
+
+                <!-- Comments -->
+                
+                <section class="comments mt-5 pt-4 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">Comments</h4>
+                    <style>
+                        #cusdis_thread iframe {
+                            min-height: 350px !important;
+                        }
+                    </style>
+                    <div id="cusdis_thread"
+                        data-host="https://cusdis.com"
+                        data-app-id="c273ece9-1cf0-4c6e-aaca-9aa59564a335"
+                        data-page-id="/retry-policy-in-power-automate.html"
+                        data-page-url="https://tamilarasu.blog/retry-policy-in-power-automate.html"
+                        data-page-title="What Is a Retry Policy in Power Automate (And Why It Matters)?"
+                        data-theme="auto">
+                    </div>
+                    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+                </section>
+                
+
+                <!-- Related Posts Grid -->
+                <section class="related-posts mt-5 pt-5 border-top">
+                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <div class="row gy-4">
+                        
+                        
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/host-html-survey-form-power-automate.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/075/host-survey-page-power-automate.png" alt="How to Build and Host a Survey Form Using Power Automate and Dataverse" class="card-img-top
+                                    related-card-img" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" loading="lazy" decoding="async">
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/host-html-survey-form-power-automate.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Build and Host a Survey Form Using Power Automate and Dataverse</a>
+                                    </h6>
+                                    <a href="/host-html-survey-form-power-automate.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/smart-approval-system-with-prediction-model-power-automate.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/73/1000118534.png" alt="Build a Smart Approval System with Prediction Model in  Power Automate" class="card-img-top
+                                    related-card-img" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" loading="lazy" decoding="async">
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/smart-approval-system-with-prediction-model-power-automate.html"
+                                            class="text-decoration-none text-dark hover-primary">Build a Smart Approval System with Prediction Model in  Power Automate</a>
+                                    </h6>
+                                    <a href="/smart-approval-system-with-prediction-model-power-automate.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/hide-sensitive-data-in-power-automate.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/066/img_be2a5971b6.gif" alt="How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?" class="card-img-top
+                                    related-card-img" width="1200" height="630" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" loading="lazy" decoding="async">
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Power Automate</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/hide-sensitive-data-in-power-automate.html"
+                                            class="text-decoration-none text-dark hover-primary">How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?</a>
+                                    </h6>
+                                    <a href="/hide-sensitive-data-in-power-automate.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                    
+
+                    
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</article>
+
+<!-- JSON-LD Structured Data for BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What Is a Retry Policy in Power Automate (And Why It Matters)?",
+  "image": "https://tamilarasu.blog/assets/images/043/img_5a8ccf0457.png",
+  "datePublished": "2025-05-04T23:11:00+05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Tamilarasu Arunachalam"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tamilarasu Arunachalam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tamilarasu.blog/assets/images/logo.png"
+    }
+  },
+  "description": ""
+}
+</script>
+  </main>
+
+  <!-- Optimized 3-Column Footer -->
+<footer class="mt-auto py-5 bg-white border-top">
+    <div class="container">
+        <div class="row gy-4">
+
+            <!-- Column 1: Brand & About -->
+            <div class="col-lg-4 col-md-6">
+                <a class="navbar-brand fw-bold mb-3 d-block text-dark h4" href="/"
+                    style="font-family: 'Rock Salt', cursive;">Tamilarasu</a>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/"
+                            class="text-decoration-none text-secondary small hover-primary">Home</a></li>
+                    <li><a href="/about"
+                            class="text-decoration-none text-secondary small hover-primary">About</a></li>
+                    <li><a href="/contact"
+                            class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
+                </ul>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://twitter.com/tamilarasu_av" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                    </a>
+                    <a href="https://linkedin.com/in/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                    </a>
+                    <a href="https://github.com/tamilarasu-arunachalam" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                    </a>
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                        rel="noopener">
+                        <img src="/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links Menu -->
+            <div class="col-lg-3 col-md-6 offset-lg-1">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h6>
+                <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="/whatsapp-link-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
+                    </li>
+                    <li><a href="/permalink-generator"
+                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
+                    <li><a href="/text-to-file"
+                            class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
+                    <li><a href="/html-to-markdown"
+                            class="text-decoration-none text-secondary small hover-primary">HTML to Markdown</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Legal & Newsletter -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="text-dark fw-bold mb-4 small text-uppercase ls-1">Stay Connected</h6>
+                <p class="text-secondary small mb-3">Join our weekly newsletter for high-signal tech insights.</p>
+                <form action="#" method="post" class="mb-4">
+                    <div class="input-group shadow-sm border rounded overflow-hidden">
+                        <input type="email" class="form-control border-0 px-3 py-2 small" placeholder="Email address.."
+                            required>
+                        <button class="btn btn-dark fw-bold px-4 rounded-0" type="submit">Join</button>
+                    </div>
+                </form>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="/privacy"
+                        class="text-decoration-none text-muted small hover-primary">Privacy</a>
+                    <a href="/terms"
+                        class="text-decoration-none text-muted small hover-primary">Terms</a>
+                    <a href="/disclaimer"
+                        class="text-decoration-none text-muted small hover-primary">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="pt-4 mt-5 border-top text-center text-md-start">
+            <div class="small text-secondary opacity-75">
+                &copy; 2026 Tamilarasu Arunachalam. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <script>
+    // Logic to handle mobile menu backdrop and body lock
+    document.addEventListener('DOMContentLoaded', function () {
+      const myCollapse = document.getElementById('navbarNav');
+      if (myCollapse) {
+        myCollapse.addEventListener('show.bs.collapse', function () {
+          document.body.classList.add('show-nav');
+        })
+        myCollapse.addEventListener('hide.bs.collapse', function () {
+          document.body.classList.remove('show-nav');
+        })
+
+        // Close menu on link click
+        const navLinks = myCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const bsCollapse = bootstrap.Collapse.getInstance(myCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          });
+        });
+      }
+    });
+  </script>
+  
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Initialize highlighting -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.hljs) {
+        hljs.highlightAll();
+
+        if (typeof hljs.lineNumbersBlock === 'function') {
+          document.querySelectorAll('code').forEach((element) => {
+            hljs.lineNumbersBlock(element);
+          });
+        }
+      }
+    });
+  </script>
+  
+  <!-- Simple-Jekyll-Search -->
+  <script defer src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('results-container');
+
+      if (searchInput && resultsContainer) {
+        SimpleJekyllSearch({
+          searchInput: searchInput,
+          resultsContainer: resultsContainer,
+          json: '/search.json',
+          searchResultTemplate: '<li class="p-2 border-bottom"><a href="{url}" class="text-decoration-none text-dark d-block fw-medium">{title}</a><small class="text-muted">{date}</small></li>',
+          noResultsText: '<li class="p-2 text-muted">No results found</li>',
+          limit: 10,
+          fuzzy: false
+        });
+
+        // Show/hide results dropdown
+        searchInput.addEventListener('input', function () {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          } else {
+            resultsContainer.style.display = 'none';
+          }
+        });
+
+        // Hide results when clicking outside
+        document.addEventListener('click', function (e) {
+          if (!document.getElementById('search-container').contains(e.target)) {
+            resultsContainer.style.display = 'none';
+          }
+        });
+
+        // Show results when focusing back on input
+        searchInput.addEventListener('focus', function () {
+          if (this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
