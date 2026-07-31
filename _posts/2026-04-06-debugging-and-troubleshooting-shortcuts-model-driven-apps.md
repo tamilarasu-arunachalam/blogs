@@ -5,8 +5,10 @@ title: Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts
 date: 2026-04-06 17:41:00 +0000
 image: assets/images/063/img_e3160e0be0.gif
 description: ''
-meta_keywords: ''
+meta_keywords: troubleshoot power apps, power apps debugging, troubleshoot dynamics 365 crm, debugging dynamics 365 crm, dynamics 365 bookmarklets, powerapps bookmarklets
 category: Dynamics 365 CE
+read_time: 15 mins
+published: true
 categories:
   - Model Driven Apps
   - Dynamics 365 CE
