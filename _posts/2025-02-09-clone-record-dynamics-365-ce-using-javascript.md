@@ -4,8 +4,8 @@ post_id: '041'
 title: Clone a record in Dynamics 365 CE using JavaScript
 date: 2025-02-09 17:41:00 +0000
 image: assets/images/041/img_8bc1cd0eba.png
-description: ''
-meta_keywords: ''
+description: Learn how you can clone a record in the model driven app using command button and JavaScript
+meta_keywords: clone record dynamics 365 crm, clone record javascript Dynamics crm, clone record model driven app, clone record power apps
 category: Dynamics 365 CE
 read_time: ''
 categories:
