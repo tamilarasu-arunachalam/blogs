@@ -7,6 +7,7 @@ image: assets/images/041/img_8bc1cd0eba.png
 description: ''
 meta_keywords: ''
 category: Dynamics 365 CE
+read_time: ''
 categories:
   - Model Driven Apps
   - Dynamics 365 CRM Online
