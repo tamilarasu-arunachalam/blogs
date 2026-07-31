@@ -1,12 +1,21 @@
 ---
-post_id: "026"
 layout: post
-title: "Relate and Unrelate Dataverse rows using Power Automate"
+post_id: '026'
+title: Relate and Unrelate Dataverse rows using Power Automate
 date: 2023-07-09 03:39:00 +0000
-category: Power Automate
 image: assets/images/026/img_14c59e2764.png
-categories: ["Power Apps", "Power Automate", "Dynamics 365 CE", "Dataverse"]
+description: ''
+meta_keywords: associate dataverse, disassociate dataverse, associate dataverse power automate, associate record power automate, associate record dynamics 365 crm, associate record dynamics 365 ce, link records dataverse, dataverse relationship power automate, create dataverse relationship
+category: Power Automate
+read_time: 10 mins
+published: true
+categories:
+  - Power Apps
+  - Power Automate
+  - Dynamics 365 CE
+  - Dataverse
 ---
+
 ![]({{ site.baseurl }}/assets/images/026/img_14c59e2764.png)
 
 ## Relate rows
@@ -27,7 +36,7 @@ categories: ["Power Apps", "Power Automate", "Dynamics 365 CE", "Dataverse"]
 [![Relate and Unrelate Dataverse rows using Power Automate]({{ site.baseurl }}/assets/images/026/img_e80a67c45d.png)]({{ site.baseurl }}/assets/images/026/img_e80a67c45d.png)
 
 -   In the relate rows step, we must mention the Table/Entity, row ID (record ID), Relationship, and Relate with.
--   For the Relationship field, select the respective relationship for the record which we want to relate with. In my case, I have selected contact\_customer\_contacts.
+-   For the Relationship field, select the respective relationship for the record which we want to relate with. In my case, I have selected contact_customer_contacts.
 -   Relate with field only accept the row URL or OData URL of the target record.
 -   Save the flow and Test it.
 
@@ -52,11 +61,10 @@ categories: ["Power Apps", "Power Automate", "Dynamics 365 CE", "Dataverse"]
 ![Relate and Unrelate Dataverse rows using Power Automate]({{ site.baseurl }}/assets/images/026/img_ddf51f278e.png)
 
 -   Add Table Name, Row ID, Relationship and Unrelate With fields.
--   For the Relationship field, select the respective relationship for the record which we want to disassociate with. In my case, I have selected contact\_customer\_contacts.
+-   For the Relationship field, select the respective relationship for the record which we want to disassociate with. In my case, I have selected contact_customer_contacts.
 -   The unrelate with field accepts the record's OData URL. Do give it as mentioned in the above image.
 -   Save the flow and run.
 -   [![Relate and Unrelate Dataverse rows using Power Automate]({{ site.baseurl }}/assets/images/026/img_c0d61dc8ba.png)]({{ site.baseurl }}/assets/images/026/img_c0d61dc8ba.png)
-    
 -   The flow ran successfully. Let's check the record whether it is disassociated or not.
 
 [![Relate and Unrelate Dataverse rows using Power Automate]({{ site.baseurl }}/assets/images/026/img_afc8b3991e.png)]({{ site.baseurl }}/assets/images/026/img_afc8b3991e.png)
