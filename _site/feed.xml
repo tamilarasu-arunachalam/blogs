@@ -2,16 +2,25 @@
 <rss version="2.0">
   <channel>
     <title>Tamilarasu Arunachalam</title>
-    <link>https://tamilarasu.blog/</link>
+    <link>http://localhost:4000/</link>
     <description>Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jul 2026 19:55:03 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2026 21:54:20 +0530</lastBuildDate>
     <generator>Jekyll RSS</generator>
     
     <item>
+      <title>Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript</title>
+      <link>http://localhost:4000/hide-ribbon-button-based-on-environment-type-d365-ce-js.html</link>
+      <guid isPermaLink="true">http://localhost:4000/hide-ribbon-button-based-on-environment-type-d365-ce-js.html</guid>
+      <pubDate>Sun, 02 Aug 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;A while back, I was asked to implement a requirement to hide the &lt;strong&gt;Word Template&lt;/strong&gt; button for users in the &lt;strong&gt;Production&lt;/strong&gt; environment while keeping it visible in &lt;strong&gt;Sandbox&lt;/strong&gt; and &lt;strong&gt;Developer&lt;/strong&gt; environments.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Understanding Dataverse Impersonation with Web API using JavaScript - Dynamics 365 CRM</title>
-      <link>https://tamilarasu.blog/dataverse-impersonation-with-web-api-d365-crm.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/dataverse-impersonation-with-web-api-d365-crm.html</guid>
+      <link>http://localhost:4000/dataverse-impersonation-with-web-api-d365-crm.html</link>
+      <guid isPermaLink="true">http://localhost:4000/dataverse-impersonation-with-web-api-d365-crm.html</guid>
       <pubDate>Sun, 26 Jul 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;If your user account executing the code has the necessary privileges, it can perform certain operations on behalf of another user. Impersonation involves two users, where &lt;strong&gt;User A&lt;/strong&gt; executes the code to perform an operation on behalf of &lt;strong&gt;User B&lt;/strong&gt;.&lt;/p&gt;
 </description>
@@ -19,8 +28,8 @@
     
     <item>
       <title>How to Configure and Manage Global Notifications in Dynamics 365 CRM Using JavaScript</title>
-      <link>https://tamilarasu.blog/global-notifications-dynamics-365-crm-javascript.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/global-notifications-dynamics-365-crm-javascript.html</guid>
+      <link>http://localhost:4000/global-notifications-dynamics-365-crm-javascript.html</link>
+      <guid isPermaLink="true">http://localhost:4000/global-notifications-dynamics-365-crm-javascript.html</guid>
       <pubDate>Sun, 19 Jul 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;In Model-Driven Apps and Dynamics 365 CRM, we can configure notifications at the field level, form level, global level, and even as in-app notifications. In this article, we will explore &lt;strong&gt;Global Notifications&lt;/strong&gt; and demonstrate how to configure them in a Model-Driven App using JavaScript.&lt;/p&gt;
 </description>
@@ -28,8 +37,8 @@
     
     <item>
       <title>How to execute a batch process using JavaScript Web API in Dynamics 365 CE?</title>
-      <link>https://tamilarasu.blog/execute-batch-using-js-web-api-d365-ce.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/execute-batch-using-js-web-api-d365-ce.html</guid>
+      <link>http://localhost:4000/execute-batch-using-js-web-api-d365-ce.html</link>
+      <guid isPermaLink="true">http://localhost:4000/execute-batch-using-js-web-api-d365-ce.html</guid>
       <pubDate>Sun, 12 Jul 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;When you need to create thousands of records from a JSON payload, executing individual API calls for every record can negatively impact system performance and increase network overhead. This is where Batch Processing becomes extremely useful.&lt;/p&gt;
 </description>
@@ -37,8 +46,8 @@
     
     <item>
       <title>Set Field Recommendations Using JavaScript in Dynamics 365 CE / Model-Driven Apps</title>
-      <link>https://tamilarasu.blog/set-field-recommendations-javascript-in-d365-ce-mda.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/set-field-recommendations-javascript-in-d365-ce-mda.html</guid>
+      <link>http://localhost:4000/set-field-recommendations-javascript-in-d365-ce-mda.html</link>
+      <guid isPermaLink="true">http://localhost:4000/set-field-recommendations-javascript-in-d365-ce-mda.html</guid>
       <pubDate>Sun, 05 Jul 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;In Dynamics 365 Customer Engagement (CE), we often use &lt;strong&gt;Business Rules&lt;/strong&gt; to provide field recommendations. However, there may be scenarios where we need more flexibility and want to display recommendations dynamically using JavaScript.&lt;/p&gt;
 </description>
@@ -46,8 +55,8 @@
     
     <item>
       <title>How to Build and Host a Survey Form Using Power Automate and Dataverse</title>
-      <link>https://tamilarasu.blog/host-html-survey-form-power-automate.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/host-html-survey-form-power-automate.html</guid>
+      <link>http://localhost:4000/host-html-survey-form-power-automate.html</link>
+      <guid isPermaLink="true">http://localhost:4000/host-html-survey-form-power-automate.html</guid>
       <pubDate>Sun, 28 Jun 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;Ever wondered if you could host a survey form in Power Automate and have the submitted data directly inserted into Dataverse? I recently read a blog by &lt;a href=&quot;https://www.matthewdevaney.com/power-automate-flow-to-host-a-web-page-web-application/&quot;&gt;&lt;strong&gt;Matthew Devaney&lt;/strong&gt;&lt;/a&gt; that explains how to host a page in Power Automate and add data to a SharePoint list. Inspired by that, I wanted to demonstrate the same concept using Dataverse  -  so here it is.&lt;/p&gt;
 </description>
@@ -55,8 +64,8 @@
     
     <item>
       <title>How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript</title>
-      <link>https://tamilarasu.blog/play-sound-effects-on-validation-errors-d365-crm-js.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/play-sound-effects-on-validation-errors-d365-crm-js.html</guid>
+      <link>http://localhost:4000/play-sound-effects-on-validation-errors-d365-crm-js.html</link>
+      <guid isPermaLink="true">http://localhost:4000/play-sound-effects-on-validation-errors-d365-crm-js.html</guid>
       <pubDate>Sun, 21 Jun 2026 11:11:00 +0530</pubDate>
       <description>&lt;p&gt;A few days ago, I came across a trending tweet where someone asked for a VS Code extension that plays a loud “Faaaaaaaaah” sound whenever an error occurs while coding.&lt;/p&gt;
 </description>
@@ -64,8 +73,8 @@
     
     <item>
       <title>Why AI Pair Programming Will Become a Must for All Developers in 2026</title>
-      <link>https://tamilarasu.blog/why-ai-pair-programming-must-in-2025.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/why-ai-pair-programming-must-in-2025.html</guid>
+      <link>http://localhost:4000/why-ai-pair-programming-must-in-2025.html</link>
+      <guid isPermaLink="true">http://localhost:4000/why-ai-pair-programming-must-in-2025.html</guid>
       <pubDate>Tue, 16 Jun 2026 23:11:00 +0530</pubDate>
       <description>&lt;h2 id=&quot;the-shift-already-happening-in-dev-teams&quot;&gt;The Shift Already Happening in Dev Teams&lt;/h2&gt;
 
@@ -83,8 +92,8 @@
     
     <item>
       <title>Build a Smart Approval System with Prediction Model in  Power Automate</title>
-      <link>https://tamilarasu.blog/smart-approval-system-with-prediction-model-power-automate.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/smart-approval-system-with-prediction-model-power-automate.html</guid>
+      <link>http://localhost:4000/smart-approval-system-with-prediction-model-power-automate.html</link>
+      <guid isPermaLink="true">http://localhost:4000/smart-approval-system-with-prediction-model-power-automate.html</guid>
       <pubDate>Sun, 14 Jun 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;In this AI era, traditional approvals no longer make sense. Approvals play a major role everywhere, but they often require follow-ups and reminders to get things sorted. To address this, I planned to build a smart approval system using Dataverse, AI Builder, and Power Automate. This is a small prototype, but it can be extended to a larger solution.&lt;/p&gt;
 </description>
@@ -92,8 +101,8 @@
     
     <item>
       <title>Why Moosend Is the Best Email Marketing Platform for Small Businesses and Growing Brands</title>
-      <link>https://tamilarasu.blog/why-moosend-best-email-platform.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/why-moosend-best-email-platform.html</guid>
+      <link>http://localhost:4000/why-moosend-best-email-platform.html</link>
+      <guid isPermaLink="true">http://localhost:4000/why-moosend-best-email-platform.html</guid>
       <pubDate>Tue, 09 Jun 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;Every business starts email marketing the same way - full of optimism, a growing contact list, and a simple goal: stay connected with customers. But somewhere between navigating confusing dashboards, hitting feature paywalls, and watching monthly costs climb as the subscriber list grows, that optimism fades.&lt;/p&gt;
 </description>
@@ -101,8 +110,8 @@
     
     <item>
       <title>How I Automated Chrome Extension Publishing with GitHub Actions</title>
-      <link>https://tamilarasu.blog/automate-chrome-extension-publishing-with-github-actions.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/automate-chrome-extension-publishing-with-github-actions.html</guid>
+      <link>http://localhost:4000/automate-chrome-extension-publishing-with-github-actions.html</link>
+      <guid isPermaLink="true">http://localhost:4000/automate-chrome-extension-publishing-with-github-actions.html</guid>
       <pubDate>Tue, 02 Jun 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;Every time I shipped a new version of my Chrome extension, I dreaded the same ritual - bump the version, zip the build folder, log into the Chrome Web Store Developer Dashboard, upload the file, fill in the release notes, and hit publish. It sounds simple, but do it a dozen times and you start wondering: &lt;em&gt;why am I doing this manually?&lt;/em&gt;
 That’s when I wired up GitHub Actions to handle it for me. Now every merge to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; ships my extension automatically. Here’s exactly how I did it.&lt;/p&gt;
@@ -111,8 +120,8 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
     
     <item>
       <title>How I Built a Stunning Admin Dashboard in Power Pages?</title>
-      <link>https://tamilarasu.blog/built-stunning-admin-dashboard-power-pages.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/built-stunning-admin-dashboard-power-pages.html</guid>
+      <link>http://localhost:4000/built-stunning-admin-dashboard-power-pages.html</link>
+      <guid isPermaLink="true">http://localhost:4000/built-stunning-admin-dashboard-power-pages.html</guid>
       <pubDate>Sun, 24 May 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;When I started building a hospital management app as a weekend project, I never imagined the frontend would become the most exciting part. I set up Power Pages as an external-facing portal - patients could book appointments, staff could track them, and everyone had what they needed in one place. But then I looked at the default design and thought: &lt;em&gt;this has to change.&lt;/em&gt;&lt;/p&gt;
 </description>
@@ -120,8 +129,8 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
     
     <item>
       <title>Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!</title>
-      <link>https://tamilarasu.blog/bts-of-export-to-excel-model-driven-apps.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/bts-of-export-to-excel-model-driven-apps.html</guid>
+      <link>http://localhost:4000/bts-of-export-to-excel-model-driven-apps.html</link>
+      <guid isPermaLink="true">http://localhost:4000/bts-of-export-to-excel-model-driven-apps.html</guid>
       <pubDate>Sun, 17 May 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;I recently worked on something where I had to use &lt;strong&gt;Advanced Find&lt;/strong&gt; or filter views every time while exporting weekly or monthly reports. Although we can create &lt;strong&gt;personal views&lt;/strong&gt; to make the data sorted, I was curious to know how the filtered data actually gets exported.&lt;/p&gt;
 </description>
@@ -129,8 +138,8 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
     
     <item>
       <title>How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?</title>
-      <link>https://tamilarasu.blog/hide-sensitive-data-in-power-automate.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/hide-sensitive-data-in-power-automate.html</guid>
+      <link>http://localhost:4000/hide-sensitive-data-in-power-automate.html</link>
+      <guid isPermaLink="true">http://localhost:4000/hide-sensitive-data-in-power-automate.html</guid>
       <pubDate>Sun, 26 Apr 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;There was a moment while debugging a Power Automate flow when something unexpected showed up. Instead of just checking an error, the entire API request and response data were visible in the run history. It included sensitive details that should never be exposed so easily. That’s when the importance of secure inputs and outputs became very real.&lt;/p&gt;
 </description>
@@ -138,8 +147,8 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
     
     <item>
       <title>How to Unit Test Dynamics 365 CRM JavaScript using QUnit?</title>
-      <link>https://tamilarasu.blog/unit-test-javascript-using-qunit-d365-crm.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/unit-test-javascript-using-qunit-d365-crm.html</guid>
+      <link>http://localhost:4000/unit-test-javascript-using-qunit-d365-crm.html</link>
+      <guid isPermaLink="true">http://localhost:4000/unit-test-javascript-using-qunit-d365-crm.html</guid>
       <pubDate>Sun, 19 Apr 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;A few weeks ago, our team made an important decision -we wanted to improve the quality of our Dynamics 365 CRM project by introducing &lt;strong&gt;unit testing&lt;/strong&gt;. Until then, testing was mostly manual and relied heavily on functional testing inside the CRM environment. Unit testing felt like a natural next step.&lt;/p&gt;
 </description>
@@ -147,8 +156,8 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
     
     <item>
       <title>How to Add a Favicon in Power Pages?</title>
-      <link>https://tamilarasu.blog/how-to-add-favicon-in-power-pages.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/how-to-add-favicon-in-power-pages.html</guid>
+      <link>http://localhost:4000/how-to-add-favicon-in-power-pages.html</link>
+      <guid isPermaLink="true">http://localhost:4000/how-to-add-favicon-in-power-pages.html</guid>
       <pubDate>Sun, 12 Apr 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;When you open a website in your browser, one small detail quietly helps you recognize it instantly. That tiny icon shown in the browser tab, bookmarks, history, and address bar is called a &lt;strong&gt;favicon&lt;/strong&gt;. The word favicon stands for “favorite icon,” and even though it is small, it plays a big role in improving &lt;strong&gt;user experience&lt;/strong&gt; and maintaining &lt;strong&gt;brand consistency&lt;/strong&gt;.&lt;/p&gt;
 </description>
@@ -156,8 +165,8 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
     
     <item>
       <title>Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts</title>
-      <link>https://tamilarasu.blog/debugging-and-troubleshooting-shortcuts-model-driven-apps.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/debugging-and-troubleshooting-shortcuts-model-driven-apps.html</guid>
+      <link>http://localhost:4000/debugging-and-troubleshooting-shortcuts-model-driven-apps.html</link>
+      <guid isPermaLink="true">http://localhost:4000/debugging-and-troubleshooting-shortcuts-model-driven-apps.html</guid>
       <pubDate>Mon, 06 Apr 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;There is a quote about debugging from Brian Kernighan (Author and Co-contributor for Unix):&lt;/p&gt;
 </description>
@@ -165,8 +174,8 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
     
     <item>
       <title>How to Customize the Sign in page in Power Pages Easily</title>
-      <link>https://tamilarasu.blog/customize-signin-page-power-pages.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/customize-signin-page-power-pages.html</guid>
+      <link>http://localhost:4000/customize-signin-page-power-pages.html</link>
+      <guid isPermaLink="true">http://localhost:4000/customize-signin-page-power-pages.html</guid>
       <pubDate>Mon, 30 Mar 2026 02:41:00 +0530</pubDate>
       <description>&lt;p&gt;Power Pages allows users to sign in using different providers like Entra ID, Google, LinkedIn, and others, which is great for authentication flexibility, but the default sign in page UI is quite basic and not easy to customize. Many developers struggle to match the login experience with their branding or modern UI expectations, so in this blog, we will see a simple and practical way to customize the sign in page by using content snippets, hiding the default components, and building a clean custom login page using Bootstrap.&lt;/p&gt;
 </description>
@@ -174,8 +183,8 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
     
     <item>
       <title>Implement Data Summarization API for Dataverse in Power Pages</title>
-      <link>https://tamilarasu.blog/data-summarization-api-power-pages.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/data-summarization-api-power-pages.html</guid>
+      <link>http://localhost:4000/data-summarization-api-power-pages.html</link>
+      <guid isPermaLink="true">http://localhost:4000/data-summarization-api-power-pages.html</guid>
       <pubDate>Sun, 15 Mar 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;In today’s AI-driven world, summarizing information has become incredibly easy. We can summarize long articles, web pages, books, and even lengthy videos within seconds using AI tools. Microsoft is gradually bringing similar AI capabilities into the Power Platform ecosystem.&lt;/p&gt;
 </description>
@@ -183,19 +192,10 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
     
     <item>
       <title>Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide</title>
-      <link>https://tamilarasu.blog/client-api-power-pages-crud-guide.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/client-api-power-pages-crud-guide.html</guid>
+      <link>http://localhost:4000/client-api-power-pages-crud-guide.html</link>
+      <guid isPermaLink="true">http://localhost:4000/client-api-power-pages-crud-guide.html</guid>
       <pubDate>Sun, 15 Feb 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;If you have worked with Power Pages, you probably got stuck at some point using webapi.safeAjax for Dataverse operations. Microsoft introduced the $pages Client API to simplify how developers interact with forms, authentication, Dataverse data, and multilingual configuration directly from custom HTML and JavaScript pages.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How to Integrate Power Pages with Firebase Realtime Database with Example CRUD</title>
-      <link>https://tamilarasu.blog/integrate-power-pages-with-firebase-example-crud.html</link>
-      <guid isPermaLink="true">https://tamilarasu.blog/integrate-power-pages-with-firebase-example-crud.html</guid>
-      <pubDate>Sun, 11 Jan 2026 23:11:00 +0530</pubDate>
-      <description>&lt;p&gt;For a long time, I have felt that Power Pages is capable of doing much more than what we usually limit it to. Most of the time, it stays tightly coupled with Dataverse and SharePoint, even though it has the flexibility to work beyond that boundary.&lt;/p&gt;
 </description>
     </item>
     

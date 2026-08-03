@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript",
+      "category" : "Dynamics 365 CE",
+      "url"      : "/hide-ribbon-button-based-on-environment-type-d365-ce-js.html",
+      "date"     : "August 2, 2026"
+    } ,
+  
+    {
       "title"    : "Understanding Dataverse Impersonation with Web API using JavaScript - Dynamics 365 CRM",
       "category" : "Dynamics 365 CE",
       "url"      : "/dataverse-impersonation-with-web-api-d365-crm.html",
@@ -248,7 +255,7 @@
     {
       "title"    : "Clone a record in Dynamics 365 CE using JavaScript",
       "category" : "Dynamics 365 CE",
-      "url"      : "/clone-a-record-dynamics-365-ce-using-javascript.html",
+      "url"      : "/clone-record-dynamics-365-ce-using-javascript.html",
       "date"     : "February 9, 2025"
     } ,
   

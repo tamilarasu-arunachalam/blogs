@@ -10,35 +10,33 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="/assets/favicon/site.webmanifest">
   <!-- Begin Jekyll SEO tag v2.9.0 -->
-<title>Auto Populate lookup based on the other lookup field in Power Apps | Tamilarasu Arunachalam</title>
+<title>Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript | Tamilarasu Arunachalam</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Auto Populate lookup based on the other lookup field in Power Apps" />
+<meta property="og:title" content="Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript" />
 <meta name="author" content="Tamilarasu Arunachalam" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
-<meta name="twitter:description" property="og:description" content="Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day." />
-<link rel="canonical" href="http://localhost:4000/auto-populate-lookup-based-on-other-lookup-in-d365-crm.html" />
-<meta property="og:url" content="http://localhost:4000/auto-populate-lookup-based-on-other-lookup-in-d365-crm.html" />
+<meta name="description" content="Learn how to detect environment type in Dynamics 365 using RetrieveOrganizationInfo and hide the Word Template button in Production." />
+<meta name="twitter:description" property="og:description" content="Learn how to detect environment type in Dynamics 365 using RetrieveOrganizationInfo and hide the Word Template button in Production." />
+<link rel="canonical" href="http://localhost:4000/hide-ribbon-button-based-on-environment-type-d365-ce-js.html" />
+<meta property="og:url" content="http://localhost:4000/hide-ribbon-button-based-on-environment-type-d365-ce-js.html" />
 <meta property="og:site_name" content="Tamilarasu Arunachalam" />
-<meta property="og:image" content="http://localhost:4000/assets/images/008/img_21739b17b9.png" />
+<meta property="og:image" content="http://localhost:4000/assets/images/3322dc979390/environment-type-featured.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-12-11T16:24:00+05:30" />
-<meta property="article:modified_time" content="2022-12-11T16:24:00+05:30" />
+<meta property="article:published_time" content="2026-08-02T23:11:00+05:30" />
+<meta property="article:modified_time" content="2026-08-02T23:11:00+05:30" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:4000/assets/images/008/img_21739b17b9.png" />
-<meta name="twitter:title" content="Auto Populate lookup based on the other lookup field in Power Apps" />
+<meta name="twitter:image" content="http://localhost:4000/assets/images/3322dc979390/environment-type-featured.png" />
+<meta name="twitter:title" content="Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript" />
 <meta name="twitter:site" content="@tamilarasu_av" />
 <meta name="twitter:creator" content="@Tamilarasu Arunachalam" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2022-12-11T16:24:00+05:30","datePublished":"2022-12-11T16:24:00+05:30","description":"Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.","headline":"Auto Populate lookup based on the other lookup field in Power Apps","image":"http://localhost:4000/assets/images/008/img_21739b17b9.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/auto-populate-lookup-based-on-other-lookup-in-d365-crm.html"},"url":"http://localhost:4000/auto-populate-lookup-based-on-other-lookup-in-d365-crm.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Tamilarasu Arunachalam"},"dateModified":"2026-08-02T23:11:00+05:30","datePublished":"2026-08-02T23:11:00+05:30","description":"Learn how to detect environment type in Dynamics 365 using RetrieveOrganizationInfo and hide the Word Template button in Production.","headline":"Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript","image":"http://localhost:4000/assets/images/3322dc979390/environment-type-featured.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/hide-ribbon-button-based-on-environment-type-d365-ce-js.html"},"url":"http://localhost:4000/hide-ribbon-button-based-on-environment-type-d365-ce-js.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="alternate" type="application/rss+xml" title="Tamilarasu Arunachalam"
     href="http://localhost:4000/feed.xml">
   <!-- keywords -->
-  <meta name="keywords" content=" Tamilarasu, Tamilarasu Arunachalam, Tamilarasu Power
-    Platform, Tamilarasu Arunachalam Developer, Tamilarasu chrome extensions, Tamilarasu blogs, Power Platform blogs,
-    Dynamics 365 blogs">
+  <meta name="keywords" content="RetrieveOrganizationInfo, Dynamics 365 Environment Type, Hide Word Template Button, Dynamics 365 Web API, Power Apps Environment, Dynamics 365 Production Environment, Sandbox Environment, Developer Environment, Dataverse API">
 
   <!-- Bootstrap 5 CSS -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -70,7 +68,7 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 
   
-  <link rel="preload" as="image" href="/assets/images/008/img_21739b17b9.png">
+  <link rel="preload" as="image" href="/assets/images/3322dc979390/environment-type-featured.png">
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRDWJ8N6VV"></script>
@@ -150,13 +148,13 @@
                     <div class="mb-3">
                         <span class="badge bg-light text-dark border">Dynamics 365 CE</span>
                     </div>
-                    <h1 class="display-4 fw-bold mb-4">Auto Populate lookup based on the other lookup field in Power Apps</h1>
+                    <h1 class="display-4 fw-bold mb-4">Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript</h1>
                     <div class="post-meta d-flex align-items-center mb-4">
                         <img src="https://ui-avatars.com/api/?name=Tamilarasu+Arunachalam&background=random"
                             class="rounded-circle me-3" width="50" alt="Author">
                         <div>
                             <div class="fw-bold">Tamilarasu Arunachalam</div>
-                            <div class="text-muted small">December 11, 2022 • 5 min read</div>
+                            <div class="text-muted small">August 02, 2026 • 10 mins</div>
                         </div>
                     </div>
                 </header>
@@ -179,7 +177,7 @@
 
 
 
-<img src="/assets/images/008/img_21739b17b9.png" alt="Auto Populate lookup based on the other lookup field in Power Apps" class="img-fluid rounded-4 shadow-sm w-100" width="1200" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" fetchpriority="high">
+<img src="/assets/images/3322dc979390/environment-type-featured.png" alt="Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript" class="img-fluid rounded-4 shadow-sm w-100" width="1200" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" fetchpriority="high">
 
                 </div>
                 
@@ -191,68 +189,35 @@
 
                 <!-- Main Content Body -->
                 <div class="post-body fs-5 mt-4">
-                    <p>Lookup fields are not like a normal field because after creation, the lookup field creates a N:1 relationship between the entity that the lookup is created for and the entity that is being looked up to. The value of the lookup is the GUID of the record in destination table we are looked up to. </p>
+                    <p>A while back, I was asked to implement a requirement to hide the <strong>Word Template</strong> button for users in the <strong>Production</strong> environment while keeping it visible in <strong>Sandbox</strong> and <strong>Developer</strong> environments.</p>
 
-<p>In this article we’ll have a view on auto populating lookup based on the another lookup using the JavaScript web resource. I have created a form which includes three lookup fields and they are related to one another. </p>
+<p>Initially, I was scratching my head trying to figure out the best approach. After some research, I realized that the ultimate goal was to show or hide command bar buttons based on the <strong>Dynamics 365 environment type</strong>. I then took a deeper dive into identifying the current environment programmatically.</p>
 
-<h3 id="steps">Steps:</h3>
+<p>Usually, we can determine the environment type from the URL. For example, a Production environment may have a URL such as: <code class="language-plaintext highlighter-rouge">[org-url]-prod.crm8.dynamics.com</code>.</p>
+
+<p>However, relying on the URL is not the most reliable or recommended approach. After further investigation, I discovered a better solution. Microsoft provides a Web API function called <code class="language-plaintext highlighter-rouge">RetrieveOrganizationInfo</code>, which can be used to identify the current organization’s environment type.</p>
+
+<p>You can find the different environment types in the table below.</p>
+
+<p><img src="assets/images/baa3f60c9fb5/environment-types-table.png" alt="Environment types in Power Platform" /></p>
+
+<p>Once I found the approach, I jumped straight into the implementation. I wrote a script that hides the <strong>Word Templates</strong> button when the current environment is a <strong>Production</strong> environment. You can refer to the code sample below.</p>
+
+<script src="https://gist.github.com/tamilarasu-arunachalam/06d48913d6796fb42849a0fd14c473be.js"></script>
+
+<p>To hide the button, you need to add an <strong>Enable Rule</strong> to the existing command. The screenshot below shows how this can be configured.</p>
+
+<p><img src="assets/images/00f80e660366/ShowBtnOnDev-enable-rule.png" alt="Enable rule in Ribbon WorkBench" /></p>
+
+<p>Since I currently have access only to a developer environment and not a Production environment, I cannot demonstrate the functionality directly. However, I performed reverse testing, and the solution worked as expected.</p>
+
+<h4 id="references">References:</h4>
 
 <ul>
-  <li>Table Setup</li>
-  <li>Web resource Setup</li>
-  <li>JavaScript Code</li>
-  <li>Add Web resource to Event Handler</li>
-  <li>Result</li>
+  <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/retrieveorganizationinfo?view=dataverse-latest">RetrieveOrganizationInfo Function (Microsoft.Dynamics.CRM) — Microsoft Learn</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/organizationtype?view=dataverse-latest">OrganizationType EnumType (Microsoft.Dynamics.CRM) — Microsoft Learn</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-webapi/online/execute">Xrm.WebApi.online.execute (Client API reference) in model-driven apps — Power Apps — Microsoft Learn</a></li>
 </ul>
-
-<h2 id="table-setup-">Table Setup :</h2>
-
-<p><a href="/assets/images/008/img_97cf6fb770.png"><img src="/assets/images/008/img_97cf6fb770.png" alt="" /></a></p>
-
-<p>     I have four tables in Dataverse which are details, city, state and country. The details table contains three lookup fields named City, State and Country. City has N:1 relationship with State, which has N:1 relationship with Country. The below diagram represents the Table setup for the context. The scenario was if the city was selected, the state and country should be auto-populated. Below diagram represents the relationship between the table we use.</p>
-
-<p><a href="/assets/images/008/img_f96135fdb3.png"><img src="/assets/images/008/img_f96135fdb3.png" alt="" /></a></p>
-
-<h2 id="web-resource-setup">Web resource Setup:</h2>
-
-<p>         Auto-population can be achieved through business rules too, but the filtering is not possible in Business Rules. So, we can make it through Web resources. For that you have to add a new web resource by clicking + New → more → Web resource. A quick create form opens for creating a web resource. Upload your Web resource file(if you didn’t started the coding part, upload a sample JS file from device and you can modify it any time), give a name, select type as JavaScript(JS) and Save it. </p>
-
-<p><a href="/assets/images/008/img_7e55819582.png"><img src="/assets/images/008/img_7e55819582.png" alt="" /></a></p>
-
-<h2 id="javascript-code-">JavaScript Code :</h2>
-
-<p>The Web resource contains two functions setState and setCountry, one for auto-populating state and another for country. Both are triggered from field on-change events. setState is triggered on-change of city and setCountry is triggered on-change of state. The below snippet is the function of setState</p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/9c76178b30c512ef5c746af93e6ece8b.js?file=setState.js"></script>
-
-<p>The below snippet is for setCountry function. </p>
-
-<script src="https://gist.github.com/tamilarasu-arunachalam/9c76178b30c512ef5c746af93e6ece8b.js?file=setCountry.js"></script>
-
-<pre><code class="language-plain">targetState.fireOnChange();
-</code></pre>
-
-<p>The above line of code is a special function in dataverse because which triggers the function when a field is changed automatically(from another trigger). Once our coding part gets completed add the Web resource file to dataverse. </p>
-
-<h2 id="add-web-resource-to-event-handler">Add Web resource to Event Handler:</h2>
-
-<p>Move to form designer in Power Apps and add the Web resource to the form library.</p>
-
-<p><a href="/assets/images/008/img_ea3c22d7d4.png"><img src="/assets/images/008/img_ea3c22d7d4.png" alt="" /></a></p>
-
-<p>Move to the <strong>Tree View</strong> and select the field and navigate to Events tab in the right menu bar. Configure the event by clicking the <strong>+ Event handler</strong>. Select event type, library and function name then click Done. You have to add event handler for city and state field in form.</p>
-
-<p><a href="/assets/images/008/img_274b8f01e0.png"><img src="/assets/images/008/img_274b8f01e0.png" alt="" /></a></p>
-
-<p>Save and Publish the solution. Move to the application to test how it works.</p>
-
-<h2 id="result">Result:</h2>
-
-<p><a href="/assets/images/008/img_cc12ec2169.gif"><img src="/assets/images/008/img_cc12ec2169.gif" alt="" /></a></p>
-
-<p>In the above clip you could see the working of auto-population of lookup based on the other.</p>
-
-<p>Keep Learning..</p>
 
                 </div>
 
@@ -289,9 +254,9 @@
                     <div id="cusdis_thread"
                         data-host="https://cusdis.com"
                         data-app-id="c273ece9-1cf0-4c6e-aaca-9aa59564a335"
-                        data-page-id="/auto-populate-lookup-based-on-other-lookup-in-d365-crm.html"
-                        data-page-url="http://localhost:4000/auto-populate-lookup-based-on-other-lookup-in-d365-crm.html"
-                        data-page-title="Auto Populate lookup based on the other lookup field in Power Apps"
+                        data-page-id="/hide-ribbon-button-based-on-environment-type-d365-ce-js.html"
+                        data-page-url="http://localhost:4000/hide-ribbon-button-based-on-environment-type-d365-ce-js.html"
+                        data-page-title="Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript"
                         data-theme="auto">
                     </div>
                     <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
@@ -305,48 +270,6 @@
                         
                         
                         
-                         <div class="col-md-4">
-                            <div class="related-post-card card h-100 border-0">
-                                <a href="/hide-ribbon-button-based-on-environment-type-d365-ce-js.html" class="related-card-img-link">
-                                    <!-- Premium Image Handler with Placeholder Fallback -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img src="/assets/images/3322dc979390/environment-type-featured.png" alt="Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript" class="card-img-top
-                                    related-card-img" width="1200" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" loading="lazy" decoding="async">
-
-                                </a>
-                                <div class="card-body p-4">
-                                    <span class="related-card-category">Dynamics 365 CE</span>
-                                    <h6 class="related-card-title mt-2 mb-3">
-                                        <a href="/hide-ribbon-button-based-on-environment-type-d365-ce-js.html"
-                                            class="text-decoration-none text-dark hover-primary">Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript</a>
-                                    </h6>
-                                    <a href="/hide-ribbon-button-based-on-environment-type-d365-ce-js.html" class="related-card-readmore">
-                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd"
-                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                    </div>
-                    
-                    
-                    
                     
                         
                          <div class="col-md-4">
@@ -437,9 +360,49 @@
                     
                     
                         
-                        
+                         <div class="col-md-4">
+                            <div class="related-post-card card h-100 border-0">
+                                <a href="/execute-batch-using-js-web-api-d365-ce.html" class="related-card-img-link">
+                                    <!-- Premium Image Handler with Placeholder Fallback -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img src="/assets/images/077/dataverse-batch-process-flow.png" alt="How to execute a batch process using JavaScript Web API in Dynamics 365 CE?" class="card-img-top
+                                    related-card-img" width="1200" height="200" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px" loading="lazy" decoding="async">
+
+                                </a>
+                                <div class="card-body p-4">
+                                    <span class="related-card-category">Dynamics 365 CE</span>
+                                    <h6 class="related-card-title mt-2 mb-3">
+                                        <a href="/execute-batch-using-js-web-api-d365-ce.html"
+                                            class="text-decoration-none text-dark hover-primary">How to execute a batch process using JavaScript Web API in Dynamics 365 CE?</a>
+                                    </h6>
+                                    <a href="/execute-batch-using-js-web-api-d365-ce.html" class="related-card-readmore">
+                                        Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                    
                     
                     
+                    
                         
                         
                     
@@ -645,6 +608,8 @@
                         
                     
                         
+                        
+                    
                     
                         
                     
@@ -666,9 +631,9 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Auto Populate lookup based on the other lookup field in Power Apps",
-  "image": "http://localhost:4000/assets/images/008/img_21739b17b9.png",
-  "datePublished": "2022-12-11T16:24:00+05:30",
+  "headline": "Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript",
+  "image": "http://localhost:4000/assets/images/3322dc979390/environment-type-featured.png",
+  "datePublished": "2026-08-02T23:11:00+05:30",
   "author": {
     "@type": "Person",
     "name": "Tamilarasu Arunachalam"
@@ -681,7 +646,7 @@
       "url": "http://localhost:4000/assets/images/logo.png"
     }
   },
-  "description": ""
+  "description": "Learn how to detect environment type in Dynamics 365 using RetrieveOrganizationInfo and hide the Word Template button in Production."
 }
 </script>
   </main>
