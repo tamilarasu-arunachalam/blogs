@@ -19,7 +19,7 @@ Managed Solutions are typically used in **Test** or **Production** environments 
 
 Solutions are exported from the source environment and imported into the target environment.
 
-![Update solution Power Platform](/assets/images/e220d9361c16/update-solution.png)
+![Update solution Power Platform](assets/images/ff55636acd75/update-solution.png)
 
 > **Note:** `1.0.1.1` is an example of a solution version. Solution versioning follows the format: `Major.Minor.Build.Revision`
 
@@ -73,7 +73,7 @@ Example:
 
 If the parent solution is cloned, all related patches are rolled up into a newer version of the solution.
 
-![Clone a patch power platform](/assets/images/b7c26d570056/clone-a-patch.png)
+![Clone a patch power platform](assets/images/31f5b387d261/clone-a-patch.png)
 
 To create a patch:
 
@@ -81,17 +81,17 @@ To create a patch:
 2. Select **Clone**.
 3. Click **Clone a Patch**.
 
-![clone a patch power platform solution](/assets/images/ceb37881540c/clone-a-patch-2.png)
+![clone a patch power platform solution](assets/images/b060591edc1d/clone-a-patch-2.png)
 
 A side panel will appear where you can modify the **Build** and **Revision** values for the patch version.
 
 After the patch is created, it appears with the same display name as the parent solution, while its unique name includes a patch identifier and additional characters.
 
-![clone a patch power platform solutions](/assets/images/cb3a4d5b21a1/clone-a-patch-3.png)
+![clone a patch power platform solutions](assets/images/4a3b01ce5b71/clone-a-patch-3.png)
 
 #### Clone:
 
-![clone solutions power platform](/assets/images/ba5d4239a2e4/clone-patch-featured.png)
+![clone solutions power platform](assets/images/a84b666a9dfd/clone-patch-featured.png)
 
 When a **Clone Solution** operation is performed on an Unmanaged Solution, the base solution and all associated patches are rolled up into a new version of the solution.
 
@@ -104,11 +104,11 @@ For example:
 - Original Solution Version: `1.6.0.1`
 - Valid Clone Versions: `1.6.0.1` or `1.7.0.0`
 
-![clone solution power platform](/assets/images/340fe4e91043/clone-solution-1.png)
+![clone solution power platform](assets/images/b5325393be8b/clone-solution-1.png)
 
 Similar to creating a patch, you can create a clone by navigating to the solution’s **Clone** option and selecting **Clone Solution**.
 
-![clone solution power platform](/assets/images/3deb4e405084/clone-solution-2.png)
+![clone solution power platform](assets/images/2d98d99a4fd9/clone-solution-2.png)
 
 In the side panel, you can modify the **Major** and **Minor** version numbers before proceeding with the clone operation.
 
