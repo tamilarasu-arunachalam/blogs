@@ -3,7 +3,7 @@ layout: post
 post_id: '082'
 title: How to Clone Dataverse Records with Power Fx in Model-Driven Apps
 date: 2026-08-23T23:11
-image: ''
+image: /assets/images/6d97655c3052/clone-record-powerfx-featured.png
 description: Learn how to clone records in a Model-Driven App using PowerFx and command buttons. Reduce manual data entry, save time, and even clone related child records without using JavaScript.
 meta_keywords: Power Fx clone record, Model Driven App clone record, Dataverse clone record, Clone Account Power Fx, Clone Child Records Dataverse, Clone Records PowerFx Dynamics 365 CRM, Clone Account PowerFx Command bar
 category: Dataverse
@@ -23,7 +23,7 @@ If you want to clone a record along with its child records, you can do that as w
 
 Refer to the GIF below for a demonstration.
 
-![](/assets/images/fcafc3a119a3/Screen_Recording.webp)
+![Clone](assets/images/bbdf4da1a241/Screen_Recording.webp)
 
 If you want to clone a record using JavaScript, you can refer to my blog on [Clone a record in Dynamics 365 CE using JavaScript](https://tamilarasu.blog/clone-record-dynamics-365-ce-using-javascript.html)
 
