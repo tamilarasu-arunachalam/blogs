@@ -15,7 +15,9 @@ If you or someone in your role has to create the same kind of records manually m
 
 For example, if you are a salesperson who has to create orders with almost the same data every time, with only minimal changes, you still need to create a new record from scratch. You may have wished there was a **Clone** option available. So, I developed a cloning functionality using a command button and Power Fx.
 
-I have already posted a blog on cloning a record in a Model-Driven App using a command button and JavaScript. However, there is another way to achieve this. Yes, we can use **Power Fx** instead of JavaScript to clone a record. Without much complexity, this can be done easily using Power Fx.
+I have already posted a blog on cloning a record in a Model-Driven App using a command button and JavaScript. If you want to clone a record using JavaScript, you can refer to my blog on [Clone a record in Dynamics 365 CE using JavaScript](https://tamilarasu.blog/clone-record-dynamics-365-ce-using-javascript.html).
+
+However, there is another way to achieve this. Yes, we can use **Power Fx** instead of JavaScript to clone a record. Without much complexity, this can be done easily using Power Fx.
 
 As a demonstration, I created a command button named **Clone Account** on the Account form. In the action, select **Run Formula** and click **Open Formula Bar**. Once the formula bar opens, use the Power Fx code below, then save and publish it.
 
@@ -24,8 +26,6 @@ If you want to clone a record along with its child records, you can do that as w
 Refer to the GIF below for a demonstration.
 
 ![Clone record using Powerfx model driven apps](assets/images/bbdf4da1a241/Screen_Recording.webp)
-
-If you want to clone a record using JavaScript, you can refer to my blog on [Clone a record in Dynamics 365 CE using JavaScript](https://tamilarasu.blog/clone-record-dynamics-365-ce-using-javascript.html)
 
 #### References:
 
