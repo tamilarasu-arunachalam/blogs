@@ -23,7 +23,7 @@ If you want to clone a record along with its child records, you can do that as w
 
 Refer to the GIF below for a demonstration.
 
-![Clone](assets/images/bbdf4da1a241/Screen_Recording.webp)
+![Clone record using Powerfx model driven apps](assets/images/bbdf4da1a241/Screen_Recording.webp)
 
 If you want to clone a record using JavaScript, you can refer to my blog on [Clone a record in Dynamics 365 CE using JavaScript](https://tamilarasu.blog/clone-record-dynamics-365-ce-using-javascript.html)
 
