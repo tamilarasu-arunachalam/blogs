@@ -63,16 +63,17 @@ To create a Function in Power Platform, the user must have the **System Customiz
 
 Follow the steps below:
 
-![Create Dataverse Functions](/assets/images/65cef04e27f7/function-create-new-1.png)
+![Create Dataverse Functions](assets/images/a304b5e57679/function-create-new-1.png)
 
-1. Navigate to the preferred Solution → **Objects → Automation → Function**.
-2. A side pane will open, prompting you to enter the **Display Name** and **Description** for the Function.
-![Create Dataverse Functions](/assets/images/17b258113789/function-create-new-2.png)
-3. Add the required **Input** and **Output Parameters** along with their names and data types.
-![Create Dataverse Functions](/assets/images/314f6c54e31b/function-create-new-3.png)
-4. Optionally, select table references from the supported list of Dataverse tables. These references can be used to access data through functions such as **Filter()** and **LookUp()**.
-5. Enter the Power Fx expression in the **Formula** field.
-6. Save and publish the Function.
+- Navigate to the preferred Solution → **Objects → Automation → Function**.
+- A side pane will open, prompting you to enter the **Display Name** and **Description** for the Function.
+![Create Dataverse Functions](assets/images/8d855a785cf0/function-create-new-2.png)
+- Add the required **Input** and **Output Parameters** along with their names and data types.
+![Create Dataverse Functions](assets/images/dfef384e1a74/function-create-new-3.png)
+- Optionally, select table references from the supported list of Dataverse tables. These references can be used to access data through functions such as **Filter()** and **LookUp()**.
+- Enter the Power Fx expression in the **Formula** field.
+- Save and publish the Function.
+- For example, I have created a function to get the revenue and credit limit by passing the account id as parameter.
 
 ## Debugging Using the `Trace()` Function
 
