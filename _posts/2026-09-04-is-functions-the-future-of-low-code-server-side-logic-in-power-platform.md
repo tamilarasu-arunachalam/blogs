@@ -3,7 +3,7 @@ layout: post
 post_id: '083'
 title: Is Functions the Future of Low-Code Server-Side Logic in Power Platform?
 date: 2026-09-06T23:11:00
-image: /assets/images/749b27099c73/dataverse-functions.png
+image: assets/images/982b578f44b8/dataverse-functions.png
 description: Explore Dataverse Functions, a low-code way to build server-side logic using Power Fx and integrate seamlessly with Power Apps and Power Automate.
 meta_keywords: Dataverse Functions, Dataverse Plugins, Low Code Plugins, Server Side Logic, Dataverse Automation, Power Platform Functions, Custom Business Logic, Dataverse Development, Microsoft Power Platform, Dataverse Web API
 category: Power Platform
