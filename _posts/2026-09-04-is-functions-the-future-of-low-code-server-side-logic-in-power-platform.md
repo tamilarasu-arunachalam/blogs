@@ -34,7 +34,7 @@ Server-side logic provides several benefits, including:
 
 ## Properties of Functions
 
-![Dataverse Function Properties](/assets/images/fc39595011bc/function-properties.png)
+![Dataverse Function Properties](assets/images/f27b848bfeed/function-properties.png)
 
 As Functions are manually invokable and custom coded, they support parameters with the following data types:
 
@@ -47,13 +47,13 @@ As Functions are manually invokable and custom coded, they support parameters wi
 
 Below are the unique properties of these parameters.
 
-![Dataverse Function parameter Properties](/assets/images/c1f2a39fea5f/function-parameter-properties.png)
+![Dataverse Function parameter Properties](assets/images/608488e54643/function-parameter-properties.png)
 
 ## Access Permissions for Functions
 
 Below are the access permissions available for Functions.
 
-![Dataverse Functions permissions](/assets/images/afdc28d5fcc7/function-permissions.png)
+![Dataverse Functions permissions](assets/images/25cf7bcba644/function-permissions.png)
 
 ## Creating a Function
 
@@ -63,9 +63,13 @@ To create a Function in Power Platform, the user must have the **System Customiz
 
 Follow the steps below:
 
+![Create Dataverse Functions](/assets/images/65cef04e27f7/function-create-new-1.png)
+
 1. Navigate to the preferred Solution → **Objects → Automation → Function**.
 2. A side pane will open, prompting you to enter the **Display Name** and **Description** for the Function.
+![Create Dataverse Functions](/assets/images/17b258113789/function-create-new-2.png)
 3. Add the required **Input** and **Output Parameters** along with their names and data types.
+![Create Dataverse Functions](/assets/images/314f6c54e31b/function-create-new-3.png)
 4. Optionally, select table references from the supported list of Dataverse tables. These references can be used to access data through functions such as **Filter()** and **LookUp()**.
 5. Enter the Power Fx expression in the **Formula** field.
 6. Save and publish the Function.
@@ -81,35 +85,49 @@ To debug a Function using the `Trace()` function, ensure that plug-in and custom
 
 ## Invoking Functions Across Different Platforms
 
-### Invoke a Function from a Canvas App or Custom Page
-
-**Canvas App:**
+### **Canvas App:**
 
 You can call your function with parameter like below
-```
+
+```plain
 Environment.new_GetRevenueandCreditLimit(
 {
     AccountId: a1837caf-84a4-4627-a0c6-8b8dc2fc7dc8
 }
 );
 ```
-Invoke Functions from a Power Automate Cloud Flow
-In a cloud flow, add a new action from the Microsoft Dataverse connector.
-Select the action called Perform an unbound action.
-Select your Function. The Function will appear with its unique schema name and prefix.
-Provide values for all required input parameters.
-Invoke Functions from the Dataverse Web API
+
+### Power Automate Cloud Flow
+
+- In a cloud flow, add a new action from the Microsoft Dataverse connector.
+- Select the action called Perform an unbound action.
+- Select your Function. The Function will appear with its unique schema name and prefix.
+- Provide values for all required input parameters.
+
+### Dataverse Web API
 
 Functions can also be invoked from the Dataverse Web API, making them accessible from external applications and integrations.
 
-Limitations of Dataverse Functions
+```
+POST [Organization URI]/api/data/v9.1/myapi_CustomUnboundAPI
+OData-MaxVersion: 4.0
+OData-Version: 4.0
+Content-Type: application/json; charset=utf-8
+
+{
+  "AccountId": "a1837caf-84a4-4627-a0c6-8b8dc2fc7dc8"
+}
+```
+
+## Limitations of Dataverse Functions
 
 Dataverse Functions currently support only the list of Power Fx functions documented in Microsoft Learn. Before implementing Functions in production scenarios, it is recommended to review the latest supported functions and limitations in the official Microsoft documentation.
 
-References:
-Streamline app development with low-code plug-ins in Microsoft Dataverse - Power Apps - Microsoft Learn
-Functions in Microsoft Dataverse - Power Apps - Microsoft Learn
-Create and use functions in Microsoft Dataverse - Power Apps - Microsoft Learn
-Invoke a function using Power Platform - Power Apps - Microsoft Learn
-Example functions in Microsoft Dataverse - Power Apps - Microsoft Learn
-Supported functions in Microsoft Dataverse - Power Apps - Microsoft Learn
+### References:
+
+- [Functions in Microsoft Dataverse - Power Apps - Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/low-code-plug-ins?tabs=instant)
+- [Create and use functions in Microsoft Dataverse - Power Apps - Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/functions-create)
+- [Invoke a function using Power Platform - Power Apps - Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/functions-invoke)
+- [Example functions in Microsoft Dataverse - Power Apps - Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/functions-examples)
+- [Supported functions in Microsoft Dataverse - Power Apps - Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/functions-supported-power-fx)
+- [Streamline app development with low-code plug-ins in Microsoft Dataverse - Power Apps - Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/low-code-plug-ins?tabs=instant)
