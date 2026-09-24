@@ -5,8 +5,35 @@
     <link>http://localhost:4000/</link>
     <description>Documenting my developer journey: unpacking the how, what, and why behind the technical situations I tackle every day.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Aug 2026 21:54:20 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 19:10:51 +0530</lastBuildDate>
     <generator>Jekyll RSS</generator>
+    
+    <item>
+      <title>Is Functions the Future of Low-Code Server-Side Logic in Power Platform?</title>
+      <link>http://localhost:4000/create-and-use-dataverse-functions.html</link>
+      <guid isPermaLink="true">http://localhost:4000/create-and-use-dataverse-functions.html</guid>
+      <pubDate>Mon, 07 Sep 2026 04:41:00 +0530</pubDate>
+      <description>&lt;p&gt;As the traditional plugin process for executing server-side business logic is quite complex and time-consuming, developers need to create a Plugin as a custom class, compile it into a .NET Framework assembly, and then register the assembly using the Plugin Registration Tool in Dataverse.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Clone Dataverse Records with Power Fx in Model-Driven Apps</title>
+      <link>http://localhost:4000/clone-dataverse-records-power-fx-mda.html</link>
+      <guid isPermaLink="true">http://localhost:4000/clone-dataverse-records-power-fx-mda.html</guid>
+      <pubDate>Sun, 23 Aug 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;If you or someone in your role has to create the same kind of records manually multiple times, you may have already hated doing it. So, I came up with something to solve this problem.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What is Clone, Patch and Clone a Patch in Power Platform Solutions?</title>
+      <link>http://localhost:4000/clone-patch-and-clone-a-patch-in-power-platform-solutions.html</link>
+      <guid isPermaLink="true">http://localhost:4000/clone-patch-and-clone-a-patch-in-power-platform-solutions.html</guid>
+      <pubDate>Sun, 09 Aug 2026 23:11:00 +0530</pubDate>
+      <description>&lt;p&gt;Solutions are containers of components used to move customizations and configurations across environments. Solutions are of two types: &lt;strong&gt;Managed Solutions&lt;/strong&gt; and &lt;strong&gt;Unmanaged Solutions&lt;/strong&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript</title>
@@ -169,33 +196,6 @@ That’s when I wired up GitHub Actions to handle it for me. Now every merge to 
       <guid isPermaLink="true">http://localhost:4000/debugging-and-troubleshooting-shortcuts-model-driven-apps.html</guid>
       <pubDate>Mon, 06 Apr 2026 23:11:00 +0530</pubDate>
       <description>&lt;p&gt;There is a quote about debugging from Brian Kernighan (Author and Co-contributor for Unix):&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How to Customize the Sign in page in Power Pages Easily</title>
-      <link>http://localhost:4000/customize-signin-page-power-pages.html</link>
-      <guid isPermaLink="true">http://localhost:4000/customize-signin-page-power-pages.html</guid>
-      <pubDate>Mon, 30 Mar 2026 02:41:00 +0530</pubDate>
-      <description>&lt;p&gt;Power Pages allows users to sign in using different providers like Entra ID, Google, LinkedIn, and others, which is great for authentication flexibility, but the default sign in page UI is quite basic and not easy to customize. Many developers struggle to match the login experience with their branding or modern UI expectations, so in this blog, we will see a simple and practical way to customize the sign in page by using content snippets, hiding the default components, and building a clean custom login page using Bootstrap.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Implement Data Summarization API for Dataverse in Power Pages</title>
-      <link>http://localhost:4000/data-summarization-api-power-pages.html</link>
-      <guid isPermaLink="true">http://localhost:4000/data-summarization-api-power-pages.html</guid>
-      <pubDate>Sun, 15 Mar 2026 23:11:00 +0530</pubDate>
-      <description>&lt;p&gt;In today’s AI-driven world, summarizing information has become incredibly easy. We can summarize long articles, web pages, books, and even lengthy videos within seconds using AI tools. Microsoft is gradually bringing similar AI capabilities into the Power Platform ecosystem.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide</title>
-      <link>http://localhost:4000/client-api-power-pages-crud-guide.html</link>
-      <guid isPermaLink="true">http://localhost:4000/client-api-power-pages-crud-guide.html</guid>
-      <pubDate>Sun, 15 Feb 2026 23:11:00 +0530</pubDate>
-      <description>&lt;p&gt;If you have worked with Power Pages, you probably got stuck at some point using webapi.safeAjax for Dataverse operations. Microsoft introduced the $pages Client API to simplify how developers interact with forms, authentication, Dataverse data, and multilingual configuration directly from custom HTML and JavaScript pages.&lt;/p&gt;
 </description>
     </item>
     

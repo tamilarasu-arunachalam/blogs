@@ -154,12 +154,12 @@
 
                 <form action="https://docs.google.com/forms/d/e/1FAIpQLSdbXaYwkQCSgz9JCCl_Etkox3wk8W971dZxkMB8QhaPaOFuew/formResponse" target="_self" method="POST" id="contact-form" onsubmit="handleFormSubmit(event)">
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="name" name="entry.1374407783" placeholder="John Doe" required="" />
+                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="name" name="entry.1374407783" placeholder="John Doe" pattern="[A-Za-z\s]+" title="Name should only contain alphabets and spaces" required="" />
                         <label for="name" class="fw-bold text-secondary">Your Name</label>
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <input type="email" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="email" name="entry.1875774789" placeholder="john@example.com" required="" />
+                        <input type="email" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="email" name="entry.1875774789" placeholder="john@example.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Please enter a valid email address (e.g., user@domain.com)" required="" />
                         <label for="email" class="fw-bold text-secondary">Email Address</label>
                     </div>
                     
@@ -229,7 +229,7 @@
 </style>
 
 <script>
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
     const btn = document.getElementById('submit-btn');
     const form = document.getElementById('contact-form');
@@ -243,8 +243,42 @@ function handleFormSubmit(e) {
     
     // Loading state
     const originalContent = btn.innerHTML;
-    btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Validating Email...';
     btn.disabled = true;
+
+    // Check email domain validity
+    const emailValue = document.getElementById('email').value;
+    const domain = emailValue.split('@')[1];
+    
+    try {
+        const response = await fetch(`https://api.mailcheck.ai/domain/${domain}`);
+        const data = await response.json();
+        
+        // Handle invalid domains (API returns 400 Bad Request)
+        if (!response.ok || data.error || data.status === 400) {
+            alert('The email domain does not appear to be valid. Please check your email address.');
+            btn.innerHTML = originalContent;
+            btn.disabled = false;
+            return;
+        }
+
+        if (!data.mx) {
+            alert('The email domain cannot receive emails. Please check your email address.');
+            btn.innerHTML = originalContent;
+            btn.disabled = false;
+            return;
+        }
+        if (data.disposable) {
+            alert('Disposable email addresses are not allowed. Please use a regular email address.');
+            btn.innerHTML = originalContent;
+            btn.disabled = false;
+            return;
+        }
+    } catch (err) {
+        console.warn('Email validation API failed, proceeding with submission:', err);
+    }
+    
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
     
     const formData = new FormData(form);
     fetch(form.action, {

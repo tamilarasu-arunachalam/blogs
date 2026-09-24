@@ -1,6 +1,27 @@
 [
   
     {
+      "title"    : "Is Functions the Future of Low-Code Server-Side Logic in Power Platform?",
+      "category" : "Power Platform",
+      "url"      : "/create-and-use-dataverse-functions.html",
+      "date"     : "September 7, 2026"
+    } ,
+  
+    {
+      "title"    : "How to Clone Dataverse Records with Power Fx in Model-Driven Apps",
+      "category" : "Dataverse",
+      "url"      : "/clone-dataverse-records-power-fx-mda.html",
+      "date"     : "August 23, 2026"
+    } ,
+  
+    {
+      "title"    : "What is Clone, Patch and Clone a Patch in Power Platform Solutions?",
+      "category" : "Power Platform",
+      "url"      : "/clone-patch-and-clone-a-patch-in-power-platform-solutions.html",
+      "date"     : "August 9, 2026"
+    } ,
+  
+    {
       "title"    : "Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript",
       "category" : "Dynamics 365 CE",
       "url"      : "/hide-ribbon-button-based-on-environment-type-d365-ce-js.html",
