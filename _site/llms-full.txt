@@ -1,7 +1,9 @@
+# Tamilarasu Arunachalam - Full
+
+> A technical blog focused on readable tutorials and practical solutions for Dynamics 365, Power Platform, Azure, JavaScript, and CRM automation.
+
 Site: Tamilarasu Arunachalam
 URL: https://tamilarasu-arunachalam.github.io
-Description: A technical blog focused on readable tutorials and practical solutions for Dynamics 365, Power Platform, Azure, JavaScript, and CRM automation.
-
 Primary Audience:
 - Developers and technical architects
 - Power Platform professionals
