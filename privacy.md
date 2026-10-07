@@ -22,20 +22,23 @@ permalink: /privacy/
                 <ul class="mb-4">
                     <li><strong>Email Addresses:</strong> Only when you voluntarily subscribe to our newsletter.</li>
                     <li><strong>Log Files:</strong> Standard browser information, IP address, and time of access.</li>
-                    <li><strong>Cookies:</strong> To personalize your experience and track site performance.</li>
+                    <li><strong>Cookies and similar technologies:</strong> Optional analytics technologies are used only if you allow them in Cookie preferences.</li>
                 </ul>
 
-                <h2 class="h3 fw-bold mt-5 mb-3">2. Google AdSense & Third-Party Advertising</h2>
+                <h2 class="h3 fw-bold mt-5 mb-3">2. Cookie Preferences</h2>
+                <p>Essential storage is used to remember your cookie preference. If you allow analytics, Google Analytics and Microsoft Clarity may use cookies or similar technologies to help us understand how visitors use the site. If you allow third-party comments, the Cusdis comments service is loaded on blog posts. These optional services are not loaded unless you opt in to their category. You can accept or reject them, or change your choices at any time using the Cookie preferences link in the footer.</p>
+
+                <h2 class="h3 fw-bold mt-5 mb-3">3. Google AdSense & Third-Party Advertising</h2>
                 <p>We use third-party advertising companies, including Google, to serve ads when you visit our website. These companies may use information about your visits to this and other websites in order to provide advertisements about goods and services of interest to you.</p>
                 <p>Google uses the DoubleClick cookie to enable it and its partners to serve ads to users based on their visit to your sites and/or other sites on the Internet.</p>
 
-                <h2 class="h3 fw-bold mt-5 mb-3">3. Affiliate Disclosure</h2>
+                <h2 class="h3 fw-bold mt-5 mb-3">4. Affiliate Disclosure</h2>
                 <p>TechBlog participates in various affiliate marketing programs. When you click on an affiliate link and make a purchase, we may receive a small commission at no additional cost to you. These commissions help support our research and the content we provide for free.</p>
 
-                <h2 class="h3 fw-bold mt-5 mb-3">4. Security</h2>
+                <h2 class="h3 fw-bold mt-5 mb-3">5. Security</h2>
                 <p>We employ standard security protocols to protect your personal information. However, no method of transmission over the internet is 100% secure.</p>
 
-                <h2 class="h3 fw-bold mt-5 mb-3">5. Contact Us</h2>
+                <h2 class="h3 fw-bold mt-5 mb-3">6. Contact Us</h2>
                 <p>If you have any questions about this Privacy Policy, please <a href="/contact">contact us here</a>.</p>
             </article>
         </div>

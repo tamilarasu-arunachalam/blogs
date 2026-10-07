@@ -11,6 +11,12 @@ github_username:  tamilarasu-arunachalam
 markdown: kramdown
 theme: minima
 permalink: /:title.html
+sass:
+  quiet_deps: true
+  silence_deprecations:
+    - import
+    - global-builtin
+    - color-functions
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag

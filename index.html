@@ -40,11 +40,11 @@ title: Home
                 <ul class="dropdown-menu dropdown-menu-end shadow-sm rounded-4 border-0 mt-2" aria-labelledby="categoryDropdown">
                     <li><button class="dropdown-item category-filter-btn active fw-medium" data-category="all">All Categories</button></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="dynamics 365 ce">Dynamics 365 CE</button></li>
-                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="power automate">Power Automate</button></li>
-                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="power pages">Power Pages</button></li>
-                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="ai programming">AI Programming</button></li>
-                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="extension development">Extension Development</button></li>
+                    {% assign filter_categories = site.posts | map: "category" | compact | uniq | sort %}
+                    {% for category in filter_categories %}
+                    {% assign category_key = category | downcase | escape %}
+                    <li><button class="dropdown-item category-filter-btn fw-medium" data-category="{{ category_key }}">{{ category | escape }}</button></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -80,7 +80,7 @@ title: Home
                         </div>
                         <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
                              {% if post.category %}
-                             <span class="category-pill">{{ post.category }}</span>
+                             <span class="category-pill">{{ post.category | escape }}</span>
                              {% endif %}
                         </div>
                     </div>

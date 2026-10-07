@@ -1,0 +1,56 @@
+<section id="cookie-consent-banner" class="cookie-consent-banner" aria-label="Cookie preferences" hidden>
+    <div class="cookie-consent-copy">
+        <h2 class="h5 fw-bold mb-2">Your cookie preferences</h2>
+        <p class="mb-0">We use essential storage to remember your choice. You can choose whether to enable optional analytics and third-party comments.</p>
+        <p class="cookie-consent-status small mb-0 mt-2" role="status" aria-live="polite"></p>
+    </div>
+    <div class="cookie-consent-actions">
+        <button type="button" class="btn btn-outline-secondary" data-cookie-reject>Reject optional</button>
+        <button type="button" class="btn btn-outline-primary" data-cookie-customize>Customize</button>
+        <button type="button" class="btn btn-primary" data-cookie-accept>Accept all</button>
+    </div>
+</section>
+
+<dialog id="cookie-preferences-dialog" class="cookie-preferences-dialog" aria-labelledby="cookie-preferences-title"
+    aria-describedby="cookie-preferences-description">
+    <form method="dialog" class="cookie-preferences-content">
+        <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
+            <div>
+                <h2 id="cookie-preferences-title" class="h4 fw-bold mb-2">Cookie preferences</h2>
+                <p id="cookie-preferences-description" class="text-secondary mb-0">Choose whether to allow optional services. Essential storage is always active so we can remember your choice.</p>
+            </div>
+            <button type="button" class="btn-close" aria-label="Close cookie preferences" data-cookie-close></button>
+        </div>
+        <fieldset class="cookie-preferences-option">
+            <legend class="visually-hidden">Cookie categories</legend>
+            <div class="d-flex justify-content-between align-items-start gap-3">
+                <div>
+                    <h3 class="h6 fw-bold mb-1">Essential storage</h3>
+                    <p class="small text-secondary mb-0">Required to save your cookie preferences. Always active.</p>
+                </div>
+                <span class="badge text-bg-light border">Always on</span>
+            </div>
+            <hr>
+            <label class="d-flex justify-content-between align-items-start gap-3" for="cookie-analytics">
+                <span>
+                    <span class="d-block fw-bold">Analytics</span>
+                    <span class="d-block small text-secondary">Allows Google Analytics and Microsoft Clarity to measure site usage.</span>
+                </span>
+                <input id="cookie-analytics" class="form-check-input mt-1" type="checkbox">
+            </label>
+            <hr>
+            <label class="d-flex justify-content-between align-items-start gap-3" for="cookie-comments">
+                <span>
+                    <span class="d-block fw-bold">Third-party comments</span>
+                    <span class="d-block small text-secondary">Allows the Cusdis comments service to load on blog posts.</span>
+                </span>
+                <input id="cookie-comments" class="form-check-input mt-1" type="checkbox">
+            </label>
+        </fieldset>
+        <p class="cookie-consent-status small mt-3 mb-0" role="status" aria-live="polite"></p>
+        <div class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2 mt-4">
+            <button type="button" class="btn btn-outline-secondary" data-cookie-reject>Reject optional</button>
+            <button type="button" class="btn btn-primary" data-cookie-save>Save preferences</button>
+        </div>
+    </form>
+</dialog>

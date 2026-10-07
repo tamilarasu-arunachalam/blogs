@@ -45,7 +45,7 @@ read_time: "8 min read"
 
 - **📌 Pinned Posts**: Set `pinned: true` in any post to make it stay at the top of the homepage list permanently.
 - **🔗 Clean URLs**: Your URLs are now automatically formatted as `yourdomain.com/post-title.html` for better SEO and clean sharing.
-- **🧭 Live Category Filter**: The home page features a real-time JavaScript filter. Simply adding a new category to a post will automatically add a filter button to the list.
+- **🧭 Live Category Filter**: The home page builds its filter buttons from the distinct `category` values used in published posts. Add a `category` to a new post and its filter option appears on the next site build; `categories` is for secondary tags and does not add filter options.
 - **🗂️ Table of Contents**: Use the `topics:` field in the front matter to generate a professional TOC at the top of your post.
 - **💡 Smart Related Posts**: The bottom of every post now features a 3-grid "You might also like" section, which intelligently pulls articles from the same category.
 - **❓ FAQ Accordion**: Use the `faq:` field in the front matter to include a professional FAQ section at the end of your content.
