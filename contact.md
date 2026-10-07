@@ -28,7 +28,7 @@ permalink: /contact/
                 <form action="https://docs.google.com/forms/d/e/1FAIpQLSdbXaYwkQCSgz9JCCl_Etkox3wk8W971dZxkMB8QhaPaOFuew/formResponse"
       target="_self" method="POST" id="contact-form" onsubmit="handleFormSubmit(event)">
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="name" name="entry.1374407783" placeholder="John Doe" pattern="[A-Za-z\s]+" title="Name should only contain alphabets and spaces" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '')" required>
+                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="name" name="entry.1374407783" placeholder="John Doe" pattern="[A-Za-z\s]+" title="Name should only contain alphabets and spaces" required>
                         <label for="name" class="fw-bold text-secondary">Your Name</label>
                     </div>
                     
@@ -109,6 +109,12 @@ permalink: /contact/
 </style>
 
 <script>
+const contactFormLoadedAt = Date.now();
+const nameInput = document.getElementById('name');
+nameInput.addEventListener('input', () => {
+    nameInput.value = nameInput.value.replace(/[^A-Za-z\s]/g, '');
+});
+
 async function handleFormSubmit(e) {
     e.preventDefault();
     const btn = document.getElementById('submit-btn');
@@ -123,8 +129,9 @@ async function handleFormSubmit(e) {
 
     // Honeypot check
     const honeypot = document.getElementById('honeypot_website').value;
-    if (honeypot) {
-        console.warn('Spam detected');
+    const submittedTooQuickly = Date.now() - contactFormLoadedAt < 3000;
+    if (honeypot || submittedTooQuickly) {
+        console.warn('Automated submission blocked');
         overlay.style.opacity = '1';
         overlay.style.pointerEvents = 'auto';
         form.reset();
