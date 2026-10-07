@@ -7,15 +7,17 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: "assets/images/{{post_id}}"
-public_folder: "/assets/images/{{post_id}}"
+media_folder: "assets/images/{{slug}}"
+public_folder: "/assets/images/{{slug}}"
 
 collections:
   - name: "posts"
     label: "Blog Posts"
     folder: "_posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: "post_id"
+    summary: "{{title}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Post ID", name: "post_id", widget: "string"}

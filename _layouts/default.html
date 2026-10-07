@@ -13,9 +13,8 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}"
     href="{{ site.url }}{{ site.baseurl }}/feed.xml">
   <!-- keywords -->
-  <meta name="keywords" content="{{ page.meta_keywords | default: " Tamilarasu, Tamilarasu Arunachalam, Tamilarasu Power
-    Platform, Tamilarasu Arunachalam Developer, Tamilarasu chrome extensions, Tamilarasu blogs, Power Platform blogs,
-    Dynamics 365 blogs" }}">
+  {% assign page_keywords = page.meta_keywords | join: ", " %}
+  <meta name="keywords" content="{{ page_keywords | default: 'Tamilarasu, Tamilarasu Arunachalam, Power Platform, Dynamics 365' | escape }}">
 
   <!-- Bootstrap 5 CSS -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>

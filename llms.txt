@@ -1,18 +1,29 @@
-# Tamilarasu Arunachalam
+---
+layout: null
+permalink: /llms.txt
+---
+# {{ site.title | escape }}
 
-> High readability technical blog covering Dynamics 365, Power Apps, Power Automate, Azure, JavaScript, and CRM development.
+> {{ site.description | escape }}
 
-- Site: Tamilarasu Arunachalam
-- URL: https://tamilarasu-arunachalam.github.io
-- Language: en
-- Geo: Chennai, India
-- Audience: Developers, IT professionals, makers, and technical readers
-- Topics: Dynamics 365, Power Platform, Azure, JavaScript, Web Development, CRM, Automation
-- Keywords: dynamics 365, power apps, power automate, azure, crm, javascript, technical blog, seo, ai optimization
-- Sitemap: https://tamilarasu-arunachalam.github.io/sitemap.xml
-- RSS: https://tamilarasu-arunachalam.github.io/rss.xml
-- Feed: https://tamilarasu-arunachalam.github.io/feed.atom
-- Robots: https://tamilarasu-arunachalam.github.io/robots.txt
-- Security: https://tamilarasu-arunachalam.github.io/security.txt
-- Humans: https://tamilarasu-arunachalam.github.io/humans.txt
-- LLMS-Full: https://tamilarasu-arunachalam.github.io/llms-full.txt
+This site publishes practical tutorials and technical articles about Dynamics 365, Power Platform, Power Apps, Power Automate, Dataverse, Azure, JavaScript, and web development.
+
+## Site
+
+- [Home]({{ '/' | absolute_url }}): Browse the latest articles.
+- [About]({{ '/about/' | absolute_url }}): About the author and this site.
+- [Contact]({{ '/contact/' | absolute_url }}): Contact the author.
+- [Privacy policy]({{ '/privacy/' | absolute_url }}): Privacy and cookie preferences.
+- [Terms]({{ '/terms/' | absolute_url }}): Site terms.
+
+## Discovery
+
+- [Sitemap]({{ '/sitemap.xml' | absolute_url }}): Discover site pages and published articles.
+- [Atom feed]({{ '/feed.xml' | absolute_url }}): Follow new articles.
+- [Full site index]({{ '/llms-full.txt' | absolute_url }}): Site overview and links to published articles.
+
+## Recent articles
+
+{% for post in site.posts limit: 10 %}
+- [{{ post.title | strip_html | escape }}]({{ post.url | absolute_url }}){% if post.description and post.description != "" %}: {{ post.description | strip_html | normalize_whitespace | escape }}{% endif %}
+{% endfor %}

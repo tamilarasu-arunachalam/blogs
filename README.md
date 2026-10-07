@@ -89,6 +89,7 @@ A custom CMS is available at `/admin/` using Google authentication and GitHub AP
 - `admin/config.yml`: Not used by this custom admin panel.
 - `posts` are managed from `_posts/`.
 - Common pages are available as editable files: `about.md`, `contact.md`, `privacy.md`, and `terms.md`.
+- Assign each post a unique numeric `post_id` before uploading images. The CMS uses that ID for the asset folder, saving images under `assets/images/<post_id>/` while keeping the post filename based on its date and title.
 
 ### How to use it
 

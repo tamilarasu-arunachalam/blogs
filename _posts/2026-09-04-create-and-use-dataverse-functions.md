@@ -3,7 +3,7 @@ layout: post
 post_id: '083'
 title: Is Functions the Future of Low-Code Server-Side Logic in Power Platform?
 date: 2026-09-06T23:11:00
-image: assets/images/982b578f44b8/dataverse-functions.png
+image: assets/images/083/dataverse-functions.png
 description: Explore Dataverse Functions, a low-code way to build server-side logic using Power Fx and integrate seamlessly with Power Apps and Power Automate.
 meta_keywords: Dataverse Functions, Dataverse Plugins, Low Code Plugins, Server Side Logic, Dataverse Automation, Power Platform Functions, Custom Business Logic, Dataverse Development, Microsoft Power Platform, Dataverse Web API
 category: Power Platform
@@ -34,7 +34,7 @@ Server-side logic provides several benefits, including:
 
 ## Properties of Functions
 
-![Dataverse Function Properties](assets/images/f27b848bfeed/function-properties.png)
+![Dataverse Function Properties](assets/images/083/function-properties.png)
 
 As Functions are manually invokable and custom coded, they support parameters with the following data types:
 
@@ -47,13 +47,13 @@ As Functions are manually invokable and custom coded, they support parameters wi
 
 Below are the unique properties of these parameters.
 
-![Dataverse Function parameter Properties](assets/images/608488e54643/function-parameter-properties.png)
+![Dataverse Function parameter Properties](assets/images/083/function-parameter-properties.png)
 
 ## Access Permissions for Functions
 
 Below are the access permissions available for Functions.
 
-![Dataverse Functions permissions](assets/images/25cf7bcba644/function-permissions.png)
+![Dataverse Functions permissions](assets/images/083/function-permissions.png)
 
 ## Creating a Function
 
@@ -63,13 +63,13 @@ To create a Function in Power Platform, the user must have the **System Customiz
 
 Follow the steps below:
 
-![Create Dataverse Functions](assets/images/a304b5e57679/function-create-new-1.png)
+![Create Dataverse Functions](assets/images/083/function-create-new-1.png)
 
 - Navigate to the preferred Solution → **Objects → Automation → Function**.
 - A side pane will open, prompting you to enter the **Display Name** and **Description** for the Function.
-![Create Dataverse Functions](assets/images/8d855a785cf0/function-create-new-2.png)
+![Create Dataverse Functions](assets/images/083/function-create-new-2.png)
 - Add the required **Input** and **Output Parameters** along with their names and data types.
-![Create Dataverse Functions](assets/images/dfef384e1a74/function-create-new-3.png)
+![Create Dataverse Functions](assets/images/083/function-create-new-3.png)
 - Optionally, select table references from the supported list of Dataverse tables. These references can be used to access data through functions such as **Filter()** and **LookUp()**.
 - Enter the Power Fx expression in the **Formula** field.
 - Save and publish the Function.

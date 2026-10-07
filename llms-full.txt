@@ -1,40 +1,25 @@
-# Tamilarasu Arunachalam - Full
+---
+layout: null
+permalink: /llms-full.txt
+---
+# {{ site.title | escape }} — Full Site Index
 
-> A technical blog focused on readable tutorials and practical solutions for Dynamics 365, Power Platform, Azure, JavaScript, and CRM automation.
+> {{ site.description | escape }}
 
-Site: Tamilarasu Arunachalam
-URL: https://tamilarasu-arunachalam.github.io
-Primary Audience:
-- Developers and technical architects
-- Power Platform professionals
-- Microsoft Dynamics 365 implementers
-- Automation and integration specialists
+This site contains practical tutorials and technical articles about Dynamics 365, Power Platform, Power Apps, Power Automate, Dataverse, Azure, JavaScript, and web development. Articles are written for developers, IT professionals, makers, and technical readers.
 
-Primary Topics:
-- Dynamics 365 and Power Apps development
-- Power Automate flows and connectors
-- Azure integrations and cloud automation
-- JavaScript solutions for business applications
-- CRM customization, plugins, and API usage
+## Site resources
 
-SEO / AEO Metadata:
-- Language: English
-- Geo: Chennai, India
-- Content Type: Technical articles, tutorials, product reviews, how-to guides
-- Structured Data: Jekyll SEO Tag plugin enabled
+- [Home]({{ '/' | absolute_url }})
+- [About]({{ '/about/' | absolute_url }})
+- [Contact]({{ '/contact/' | absolute_url }})
+- [Privacy policy]({{ '/privacy/' | absolute_url }})
+- [Terms]({{ '/terms/' | absolute_url }})
+- [Sitemap]({{ '/sitemap.xml' | absolute_url }})
+- [Atom feed]({{ '/feed.xml' | absolute_url }})
 
-Important Resources:
-- Sitemap: https://tamilarasu-arunachalam.github.io/sitemap.xml
-- RSS Feed: https://tamilarasu-arunachalam.github.io/rss.xml
-- Atom Feed: https://tamilarasu-arunachalam.github.io/feed.atom
-- Robots: https://tamilarasu-arunachalam.github.io/robots.txt
-- Security: https://tamilarasu-arunachalam.github.io/security.txt
-- Humans: https://tamilarasu-arunachalam.github.io/humans.txt
+## Published articles
 
-Contact:
-- Email: contact@yourdomain.com
-- Twitter: https://twitter.com/tamilarasu
-- GitHub: https://github.com/tamilarasu-arunachalam
-
-Notes:
-This file is intended as a machine-readable summary of site structure, audience, and content scope for search engines, geotargeting, and AI optimization.
+{% for post in site.posts %}
+- [{{ post.title | strip_html | escape }}]({{ post.url | absolute_url }}){% if post.description and post.description != "" %}: {{ post.description | strip_html | normalize_whitespace | escape }}{% endif %}
+{% endfor %}
