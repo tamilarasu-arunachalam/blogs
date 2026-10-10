@@ -103,17 +103,21 @@ A custom CMS is available at `/admin/` using Google authentication and GitHub AP
 
 ## Contact Form Spam Protection
 
-The contact form sends submissions to a Google Apps Script web app. The app checks the honeypot and submission timing server-side, saves accepted messages to the Google Form's linked response spreadsheet, and sends an admin notification. It does not send confirmation emails to submitted addresses. No CAPTCHA service is used.
+The contact form posts to a Google Apps Script web app. The app silently drops submissions that fill the honeypot, arrive less than three seconds after page load, fail validation, or exceed the rate limits. Accepted submissions are saved to the Google Form's linked response spreadsheet and send both an admin notification and a confirmation email to the submitted address. No CAPTCHA service is used.
 
 1. In Google Forms, open **Responses** and turn off **Accepting responses** so the public `formResponse` URL cannot bypass the web app.
 2. Open the linked response spreadsheet and copy its ID from the URL.
 3. In Apps Script, remove any installed `onFormSubmit` trigger for the old email handler so it cannot send duplicate notifications.
 4. Create or update the Apps Script project with `google-apps-script/Code.gs`, then add this Script Property under **Project Settings**:
    - `SPREADSHEET_ID`: the linked response spreadsheet ID.
-5. Deploy the script as a **Web app**, executing as yourself and allowing access to anyone. Copy the deployment URL.
-6. Set `contact_form_endpoint` in `_config.yml` to the deployment URL, then rebuild and deploy the site.
+5. Run `authorize` once from the Apps Script editor and approve the requested permissions.
+6. Deploy the script as a **Web app**, executing as yourself and allowing access to anyone. Copy the deployment URL.
+7. Set `contact_form_endpoint` in `_config.yml` to the deployment URL, then rebuild and deploy the site.
+8. Submit a test message from the deployed site after leaving the page open for at least three seconds. Confirm the response sheet row and both emails, then submit again from the same email within 10 minutes and confirm that no second message is processed.
 
-The linked response sheet must retain its Google Form headers (`Full Name`, `Email Address`, `Subject`, and `Message`). The script appends accepted messages and sends an admin notification to `hello@tamilarasu.blog`; it never sends email to the address entered by the visitor. Without a CAPTCHA or server-side identity/rate-limit service, the honeypot and timing checks only deter basic bots; a bot that directly posts forged values can still submit.
+The linked response sheet must retain its Google Form headers (`Full Name`, `Email Address`, `Subject`, and `Message`); a `Timestamp` column is also populated when present. The script allows at most one accepted submission per email every 10 minutes and 4 accepted submissions per hour overall (`EMAIL_COOLDOWN_MS` and `MAX_PER_HOUR` in `Code.gs`).
+
+Redeploy every script edit using **Deploy → Manage deployments → Edit → New version → Deploy**. Because the browser uses `mode: 'no-cors'`, it cannot read the Apps Script response. The page shows its thank-you message when the request completes, including for server-side silent drops; check Apps Script **Executions** and the response spreadsheet when troubleshooting. A confirmation email can be abused to send mail to submitted addresses; the cooldown and hourly cap reduce, but do not eliminate, that risk. Remove the second `GmailApp.sendEmail` call in `Code.gs` if you do not want confirmation emails. Bots can bypass the client-side timer and honeypot, so this is deterrence and rate limiting, not CAPTCHA or strong bot authentication.
 
 ---
 Built with ❤️ for performance-driven technical writing.

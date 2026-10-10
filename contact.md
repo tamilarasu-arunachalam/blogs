@@ -25,15 +25,14 @@ permalink: /contact/
                     <button type="button" class="btn btn-outline-dark rounded-pill px-4 mt-2" onclick="resetForm()">Send Another</button>
                 </div>
 
-                <form action="{{ site.contact_form_endpoint | escape }}"
-      target="contact-response-frame" method="POST" id="contact-form" onsubmit="handleFormSubmit(event)">
+                <form id="contactForm">
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="name" name="name" placeholder="John Doe" pattern="[A-Za-z\s]+" title="Name should only contain alphabets and spaces" maxlength="100" required>
-                        <label for="name" class="fw-bold text-secondary">Your Name</label>
+                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="fullName" name="fullName" placeholder="John Doe" maxlength="100" required>
+                        <label for="fullName" class="fw-bold text-secondary">Your Name</label>
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <input type="email" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="email" name="email" placeholder="john@example.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Please enter a valid email address (e.g., user@domain.com)" maxlength="254" required>
+                        <input type="email" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="email" name="email" placeholder="john@example.com" maxlength="254" required>
                         <label for="email" class="fw-bold text-secondary">Email Address</label>
                     </div>
                     
@@ -47,18 +46,9 @@ permalink: /contact/
                         <label for="message" class="fw-bold text-secondary">How can I help?</label>
                     </div>
 
-                    <input type="hidden" id="request-nonce" name="request_nonce">
-                    <input type="hidden" id="form-loaded-at" name="form_loaded_at">
-                    
                     <!-- Honeypot Field -->
-                    <div class="form-floating mb-4" style="display: none;" aria-hidden="true">
-                        <input type="text" class="form-control form-control-lg border-2 rounded-3" id="honeypot_website" name="honeypot_website" tabindex="-1" autocomplete="off" placeholder="Website">
-                        <label for="honeypot_website">Website</label>
-                    </div>
-
-                    <div class="form-floating mb-4" style="display: none;" aria-hidden="true">
-                        <input type="text" class="form-control form-control-lg border-2 rounded-3" id="phone_number" name="phone_number" tabindex="-1" autocomplete="off" placeholder="Phone Number">
-                        <label for="phone_number">Phone Number</label>
+                    <div style="position: absolute; left: -9999px;" aria-hidden="true">
+                        <input type="text" name="website" tabindex="-1" autocomplete="off">
                     </div>
 
                     <p id="form-status" class="visually-hidden" role="status" aria-live="polite"></p>
@@ -70,7 +60,6 @@ permalink: /contact/
                         </button>
                     </div>
                 </form>
-                <iframe name="contact-response-frame" id="contact-response-frame" title="Contact form response" class="d-none" tabindex="-1"></iframe>
             </div>
         </div>
 
@@ -117,74 +106,13 @@ permalink: /contact/
 </style>
 
 <script>
-const contactFormLoadedAt = Date.now();
 const formEndpoint = {{ site.contact_form_endpoint | jsonify }};
-const contactForm = document.getElementById('contact-form');
+const pageLoaded = Date.now();
+const contactForm = document.getElementById('contactForm');
 const submitButton = document.getElementById('submit-btn');
 const formStatus = document.getElementById('form-status');
-const responseFrame = document.getElementById('contact-response-frame');
-let pendingRequestNonce = null;
-let responseTimeout = null;
-
-function createRequestNonce() {
-    const bytes = new Uint8Array(16);
-    crypto.getRandomValues(bytes);
-    return Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
-}
-
-function finishSubmission(status) {
-    clearTimeout(responseTimeout);
-    submitButton.disabled = false;
-    submitButton.innerHTML = '<span>Send Message</span><i class="bi bi-send-fill"></i>';
-    pendingRequestNonce = null;
-
-    if (status === 'success') {
-        document.getElementById('success-overlay').style.opacity = '1';
-        document.getElementById('success-overlay').style.pointerEvents = 'auto';
-        contactForm.reset();
-        return;
-    }
-
-    formStatus.textContent = 'We could not send your message. Please try again later.';
-    formStatus.classList.remove('visually-hidden');
-}
-
-window.addEventListener('message', event => {
-    if (event.source !== responseFrame.contentWindow || !event.data ||
-        event.data.type !== 'contact-form-result' ||
-        event.data.nonce !== pendingRequestNonce) {
-        return;
-    }
-
-    finishSubmission(event.data.status);
-});
-
-const nameInput = document.getElementById('name');
-nameInput.addEventListener('input', () => {
-    nameInput.value = nameInput.value.replace(/[^A-Za-z\s]/g, '');
-});
-
-function handleFormSubmit(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    const form = document.getElementById('contact-form');
-    const overlay = document.getElementById('success-overlay');
-    
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-    }
-
-    const honeypot = document.getElementById('honeypot_website').value;
-    const phoneNumber = document.getElementById('phone_number').value;
-    const submittedTooQuickly = Date.now() - contactFormLoadedAt < 3000;
-    if (honeypot || phoneNumber || submittedTooQuickly) {
-        console.warn('Automated submission blocked');
-        overlay.style.opacity = '1';
-        overlay.style.pointerEvents = 'auto';
-        form.reset();
-        return;
-    }
+contactForm.addEventListener('submit', async event => {
+    event.preventDefault();
 
     if (!formEndpoint) {
         formStatus.textContent = 'The contact form has not been configured yet. Please email hello@tamilarasu.blog.';
@@ -194,24 +122,27 @@ function handleFormSubmit(e) {
 
     formStatus.textContent = '';
     formStatus.classList.add('visually-hidden');
-    btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
-    btn.disabled = true;
+    submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+    submitButton.disabled = true;
 
     try {
-        pendingRequestNonce = createRequestNonce();
-        document.getElementById('request-nonce').value = pendingRequestNonce;
-        document.getElementById('form-loaded-at').value = String(contactFormLoadedAt);
-
-        responseTimeout = setTimeout(() => finishSubmission('error'), 30000);
-        form.submit();
+        const data = new URLSearchParams(new FormData(contactForm));
+        data.append('timeSpent', String(Date.now() - pageLoaded));
+        await fetch(formEndpoint, { method: 'POST', body: data, mode: 'no-cors' });
+        formStatus.textContent = 'Thank you! Your message was sent.';
+        formStatus.classList.remove('visually-hidden');
+        document.getElementById('success-overlay').style.opacity = '1';
+        document.getElementById('success-overlay').style.pointerEvents = 'auto';
+        contactForm.reset();
     } catch (error) {
         console.error('Contact form submission failed:', error);
-        btn.disabled = false;
-        btn.innerHTML = '<span>Send Message</span><i class="bi bi-send-fill"></i>';
         formStatus.textContent = 'We could not send your message. Please try again later.';
         formStatus.classList.remove('visually-hidden');
+    } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = '<span>Send Message</span><i class="bi bi-send-fill"></i>';
     }
-}
+});
 
 function resetForm() {
     const overlay = document.getElementById('success-overlay');

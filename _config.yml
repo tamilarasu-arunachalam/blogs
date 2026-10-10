@@ -4,7 +4,7 @@ author: Tamilarasu Arunachalam
 email: contact@yourdomain.com
 baseurl: "" 
 url: "https://tamilarasu.blog"
-contact_form_endpoint: ""
+contact_form_endpoint: "https://script.google.com/macros/s/AKfycbyUYGY275Bjcjez3irrBg7RjbnJcf42jiAfnwn4vqK7epWsOJB0hkHQvhC_UKXQfASf/exec"
 twitter_username: tamilarasu_av
 github_username:  tamilarasu-arunachalam
 
