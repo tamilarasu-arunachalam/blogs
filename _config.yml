@@ -4,6 +4,7 @@ author: Tamilarasu Arunachalam
 email: contact@yourdomain.com
 baseurl: "" 
 url: "https://tamilarasu.blog"
+contact_form_endpoint: ""
 twitter_username: tamilarasu_av
 github_username:  tamilarasu-arunachalam
 

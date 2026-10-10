@@ -101,5 +101,19 @@ A custom CMS is available at `/admin/` using Google authentication and GitHub AP
 
 > This custom admin panel does not rely on Netlify.
 
+## Contact Form Spam Protection
+
+The contact form sends submissions to a Google Apps Script web app. The app checks the honeypot and submission timing server-side, saves accepted messages to the Google Form's linked response spreadsheet, and sends an admin notification. It does not send confirmation emails to submitted addresses. No CAPTCHA service is used.
+
+1. In Google Forms, open **Responses** and turn off **Accepting responses** so the public `formResponse` URL cannot bypass the web app.
+2. Open the linked response spreadsheet and copy its ID from the URL.
+3. In Apps Script, remove any installed `onFormSubmit` trigger for the old email handler so it cannot send duplicate notifications.
+4. Create or update the Apps Script project with `google-apps-script/Code.gs`, then add this Script Property under **Project Settings**:
+   - `SPREADSHEET_ID`: the linked response spreadsheet ID.
+5. Deploy the script as a **Web app**, executing as yourself and allowing access to anyone. Copy the deployment URL.
+6. Set `contact_form_endpoint` in `_config.yml` to the deployment URL, then rebuild and deploy the site.
+
+The linked response sheet must retain its Google Form headers (`Full Name`, `Email Address`, `Subject`, and `Message`). The script appends accepted messages and sends an admin notification to `hello@tamilarasu.blog`; it never sends email to the address entered by the visitor. Without a CAPTCHA or server-side identity/rate-limit service, the honeypot and timing checks only deter basic bots; a bot that directly posts forged values can still submit.
+
 ---
 Built with ❤️ for performance-driven technical writing.

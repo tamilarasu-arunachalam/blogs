@@ -25,36 +25,43 @@ permalink: /contact/
                     <button type="button" class="btn btn-outline-dark rounded-pill px-4 mt-2" onclick="resetForm()">Send Another</button>
                 </div>
 
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSdbXaYwkQCSgz9JCCl_Etkox3wk8W971dZxkMB8QhaPaOFuew/formResponse"
-      target="_self" method="POST" id="contact-form" onsubmit="handleFormSubmit(event)">
+                <form action="{{ site.contact_form_endpoint | escape }}"
+      target="contact-response-frame" method="POST" id="contact-form" onsubmit="handleFormSubmit(event)">
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="name" name="entry.1374407783" placeholder="John Doe" pattern="[A-Za-z\s]+" title="Name should only contain alphabets and spaces" required>
+                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="name" name="name" placeholder="John Doe" pattern="[A-Za-z\s]+" title="Name should only contain alphabets and spaces" maxlength="100" required>
                         <label for="name" class="fw-bold text-secondary">Your Name</label>
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <input type="email" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="email" name="entry.1875774789" placeholder="john@example.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Please enter a valid email address (e.g., user@domain.com)" required>
+                        <input type="email" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="email" name="email" placeholder="john@example.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Please enter a valid email address (e.g., user@domain.com)" maxlength="254" required>
                         <label for="email" class="fw-bold text-secondary">Email Address</label>
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="subject" name="entry.156927077" placeholder="How Can I help you?" required>
+                        <input type="text" class="form-control form-control-lg border-2 rounded-3 bg-light-subtle" id="subject" name="subject" placeholder="How Can I help you?" maxlength="200" required>
                         <label for="subject" class="fw-bold text-secondary">Subject</label>
                     </div>
                     
                     <div class="form-floating mb-4">
-                        <textarea class="form-control border-2 rounded-3 bg-light-subtle" id="message" name="entry.360405811" placeholder="Tell me more..." style="height: 150px" required></textarea>
+                        <textarea class="form-control border-2 rounded-3 bg-light-subtle" id="message" name="message" placeholder="Tell me more..." style="height: 150px" maxlength="10000" required></textarea>
                         <label for="message" class="fw-bold text-secondary">How can I help?</label>
                     </div>
 
-                    <input type="hidden" name="fvv" value="1">
-    <input type="hidden" name="fbzx" value="-8741921683673455065">
+                    <input type="hidden" id="request-nonce" name="request_nonce">
+                    <input type="hidden" id="form-loaded-at" name="form_loaded_at">
                     
                     <!-- Honeypot Field -->
                     <div class="form-floating mb-4" style="display: none;" aria-hidden="true">
                         <input type="text" class="form-control form-control-lg border-2 rounded-3" id="honeypot_website" name="honeypot_website" tabindex="-1" autocomplete="off" placeholder="Website">
                         <label for="honeypot_website">Website</label>
                     </div>
+
+                    <div class="form-floating mb-4" style="display: none;" aria-hidden="true">
+                        <input type="text" class="form-control form-control-lg border-2 rounded-3" id="phone_number" name="phone_number" tabindex="-1" autocomplete="off" placeholder="Phone Number">
+                        <label for="phone_number">Phone Number</label>
+                    </div>
+
+                    <p id="form-status" class="visually-hidden" role="status" aria-live="polite"></p>
                     
                     <div class="d-grid gap-2 mt-5">
                         <button type="submit" id="submit-btn" class="btn btn-dark btn-lg py-3 rounded-pill fw-bold d-flex align-items-center justify-content-center gap-2 transition-all">
@@ -63,6 +70,7 @@ permalink: /contact/
                         </button>
                     </div>
                 </form>
+                <iframe name="contact-response-frame" id="contact-response-frame" title="Contact form response" class="d-none" tabindex="-1"></iframe>
             </div>
         </div>
 
@@ -110,92 +118,99 @@ permalink: /contact/
 
 <script>
 const contactFormLoadedAt = Date.now();
+const formEndpoint = {{ site.contact_form_endpoint | jsonify }};
+const contactForm = document.getElementById('contact-form');
+const submitButton = document.getElementById('submit-btn');
+const formStatus = document.getElementById('form-status');
+const responseFrame = document.getElementById('contact-response-frame');
+let pendingRequestNonce = null;
+let responseTimeout = null;
+
+function createRequestNonce() {
+    const bytes = new Uint8Array(16);
+    crypto.getRandomValues(bytes);
+    return Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+}
+
+function finishSubmission(status) {
+    clearTimeout(responseTimeout);
+    submitButton.disabled = false;
+    submitButton.innerHTML = '<span>Send Message</span><i class="bi bi-send-fill"></i>';
+    pendingRequestNonce = null;
+
+    if (status === 'success') {
+        document.getElementById('success-overlay').style.opacity = '1';
+        document.getElementById('success-overlay').style.pointerEvents = 'auto';
+        contactForm.reset();
+        return;
+    }
+
+    formStatus.textContent = 'We could not send your message. Please try again later.';
+    formStatus.classList.remove('visually-hidden');
+}
+
+window.addEventListener('message', event => {
+    if (event.source !== responseFrame.contentWindow || !event.data ||
+        event.data.type !== 'contact-form-result' ||
+        event.data.nonce !== pendingRequestNonce) {
+        return;
+    }
+
+    finishSubmission(event.data.status);
+});
+
 const nameInput = document.getElementById('name');
 nameInput.addEventListener('input', () => {
     nameInput.value = nameInput.value.replace(/[^A-Za-z\s]/g, '');
 });
 
-async function handleFormSubmit(e) {
+function handleFormSubmit(e) {
     e.preventDefault();
     const btn = document.getElementById('submit-btn');
     const form = document.getElementById('contact-form');
     const overlay = document.getElementById('success-overlay');
     
-    // Validate form
     if (!form.checkValidity()) {
         form.reportValidity();
         return;
     }
 
-    // Honeypot check
     const honeypot = document.getElementById('honeypot_website').value;
+    const phoneNumber = document.getElementById('phone_number').value;
     const submittedTooQuickly = Date.now() - contactFormLoadedAt < 3000;
-    if (honeypot || submittedTooQuickly) {
+    if (honeypot || phoneNumber || submittedTooQuickly) {
         console.warn('Automated submission blocked');
         overlay.style.opacity = '1';
         overlay.style.pointerEvents = 'auto';
         form.reset();
         return;
     }
-    
-    // Loading state
-    const originalContent = btn.innerHTML;
-    btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Validating Email...';
+
+    if (!formEndpoint) {
+        formStatus.textContent = 'The contact form has not been configured yet. Please email hello@tamilarasu.blog.';
+        formStatus.classList.remove('visually-hidden');
+        return;
+    }
+
+    formStatus.textContent = '';
+    formStatus.classList.add('visually-hidden');
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
     btn.disabled = true;
 
-    // Check email domain validity
-    const emailValue = document.getElementById('email').value;
-    const domain = emailValue.split('@')[1];
-    
     try {
-        const response = await fetch(`https://api.mailcheck.ai/domain/${domain}`);
-        const data = await response.json();
-        
-        // Handle invalid domains (API returns 400 Bad Request)
-        if (!response.ok || data.error || data.status === 400) {
-            alert('The email domain does not appear to be valid. Please check your email address.');
-            btn.innerHTML = originalContent;
-            btn.disabled = false;
-            return;
-        }
+        pendingRequestNonce = createRequestNonce();
+        document.getElementById('request-nonce').value = pendingRequestNonce;
+        document.getElementById('form-loaded-at').value = String(contactFormLoadedAt);
 
-        if (!data.mx) {
-            alert('The email domain cannot receive emails. Please check your email address.');
-            btn.innerHTML = originalContent;
-            btn.disabled = false;
-            return;
-        }
-        if (data.disposable) {
-            alert('Disposable email addresses are not allowed. Please use a regular email address.');
-            btn.innerHTML = originalContent;
-            btn.disabled = false;
-            return;
-        }
-    } catch (err) {
-        console.warn('Email validation API failed, proceeding with submission:', err);
+        responseTimeout = setTimeout(() => finishSubmission('error'), 30000);
+        form.submit();
+    } catch (error) {
+        console.error('Contact form submission failed:', error);
+        btn.disabled = false;
+        btn.innerHTML = '<span>Send Message</span><i class="bi bi-send-fill"></i>';
+        formStatus.textContent = 'We could not send your message. Please try again later.';
+        formStatus.classList.remove('visually-hidden');
     }
-    
-    btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
-    
-    const formData = new FormData(form);
-    fetch(form.action, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData
-    }).then(() => {
-        btn.innerHTML = originalContent;
-        btn.disabled = false;
-        
-        // Show success overlay
-        overlay.style.opacity = '1';
-        overlay.style.pointerEvents = 'auto';
-        form.reset();
-    }).catch(error => {
-        console.error('Error submitting form:', error);
-        btn.innerHTML = originalContent;
-        btn.disabled = false;
-        alert('There was an error sending your message. Please try again.');
-    });
 }
 
 function resetForm() {
