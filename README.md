@@ -83,23 +83,14 @@ read_time: "8 min read"
 
 ## 🧑‍💻 Content Management System
 
-A custom CMS is available at `/admin/` using Google authentication and GitHub API.
+Decap CMS is available at `/admin/` and manages posts in `_posts/`. Common pages are available as editable files: `about.md`, `contact.md`, `privacy.md`, and `terms.md`.
 
-- `admin/index.html`: Launches the custom CMS UI.
-- `admin/config.yml`: Not used by this custom admin panel.
-- `posts` are managed from `_posts/`.
-- Common pages are available as editable files: `about.md`, `contact.md`, `privacy.md`, and `terms.md`.
-- Assign each post a unique numeric `post_id` before uploading images. The CMS uses that ID for the asset folder, saving images under `assets/images/<post_id>/` while keeping the post filename based on its date and title.
+Assign each post a unique numeric `post_id` before uploading images. The Blog Posts collection stores its images under `assets/images/<post_id>/` while keeping the post filename based on its date and title.
 
-### How to use it
-
-1. Create a Google OAuth client ID and replace `YOUR_GOOGLE_OAUTH_CLIENT_ID` in `admin/index.html`.
-2. Open `/admin/` in your browser.
-3. Sign in with Google.
-4. Paste a GitHub personal access token with `repo` scope.
-5. Select a file, edit the content, and save.
-
-> This custom admin panel does not rely on Netlify.
+1. Open `/admin/` and sign in through the configured GitHub backend.
+2. Create or open a post and set its `post_id`.
+3. Upload images from that post; the collection media path uses its `post_id`.
+4. Save the post.
 
 ## Contact Form Spam Protection
 
