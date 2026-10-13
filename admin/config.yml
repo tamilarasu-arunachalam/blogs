@@ -16,8 +16,8 @@ collections:
     folder: "_posts"
     create: true
 
-    media_folder: "/assets/images/{{post_id}}"
-    public_folder: "/assets/images/{{post_id}}"
+    media_folder: "assets/images/{{slug}}"
+    public_folder: "/assets/images/{{slug}}"
 
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:

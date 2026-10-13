@@ -83,13 +83,13 @@ read_time: "8 min read"
 
 ## 🧑‍💻 Content Management System
 
-Decap CMS is available at `/admin/` and manages posts in `_posts/`. Common pages are available as editable files: `about.md`, `contact.md`, `privacy.md`, and `terms.md`.
+Sveltia CMS is available at `/admin/` and manages posts in `_posts/`. Common pages are available as editable files: `about.md`, `contact.md`, `privacy.md`, and `terms.md`.
 
-Assign each post a unique numeric `post_id` before uploading images. The Blog Posts collection stores its images under `assets/images/<post_id>/` while keeping the post filename based on its date and title.
+The Blog Posts collection stores uploaded images under `assets/images/<post-slug>/`. The post slug is based on its date and title; `post_id` remains a separate field.
 
 1. Open `/admin/` and sign in through the configured GitHub backend.
-2. Create or open a post and set its `post_id`.
-3. Upload images from that post; the collection media path uses its `post_id`.
+2. Create or open a post.
+3. Upload images from that post; they are stored in its slug-named image folder.
 4. Save the post.
 
 ## Contact Form Spam Protection
