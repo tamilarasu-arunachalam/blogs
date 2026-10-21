@@ -17,7 +17,7 @@ categories:
 
 When working with Dynamics 365 CRM and Model Driven Apps, developers often need to interact with the XRM Web API to perform CRUD (Create, Read, Update, Delete) operations. By default, the XRM Web API works asynchronously. This means that the results are returned later, allowing other code to run in the meantime. However, there are times when synchronous calls are needed, especially when operations must happen in a specific order. In this post, we'll explore how to make XRM Web API calls appear synchronous in Dynamics 365.
 
-### **Understanding Asynchronous vs. Synchronous in JavaScript**
+## **Understanding Asynchronous vs. Synchronous in JavaScript**
 
     JavaScript, the language used for Dynamics 365 scripts, is single-threaded. This means it doesn't naturally wait for processes to complete before moving on to the next task. Asynchronous operations, like XRM Web API calls, are useful for keeping the user interface responsive. However, there are times when you need the results right away. Let's explore some ways to handle this.
 

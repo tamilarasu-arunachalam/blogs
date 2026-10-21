@@ -2,6 +2,7 @@
 layout: post
 post_id: '001'
 title: Why Moosend Is the Best Email Marketing Platform for Small Businesses and Growing Brands
+seo_title: Moosend for Small Business Email Marketing
 date: 2026-06-09 23:11:00 +0530
 image: assets/images/001/moosend-email-analytics.png
 description: A comprehensive look at why Moosend is the perfect blend of simplicity and advanced automation for growing businesses.

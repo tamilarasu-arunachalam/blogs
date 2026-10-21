@@ -2,6 +2,7 @@
 layout: post
 post_id: '051'
 title: Associate and Disassociate Records in Dynamics 365 using XRM WebAPI (JavaScript)
+seo_title: Associate Dynamics 365 Records with XRM Web API
 date: 2025-11-02 17:41:00 +0000
 image: assets/images/051/img_81b48ca268.gif
 description: ''

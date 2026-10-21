@@ -15,7 +15,7 @@ categories:
 
 Hi fellow tech peeps out there. Have you ever thought of using the dataverse table data in the normal HTML page with some CSS styles in it. This article is about how to access the dataverse data using the MSAL.js(_Microsoft Authentication Library_). 
 
-### Pre-requisites:
+## Pre-requisites:
 
 -   Access to Dataverse or Dynamics 365 CE applications
 -   Azure license with permission to manage applications

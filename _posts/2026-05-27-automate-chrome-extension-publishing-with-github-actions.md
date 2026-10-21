@@ -6,7 +6,7 @@ date: 2026-06-02 23:11:00 +0530
 category: Extension Development
 post_id: "069"
 image: "assets/images/069/extension-publishing-featured-image.png"
-description: "Tired of manually zipping and uploading your Chrome extension updates? Learn how I built a seamless GitHub Actions workflow to automate my deployments in under 10 minutes."
+description: "Automate Chrome extension releases with GitHub Actions, from packaging updates to publishing them to the Chrome Web Store."
 meta_keywords: "chrome extension, github actions, automation, ci/cd, web store publishing"
 read_time: "10 min read"
 ---

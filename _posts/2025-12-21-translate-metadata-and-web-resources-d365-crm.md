@@ -23,7 +23,7 @@ If you have ever worked on a Dynamics 365 CE or Power Apps model-driven app that
 -   [JavaScript Way](#webResourceWay)
 -   [References](#references)
 
-### Overview:
+## Overview:
 
 Dynamics 365 supports multilingual applications, but translations are handled differently depending on what you are translating.
 

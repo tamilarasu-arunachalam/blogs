@@ -23,7 +23,7 @@ Side panes in Model Driven Apps are designed to facilitate access to multiple pa
 
 To develop and extend a side pane, you can use the following methods:
 
-#### **`createPane`:**
+### **`createPane`:**
 
 This method is used to create a side pane. Below are the properties of the object used for configuring the pane during its creation:
 

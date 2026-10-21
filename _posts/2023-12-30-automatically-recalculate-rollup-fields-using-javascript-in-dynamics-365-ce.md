@@ -2,6 +2,8 @@
 post_id: "032"
 layout: post
 title: "Automatically Recalculate Rollup fields using JavaScript in Dynamics 365 CE"
+description: "Recalculate Dynamics 365 CE rollup fields with JavaScript instead of waiting for the automatic hourly refresh."
+seo_title: Recalculate Dataverse Rollup Fields with JavaScript
 date: 2023-12-30 17:41:00 +0000
 category: Dynamics 365 CE
 image: assets/images/032/img_6323eb129c.png

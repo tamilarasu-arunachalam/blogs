@@ -20,7 +20,7 @@ categories:
 -   [List Option set Labels using JavaScript](#list-option-set-labels-using-javascript)
 -   [Summary](#summary)
 
-### String Maps Table in Dataverse
+## String Maps Table in Dataverse
 
     String Maps table in Dataverse contains the details of Option set fields which are present in that organization. It contains details like Object Type code, Attribute Name, Attribute Value, Value, Display Order, and Organization ID. The response of the string maps API looks like the below image.
 

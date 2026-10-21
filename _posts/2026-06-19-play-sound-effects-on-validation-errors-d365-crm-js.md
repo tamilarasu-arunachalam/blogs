@@ -2,6 +2,7 @@
 layout: post
 post_id: '074'
 title: How to Play Sound Effects on Validation Errors in Dynamics 365 CE Using JavaScript
+seo_title: Play Validation Error Sounds in Dynamics 365 CE
 date: 2026-06-21T11:11
 image: assets/images/074/play-sound-on-validation-errors-d365-crm.png
 description: Learn how to play sound effects for validation errors in Dynamics 365 CE using JavaScript and web resources. A creative workaround to enhance user experience.
@@ -53,7 +54,7 @@ If you found this interesting, you may want to check out my other blogs as well!
 See the demonstration video below
 <video src="/assets/images/074/sound-effects-in-d365-crm.mp4" width="100%" height="auto" controls></video>
 
-#### References:
+## References:
 
 - [Playing sounds in CRM — Power Platform & Dynamics CRM Tip Of The Day](https://crmtipoftheday.com/892/tip-892-playing-sounds-in-crm/)
 - [Play Custom CRM Sounds with JavaScript Workaround - Aladdin Farajat posted on the topic - LinkedIn](https://www.linkedin.com/posts/aladdin-farajat-2055b1236_dynamics365-powerplatform-javascript-activity-7409664330243190784-VIT1)

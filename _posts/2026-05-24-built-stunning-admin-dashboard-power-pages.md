@@ -67,7 +67,7 @@ Finally
 
 Building a custom admin dashboard in Power Pages is absolutely doable - you just need to know which defaults to override and which tools to bring in from outside. Bootstrap Icons, Chart.js, UI Avatars, and custom web templates each solved a specific problem without overcomplicating things.
 
-### References:
+## References:
 
 *   [Get started with Bootstrap · Bootstrap v5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 *   [Bootstrap Icons · Official open source SVG icon library for Bootstrap](https://icons.getbootstrap.com/)

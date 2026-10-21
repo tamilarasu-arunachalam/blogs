@@ -2,6 +2,7 @@
 post_id: "050"
 layout: post
 title: "How to Configure and Use Tabbed Sections in Model-Driven Apps?"
+description: "Learn how to configure tabbed sections in model-driven apps to organize form fields, improve navigation, and create a cleaner user experience."
 date: 2025-09-28 17:41:00 +0000
 category: Dynamics 365 CE
 image: assets/images/050/img_62d6897223.gif

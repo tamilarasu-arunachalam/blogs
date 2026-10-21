@@ -2,6 +2,7 @@
 layout: post
 post_id: '018'
 title: Deactivate Duplicate Records using Plugin and Custom Action in Dynamics CRM
+seo_title: Deactivate Duplicates with a Dynamics CRM Plugin
 date: 2023-05-09 17:41:00 +0000
 image: assets/images/018/img_ccac86014f.png
 description: ''

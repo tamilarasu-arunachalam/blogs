@@ -18,12 +18,12 @@ In Business Central, Web Service Access Key is used for the  authentication of 
 
 This article guides you to register an app in Azure Active Directory and make the application data accessible for external client applications with OAuth authentication. The registered app allows you to read and write data in the application data. We can also register the app for other Dynamics 365 applications like CRM, Business Central/NAV and Finance and Operations. Let's dive into the process.
 
-### Prerequisites:
+## Prerequisites:
 
 -   Microsoft account with Dynamics 365 Business Central license
 -   The account should have administrator privilege
 
-#### Steps:  [![]({{ site.baseurl }}/assets/images/009/img_4a99213bc1.png)]({{ site.baseurl }}/assets/images/009/img_4a99213bc1.png)
+### Steps:  [![]({{ site.baseurl }}/assets/images/009/img_4a99213bc1.png)]({{ site.baseurl }}/assets/images/009/img_4a99213bc1.png)
 
 -   Login to [azure portal](https://portal.azure.com/) and click on Active Directory. 
 

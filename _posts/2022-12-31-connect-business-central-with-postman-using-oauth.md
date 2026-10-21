@@ -2,6 +2,7 @@
 layout: post
 post_id: '010'
 title: Connect the Azure AD App for Business Central with Postman using OAuth 2.0 Authentication
+seo_title: Connect Business Central to Postman with OAuth
 date: 2022-12-31 16:34:00 +0000
 image: assets/images/010/img_3e414448ba.png
 description: ''

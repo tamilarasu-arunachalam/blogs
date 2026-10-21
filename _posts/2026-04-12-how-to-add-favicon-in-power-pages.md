@@ -42,7 +42,7 @@ After completing these steps, you will notice that the default globe icon in you
 
 Adding a favicon may seem like a minor step, but it contributes significantly to **branding**, **usability**, and overall **website experience**. It is one of those small details that can make your website feel complete and polished.
 
-### References
+## References
 
 -   [The best Favicon Generator (completely free) - favicon.io](https://favicon.io/)  
 -   [MDN Favicon](https://developer.mozilla.org/en-US/docs/Glossary/Favicon)

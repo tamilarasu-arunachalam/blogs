@@ -9,7 +9,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="{{ site.baseurl }}/assets/favicon/site.webmanifest">
-  {% seo %}
+  {% seo title=false %}
+  <title>{{ page.seo_title | default: page.title }}{% unless page.url == "/" %} | {{ site.title }}{% endunless %}</title>
+  {% if paginator and paginator.page > 1 %}
+  <meta name="robots" content="noindex, follow">
+  {% endif %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}"
     href="{{ site.url }}{{ site.baseurl }}/feed.xml">
   <!-- keywords -->

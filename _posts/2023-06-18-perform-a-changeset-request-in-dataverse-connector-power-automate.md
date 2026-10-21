@@ -2,6 +2,7 @@
 post_id: "023"
 layout: post
 title: "Perform a changeset request in Dataverse Connector | Power Automate"
+description: "Learn to group Dataverse connector actions in a Power Automate change set and roll back the transaction if an operation fails."
 date: 2023-06-18 15:39:00 +0000
 category: Power Automate
 image: assets/images/023/img_0437cd6c48.png

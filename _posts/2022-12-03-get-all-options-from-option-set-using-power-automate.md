@@ -18,7 +18,7 @@ categories:
 
 In Power Automate, getting all the option set values from Dataverse is not quite easy as getting the selected value from the option set field(Dataverse Choices). Here in this article we will have a look on how to take all the options from the option set and list it using the Power Automate(Formerly Flow).
 
-### Steps:
+## Steps:
 
 -   Get Option set metadata from Web API
 -   Creating a flow

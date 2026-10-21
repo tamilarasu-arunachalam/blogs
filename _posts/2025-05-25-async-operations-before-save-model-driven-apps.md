@@ -20,7 +20,7 @@ Hello folks. I recently tackled one of these scenarios, and what seemed like a s
 
 In this post, I’ll share how I handled preventing of form save during async operations involving subgrid data, using a real-world example from a JavaScript customization I worked on.
 
-### Example Scenario
+## Example Scenario
 
 Let’s say you have two tables:
 
@@ -32,7 +32,7 @@ Let’s say you have two tables:
 
 [![]({{ site.baseurl }}/assets/images/044/img_bdfd56a891.png)]({{ site.baseurl }}/assets/images/044/img_bdfd56a891.png)  
 
-#### **Functionality:**
+### **Functionality:**
 
 -   The Order table includes a `Order Status` field (an option set with values like Open, Closed, and Cancelled).
 

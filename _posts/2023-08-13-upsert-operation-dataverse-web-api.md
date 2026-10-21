@@ -25,7 +25,7 @@ categories:
 
 According to database nomenclature, Upsert is what really means to update or insert a record. During this operation, the resultant record gets created if it doesn't exist or gets updated if it already exist. By default, Dataverse will do the upset operation while using the Web API PATCH. But we must be aware of when do we need upsert and when it is not needed. Upsert can be used in complex data integration processes where we won't know the record already exists or not. At this kind of scenario's upsert would be a great pick. For more details. Please refer [Microsoft's Official Documentation](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-upsert-insert-update-record?tabs=webapi) 
 
-#### Fact: 
+## Fact:
 
 We can even create records with the custom GUID (not the auto-generated one) while performing Upsert Operation. I have tested with the 11111111-1111-1111-1111-111111111111, and guess what? It worked.
 

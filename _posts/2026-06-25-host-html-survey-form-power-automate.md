@@ -45,7 +45,7 @@ Now, copy the URL from the Host a web page flow and paste it into your browser. 
 
 ![Design for the hosted web page](assets/images/075/hosted-webpage-design.png)
 
-### References:
+## References:
 
 - [Power Automate Flow to Host a Web Page/Web Application](https://www.matthewdevaney.com/power-automate-flow-to-host-a-web-page-web-application/)
 - [Build a custom website using Power Automate (part 1)](https://beyondm365.com/p/build-a-custom-website-using-power-automate-part-1)

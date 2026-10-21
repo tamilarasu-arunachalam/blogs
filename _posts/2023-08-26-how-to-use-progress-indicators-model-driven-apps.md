@@ -38,7 +38,7 @@ The progress indicator will show for 3 seconds, and it gets closed after every o
 
 [![]({{ site.baseurl }}/assets/images/029/img_8d49882339.png)]({{ site.baseurl }}/assets/images/029/img_8d49882339.png)
 
-#### References:
+## References:
 
 [showProgressIndicator](https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/xrm-utility/showprogressindicator)
 

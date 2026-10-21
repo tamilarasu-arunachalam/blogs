@@ -2,6 +2,7 @@
 layout: post
 post_id: '066'
 title: How to Hide Sensitive Data in Power Automate Using Secure Inputs and Outputs?
+seo_title: Secure Power Automate Data with Secure Inputs
 date: 2026-04-26 17:41:00 +0000
 image: assets/images/066/img_be2a5971b6.gif
 description: Learn how to secure the inputs and outputs in the power automate flow using the settings to prevent the data exposure.
@@ -28,7 +29,7 @@ In Dynamics 365 and Dataverse-based implementations, flows often handle business
 
 Secure inputs and outputs may seem like a small feature, but they play a big role in building secure and reliable Power Automate solutions.
 
-### References:
+## References:
 
 -   [Manage sensitive input like passwords in Power Automate — Power Automate | Microsoft Learn](https://learn.microsoft.com/en-us/power-automate/how-tos-use-sensitive-input)  
 -   [Secure data used in cloud flows — Power Automate | Microsoft Learn](https://learn.microsoft.com/en-us/power-automate/guidance/coding-guidelines/use-secure-inputs-outputs-triggers)  

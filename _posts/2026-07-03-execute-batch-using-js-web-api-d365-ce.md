@@ -2,9 +2,10 @@
 layout: post
 post_id: '077'
 title: How to execute a batch process using JavaScript Web API in Dynamics 365 CE?
+seo_title: JavaScript Web API Batch Requests in Dynamics 365
 date: 2026-07-12T23:11
 image: assets/images/077/dataverse-batch-process-flow.png
-description: Discover how to use Dataverse Web API Batch Requests to create multiple records in a single API call, improve performance, and manage transactions using change sets.
+description: "Use Dataverse Web API batch requests to create records in one call and manage transactions with change sets."
 meta_keywords: Dataverse Batch Requests, Dynamics 365 Batch Requests, Dataverse Web API, Bulk Create Records Dataverse, Create Multiple Records Dataverse, Dataverse Performance Optimization, Web API Batch Processing, Dataverse Change Sets, Dynamics 365 Web API Batch, ExecuteMultipleRequest Dataverse, Dataverse Bulk Operations, Power Platform Batch Requests, Dataverse Transaction Processing, Dataverse Create Records from JSON, Dataverse change set transaction example, Bulk insert records in Dynamics 365, Dataverse batch request example with JavaScript
 category: Dynamics 365 CE
 read_time: 5 mins
@@ -21,7 +22,7 @@ Similarly, if you’re working with server-side code or plugins, you can achieve
 
 Additionally, batch requests support Change Sets, which group multiple create, update, or delete operations into a single transaction. A change set follows an all-or-nothing approach - either all operations succeed or the entire transaction fails. This ensures data consistency when processing related records.
 
-### Understanding Web API Batch Requests
+## Understanding Web API Batch Requests
 
 Constructing a Web API batch request can be a little challenging, especially if you’re new to the Dataverse Web API.
 
@@ -64,7 +65,7 @@ Refer to the image below for the demonstration.
 
 ![Dataverse batch request example with JavaScript](/assets/images/077/batch-demonstration.png)
 
-#### References:
+### References:
 
 - [Execute Batch Operations Using the Web API -  Power Apps - Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/execute-batch-operations-using-web-api)
 - [Batch Request to Create, Update and Delete records in Dynamics 365 CE — Nebulaa IT Solutions](https://nebulaaitsolutions.com/blog/batch-request-to-create-update-and-delete-records-in-dynamics-365-ce)

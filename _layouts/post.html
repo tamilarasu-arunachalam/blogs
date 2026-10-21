@@ -47,7 +47,7 @@ layout: default
                     <div class="d-flex align-items-center justify-content-center mb-3">
                         <img src="{{ '/assets/images/xrm-flash-code-icon.png' | relative_url }}"
                             alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
-                        <h4 class="mb-0 fw-bold">XRM Flash Code</h4>
+                        <h2 class="h4 mb-0 fw-bold">XRM Flash Code</h2>
                     </div>
                     <p class="mb-4">VS Code-style editor for Dynamics 365 CRM. Edit, format, and publish Web Resources natively (JS, HTML, CSS, XML).</p>
                     <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
@@ -60,7 +60,7 @@ layout: default
                     <div class="d-flex align-items-center justify-content-center mb-3">
                         <img src="{{ '/assets/images/xrm-fq-icon128.png' | relative_url }}" alt="XRM Flash Query Logo"
                             width="48" height="48" class="me-3 rounded-3 shadow-sm">
-                        <h4 class="mb-0 fw-bold">XRM Flash Query</h4>
+                        <h2 class="h4 mb-0 fw-bold">XRM Flash Query</h2>
                     </div>
                     <p class="mb-4">High-performance FetchXML and SQL query builder for Dynamics 365, Microsoft Dataverse and Power Platform</p>
                     <a href="https://chromewebstore.google.com/detail/tube-flash-kit-youtube-to/jgncellnebacebinoloeofifoihhmgpl"
@@ -73,7 +73,7 @@ layout: default
                     <div class="d-flex align-items-center justify-content-center mb-3">
                         <img src="{{ '/assets/images/tube-flash-kit-icon.png' | relative_url }}"
                             alt="Tube Flash Kit Logo" width="48" height="48" class="me-3 rounded-3 shadow-sm">
-                        <h4 class="mb-0 fw-bold">Tube Flash Kit</h4>
+                        <h2 class="h4 mb-0 fw-bold">Tube Flash Kit</h2>
                     </div>
                     <p class="mb-4">The ultimate toolkit for YouTube Learners. Enhance your workflow and viewing
                         experience with just one click.</p>
@@ -87,7 +87,7 @@ layout: default
                 <!-- Comments -->
                 {% if site.cusdis_app_id and site.cusdis_app_id != "" %}
                 <section class="comments mt-5 pt-4 border-top">
-                    <h4 class="fw-bold mb-4 ls-n1 text-dark">Comments</h4>
+                    <h2 class="h4 fw-bold mb-4 ls-n1 text-dark">Comments</h2>
                     <style>
                         #cusdis_thread iframe {
                             min-height: 350px !important;
@@ -105,7 +105,7 @@ layout: default
 
                 <!-- Related Posts Grid -->
                 <section class="related-posts mt-5 pt-5 border-top">
-                    <h4 class="fw-bold mb-4 ls-n1 text-dark">You might also like</h4>
+                    <h2 class="h4 fw-bold mb-4 ls-n1 text-dark">You might also like</h2>
                     <div class="row gy-4">
                         {% assign related_count = 0 %}
                         {% for post in site.posts %}
@@ -119,10 +119,10 @@ layout: default
                                 </a>
                                 <div class="card-body p-4">
                                     <span class="related-card-category">{{ post.category }}</span>
-                                    <h6 class="related-card-title mt-2 mb-3">
+                                    <h3 class="h6 related-card-title mt-2 mb-3">
                                         <a href="{{ post.url | relative_url }}"
                                             class="text-decoration-none text-dark hover-primary">{{ post.title }}</a>
-                                    </h6>
+                                    </h3>
                                     <a href="{{ post.url | relative_url }}" class="related-card-readmore">
                                         Read article <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                             fill="currentColor" viewBox="0 0 16 16">

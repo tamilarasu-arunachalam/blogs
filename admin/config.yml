@@ -24,11 +24,101 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Post ID", name: "post_id", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
+      - label: "SEO title"
+        name: seo_title
+        widget: string
+        required: false
+        pattern: ['^.{1,60}$', 'Keep under 60 characters']
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "image", widget: "image", required: false}
-      - {label: "Meta Description", name: "description", widget: "text", required: false}
+      - label: "Meta description"
+        name: description
+        widget: text
+        required: false
+        hint: "70-160 characters. Summarize the page and give a reason to click."
+        pattern: ['^.{70,160}$', 'Must be 70-160 characters']
       - {label: "Meta Keywords", name: "meta_keywords", widget: "text", required: false}
       - {label: "Category", name: "category", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Read Time", name: "read_time", widget: "string", required: false}
       - {label: "Published", name: "published", widget: "boolean", default: true}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "about"
+        label: "About"
+        file: "about.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "SEO title"
+            name: seo_title
+            widget: string
+            required: false
+            pattern: ['^.{1,60}$', 'Keep under 60 characters']
+          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/about/"}
+          - label: "Meta description"
+            name: description
+            widget: text
+            required: false
+            hint: "70-160 characters. Summarize the page and give a reason to click."
+            pattern: ['^.{70,160}$', 'Must be 70-160 characters']
+          - {label: "Body", name: "body", widget: "markdown"}
+      - name: "contact"
+        label: "Contact"
+        file: "contact.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "SEO title"
+            name: seo_title
+            widget: string
+            required: false
+            pattern: ['^.{1,60}$', 'Keep under 60 characters']
+          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/contact/"}
+          - label: "Meta description"
+            name: description
+            widget: text
+            required: false
+            hint: "70-160 characters. Summarize the page and give a reason to click."
+            pattern: ['^.{70,160}$', 'Must be 70-160 characters']
+          - {label: "Body", name: "body", widget: "markdown"}
+      - name: "privacy"
+        label: "Privacy Policy"
+        file: "privacy.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "SEO title"
+            name: seo_title
+            widget: string
+            required: false
+            pattern: ['^.{1,60}$', 'Keep under 60 characters']
+          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/privacy/"}
+          - label: "Meta description"
+            name: description
+            widget: text
+            required: false
+            hint: "70-160 characters. Summarize the page and give a reason to click."
+            pattern: ['^.{70,160}$', 'Must be 70-160 characters']
+          - {label: "Body", name: "body", widget: "markdown"}
+      - name: "terms"
+        label: "Terms and Conditions"
+        file: "terms.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "SEO title"
+            name: seo_title
+            widget: string
+            required: false
+            pattern: ['^.{1,60}$', 'Keep under 60 characters']
+          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/terms/"}
+          - label: "Meta description"
+            name: description
+            widget: text
+            required: false
+            hint: "70-160 characters. Summarize the page and give a reason to click."
+            pattern: ['^.{70,160}$', 'Must be 70-160 characters']
+          - {label: "Body", name: "body", widget: "markdown"}

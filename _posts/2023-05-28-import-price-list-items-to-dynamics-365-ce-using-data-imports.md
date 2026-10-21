@@ -2,6 +2,7 @@
 post_id: "020"
 layout: post
 title: "Import Price List Items to Dynamics 365 CE using Data Imports"
+description: "Import Dynamics 365 price list items by resolving related product and price list lookups with a structured data import."
 date: 2023-05-28 05:41:00 +0000
 category: Dynamics 365 CE
 image: assets/images/020/img_d4c2b82a69.png
@@ -9,7 +10,7 @@ categories: ["Data Management", "Dynamics 365 CE", "Dataverse", "Data Import"]
 ---
 Importing data to Price list items table is not easy as product table. Because the price list items include lookup fields from different tables. Sometimes the import may lead to “_The lookup reference could not be resolved”_ error. For that, we have to follow some simple steps to accomplish this import. 
 
-### **Solution:**
+## **Solution:**
 
 [![]({{ site.baseurl }}/assets/images/020/img_1a81324a3b.png)]({{ site.baseurl }}/assets/images/020/img_1a81324a3b.png)
 

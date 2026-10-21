@@ -2,6 +2,7 @@
 layout: post
 post_id: '045'
 title: How to Filter Subgrid Based on Parent Record Fields on Tab Switch in Model-Driven Apps?
+seo_title: Filter Model-Driven App Subgrids by Parent Fields
 date: 2025-06-22 17:41:00 +0000
 image: assets/images/045/img_7996e7f7a6.gif
 description: ''

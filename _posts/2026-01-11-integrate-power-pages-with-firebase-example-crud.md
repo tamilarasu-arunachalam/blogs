@@ -2,6 +2,7 @@
 layout: post
 post_id: '058'
 title: How to Integrate Power Pages with Firebase Realtime Database with Example CRUD
+seo_title: "Connect Power Pages to Firebase: CRUD Guide"
 date: 2026-01-11 17:41:00 +0000
 image: assets/images/058/img_17c61a0d2a.gif
 description: ''
@@ -30,7 +31,7 @@ As with my other blogs, this one is also about integration, but with a combinati
     - [Delete Record](#delete-record)
 - [References:](#references)
 
-### What is Firebase ?
+## What is Firebase ?
 
   [**Firebase**](https://firebase.google.com/firebase) is a Google product that helps developers build, manage, and scale applications easily. In simple terms, Firebase is a **Backend as a Service (BaaS)**.
 

@@ -2,6 +2,7 @@
 post_id: "040"
 layout: post
 title: "Inline Documents Preview in Power Pages using JavaScript"
+description: "Preview Dataverse documents directly in Power Pages without third-party libraries using an embedded document viewer."
 date: 2025-01-26 17:41:00 +0000
 category: Power Pages
 image: assets/images/040/img_9fa686f603.png
@@ -11,7 +12,7 @@ In this blog post, I’ll Walk you through the steps to preview documents direct
 
 Let’s dive in!
 
-### 1\. Creating the Claim Table in Dataverse
+## 1\. Creating the Claim Table in Dataverse
 
 I started by creating a Dataverse table named Claim. This table contains the following fields:
 

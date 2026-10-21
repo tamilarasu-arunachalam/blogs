@@ -2,6 +2,7 @@
 layout: post
 post_id: '052'
 title: How to Edit Child and Parent Records Directly Within Forms in Dynamics 365 CRM?
+seo_title: Edit Parent and Child Records in Dynamics 365 Forms
 date: 2025-11-23 17:41:00 +0000
 image: assets/images/052/img_14eb6fb8f7.gif
 description: ''
@@ -17,7 +18,7 @@ categories:
 
 Recently, while working on a customization, a simple question hit me — **“Can we edit related entity records directly inside the parent form in Dynamics 365 CRM?”** After checking, the answer was a clear yes. Here is how you can do it for both 1:N and N:1 relationships.
 
-#### Topics Covered
+## Topics Covered
 
 -   [Editable Subgrid (1:N Relationship)](#editableSubGrid)
 -   [Form Component Control (N:1 Relationship)](#formComponentControl)

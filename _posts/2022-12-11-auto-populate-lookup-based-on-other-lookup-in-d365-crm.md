@@ -17,7 +17,7 @@ Lookup fields are not like a normal field because after creation, the lookup fie
 
 In this article we'll have a view on auto populating lookup based on the another lookup using the JavaScript web resource. I have created a form which includes three lookup fields and they are related to one another. 
 
-### Steps:
+## Steps:
 
 -   Table Setup
 -   Web resource Setup

@@ -2,6 +2,7 @@
 layout: post
 post_id: '046'
 title: How to Revert to the Classic UI in Power Apps Model-Driven Apps (Even After the Toggle Is Gone)?
+seo_title: "Classic UI in Power Apps: Revert the Toggle"
 date: 2025-06-29 17:41:00 +0000
 image: assets/images/046/img_b9249e56d8.png
 description: ''

@@ -2,6 +2,7 @@
 layout: post
 post_id: '053'
 title: Show/Hide Ribbon Buttons for Subgrids of the Same Table in Model Driven Apps
+seo_title: Show or Hide Same-Table Subgrid Ribbon Buttons
 date: 2025-11-30 17:41:00 +0000
 image: assets/images/053/img_72426d992d.gif
 description: ''
@@ -32,7 +33,7 @@ After trying multiple approaches, I found that the best way was to configure eve
 - [Setting Up Command Button Action](#setting-up-command-button-action)
 - [Demonstration](#demonstration)
 
-### Scenario Overview
+## Scenario Overview
 
 I had two tables:
 

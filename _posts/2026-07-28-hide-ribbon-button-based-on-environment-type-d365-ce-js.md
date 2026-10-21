@@ -2,6 +2,7 @@
 layout: post
 post_id: '080'
 title: Hide a Ribbon Button Based on the Environment in Dynamics 365 Using JavaScript
+seo_title: Hide Ribbon Buttons by Environment in Dynamics 365
 date: 2026-08-02T23:11
 image: assets/images/078/environment-type-featured.png
 description: Learn how to detect environment type in Dynamics 365 using RetrieveOrganizationInfo and hide the Word Template button in Production.
@@ -33,7 +34,7 @@ To hide the button, you need to add an **Enable Rule** to the existing command. 
 
 Since I currently have access only to a developer environment and not a Production environment, I cannot demonstrate the functionality directly. However, I performed reverse testing, and the solution worked as expected.
 
-#### References:
+## References:
 
 - [RetrieveOrganizationInfo Function (Microsoft.Dynamics.CRM) — Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/retrieveorganizationinfo?view=dataverse-latest)
 - [OrganizationType EnumType (Microsoft.Dynamics.CRM) — Microsoft Learn](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/organizationtype?view=dataverse-latest)

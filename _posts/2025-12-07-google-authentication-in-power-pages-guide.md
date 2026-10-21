@@ -24,7 +24,7 @@ In this blog, we’ll walk through a simple and beginner-friendly guide on how t
 - [Configure Google Identity Provider – Part 2](#configure-google-identity-provider--part-2)
 - [References](#references)
 
-### Configure Google Identity Provider – Part 1
+## Configure Google Identity Provider – Part 1
 
 First, go to [make.powerpages.com](https://make.powerpages.com) and open the Power Pages site for which you want to enable Google login. From the left navigation, open the **Security** section and select **Identity Providers**. You will see a list of available providers as shown below.
 

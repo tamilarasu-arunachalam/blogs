@@ -29,7 +29,7 @@ To bring this functionality to life, I outlined the key steps required:
 -   Create a Command Button
 -   Demonstrate the Functionality
 
-### Develop the Web Resource
+## Develop the Web Resource
 
 Since we are implementing this functionality on the client-side, we need to write JavaScript to handle the cloning process. The script should cover the following key actions:
 

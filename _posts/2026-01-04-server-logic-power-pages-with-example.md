@@ -27,7 +27,7 @@ Server Logic in Power Pages helps solve this problem by allowing developers to r
 - [My Thoughts](#my-thoughts)
 - [References:](#references)
 
-### Why server logic?
+## Why server logic?
 
 Server Logic is designed for scenarios where client side JavaScript is not sufficient or safe. Imagine an online store built on Power Pages that handles discount calculation, inventory validation, or payment verification. If these operations are implemented on the client side, users can inspect network calls and manipulate requests. Server Logic allows these operations to run securely on the server with proper permissions. The client only receives the required response, not the implementation details.
 

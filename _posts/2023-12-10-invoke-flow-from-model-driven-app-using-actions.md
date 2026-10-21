@@ -2,6 +2,7 @@
 layout: post
 post_id: '031'
 title: Invoke a Power Automate flow synchronously from a Model Driven App using Actions
+seo_title: Invoke Power Automate Flows from Model-Driven Apps
 date: 2023-12-10 17:41:00 +0000
 image: assets/images/031/img_ccd88a128b.png
 description: ''

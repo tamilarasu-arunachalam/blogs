@@ -2,6 +2,7 @@
 layout: post
 post_id: '013'
 title: Environment Variables in Dataverse and How to use it in Power Automate Flow
+seo_title: Use Dataverse Environment Variables in Power Automate
 date: 2023-04-09 07:46:00 +0000
 image: assets/images/013/img_ace1b240a0.png
 description: ''
@@ -40,7 +41,7 @@ meta_description: Environment variables in Dataverse allow you to store the conn
 -   Default Value
 -   Current Value
 
-#### Default value:
+### Default value:
 
 -   It is part of the environment variable definition table. It is not a required if it has current values.
 -   If the value should be the same for all the environments, we may use default values. Because we can't able to modify it in the target environment.

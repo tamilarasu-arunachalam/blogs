@@ -2,6 +2,7 @@
 layout: post
 post_id: '067'
 title: Just Found What Happens Behind the Scenes of Export to Excel in Model‑Driven Apps!
+seo_title: Behind the Scenes of Model-Driven Excel Export
 date: 2026-05-17 17:41:00 +0000
 image: assets/images/067/img_81152b8845.gif
 description: ''
@@ -39,7 +40,7 @@ Refer to the GIF below for a demonstration of the custom button and how the scri
 
 [![]({{ site.baseurl }}/assets/images/067/img_b4e61bca01.gif)]({{ site.baseurl }}/assets/images/067/img_b4e61bca01.gif)
 
-#### References:
+## References:
 
 -   [Code to Excel: Export Like a Pro! — Andrew Butenko’s Blog](https://butenko.pro/2024/11/23/code-to-excel-export-like-a-pro/)
 -   [Export to Excel Dataverse Table with Power Automate — Ludovic Perrichon](https://ludovicperrichon.com/export-to-excel-dataverse-table-with-power-automate/)

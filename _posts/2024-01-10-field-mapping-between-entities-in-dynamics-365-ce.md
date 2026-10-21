@@ -2,6 +2,7 @@
 post_id: "033"
 layout: post
 title: "Field Mapping between Entities in Dynamics 365 CE"
+description: "Map fields between related Dataverse entities without client-side code using built-in field mapping, including its relationship and field type requirements."
 date: 2024-01-10 17:41:00 +0000
 category: Dynamics 365 CE
 image: assets/images/033/img_ea59cf2330.png

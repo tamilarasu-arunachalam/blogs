@@ -2,6 +2,7 @@
 layout: post
 post_id: '060'
 title: 'Power Pages WebAPI with $pages Client API: Modern Dataverse CRUD Implementation Guide'
+seo_title: Power Pages CRUD with the $pages Client API
 date: 2026-02-15 17:41:00 +0000
 image: assets/images/060/img_25db1d708c.gif
 description: ''

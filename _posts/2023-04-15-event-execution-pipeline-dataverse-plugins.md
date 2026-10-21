@@ -56,7 +56,7 @@ Two types of Images:
 -   Pre-Image
 -   Post-Image
 
-#### Pre-Image
+### Pre-Image
 
     The value of the attributes before the main operation can be retrieved through this Pre-Image.
 

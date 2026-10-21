@@ -23,7 +23,7 @@ Solutions are exported from the source environment and imported into the target 
 
 > **Note:** `1.0.1.1` is an example of a solution version. Solution versioning follows the format: `Major.Minor.Build.Revision`
 
-#### Updating a Solution:
+## Updating a Solution:
 
 When importing a Managed Solution into a target environment, if the import process detects that another version of the same solution already exists, it provides the following options:
 
@@ -45,7 +45,7 @@ This option updates the solution with the imported version, but unlike **Upgrade
 
 If components were deleted in the source environment, differences may exist between the source and target environments. Compared to **Upgrade**, **Update** generally provides better performance because it does not perform component removal operations.
 
-#### Patch:
+### Patch:
 
 A **Patch Solution** can be created from a parent solution to deliver minor updates to the base solution.
 

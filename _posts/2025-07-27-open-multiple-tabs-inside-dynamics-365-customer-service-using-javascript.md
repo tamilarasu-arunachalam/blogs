@@ -2,6 +2,7 @@
 layout: post
 post_id: '049'
 title: How to Open Multiple Workspace Tabs in Dynamics 365 Customer Service Using JavaScript?
+seo_title: Open Multiple Dynamics 365 Customer Service Tabs
 date: 2025-07-27 17:41:00 +0000
 image: assets/images/049/img_e80e5e6282.gif
 description: ''

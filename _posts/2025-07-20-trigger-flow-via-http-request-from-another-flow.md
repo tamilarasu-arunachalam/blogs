@@ -2,6 +2,7 @@
 layout: post
 post_id: '048'
 title: How to Trigger a Power Automate Flow via HTTP Request (API) From Another Flow?
+seo_title: Trigger One Power Automate Flow from Another
 date: 2025-07-20 17:41:00 +0000
 image: assets/images/048/img_453fc33dd7.jpg
 description: ''
