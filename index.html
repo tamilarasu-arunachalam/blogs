@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Home
-seo_title: "The Developer's Journal | Tamilarasu Arunachalam"
+title: "Dynamics 365 & Power Platform Dev Blog | Tamilarasu"
+description: "Practical tutorials on Dynamics 365 CE, Power Apps, Power Automate, Power Pages and Dataverse — JavaScript, Power Fx and Web API solutions from real projects."
+image: assets/images/og-banner.jpg
 ---
 
 <!-- Redesigned Hero: Newsletter Section -->
@@ -155,45 +156,11 @@ seo_title: "The Developer's Journal | Tamilarasu Arunachalam"
                     </ul>
                 </nav>
                 {% endif %}
-
             </div>
             
             <div class="col-lg-10 mx-auto" id="filtered-posts-container" style="display: none;">
-                <!-- Filtered posts will be injected here -->
+                <!-- Filtered posts will be dynamically injected here -->
             </div>
-            
-            <div id="all-posts-hidden-container" style="display: none;">
-                {% for post in site.posts %}
-                <article class="post-list-item" data-category="{{ post.category | downcase | escape }}" style="display: grid; transition: opacity 0.3s ease;">
-                    <div class="post-thumbnail-wrapper">
-                        <a href="{{ post.url | relative_url }}">
-                            {% include image.html url=post.image alt=post.title class="post-thumbnail" %}
-                        </a>
-                    </div>
-                    <div class="post-content-column">
-                        <div class="mb-2 d-flex align-items-center justify-content-between">
-                            <div class="d-flex align-items-center gap-2">
-                                {% if post.pinned %}<span class="pinned-badge">PINNED</span>{% endif %}
-                                <span class="text-secondary small fw-medium">{{ post.date | date: "%b %d, %Y" }}</span>
-                            </div>
-                            <span class="small text-muted opacity-75">{{ post.read_time | default: '5 min' }}</span>
-                        </div>
-                        <h2 class="h4 fw-bold mb-2">
-                            <a href="{{ post.url | relative_url }}" class="post-title-link text-decoration-none text-dark hover-primary">{{ post.title }}</a>
-                        </h2>
-                        <div class="post-excerpt-list text-muted small mb-3">
-                            {{ post.excerpt | strip_html | truncatewords: 30 }}
-                        </div>
-                        <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
-                             {% if post.category %}
-                             <span class="category-pill">{{ post.category }}</span>
-                             {% endif %}
-                        </div>
-                    </div>
-                </article>
-                {% endfor %}
-            </div>
-
         </div>
     </div>
 </section>
@@ -204,16 +171,48 @@ seo_title: "The Developer's Journal | Tamilarasu Arunachalam"
         const filterBtns = document.querySelectorAll('.category-filter-btn');
         const defaultContainer = document.getElementById('post-list-container');
         const filteredContainer = document.getElementById('filtered-posts-container');
-        const allPostsHidden = document.getElementById('all-posts-hidden-container');
         const postCountLabel = document.getElementById('post-count-label');
-        const totalPosts = allPostsHidden ? allPostsHidden.querySelectorAll('.post-list-item').length : 0;
+        const totalPosts = {{ site.posts | size }};
+        let cachedPosts = null;
 
-        if (!filterBtns.length || !defaultContainer || !filteredContainer || !allPostsHidden) return;
+        if (!filterBtns.length || !defaultContainer || !filteredContainer) return;
 
         function updateCount(count) {
             if (postCountLabel) {
                 postCountLabel.textContent = count + (count === 1 ? ' post' : ' posts');
             }
+        }
+
+        function createPostElement(post) {
+            const article = document.createElement('article');
+            article.className = 'post-list-item';
+            article.style.display = 'grid';
+            article.style.transition = 'opacity 0.3s ease';
+
+            const imageHtml = post.image
+                ? '<img src="' + post.image + '" alt="' + (post.title || '').replace(/"/g, '&quot;') + '" class="post-thumbnail" width="600" height="375" loading="lazy" decoding="async">'
+                : '<div class="post-thumbnail img-placeholder shadow-inner" aria-hidden="true"></div>';
+
+            article.innerHTML = 
+                '<div class="post-thumbnail-wrapper">' +
+                    '<a href="' + post.url + '">' + imageHtml + '</a>' +
+                '</div>' +
+                '<div class="post-content-column">' +
+                    '<div class="mb-2 d-flex align-items-center justify-content-between">' +
+                        '<div class="d-flex align-items-center gap-2">' +
+                            '<span class="text-secondary small fw-medium">' + post.date + '</span>' +
+                        '</div>' +
+                        '<span class="small text-muted opacity-75">' + (post.read_time || '5 min') + '</span>' +
+                    '</div>' +
+                    '<h2 class="h4 fw-bold mb-2">' +
+                        '<a href="' + post.url + '" class="post-title-link text-decoration-none text-dark hover-primary">' + post.title + '</a>' +
+                    '</h2>' +
+                    '<div class="post-excerpt-list text-muted small mb-3">' + (post.excerpt || '') + '</div>' +
+                    '<div class="mt-auto d-flex flex-wrap gap-2 align-items-center">' +
+                        (post.category ? '<span class="category-pill">' + post.category + '</span>' : '') +
+                    '</div>' +
+                '</div>';
+            return article;
         }
 
         function renderFilteredPage(matchingPosts, page) {
@@ -223,29 +222,21 @@ seo_title: "The Developer's Journal | Tamilarasu Arunachalam"
 
             filteredContainer.innerHTML = '';
 
-            // Render posts for the current page
             matchingPosts.slice(start, end).forEach(post => {
-                filteredContainer.appendChild(post.cloneNode(true));
+                filteredContainer.appendChild(createPostElement(post));
             });
 
-            // Render pagination if needed
             if (totalPages > 1) {
                 const nav = document.createElement('nav');
                 nav.setAttribute('aria-label', 'Filtered page navigation');
                 nav.className = 'mt-5';
                 let paginationHTML = '<ul class="pagination justify-content-center">';
 
-                // First button
                 if (page > 1) {
                     paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="1" aria-label="First"><i class="bi bi-chevron-double-left"></i></button></li>';
-                }
-
-                // Previous button
-                if (page > 1) {
                     paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="' + (page - 1) + '" aria-label="Previous"><i class="bi bi-chevron-left"></i></button></li>';
                 }
 
-                // Page numbers
                 let startPage = Math.max(1, page - 1);
                 let endPage = Math.min(totalPages, startPage + 3);
                 if (endPage - startPage < 3) startPage = Math.max(1, endPage - 3);
@@ -258,13 +249,8 @@ seo_title: "The Developer's Journal | Tamilarasu Arunachalam"
                     }
                 }
 
-                // Next button
                 if (page < totalPages) {
                     paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="' + (page + 1) + '" aria-label="Next"><i class="bi bi-chevron-right"></i></button></li>';
-                }
-
-                // Last button
-                if (page < totalPages) {
                     paginationHTML += '<li class="page-item"><button class="page-link rounded-circle border-0 bg-light text-dark mx-1 filtered-page-btn" data-page="' + totalPages + '" aria-label="Last"><i class="bi bi-chevron-double-right"></i></button></li>';
                 }
 
@@ -272,7 +258,6 @@ seo_title: "The Developer's Journal | Tamilarasu Arunachalam"
                 nav.innerHTML = paginationHTML;
                 filteredContainer.appendChild(nav);
 
-                // Bind pagination clicks
                 filteredContainer.querySelectorAll('.filtered-page-btn').forEach(btn => {
                     btn.addEventListener('click', function() {
                         renderFilteredPage(matchingPosts, parseInt(this.getAttribute('data-page')));
@@ -282,9 +267,20 @@ seo_title: "The Developer's Journal | Tamilarasu Arunachalam"
             }
         }
 
+        async function getPosts() {
+            if (cachedPosts) return cachedPosts;
+            try {
+                const res = await fetch('{{ site.baseurl }}/search.json');
+                cachedPosts = await res.json();
+                return cachedPosts;
+            } catch (e) {
+                console.error('Failed to load posts for filtering', e);
+                return [];
+            }
+        }
+
         filterBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Update active state
+            btn.addEventListener('click', async function() {
                 filterBtns.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
 
@@ -303,14 +299,8 @@ seo_title: "The Developer's Journal | Tamilarasu Arunachalam"
                     defaultContainer.style.display = 'none';
                     filteredContainer.style.display = 'block';
 
-                    // Collect matching posts
-                    const allPosts = allPostsHidden.querySelectorAll('.post-list-item');
-                    const matchingPosts = [];
-                    allPosts.forEach(post => {
-                        if (post.getAttribute('data-category') === category) {
-                            matchingPosts.push(post);
-                        }
-                    });
+                    const posts = await getPosts();
+                    const matchingPosts = posts.filter(post => (post.category || '').toLowerCase() === category);
 
                     updateCount(matchingPosts.length);
 

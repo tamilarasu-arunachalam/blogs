@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Terms and Conditions
-permalink: /terms/
+permalink: /terms
+redirect_from:
+  - /terms/
 ---
 
 <header class="py-5 bg-light mb-5 px-3 px-lg-0">

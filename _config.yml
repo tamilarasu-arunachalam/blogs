@@ -23,6 +23,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-minifier
 
 # Pagination settings
 paginate: 5

@@ -11,10 +11,10 @@ This site contains practical tutorials and technical articles about Dynamics 365
 ## Site resources
 
 - [Home]({{ '/' | absolute_url }})
-- [About]({{ '/about/' | absolute_url }})
-- [Contact]({{ '/contact/' | absolute_url }})
-- [Privacy policy]({{ '/privacy/' | absolute_url }})
-- [Terms]({{ '/terms/' | absolute_url }})
+- [About]({{ '/about' | absolute_url }})
+- [Contact]({{ '/contact' | absolute_url }})
+- [Privacy policy]({{ '/privacy' | absolute_url }})
+- [Terms]({{ '/terms' | absolute_url }})
 - [Sitemap]({{ '/sitemap.xml' | absolute_url }})
 - [Atom feed]({{ '/feed.xml' | absolute_url }})
 

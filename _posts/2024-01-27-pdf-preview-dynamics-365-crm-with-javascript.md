@@ -16,6 +16,8 @@ categories:
   - HTML
   - Web resource
   - Dynamics 365 Web API
+redirect_from:
+  - /building-a-pdf-preview-feature-inside-dynamics-365-ce-with-jscript.html
 ---
 
 I recently encountered a question regarding the possibility of previewing a PDF file inside Dynamics 365 CRM or a Model Driven App without opening an additional tab or window. After conducting some research, I found that there is no out-of-the-box (OOTB) feature for previewing PDF files. However, I devised an approach to achieve this by leveraging client-side scripting, specifically using JScript.

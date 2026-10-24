@@ -1,7 +1,9 @@
 ---
 layout: default
 title: About Me
-permalink: /about/
+permalink: /about
+redirect_from:
+  - /about/
 ---
 
 <header class="py-5 bg-light mb-5">

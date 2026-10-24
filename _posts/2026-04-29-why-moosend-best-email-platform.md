@@ -64,7 +64,9 @@ Email marketing works. The data is clear, the ROI is real, and the opportunity i
 
 For startups watching every rupee, freelancers managing multiple clients, or growing businesses that need results without complexity, Moosend is worth a serious look.
 
-[**Start your free Moosend trial today - no credit card required. &rarr;**](https://moosend.com/?ref=51e754dbd6)
+<p class="small text-muted fst-italic"><strong>Disclosure:</strong> Some links in this article are affiliate links. If you choose to sign up through these links, I may earn a small commission at no extra cost to you. I only recommend platforms and tools that provide genuine value.</p>
+
+<a href="https://moosend.com/?ref=51e754dbd6" target="_blank" rel="sponsored noopener" class="btn btn-primary fw-bold px-4 py-2 text-decoration-none">Start your free Moosend trial today - no credit card required &rarr;</a>
 
 **References:**
 

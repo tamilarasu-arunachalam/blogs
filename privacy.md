@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Privacy Policy
-permalink: /privacy/
+permalink: /privacy
+redirect_from:
+  - /privacy/
 ---
 
 <header class="py-5 bg-light mb-5 px-3 px-lg-0">

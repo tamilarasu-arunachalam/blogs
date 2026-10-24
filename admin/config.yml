@@ -42,6 +42,11 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Read Time", name: "read_time", widget: "string", required: false}
       - {label: "Published", name: "published", widget: "boolean", default: true}
+      - label: "Redirect From"
+        name: "redirect_from"
+        widget: "list"
+        required: false
+        hint: "Old URLs to redirect to this post (e.g. /old-slug.html)"
 
   - name: "pages"
     label: "Pages"
@@ -57,7 +62,7 @@ collections:
             widget: string
             required: false
             pattern: ['^.{1,60}$', 'Keep under 60 characters']
-          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/about/"}
+          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/about"}
           - label: "Meta description"
             name: description
             widget: text
@@ -76,7 +81,7 @@ collections:
             widget: string
             required: false
             pattern: ['^.{1,60}$', 'Keep under 60 characters']
-          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/contact/"}
+          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/contact"}
           - label: "Meta description"
             name: description
             widget: text
@@ -95,7 +100,7 @@ collections:
             widget: string
             required: false
             pattern: ['^.{1,60}$', 'Keep under 60 characters']
-          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/privacy/"}
+          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/privacy"}
           - label: "Meta description"
             name: description
             widget: text
@@ -114,7 +119,7 @@ collections:
             widget: string
             required: false
             pattern: ['^.{1,60}$', 'Keep under 60 characters']
-          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/terms/"}
+          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/terms"}
           - label: "Meta description"
             name: description
             widget: text

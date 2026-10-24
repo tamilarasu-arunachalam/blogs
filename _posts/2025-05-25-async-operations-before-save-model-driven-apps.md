@@ -14,6 +14,8 @@ categories:
   - JavaScript
   - Web resource
   - Power Apps
+redirect_from:
+  - /safely-handle-async-operations-before-save-in-model-driven-power-apps.html
 ---
 
 Hello folks. I recently tackled one of these scenarios, and what seemed like a simple validation turned into a bit of a deep dive.

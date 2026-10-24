@@ -9,6 +9,8 @@ meta_keywords: Power Fx clone record, Model Driven App clone record, Dataverse c
 category: Dataverse
 read_time: 10 mins
 published: true
+redirect_from:
+  - /how-to-clone-dataverse-records-with-power-fx-in-model-driven-apps.html
 ---
 
 If you or someone in your role has to create the same kind of records manually multiple times, you may have already hated doing it. So, I came up with something to solve this problem.

@@ -11,10 +11,10 @@ This site publishes practical tutorials and technical articles about Dynamics 36
 ## Site
 
 - [Home]({{ '/' | absolute_url }}): Browse the latest articles.
-- [About]({{ '/about/' | absolute_url }}): About the author and this site.
-- [Contact]({{ '/contact/' | absolute_url }}): Contact the author.
-- [Privacy policy]({{ '/privacy/' | absolute_url }}): Privacy and cookie preferences.
-- [Terms]({{ '/terms/' | absolute_url }}): Site terms.
+- [About]({{ '/about' | absolute_url }}): About the author and this site.
+- [Contact]({{ '/contact' | absolute_url }}): Contact the author.
+- [Privacy policy]({{ '/privacy' | absolute_url }}): Privacy and cookie preferences.
+- [Terms]({{ '/terms' | absolute_url }}): Site terms.
 
 ## Discovery
 

@@ -48,8 +48,8 @@
 {% endif %}
 
 {% if resolved_url %}
-{% assign img_width = include.width | default: '1200' %}
-{% assign img_height = include.height | default: '200' %}
+{% assign img_width = include.width | default: '600' %}
+{% assign img_height = include.height | default: '375' %}
 {% assign img_sizes = include.sizes | default: '(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px' %}
 <img src="{{ resolved_url }}" alt="{{ img_alt }}" class="{{ img_class }}" width="{{ img_width }}" height="{{ img_height }}" sizes="{{ img_sizes }}" {{ img_loading }}>
 {% else %}

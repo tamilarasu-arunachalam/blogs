@@ -16,6 +16,8 @@ categories:
   - Web resource
   - Dynamics 365 CE
   - Dataverse
+redirect_from:
+  - /invoke-a-power-automate-flow-synchronously-from-a-model-driven-app-using-actions.html
 ---
 
 In this article, I am going to demonstrate on how to use these dataverse custom action to trigger the automated flow in Power automate. Dataverse already has a trigger in place for the event of the action trigger. With this method, we can call a power automate flow synchronously from the model driven app's command button.    

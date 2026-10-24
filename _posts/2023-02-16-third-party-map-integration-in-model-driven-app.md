@@ -11,6 +11,8 @@ category: Dynamics 365 CE
 categories:
   - Power Apps
   - Dataverse
+redirect_from:
+  - /third-party-map-integration-with-geocoding-in-model-driven-app-power-apps.html
 ---
 
 Microsoft Dynamics 365 CRM supports addition of Bing Maps to its forms by default. But it should be enable/disable under Settings → Administration → System Settings. Bing Maps in Dynamics 365 CE works on the geocoding concept. It retrieves address from the form field and with the geocoding it pin the location on the map. To replicate the same concept with the open source maps, i go with the leaflet. Leaflet is one of the popular opensource map. Let’s dive in to the article and get to know how to use another map instead of Bing maps.

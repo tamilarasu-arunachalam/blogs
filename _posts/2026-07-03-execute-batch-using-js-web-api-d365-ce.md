@@ -1,8 +1,8 @@
 ---
 layout: post
 post_id: '077'
-title: How to execute a batch process using JavaScript Web API in Dynamics 365 CE?
-seo_title: JavaScript Web API Batch Requests in Dynamics 365
+title: "Batch Requests with JavaScript Web API in Dynamics 365 CE"
+seo_title: "Batch Requests with JavaScript Web API in Dynamics 365 CE"
 date: 2026-07-12T23:11
 image: assets/images/077/dataverse-batch-process-flow.png
 description: "Use Dataverse Web API batch requests to create records in one call and manage transactions with change sets."

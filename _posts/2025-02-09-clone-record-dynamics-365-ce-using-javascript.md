@@ -15,6 +15,8 @@ categories:
   - Web resource
   - Dynamics 365 CE
   - Dynamics 365 Web API
+redirect_from:
+  - /clone-a-record-in-dynamics-365-ce-using-javascript.html
 ---
 
 Fellas! Have you ever been in a situation where you needed to create multiple similar records with some fields carrying the same data? I found myself in this exact scenario and thought—why not build a simple templating functionality?

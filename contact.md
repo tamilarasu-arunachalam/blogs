@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Contact Us
-permalink: /contact/
+permalink: /contact
+redirect_from:
+  - /contact/
 ---
 
 <header class="py-5 bg-light mb-5 px-3 px-lg-0">

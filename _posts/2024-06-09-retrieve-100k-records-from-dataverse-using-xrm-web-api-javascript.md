@@ -15,6 +15,8 @@ categories:
   - JavaScript
   - Web resource
   - Dynamics 365 Web API
+redirect_from:
+  - /retrieve-100k-records-from-dataverse-in-xrm-web-api-using-javascript.html
 ---
 
 Struggling to fetch large data sets via the XRM Web API? No sweat! I've authored an article demonstrating how to efficiently fetch large datasets from the Dataverse XRM Web API using JavaScript. In the article, I cover both querying techniques, including FetchXML and OData Query, providing comprehensive guidance on handling substantial amounts of data.

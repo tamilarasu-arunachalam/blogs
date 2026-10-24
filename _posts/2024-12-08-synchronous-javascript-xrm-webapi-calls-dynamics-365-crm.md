@@ -13,6 +13,8 @@ categories:
   - Web resource
   - Dynamics 365 CE
   - Dynamics 365 Web API
+redirect_from:
+  - /making-xrm-web-api-calls-synchronous-with-javascript-in-dynamics-365-crm.html
 ---
 
 When working with Dynamics 365 CRM and Model Driven Apps, developers often need to interact with the XRM Web API to perform CRUD (Create, Read, Update, Delete) operations. By default, the XRM Web API works asynchronously. This means that the results are returned later, allowing other code to run in the meantime. However, there are times when synchronous calls are needed, especially when operations must happen in a specific order. In this post, we'll explore how to make XRM Web API calls appear synchronous in Dynamics 365.

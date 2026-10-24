@@ -1,7 +1,8 @@
 ---
 published: true
 layout: post
-title: "How I Automated Chrome Extension Publishing with GitHub Actions"
+title: "Publish a Chrome Extension with GitHub Actions (OAuth Setup)"
+seo_title: "Publish a Chrome Extension with GitHub Actions (OAuth Setup)"
 date: 2026-06-02 23:11:00 +0530
 category: Extension Development
 post_id: "069"

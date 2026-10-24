@@ -1,7 +1,8 @@
 ---
 layout: post
 post_id: '038'
-title: Unlocking the Power of Side Panes in Model-Driven Apps
+title: "Side Panes in Model-Driven Apps: createPane & removePane"
+seo_title: "Side Panes in Model-Driven Apps: createPane & removePane"
 date: 2024-09-15 17:41:00 +0000
 image: assets/images/038/img_9dc1697832.png
 description: ''
