@@ -118,14 +118,14 @@ h6 {
 
 .post-thumbnail-wrapper {
     width: 100%;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
     border-radius: 12px;
 }
 
 .post-thumbnail {
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 10;
+    height: 100%;
     object-fit: cover;
     display: block;
     border-radius: 8px;

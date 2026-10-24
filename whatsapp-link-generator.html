@@ -29,7 +29,7 @@ faq:
 - question: "Does this tool work for WhatsApp Business?"
   answer: "Yes. The generated wa.me links work with both regular WhatsApp and WhatsApp Business accounts on all devices."
 - question: "What format should I enter the phone number in?"
-  answer: "Enter the phone number with the country code but without the + sign, spaces, or dashes. For example, for an Indian number +91 98765 43210, enter 919876543210."
+  answer: "Select the country code, then enter the phone number without the country code. For example, select India (+91) and enter 9876543210."
 - question: "Does this tool store my phone number or message?"
   answer: "No. All processing happens entirely in your browser. Nothing is sent to any server, making it completely private and secure."
 - question: "Can I pre-fill a message in the WhatsApp link?"
@@ -49,14 +49,23 @@ faq:
         <div class="col-lg-8">
             <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5">
                 <div class="mb-4">
-                    <label for="phoneNumber" class="form-label fw-bold text-secondary">Phone Number (with country
-                        code)</label>
+                    <label for="countryCode" class="form-label fw-bold text-secondary">Country Code</label>
+                    <select id="countryCode" class="form-select form-select-lg bg-light shadow-none"
+                        onchange="generateWhatsAppLink(); validatePhone();"
+                        style="border: 2px solid #dee2e6;">
+                        <option value="91" selected>India (+91)</option>
+                    </select>
+                    <div id="countryCodeFeedback" class="form-text mt-2" aria-live="polite"></div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="phoneNumber" class="form-label fw-bold text-secondary">Phone Number</label>
                     <input type="tel" class="form-control form-control-lg bg-light shadow-none"
                         oninput="generateWhatsAppLink(); validatePhone();" id="phoneNumber"
-                        placeholder="e.g. 919876543210"
+                        placeholder="e.g. 9876543210"
                         style="border: 2px solid #dee2e6; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
                     <div id="phoneFeedback" class="form-text mt-2 fw-medium text-muted">
-                        Enter phone number with country code, without + or spaces
+                        Enter the phone number without the country code
                     </div>
                 </div>
 
@@ -123,9 +132,8 @@ faq:
 
                 <h3 class="fw-bold mt-5 mb-3">How to Use This Tool</h3>
                 <ol>
-                    <li>Enter the <strong>phone number</strong> with the country code (e.g. <code>919876543210</code>
-                        for India, <code>14155551234</code> for the US). Do not include the <code>+</code> sign, spaces,
-                        or dashes.</li>
+                    <li>Select the <strong>country code</strong>, then enter the phone number without the country code,
+                        spaces, or dashes (e.g. select India (+91) and enter <code>9876543210</code>).</li>
                     <li>Optionally type a <strong>pre-filled message</strong> that the recipient will see when they open
                         the chat.</li>
                     <li>Your WhatsApp link is generated instantly. <strong>Copy it</strong> or click <strong>Open in
@@ -202,20 +210,58 @@ faq:
 </script>
 
 <script>
+    function getFullPhoneNumber() {
+        var countryCode = document.getElementById("countryCode").value;
+        var nationalNumber = document.getElementById("phoneNumber").value.trim().replace(/\D/g, '');
+        return countryCode + nationalNumber;
+    }
+
+    fetch("{{ '/assets/js/country-codes.json' | relative_url }}")
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error("Country code list request failed with status " + response.status);
+            }
+            return response.json();
+        })
+        .then(function (countries) {
+            var countrySelect = document.getElementById("countryCode");
+            var countryFeedback = document.getElementById("countryCodeFeedback");
+            var india = countries.find(function (country) {
+                return country.iso2 === "IN";
+            });
+
+            if (!india) {
+                throw new Error("India was not found in the country code list");
+            }
+
+            countrySelect.replaceChildren();
+            countries.forEach(function (country) {
+                countrySelect.add(new Option(
+                    country.name + " (+" + country.dialCode + ")",
+                    country.dialCode
+                ));
+            });
+            countrySelect.value = india.dialCode;
+        })
+        .catch(function (error) {
+            var countryFeedback = document.getElementById("countryCodeFeedback");
+            countryFeedback.className = "form-text mt-2 text-danger";
+            countryFeedback.textContent = "Could not load country codes. India (+91) is still available.";
+            console.error("Could not initialize country code options.", error);
+        });
+
     function validatePhone() {
         var phoneInput = document.getElementById("phoneNumber");
         var feedback = document.getElementById("phoneFeedback");
         var openBtn = document.getElementById("waOpenLink");
-        var raw = phoneInput.value.trim();
+        var nationalNumber = phoneInput.value.trim().replace(/\D/g, '');
+        var digits = getFullPhoneNumber();
 
-        // Strip non-digit characters for validation
-        var digits = raw.replace(/\D/g, '');
-
-        if (digits.length === 0) {
+        if (nationalNumber.length === 0) {
             phoneInput.style.borderColor = "#dee2e6";
             phoneInput.style.boxShadow = "none";
             feedback.className = "form-text mt-2 fw-medium text-muted";
-            feedback.innerHTML = "Enter phone number with country code, without + or spaces";
+            feedback.innerHTML = "Enter the phone number without the country code";
             openBtn.classList.add("disabled");
         } else if (digits.length < 7) {
             phoneInput.style.borderColor = "#fd7e14";
@@ -239,12 +285,13 @@ faq:
     }
 
     function generateWhatsAppLink() {
-        var phone = document.getElementById("phoneNumber").value.trim().replace(/\D/g, '');
+        var phone = getFullPhoneNumber();
+        var nationalNumber = document.getElementById("phoneNumber").value.trim().replace(/\D/g, '');
         var message = document.getElementById("waMessage").value.trim();
         var linkInput = document.getElementById("waLink");
         var openBtn = document.getElementById("waOpenLink");
 
-        if (!phone) {
+        if (!nationalNumber) {
             linkInput.value = "";
             openBtn.href = "#";
             return;
@@ -260,8 +307,9 @@ faq:
     }
 
     function validateBeforeOpen() {
-        var phone = document.getElementById("phoneNumber").value.trim().replace(/\D/g, '');
-        if (phone.length < 7) {
+        var nationalNumber = document.getElementById("phoneNumber").value.trim().replace(/\D/g, '');
+        var phone = getFullPhoneNumber();
+        if (nationalNumber.length === 0 || phone.length < 7 || phone.length > 15) {
             return false;
         }
         return true;

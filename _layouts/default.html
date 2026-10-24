@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="{{ site.baseurl }}/assets/favicon/site.webmanifest">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/assets/favicon/site.webmanifest' | relative_url }}">
   {% seo title=false %}
   <title>{{ page.seo_title | default: page.title }}{% unless page.url == "/" %} | {{ site.title }}{% endunless %}</title>
   {% if paginator and paginator.page > 1 %}
@@ -58,7 +59,7 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 
   {% if page.image %}
-  <link rel="preload" as="image" href="{{ page.image | relative_url }}">
+  <link rel="preload" as="image" href="{{ page.image.path | default: page.image | relative_url }}">
   {% endif %}
 </head>
 
