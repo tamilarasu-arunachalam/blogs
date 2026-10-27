@@ -62,13 +62,18 @@ To restore a deleted record, we need to perform two steps:
 Deleted records can be retrieved by using either query parameters or Fetch XML filters.
 
 The following code retrieves deleted records:
+<script src="https://gist.github.com/tamilarasu-arunachalam/f597e5e7d96df90251bb33e56e9fb5c0.js?file=getDeletedRecords.js"></script>
 
 The following code restores a deleted record:
+
+<script src="https://gist.github.com/tamilarasu-arunachalam/f597e5e7d96df90251bb33e56e9fb5c0.js?file=restoreDeletedRecords.js"></script>
 
 ### Restore Deleted Dataverse Records Using C#
 
 - The same approach can be implemented in C#. In the example below, the plugin restores deleted **Account** records whose account number starts with **“ABC”**.
 - After retrieving the required records, we execute the **Restore** request to recover them.
+
+<script src="https://gist.github.com/tamilarasu-arunachalam/f597e5e7d96df90251bb33e56e9fb5c0.js?file=RestoreDeletedABCAccountsPlugin.js"></script>
 
 We are using a **QueryExpression** to select fields and apply filters while retrieving deleted records. If you are more comfortable working with FetchXML, you can use that instead.
 
