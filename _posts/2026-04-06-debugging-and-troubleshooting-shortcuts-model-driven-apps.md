@@ -2,6 +2,7 @@
 layout: post
 post_id: '063'
 title: Best Way to Troubleshoot Model-Driven Apps with Debugging Shortcuts
+seo_title: ''
 date: 2026-04-06 17:41:00 +0000
 image: assets/images/063/img_e3160e0be0.gif
 description: ''
@@ -9,6 +10,8 @@ meta_keywords: troubleshoot power apps, power apps debugging, troubleshoot dynam
 category: Dynamics 365 CE
 read_time: 15 mins
 published: true
+redirect_from:
+  - /2025/04/unlock-hidden-superpowers-in-dynamics-crm-url-tweaks.html
 categories:
   - Model Driven Apps
   - Dynamics 365 CE

@@ -2,11 +2,16 @@
 layout: post
 post_id: '054'
 title: How to Set Up Google Authentication in Power Pages (Beginner Guide)?
+seo_title: ''
 date: 2025-12-07 17:41:00 +0000
 image: assets/images/054/img_f190a8922a.gif
 description: ''
 meta_keywords: ''
 category: Power Pages
+read_time: ''
+published: true
+redirect_from:
+  - /2025/12/set-up-google-authentication-in-power-pages.html
 categories:
   - Power Pages
   - Power Portal
