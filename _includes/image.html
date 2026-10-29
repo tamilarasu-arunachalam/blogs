@@ -51,7 +51,7 @@
 {% assign img_width = include.width | default: '600' %}
 {% assign img_height = include.height | default: '375' %}
 {% assign img_sizes = include.sizes | default: '(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 1200px' %}
-<img src="{{ resolved_url }}" alt="{{ img_alt }}" class="{{ img_class }}" width="{{ img_width }}" height="{{ img_height }}" sizes="{{ img_sizes }}" {{ img_loading }}>
+<img src="{{ resolved_url }}" alt="{{ img_alt }}" class="{{ img_class }}" width="{{ img_width }}" height="{{ img_height }}" sizes="{{ img_sizes }}" {% if include.style %}style="{{ include.style }}"{% endif %} {{ img_loading }}>
 {% else %}
 <div class="{{ img_class }} img-placeholder shadow-inner" aria-hidden="true" role="img" aria-label="Placeholder">
     <!-- Displayed via CSS ::after -->

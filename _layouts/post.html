@@ -85,20 +85,12 @@ layout: default
                 {% endcase %}
 
                 <!-- Comments -->
-                {% if site.cusdis_app_id and site.cusdis_app_id != "" %}
+                {% if site.echothread_shortname and site.echothread_api_key %}
                 <section class="comments mt-5 pt-4 border-top">
                     <h2 class="h4 fw-bold mb-4 ls-n1 text-dark">Comments</h2>
-                    <style>
-                        #cusdis_thread iframe {
-                            min-height: 350px !important;
-                        }
-                    </style>
-                    <div id="cusdis_thread"
-                        data-app-id="{{ site.cusdis_app_id }}"
-                        data-page-id="{{ page.url }}"
-                        data-page-url="{{ page.url | absolute_url }}"
-                        data-page-title="{{ page.title }}"
-                        data-theme="auto">
+                    <div id="echothread"
+                        data-shortname="{{ site.echothread_shortname }}"
+                        data-api-key="{{ site.echothread_api_key }}">
                     </div>
                 </section>
                 {% endif %}
@@ -114,8 +106,7 @@ layout: default
                             <div class="related-post-card card h-100 border-0">
                                 <a href="{{ post.url | relative_url }}" class="related-card-img-link">
                                     {% include image.html url=post.image alt=post.title class="card-img-top
-                                    related-card-img"
-                                    style="aspect-ratio: 16/9; object-fit: cover;" %}
+                                    related-card-img" %}
                                 </a>
                                 <div class="card-body p-4">
                                     <span class="related-card-category">{{ post.category }}</span>

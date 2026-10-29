@@ -511,8 +511,6 @@ h6 {
 
 .post-body p,
 .content-area p,
-.privacy-content p,
-.terms-content p,
 .disclaimer-content p {
     margin-bottom: 2rem;
     font-size: clamp(1.1rem, 1.05rem + 0.25vw, 1.25rem);
@@ -789,13 +787,21 @@ pre code.hljs {
 .related-card-img-link {
     display: block;
     overflow: hidden;
+    aspect-ratio: 16 / 9;
 }
 
 .related-card-img {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.legal-page main p,
+.legal-page main li {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #334155;
 }
 
 .related-post-card:hover .related-card-img {

@@ -5,7 +5,7 @@
     const dialog = document.getElementById('cookie-preferences-dialog');
     const analyticsToggle = document.getElementById('cookie-analytics');
     const commentsToggle = document.getElementById('cookie-comments');
-    const commentsThread = document.getElementById('cusdis_thread');
+    const commentsThread = document.getElementById('echothread');
     const statusMessages = document.querySelectorAll('.cookie-consent-status');
     const googleAnalyticsId = script ? script.dataset.googleAnalyticsId : '';
     const clarityId = script ? script.dataset.clarityId : '';
@@ -72,7 +72,7 @@
     }
 
     function loadComments() {
-        if (!commentsThread || !commentsThread.dataset.appId || commentsLoaded) {
+        if (!commentsThread || !commentsThread.dataset.apiKey || commentsLoaded) {
             return;
         }
         commentsLoaded = true;
@@ -80,7 +80,7 @@
         const commentsScript = document.createElement('script');
         commentsScript.async = true;
         commentsScript.defer = true;
-        commentsScript.src = 'https://cusdis.com/js/cusdis.es.js';
+        commentsScript.src = 'https://cdn.echothread.io/widget.js';
         document.body.appendChild(commentsScript);
     }
 
