@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}">
   <link rel="manifest" href="{{ '/assets/favicon/site.webmanifest' | relative_url }}">
   {% seo title=false %}
-  <title>{{ page.seo_title | default: page.title }}{% unless page.url == "/" %} | {{ site.title }}{% endunless %}</title>
+  <title>{{ page.seo_title | default: page.title }}</title>
   {% if paginator and paginator.page > 1 %}
   <meta name="robots" content="noindex, follow">
   {% endif %}

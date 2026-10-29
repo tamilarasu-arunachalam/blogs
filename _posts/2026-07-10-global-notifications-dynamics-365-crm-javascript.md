@@ -48,13 +48,13 @@ To achieve this, I created a new **Date of Birth** field in the **User** table a
 <script src="https://gist.github.com/tamilarasu-arunachalam/c87c39c7af9f37e2a603071fcdb7a8d4.js"></script>
 Next, I created a button in the **Application Ribbon** using **Ribbon Workbench** and configured an **Enable Rule** with a **Custom Rule** step. I set the **InvertResult** property to **true** and added the required method and JavaScript web resource library.
 
-[![Dynamics 365 CRM Global Notification](/assets/images/078/global-notification-enable-rule.png)](/assets/images/{{post_id}}/global-notification-enable-rule.png)
+[![Dynamics 365 CRM Global Notification](/assets/images/078/global-notification-enable-rule.png)](/assets/images/078/global-notification-enable-rule.png)
 
 After a few debugging iterations, the code worked successfully. Below are the resulting screenshots.
 
-For another user’s birthday[![Dynamics 365 CRM Global Notification](/assets/images/078/other-user-global-notification.png)](/assets/images/{{post_id}}/other-user-global-notification.png)
+For another user’s birthday[![Dynamics 365 CRM Global Notification](/assets/images/078/other-user-global-notification.png)](/assets/images/078/other-user-global-notification.png)
 
-For current user birthday[![Dynamics 365 CRM Global Notification](/assets/images/078/same-user-global-notification.png)](/assets/images/{{post_id}}/same-user-global-notification.png)
+For current user birthday[![Dynamics 365 CRM Global Notification](/assets/images/078/same-user-global-notification.png)](/assets/images/078/same-user-global-notification.png)
 
 ## References:
 

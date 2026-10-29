@@ -132,7 +132,7 @@ javascript:(function(){try{var e=window.top.Xrm&&window.top.Xrm.Utility.getGloba
 
 After clicking run, we can see the Status and Result of the run. Please refer to the below image.
 
-[![]({{ site.baseurl }}/assets/images/063/img_3234ecaea7.png)]({{ site.baseurl }}/assets/images/063/img_3234ecaea7.pn)
+[![]({{ site.baseurl }}/assets/images/063/img_3234ecaea7.png)]({{ site.baseurl }}/assets/images/063/img_3234ecaea7.png)
 
 ## Client Performance Center:
 
