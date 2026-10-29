@@ -7,8 +7,6 @@ redirect_from:
   - /privacy/
 ---
 
-# Privacy Policy
-
 Welcome to Tamilarasu's Blog. Your privacy is paramount. This policy outlines how we handle the data you share when you visit or interact with our site.
 
 ## 1. Information We Collect

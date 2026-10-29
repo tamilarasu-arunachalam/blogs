@@ -7,8 +7,6 @@ redirect_from:
   - /terms/
 ---
 
-# Terms and Conditions
-
 Welcome to Tamilarasu's Blog. By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use Tamilarasu's Blog if you do not accept all of the terms and conditions stated on this page.
 
 ## 1. License and Access

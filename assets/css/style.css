@@ -797,12 +797,6 @@ pre code.hljs {
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.legal-page main p,
-.legal-page main li {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #334155;
-}
 
 .related-post-card:hover .related-card-img {
     transform: scale(1.06);
