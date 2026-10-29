@@ -2,11 +2,16 @@
 layout: post
 post_id: '064'
 title: How to Add a Favicon in Power Pages?
+seo_title: ''
 date: 2026-04-12 17:41:00 +0000
 image: assets/images/064/img_0e751ab16e.gif
 description: ''
 meta_keywords: ''
 category: Power Pages
+read_time: ''
+published: true
+redirect_from:
+  - /2026/04/how-to-add-favicon-in-power-pages.html
 categories:
   - Power Pages
   - Power Portal
