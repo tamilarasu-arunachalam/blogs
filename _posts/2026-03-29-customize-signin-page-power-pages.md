@@ -2,11 +2,16 @@
 layout: post
 post_id: '062'
 title: How to Customize the Sign in page in Power Pages Easily
+seo_title: ''
 date: 2026-03-29 21:11:00 +0000
 image: assets/images/062/img_478dd1953a.gif
 description: ''
 meta_keywords: ''
 category: Power Pages
+read_time: 10 mins
+published: true
+redirect_from:
+  - /2026/03/customize-signin-page-in-power-pages.html
 categories:
   - Power Pages
   - Power Portal
