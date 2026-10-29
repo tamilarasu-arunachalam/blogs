@@ -2,11 +2,16 @@
 layout: post
 post_id: '021'
 title: Fetch Optionset Labels from String Maps Table using Flow or JavaScript
+seo_title: ''
 date: 2023-06-11 18:30:00 +0000
 image: assets/images/021/img_9d960ad019.png
 description: ''
 meta_keywords: ''
 category: Dynamics 365 CE
+read_time: 5 mins
+published: true
+redirect_from:
+  - /string-maps-table-in-dataverse
 categories:
   - Model Driven Apps
   - Dynamics 365 CRM Online
