@@ -76,7 +76,7 @@ image:
                         <div class="mb-2 d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center gap-2">
                                 {% if post.pinned %}<span class="pinned-badge">PINNED</span>{% endif %}
-                                <span class="text-secondary small fw-medium">{{ post.date | date: "%b %d, %Y" }}</span>
+                                <span class="text-secondary small fw-medium">{{ post.date | date: "%b %d, %Y • %I:%M %p IST" }}</span>
                             </div>
                             <span class="small text-muted opacity-75">{{ post.read_time | default: '5 min' }}</span>
                         </div>

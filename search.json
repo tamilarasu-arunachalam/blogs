@@ -7,7 +7,7 @@ layout: null
       "title"    : {{ post.title | jsonify }},
       "category" : {{ post.category | jsonify }},
       "url"      : {{ post.url | relative_url | jsonify }},
-      "date"     : {{ post.date | date: "%b %d, %Y" | jsonify }},
+      "date"     : {{ post.date | date: "%b %d, %Y • %I:%M %p IST" | jsonify }},
       "image"    : {{ post.image | relative_url | jsonify }},
       "excerpt"  : {{ post.excerpt | strip_html | truncatewords: 30 | jsonify }},
       "read_time": {{ post.read_time | default: '5 min' | jsonify }}
