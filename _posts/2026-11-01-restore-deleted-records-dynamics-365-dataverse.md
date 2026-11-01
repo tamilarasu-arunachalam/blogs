@@ -4,7 +4,7 @@ post_id: '084'
 title: How to restore the deleted Dataverse records in Dynamics 365 CRM
 seo_title: Restore the deleted Dataverse records in Dynamics 365 CRM
 date: 2026-11-01 23:11:00 +0530
-image: assets/images/2026-11-01-restore-deleted-records-dynamics-365-dataverse/restore-deleted-records-dataverse-dynamics-365.png
+image: assets/images/084/restore-deleted-records-dataverse-dynamics-365.png
 description: Learn how to restore deleted Dataverse records using the Recycle Bin feature in Power Platform Admin Center, JavaScript, and C#.
 meta_keywords: Restore Deleted Dataverse Records, Dataverse Recycle Bin, Recover Deleted Records in Dataverse,, Restore Deleted Records Dynamics 365, Power Platform Recycle Bin
 category: Power Platform
@@ -25,7 +25,7 @@ To enable the Recycle Bin feature, configure the setting in the **Power Platform
 - Navigate to **Manage → Environments** and open the desired environment.
 - Go to **Settings → Product → Features**.
 
-![Restore deleted records Dataverse Dynamics 365 CRM](assets/images/2026-11-01-restore-deleted-records-dynamics-365-dataverse/enable-recycle-bin-power-platform.png)
+![Restore deleted records Dataverse Dynamics 365 CRM](assets/images/084/enable-recycle-bin-power-platform.png)
 
 - Scroll down to the **Deleted records** section and enable **Keep deleted Dataverse records**.
 - In the **Keep deleted records (days)** field, enter a value between **1 and 90** days.
@@ -40,7 +40,7 @@ To view and restore deleted records:
 - Select **Environments** and open the required environment.
 - Go to **Settings → Data Management → Deleted Records**.
 
-![Restore Deleted Dataverse Records using Dataverse Recycle Bin in Dynamics 365](assets/images/2026-11-01-restore-deleted-records-dynamics-365-dataverse/restore-deleted-dataverse-records.png)
+![Restore Deleted Dataverse Records using Dataverse Recycle Bin in Dynamics 365](assets/images/084/restore-deleted-dataverse-records.png)
 
 - View deleted records across all supported tables.
 - Select one or more records that you want to restore and click **Restore** from the command bar.
