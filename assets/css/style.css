@@ -316,6 +316,7 @@ h6 {
     background: #ffffff !important;
     border-bottom: 1px solid #f1f5f9;
     z-index: 2000;
+    overflow: visible;
 }
 
 .nav-link {
@@ -375,6 +376,8 @@ h6 {
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
         z-index: 1000 !important;
         display: block !important;
+        height: auto !important;
+        visibility: visible !important;
         opacity: 0 !important;
         transform: translateY(-10px) scale(0.95) !important;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -385,6 +388,8 @@ h6 {
     }
 
     .navbar-collapse.show {
+        height: auto !important;
+        overflow-y: auto !important;
         opacity: 1 !important;
         transform: translateY(12px) scale(1) !important;
         pointer-events: auto !important;
@@ -394,6 +399,7 @@ h6 {
         flex-direction: column !important;
         gap: 0.25rem !important;
         align-items: stretch !important;
+        height: auto !important;
     }
 
     .navbar-nav .nav-item {
