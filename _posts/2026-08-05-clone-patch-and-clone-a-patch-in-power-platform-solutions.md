@@ -2,7 +2,7 @@
 layout: post
 post_id: '081'
 title: What is Clone, Patch and Clone a Patch in Power Platform Solutions?
-date: 2026-08-09T23:11
+date: 2026-08-09 23:11:00 +0530
 image: assets/images/081/700825e80059f21c770ea4b770721fc5.jpg
 description: Learn Power Platform solution management, including managed and unmanaged solutions, upgrades, patches, cloning, and versioning best practices.
 meta_keywords: Power Platform Solutions, Managed Solution, Unmanaged Solution, Dataverse Solutions, Solution Upgrade, Solution Patch, Clone Solution, Power Apps ALM, Power Platform Deployment, Solution Versioning

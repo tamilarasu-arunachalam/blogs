@@ -3,7 +3,7 @@ layout: post
 post_id: '076'
 title: Set Field Recommendations Using JavaScript in Dynamics 365 CE / Model-Driven Apps
 seo_title: JavaScript Field Recommendations in Model-Driven Apps
-date: 2026-07-05T23:11
+date: 2026-07-05 23:11:00 +0530
 image: assets/images/076/recommendation-using-javascript.png
 description: "Show field recommendation notifications in Dynamics 365 CE with JavaScript and the addNotification() method."
 meta_keywords: addNotification Dynamics 365, Dynamics 365 field recommendation, Recommendation notification Dynamics 365, How to show recommendation notification in Dynamics 365 CE, Using addNotification method in Dynamics 365 Model-Driven Apps, Display field recommendations using JavaScript in Dynamics 365, Dynamics 365 form field recommendation example, Dynamics 365 CE notificationLevel recommendation, How to add field notifications in Model-Driven Apps

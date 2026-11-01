@@ -5,6 +5,8 @@ source "https://rubygems.org"
 # gem "rails"
 
 gem "jekyll", "~> 4.4"
+gem "tzinfo", "~> 2.0"
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 gem "jekyll-seo-tag"
 

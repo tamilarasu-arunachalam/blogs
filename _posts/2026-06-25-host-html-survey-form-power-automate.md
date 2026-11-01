@@ -2,7 +2,7 @@
 layout: post
 post_id: '075'
 title: How to Build and Host a Survey Form Using Power Automate and Dataverse
-date: 2026-06-28T23:11
+date: 2026-06-28 23:11:00 +0530
 image: assets/images/075/host-survey-page-power-automate.png
 description: Step-by-step tutorial to host a survey form in Power Automate and store user responses directly into Dataverse using HTTP requests.
 meta_keywords: host website Power Automate, Power Automate HTTP trigger, Power Automate Dataverse integration, Host web form in Power Automate, Power Automate website hosting, HTML website Power Automate hosting
