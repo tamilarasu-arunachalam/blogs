@@ -1,5 +1,5 @@
 :root {
-    --nav-height: 3.75rem;
+    --nav-height: 3rem;
     --primary: #0f172a;
     --secondary: #475569;
     --accent: #2563eb;
@@ -314,6 +314,9 @@ h6 {
 /* Navbar styles - Ultra Solid & Minimal Header */
 .navbar {
     height: var(--nav-height);
+    min-height: var(--nav-height);
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
     background: #ffffff !important;
     border-bottom: 1px solid #f1f5f9;
     z-index: 2000;
