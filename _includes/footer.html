@@ -16,21 +16,26 @@
                             class="text-decoration-none text-secondary small hover-primary">Contact Me</a></li>
                 </ul>
                 <div class="d-flex gap-2 mt-4">
-                    <a href="https://twitter.com/{{ site.twitter_username }}" class="social-icon" target="_blank"
+                    <a href="https://{{site.author | slugify}}.medium.com/" title="Follow" class="social-icon" target="_blank"
                         rel="noopener">
-                        <img src="{{ site.baseurl }}/assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+                        <img src="{{ site.baseurl }}/assets/icons/medium.svg" alt="Medium" width="20" height="20">
                     </a>
-                    <a href="https://linkedin.com/in/{{ site.author | slugify }}" class="social-icon" target="_blank"
+                    <a href="https://linkedin.com/in/{{ site.author | slugify }}" class="social-icon" title="Follow" target="_blank"
                         rel="noopener">
                         <img src="{{ site.baseurl }}/assets/icons/linkedin.svg" alt="LinkedIn" width="24" height="24">
                     </a>
                     <a href="https://github.com/{{ site.github_username }}" class="social-icon" target="_blank"
                         rel="noopener">
-                        <img src="{{ site.baseurl }}/assets/icons/github.svg" alt="GitHub" width="24" height="24">
+                        <img src="{{ site.baseurl }}/assets/icons/github.svg" alt="GitHub" title="Follow" width="24" height="24">
                     </a>
-                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" target="_blank"
+                    <a href="https://www.youtube.com/@tamilarasu21" class="social-icon" title="Subscribe" target="_blank"
                         rel="noopener">
                         <img src="{{ site.baseurl }}/assets/icons/youtube.svg" alt="YouTube" width="24" height="24">
+                    </a>
+                    <a href="https://www.buymeacoffee.com/tamilarasu" class="bmc-button" title="Donate" target="_blank"
+                        rel="noopener" aria-label="Buy me a coffee">
+                        <img src="{{ site.baseurl }}/assets/icons/bmc-button.svg" alt="Buy me a coffee" width="109"
+                            height="25">
                     </a>
                 </div>
             </div>
@@ -39,11 +44,11 @@
             <div class="col-lg-3 col-md-6 offset-lg-1">
                 <h2 class="h6 text-dark fw-bold mb-4 small text-uppercase ls-1">Tools</h2>
                 <ul class="list-unstyled d-grid gap-2">
+                    <li><a href="{{ site.baseurl }}/tools"
+                            class="text-decoration-none text-secondary small hover-primary">All Tools</a></li>
                     <li><a href="{{ site.baseurl }}/whatsapp-link-generator"
                             class="text-decoration-none text-secondary small hover-primary">Whatsapp Link Generator</a>
                     </li>
-                    <li><a href="{{ site.baseurl }}/permalink-generator"
-                            class="text-decoration-none text-secondary small hover-primary">Permalink Generator</a></li>
                     <li><a href="{{ site.baseurl }}/text-to-file"
                             class="text-decoration-none text-secondary small hover-primary">Text to File</a></li>
                     <li><a href="{{ site.baseurl }}/html-to-markdown"

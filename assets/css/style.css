@@ -799,6 +799,32 @@ pre code.hljs {
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
+.bmc-button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    text-decoration: none;
+    line-height: 1;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.bmc-button img {
+    display: block;
+    width: 109px;
+    height: 25px;
+    opacity: 1;
+}
+
+.bmc-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.03) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12));
+}
+
+#echothread .et-footer,
+#echothread .et-compose-signin-band {
+    display: none !important;
+}
+
 /* ── Related Posts Cards ─────────────────────────────────────────────── */
 .related-post-card {
     border-radius: 1rem !important;
